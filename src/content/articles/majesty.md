@@ -9,8 +9,8 @@ infobox:
     value:
       - "Ipsa scientia potestas est"
       - "\"Knowledge itself is power\""
-  - { label: "Founded", value: "3 August, 1922" }
-  - { label: "Disbanded", value: "6 June, 1932" }
+  - { label: "Founded", value: ":date[1922-08-03|ago]" }
+  - { label: "Disbanded", value: ":date[1932-06-06|ago]" }
   - label: "Service Branches"
     value:
       - "Ground Operations"
@@ -19,7 +19,7 @@ infobox:
   - { label: "Headquarters", value: "Varies, currently Site Volch'ye Logovo, Vostokiya" }
   - { section: "Leadership" }
   - { label: "Director", value: "[[cassandra-conway]]" }
-  - { label: "Vice-Director", value: "Goro Kurotowa" }
+  - { label: "Vice-Director", value: "[[goro-kurotowa]]" }
   - { label: "Head of Ground Operations", value: "Farooq Ibn Raihan" }
   - { label: "Head of Naval Operations", value: "Nicholas. A. Andersen" }
   - { label: "Head of Air Operations", value: "Larry Foulke" }
@@ -45,6 +45,7 @@ infobox:
       - "Shivon (formerly)"
   - { label: "Revenue", value: "721,585,000 (1929)" }
 ---
+
 **Special Reconnaissance Service No.12 "Majesty",** often stylized simply as **MAJESTY**, was a former Elysian Office of Naval Intelligence branch specializing in espionage, sabotage and target elimination. Up until 1928, the organization operated under the oversight of the Supreme Protector, as well as the Minister of the Interior.
 
 During the [[hyperborea]] talks between [[elysia]] and [[nichirin]], MAJESTY hijacked multiple Elysian assets for their own personal use, as well as attempted to blackmail Nichirin for further information on Imperial Site H-041 “Malkuth”, however were given nothing by the Nichirian delegation.
@@ -65,7 +66,7 @@ The organization is also linked to the attempted assassination of Col. [[george-
 
 As a private military contractor, MAJESTY has had dealings with several world governments to either augment their existing intelligence services, or assist directly with military operations. The organization has however severed ties with the Order of [[shivon]], due to being practically sold out to the Unity State by its government. In addition to their contract services, MAJESTY also operates the global logistics and transport corporation Rosa Industries as a shell company for their activities, at times siphoning funds from them to run their own operations.
 
-The organization’s downfall began in earnest following several security leaks regarding ties to MAJESTY’s former operations and Conway’s past. The evidence collected from these leaks enabled Goro Kurotowa, Conway’s second-in-command and longtime supporter of the organization, to defect to the Miyamoto Shogunate and reveal the location to the opposing parties, using evidence available to the investigating parties. Following confirmation from an Elysian reconnaissance operation on the site of their headquarters, a joint Nichirian-Elysian strike force assaulted the facility as the final part of Operation KNIGHTFALL. The operation ended with a decisive Elysian victory, with the base falling under allied control and Conway’s arrest. What little could escape the facility’s fall fled alongside the organization’s remaining leadership, reorganizing themselves under Goro Kurotowa’s new private military company Soldiers Without Borders.
+The organization’s downfall began in earnest following several security leaks regarding ties to MAJESTY’s former operations and Conway’s past. The evidence collected from these leaks enabled [[goro-kurotowa]], Conway’s second-in-command and longtime supporter of the organization, to defect to the Miyamoto Shogunate and reveal the location to the opposing parties, using evidence available to the investigating parties. Following confirmation from an Elysian reconnaissance operation on the site of their headquarters, a joint Nichirian-Elysian strike force assaulted the facility as the final part of Operation KNIGHTFALL. The operation ended with a decisive Elysian victory, with the base falling under allied control and Conway’s arrest. What little could escape the facility’s fall fled alongside the organization’s remaining leadership, reorganizing themselves under Goro Kurotowa’s new private military company Soldiers Without Borders.
 
 After this, MAJESTY functionally ceased to exist as a coherent entity, the remnants either fleeing the Wolf’s Lair’s destruction into exile, reorganizing under Kurotowa, or splintering off into their own smaller groups.
 
