@@ -32,7 +32,7 @@ groups:
           - "us-navy|US. Navy"
           - "us-air-force|US. Air Force"
           - "us-ranger-corps|US. Ranger Corps"
-          - "majesty|MAJESTY"
+          - "majesty"
   - label: "Economy"
     rows:
       - items:
@@ -70,6 +70,7 @@ groups:
           - "arianne-malloran"
           - "alyssa-traton"
           - "cassandra-conway"
+          - "goro-kurotowa"
       - label: "Politburo Ministers"
         items:
           - "elias-gray"
