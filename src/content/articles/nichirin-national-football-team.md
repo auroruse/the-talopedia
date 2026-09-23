@@ -7,7 +7,7 @@ nation: nichirin
 authors: [nichirin]
 infobox:
   - { image: "https://lh3.googleusercontent.com/pw/AP1GczNNVcgz2kqgXCsvDP5TwPfOmQiSm4IAj-UYAPHhvEXIH52MaTgHl8oNzZ_hwvvUA9muykq3JQLXS3PCnS6FdyGi8fBTjPRDOZsr2m63xYjQHu8zVoxjOG4AdOmwhOz1ZO2g4Gf2gyeTJVyU0A6E2nrj=w2000", caption: "" }
-  - { label: "Nickname", value: "赤鬼軍団 (Crimson Oni Legion)" }
+  - { label: "Nickname", value: "真紅の災厄 (Crimson-Red Calamity)" }
   - { label: "Association", value: "Nichirian Football Association (NFA)" }
   - { label: "Confederation", value: "Eastern" }
   - { label: "Manager", value: ":img[/assets/flags/askurias.png] [[josue-alferinho|Josué Alferinho]]" }
@@ -37,7 +37,7 @@ infobox:
   - { label: "Best Result", value: "Champions (1914, 1930, 1932)" }
 ---
 
-TBA
+The **Nichirin national football team** (全日輪蹴球代表, *Zen-Nichirin Shūkyū Daihyō*), nicknamed the **Crimson-Red Calamity **(真紅の災厄, *Shinku no Saiyaku*), represents [[nichirin]] in international association football. It is controlled by the Nichirian Football Association (NFA). As the first country in [[valtheria]] to adopt football, it shares the record for [[afa-world-cup|World Cup]] titles, with three, and is the only nation to have won the [[afa-nations-league|Nations League]]. Nichirin has been among the world's leading national teams since [[great-war|the Great War]] and has had the best competitive record of any nation since the appointment of head coach [[josue-alferinho|Josué Alferinho]] after the 1932 World Cup.
 
 ## History
 
@@ -47,7 +47,7 @@ Association football was introduced to Nichirin in the early 1880s by [[elvester
 
 Nichirin's first international match took place in [[naginomiya]] on May 6, 1892, as an exhibition staged by the Bakufu during a visit by a [[xing-empire|Xing]] diplomatic delegation. As fielding a military team against the Xing was considered provocative, [[takarazuka-imperial-university]]'s side was selected to represent the country, and won 5-2. The side, which had been preparing for a tour of Elvester, sailed shortly afterward and lost 8-2 to Elvester in Dunmaris on June 21, which remains the national team's heaviest defeat.
 
-Following the tour, the service clubs refused to recognize a university side as the national team, and the university declined to cede the role. As a result, Nichirin played no further international matches for the remainder of the decade. In late 1899, after the founding of the [[avium-football-association]] (AFA) and the announcement of the inaugural [[afa-world-cup|World Cup]], [[afa-club-world-cup|Club World Cup]], and continental championships, the Bakufu established the Nichirian Football Association (NFA) by decree, meeting the AFA's requirement of a single member association per country. The NFA formed a joint selection committee of service and university representatives and appointed [[percy-nicholson]], a retired Elvesterian former [[toteham-lilywhite]] player unaffiliated with either faction, as the first head coach. Under Nicholson, Nichirin won the inaugural [[vafc-championship|VAFC Championship]] in 1900 and made its World Cup debut the same year.
+Following the tour, the service clubs refused to recognize a university side as the national team, and the university declined to cede the role. As a result, Nichirin played no further international matches for the remainder of the decade. In late 1899, after the founding of the [[avium-football-association]] (AFA) and the announcement of the inaugural World Cup, [[afa-club-world-cup|Club World Cup]], and continental championships, the Bakufu established the Nichirian Football Association (NFA) by decree, meeting the AFA's requirement of a single member association per country. The NFA formed a joint selection committee of service and university representatives and appointed [[percy-nicholson]], a retired Elvesterian former [[toteham-lilywhite]] player unaffiliated with either faction, as the first head coach. Under Nicholson, Nichirin won the inaugural [[vafc-championship|VAFC Championship]] in 1900 and made its World Cup debut the same year.
 
 ### The Nicholson Era
 
@@ -59,7 +59,7 @@ In response, Nicholson restructured the team's attacking play to counter deep de
 
 ### Post-Great War
 
-Footballers received no exemption from the Shogunate's conscription during [[great-war|the Great War]]. Eighteen of the twenty-two players in the 1914 World Cup squad were called up, and seven were killed, among them Hidaka, a reserve lieutenant, in the defense of Mizuhara on July 22, 1915. The NL1 was suspended from 1914 to 1919, and neither the VAFC Championship nor the 1916 World Cup took place. Manshuan clubs were the worst affected; Dynamo Mizuhara lost most of its squad in the city's defense.
+Footballers received no exemption from the Shogunate's conscription during the Great War. Eighteen of the twenty-two players in the 1914 World Cup squad were called up, and seven were killed, among them Hidaka, a reserve lieutenant, in the defense of Mizuhara on July 22, 1915. The NL1 was suspended from 1914 to 1919, and neither the VAFC Championship nor the 1916 World Cup took place. Manshuan clubs were the worst affected; Dynamo Mizuhara lost most of its squad in the city's defense.
 
 The league resumed in 1920/21, and Nichirian football was quick to recover. To replace the players lost in the war, the Bakufu funded football in schools and youth leagues from 1920, a program the army supported as a means of improving the fitness of conscripts. Over the same period, the NL1 also became increasingly commercial, with growing transfer fees and zaibatsu investment in new facilities. Nichirian clubs won four of the ten Club World Cups from 1921 to 1930, beginning with the Imperial Sports Society in 1921 and [[spartak-kanagawa]] in 1923. Dynamo Mizuhara did not win a domestic title until 1925/26, but won the Club World Cup in 1930.
 
@@ -71,7 +71,7 @@ Nichirin won seven of the ten VAFC Championships from 1921 to 1930, losing to To
 
 Nichirin won its third World Cup title in [[alemannia]] in 1932, beating [[hollosend-national-football-team|Hollosend]] 4-3 in the final; Itoshi was named man of the match in the quarter-final, semi-final and final. Later that year, the AFA introduced the [[afa-nations-league|Nations League]], a double-elimination tournament held as a fundraiser for the AFA Foundation. The tournament's highest-placed eligible finisher earns the right to host the following World Cup, and Nichirin's victory in the inaugural edition made it host of the 1933 World Cup. Nichirin also won the VAFC Championship, for a treble, and finished the year first in the AFA rankings.
 
-As defending champions, Nichirin hosted the 1933 World Cup and was eliminated in the group stage without a win, finishing last in a group with Hollosend, Sidanya and Skjarnland. Tatara was dismissed after the tournament and replaced by Askurian coach [[josue-alferinho|Josué Alferinho]], under whom Nichirin retained both the Nations League and the VAFC Championship later that year.
+As defending champions, Nichirin hosted the 1933 World Cup and was eliminated in the group stage without a win, finishing last in a group with Hollosend, Sidanya and Skjarnland. Tatara was dismissed after the tournament and replaced by Askurian coach Josué Alferinho, under whom Nichirin retained both the Nations League and the VAFC Championship later that year.
 
 Nichirin qualified for the 1934 World Cup in the E.S.U. without conceding a goal. At the finals, it eliminated the defending champions, Alemannia, in the round of 16, and lost the semi-final to the hosts, the eventual champions, finishing fourth after losing the third-place match to Askurias. Nichirin then won a third consecutive Nations League and the final edition of the VAFC Championship, which the AFA retired when it replaced its four confederations with two conferences for the 1935 World Cup.
 
@@ -85,7 +85,7 @@ As of November 29, 1934, after the match against [[cahaya-national-football-team
 
 ### Nicknames
 
-The national team is known as the Crimson Oni Legion (赤鬼軍団, *Akaoni Gundan*, "red oni army corps"). The name originated in the Great War, when Xing troops nicknamed the Nichirian defenders of Mizuhara in July 1915 "red oni" (赤鬼, *chì guǐ*), likening them to enraged oni after some units, bloodied and out of ammunition, resorted to hand to hand combat.  Returning soldiers adopted the epithet, and veterans wearing red oni masks became a fixture at national team matches in the 1920s; by the middle of the decade, the press had applied the name to the team itself.
+The national team is known as the Crimson Calamity. The name originated in the Great War, when Xing troops nicknamed the Nichirian defenders of Mizuhara in July 1915 "red oni" (赤鬼, *chì guǐ*), likening them to enraged oni after some units, bloodied and out of ammunition, resorted to hand to hand combat. Returning soldiers adopted the epithet, and veterans wearing red oni masks became a fixture at national team matches in the 1920s. At the 1924 World Cup, an Elvesterian wire correspondent, told that oni personify the misfortune driven out of homes at Setsubun, described the masked veterans in the stands as a "crimson calamity", and his reports applied the phrase to the team as it advanced to the final.
 
 ### Kit
 
