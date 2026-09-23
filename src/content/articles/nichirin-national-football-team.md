@@ -113,26 +113,26 @@ The rivalry with neighboring Rudania, a communist state, is primarily political.
 
 <table>
 <tr><th>Pos.</th><th>Player</th><th>Date of birth (age)</th><th>Caps</th><th>Goals</th><th>Club</th></tr>
-<tr><td>GK</td><td>Eisuke Sato</td><td>:date[1899-03-03|age]</td><td>178</td><td>0</td><td><br></td></tr>
-<tr><td>GK</td><td>Akihisa Kubo</td><td>:date[1904-06-15|age]</td><td>6</td><td>0</td><td><br></td></tr>
-<tr><td>DF</td><td>Daigo Takanashi</td><td>:date[1899-07-08|age]</td><td>179</td><td>7</td><td><br></td></tr>
-<tr><td>DF</td><td>Kōzō Fujise</td><td>:date[1908-04-17|age]</td><td>123</td><td>8</td><td><br></td></tr>
-<tr><td>DF</td><td>Aonuma Jingūji</td><td>:date[1896-01-12|age]</td><td>95</td><td>3</td><td><br></td></tr>
-<tr><td>DF</td><td>Genma Nishigawa</td><td>:date[1909-06-02|age]</td><td>78</td><td>0</td><td><br></td></tr>
-<tr><td>DF</td><td>Kazuyoshi Hiranuma</td><td>:date[1903-01-28|age]</td><td>59</td><td>3</td><td><br></td></tr>
-<tr><td>DF</td><td>Gen Fija</td><td>:date[1910-08-09|age]</td><td>59</td><td>0</td><td><br></td></tr>
-<tr><td>DF</td><td>Takamasa Hida</td><td>:date[1908-09-03|age]</td><td>8</td><td>0</td><td><br></td></tr>
-<tr><td>DF</td><td>Naoto Umenokōji</td><td>:date[1915-04-05|age]</td><td>2</td><td>0</td><td><br></td></tr>
-<tr><td>MF</td><td>Takeru Mikado</td><td>:date[1897-02-04|age]</td><td>216</td><td>29</td><td><br></td></tr>
-<tr><td>MF</td><td>Makoto Kishima</td><td>:date[1905-09-14|age]</td><td>155</td><td>23</td><td><br></td></tr>
-<tr><td>MF</td><td>Kiyoshi Torigoe</td><td>:date[1902-03-30|age]</td><td>144</td><td>38</td><td><br></td></tr>
-<tr><td>MF</td><td>Shō Itoshi</td><td>:date[1908-08-23|age]</td><td>123</td><td>46</td><td><br></td></tr>
-<tr><td>MF</td><td>Luca Higashiyama</td><td>:date[1908-05-30|age]</td><td>121</td><td>36</td><td><br></td></tr>
-<tr><td>MF</td><td>Rui Ōe</td><td>:date[1909-02-19|age]</td><td>81</td><td>32</td><td><br></td></tr>
-<tr><td>MF</td><td>Ikki Dazai</td><td>:date[1906-05-16|age]</td><td>41</td><td>6</td><td><br></td></tr>
-<tr><td>MF</td><td>Hiro Oshiro</td><td>:date[1913-07-21|age]</td><td>29</td><td>7</td><td><br></td></tr>
-<tr><td>MF</td><td>Gaku Ibusuki</td><td>:date[1914-08-11|age]</td><td>26</td><td>5</td><td><br></td></tr>
-<tr><td>MF</td><td>Daichi Komatsubara</td><td>:date[1912-06-27|age]</td><td>3</td><td>0</td><td><br></td></tr>
-<tr><td>FW</td><td>Ganzorig Erdene</td><td>:date[1909-03-26|age]</td><td>106</td><td>52</td><td><br></td></tr>
-<tr><td>FW</td><td>Hiromu Furuhashi</td><td>:date[1907-04-02|age]</td><td>35</td><td>12</td><td><br></td></tr>
+<tr><td>GK</td><td>Eisuke Sato</td><td>:date[1899-03-03|age]</td><td>178</td><td>0</td><td>:flag[nichirin] Kyōwa Naginomiya</td></tr>
+<tr><td>GK</td><td>Akihisa Kubo</td><td>:date[1904-06-15|age]</td><td>6</td><td>0</td><td>:flag[nichirin] Locomotive Fūchumachi</td></tr>
+<tr><td>DF</td><td>Daigo Takanashi</td><td>:date[1899-07-08|age]</td><td>179</td><td>7</td><td>:flag[nichirin] Spartak Kanagawa</td></tr>
+<tr><td>DF</td><td>Kōzō Fujise</td><td>:date[1908-04-17|age]</td><td>123</td><td>8</td><td>:flag[nichirin] Dynamo Mizuhara<br></td></tr>
+<tr><td>DF</td><td>Aonuma Jingūji</td><td>:date[1896-01-12|age]</td><td>95</td><td>3</td><td>:flag[karjania] Union Nowgorod</td></tr>
+<tr><td>DF</td><td>Genma Nishigawa</td><td>:date[1909-06-02|age]</td><td>78</td><td>0</td><td>:flag[nichirin] Viridia Shikisen</td></tr>
+<tr><td>DF</td><td>Kazuyoshi Hiranuma</td><td>:date[1903-01-28|age]</td><td>59</td><td>3</td><td>:flag[nichirin] Spartak Kanagawa</td></tr>
+<tr><td>DF</td><td>Gen Fija</td><td>:date[1910-08-09|age]</td><td>59</td><td>0</td><td>:flag[nichirin] Ayanami Sei-Hachiman</td></tr>
+<tr><td>DF</td><td>Takamasa Hida</td><td>:date[1908-09-03|age]</td><td>8</td><td>0</td><td>:flag[nichirin] Shizuku Athletic</td></tr>
+<tr><td>DF</td><td>Naoto Umenokōji</td><td>:date[1915-04-05|age]</td><td>2</td><td>0</td><td>:flag[nichirin] Imperial Sports Society</td></tr>
+<tr><td>MF</td><td>Takeru Mikado</td><td>:date[1897-02-04|age]</td><td>216</td><td>29</td><td></td></tr>
+<tr><td>MF</td><td>Makoto Kishima</td><td>:date[1905-09-14|age]</td><td>155</td><td>23</td><td></td></tr>
+<tr><td>MF</td><td>Kiyoshi Torigoe</td><td>:date[1902-03-30|age]</td><td>144</td><td>38</td><td></td></tr>
+<tr><td>MF</td><td>Shō Itoshi</td><td>:date[1908-08-23|age]</td><td>123</td><td>46</td><td></td></tr>
+<tr><td>MF</td><td>Luca Higashiyama</td><td>:date[1908-05-30|age]</td><td>121</td><td>36</td><td></td></tr>
+<tr><td>MF</td><td>Rui Ōe</td><td>:date[1909-02-19|age]</td><td>81</td><td>32</td><td></td></tr>
+<tr><td>MF</td><td>Ikki Dazai</td><td>:date[1906-05-16|age]</td><td>41</td><td>6</td><td></td></tr>
+<tr><td>MF</td><td>Hiro Oshiro</td><td>:date[1913-07-21|age]</td><td>29</td><td>7</td><td></td></tr>
+<tr><td>MF</td><td>Gaku Ibusuki</td><td>:date[1914-08-11|age]</td><td>26</td><td>5</td><td></td></tr>
+<tr><td>MF</td><td>Daichi Komatsubara</td><td>:date[1912-06-27|age]</td><td>3</td><td>0</td><td></td></tr>
+<tr><td>FW</td><td>Ganzorig Erdene</td><td>:date[1909-03-26|age]</td><td>106</td><td>52</td><td></td></tr>
+<tr><td>FW</td><td>Hiromu Furuhashi</td><td>:date[1907-04-02|age]</td><td>35</td><td>12</td><td></td></tr>
 </table>
