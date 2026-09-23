@@ -142,3 +142,21 @@ The following 22 players were called up to the Eastern Conference Qualifiers for
 </table>
 
 ## Records
+
+Takeru Mikado holds the record for appearances, with 216 caps since his debut in 1918; defender Daigo Takanashi and goalkeeper Eisuke Sato are next, with 179 and 178. Sōichirō Hidaka has been the record goalscorer since 1914, with 91 goals in 103 matches. The closest active players are forwards Ganzorig Erdene, with 52 goals, and Shō Itoshi, with 46.
+
+## Honors
+
+### Global
+
+- **AFA World Cup**
+  - :img[/assets/icons/gold-medal.webp] **Champions (3):** 1914, 1930, 1932
+  - :img[/assets/icons/silver-medal.webp] Runners-Up (1): 1924
+- **AFA Nations League**
+  - :img[/assets/icons/gold-medal.webp] **Champions (3):** 1932, 1933, 1934
+
+### Continental
+
+- **VAFC Championship**
+  - :img[/assets/icons/gold-medal.webp] **Champions (23):** 1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1921, 1923, 1924, 1926, 1927, 1928, 1930, 1931, 1932, 1933, 1934
+  - :img[/assets/icons/silver-medal.webp] Runners-Up (5): 1912, 1913, 1922, 1925, 1929
