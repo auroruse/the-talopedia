@@ -30,14 +30,14 @@ infobox:
       - "(Johannshafen; February 24, 1934)"
   - { section: "Biggest Defeat" }
   - value:
-      - ":flag[elvester] [[elvester-national-football-team|Elvester]] **8-2** Nichirin :flag[nichirin]"
+      - ":flag[elvester] [[elvester-national-football-team|Elvester]] **8-2 **Nichirin :flag[nichirin]"
       - "([[dunmaris]]; June 21, 1892)"
   - { section: "World Cup" }
   - { label: "First Appearance", value: "1900" }
   - { label: "Best Result", value: "Champions (1914, 1930, 1932)" }
 ---
 
-The **Nichirin national football team** (全日輪蹴球代表, *Zen-Nichirin Shūkyū Daihyō*), nicknamed the **Crimson-Red Calamity** (真紅の災厄, *Shinku no Saiyaku*), represents [[nichirin]] in international association football. It is controlled by the Nichirian Football Association (NFA). As the first country in [[valtheria]] to adopt football, it shares the record for [[afa-world-cup|World Cup]] titles, with three, and is the only nation to have won the [[afa-nations-league|Nations League]]. Nichirin has been among the world's leading national teams since [[great-war|the Great War]] and has had the best competitive record of any nation since the appointment of head coach [[josue-alferinho|Josué Alferinho]] after the 1932 World Cup.
+The **Nichirin national football team** (全日輪蹴球代表, *Zen-Nichirin Shūkyū Daihyō*), nicknamed the **Crimson-Red Calamity **(真紅の災厄, *Shinku no Saiyaku*), represents [[nichirin]] in international association football. It is controlled by the Nichirian Football Association (NFA). As the first country in [[valtheria]] to adopt football, it shares the record for [[afa-world-cup|World Cup]] titles, with three, and is the only nation to have won the [[afa-nations-league|Nations League]]. Nichirin has been among the world's leading national teams since [[great-war|the Great War]] and has had the best competitive record of any nation since the appointment of head coach [[josue-alferinho|Josué Alferinho]] after the 1932 World Cup.
 
 ## History
 
@@ -85,7 +85,7 @@ As of November 29, 1934, after the match against [[cahaya-national-football-team
 
 ### Nicknames
 
-The national team is known as the Crimson Calamity. The name originated in the Great War, when Xing troops nicknamed the Nichirian defenders of Mizuhara in July 1915 "red oni" (赤鬼, *chì guǐ*), likening them to enraged oni after some units, bloodied and out of ammunition, resorted to hand to hand combat. Returning soldiers adopted the epithet, and veterans wearing red oni masks became a fixture at national team matches in the 1920s. At the 1924 World Cup, an Elvesterian wire correspondent, told that oni personify the misfortune driven out of homes at Setsubun, described the masked veterans in the stands as a "crimson calamity", and his reports applied the phrase to the team as it advanced to the final.
+The national team is known as the Crimson-Red Calamity. The name originated in the Great War, when Xing troops nicknamed the Nichirian defenders of Mizuhara in July 1915 "red oni" (赤鬼, *chì guǐ*), likening them to enraged oni after some units, bloodied and out of ammunition, resorted to hand to hand combat. Returning soldiers adopted the epithet, and veterans wearing red oni masks became a fixture at national team matches in the 1920s. At the 1924 World Cup, an Elvesterian wire correspondent, told that oni personify the misfortune driven out of homes at Setsubun, described the masked veterans in the stands as a "crimson-red calamity", and his reports applied the phrase to the team as it advanced to the final.
 
 ### Kit
 
