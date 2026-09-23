@@ -79,6 +79,8 @@ Nichirin qualified for the 1934 World Cup in the E.S.U. without conceding a goal
 
 On September 30, 1934, a bomb in the dressing room at Dynamo Mizuhara's training ground, beside the Tadamune Kuronami National Stadium, killed four players from the 1934 World Cup squad: Mitsui and Bashira of the Gorin, and the defenders Akira Nagumo and Yoshikazu Takanen. The Ministry of the Interior stated that the explosion was not accidental; no arrests have been announced. Regardless, without the four, Nichirin topped the Eastern Conference's first qualifying tournament unbeaten and qualified for the 1935 World Cup in [[skjarnland]].
 
+As of November 29, 1934, after the match against [[cahaya-national-football-team|Cahaya]] in the Eastern Conference Qualifiers for the 1935 World Cup, Nichirin under Alferinho has a record of 54 wins, 5 draws, and 6 losses, with 201 goals scored and 44 conceded with a win rate of 83.1%.
+
 ## Team Image
 
 ### Nicknames
@@ -111,28 +113,32 @@ The rivalry with neighboring Rudania, a communist state, is primarily political.
 
 ## Current Squad
 
+The following 22 players were called up to the Eastern Conference Qualifiers for the 1935 World Cup. Caps and goals are accurate as of November 29, 1934, after the match against Cahaya.
+
 <table>
-<tr><th>Pos.</th><th>Player</th><th>Date of birth (age)</th><th>Caps</th><th>Goals</th><th>Club</th></tr>
-<tr><td>GK</td><td>Eisuke Sato</td><td>:date[1899-03-03|age]</td><td>178</td><td>0</td><td>:flag[nichirin] Kyōwa Naginomiya</td></tr>
-<tr><td>GK</td><td>Akihisa Kubo</td><td>:date[1904-06-15|age]</td><td>6</td><td>0</td><td>:flag[nichirin] Locomotive Fūchumachi</td></tr>
+<tr><th>Position</th><th>Player</th><th>Date of Birth</th><th>Caps</th><th>Goals</th><th>Club</th></tr>
+<tr><td>GK</td><td>[[eisuke-sato]]</td><td>:date[1899-03-03|age]</td><td>178</td><td>0</td><td>:flag[nichirin] [[kyowa-naginomiya|Kyōwa Naginomiya]]</td></tr>
+<tr><td>GK</td><td>Akihisa Kubo</td><td>:date[1904-06-15|age]</td><td>6</td><td>0</td><td>:flag[nichirin] [[locomotive-fuchumachi|Locomotive Fūchumachi]]</td></tr>
 <tr><td>DF</td><td>Daigo Takanashi</td><td>:date[1899-07-08|age]</td><td>179</td><td>7</td><td>:flag[nichirin] Spartak Kanagawa</td></tr>
 <tr><td>DF</td><td>Kōzō Fujise</td><td>:date[1908-04-17|age]</td><td>123</td><td>8</td><td>:flag[nichirin] Dynamo Mizuhara<br></td></tr>
-<tr><td>DF</td><td>Aonuma Jingūji</td><td>:date[1896-01-12|age]</td><td>95</td><td>3</td><td>:flag[karjania] Union Nowgorod</td></tr>
-<tr><td>DF</td><td>Genma Nishigawa</td><td>:date[1909-06-02|age]</td><td>78</td><td>0</td><td>:flag[nichirin] Viridia Shikisen</td></tr>
+<tr><td>DF</td><td>Aonuma Jingūji</td><td>:date[1896-01-12|age]</td><td>95</td><td>3</td><td>:flag[karjania] [[union-nowgorod]]</td></tr>
+<tr><td>DF</td><td>[[genma-nishigawa]]</td><td>:date[1909-06-02|age]</td><td>78</td><td>0</td><td>:flag[nichirin] [[viridia-shikisen]]</td></tr>
 <tr><td>DF</td><td>Kazuyoshi Hiranuma</td><td>:date[1903-01-28|age]</td><td>59</td><td>3</td><td>:flag[nichirin] Spartak Kanagawa</td></tr>
-<tr><td>DF</td><td>Gen Fija</td><td>:date[1910-08-09|age]</td><td>59</td><td>0</td><td>:flag[nichirin] Ayanami Sei-Hachiman</td></tr>
+<tr><td>DF</td><td>[[gen-fija]]</td><td>:date[1910-08-09|age]</td><td>59</td><td>0</td><td>:flag[nichirin] [[ayanami-sei-hachiman|Ayanami Sei-Hachiman]]</td></tr>
 <tr><td>DF</td><td>Takamasa Hida</td><td>:date[1908-09-03|age]</td><td>8</td><td>0</td><td>:flag[nichirin] Shizuku Athletic</td></tr>
 <tr><td>DF</td><td>Naoto Umenokōji</td><td>:date[1915-04-05|age]</td><td>2</td><td>0</td><td>:flag[nichirin] Imperial Sports Society</td></tr>
-<tr><td>MF</td><td>Takeru Mikado</td><td>:date[1897-02-04|age]</td><td>216</td><td>29</td><td></td></tr>
-<tr><td>MF</td><td>Makoto Kishima</td><td>:date[1905-09-14|age]</td><td>155</td><td>23</td><td></td></tr>
-<tr><td>MF</td><td>Kiyoshi Torigoe</td><td>:date[1902-03-30|age]</td><td>144</td><td>38</td><td></td></tr>
-<tr><td>MF</td><td>Shō Itoshi</td><td>:date[1908-08-23|age]</td><td>123</td><td>46</td><td></td></tr>
-<tr><td>MF</td><td>Luca Higashiyama</td><td>:date[1908-05-30|age]</td><td>121</td><td>36</td><td></td></tr>
-<tr><td>MF</td><td>Rui Ōe</td><td>:date[1909-02-19|age]</td><td>81</td><td>32</td><td></td></tr>
-<tr><td>MF</td><td>Ikki Dazai</td><td>:date[1906-05-16|age]</td><td>41</td><td>6</td><td></td></tr>
-<tr><td>MF</td><td>Hiro Oshiro</td><td>:date[1913-07-21|age]</td><td>29</td><td>7</td><td></td></tr>
-<tr><td>MF</td><td>Gaku Ibusuki</td><td>:date[1914-08-11|age]</td><td>26</td><td>5</td><td></td></tr>
-<tr><td>MF</td><td>Daichi Komatsubara</td><td>:date[1912-06-27|age]</td><td>3</td><td>0</td><td></td></tr>
-<tr><td>FW</td><td>Ganzorig Erdene</td><td>:date[1909-03-26|age]</td><td>106</td><td>52</td><td></td></tr>
-<tr><td>FW</td><td>Hiromu Furuhashi</td><td>:date[1907-04-02|age]</td><td>35</td><td>12</td><td></td></tr>
+<tr><td>MF</td><td>Takeru Mikado</td><td>:date[1897-02-04|age]</td><td>216</td><td>29</td><td>:flag[varahmehr] [[sep-h-kuhestan|Sepāh Kuhestan]]</td></tr>
+<tr><td>MF</td><td>[[makoto-kishima]]</td><td>:date[1905-09-14|age]</td><td>155</td><td>23</td><td>:flag[nichirin] [[tsukumo-shinkeisei]]</td></tr>
+<tr><td>MF</td><td>[[kiyoshi-torigoe]]</td><td>:date[1902-03-30|age]</td><td>144</td><td>38</td><td>:flag[nichirin] Imperial Sports Society</td></tr>
+<tr><td>MF</td><td>Shō Itoshi</td><td>:date[1908-08-23|age]</td><td>123</td><td>46</td><td>:flag[alemannia] [[arminia-berelstein]]</td></tr>
+<tr><td>MF</td><td>Luca Higashiyama</td><td>:date[1908-05-30|age]</td><td>121</td><td>36</td><td>:flag[nichirin] Viridia Shikisen</td></tr>
+<tr><td>MF</td><td>[[rui-oe|Rui Ōe]]</td><td>:date[1909-02-19|age]</td><td>81</td><td>32</td><td>:flag[nichirin] Dynamo Mizuhara</td></tr>
+<tr><td>MF</td><td>Ikki Dazai</td><td>:date[1906-05-16|age]</td><td>41</td><td>6</td><td>:flag[nichirin] Viridia Shikisen</td></tr>
+<tr><td>MF</td><td>[[hiro-oshiro]]</td><td>:date[1913-07-21|age]</td><td>29</td><td>7</td><td>:flag[nichirin] Dynamo Mizuhara</td></tr>
+<tr><td>MF</td><td>Gaku Ibusuki</td><td>:date[1914-08-11|age]</td><td>26</td><td>5</td><td>:img[/assets/flags/askurias.png] [[fc-barcino]]</td></tr>
+<tr><td>MF</td><td>Daichi Komatsubara</td><td>:date[1912-06-27|age]</td><td>3</td><td>0</td><td>:flag[nichirin] Shizuku Athletic</td></tr>
+<tr><td>FW</td><td>[[ganzorig-erdene]]</td><td>:date[1909-03-26|age]</td><td>106</td><td>52</td><td>:flag[nichirin] [[orughan-fc]]</td></tr>
+<tr><td>FW</td><td>Hiromu Furuhashi</td><td>:date[1907-04-02|age]</td><td>35</td><td>12</td><td>:flag[nichirin] Shizuku Athletic</td></tr>
 </table>
+
+## Records
