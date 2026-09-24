@@ -474,7 +474,7 @@ const ADMIN = REPO.split('/')[0];
         .replace(/\[\[([^\]|]+?)\|([^\]]+?)\]\]/g, (_, s, d) => `<a href="#" data-slug="${s}">${d}</a>`)
         .replace(/\[\[([^\]|]+?)\]\]/g, (_, s) => `<a href="#" data-slug="${s}">${displayOf(s)}</a>`)
         .replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g, '<a href="$2">$1</a>')
-        .replace(/&lt;(sup|sub)&gt;([\s\S]*?)&lt;\/\1&gt;/g, '<$1>$2</$1>')
+        .replace(/&lt;(sup|sub|small)&gt;([\s\S]*?)&lt;\/\1&gt;/g, '<$1>$2</$1>')
         .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
         .replace(/\*([^*]+)\*/g, '<i>$1</i>');
     }
@@ -510,8 +510,8 @@ const ADMIN = REPO.split('/')[0];
         const inner = htmlToMd(n, br);
         if (tag === 'b' || tag === 'strong') out += emphasis('**', inner);
         else if (tag === 'i' || tag === 'em') out += emphasis('*', inner);
-        // Markdown has no superscript, so these stay as the HTML they are.
-        else if (tag === 'sup' || tag === 'sub') out += inner.trim() ? `<${tag}>${inner}</${tag}>` : '';
+        // Markdown has no superscript or small print, so these stay as the HTML they are.
+        else if (tag === 'sup' || tag === 'sub' || tag === 'small') out += inner.trim() ? `<${tag}>${inner}</${tag}>` : '';
         else if (tag === 'a') {
           const slug = n.dataset.slug;
           if (slug) out += displayOf(slug) === inner ? `[[${slug}]]` : `[[${slug}|${inner}]]`;
@@ -2305,7 +2305,11 @@ const ADMIN = REPO.split('/')[0];
             ...(doc.querySelector('table')?.classList.contains('sortable') && { sortable: true }),
             rows: [...doc.querySelectorAll('tr')].map((tr, r) =>
               [...tr.children].map((c) => {
-                const text = c.innerHTML.trim();
+                // The cell goes on as written text, the form a markdown table gives, so the
+                // entities the parser wrote back are turned into their characters here.
+                // Left in, & showed in the editor as &amp; and was saved that way.
+                const text = c.innerHTML.trim().replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+                  .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&');
                 const head = c.tagName === 'TH', cs = c.colSpan || 1, rs = c.rowSpan || 1;
                 return cs === 1 && rs === 1 && head === (r === 0)
                   ? text : { text, ...(cs > 1 && { colspan: cs }), ...(rs > 1 && { rowspan: rs }), head };

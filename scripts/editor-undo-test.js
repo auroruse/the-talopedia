@@ -362,6 +362,22 @@
     ok('a data table goes in, labelled as one', dataBlk?.querySelector('.blk-tag')?.textContent === 'Data table', dataBlk && dataBlk.className);
     ok('and is written as a sortable HTML table', $('#preview').textContent.includes('<table class="sortable">'),
       ($('#preview').textContent.match(/<table[^>]*>/g) || []).join(' '));
+
+    // A data table opened from a file: an ampersand reads as one, and small print stays small.
+    const cellIn = '<td>Kanaeya &amp; Co.<br><small>Native</small><br><small>*Romaji*</small></td>';
+    const file = new DataTransfer();
+    file.items.add(new File([`---\ntitle: "Table test"\ntype: list\n---\n\n<table class="sortable">\n`
+      + `<tr><th>Name</th><th>Group</th></tr>\n<tr>${cellIn}<td>A</td></tr>\n</table>\n`], 'table-test.md'));
+    $('#open-file-input').files = file.files;
+    $('#open-file-input').dispatchEvent(new Event('change'));
+    await sleep(300);
+    const nameCell = document.querySelector('#body .blk[data-sortable] .ed-tbl tr:nth-child(2) td');
+    ok('an opened data table shows & as itself', nameCell?.textContent === 'Kanaeya & Co.NativeRomaji', nameCell?.textContent);
+    ok('its small print is small, the romaji italic too', nameCell?.querySelectorAll('small').length === 2
+      && nameCell.querySelector('small i')?.textContent === 'Romaji', nameCell?.innerHTML);
+    ok('and it saves as it came in, bar the entity', $('#preview').textContent
+      .includes('<td>Kanaeya & Co.<br><small>Native</small><br><small>*Romaji*</small></td>'),
+      ($('#preview').textContent.match(/<td>Kanaeya[^\n]*/) || [])[0]);
   } catch (err) {
     out.push('FAIL threw: ' + err.message);
   }
