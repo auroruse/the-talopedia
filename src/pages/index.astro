@@ -57,7 +57,7 @@ const featuredPanel = !pick ? '' : (() => {
 
 /**
  * The panels of five under the featured article: Trending Characters, picked by hand
- * on the front page, and Newest Articles, the pages most recently written or rewritten. Each row is a
+ * on the front page, and Latest Articles, the pages most recently written or rewritten. Each row is a
  * rank, a square picture, the title and one line under it, the same in both so the
  * two sit level beside each other.
  */
@@ -107,13 +107,13 @@ function trendingPanel(rest) {
 }
 
 const day = (iso) => new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
-const newest = articles
+const latest = articles
   .map((e) => ({ e, w: lastWritten(e.id) }))
   .filter((x) => x.w)
   .sort((a, b) => Date.parse(b.w.at) - Date.parse(a.w.at) || a.e.data.title.localeCompare(b.e.data.title))
   .slice(0, 5);
-const newestPanel = tops(newest.map(({ e, w }) =>
-  ({ e, meta: `${origin(e)} \u00b7 ${w.updated ? 'updated ' : ''}${day(w.at)}` })))
+const latestPanel = tops(latest.map(({ e, w }) =>
+  ({ e, meta: `${origin(e)} \u00b7 ${w.updated ? 'updated' : 'created'} ${day(w.at)}` })))
   + `<p class="more"><a href="${url('/categories')}">All categories</a></p>`;
 
 /**
@@ -138,7 +138,7 @@ function splitHome(html = '') {
     const isFeatured = /id="featured-article"/.test(head);
     const inner = isFeatured ? featuredPanel
       : /id="trending-characters"/.test(head) ? trendingPanel(rest)
-      : /id="newest-articles"/.test(head) ? newestPanel
+      : /id="latest-articles"/.test(head) ? latestPanel
       : rest;
     // How long this one has left. Empty until the script at the foot of the page
     // fills it in, since a build cannot know when the reader is looking.

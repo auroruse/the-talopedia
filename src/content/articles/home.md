@@ -19,4 +19,4 @@ The Talopedia is a collaborative, Google Docs-based encyclopedia for [[avium]], 
 
 [[category:characters|All characters]]
 
-## Newest Articles
+## Latest Articles
