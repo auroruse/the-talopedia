@@ -4,8 +4,6 @@ type: list
 nation: nichirin
 ---
 
-This article lists notable companies in [[nichirin]] in terms of their revenue and total assets.
-
 ## 1934 METI Zaibatsu Register
 
 This list displays the 24 largest zaibatsu in the Ministry of Economy, Trade, and Industry's 1934 register of zaibatsu enterprises, which ranks the family-controlled conglomerates of Nichirin by total assets. The figures below are given in millions of dollars and are for the fiscal year 1933. Also listed are the headquarters location of each zaibatsu and its companies in the Nikkei 150, with their industries.
@@ -38,7 +36,7 @@ This list displays the 24 largest zaibatsu in the Ministry of Economy, Trade, an
 <tr><td>24</td><td>Yomigaeri Group<br><small>蘇財閥</small><br><small>*Yomigaeri Zaibatsu*</small></td><td>Yomigaeri (Pharmaceuticals)</td><td>12,220</td><td>11,810</td><td>Iwabuchi</td></tr>
 </table>
 
-## 1934 *Nikkei* 150
+## 1934 Nikkei 150
 
 This list displays the 150 companies in the 1934 Nikkei 150, which the Nikkei Daily publishes each year to rank the largest Nichirian companies by annual revenue. The figures below are given in millions of dollars and are for the fiscal year 1933. Also listed are the companies' total assets, number of employees, headquarter locations, and industry sector, alongside the zaibatsu to which it belongs.
 
