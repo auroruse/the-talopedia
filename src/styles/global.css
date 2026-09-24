@@ -268,6 +268,16 @@ pre.source {
 .article table:not(.ib):not(.nb) th[colspan] { text-align: center; }
 /* An :img given a width is a picture in its own right, not a mark beside the text. */
 .article .ico.sized { display: block; margin: 2px 0 6px; vertical-align: top; }
+/* A data table's header cells sort it; the arrow says which way it runs now. */
+.article table.sortable th.sort-key { position: relative; padding-right: 24px; cursor: pointer; user-select: none; }
+.article table.sortable th.sort-key:hover { background: var(--lift); }
+.article table.sortable th.sort-key:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
+th.sort-key::after {
+  content: '\21C5'; position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  font-size: 11px; color: var(--muted);
+}
+th.sort-key[aria-sort="ascending"]::after { content: '\25B2'; font-size: 9px; color: var(--ink); }
+th.sort-key[aria-sort="descending"]::after { content: '\25BC'; font-size: 9px; color: var(--ink); }
 /* A figure the text wraps around. Width is set per image, in pixels. */
 .article figure.float { margin: 16px 0 14px; max-width: 100%; }
 /* Level with the editor, which sets a floated picture 28px below whatever comes before

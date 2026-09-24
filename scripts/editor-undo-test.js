@@ -353,6 +353,15 @@
       : tr.dataset.kind === 'row' ? tr.querySelector('.ce')?.textContent.trim() : `[${tr.dataset.kind}]`);
     ok('national team sidebar comes from the Nichirin team', labels.includes('AFA Code') && labels.includes('§Biggest Win')
       && labels[labels.indexOf('§Biggest Win') + 1] === '[value]', labels.join(' | '));
+
+    // Insert > Data table: the same grid, marked so the page can sort it by any column.
+    focusEnd(paras()[0]);
+    document.querySelector('#dtbl-pick .tbl-cell[data-r="3"][data-c="2"]').click();
+    await sleep(100);
+    const dataBlk = document.querySelector('#body .blk[data-sortable]');
+    ok('a data table goes in, labelled as one', dataBlk?.querySelector('.blk-tag')?.textContent === 'Data table', dataBlk && dataBlk.className);
+    ok('and is written as a sortable HTML table', $('#preview').textContent.includes('<table class="sortable">'),
+      ($('#preview').textContent.match(/<table[^>]*>/g) || []).join(' '));
   } catch (err) {
     out.push('FAIL threw: ' + err.message);
   }

@@ -169,6 +169,13 @@ const ADMIN = REPO.split('/')[0];
               <p class="tbl-size"><span id="tbl-label">0 × 0</span></p>
             </div>
           </div>
+          <div class="ins-item" data-ins="data-table">
+            <button type="button">Data table<span class="ins-arrow">›</span></button>
+            <div class="ins-sub">
+              <div class="tbl-pick" id="dtbl-pick"></div>
+              <p class="tbl-size"><span id="dtbl-label">0 × 0</span></p>
+            </div>
+          </div>
           <div class="ins-item" data-ins="date">
             <button type="button">Date<span class="ins-arrow">›</span></button>
             <div class="ins-sub ins-sub-date">
@@ -1182,6 +1189,10 @@ const ADMIN = REPO.split('/')[0];
               (_, r) => Array.from({ length: data.cols }, () => r === 0 ? 'Column' : ''))
           : null;
         b.append(tableEditor(seed));
+        if (data.sortable) {
+          b.dataset.sortable = '';
+          b.querySelector('.blk-tag').textContent = 'Data table';
+        }
       }
 
       const ctl = controls(b);
@@ -1988,6 +1999,7 @@ const ADMIN = REPO.split('/')[0];
         };
         if (kind === 'table') return {
           kind,
+          ...(b.hasAttribute('data-sortable') && { sortable: true }),
           rows: [...b.querySelectorAll('tbody tr')].map((tr, r) =>
             [...tr.children].map((c) => {
               const text = cellMd(c);
@@ -2232,7 +2244,7 @@ const ADMIN = REPO.split('/')[0];
           // the pipe form, which stays readable in a diff.
           // A pipe in a cell can be escaped for GFM, but not when it sits inside a
           // token: :img[path|96] would come back as :img[path\|96]. Those go to HTML too.
-          if (b.rows.every((r) => r.every((c) => typeof c === 'string' && !c.includes('|')))) {
+          if (!b.sortable && b.rows.every((r) => r.every((c) => typeof c === 'string' && !c.includes('|')))) {
             // A pipe inside a cell would split it, so it is escaped for GFM.
             const cell = (c) => String(c).replace(/\|/g, '\\|');
             return ['| ' + head.map(cell).join(' | ') + ' |', '| ' + head.map(() => '---').join(' | ') + ' |',
@@ -2249,7 +2261,8 @@ const ADMIN = REPO.split('/')[0];
             return `<${tag}${cs > 1 ? ` colspan="${cs}"` : ''}${rs > 1 ? ` rowspan="${rs}"` : ''}>`
               + `${text}</${tag}>`;
           };
-          return ['<table>', ...b.rows.map((r, i) => '<tr>' + r.map((c) => td(c, i)).join('') + '</tr>'),
+          return [b.sortable ? '<table class="sortable">' : '<table>',
+            ...b.rows.map((r, i) => '<tr>' + r.map((c) => td(c, i)).join('') + '</tr>'),
             '</table>'].join('\n');
         }
         return '';
@@ -2289,6 +2302,7 @@ const ADMIN = REPO.split('/')[0];
           const doc = new DOMParser().parseFromString(t, 'text/html');
           blocks.push({
             kind: 'table',
+            ...(doc.querySelector('table')?.classList.contains('sortable') && { sortable: true }),
             rows: [...doc.querySelectorAll('tr')].map((tr, r) =>
               [...tr.children].map((c) => {
                 const text = c.innerHTML.trim();
@@ -2794,31 +2808,35 @@ const ADMIN = REPO.split('/')[0];
 
     document.querySelectorAll('[data-add]').forEach((b) => b.onclick = () => insert(b.dataset.add));
 
-    /* ---------- table size picker ---------- */
-    // Docs-style grid: hovering sizes the table, clicking inserts it.
-    const pick = $('#tbl-pick');
-    const MAXR = 8, MAXC = 8;
-    for (let r = 1; r <= MAXR; r++) {
-      for (let c = 1; c <= MAXC; c++) {
-        const cell = el('span', 'tbl-cell');
-        cell.dataset.r = r; cell.dataset.c = c;
-        cell.onmouseenter = () => {
-          $('#tbl-label').textContent = `${c} \u00d7 ${r}`;
-          pick.querySelectorAll('.tbl-cell').forEach((x) =>
-            x.classList.toggle('on', +x.dataset.r <= r && +x.dataset.c <= c));
-        };
-        cell.onmousedown = (e) => e.preventDefault();
-        cell.onclick = () => {
-          insert('table', { rows: r, cols: c });
-          document.querySelectorAll('.drop-menu').forEach((m) => m.hidden = true);
-        };
-        pick.append(cell);
+    /* ---------- table size pickers ---------- */
+    // Docs-style grid: hovering sizes the table, clicking inserts it. A data table is
+    // the same table, written so that a reader can sort it by any column.
+    function sizePicker(pick, label, extra) {
+      const MAXR = 8, MAXC = 8;
+      for (let r = 1; r <= MAXR; r++) {
+        for (let c = 1; c <= MAXC; c++) {
+          const cell = el('span', 'tbl-cell');
+          cell.dataset.r = r; cell.dataset.c = c;
+          cell.onmouseenter = () => {
+            label.textContent = `${c} \u00d7 ${r}`;
+            pick.querySelectorAll('.tbl-cell').forEach((x) =>
+              x.classList.toggle('on', +x.dataset.r <= r && +x.dataset.c <= c));
+          };
+          cell.onmousedown = (e) => e.preventDefault();
+          cell.onclick = () => {
+            insert('table', { rows: r, cols: c, ...extra });
+            document.querySelectorAll('.drop-menu').forEach((m) => m.hidden = true);
+          };
+          pick.append(cell);
+        }
       }
+      pick.onmouseleave = () => {
+        label.textContent = '0 \u00d7 0';
+        pick.querySelectorAll('.tbl-cell').forEach((x) => x.classList.remove('on'));
+      };
     }
-    pick.onmouseleave = () => {
-      $('#tbl-label').textContent = '0 \u00d7 0';
-      pick.querySelectorAll('.tbl-cell').forEach((x) => x.classList.remove('on'));
-    };
+    sizePicker($('#tbl-pick'), $('#tbl-label'), {});
+    sizePicker($('#dtbl-pick'), $('#dtbl-label'), { sortable: true });
 
     /* ---------- date ---------- */
     let dtMode = '';
@@ -4625,6 +4643,12 @@ const ADMIN = REPO.split('/')[0];
        the menu is never every panel at once. */
     .ins-menu { min-width: 150px; }
     .ins-item { position: relative; }
+    /* A data table sorts on the page by its header cells; here the arrows only say so. */
+    .blk[data-sortable] .ed-tbl tr:first-child > th { position: relative; padding-right: 22px; }
+    .blk[data-sortable] .ed-tbl tr:first-child > th::after {
+      content: '\21C5'; position: absolute; right: 7px; top: 50%; transform: translateY(-50%);
+      font-size: 11px; color: var(--muted); pointer-events: none;
+    }
     .ins-item > button { display: flex; align-items: center; gap: 8px; }
     .ins-arrow { margin-left: auto; color: var(--muted); }
     .ins-item:hover > button, .ins-item:focus-within > button { background: var(--band); }
