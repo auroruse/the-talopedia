@@ -18,7 +18,7 @@ infobox:
       - "[[elias-gray]] (Foreign Affairs)"
       - "Arianne Malloran (Defense)"
   - { label: "Legislature", value: "Parliament, via the Party Congress and Party Politburo" }
-  - { label: "Formation", value: "25 July, 1922" }
+  - { label: "Formation", value: ":date[1922-07-25|ago]" }
   - { section: "Demographics" }
   - { label: "Population", value: "1928 Census" }
   - { label: "Total", sub: true, value: "151,167,000" }
@@ -49,7 +49,8 @@ infobox:
   - { label: "Alpha-2 Code", value: "US" }
   - { label: "Alpha-3 Code", value: "ESU" }
 ---
-**The Elysian State of Unity** (abbreviated as the **E.S.U**), commonly known as the **Unity State**, is a country in Northeastern [[elysia]]. It is bordered on the North by Acadia and the Thule Governorate, Calveria to the west,  Hollosend to the West and South, and the Sahara Sea to the East. The Unity State covers over 700 thousand square kilometers and has an estimated population of over 102 million people, making it the second most populous single nation in Elysia after Hollosend. The Unity State is a one-party state ruled by [[archer-maine]], acting as the flagship [[gestaltist]] state in the world. Its capital city is Nexus.
+
+**The Elysian State of Unity** (abbreviated as the **E.S.U**), commonly known as the **Unity State**, is a country in Northeastern [[elysia]]. It is bordered on the North by Acadia and the Thule Governorate, Hollosend to the West and South, and the Sahara Sea to the East. The Unity State covers over 3 million square kilometers and has an estimated population of over 151 million people, making it the second most populous single nation in Elysia after Hollosend. The Unity State is a one-party state ruled by [[archer-maine]], acting as the flagship [[gestaltist]] state in the world. Its capital city is Nexus.
 
 The earliest signs of human settlementation in North-Eastern Elysia date back to around 4200 BCE with the arrival and settlement of hunter-gatherer tribes in the region, which would later go on to form the native tribes of the area, most prominently the Thram. Remaining isolated and without much advancement, the earliest signs of agricultural practices in the region date only to around 200 BCE, only a few centuries before Rumaic settlement and colonization of the region. With the collapse of the Rumaic Empire, and the waning authority of the Triumvirate, any remnants of former Rumaic authority in the region collapsed with the arrival of Evrian refugees escaping the Black Death’s subsequent chaos to Elysia. The chaos was exploited by multiple Evrian powers to establish colonies and authority in the region, most notably for Northeastern Elysia being [[elvester]], who founded the Commonwealth of Elysia in 1582. However, over the years, ideas of self-governance and Enlightenment era ideas began taking root in the Commonwealth, eventually culminating in a total revolt against their Elvesterian overlords in the Elysian Revolutionary War. Following their independence from Elvester, the newly founded United States of Elysia saw an incredible era of economic growth, eventually becoming one of the foremost nations spearheading the industrial revolution. And while not yet a great power by 1900, the USE still maintained great power and influence over Northern Elysia and the world stage at large.
 
@@ -127,7 +128,6 @@ On the 25th of July 1922, along with approval from the newly created Gestaltist 
 
 <figure><img src="/assets/old-media/media/elysian-state-of-unity-2.jpg" alt="A student of electrical engineering studying at the Axiom Institute of Technology."><figcaption>A student of electrical engineering studying at the Axiom Institute of Technology.</figcaption></figure>
 
-
 In 1927, the Unity State would pursue the establishment of a permanent base on the continent of [[hyperborea]]. The events related to this venture would result in a brief period of tension with the Miyamoto Shogunate over an Elysian reconnaissance squad’s intrusion into Nichirian base territory in Hyperborea. The negotiations regarding which would prove to be the beginning of a conflict known only as the [[majesty]] Crisis, wherein a branch of the Elysian Office of Naval Intelligence would split off into its own separate entity. The conflict would prove to be a nightmare for the Unity State, now forced to chase a mostly formless enemy across the globe, leading them to send military expeditions into [[shivon]] and finally [[rudania]], after which the organization would scatter and disband.
 
 The Unity State would see the first successes of its ideals through their invitation into and acting as a founding member of the Third Internationale in 1930. The organization would see a surge in membership over the following years, plateauing out at 5 in the mid 1930’s. Due to diplomatic tensions related to the MAJESTY crisis, Rudania was voted out as a member in 1932, leading to the ESU assuming leadership of the organization. Another diplomatic triumph of the 1930s would see Elysia diplomatically annexing the Republic of Calveria into the Unity State, incorporating most of the nation into the ESU, with the exception of certain native territories to the west of the Lannahechee river.
@@ -141,7 +141,6 @@ The total strength of the Grand Army is ~4 million personnel in active duty, wit
 According to the latest government reports, the Unity State spent around $612 billion on Defense in 1934.
 
 <figure><img src="/assets/old-media/media/elysian-state-of-unity-3.jpg" alt="Riflemen of the 2nd Infantry Division during a training exercise near Fort Freedom (circa 1926)."><figcaption>Riflemen of the 2nd Infantry Division during a training exercise near Fort Freedom (circa 1926).</figcaption></figure>
-
 
 ## Government
 
@@ -159,13 +158,11 @@ Despite the transition to a planned economy, the E.S.U continues to dominate mos
 
 <figure><img src="/assets/old-media/media/elysian-state-of-unity-4.jpg" alt="Evening rush-hour on Beat Street, Axiom. Formerly Elysia’s center for global stock trading."><figcaption>Evening rush-hour on Beat Street, Axiom. Formerly Elysia’s center for global stock trading.</figcaption></figure>
 
-
 Elysian wealth is highly decentralized, with income equality being largely nullified through the State’s legislation on minimum wages, and its extensive welfare policies, with homelessness being practically eliminated thanks to the government’s “Housing First” approach.
 
 Technologically, Elysia has always been on the forefront of technological developments since the mid 19th century, and scientific developments since the late 19th century. Many Elysian educational institutions are regarded among the highest quality in the world, with technical universities such as the Axiom Institute of Technology.
 
 <figure><img src="/assets/old-media/media/elysian-state-of-unity-5.jpg" alt="A view from a Dynamo assembly line, one of the most commonly seen Elysian export products."><figcaption>A view from a Dynamo assembly line, one of the most commonly seen Elysian export products.</figcaption></figure>
-
 
 ## Geography
 
@@ -174,7 +171,6 @@ Technologically, Elysia has always been on the forefront of technological develo
 Geographically, Elysia lies in the geographic area known as **Old Elysia**, with the country split into East and West by the Apalchen mountain range. Western Elysia is home to the nation's largest cities and densest population centers, as well as economical heartland, dominated primarily by wide plains its coastline to the Saharan Sea. Eastern Elysia is primarily dominated by the forested and rural lands of the Apalchen mountains, with most population centers located near the river valleys snaking deeper inland, or around the coast of the Great Lakes region. Additionally to this is Northern Elysia, characterized primarily by its less mountainous, although still hilly terrain, dominated by coniferous taiga forests and fens, with pine, spruce and birch dominating the landscape.
 
 <figure><img src="/assets/old-media/media/elysian-state-of-unity-6.jpg" alt="The Apalchens, the mountain range that splits Elysia in two."><figcaption>The Apalchens, the mountain range that splits Elysia in two.</figcaption></figure>
-
 
 ### Biodiversity
 
@@ -189,7 +185,6 @@ Most prominently, Elysian territory on the coast of the Great Lakes is home to t
 Despite its position near the equator, Elysia experiences a significant cooling effect caused by the frigid winds blowing from the Hyperborean ocean, with summer temperatures hovering between 15-25 degrees centigrade, whereas during winter, the temperatures often swing between -15 and -20, being 10 or so degrees warmer than Central Elysia thanks to maritime temperature regulations. Precipitation is frequent, with both rain- and snowfall being very typical sights in every area of the E.S.U.
 
 <figure><img src="/assets/old-media/media/elysian-state-of-unity-7.jpg" alt="The Augustine coast, an example of the many rocky beaches in North-Eastern Elysia."><figcaption>The Augustine coast, an example of the many rocky beaches in North-Eastern Elysia.</figcaption></figure>
-
 
 ## Demographics
 
@@ -210,7 +205,6 @@ Officially, the Unity State is secular, however the constitution guarantees free
 Before the end of the civil war, 75% of the Elysian population lived in urban areas, particularly the densely populated city centers, with only around a third living in suburbs. Following the Unity State’s rise to power, it sought to centralize the population even further, relocating swathes of the suburban and rural population to the denser metropolitan areas with easier access to services, faster transit to work, and beginning a process of “de-peasantification” of agriculture, moving food production closer to the cities in newly constructed factory-farms and greenhouses, with many greenhouses decorating the rooftops of buildings in major cities. This has led to a deliberate and swift decline in the rural population, with many small villages and towns left abandoned for nature to reclaim.
 
 <figure><img src="/assets/old-media/media/elysian-state-of-unity-8.jpg" alt="Aerial view of Foundry’s industrial district, among the largest in all of Elysia."><figcaption>Aerial view of Foundry’s industrial district, among the largest in all of Elysia.</figcaption></figure>
-
 
 ## Largest Cities
 
