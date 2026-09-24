@@ -40,7 +40,7 @@ infobox:
 
 ## Early Life and Education
 
-<figure class="float float-left" style="width:160px"><img src="https://lh3.googleusercontent.com/pw/AP1GczNMahorQ7UAviM8HKS6vKEuMXgl6k3HtKNJopRcr3v-23JAiSI3lMU41BmmiP-Tqs_PZtpluNp9q-b_02pr3iV7ib6na2z4NoPhUIJC-kl9U3JhztUGlH0YPGmefcm8PT1ZVP7vOT_7FaTK-QxxBxTw=w2000" alt="Alexander and Kriemhilt, January 1903."><figcaption>Alexander and Kriemhilt, January 1903.</figcaption></figure>
+<figure class="float float-left" style="width:167px"><img src="https://lh3.googleusercontent.com/pw/AP1GczNMahorQ7UAviM8HKS6vKEuMXgl6k3HtKNJopRcr3v-23JAiSI3lMU41BmmiP-Tqs_PZtpluNp9q-b_02pr3iV7ib6na2z4NoPhUIJC-kl9U3JhztUGlH0YPGmefcm8PT1ZVP7vOT_7FaTK-QxxBxTw=w2000" alt="Alexander and Kriemhilt, January 1903."><figcaption>Alexander and Kriemhilt, January 1903.</figcaption></figure>
 
 Hildegard Kriemhilt Adelheid von Bismarck was born on February 14, 1901, in [[akenau]], the capital of the Kingdom of [[ymiria]], then a constituent state of the [[holy-evrian-empire]]. Von Bismarck is the daughter of [[alexander-von-bismarck]], a Ymirian noble with longstanding ties to the Nichirian government, and Wilhelmina von Thurn, a daughter of the House of Thurn. The Thurns held the hereditary office of Imperial Postmaster General until the empire's dissolution in 1805 and afterward held the telegraph concession for Ymiria; Wilhelmina managed the concession's Akenau office.
 
@@ -60,7 +60,7 @@ In 1919, von Bismarck enrolled at [[takarazuka-imperial-university]] to complete
 
 As Minister of Colonial Affairs, von Bismarck administered Kiritani and [[kinshu|Shin-Nichirin]] (now Kinshū), whose combined population exceeds 150 million. In February 1930, she attended the First Conference of the Alemannian Nations at Akenau alongside Chief Liaison Officer [[akane-shikinami-hoffmann]] as a observer of the [[mizuhara-pentapartite]]. Her expertise in Alemannian political history informed the cabinet's assessment of the [[akenauer-bund]], the coordination framework founded at that conference between Ymiria, Arlbern, and Nordmark, which she described as a reunification vehicle for the former Holy Evrian successor states. She had proposed the Bund's name at the conference and designed its flag, three interlocking black, gold, and red rings on a dark blue field. On September 27, 1930, she attended the peace negotiations ending the [[second-genosan-war]], held in a railway carriage at Fehervaros, as a Pentapartite advisor as her father presented the Akenauer Bund's terms to the Genosan delegate.
 
-<figure class="float float-right" style="width:300px"><img src="https://lh3.googleusercontent.com/pw/AP1GczOAoplcpL5rUW7PqdnVBiNyaB0lriUd8jFIa2yGvR8YPL-U1-NhGDKJqkYT-3nHEAClVlWs_h9h5mpC0VF11FNaGWMA7WX4hltg6mQBP5sxzW_AHrbtUkBGlatkNjlV2HrVLIrUhegL6yRcjPlwCBJN=w2000" alt="Von Bismarck with Ershadi (left) and Ullrichs (right) in Bachstadt, November 1930."><figcaption>Von Bismarck with Ershadi (left) and Ullrichs (right) in Bachstadt, November 1930.</figcaption></figure>
+<figure class="float float-right" style="width:300px"><img src="https://lh3.googleusercontent.com/pw/AP1GczNcbL7pD6CU-7c6zDh_idvcO2LpsQH10a3hMB6-z5U5N1FX1zlijYKOvWHQNAUsYskZv04tPLdME5r-GtD3gGeTQCpktlH7a-UHlGuMtKT0NitGlVUn_QAZe19beplaECOG9QjiskOcrTHQnjqJS5LH=w2000" alt="Von Bismarck aboard NCH Kazagahira, en route to Bachstadt, January 1931."><figcaption>Von Bismarck aboard NCH Kazagahira, en route to Bachstadt, January 1931.</figcaption></figure>
 
 ### Operation Monsoon and the Bachstadt Settlement
 
