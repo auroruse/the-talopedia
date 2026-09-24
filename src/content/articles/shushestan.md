@@ -12,13 +12,13 @@ infobox:
   - { label: "Largest City", value: "Shushabad" }
   - { label: "Area", value: "58,221 km²" }
   - { section: "Legislature" }
-  - { label: "Delegates (Majles-e Nāmāyandagān)", value: "39 / 391" }
-  - { label: "Senators (Shurā-ye Āyan)", value: "2" }
+  - { label: "Delegates (Majles-e Nāmāyandagān)", value: "30 / 391" }
+  - { label: "Senators (Shurā-ye Āyan)", value: "2" }
   - { label: "Governor", value: "Elyas Hakimian" }
   - { section: "Demographics" }
   - { label: "Population", value: "1929 Census" }
-  - { label: "Total", sub: true, value: "5,220,000" }
-  - { label: "Density", sub: true, value: "89.66 / km<sup>2</sup>" }
+  - { label: "Total", sub: true, value: "4,220,000" }
+  - { label: "Density", sub: true, value: "72.48 / km<sup>2</sup>" }
   - label: "Ethnic Groups"
     value:
       - "51% Mehrāni"
@@ -29,7 +29,7 @@ infobox:
       - "4% Other"
   - label: "Religion"
     value:
-      - "54% [[mithraism]]"
+      - "54% [[mithraism]]"
       - "18% Hasmoneanism"
       - "17% Shahadism"
       - "7% Atheism"
@@ -43,7 +43,7 @@ infobox:
 ---
 
 **Shushestan** (Mehrāni:
-شوشستان, *Shushestān*; lit. *Land of Shush*), officially the **Ostān-e Shushestān** (Province of Shush), is an ostān of the [[varahmehr|Federal Republic of Varahmehr]], located on the southwestern shore of the Daria Bay in the southeast of the federation. It is the commercial center of the republic. It is the seat of the federation's most respected commercial courts and of the banking houses whose instruments of credit underpin federal finance. It is also the headquarters of the Niru-ye Daryāyi, the naval branch of the [[defence-force-of-varahmehr]]. Its capital, Shushabad (شوش‌آباد, lit. *City of Shush*), is the federation's principal port, with a population of 1.72 million, making it the fifth most populous city in Varahmehr. The ostān is divided into two shahrestān-hā: Mosaghat, which covers Shushabad and its harbor, and Ghehooh, which covers the northern coast at Bandar Mehr and the interior oasis city of Dorudgar. Shushestan is the historic heartland of the Shushtari people. At the founding negotiations its final condition became Article Three of the Federal Compact, the guarantee of equal protection for all citizens regardless of ethnicity, religion, or heritage, and its delegation reads that article aloud every Ruz-e Peymān. Its mercantile tradition, maintained for two and a half millennia, rests on the premise that trade is not merely economic activity but a form of covenant between peoples. Its geography, a narrow coastal plain facing the sheltered water of the Daria Bay with the desert at its back, has turned the ostān toward the sea throughout its recorded history. Its political identity has developed around the same orientation: dependent on the trust of outsiders, and insistent that the protection of minorities be written into law rather than left to goodwill.
+شوشستان, *Shushestān*; lit. *Land of Shush*), officially the **Ostān-e Shushestān** (Province of Shush), is an ostān of the [[varahmehr|Federal Republic of Varahmehr]], located on the southwestern shore of the Daria Bay in the southeast of the federation. It is the commercial center of the republic. It is the seat of the federation's most respected commercial courts and of the banking houses whose instruments of credit underpin federal finance. It is also the headquarters of the Niru-ye Daryāyi, the naval branch of the [[defence-force-of-varahmehr]]. Its capital, Shushabad (شوش‌آباد, lit. *City of Shush*), is the federation's principal port, with a population of 1.72 million, making it the fifth most populous city in Varahmehr. The ostān is divided into two shahrestān-hā: Mosaghat, which covers Shushabad and its harbor, and Ghehooh, which covers the northern coast at Bandar Mehr and the interior oasis city of Dorudgar. Shushestan is the historic heartland of the Shushtari people. At the founding negotiations its final condition became Article Three of the Federal Compact, the guarantee of equal protection for all citizens regardless of ethnicity, religion, or heritage, and its delegation reads that article aloud every Ruz-e Peymān. Its mercantile tradition, maintained for two and a half millennia, rests on the premise that trade is not merely economic activity but a form of covenant between peoples. Its geography, a narrow coastal plain facing the sheltered water of the Daria Bay with the desert at its back, has turned the ostān toward the sea throughout its recorded history. Its political identity has developed around the same orientation: dependent on the trust of outsiders, and insistent that the protection of minorities be written into law rather than left to goodwill.
 
 ## Etymology
 
@@ -83,8 +83,7 @@ The end of isolationism restored Shushabad's position as the federation's princi
 
 ## Government
 
-Shushestan sends 39 delegates to the Majles-e Nāmāyandagān (Chamber of Delegates) and two senators to the Shurā-ye Āyan (Senate). The ostān is governed by an elected Ostāndār serving a four-year term, currently Elyas Hakimian of the Hezb-e
-Āzādi-ye Bāzār (AZB), together with a 110-seat provincial assembly. Each of the two shahrestān-hā elects its own Shahrdār.
+Shushestan sends 30 delegates to the Majles-e Nāmāyandagān (Chamber of Delegates) and two senators to the Shurā-ye Āyan (Senate). The ostān is governed by an elected Ostāndār serving a four-year term, currently Elyas Hakimian of the Hezb-e Āzādi-ye Bāzār (AZB), together with a 110-seat provincial assembly. Each of the two shahrestān-hā elects its own Shahrdār.
 
 Under the factional system that preceded formal parties, Shushestan was one of the two bases of the Peymān-dārān, the pro-market and constitutionalist faction; Nourestan was the other. The Shushestani wing differed from the Nourestani by a stronger emphasis on civil liberties, a lean consistent with an electorate in which non-Mehrāni communities make up nearly half the population. Since the transition from factions to parties, the AZB has held the ostān's government. Its federal delegation fell to 15 seats in the 1933 election, which left the ostān governed by a party with a small presence in the Majles.
 
@@ -128,8 +127,7 @@ Shushestan is divided into two shahrestān-hā, each governed by an elected Shah
 
 **Mosaghat** (مسقط. lit. *the Anchorage*) covers Shushabad and its immediate hinterland. The name derives from the Arabi term for the place where a ship lets fall its anchor. Its adoption into Mehrāni usage reflects the long presence of the Arabi in the city's trading quarters. Shushabad, with a population of 1.72 million, is the provincial capital, the principal port of the federation, and the seat of the commercial courts and the major banking houses. The city's old quarters keep the architecture of the merchant families who built them: courtyard houses, warehouses opening onto the harbor, and the houses of worship of three faiths.
 
-Ghehooh (قهوه, lit. *Coffee*) covers the rest of the ostān, from the northern coast to the interior. The name derives from the Arabi *qahwa* and reflects the association of the shahrestān's Arabi coastal communities with the qahwa tradition. Its capital, Dorudgar (درودگر, lit. *Carpenter*), with a population of 847,000 is the ostān's second city. It is an oasis city whose name is traditionally attributed to the palm-wood joiners who once supplied the boatbuilders of the coast. Bandar Mehr
-(بندر مهر, lit. *Port of the Sun*), with a population of 148,000, is the shahrestān's port: a fishing and coastal trading town that shares the headquarters of the Naval Force with Shushabad.
+Ghehooh (قهوه, lit. *Coffee*) covers the rest of the ostān, from the northern coast to the interior. The name derives from the Arabi *qahwa* and reflects the association of the shahrestān's Arabi coastal communities with the qahwa tradition. Its capital, Dorudgar (درودگر, lit. *Carpenter*), with a population of 847,000 is the ostān's second city. It is an oasis city whose name is traditionally attributed to the palm-wood joiners who once supplied the boatbuilders of the coast. Bandar Mehr (بندر مهر, lit. *Port of the Sun*), with a population of 148,000, is the shahrestān's port: a fishing and coastal trading town that shares the headquarters of the Naval Force with Shushabad.
 
 ## Largest Cities
 
