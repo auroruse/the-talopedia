@@ -84,5 +84,9 @@ export function resolveHtml(html = '') {
     .replace(/<(td|th|figcaption)\b([^>]*)>([\s\S]*?)<\/\1>/g, (_, tag, attrs, inner) =>
       `<${tag}${attrs}>${inner
         .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*([^*]+)\*/g, '<em>$1</em>')}</${tag}>`);
+        .replace(/\*([^*]+)\*/g, '<em>$1</em>')}</${tag}>`)
+    // A data table wider than the column scrolls inside its own box, where it would
+    // otherwise push the whole page sideways. The table itself is left as it was, so
+    // one that fits looks exactly like a plain table.
+    .replace(/<table class="sortable">[\s\S]*?<\/table>/g, (t) => `<div class="dt-box">${t}</div>`);
 }

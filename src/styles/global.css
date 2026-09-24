@@ -268,6 +268,9 @@ pre.source {
 .article table:not(.ib):not(.nb) th[colspan] { text-align: center; }
 /* An :img given a width is a picture in its own right, not a mark beside the text. */
 .article .ico.sized { display: block; margin: 2px 0 6px; vertical-align: top; }
+/* The table's margin moves onto its box, so the gap above and below stays the same. */
+.article .dt-box { overflow-x: auto; margin: 16px 0; }
+.article .dt-box > table.sortable { margin: 0; }
 /* A data table's header cells sort it; the arrow says which way it runs now. */
 .article table.sortable th.sort-key { position: relative; padding-right: 24px; cursor: pointer; user-select: none; }
 .article table.sortable th.sort-key:hover { background: var(--lift); }
