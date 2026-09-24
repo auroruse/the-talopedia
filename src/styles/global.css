@@ -269,7 +269,10 @@ pre.source {
 /* An :img given a width is a picture in its own right, not a mark beside the text. */
 .article .ico.sized { display: block; margin: 2px 0 6px; vertical-align: top; }
 /* A figure the text wraps around. Width is set per image, in pixels. */
-.article figure.float { margin: 4px 0 14px; max-width: 100%; }
+.article figure.float { margin: 16px 0 14px; max-width: 100%; }
+/* Level with the editor, which sets a floated picture 28px below whatever comes before
+   it. A paragraph's own 12px bottom margin counts toward that; a heading has none. */
+.article :is(h2, h3) + figure.float { margin-top: 28px; }
 .article figure.float img { width: 100%; height: auto; display: block; }
 .article figure.float figcaption {
   font-size: 12px; color: var(--muted); margin-top: 5px; line-height: 1.4;
@@ -371,7 +374,7 @@ figcaption:empty { display: none; }
   .imgrid { display: block; }
   .imgrid figure + figure { margin-top: 14px; }
   /* Too narrow to wrap text beside a picture. */
-  .article figure.float { float: none; width: auto !important; margin: 16px 0; }
+  .article figure.float, .article :is(h2, h3) + figure.float { float: none; width: auto !important; margin: 16px 0; }
   .navbox th.grp, .navbox th.row { width: auto; }
 }
 
