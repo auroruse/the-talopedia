@@ -1,5 +1,6 @@
 ---
-title: "Thomas Illyon Binkowicz"
+title: "Thomas Binkowicz"
+sidebarTitle: "Thomas Illyon Binkowicz"
 nativeTitle: "תומאס איילון בינקוביץ'"
 type: character
 nation: shivon
@@ -12,6 +13,7 @@ infobox:
   - { label: "Parents", value: "Heir Binkowicz (father)Buba Binkowicz (mother)" }
   - { label: "Alma Mater", value: "Shivonite Military Academy" }
 ---
+
 **Thomas Illyon Binkowicz** (born December 14, 1882) is the current authoritarian ruler of [[shivon]]. Before taking power, he was a political revolutionary who helped turn the government into the ultra-Ordalist regime it is now. Before politics, he led a street gang called the Stukes, known for their leather jackets and violent behavior. These early years shaped how he thinks and how he uses fear and loyalty. Binkowicz is a strong nationalist and believes Shivon must stay strict, controlled, and unified under his rule.
 
 ## Early Life
