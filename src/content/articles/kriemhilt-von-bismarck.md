@@ -40,7 +40,7 @@ infobox:
 
 ## Early Life and Education
 
-<figure class="float float-left" style="width:167px"><img src="https://lh3.googleusercontent.com/pw/AP1GczNMahorQ7UAviM8HKS6vKEuMXgl6k3HtKNJopRcr3v-23JAiSI3lMU41BmmiP-Tqs_PZtpluNp9q-b_02pr3iV7ib6na2z4NoPhUIJC-kl9U3JhztUGlH0YPGmefcm8PT1ZVP7vOT_7FaTK-QxxBxTw=w2000" alt="Alexander and Kriemhilt, January 1903."><figcaption>Alexander and Kriemhilt, January 1903.</figcaption></figure>
+<figure class="float float-left" style="width:160px"><img src="https://lh3.googleusercontent.com/pw/AP1GczNMahorQ7UAviM8HKS6vKEuMXgl6k3HtKNJopRcr3v-23JAiSI3lMU41BmmiP-Tqs_PZtpluNp9q-b_02pr3iV7ib6na2z4NoPhUIJC-kl9U3JhztUGlH0YPGmefcm8PT1ZVP7vOT_7FaTK-QxxBxTw=w2000" alt="Alexander and Kriemhilt, January 1903."><figcaption>Alexander and Kriemhilt, January 1903.</figcaption></figure>
 
 Hildegard Kriemhilt Adelheid von Bismarck was born on February 14, 1901, in [[akenau]], the capital of the Kingdom of [[ymiria]], then a constituent state of the [[holy-evrian-empire]]. Von Bismarck is the daughter of [[alexander-von-bismarck]], a Ymirian noble with longstanding ties to the Nichirian government, and Wilhelmina von Thurn, a daughter of the House of Thurn. The Thurns held the hereditary office of Imperial Postmaster General until the empire's dissolution in 1805 and afterward held the telegraph concession for Ymiria; Wilhelmina managed the concession's Akenau office.
 
