@@ -1,5 +1,6 @@
 ---
-title: "Arjun Majumdar"
+title: "Futsunushi"
+sidebarTitle: "Arjun Majumdar"
 nativeTitle: "アルジュン・マジュムダール"
 type: character
 nation: nichirin
@@ -13,8 +14,8 @@ infobox:
   - { section: "Personal Details" }
   - label: "Nationality"
     value:
-      - ":img[/assets/flags/vangalam.png] Bangali"
-      - ":img[/assets/flags/horai.jpg] Hōraian"
+      - ":img[/assets/flags/vangalam.png] Bangali"
+      - ":img[/assets/flags/horai.jpg] Hōraian"
   - { label: "Born", value: ":date[1894-06-01|age]" }
 ---
 

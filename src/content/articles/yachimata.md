@@ -1,5 +1,6 @@
 ---
-title: "Kosumi Inari"
+title: "Yachimata"
+sidebarTitle: "Kosumi Inari"
 nativeTitle: "稲荷 狐澄"
 type: character
 nation: nichirin
@@ -10,7 +11,7 @@ infobox:
   - { label: "Right Pillar", value: "[[gendo-takahashi]]" }
   - { label: "Preceded by", value: "*Position Established*" }
   - { section: "Personal Details" }
-  - { label: "Nationality", value: ":flag[nichirin] [[nichirin|Nichirian]]" }
+  - { label: "Nationality", value: ":flag[nichirin] [[nichirin|Nichirian]]" }
   - label: "Born"
     value:
       - "Kosumi Inari"

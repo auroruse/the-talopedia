@@ -1,5 +1,6 @@
 ---
-title: "Emeka Okafor"
+title: "Takemikazuchi"
+sidebarTitle: "Emeka Okafor"
 nativeTitle: "エメカ・オカフォー"
 type: character
 nation: nichirin
@@ -11,7 +12,7 @@ infobox:
   - { label: "Right Pillar", value: "[[gendo-takahashi]]" }
   - { label: "Preceded by", value: "*Position Established*" }
   - { section: "Personal Details" }
-  - { label: "Nationality", value: ":img[/assets/flags/cote-de-saumon.png] Saumonais" }
+  - { label: "Nationality", value: ":img[/assets/flags/cote-de-saumon.png] Saumonais" }
   - { label: "Born", value: ":date[1896-02-29|age]" }
 ---
 
