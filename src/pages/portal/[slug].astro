@@ -29,7 +29,7 @@ const hasNavbox = !!navbox(d.nation);
 const found = coordsFor(nation(d.nation)?.name, d.nation);
 const coords = found && { ...found, href: found.type === 'nation' ? mapUrl(nation(d.nation)?.name ?? d.nation) : null };
 ---
-<Base title={d.title} headings={headings} coords={coords} nationId={d.nation} slug={`portal:${entry.id}`}
+<Base title={d.title} image={d.banner} headings={headings} coords={coords} nationId={d.nation} slug={`portal:${entry.id}`}
   editSlug={hasNavbox ? `navbox:${d.nation}` : `portal:${entry.id}`}
   editLabel={hasNavbox ? 'Edit navbox' : 'Edit'}>
   {d.banner && <img class="portal-banner" src={url(d.banner)} alt={d.title} />}

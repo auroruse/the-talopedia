@@ -5,6 +5,8 @@ import Infobox from '../components/Infobox.astro';
 import { coordsFor, nation, mapUrl, url } from '../lib/registry.mjs';
 import { categoryOf } from '../lib/categories.mjs';
 import { resolveHtml, renderNavbox } from '../lib/navbox.mjs';
+import { ledeOf } from '../lib/inline.mjs';
+import { firstImage } from '../lib/featured.mjs';
 
 export async function getStaticPaths() {
   const all = await getCollection('articles');
@@ -16,7 +18,7 @@ const { entry } = Astro.props;
 const d = entry.data;
 const headings = entry.rendered?.metadata?.headings ?? [];
 const html = resolveHtml(entry.rendered?.html ?? '');
-const lede = entry.body?.replace(/<[^>]+>/g, '').replace(/\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]/g, '$2$1').slice(0, 200);
+const lede = ledeOf(entry.body);
 // Explicit coords win; otherwise the map's own table answers for this subject.
 const found = d.coords ? { position: d.coords } : coordsFor(d.title, entry.id);
 // Nations link by their registry name, cities by the map's own spelling.
@@ -26,7 +28,7 @@ const href = found?.type === 'nation' ? mapUrl(nation(d.nation)?.name ?? d.title
 const coords = found && { ...found, href };
 const category = categoryOf(d.type);
 ---
-<Base title={d.title} description={lede} headings={headings} coords={coords} nationId={d.nation} authorIds={d.authors} slug={entry.id}>
+<Base title={d.title} description={lede} image={firstImage(d)} headings={headings} coords={coords} nationId={d.nation} authorIds={d.authors} slug={entry.id}>
   {d.ooc && (
     <p class="notice">
       This article contains out-of-character (OOC) information. Some details presented here are

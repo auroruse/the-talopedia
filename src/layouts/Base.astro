@@ -1,9 +1,12 @@
 ---
 import '../styles/global.css';
 import { url, nation, exists } from '../lib/registry.mjs';
-import { renderInline } from '../lib/inline.mjs';
+import { renderInline, asset } from '../lib/inline.mjs';
 
-const { title, description, headings = [], coords = null, chrome = true, nationId = null, authorIds = null, wide = false, slug = null, editSlug = null, editLabel = 'Edit', view = 'article' } = Astro.props;
+const { title, description, image = null, headings = [], coords = null, chrome = true, nationId = null, authorIds = null, wide = false, slug = null, editSlug = null, editLabel = 'Edit', view = 'article' } = Astro.props;
+const pageTitle = title && title !== 'The Talopedia' ? `${title} - The Talopedia` : 'The Talopedia';
+// A preview needs a whole address; a page with no picture of its own shows the site's icon.
+const previewImage = new URL(image ? asset(image) : url('/favicon.png'), Astro.site).href;
 // A portal's slug carries the prefix its links use; on disk and in the URL it sits
 // under /portal/. The editor is passed the prefixed form, which is what it opens by.
 const pagePath = slug ? (slug.startsWith('portal:') ? `/portal/${slug.slice(7)}` : `/${slug}`) : null;
@@ -32,8 +35,12 @@ for (const h of headings) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title ? `${title} — The Talopedia` : 'The Talopedia'}</title>
+    <title>{pageTitle}</title>
     {description && <meta name="description" content={description} />}
+    {/* What a link preview shows: Discord and the like read these rather than the page. */}
+    <meta property="og:title" content={pageTitle} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:image" content={previewImage} />
     <link rel="icon" type="image/png" sizes="500x500" href={url('/favicon.png')} />
     <link rel="apple-touch-icon" href={url('/apple-touch-icon.png')} />
   </head>

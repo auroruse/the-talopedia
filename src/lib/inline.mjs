@@ -137,4 +137,19 @@ export function renderInline(str) {
     .replace(new RegExp(`(${ICON}) (${NAME})`, 'g'), '<span class="nw">$1&nbsp;$2</span>');
 }
 
+/**
+ * An article's opening line as plain text, for search results and link previews. It
+ * goes through the same renderer as the page, so a link reads as its title and a date
+ * as a date, and then the tags come off.
+ */
+export function ledeOf(body = '', max = 230) {
+  const first = body.split('\n').map((l) => l.trim())
+    // Skip headings, tables, raw HTML and list items, but not a lede opening in bold.
+    .find((l) => l && !/^(?:[#|<>]|[-*+]\s|\d+\.\s)/.test(l));
+  if (!first) return '';
+  const plain = unesc(renderInline(first).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' '))
+    .replace(/\s+/g, ' ').trim();
+  return plain.length > max ? plain.slice(0, max).replace(/\s+\S*$/, '') + '\u2026' : plain;
+}
+
 export { CUSTOM, custom, esc };
