@@ -4,6 +4,12 @@ type: list
 nation: nichirin
 ---
 
+This article lists the largest companies in [[nichirin]] in terms of their revenue and total assets.
+
+## 1934 *Nikkei* 150
+
+This list displays the 150 companies in the 1934 Nikkei 150, which the Nikkei Daily publishes each year to rank the largest Nichirian companies by annual revenue. The figures below are given in millions of dollars and are for the fiscal year 1933. Also listed are the companies' total assets, number of employees, headquarter locations, and industry sector, alongside the zaibatsu to which it belongs.
+
 <table class="sortable">
 <tr><th>Rank</th><th>Name</th><th>Industry</th><th>Revenue<br><small>(USD millions)</small></th><th>Total Assets<br><small>(USD millions)</small></th><th>Employees</th><th>Headquarters</th><th>Zaibatsu</th></tr>
 <tr><td>1</td><td>Echigoya Trading<br><small>越後屋商事</small><br><small>*Echigoya Shōji*</small></td><td>Conglomerate</td><td>1,230,000</td><td>335,300</td><td>45,300</td><td>Shinkeisei</td><td>Echigoya</td></tr>
