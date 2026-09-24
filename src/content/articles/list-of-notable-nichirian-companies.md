@@ -11,7 +11,7 @@ nation: nichirin
 <tr><td>3</td><td>Hengyuan & Co.<br><small>恒源號</small><br><small>*Kōgen-gō*</small></td><td>Conglomerate</td><td>533,500</td><td>99,810</td><td>16,000</td><td>Shinkeisei</td><td>Hengyuan</td></tr>
 <tr><td>4</td><td>Dastgheib-Maruhoshi<br><small>ダストゲイブ丸星商会</small><br><small>*Dasutogeibu-Maruhoshi Shōkai*</small></td><td>Trading</td><td>453,000</td><td>92,050</td><td>15,500</td><td>Takarazuka</td><td>–</td></tr>
 <tr><td>5</td><td>Yachiyo Cotton<br><small>八千代棉花</small><br><small>*Yachiyo Menka*</small></td><td>Trading</td><td>307,500</td><td>61,940</td><td>8,020</td><td>Takarazuka</td><td>–</td></tr>
-<tr><td>6</td><td>Nichirin Steel<br><small>日輪製鐵</small><br><small>*Nichirin Seitetsu*</small></td><td>Steel</td><td>225,800</td><td>339,500</td><td>229,000</td><td>Shinkeisei</td><td>–</td></tr>
+<tr><td>6</td><td>Nichirin Steel<br><small>日輪製鐵</small><br><small>*Nichirin Seitetsu*</small></td><td>Steel</td><td>225,800</td><td>339,500</td><td>229,000</td><td>Mizuhara</td><td>–</td></tr>
 <tr><td>7</td><td>Manshū Railway<br><small>満州鉄道</small><br><small>*Manshū Tetsudō*</small></td><td>Railways</td><td>210,300</td><td>1,003,000</td><td>252,000</td><td>Harushige</td><td>–</td></tr>
 <tr><td>8</td><td>Higashi-Kikyō<br><small>東桔梗商店</small><br><small>*Higashi-Kikyō Shōten*</small></td><td>Trading</td><td>153,100</td><td>30,840</td><td>6,020</td><td>Chūkyō</td><td>–</td></tr>
 <tr><td>9</td><td>Kanaeya & Co.<br><small>鼎屋商店</small><br><small>*Kanaeya Shōten*</small></td><td>Conglomerate</td><td>151,200</td><td>31,890</td><td>5,620</td><td>Chūkyō</td><td>Kanaeya</td></tr>
@@ -28,17 +28,17 @@ nation: nichirin
 <tr><td>20</td><td>Tsukumo Heavy Industries<br><small>九十九重工</small><br><small>*Tsukumo Jūkō*</small></td><td>Shipbuilding</td><td>81,500</td><td>140,700</td><td>145,000</td><td>Shinkeisei</td><td>Tsukumo</td></tr>
 <tr><td>21</td><td>Bankoku & Co.<br><small>萬國商會</small><br><small>*Bankoku Shōkai*</small></td><td>Trading</td><td>80,400</td><td>15,650</td><td>2,810</td><td>Genkai</td><td>Bankoku</td></tr>
 <tr><td>22</td><td>Manshū Mail Steamship<br><small>満州郵船</small><br><small>*Manshū Yūsen*</small></td><td>Shipping</td><td>79,490</td><td>216,400</td><td>78,000</td><td>Benigata</td><td>–</td></tr>
-<tr><td>23</td><td>Kamabuchi Specie Bank<br><small>釜淵正金銀行</small><br><small>*Kamabuchi Shōkin Ginkō*</small></td><td>Banking</td><td>78,550</td><td>1,208,000</td><td>13,200</td><td>Kamabuchi</td><td>–</td></tr>
+<tr><td>23</td><td>Nichirin Specie Bank<br><small>日輪正金銀行</small><br><small>*Nichirin Shōkin Ginkō*</small></td><td>Banking</td><td>78,550</td><td>1,208,000</td><td>13,200</td><td>Shinkeisei</td><td>–</td></tr>
 <tr><td>24</td><td>Meiwa Sugar<br><small>明和製糖</small><br><small>*Meiwa Seitō*</small></td><td>Sugar</td><td>73,040</td><td>99,870</td><td>54,500</td><td>Shinkeisei</td><td>Echigoya</td></tr>
 <tr><td>25</td><td>Ryūsen Oil<br><small>龍泉石油</small><br><small>*Ryūsen Sekiyu*</small></td><td>Oil</td><td>71,550</td><td>93,530</td><td>29,400</td><td>Daikei</td><td>–</td></tr>
 <tr><td>26</td><td>Tsukumo Steel<br><small>九十九鋼</small><br><small>*Tsukumo Hagane*</small></td><td>Steel</td><td>70,660</td><td>75,680</td><td>67,100</td><td>Shinkeisei</td><td>Tsukumo</td></tr>
 <tr><td>27</td><td>Nichirin Hypothec Bank<br><small>日輪勧業銀行</small><br><small>*Nichirin Kangyō Ginkō*</small></td><td>Banking</td><td>69,670</td><td>967,000</td><td>11,200</td><td>Shinkeisei</td><td>–</td></tr>
 <tr><td>28</td><td>Kanaeya Miyabi Spinning<br><small>鼎屋雅</small><br><small>*Kanaeya Miyabi*</small></td><td>Cotton spinning</td><td>69,030</td><td>70,390</td><td>109,000</td><td>Chūkyō</td><td>Kanaeya</td></tr>
 <tr><td>29</td><td>Itokura Silk<br><small>糸倉製糸</small><br><small>*Itokura Seishi*</small></td><td>Silk</td><td>68,300</td><td>56,140</td><td>180,000</td><td>Kagamidaira</td><td>Itokura</td></tr>
-<tr><td>30</td><td>Kanaeya Bank<br><small>鼎屋銀行</small><br><small>*Kanaeya Ginkō*</small></td><td>Banking</td><td>67,440</td><td>1,008,000</td><td>21,400</td><td>Chūkyō</td><td>Kanaeya</td></tr>
+<tr><td>30</td><td>Nikaidō Bank<br><small>二階堂銀行</small><br><small>*Nikaidō Ginkō*</small></td><td>Banking</td><td>67,440</td><td>1,008,000</td><td>21,400</td><td>Shinkeisei</td><td>Nikaidō</td></tr>
 <tr><td>31</td><td>Hokushin Mining<br><small>北辰鉱業</small><br><small>*Hokushin Kōgyō*</small></td><td>Mining</td><td>64,750</td><td>111,500</td><td>147,000</td><td>Nishikino</td><td>Hokushin</td></tr>
 <tr><td>32</td><td>Tōkō Sugar<br><small>東光製糖</small><br><small>*Tōkō Seitō*</small></td><td>Sugar</td><td>62,810</td><td>81,620</td><td>47,100</td><td>Hareumi</td><td>–</td></tr>
-<tr><td>33</td><td>Nikaidō Bank<br><small>二階堂銀行</small><br><small>*Nikaidō Ginkō*</small></td><td>Banking</td><td>61,110</td><td>854,600</td><td>15,900</td><td>Shinkeisei</td><td>Nikaidō</td></tr>
+<tr><td>33</td><td>Kanaeya Bank<br><small>鼎屋銀行</small><br><small>*Kanaeya Ginkō*</small></td><td>Banking</td><td>61,110</td><td>854,600</td><td>15,900</td><td>Chūkyō</td><td>Kanaeya</td></tr>
 <tr><td>34</td><td>Izumiya Steamship<br><small>泉屋汽船</small><br><small>*Izumiya Kisen*</small></td><td>Shipping</td><td>59,970</td><td>143,900</td><td>49,300</td><td>Mizuhara</td><td>Izumiya</td></tr>
 <tr><td>35</td><td>Echigoya<br><small>越後屋呉服店</small><br><small>*Echigoya Gofukuten*</small></td><td>Retail</td><td>59,070</td><td>56,930</td><td>47,200</td><td>Shinkeisei</td><td>Echigoya</td></tr>
 <tr><td>36</td><td>Izumiya Bank<br><small>泉屋銀行</small><br><small>*Izumiya Ginkō*</small></td><td>Banking</td><td>58,890</td><td>819,900</td><td>17,000</td><td>Shinkeisei</td><td>Izumiya</td></tr>
@@ -48,14 +48,14 @@ nation: nichirin
 <tr><td>40</td><td>Hakkaku Colliery & Steamship<br><small>八角炭礦汽船</small><br><small>*Hakkaku Tankō Kisen*</small></td><td>Coal mining</td><td>51,030</td><td>102,400</td><td>121,000</td><td>Tanretsu</td><td>–</td></tr>
 <tr><td>41</td><td>Kirin Tenka<br><small>麒麟天下麦酒</small><br><small>*Kirin Tenka Bakushu*</small></td><td>Brewing</td><td>50,870</td><td>72,270</td><td>22,800</td><td>Satsuno</td><td>Harumachi</td></tr>
 <tr><td>42</td><td>Kagatsuchi Ironworks<br><small>迦具土製鐵</small><br><small>*Kagatsuchi Seitetsu*</small></td><td>Steel</td><td>50,320</td><td>86,850</td><td>85,700</td><td>Mizuhara</td><td>–</td></tr>
-<tr><td>43</td><td>Oshima-Nakayama Shipbuilding<br><small>尾島中山造船</small><br><small>*Oshima-Nakayama Zōsen*</small></td><td>Shipbuilding</td><td>50,080</td><td>86,320</td><td>72,900</td><td>Shimonosaki</td><td>–</td></tr>
+<tr><td>43</td><td>Oshima-Nakayama Shipbuilding<br><small>尾島中山造船</small><br><small>*Oshima-Nakayama Zōsen*</small></td><td>Shipbuilding</td><td>50,080</td><td>86,320</td><td>72,900</td><td>Naginomiya</td><td>–</td></tr>
 <tr><td>44</td><td>Tsukumo Bank<br><small>九十九銀行</small><br><small>*Tsukumo Ginkō*</small></td><td>Banking</td><td>48,010</td><td>715,100</td><td>9,620</td><td>Shinkeisei</td><td>Tsukumo</td></tr>
 <tr><td>45</td><td>Tōhan Electric Power<br><small>東半電力</small><br><small>*Tōhan Denryoku*</small></td><td>Electric power</td><td>45,420</td><td>248,600</td><td>21,800</td><td>Naginomiya</td><td>–</td></tr>
 <tr><td>46</td><td>Arima Electric Wire<br><small>有馬電線</small><br><small>*Arima Densen*</small></td><td>Electric wire</td><td>43,960</td><td>50,120</td><td>34,400</td><td>Shinkeisei</td><td>Kanayama</td></tr>
 <tr><td>47</td><td>Hengyuan Xiangyun Spinning<br><small>恒源祥雲</small><br><small>*Kōgen Shōun*</small></td><td>Cotton spinning</td><td>43,820</td><td>49,070</td><td>127,000</td><td>Hakkōran</td><td>Hengyuan</td></tr>
 <tr><td>48</td><td>Kurenai Spinning<br><small>紅紡績</small><br><small>*Kurenai Bōseki*</small></td><td>Cotton spinning</td><td>41,450</td><td>40,800</td><td>76,600</td><td>Kōshū</td><td>–</td></tr>
 <tr><td>49</td><td>Tsuzumi Spinning<br><small>鼓紡績</small><br><small>*Tsuzumi Bōseki*</small></td><td>Cotton spinning</td><td>41,410</td><td>37,690</td><td>76,700</td><td>Ashihara</td><td>–</td></tr>
-<tr><td>50</td><td>Hokka<br><small>北化</small><br><small>*Hokka*</small></td><td>Chemicals</td><td>40,750</td><td>97,750</td><td>33,300</td><td>Moriguchi</td><td>Hokushin</td></tr>
+<tr><td>50</td><td>Shinseiki Chemical<br><small>新世紀化学</small><br><small>*Shinseiki Kagaku*</small></td><td>Chemicals</td><td>40,750</td><td>97,750</td><td>33,300</td><td>Takarazuka</td><td>Tsukumo</td></tr>
 <tr><td>51</td><td>Yanagihara Flour Milling<br><small>柳原製粉</small><br><small>*Yanagihara Seifun*</small></td><td>Flour milling</td><td>40,350</td><td>23,970</td><td>9,700</td><td>Shikisen</td><td>Yanagihara</td></tr>
 <tr><td>52</td><td>Kanaeya<br><small>鼎屋百貨店</small><br><small>*Kanaeya Hyakkaten*</small></td><td>Retail</td><td>40,150</td><td>37,450</td><td>29,200</td><td>Chūkyō</td><td>Kanaeya</td></tr>
 <tr><td>53</td><td>Kyōei Life<br><small>共栄生命</small><br><small>*Kyōei Seimei*</small></td><td>Life insurance</td><td>39,420</td><td>241,100</td><td>8,120</td><td>Chūkyō</td><td>Echigoya</td></tr>
@@ -70,7 +70,7 @@ nation: nichirin
 <tr><td>62</td><td>Takaden<br><small>鷹電</small><br><small>*Takaden*</small></td><td>Electric power</td><td>35,360</td><td>213,600</td><td>15,900</td><td>Takarazuka</td><td>–</td></tr>
 <tr><td>63</td><td>Daikokuya<br><small>大黒屋</small><br><small>*Daikokuya*</small></td><td>Retail</td><td>34,660</td><td>31,590</td><td>25,700</td><td>Takarazuka</td><td>–</td></tr>
 <tr><td>64</td><td>Seikai Fire & Marine<br><small>靖海火災海上</small><br><small>*Seikai Kasai Kaijō*</small></td><td>Insurance</td><td>33,770</td><td>145,100</td><td>5,930</td><td>Shinkeisei</td><td>Tsukumo</td></tr>
-<tr><td>65</td><td>Shinseiki Chemical<br><small>新世紀化学</small><br><small>*Shinseiki Kagaku*</small></td><td>Chemicals</td><td>33,520</td><td>87,930</td><td>65,200</td><td>Takarazuka</td><td>Tsukumo</td></tr>
+<tr><td>65</td><td>Hokka<br><small>北化</small><br><small>*Hokka*</small></td><td>Chemicals</td><td>33,520</td><td>87,930</td><td>65,200</td><td>Moriguchi</td><td>Hokushin</td></tr>
 <tr><td>66</td><td>Yukiwari Sugar<br><small>雪割製糖</small><br><small>*Yukiwari Seitō*</small></td><td>Sugar</td><td>33,340</td><td>39,390</td><td>21,600</td><td>Satsuno</td><td>–</td></tr>
 <tr><td>67</td><td>Tenpū Life<br><small>天風生命</small><br><small>*Tenpū Seimei*</small></td><td>Life insurance</td><td>32,950</td><td>190,600</td><td>6,640</td><td>Shinkeisei</td><td>Tsukumo</td></tr>
 <tr><td>68</td><td>Soten Telecom<br><small>蒼天電信</small><br><small>*Sōten Denshin*</small></td><td>Electrical machinery</td><td>32,710</td><td>43,260</td><td>49,800</td><td>Shinkeisei</td><td>–</td></tr>
