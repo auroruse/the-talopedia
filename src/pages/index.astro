@@ -99,8 +99,10 @@ const latest = articles
   .filter((x) => x.w)
   .sort((a, b) => Date.parse(b.w.at) - Date.parse(a.w.at) || a.e.data.title.localeCompare(b.e.data.title))
   .slice(0, 5);
-const latestPanel = tops(latest.map(({ e, w }) =>
-  ({ e, meta: `${origin(e)} \u00b7 ${w.updated ? 'updated' : 'created'} ${day(w.at)}` })))
+// The date is only what shows before the script at the foot of the page puts "3 hours
+// ago" in its place, which it has to do in the reader's own clock.
+const latestPanel = tops(latest.map(({ e, w }) => ({ e, meta: `${origin(e)} \u00b7 `
+  + `${w.updated ? 'updated' : 'created'} <time datetime="${w.at}" data-ago>${day(w.at)}</time>` })))
   + `<p class="more"><a href="${url('/categories')}">All categories</a></p>`;
 
 /**
@@ -180,6 +182,23 @@ const headings = (rendered?.metadata?.headings ?? []).filter((h) => h.slug !== '
         requestAnimationFrame(step);
       }
     });
+
+    // Latest Articles: how long ago each was written, which a build would have printed
+    // stale by the time anyone read it. Kept current while the page stays open.
+    {
+      const since = new Intl.RelativeTimeFormat('en', { numeric: 'always' });
+      const UNITS = [['year', 31536e6], ['month', 2592e6], ['week', 6048e5], ['day', 864e5],
+        ['hour', 36e5], ['minute', 6e4]];
+      const ago = () => {
+        for (const t of document.querySelectorAll('time[data-ago]')) {
+          const ms = Date.now() - Date.parse(t.dateTime);
+          const [unit, size] = UNITS.find(([, n]) => ms >= n) || [];
+          t.textContent = unit ? since.format(-Math.floor(ms / size), unit) : 'just now';
+        }
+      };
+      ago();
+      setInterval(ago, 60000);
+    }
 
     // The draw is keyed to the UTC date and the site rebuilds itself at 00:07 UTC, so
     // that is when a different article appears. Kept in the reader's own clock rather
