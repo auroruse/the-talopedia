@@ -1,7 +1,7 @@
 /**
  * An article's type is its category, named the way a Wikipedia category would be.
  * Every page of a type is listed at /category/<slug>, and each article links there
- * from its foot. The names are in-world, so a biography files under People.
+ * from its foot.
  */
 export const NAMES = {
   overview: 'Nations and territories',
@@ -10,7 +10,7 @@ export const NAMES = {
   continent: 'Continents',
   geography: 'Geography',
   celestial: 'Celestial bodies',
-  character: 'People',
+  character: 'Characters',
   military: 'Military',
   organization: 'Organizations',
   company: 'Companies',

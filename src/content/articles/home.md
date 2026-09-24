@@ -17,6 +17,6 @@ The Talopedia is a collaborative, Google Docs-based encyclopedia for [[avium]], 
 - [[kenzo-kamiya]]
 - [[gendo-takahashi]]
 
-[[category:people|All people]]
+[[category:characters|All characters]]
 
 ## Newest Articles

@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 import { navbox, nations, nation, url } from '../lib/registry.mjs';
 import { resolveHtml, renderNavbox } from '../lib/navbox.mjs';
 import { asset, icon, esc } from '../lib/inline.mjs';
-import { createdOf } from '../lib/revisions.mjs';
+import { lastWritten } from '../lib/revisions.mjs';
 import { categoryOf } from '../lib/categories.mjs';
 import { featured, overview, firstImage, linkFirstMention } from '../lib/featured.mjs';
 
@@ -57,7 +57,7 @@ const featuredPanel = !pick ? '' : (() => {
 
 /**
  * The panels of five under the featured article: Trending Characters, picked by hand
- * on the front page, and Newest Articles, the pages most recently written. Each row is a
+ * on the front page, and Newest Articles, the pages most recently written or rewritten. Each row is a
  * rank, a square picture, the title and one line under it, the same in both so the
  * two sit level beside each other.
  */
@@ -108,11 +108,12 @@ function trendingPanel(rest) {
 
 const day = (iso) => new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
 const newest = articles
-  .map((e) => ({ e, at: createdOf(e.id) }))
-  .filter((x) => x.at)
-  .sort((a, b) => Date.parse(b.at) - Date.parse(a.at) || a.e.data.title.localeCompare(b.e.data.title))
+  .map((e) => ({ e, w: lastWritten(e.id) }))
+  .filter((x) => x.w)
+  .sort((a, b) => Date.parse(b.w.at) - Date.parse(a.w.at) || a.e.data.title.localeCompare(b.e.data.title))
   .slice(0, 5);
-const newestPanel = tops(newest.map(({ e, at }) => ({ e, meta: `${origin(e)} \u00b7 ${day(at)}` })))
+const newestPanel = tops(newest.map(({ e, w }) =>
+  ({ e, meta: `${origin(e)} \u00b7 ${w.updated ? 'updated ' : ''}${day(w.at)}` })))
   + `<p class="more"><a href="${url('/categories')}">All categories</a></p>`;
 
 /**
