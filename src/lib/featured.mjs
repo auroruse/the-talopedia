@@ -17,6 +17,14 @@ export function overview(html = '') {
   return cut === -1 ? html : html.slice(0, cut);
 }
 
+/** The overview's first paragraph with any text in it, which is all the front page shows. */
+export function firstParagraph(html = '') {
+  for (const m of overview(html).matchAll(/<p\b[^>]*>[\s\S]*?<\/p>/g)) {
+    if (m[0].replace(/<[^>]+>/g, '').trim()) return m[0];
+  }
+  return '';
+}
+
 /** The first picture in an article's sidebar. */
 export function firstImage(data) {
   const row = (data.infobox || []).find((r) => r.image || r.images?.[0]?.src);

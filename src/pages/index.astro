@@ -7,7 +7,7 @@ import { asset, icon, esc } from '../lib/inline.mjs';
 import { lastWritten } from '../lib/revisions.mjs';
 import { pictureOf } from '../lib/pictures.mjs';
 import { categoryOf } from '../lib/categories.mjs';
-import { featured, overview, firstImage, linkFirstMention } from '../lib/featured.mjs';
+import { featured, firstParagraph, firstImage, linkFirstMention } from '../lib/featured.mjs';
 
 // The front page is an ordinary article, so it opens in the editor like any other.
 const HOME = 'home';
@@ -37,8 +37,8 @@ const stats = [
 ];
 
 /**
- * Today's featured article, written out in full: its own sidebar picture floated
- * beside its overview. The front page carries the heading and nothing under it, so
+ * Today's featured article: its own sidebar picture floated beside the first paragraph
+ * of its overview. The front page carries the heading and nothing under it, so
  * there is no copy of the text to go stale and nobody has to change it each morning.
  */
 const pick = featured(articles);
@@ -47,7 +47,7 @@ const featuredPanel = !pick ? '' : (() => {
   const fig = `<figure class="float float-right feat-pic">`
     + `<img src="${asset(firstImage(pick.data))}" alt="${title}"></figure>`;
   const href = url('/' + pick.id);
-  const body = overview(resolveHtml(pick.rendered?.html));
+  const body = firstParagraph(resolveHtml(pick.rendered?.html));
   const linked = linkFirstMention(body, pick.data.title ?? pick.id, href);
   // A lede that never names its subject gets a plain link instead, so the panel is
   // never a dead end.
