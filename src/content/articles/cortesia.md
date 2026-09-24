@@ -55,12 +55,12 @@ infobox:
       - "Standard Alemannian"
   - { label: "Demonym", value: "Cortesian" }
   - { label: "GDP (PPP)", value: "1932 Census" }
-  - { label: "Total", sub: true, value: ":up $2,206,240,641,000" }
-  - { label: "Per Capita", sub: true, value: ":down $39,703" }
+  - { label: "Total", sub: true, value: ":up $2,206,240,641,000" }
+  - { label: "Per Capita", sub: true, value: ":down $39,703" }
   - { label: "Currency", value: "Cortesian Krona / CTK (kr)" }
-  - { label: "Life Expectancy", value: ":up 42.9 years" }
-  - { label: "Literacy Rate", value: ":up 50.7%" }
-  - { label: "HDI", value: ":up 0.545 (high)" }
+  - { label: "Life Expectancy", value: ":up 42.9 years" }
+  - { label: "Literacy Rate", value: ":up 50.7%" }
+  - { label: "HDI", value: ":up 0.545 (high)" }
   - { section: "Miscellaneous Info" }
   - { label: "Land Area", value: "279,031 km²" }
   - { label: "Water Area", value: "9,293 km²" }
@@ -159,13 +159,13 @@ The judiciary system is independent of the Rada Federalna, with the Sąd Najwyż
 
 | Rank | City | Urban Population | Subdivision |
 | --- | --- | --- | --- |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| 1 | Jelgawa | 2,342,000 | Wydraza |
+| 2 | Corslawa | 1,801,000 | Wilcza |
+| 3 | Kretme | 770,000 | Kojotza |
+| 4 | Czółnów | 645,000 | Kaczkza |
+| 5 | Growinas | 516,000 | Końza |
+| 6 | Stalowice | 499,000 | Dzikza |
+| 7 | Bosgownie | 445,000 | Smokza |
+| 8 | Jiezmene | 338,000 | Rybaza |
+| 9 | Kresów | 326,000 | Jaskółkza |
+| 10 | Pabžys | 298,000 | Gęśza |
