@@ -13,14 +13,14 @@ infobox:
   - { label: "Largest City", value: "Kuhestan" }
   - { label: "Ostāndār", value: "Ardeshir Babak" }
   - { label: "Faction", value: "Mardom-e Kār" }
-  - { label: "Area", value: "194,832 km²" }
+  - { label: "Area", value: "150,017 km²" }
   - { section: "Legislature" }
-  - { label: "Delegates (Majles-E Nāmāyandagān)", value: "15 / 57" }
-  - { label: "Senators (Shurā-Ye Āyan)", value: "2" }
+  - { label: "Delegates (Majles-e Nāmāyandagān)", value: "134 / 391" }
+  - { label: "Senators (Shurā-ye Āyan)", value: "2" }
   - { section: "Demographics" }
   - { label: "Population", value: "1929 Census" }
-  - { label: "Total", sub: true, value: "15,200,000" }
-  - { label: "Density", sub: true, value: "78.02 / km²" }
+  - { label: "Total", sub: true, value: "18,200,000" }
+  - { label: "Density", sub: true, value: "121.32 / km²" }
   - label: "Ethnic Groups"
     value:
       - "59% Mehrāni"
@@ -37,7 +37,8 @@ infobox:
   - { label: "Dabi-Shā Avret", value: "Kuhestan" }
   - { label: "Barkeh", value: "Āvanak" }
 ---
-Ahanestan (Mehrāni: آهنستان, *Āhanestān*; lit. *Land of Iron*), officially the Ostān-e Āhanestān (Province of Iron), is the industrial heartland of the [[varahmehr|Federal Republic of Varahmehr]]. Located in the central western interior of the federation, it is the most populous ostān by combined city and provincial population, and the largest single contributor to **Varahmehr**’s manufacturing output. Its capital, Kuhestan (کوهستان, lit. *Land of Mountains*), is the largest city in the federation with a population of 6.3 million. The ostān is divided into two shahrestān-hā: Dabi-shā Avret, encompassing the industrial core, and Barkeh, covering the lake and coastal basin district to the west.
+
+**Ahanestan** (Mehrāni: آهنستان, *Āhanestān*; lit. *Land of Iron*), officially the Ostān-e Āhanestān (Province of Iron), is the industrial heartland of the [[varahmehr|Federal Republic of Varahmehr]]. Located in the central western interior of the federation, it is the most populous ostān by combined city and provincial population, and the largest single contributor to **Varahmehr**’s manufacturing output. Its capital, Kuhestan (کوهستان, lit. *Land of Mountains*), is the largest city in the federation with a population of 6.3 million. The ostān is divided into two shahrestān-hā: Dabi-shā Avret, encompassing the industrial core, and Barkeh, covering the lake and coastal basin district to the west.
 
 Ahanestan occupies a singular position in the federation’s economic and political life. Its foundries and steel mills produce the structural materials upon which the federation’s physical infrastructure depends, and its recently confirmed oil reserves have placed it at the center of Varahmehr’s emerging international economic relationships. It is simultaneously the federation’s most ethnically contested province - the Kuhi people constitute approximately thirty percent of the ostān’s population, the largest Kuhi concentration in any ostān, and the persistent wage gap between Kuhi and Mehrāni workers in comparable industrial roles is widely regarded as the federation’s most sensitive ongoing domestic equity issue.
 
@@ -63,7 +64,7 @@ The discovery of significant oil reserves in the Ahanestan interior during the l
 
 ## Government
 
-Ahanestan sends fifteen delegates to the Majles-e Nāmāyandagān, the largest delegation of any ostān, reflecting its population. The ostān is governed by an elected Ostāndār serving a four-year term. The current Ostāndār is Ardeshir Babak of the Mardom-e Kār faction - born in Kuhestan to a Mehrāni father and a Kuhi mother, he is the first Ostāndār of the province with direct Kuhi heritage. His election has been interpreted by Mardom-e Kār as a meaningful, if partial, response to the persistent Kuhi-Mehrāni equity question.
+Ahanestan sends 134 delegates to the Majles-e Nāmāyandagān, the largest delegation of any ostān, reflecting its population. The ostān is governed by an elected Ostāndār serving a four-year term. The current Ostāndār is Ardeshir Babak of the Mardom-e Kār faction - born in Kuhestan to a Mehrāni father and a Kuhi mother, he is the first Ostāndār of the province with direct Kuhi heritage. His election has been interpreted by Mardom-e Kār as a meaningful, if partial, response to the persistent Kuhi-Mehrāni equity question.
 
 The ostān’s political culture is dominated by the Mardom-e Kār faction, whose base among Kuhestan’s industrial workforce provides a reliable delegate majority. The Kuhi-Mehrāni wage gap - in which Kuhi workers in comparable industrial roles to their Mehrāni counterparts earn measurably less - is the primary organizing grievance of the Mardom-e Kār Ahanestan wing and the issue most likely to produce legislative conflict between the ostān and the federal Assembly in the coming session.
 

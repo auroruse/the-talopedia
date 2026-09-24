@@ -13,14 +13,14 @@ infobox:
   - { label: "Largest City", value: "Gandomabad" }
   - { label: "Ostāndār", value: "Bahman Hashempour" }
   - { label: "Faction", value: "Risheh-dārān" }
-  - { label: "Area", value: "221,340 km²" }
+  - { label: "Area", value: "244,724 km²" }
   - { section: "Legislature" }
-  - { label: "Delegates (Majles-E Nāmāyandagān)", value: "14/57" }
-  - { label: "Senators (Shurā-Ye Āyan)", value: "2" }
+  - { label: "Delegates (Majles-e Nāmāyandagān)", value: "119 / 391" }
+  - { label: "Senators (Shurā-ye Āyan)", value: "2" }
   - { section: "Demographics" }
   - { label: "Population", value: "1929 Census" }
-  - { label: "Total", sub: true, value: "14,300,000" }
-  - { label: "Density", sub: true, value: "64.61 / km²" }
+  - { label: "Total", sub: true, value: "16,300,000" }
+  - { label: "Density", sub: true, value: "66.61 / km²" }
   - label: "Ethnic Groups"
     value:
       - "48% Mehrāni"
@@ -40,7 +40,8 @@ infobox:
   - { label: "Kesht", value: "Sabzavar" }
   - { label: "Kuhband", value: "Sang-e Sefid" }
 ---
-Dashtestan (Mehrāni: دشتستان, *Dashtestān*; lit. *Land of the Plains*), officially the Ostān-e Dashtestān (Province of the Plains), is the largest ostān in the [[varahmehr|Federal Republic of Varahmehr]] by land area and the second most populous, with an estimated population of 14,300,000. Located in the northern reaches of the federation, it constitutes **Varahmehr**’s primary agricultural zone - the breadbasket upon which the federation’s food security depends. Its capital, Sabzavar (سبزوار, lit. *Green Carrier*), houses the federation’s most significant grain exchange and serves as the commercial anchor of the plains economy. The second city, Gandomabad (گندم‌آباد, lit. *City of Wheat*), with a population of 2,560,000, is the most culturally significant settlement in the ostān and the second most populous city in the federation. The ostān is divided into four shahrestān-hā: Dashiristan, Ghlat, Kesht, and Kuhband.
+
+**Dashtestan** (Mehrāni: دشتستان, *Dashtestān*; lit. *Land of the Plains*), officially the Ostān-e Dashtestān (Province of the Plains), is the largest ostān in the [[varahmehr|Federal Republic of Varahmehr]] by land area and the second most populous, with an estimated population of 14,300,000. Located in the northern reaches of the federation, it constitutes **Varahmehr**’s primary agricultural zone - the breadbasket upon which the federation’s food security depends. Its capital, Sabzavar (سبزوار, lit. *Green Carrier*), houses the federation’s most significant grain exchange and serves as the commercial anchor of the plains economy. The second city, Gandomabad (گندم‌آباد, lit. *City of Wheat*), with a population of 2,560,000, is the most culturally significant settlement in the ostān and the second most populous city in the federation. The ostān is divided into four shahrestān-hā: Dashiristan, Ghlat, Kesht, and Kuhband.
 
 Dashtestan occupies a position in Varahmehr’s political and cultural life that is simultaneously foundational and contested. It produces the bulk of the federation’s grain, livestock, and timber, sustaining every other ostān through the agricultural surplus of its vast plains. Yet it remains the most transfer-dependent province in the federation - receiving 48% of its budget through federal transfers - and its relationship with the federal structure has never been entirely comfortable. The Dashti people governed themselves through the Shurā-ye Dasht, a council of clan elders, for a thousand years before the Compact was signed, and the memory of that autonomous tradition shapes Dashtestan’s politics in ways that no federal arrangement has yet fully resolved.
 
@@ -78,7 +79,7 @@ The 51 years of isolationism suited Dashtestan more than any other ostān. The p
 
 ## Government
 
-Dashtestan sends eight delegates to the Majles-e Nāmāyandagān - a figure that reflects population relative to the other ostān-hā but that the Risheh-dārān bloc has consistently argued underrepresents the plains communities, given Dashtestan’s geographic scale and its disproportionate contribution to federal food security. The ostān is governed by an elected Ostāndār serving a four-year term.
+Dashtestan sends 119 delegates to the Majles-e Nāmāyandagān - a figure that reflects population relative to the other ostān-hā but that the Risheh-dārān bloc has consistently argued underrepresents the plains communities, given Dashtestan’s geographic scale and its disproportionate contribution to federal food security. The ostān is governed by an elected Ostāndār serving a four-year term.
 
 Dashtestan is the heartland of the Risheh-dārān faction - specifically its Plains Council wing, the direct political descendants of the Shurā-ye Dasht tradition. The Shurā-ye Dasht itself no longer functions as a formal governance body - the Compact’s federal structure superseded its administrative role in 1878, but it persists as a cultural institution whose elders retain significant informal influence over provincial political life. Risheh-dārān delegates routinely seek Shurā endorsement before the Assembly votes on matters affecting the Dashti community's interests, and the absence of such endorsement for a policy position is understood across the federation as a meaningful political signal.
 

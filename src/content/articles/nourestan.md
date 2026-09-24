@@ -13,14 +13,14 @@ infobox:
   - { label: "Largest City", value: "Nourabad" }
   - { label: "Ostāndār", value: "Tahmine Shakibaii" }
   - { label: "Faction", value: "Peymān-dārān" }
-  - { label: "Area", value: "191,447 km²" }
+  - { label: "Area", value: "293,178 km²" }
   - { section: "Legislature" }
-  - { label: "Delegates (Majles-e Nāmāyandagān)", value: "8/57" }
+  - { label: "Delegates (Majles-e Nāmāyandagān)", value: "59 / 391" }
   - { label: "Senators (Shurā-ye Āyan)", value: "2" }
   - { section: "Demographics" }
   - { label: "Population", value: "1929 Census" }
-  - { label: "Total", sub: true, value: "5,500,000" }
-  - { label: "Density", sub: true, value: "28.73 / km²" }
+  - { label: "Total", sub: true, value: "7,700,000" }
+  - { label: "Density", sub: true, value: "26.26 / km²" }
   - label: "Ethnic Groups"
     value:
       - "92% Mehrāni"
@@ -76,7 +76,7 @@ The 51 years of isolationism were, in some respects, the most comfortable period
 
 ## Government
 
-Nourestan sends 12 delegates to the Majles-e Nāmāyandagān, the second-largest delegation after Ahanestan. The ostān is governed by an elected Ostāndār serving a four-year term. Politically, Nourestan is the heartland of the Peymān-dārān faction - specifically its Compact Wing, whose constitutionalist instincts align naturally with the Nouri tradition of governance through institutional process and legal precision. Chancellor Shariati is the most prominent representative of this tradition, though his position as head of the federal executive means his ostān loyalties are subordinated to his federal responsibilities in ways that sometimes create tension with Nourestan’s provincial interests.
+Nourestan sends 59 delegates to the Majles-e Nāmāyandagān, the second-largest delegation after Ahanestan. The ostān is governed by an elected Ostāndār serving a four-year term. Politically, Nourestan is the heartland of the Peymān-dārān faction - specifically its Compact Wing, whose constitutionalist instincts align naturally with the Nouri tradition of governance through institutional process and legal precision. Chancellor Shariati is the most prominent representative of this tradition, though his position as head of the federal executive means his ostān loyalties are subordinated to his federal responsibilities in ways that sometimes create tension with Nourestan’s provincial interests.
 
 <div class="imgrid">
 <figure style="flex:1.364"><img src="/assets/old-media/media/nourestan-4.jpg" alt="Aerial photograph of Nourabad’s financial district, circa 1928"><figcaption>Aerial photograph of Nourabad’s financial district, circa 1928</figcaption></figure>
