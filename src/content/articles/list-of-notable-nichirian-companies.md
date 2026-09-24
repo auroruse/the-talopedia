@@ -4,11 +4,11 @@ type: list
 nation: nichirin
 ---
 
-This article lists the largest companies in [[nichirin]] in terms of their revenue and total assets.
+This article lists notable companies in [[nichirin]] in terms of their revenue and total assets.
 
-## 1934 zaibatsu register
+## 1934 METI Zaibatsu Register
 
-This list displays the 24 largest zaibatsu in the Ministry of Industry's 1934 register of zaibatsu enterprises, which ranks the family-controlled conglomerates of Nichirin by total assets. The figures below are given in millions of dollars and are for the fiscal year 1933. Also listed are the headquarters location of each zaibatsu and its companies in the Nikkei 150, with their industries.
+This list displays the 24 largest zaibatsu in the Ministry of Economy, Trade, and Industry's 1934 register of zaibatsu enterprises, which ranks the family-controlled conglomerates of Nichirin by total assets. The figures below are given in millions of dollars and are for the fiscal year 1933. Also listed are the headquarters location of each zaibatsu and its companies in the Nikkei 150, with their industries.
 
 <table class="sortable">
 <tr><th>Rank</th><th>Name</th><th>Companies</th><th>Revenue<br><small>(USD millions)</small></th><th>Assets<br><small>(USD millions)</small></th><th>Headquarters</th></tr>
@@ -43,7 +43,7 @@ This list displays the 24 largest zaibatsu in the Ministry of Industry's 1934 re
 This list displays the 150 companies in the 1934 Nikkei 150, which the Nikkei Daily publishes each year to rank the largest Nichirian companies by annual revenue. The figures below are given in millions of dollars and are for the fiscal year 1933. Also listed are the companies' total assets, number of employees, headquarter locations, and industry sector, alongside the zaibatsu to which it belongs.
 
 <table class="sortable">
-<tr><th>Rank</th><th>Name</th><th>Industry</th><th>Revenue<br><small>(USD millions)</small></th><th>Total Assets<br><small>(USD millions)</small></th><th>Employees</th><th>Headquarters</th><th>Zaibatsu</th></tr>
+<tr><th>Rank</th><th>Name</th><th>Industry</th><th>Revenue<br><small>(USD millions)</small></th><th>Assets<br><small>(USD millions)</small></th><th>Employees</th><th>Headquarters</th><th>Zaibatsu</th></tr>
 <tr><td>1</td><td>Echigoya Trading<br><small>越後屋商事</small><br><small>*Echigoya Shōji*</small></td><td>Conglomerate</td><td>1,230,000</td><td>335,300</td><td>45,300</td><td>Shinkeisei</td><td>Echigoya</td></tr>
 <tr><td>2</td><td>Tsukumo<br><small>九十九商事</small><br><small>*Tsukumo Shōji*</small></td><td>Conglomerate</td><td>630,700</td><td>134,600</td><td>23,500</td><td>Shinkeisei</td><td>Tsukumo</td></tr>
 <tr><td>3</td><td>Hengyuan & Co.<br><small>恒源號</small><br><small>*Kōgen-gō*</small></td><td>Conglomerate</td><td>533,500</td><td>99,810</td><td>16,000</td><td>Shinkeisei</td><td>Hengyuan</td></tr>
