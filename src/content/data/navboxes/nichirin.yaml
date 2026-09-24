@@ -38,7 +38,7 @@ groups:
   - label: "Economy"
     rows:
       - items:
-          - "list-of-notable-companies"
+          - "list-of-notable-nichirian-companies"
       - label: "“Big Four” Zaibatsu"
         items:
           - "tsukumo"

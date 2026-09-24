@@ -52,7 +52,7 @@ groups:
   - label: "Economy"
     rows:
       - items:
-          - "list-of-notable-companies"
+          - "list-of-notable-elvesterian-companies"
       - label: "Top 5 Companies"
         items:
           - "whytleaf-benning|Whytleaf & Benning"

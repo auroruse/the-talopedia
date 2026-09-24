@@ -31,7 +31,7 @@ groups:
   - label: "Economy"
     rows:
       - items:
-          - "list-of-notable-companies"
+          - "list-of-notable-karjanian-companies"
       - label: "Karjanian Economy"
         items:
           - "karjanian-markka"

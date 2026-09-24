@@ -48,7 +48,7 @@ groups:
   - label: "Economy"
     rows:
       - items:
-          - "list-of-notable-companies"
+          - "list-of-notable-varahmehri-companies"
       - label: "Main Industries"
         items:
           - "manufacturing"

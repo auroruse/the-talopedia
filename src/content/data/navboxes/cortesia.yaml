@@ -36,7 +36,7 @@ groups:
   - label: "Economy"
     rows:
       - items:
-          - "list-of-notable-companies"
+          - "list-of-notable-cortesian-companies"
   - label: "Geography"
     rows:
       - label: "Elevations"
