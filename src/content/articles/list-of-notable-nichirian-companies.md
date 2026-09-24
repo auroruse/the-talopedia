@@ -6,34 +6,34 @@ nation: nichirin
 
 ## 1934 METI Zaibatsu Register
 
-This list displays the 24 largest zaibatsu in the Ministry of Economy, Trade, and Industry's 1934 register of zaibatsu enterprises, which ranks the family-controlled conglomerates of Nichirin by total assets. The figures below are given in millions of dollars and are for the fiscal year 1933. Also listed are the headquarters location of each zaibatsu and its companies in the Nikkei 150, with their industries.
+This list displays the 24 largest zaibatsu in the Ministry of Economy, Trade, and Industry's 1934 register of zaibatsu enterprises, which ranks the family-controlled conglomerates of Nichirin by total assets. The figures below are given in millions of dollars and are for the fiscal year 1933. Also listed are the principal industries and headquarters location of each zaibatsu.
 
 <table class="sortable">
-<tr><th>Rank</th><th>Name</th><th>Companies</th><th>Revenue<br><small>(USD millions)</small></th><th>Assets<br><small>(USD millions)</small></th><th>Headquarters</th></tr>
-<tr><td>1</td><td>Tsukumo Group<br><small>九十九財閥</small><br><small>*Tsukumo Zaibatsu*</small></td><td>Tsukumo (Conglomerate)<br>Tsukumo Mining (Mining)<br>Tsukumo Heavy Industries (Shipbuilding)<br>Tsukumo Steel (Steel)<br>Tsukumo Bank (Banking)<br>Shinseiki Chemical (Chemicals)<br>Seikai Fire & Marine (Insurance)<br>Tenpū Life (Life insurance)<br>Seiwa Estates (Plantations)<br>Oyamada Electric (Electrical machinery)<br>Taihei Oil (Oil)<br>Hanzawa Mining (Mining)<br>Kyokujitsu Line (Shipping)<br>Mizutani Rolling Stock (Rolling stock)</td><td>1,146,600</td><td>1,883,640</td><td>Shinkeisei</td></tr>
-<tr><td>2</td><td>Echigoya Group<br><small>越後屋財閥</small><br><small>*Echigoya Zaibatsu*</small></td><td>Echigoya Trading (Conglomerate)<br>Echigoya Spinning (Cotton spinning)<br>Meiwa Sugar (Sugar)<br>Echigoya (Retail)<br>Echigoya Bank (Banking)<br>Kyōei Life (Life insurance)<br>Etsujin (Rayon)<br>Kōshin Chemical (Chemicals)</td><td>1,630,480</td><td>1,693,510</td><td>Shinkeisei</td></tr>
-<tr><td>3</td><td>Nikaidō Group<br><small>二階堂財閥</small><br><small>*Nikaidō Zaibatsu*</small></td><td>Nikaidō Bank (Banking)<br>Nikaidō Life (Life insurance)<br>Nikaidō Savings Bank (Banking)<br>Eishō (Railways)<br>Hokuyō Linen (Linen)</td><td>153,390</td><td>1,669,330</td><td>Shinkeisei</td></tr>
-<tr><td>4</td><td>Izumiya Group<br><small>泉屋財閥</small><br><small>*Izumiya Zaibatsu*</small></td><td>Izumiya Shizuku Mining (Mining)<br>Izumiya Steamship (Shipping)<br>Izumiya Bank (Banking)<br>Izumiya Steel (Steel)<br>Mikuriya Smelting (Mining)<br>Kōnan Fertilizer (Chemicals)<br>Izuden (Electric wire)<br>Tōwa Electric (Electrical machinery)<br>Izumiya Kurogane Colliery (Coal mining)</td><td>328,800</td><td>1,297,870</td><td>Shinkeisei</td></tr>
-<tr><td>5</td><td>Hotaru Group<br><small>蛍財閥</small><br><small>*Hotaru Zaibatsu*</small></td><td>Hotaru Electric Light (Electric power)<br>Hoshikage Electric Power (Electric power)<br>Seiran (Electric power)</td><td>163,960</td><td>1,075,930</td><td>Shinkeisei</td></tr>
-<tr><td>6</td><td>Kanaeya Group<br><small>鼎屋財閥</small><br><small>*Kanaeya Zaibatsu*</small></td><td>Kanaeya & Co. (Conglomerate)<br>Kanaeya Miyabi Spinning (Cotton spinning)<br>Kanaeya Bank (Banking)<br>Kanaeya (Retail)</td><td>321,490</td><td>994,330</td><td>Chūkyō</td></tr>
-<tr><td>7</td><td>Hyakuyonjū Group<br><small>百四十財閥</small><br><small>*Hyakuyonjū Zaibatsu*</small></td><td>Hyakuyonjū Bank (Banking)<br>Hyakuyonjū Life (Life insurance)</td><td>83,740</td><td>977,500</td><td>Shinkeisei</td></tr>
-<tr><td>8</td><td>Wadatsumi Group<br><small>綿津見財閥</small><br><small>*Wadatsumi Zaibatsu*</small></td><td>Wadatsumi Bank (Banking)<br>Wadatsumi Dockyard (Shipbuilding)<br>Toyotama Line (Shipping)</td><td>51,910</td><td>406,700</td><td>Shinkeisei</td></tr>
-<tr><td>9</td><td>Itokura Group<br><small>糸倉財閥</small><br><small>*Itokura Zaibatsu*</small></td><td>Itokura Silk (Silk)<br>Sanshin Bank (Banking)</td><td>86,300</td><td>300,140</td><td>Shinkeisei</td></tr>
-<tr><td>10</td><td>Hokushin Group<br><small>北辰財閥</small><br><small>*Hokushin Zaibatsu*</small></td><td>Hokushin Mining (Mining)<br>Hyōga Electric (Electrical machinery)<br>Hokka (Chemicals)<br>Ginga Steel Tube (Steel)</td><td>160,590</td><td>270,370</td><td>Mizuhara</td></tr>
-<tr><td>11</td><td>Kodama Group<br><small>木霊財閥</small><br><small>*Kodama Zaibatsu*</small></td><td>Kodama Paper (Paper)</td><td>122,800</td><td>241,600</td><td>Shinkeisei</td></tr>
-<tr><td>12</td><td>Otohime Group<br><small>乙姫財閥</small><br><small>*Otohime Zaibatsu*</small></td><td>Otohime Industries (Chemicals)<br>Kyokutō Rayon (Rayon)<br>Tamatebako Hydroelectric Power (Electric power)</td><td>72,700</td><td>159,010</td><td>Shinkeisei</td></tr>
-<tr><td>13</td><td>Tokiwa-gumi<br><small>常盤組</small><br><small>*Tokiwa-gumi*</small></td><td>Tokiwa (Conglomerate)<br>Kajiwara Cement (Cement)<br>Hōshō Mining (Mining)<br>Ōtaki Special Steel (Steel)</td><td>181,310</td><td>152,120</td><td>Shinkeisei</td></tr>
-<tr><td>14</td><td>Hengyuan Group<br><small>恒源財閥</small><br><small>*Kōgen Zaibatsu*</small></td><td>Hengyuan & Co. (Conglomerate)<br>Hengyuan Xiangyun Spinning (Cotton spinning)</td><td>577,320</td><td>148,880</td><td>Shinkeisei</td></tr>
-<tr><td>15</td><td>Hanamichi Group<br><small>花道財閥</small><br><small>*Hanamichi Zaibatsu*</small></td><td>Hanamichi Express Railway (Railways)<br>Sajiki (Retail)<br>Kōbai (Entertainment)</td><td>52,630</td><td>110,800</td><td>Shinkeisei</td></tr>
-<tr><td>16</td><td>Kanayama Group<br><small>金山財閥</small><br><small>*Kanayama Zaibatsu*</small></td><td>Arima Electric Wire (Electric wire)<br>Kanayama Mining (Mining)</td><td>74,320</td><td>97,790</td><td>Shinkeisei</td></tr>
-<tr><td>17</td><td>Serafini Group<br><small>セラフィニ財閥</small><br><small>*Serafini Zaibatsu*</small></td><td>Fiore (Sugar)<br>Serafini (Food)</td><td>69,880</td><td>81,420</td><td>Shinkeisei</td></tr>
-<tr><td>18</td><td>Harumachi Group<br><small>春待財閥</small><br><small>*Harumachi Zaibatsu*</small></td><td>Kirin Tenka (Brewing)</td><td>50,870</td><td>72,270</td><td>Shinkeisei</td></tr>
-<tr><td>19</td><td>Karura Group<br><small>迦楼羅財閥</small><br><small>*Karura Zaibatsu*</small></td><td>Karura Aircraft (Aircraft)<br>Tenma Motor Works (Aircraft)<br>Seiryū Oil (Oil)</td><td>49,710</td><td>52,460</td><td>Takarazuka</td></tr>
-<tr><td>20</td><td>Yanagihara Group<br><small>柳原財閥</small><br><small>*Yanagihara Zaibatsu*</small></td><td>Yanagihara Flour Milling (Flour milling)<br>Yamayanagi (Food)</td><td>62,550</td><td>46,850</td><td>Shinkeisei</td></tr>
-<tr><td>21</td><td>Ashcombe & Kanda Group<br><small>アシュクム・神田財閥</small><br><small>*Ashukumu-Kanda Zaibatsu*</small></td><td>Ashcombe & Kanda (Retail)</td><td>35,870</td><td>32,910</td><td>Shinkeisei</td></tr>
-<tr><td>22</td><td>Altangerel Group<br><small>アルタンゲレル財閥</small><br><small>*Arutangereru Zaibatsu*</small></td><td>Altangerel Brothers (Wool)</td><td>24,130</td><td>25,220</td><td>Sekiringaku</td></tr>
-<tr><td>23</td><td>Bankoku Group<br><small>萬國財閥</small><br><small>*Bankoku Zaibatsu*</small></td><td>Bankoku & Co. (Trading)</td><td>80,400</td><td>15,650</td><td>Genkai</td></tr>
-<tr><td>24</td><td>Yomigaeri Group<br><small>蘇財閥</small><br><small>*Yomigaeri Zaibatsu*</small></td><td>Yomigaeri (Pharmaceuticals)</td><td>12,220</td><td>11,810</td><td>Iwabuchi</td></tr>
+<tr><th>Rank</th><th>Name</th><th>Industries</th><th>Revenue<br><small>(USD millions)</small></th><th>Assets<br><small>(USD millions)</small></th><th>Headquarters</th></tr>
+<tr><td>1</td><td>Tsukumo Group<br><small>九十九財閥</small><br><small>*Tsukumo Zaibatsu*</small></td><td>Trading, mining, shipbuilding, steel</td><td>1,146,600</td><td>1,883,640</td><td>Shinkeisei</td></tr>
+<tr><td>2</td><td>Echigoya Group<br><small>越後屋財閥</small><br><small>*Echigoya Zaibatsu*</small></td><td>Trading, textiles, sugar, retail</td><td>1,630,480</td><td>1,693,510</td><td>Shinkeisei</td></tr>
+<tr><td>3</td><td>Nikaidō Group<br><small>二階堂財閥</small><br><small>*Nikaidō Zaibatsu*</small></td><td>Banking, insurance, railways, textiles</td><td>153,390</td><td>1,669,330</td><td>Shinkeisei</td></tr>
+<tr><td>4</td><td>Izumiya Group<br><small>泉屋財閥</small><br><small>*Izumiya Zaibatsu*</small></td><td>Mining, shipping, banking, steel</td><td>328,800</td><td>1,297,870</td><td>Shinkeisei</td></tr>
+<tr><td>5</td><td>Hotaru Group<br><small>蛍財閥</small><br><small>*Hotaru Zaibatsu*</small></td><td>Electric power</td><td>163,960</td><td>1,075,930</td><td>Shinkeisei</td></tr>
+<tr><td>6</td><td>Kanaeya Group<br><small>鼎屋財閥</small><br><small>*Kanaeya Zaibatsu*</small></td><td>Trading, textiles, banking, retail</td><td>321,490</td><td>994,330</td><td>Chūkyō</td></tr>
+<tr><td>7</td><td>Hyakuyonjū Group<br><small>百四十財閥</small><br><small>*Hyakuyonjū Zaibatsu*</small></td><td>Banking, insurance</td><td>83,740</td><td>977,500</td><td>Shinkeisei</td></tr>
+<tr><td>8</td><td>Wadatsumi Group<br><small>綿津見財閥</small><br><small>*Wadatsumi Zaibatsu*</small></td><td>Banking, shipbuilding, shipping</td><td>51,910</td><td>406,700</td><td>Shinkeisei</td></tr>
+<tr><td>9</td><td>Itokura Group<br><small>糸倉財閥</small><br><small>*Itokura Zaibatsu*</small></td><td>Textiles, banking</td><td>86,300</td><td>300,140</td><td>Shinkeisei</td></tr>
+<tr><td>10</td><td>Hokushin Group<br><small>北辰財閥</small><br><small>*Hokushin Zaibatsu*</small></td><td>Mining, electrical goods, chemicals, steel</td><td>160,590</td><td>270,370</td><td>Mizuhara</td></tr>
+<tr><td>11</td><td>Kodama Group<br><small>木霊財閥</small><br><small>*Kodama Zaibatsu*</small></td><td>Paper</td><td>122,800</td><td>241,600</td><td>Shinkeisei</td></tr>
+<tr><td>12</td><td>Otohime Group<br><small>乙姫財閥</small><br><small>*Otohime Zaibatsu*</small></td><td>Chemicals, textiles, electric power</td><td>72,700</td><td>159,010</td><td>Shinkeisei</td></tr>
+<tr><td>13</td><td>Tokiwa-gumi<br><small>常盤組</small><br><small>*Tokiwa-gumi*</small></td><td>Trading, cement, mining, steel</td><td>181,310</td><td>152,120</td><td>Shinkeisei</td></tr>
+<tr><td>14</td><td>Hengyuan Group<br><small>恒源財閥</small><br><small>*Kōgen Zaibatsu*</small></td><td>Trading, textiles</td><td>577,320</td><td>148,880</td><td>Shinkeisei</td></tr>
+<tr><td>15</td><td>Hanamichi Group<br><small>花道財閥</small><br><small>*Hanamichi Zaibatsu*</small></td><td>Railways, retail, entertainment</td><td>52,630</td><td>110,800</td><td>Shinkeisei</td></tr>
+<tr><td>16</td><td>Kanayama Group<br><small>金山財閥</small><br><small>*Kanayama Zaibatsu*</small></td><td>Electrical goods, mining</td><td>74,320</td><td>97,790</td><td>Shinkeisei</td></tr>
+<tr><td>17</td><td>Serafini Group<br><small>セラフィニ財閥</small><br><small>*Serafini Zaibatsu*</small></td><td>Sugar, food</td><td>69,880</td><td>81,420</td><td>Shinkeisei</td></tr>
+<tr><td>18</td><td>Harumachi Group<br><small>春待財閥</small><br><small>*Harumachi Zaibatsu*</small></td><td>Brewing</td><td>50,870</td><td>72,270</td><td>Shinkeisei</td></tr>
+<tr><td>19</td><td>Karura Group<br><small>迦楼羅財閥</small><br><small>*Karura Zaibatsu*</small></td><td>Aircraft, oil</td><td>49,710</td><td>52,460</td><td>Takarazuka</td></tr>
+<tr><td>20</td><td>Yanagihara Group<br><small>柳原財閥</small><br><small>*Yanagihara Zaibatsu*</small></td><td>Food</td><td>62,550</td><td>46,850</td><td>Shinkeisei</td></tr>
+<tr><td>21</td><td>Ashcombe & Kanda Group<br><small>アシュクム・神田財閥</small><br><small>*Ashukumu-Kanda Zaibatsu*</small></td><td>Retail</td><td>35,870</td><td>32,910</td><td>Shinkeisei</td></tr>
+<tr><td>22</td><td>Altangerel Group<br><small>アルタンゲレル財閥</small><br><small>*Arutangereru Zaibatsu*</small></td><td>Textiles</td><td>24,130</td><td>25,220</td><td>Sekiringaku</td></tr>
+<tr><td>23</td><td>Bankoku Group<br><small>萬國財閥</small><br><small>*Bankoku Zaibatsu*</small></td><td>Trading</td><td>80,400</td><td>15,650</td><td>Genkai</td></tr>
+<tr><td>24</td><td>Yomigaeri Group<br><small>蘇財閥</small><br><small>*Yomigaeri Zaibatsu*</small></td><td>Pharmaceuticals</td><td>12,220</td><td>11,810</td><td>Iwabuchi</td></tr>
 </table>
 
 ## 1934 Nikkei 150
@@ -66,7 +66,7 @@ This list displays the 150 companies in the 1934 Nikkei 150, which the Nikkei Da
 <tr><td>22</td><td>Manshū Mail Steamship<br><small>満州郵船</small><br><small>*Manshū Yūsen*</small></td><td>Shipping</td><td>79,490</td><td>216,400</td><td>78,000</td><td>Benigata</td><td>–</td></tr>
 <tr><td>23</td><td>Nichirin Specie Bank<br><small>日輪正金銀行</small><br><small>*Nichirin Shōkin Ginkō*</small></td><td>Banking</td><td>78,550</td><td>1,208,000</td><td>13,200</td><td>Shinkeisei</td><td>–</td></tr>
 <tr><td>24</td><td>Meiwa Sugar<br><small>明和製糖</small><br><small>*Meiwa Seitō*</small></td><td>Sugar</td><td>73,040</td><td>99,870</td><td>54,500</td><td>Shinkeisei</td><td>Echigoya</td></tr>
-<tr><td>25</td><td>Ryūsen Oil<br><small>龍泉石油</small><br><small>*Ryūsen Sekiyu*</small></td><td>Oil</td><td>71,550</td><td>93,530</td><td>29,400</td><td>Daikei</td><td>–</td></tr>
+<tr><td>25</td><td>IGNIS<br><small>イグニス石油</small><br><small>*Igunisu Sekiyu*</small></td><td>Oil</td><td>71,550</td><td>93,530</td><td>29,400</td><td>Daikei</td><td>–</td></tr>
 <tr><td>26</td><td>Tsukumo Steel<br><small>九十九鋼</small><br><small>*Tsukumo Hagane*</small></td><td>Steel</td><td>70,660</td><td>75,680</td><td>67,100</td><td>Shinkeisei</td><td>Tsukumo</td></tr>
 <tr><td>27</td><td>Nichirin Hypothec Bank<br><small>日輪勧業銀行</small><br><small>*Nichirin Kangyō Ginkō*</small></td><td>Banking</td><td>69,670</td><td>967,000</td><td>11,200</td><td>Shinkeisei</td><td>–</td></tr>
 <tr><td>28</td><td>Kanaeya Miyabi Spinning<br><small>鼎屋雅</small><br><small>*Kanaeya Miyabi*</small></td><td>Cotton spinning</td><td>69,030</td><td>70,390</td><td>109,000</td><td>Chūkyō</td><td>Kanaeya</td></tr>
@@ -81,7 +81,7 @@ This list displays the 150 companies in the 1934 Nikkei 150, which the Nikkei Da
 <tr><td>37</td><td>Hyakuyonjū Bank<br><small>第百四十銀行</small><br><small>*Dai-Hyakuyonjū Ginkō*</small></td><td>Banking</td><td>58,190</td><td>809,300</td><td>15,800</td><td>Shinkeisei</td><td>Hyakuyonjū</td></tr>
 <tr><td>38</td><td>Fiore<br><small>フィオーレ製糖</small><br><small>*Fiōre Seitō*</small></td><td>Sugar</td><td>53,330</td><td>63,860</td><td>36,700</td><td>Chūkyō</td><td>Serafini</td></tr>
 <tr><td>39</td><td>Echigoya Bank<br><small>越後屋銀行</small><br><small>*Echigoya Ginkō*</small></td><td>Banking</td><td>52,230</td><td>757,400</td><td>10,100</td><td>Shinkeisei</td><td>Echigoya</td></tr>
-<tr><td>40</td><td>Hakkaku Colliery & Steamship<br><small>八角炭礦汽船</small><br><small>*Hakkaku Tankō Kisen*</small></td><td>Coal mining</td><td>51,030</td><td>102,400</td><td>121,000</td><td>Tanretsu</td><td>–</td></tr>
+<tr><td>40</td><td>Sleipnir Colliery & Steamship<br><small>スレイプニル炭礦汽船</small><br><small>*Sureipuniru Tankō Kisen*</small></td><td>Coal mining</td><td>51,030</td><td>102,400</td><td>121,000</td><td>Tanretsu</td><td>–</td></tr>
 <tr><td>41</td><td>Kirin Tenka<br><small>麒麟天下麦酒</small><br><small>*Kirin Tenka Bakushu*</small></td><td>Brewing</td><td>50,870</td><td>72,270</td><td>22,800</td><td>Satsuno</td><td>Harumachi</td></tr>
 <tr><td>42</td><td>Kagatsuchi Ironworks<br><small>迦具土製鐵</small><br><small>*Kagatsuchi Seitetsu*</small></td><td>Steel</td><td>50,320</td><td>86,850</td><td>85,700</td><td>Mizuhara</td><td>–</td></tr>
 <tr><td>43</td><td>Oshima-Nakayama Shipbuilding<br><small>尾島中山造船</small><br><small>*Oshima-Nakayama Zōsen*</small></td><td>Shipbuilding</td><td>50,080</td><td>86,320</td><td>72,900</td><td>Naginomiya</td><td>–</td></tr>
@@ -104,7 +104,7 @@ This list displays the 150 companies in the 1934 Nikkei 150, which the Nikkei Da
 <tr><td>60</td><td>Nichirin Engineering Works<br><small>日輪工作</small><br><small>*Nichirin Kōsaku*</small></td><td>Steel</td><td>35,810</td><td>51,250</td><td>40,400</td><td>Mizuhara</td><td>–</td></tr>
 <tr><td>61</td><td>Hyōga Electric<br><small>氷河電機</small><br><small>*Hyōga Denki*</small></td><td>Electrical machinery</td><td>35,670</td><td>41,710</td><td>51,300</td><td>Kōrihama</td><td>Hokushin</td></tr>
 <tr><td>62</td><td>Takaden<br><small>鷹電</small><br><small>*Takaden*</small></td><td>Electric power</td><td>35,360</td><td>213,600</td><td>15,900</td><td>Takarazuka</td><td>–</td></tr>
-<tr><td>63</td><td>Daikokuya<br><small>大黒屋</small><br><small>*Daikokuya*</small></td><td>Retail</td><td>34,660</td><td>31,590</td><td>25,700</td><td>Takarazuka</td><td>–</td></tr>
+<tr><td>63</td><td>Copia<br><small>コピア百貨店</small><br><small>*Kopia Hyakkaten*</small></td><td>Retail</td><td>34,660</td><td>31,590</td><td>25,700</td><td>Takarazuka</td><td>–</td></tr>
 <tr><td>64</td><td>Seikai Fire & Marine<br><small>靖海火災海上</small><br><small>*Seikai Kasai Kaijō*</small></td><td>Insurance</td><td>33,770</td><td>145,100</td><td>5,930</td><td>Shinkeisei</td><td>Tsukumo</td></tr>
 <tr><td>65</td><td>Hokka<br><small>北化</small><br><small>*Hokka*</small></td><td>Chemicals</td><td>33,520</td><td>87,930</td><td>65,200</td><td>Moriguchi</td><td>Hokushin</td></tr>
 <tr><td>66</td><td>Yukiwari Sugar<br><small>雪割製糖</small><br><small>*Yukiwari Seitō*</small></td><td>Sugar</td><td>33,340</td><td>39,390</td><td>21,600</td><td>Satsuno</td><td>–</td></tr>
@@ -116,7 +116,7 @@ This list displays the 150 companies in the 1934 Nikkei 150, which the Nikkei Da
 <tr><td>72</td><td>Asagiri Silk<br><small>朝霧製糸</small><br><small>*Asagiri Seishi*</small></td><td>Silk</td><td>30,440</td><td>23,090</td><td>75,800</td><td>Hidamari</td><td>–</td></tr>
 <tr><td>73</td><td>Kanayama Mining<br><small>金山鉱業</small><br><small>*Kanayama Kōgyō*</small></td><td>Mining</td><td>30,360</td><td>47,670</td><td>73,300</td><td>Imonozato</td><td>Kanayama</td></tr>
 <tr><td>74</td><td>Nikaidō Life<br><small>二階堂生命</small><br><small>*Nikaidō Seimei*</small></td><td>Life insurance</td><td>29,340</td><td>183,100</td><td>5,800</td><td>Takarazuka</td><td>Nikaidō</td></tr>
-<tr><td>75</td><td>Mutsumi Life<br><small>睦生命</small><br><small>*Mutsumi Seimei*</small></td><td>Life insurance</td><td>29,090</td><td>180,300</td><td>6,100</td><td>Takarazuka</td><td>–</td></tr>
+<tr><td>75</td><td>Concord Life<br><small>睦生命</small><br><small>*Mutsumi Seimei*</small></td><td>Life insurance</td><td>29,090</td><td>180,300</td><td>6,100</td><td>Takarazuka</td><td>–</td></tr>
 <tr><td>76</td><td>Kajiwara Cement<br><small>梶原セメント</small><br><small>*Kajiwara Semento*</small></td><td>Cement</td><td>28,740</td><td>66,930</td><td>32,000</td><td>Tōhara</td><td>Tokiwa-gumi</td></tr>
 <tr><td>77</td><td>Shinkeisei Gas<br><small>新恵星瓦斯</small><br><small>*Shinkeisei Gasu*</small></td><td>Gas</td><td>28,320</td><td>90,040</td><td>15,900</td><td>Shinkeisei</td><td>–</td></tr>
 <tr><td>78</td><td>Ryōzetsu Hydroelectric Power<br><small>嶺絶水力電気</small><br><small>*Ryōzetsu Suiryoku Denki*</small></td><td>Electric power</td><td>27,570</td><td>224,500</td><td>9,450</td><td>Shinkeisei</td><td>–</td></tr>
@@ -142,13 +142,13 @@ This list displays the 150 companies in the 1934 Nikkei 150, which the Nikkei Da
 <tr><td>98</td><td>Nikaidō Savings Bank<br><small>二階堂貯蓄銀行</small><br><small>*Nikaidō Chochiku Ginkō*</small></td><td>Banking</td><td>21,320</td><td>322,800</td><td>6,650</td><td>Shinkeisei</td><td>Nikaidō</td></tr>
 <tr><td>99</td><td>Oyamada Electric<br><small>小山田電機</small><br><small>*Oyamada Denki*</small></td><td>Electrical machinery</td><td>21,280</td><td>29,410</td><td>29,400</td><td>Chūkyō</td><td>Tsukumo</td></tr>
 <tr><td>100</td><td>Kōzuki Spinning<br><small>上月紡績</small><br><small>*Kōzuki Bōseki*</small></td><td>Cotton spinning</td><td>20,600</td><td>20,950</td><td>36,400</td><td>Chūkyō</td><td>–</td></tr>
-<tr><td>101</td><td>Taihei Oil<br><small>太平石油</small><br><small>*Taihei Sekiyu*</small></td><td>Oil</td><td>20,510</td><td>26,920</td><td>8,320</td><td>Kabagishi</td><td>Tsukumo</td></tr>
+<tr><td>101</td><td>Pax<br><small>太平石油</small><br><small>*Taihei Sekiyu*</small></td><td>Oil</td><td>20,510</td><td>26,920</td><td>8,320</td><td>Kabagishi</td><td>Tsukumo</td></tr>
 <tr><td>102</td><td>Hanamichi Express Railway<br><small>花道急行</small><br><small>*Hanamichi Kyūkō*</small></td><td>Railways</td><td>20,280</td><td>68,260</td><td>19,800</td><td>Takarazuka</td><td>Hanamichi</td></tr>
 <tr><td>103</td><td>Hōshō Mining<br><small>宝祥鉱業</small><br><small>*Hōshō Kōgyō*</small></td><td>Mining</td><td>20,110</td><td>34,630</td><td>46,600</td><td>Akino</td><td>Tokiwa-gumi</td></tr>
 <tr><td>104</td><td>Nichirin Tobacco Monopoly<br><small>日輪専売煙草</small><br><small>*Nichirin Senbai Tabako*</small></td><td>Tobacco</td><td>20,010</td><td>20,540</td><td>25,300</td><td>Shinkeisei</td><td>–</td></tr>
 <tr><td>105</td><td>Manden<br><small>満電</small><br><small>*Manden*</small></td><td>Electric power</td><td>19,000</td><td>100,800</td><td>8,270</td><td>Mizuhara</td><td>–</td></tr>
 <tr><td>106</td><td>Kurobara<br><small>黒薔薇製菓</small><br><small>*Kurobara Seika*</small></td><td>Food</td><td>18,910</td><td>19,540</td><td>20,200</td><td>Shinkeisei</td><td>–</td></tr>
-<tr><td>107</td><td>Ukemochi<br><small>保食本舗</small><br><small>*Ukemochi Honpo*</small></td><td>Food</td><td>18,500</td><td>19,790</td><td>13,200</td><td>Takarazuka</td><td>–</td></tr>
+<tr><td>107</td><td>Savora<br><small>サヴォラ本舗</small><br><small>*Savora Honpo*</small></td><td>Food</td><td>18,500</td><td>19,790</td><td>13,200</td><td>Takarazuka</td><td>–</td></tr>
 <tr><td>108</td><td>Eishō<br><small>永昌鉄道</small><br><small>*Eishō Tetsudō*</small></td><td>Railways</td><td>18,460</td><td>135,900</td><td>21,100</td><td>Shinkeisei</td><td>Nikaidō</td></tr>
 <tr><td>109</td><td>Byakko<br><small>白虎麦酒</small><br><small>*Byakko Bakushu*</small></td><td>Brewing</td><td>18,300</td><td>27,900</td><td>8,970</td><td>Kamabuchi</td><td>–</td></tr>
 <tr><td>110</td><td>Onoe Cement<br><small>尾上セメント</small><br><small>*Onoe Semento*</small></td><td>Cement</td><td>18,250</td><td>38,990</td><td>19,100</td><td>Genkai</td><td>–</td></tr>
@@ -169,7 +169,7 @@ This list displays the 150 companies in the 1934 Nikkei 150, which the Nikkei Da
 <tr><td>125</td><td>Kōbai<br><small>紅梅興行</small><br><small>*Kōbai Kōgyō*</small></td><td>Entertainment</td><td>16,040</td><td>28,080</td><td>20,000</td><td>Takarazuka</td><td>Hanamichi</td></tr>
 <tr><td>126</td><td>Seimitsu Optical<br><small>精密光学</small><br><small>*Seimitsu Kōgaku*</small></td><td>Machinery</td><td>15,920</td><td>19,790</td><td>24,200</td><td>Sagimino</td><td>–</td></tr>
 <tr><td>127</td><td>Hanzawa Mining<br><small>半沢鉱山</small><br><small>*Hanzawa Kōzan*</small></td><td>Mining</td><td>15,910</td><td>30,240</td><td>37,100</td><td>Fumino</td><td>Tsukumo</td></tr>
-<tr><td>128</td><td>Tōwa Electric<br><small>東和電機</small><br><small>*Tōwa Denki*</small></td><td>Electrical machinery</td><td>15,810</td><td>19,280</td><td>21,000</td><td>Izuminone</td><td>Izumiya</td></tr>
+<tr><td>128</td><td>Toward Electric<br><small>東和電機</small><br><small>*Tōwa Denki*</small></td><td>Electrical machinery</td><td>15,810</td><td>19,280</td><td>21,000</td><td>Izuminone</td><td>Izumiya</td></tr>
 <tr><td>129</td><td>Seiran<br><small>青嵐電鉄</small><br><small>*Seiran Dentetsu*</small></td><td>Electric power</td><td>15,760</td><td>79,330</td><td>7,380</td><td>Hidamari</td><td>Hotaru</td></tr>
 <tr><td>130</td><td>Wadatsumi Dockyard<br><small>綿津見船渠</small><br><small>*Wadatsumi Senkyo*</small></td><td>Shipbuilding</td><td>15,400</td><td>20,010</td><td>23,500</td><td>Naginomiya</td><td>Wadatsumi</td></tr>
 <tr><td>131</td><td>Kyokujitsu Line<br><small>旭日汽船</small><br><small>*Kyokujitsu Kisen*</small></td><td>Shipping</td><td>15,390</td><td>63,470</td><td>23,900</td><td>Kamabuchi</td><td>Tsukumo</td></tr>
@@ -187,7 +187,7 @@ This list displays the 150 companies in the 1934 Nikkei 150, which the Nikkei Da
 <tr><td>143</td><td>Tenma Motor Works<br><small>天馬発動機</small><br><small>*Tenma Hatsudōki*</small></td><td>Aircraft</td><td>13,920</td><td>13,540</td><td>24,100</td><td>Makinohara</td><td>Karura</td></tr>
 <tr><td>144</td><td>Ageha Spinning<br><small>揚羽紡績</small><br><small>*Ageha Bōseki*</small></td><td>Cotton spinning</td><td>13,860</td><td>15,220</td><td>42,800</td><td>Shiwane</td><td>–</td></tr>
 <tr><td>145</td><td>Hagoromo Electric Light<br><small>羽衣電燈</small><br><small>*Hagoromo Dentō*</small></td><td>Electric power</td><td>13,380</td><td>118,900</td><td>11,400</td><td>Hakata</td><td>–</td></tr>
-<tr><td>146</td><td>Suisei Rayon<br><small>彗星人絹</small><br><small>*Suisei Jinken*</small></td><td>Rayon</td><td>12,950</td><td>22,920</td><td>24,000</td><td>Hakkōran</td><td>–</td></tr>
+<tr><td>146</td><td>Comet Rayon<br><small>彗星人絹</small><br><small>*Suisei Jinken*</small></td><td>Rayon</td><td>12,950</td><td>22,920</td><td>24,000</td><td>Hakkōran</td><td>–</td></tr>
 <tr><td>147</td><td>Kōyō Electric Power<br><small>光陽電力</small><br><small>*Kōyō Denryoku*</small></td><td>Electric power</td><td>12,760</td><td>67,650</td><td>5,600</td><td>Ōtase</td><td>–</td></tr>
 <tr><td>148</td><td>Seiryū Oil<br><small>清流石油</small><br><small>*Seiryū Sekiyu*</small></td><td>Oil</td><td>12,610</td><td>15,960</td><td>4,910</td><td>Shinanose</td><td>Karura</td></tr>
 <tr><td>149</td><td>Mizutani Rolling Stock<br><small>水谷車輛</small><br><small>*Mizutani Sharyō*</small></td><td>Rolling stock</td><td>12,420</td><td>16,020</td><td>18,000</td><td>Harushige</td><td>Tsukumo</td></tr>
