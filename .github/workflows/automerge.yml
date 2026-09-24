@@ -8,9 +8,13 @@ name: Auto-merge
 # writer opened, which the editor records on every commit. A contributor's fork is
 # often days behind main, and GitHub's own merge, starting from that old fork, saw
 # every page as changed on both sides and refused.
+#
+# One the rule leaves open lands the same way once the admin puts the label "land" on
+# it. GitHub's own Merge and Resolve conflicts buttons merge from the fork's old copy
+# instead, and the hand merge that cleared #67 there lost the Shushestan edit.
 on:
   pull_request_target:
-    types: [opened, reopened, synchronize]
+    types: [opened, reopened, synchronize, labeled]
 permissions: { contents: write, pull-requests: write, actions: write }
 concurrency:
   group: automerge-${{ github.event.pull_request.number }}
@@ -38,31 +42,37 @@ jobs:
           ADMIN: ${{ github.repository_owner }}
           BASE: ${{ github.event.pull_request.base.ref }}
           HEAD: ${{ github.event.pull_request.head.sha }}
+          ACTION: ${{ github.event.action }}
+          LABEL: ${{ github.event.label.name }}
+          SENDER: ${{ github.event.sender.login }}
         run: |
           set -euo pipefail
           git fetch --quiet origin "pull/${{ github.event.pull_request.number }}/head"
-          verdict=$(node .github/gate.mjs)
+          if [ "$ACTION" = labeled ]; then
+            # The admin's go-ahead for one the rule held back. It stands in for whose
+            # page it is and nothing else: the gate still refuses anything that is not
+            # a page. Any other label, or this one from anybody else, says nothing.
+            if [ "$LABEL" = land ] && [ "$SENDER" = "$ADMIN" ]; then verdict=$(PR_AUTHOR="$ADMIN" node .github/gate.mjs)
+            else verdict="wait the label $LABEL is not the admin's go-ahead"; fi
+          else
+            verdict=$(node .github/gate.mjs)
+          fi
           echo "$verdict" | tee -a "$GITHUB_STEP_SUMMARY"
           [ "$verdict" = merge ] && echo "go=1" >> "$GITHUB_OUTPUT" || true
 
-      # Stages the merged pages on main's own tree. An edit from an older editor has
-      # no record of its copy and goes to GitHub's merge, as before. Never a checkout
-      # of the fork itself: this job holds a token that can write here, and the gate
-      # has already established that nothing outside the content tree changed.
+      # Stages the merged pages on main's own tree. Never a checkout of the fork
+      # itself: this job holds a token that can write here, and the gate has already
+      # established that nothing outside the content tree changed.
       - id: land
         if: steps.gate.outputs.go
         env:
           PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          NOTES: ${{ runner.temp }}/land-notes.md
         run: |
           set -euo pipefail
           result=$(node .github/land.mjs)
           echo "$result" | tee -a "$GITHUB_STEP_SUMMARY"
-          case "$result" in
-            ready) echo "mode=land" >> "$GITHUB_OUTPUT" ;;
-            fallback)
-              git checkout "$SHA" -- src/content public/assets
-              echo "mode=merge" >> "$GITHUB_OUTPUT" ;;
-          esac
+          [ "$result" = ready ] && echo "mode=land" >> "$GITHUB_OUTPUT" || true
 
       - if: steps.land.outputs.mode
         uses: actions/setup-node@v7
@@ -87,6 +97,7 @@ jobs:
           GIT_AUTHOR_EMAIL: ${{ github.event.pull_request.user.id }}+${{ github.event.pull_request.user.login }}@users.noreply.github.com
           GIT_COMMITTER_NAME: github-actions[bot]
           GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          NOTES: ${{ runner.temp }}/land-notes.md
         run: |
           set -euo pipefail
           [ "$(git rev-list --count HEAD.."$PR_HEAD")" = 1 ] && subject=$(git log -1 --format=%s "$PR_HEAD") || subject="$TITLE"
@@ -99,17 +110,15 @@ jobs:
             again=$(node .github/land.mjs)
             if [ "$again" != ready ]; then echo "$again" | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; fi
           done
-          gh pr close "$PR" --repo "$REPO" --comment "Landed on the wiki as $commit. It goes live with the next deploy, which has just started."
+          body="Landed on the wiki as $commit. It goes live with the next deploy, which has just started."
+          # Where this edit and a later change on main rewrote the same words, the
+          # edit's stand; what main had is said here rather than lost without a word.
+          if [ -s "$NOTES" ]; then
+            body=$(printf '%s\n\n%s\n\n%s' "$body" \
+              "This edit and a later change on main rewrote the same words, and this edit's were kept. Main had:" \
+              "$(cat "$NOTES")")
+          fi
+          gh pr close "$PR" --repo "$REPO" --comment "$body"
           # A push made with the workflow's own token raises no push event, so the
           # site would never rebuild. workflow_dispatch is the documented exception.
-          gh workflow run deploy.yml --repo "$REPO"
-
-      - if: steps.land.outputs.mode == 'merge'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR: ${{ github.event.pull_request.number }}
-          REPO: ${{ github.repository }}
-        run: |
-          set -euo pipefail
-          gh pr merge "$PR" --repo "$REPO" --squash --match-head-commit "$SHA"
           gh workflow run deploy.yml --repo "$REPO"

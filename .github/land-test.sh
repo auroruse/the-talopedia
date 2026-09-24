@@ -40,7 +40,7 @@ Based-on: $from}"
 # the given script does to it.
 onto() { git checkout -q --detach $X; [[ -n ${1:-} ]] && { eval "$1"; git $cfg commit -qam main; }; true; }
 # The script from this checkout: the worktree sits on older commits that predate it.
-land() { RESULT=$(ONTO=HEAD PR_HEAD=$PR node "$REPO/.github/land.mjs"); }
+land() { RESULT=$(ONTO=HEAD PR_HEAD=$PR NOTES=$S/notes node "$REPO/.github/land.mjs"); }
 S=$(mktemp -d)
 
 print "a page untouched on main since it was opened"
@@ -55,15 +55,37 @@ check "lands"                       '[[ $RESULT == ready ]]'
 check "keeps main's change"         'git show :$P | grep -q "renamed on main"'
 check "and the writer's"            'git show :$P | grep -q "Added by the writer."'
 
-print "main changed the same line since"
+print "main and the writer changed different sentences of one paragraph"
+git show $X:$P | sed '/^Albinya, officially/s/$/ Added by the writer./' > $S/r
+pr $X $P $S/r
+onto "sed -i '' 's/^Albinya, officially/Albinya (reworded on main), officially/' $P"; land
+check "lands"                       '[[ $RESULT == ready ]]'
+check "with both"                   'git show :$P | grep -q "^Albinya (reworded on main), officially.* Added by the writer\.$"'
+check "and nothing to report"       '[[ ! -s $S/notes ]]'
+
+print "main changed the same words since"
+git reset -q --hard
 git show $X:$P | sed '2s/.*/title: "Albinya (the writer)"/' > $S/q
 pr $X $P $S/q
 onto "sed -i '' '2s/.*/title: \"Albinya (main)\"/' $P"; land
-check "waits for a person"          '[[ $RESULT == wait* ]]'
+check "lands with the writer's words" '[[ $RESULT == ready ]] && git show :$P | grep -qxF "title: \"Albinya (the writer)\""'
+check "and says what main had"      'grep -qF "(main)" $S/notes'
 
-print "sent by an older editor, with no Based-on"
+print "sent with no note of the copy it was opened from"
+git reset -q --hard
 pr "" $P $S/p; onto; land
-check "hands it to GitHub's merge"  '[[ $RESULT == fallback ]]'
+check "lands, as the writer wrote it" '[[ $RESULT == ready ]] && git show :$P | cmp -s - $S/p'
+
+print "sent with no note, from a copy two versions old"
+git reset -q --hard
+git show $(git log --format=%h -n 1 --skip 2 $X -- $P):$P > $S/s
+print "Added by the writer." >> $S/s
+pr "" $P $S/s; onto; land
+check "lands"                       '[[ $RESULT == ready ]]'
+check "keeps everything main changed since" 'git show :$P | sed "\$d" | cmp -s - <(git show $X:$P)'
+check "and adds the writer's line"  '[[ "$(git show :$P | tail -n 1)" == "Added by the writer." ]]'
+check "and nothing to report"       '[[ ! -s $S/notes ]]'
+git reset -q --hard
 
 print "a new page"
 print -- "---\ntitle: \"T\"\ntype: character\nnation: albinya\n---\n\nNew." > $S/n
@@ -91,6 +113,19 @@ git reset -q --hard
 git show $X:$P > $S/b; print "**Bold by the writer **and plain." >> $S/b
 pr $X $P $S/b; onto; land
 check "lands with the space outside" '[[ $RESULT == ready ]] && git show :$P | grep -qxF "**Bold by the writer** and plain."'
+
+print "the editor respaced a word that main reworded"
+NB=$(printf '\302\240')   # a no-break space, as the old pages carry
+T=src/content/articles/land-test-space.md
+git reset -q --hard
+git checkout -q --detach $X
+print -r -- "Delegates${NB}(Chamber) and 39 more." > $T; git add $T; git $cfg commit -qm opened
+Y=$(git rev-parse HEAD)
+print -r -- "Delegates (Chamber) and 30 more." > $S/w
+pr $Y $T $S/w
+git checkout -q --detach $Y; sed -i '' 's/^Delegates/Deputies/' $T; git $cfg commit -qam main; land
+check "lands with main's word and the writer's number" '[[ $RESULT == ready ]] && git show :$T | grep -qxF "Deputies${NB}(Chamber) and 30 more."'
+check "and nothing to report"       '[[ ! -s $S/notes ]]'
 
 cd "$REPO"
 git worktree remove --force "$WT"
