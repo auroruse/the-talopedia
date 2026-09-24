@@ -1,5 +1,6 @@
 import { navbox as read, nation, url } from './registry.mjs';
 import { renderInline, esc, unesc, link, icon, CUSTOM, custom } from './inline.mjs';
+import { keyOf } from './sort-key.mjs';
 
 /**
  * A navbox entry may be a bare slug, an explicit [[link]], or a nation id.
@@ -86,7 +87,29 @@ export function resolveHtml(html = '') {
         .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
         .replace(/\*([^*]+)\*/g, '<em>$1</em>')}</${tag}>`)
     // A data table wider than the column scrolls inside its own box, where it would
-    // otherwise push the whole page sideways. The table itself is left as it was, so
-    // one that fits looks exactly like a plain table.
-    .replace(/<table class="sortable">[\s\S]*?<\/table>/g, (t) => `<div class="dt-box">${t}</div>`);
+    // otherwise push the whole page sideways.
+    .replace(/<table class="sortable">[\s\S]*?<\/table>/g, (t) => `<div class="dt-box">${figures(t)}</div>`);
+}
+
+/**
+ * Marks the cells of a data table's columns of figures, where every cell with anything
+ * in it is a number or a date, so they sit centred as Wikipedia sets them. Done while
+ * the page is built so the table is drawn that way from the start. A merged cell moves
+ * every column after it, and the sorter leaves such a table as written, so this does too.
+ */
+function figures(table) {
+  if (/<t[hd]\b[^>]*\s(?:colspan|rowspan)=/.test(table)) return table;
+  const ROW = /<tr\b[^>]*>[\s\S]*?<\/tr>/g;
+  const figure = [];
+  for (const [row] of table.matchAll(ROW)) {
+    if (!/<td\b/.test(row)) continue;   // a heading row
+    (row.match(/<t[hd]\b[^>]*>[\s\S]*?<\/t[hd]>/g) || []).forEach((cell, i) => {
+      const kind = keyOf(unesc(cell.replace(/<[^>]+>/g, '')))[0];
+      if (kind !== 2) figure[i] = (figure[i] ?? true) && kind === 0;
+    });
+  }
+  return table.replace(ROW, (row) => {
+    let i = 0;
+    return row.replace(/<t([hd])\b([^>]*)>/g, (tag, t, attrs) => (figure[i++] && t === 'd' ? `<td class="num"${attrs}>` : tag));
+  });
 }

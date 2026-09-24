@@ -5,7 +5,7 @@ nation: nichirin
 ---
 
 <table class="sortable">
-<tr><th>Rank</th><th>Name</th><th>Industry</th><th>Revenue (USD thousands)</th><th>Total Assets (USD thousands)</th><th>Employees</th><th>Headquarters</th><th>Group</th></tr>
+<tr><th>Rank</th><th>Name</th><th>Industry</th><th>Revenue<br><small>(USD thousands)</small></th><th>Total Assets<br><small>(USD thousands)</small></th><th>Employees</th><th>Headquarters</th><th>Group</th></tr>
 <tr><td>1</td><td>Echigoya Trading<br><small>越後屋商事</small><br><small>*Echigoya Shōji*</small></td><td>Conglomerate</td><td>1,230,000,000</td><td>335,300,000</td><td>45,300</td><td>Shinkeisei</td><td>Echigoya</td></tr>
 <tr><td>2</td><td>Tsukumo<br><small>九十九商事</small><br><small>*Tsukumo Shōji*</small></td><td>Conglomerate</td><td>630,700,000</td><td>134,600,000</td><td>23,500</td><td>Shinkeisei</td><td>Tsukumo</td></tr>
 <tr><td>3</td><td>Hengyuan & Co.<br><small>恒源號</small><br><small>*Kōgen-gō*</small></td><td>Conglomerate</td><td>533,500,000</td><td>99,810,000</td><td>16,000</td><td>Shinkeisei</td><td>Hengyuan</td></tr>
