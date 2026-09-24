@@ -5,6 +5,7 @@ import { navbox, nations, nation, url } from '../lib/registry.mjs';
 import { resolveHtml, renderNavbox } from '../lib/navbox.mjs';
 import { asset, icon, esc } from '../lib/inline.mjs';
 import { lastWritten } from '../lib/revisions.mjs';
+import { pictureOf } from '../lib/pictures.mjs';
 import { categoryOf } from '../lib/categories.mjs';
 import { featured, overview, firstImage, linkFirstMention } from '../lib/featured.mjs';
 
@@ -62,20 +63,6 @@ const featuredPanel = !pick ? '' : (() => {
  * two sit level beside each other.
  */
 const byId = new Map(articles.map((e) => [e.id, e]));
-// A picture on Google's hosting is asked for at a size the tile can use, not 2000 wide.
-const thumb = (src) => asset(src).replace(/^(https:\/\/lh3\.googleusercontent\.com\/.+)=w\d+$/, '$1=w200');
-// A flag, emblem or logo is shown whole inside the tile; a photograph fills it.
-const WHOLE = /flag|emblem|logo|coat of arms|seal|crest|badge|insignia/i;
-function pictureOf(e) {
-  const row = (e.data.infobox || []).find((r) => r.image || r.images?.[0]?.src);
-  const src = row?.image || row?.images?.[0]?.src;
-  if (src) {
-    const caption = row.caption || row.images?.[0]?.caption || '';
-    return { src: thumb(src), whole: WHOLE.test(caption) || ['overview', 'subdivision'].includes(e.data.type) };
-  }
-  const flag = nation(e.data.nation)?.flag;
-  return flag ? { src: url(flag), whole: true } : null;
-}
 const origin = (e) => {
   const n = nation(e.data.nation);
   return n ? `${icon(e.data.nation)} ${esc(n.name)}` : esc(categoryOf(e.data.type).name);

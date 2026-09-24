@@ -1,14 +1,54 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import { categories } from '../../lib/categories.mjs';
-import { url } from '../../lib/registry.mjs';
+import { categories, categoryOf } from '../../lib/categories.mjs';
+import { url, nation, navbox, exists, hrefOf } from '../../lib/registry.mjs';
+import { pictureOf } from '../../lib/pictures.mjs';
 
 export async function getStaticPaths() {
   return categories(await getCollection('articles')).map((c) => ({ params: { slug: c.slug }, props: c }));
 }
 
-const { name, pages } = Astro.props;
+const { name, slug, pages } = Astro.props;
+
+/**
+ * Characters only: every one as a portrait, a row per nation, largest first. Within a
+ * nation they follow its navbox's Characters rows, so the order is the one each nation
+ * chose; anyone its navbox does not list comes last, under Others.
+ */
+const gallery = [];
+if (slug === categoryOf('character').slug) {
+  const byNation = new Map();
+  for (const e of await getCollection('articles')) {
+    if (e.data.type !== 'character') continue;
+    const id = e.data.nation || '';
+    if (!byNation.has(id)) byNation.set(id, []);
+    byNation.get(id).push(e);
+  }
+  for (const [id, people] of byNation) {
+    const left = new Map(people.map((e) => [e.id, e]));
+    const all = navbox(id)?.groups || [];
+    const cast = all.filter((g) => /character|people/i.test(g.label || ''));
+    const groups = [];
+    for (const g of cast.length ? cast : all) {
+      for (const r of g.rows || [g]) {
+        const got = [];
+        for (const item of r.items || []) {
+          const e = left.get(String(item).replace(/[*[\]]/g, '').split('|')[0].trim());
+          if (e) { got.push(e); left.delete(e.id); }
+        }
+        if (got.length) groups.push({ label: r.label || g.label, people: got });
+      }
+    }
+    if (left.size) {
+      groups.push({ label: 'Others', people: [...left.values()].sort((a, b) => a.data.title.localeCompare(b.data.title)) });
+    }
+    const n = nation(id);
+    const to = exists('portal:' + id) ? 'portal:' + id : exists(id) ? id : null;
+    gallery.push({ name: n?.name || 'Unaffiliated', flag: n?.flag, href: to && hrefOf(to), count: people.length, groups });
+  }
+  gallery.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+}
 
 // Filed under the first letter, as Wikipedia does, with accents folded so Ōsaka is an O.
 const letterOf = (title) => {
@@ -24,6 +64,44 @@ for (const p of pages) {
 ---
 <Base title={`Category:${name}`}>
   <div class="article category">
+    {gallery.length > 0 && (
+      <table class="nb cg">
+        <tbody>
+          {gallery.map((row) => (
+            <tr>
+              <th>
+                {row.href
+                  ? <a class="cg-nation" href={row.href}>{row.flag && <img src={url(row.flag)} alt="" />}<b>{row.name}</b></a>
+                  : <span class="cg-nation">{row.flag && <img src={url(row.flag)} alt="" />}<b>{row.name}</b></span>}
+                <span class="cg-count">{row.count}</span>
+              </th>
+              <td>
+                <div class="cg-strip">
+                  {row.groups.map((g) => (
+                    <div class="cg-group">
+                      <span class="cg-label">{g.label}</span>
+                      <div class="cg-cards">
+                        {g.people.map((e) => {
+                          const pic = pictureOf(e);
+                          return (
+                            <a class="cg-card" href={url('/' + e.id)}>
+                              <span class:list={['cg-pic', pic?.whole && 'whole']}>
+                                {pic && <img src={pic.src} alt="" loading="lazy" decoding="async" />}
+                              </span>
+                              <span class="cg-name">{e.data.title}</span>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
     <h2>Pages in category "{name}"<span class="cat-n">{pages.length}</span></h2>
     <div class="cat-cols">
       {[...groups].map(([letter, list]) => (
