@@ -102,13 +102,13 @@ groups:
       - label: "Religion"
         items:
           - "kaiseido"
-          - "[[shenism]][[kaiseido|]]"
+          - "shenism"
           - "shugendosha|Shugendōsha"
-          - "[[orkhanism]][[kaiseido|]]"
+          - "orkhanism"
       - label: "Sports"
         items:
           - "nichirian-national-football-team|Nichirian national football team"
-          - "[[nichirian-football-league-system|Nichirian football league system]][[nichirian-national-football-team|]]"
+          - "nichirian-football-league-system|Nichirian football league system"
   - label: "Characters"
     rows:
       - label: "Historical Figures"
