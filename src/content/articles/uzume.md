@@ -1,5 +1,6 @@
 ---
-title: "Liang Weixi"
+title: "Uzume"
+sidebarTitle: "Liang Weixi"
 nativeTitle: "梁微曦"
 type: character
 nation: nichirin
@@ -12,8 +13,8 @@ infobox:
   - { section: "Personal Details" }
   - label: "Nationality"
     value:
-      - ":flag[guandong] Guandongese"
-      - ":flag[nichirin] [[nichirin|Nichirian]]"
+      - ":flag[guandong] Guandongese"
+      - ":flag[nichirin] [[nichirin|Nichirian]]"
   - label: "Born"
     value:
       - "Liang Weixi"
