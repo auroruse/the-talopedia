@@ -831,6 +831,34 @@ const ADMIN = REPO.split('/')[0];
         above = nlLevel(d);
       }
       if (!box.children.length) box.append(nlLine(0, ''));
+      nlDraw(box);
+    }
+    /**
+     * The lines between levels, as the page draws them. A line with more at its level
+     * further down takes a joint whose line runs on, the last takes a corner, and every
+     * level still open above a line runs straight past it. A line still empty, being
+     * typed into, is run past and never branches.
+     */
+    function nlDraw(box) {
+      const lines = [...box.children].map((d) => ({ d, level: nlLevel(d), empty: !d.textContent.trim() && !d.querySelector('img') }));
+      /** Whether a later written line sits at level a before anything shallower does. */
+      const goesOn = (i, a) => {
+        for (let j = i + 1; j < lines.length; j++) {
+          if (!lines[j].empty && lines[j].level <= a) return lines[j].level === a;
+        }
+        return false;
+      };
+      lines.forEach(({ d, level, empty }, i) => {
+        const past = [];
+        for (let a = 1; a < (empty ? level + 1 : level); a++) if (goesOn(i, a)) past.push(a);
+        if (level && !empty) d.dataset.joint = goesOn(i, level) ? 'more' : 'last';
+        else delete d.dataset.joint;
+        // The same 10px into each level's 21px as the page, one hairline per open level.
+        d.style.backgroundImage = past.map(() => 'linear-gradient(#808080, #808080)').join(', ');
+        d.style.backgroundSize = past.map(() => '1px 100%').join(', ');
+        d.style.backgroundPosition = past.map((a) => `${21 * (a - 1) + 10}px 0`).join(', ');
+        d.style.backgroundRepeat = 'no-repeat';
+      });
     }
     const nlAtStart = (d) => {
       const r = getSelection().getRangeAt(0);
@@ -1009,6 +1037,7 @@ const ADMIN = REPO.split('/')[0];
           depthButton.title = `Nests ${depth()} level${depth() === 1 ? '' : 's'} deep; click for ${depth() % 4 + 1}`;
           const on = tr.dataset.guides !== 'false';
           guidesButton.classList.toggle('off', !on);
+          box.classList.toggle('bare', !on);
           guidesButton.title = on ? 'Guide lines drawn; click to leave them out' : 'No guide lines; click to draw them';
         };
         paint();
@@ -4974,20 +5003,27 @@ const ADMIN = REPO.split('/')[0];
     .ctl button:hover { color: var(--ink); background: var(--band); }
     /* A nested list's guide-lines switch, when the lines are left out. */
     .ctl button.off { opacity: .4; }
-    /* A nested list's lines, indented as the page sets them, each on a short branch. */
+    /* A nested list's lines, indented and joined as the page draws them; nlDraw works
+       out which joint each line takes and which levels run past it. */
     .ib-edit .ce.outline > div { position: relative; }
-    .ib-edit .ce.outline > div[data-level="1"] { padding-left: 16px; }
-    .ib-edit .ce.outline > div[data-level="2"] { padding-left: 32px; }
-    .ib-edit .ce.outline > div[data-level="3"] { padding-left: 48px; }
-    .ib-edit .ce.outline > div[data-level="4"] { padding-left: 64px; }
-    .ib-edit .ce.outline > div:not([data-level="0"])::before {
-      content: ''; position: absolute; top: 0; width: 7px; height: .7em;
-      border-left: 1px solid #808080; border-bottom: 1px solid #808080;
+    .ib-edit .ce.outline > div:not([data-level="0"]) { text-indent: .3em; }
+    .ib-edit .ce.outline > div[data-level="1"] { padding-left: 21px; }
+    .ib-edit .ce.outline > div[data-level="2"] { padding-left: 42px; }
+    .ib-edit .ce.outline > div[data-level="3"] { padding-left: 63px; }
+    .ib-edit .ce.outline > div[data-level="4"] { padding-left: 84px; }
+    .ib-edit .ce.outline > div[data-joint]::before {
+      content: ''; position: absolute; top: 0; bottom: calc(100% - .7em); border-left: 1px solid #808080;
     }
-    .ib-edit .ce.outline > div[data-level="1"]::before { left: 5px; }
-    .ib-edit .ce.outline > div[data-level="2"]::before { left: 21px; }
-    .ib-edit .ce.outline > div[data-level="3"]::before { left: 37px; }
-    .ib-edit .ce.outline > div[data-level="4"]::before { left: 53px; }
+    .ib-edit .ce.outline > div[data-joint="more"]::before { bottom: 0; }
+    .ib-edit .ce.outline > div[data-joint]::after {
+      content: ''; position: absolute; top: .7em; width: 11px; border-top: 1px solid #808080;
+    }
+    .ib-edit .ce.outline > div[data-level="1"]::before, .ib-edit .ce.outline > div[data-level="1"]::after { left: 10px; }
+    .ib-edit .ce.outline > div[data-level="2"]::before, .ib-edit .ce.outline > div[data-level="2"]::after { left: 31px; }
+    .ib-edit .ce.outline > div[data-level="3"]::before, .ib-edit .ce.outline > div[data-level="3"]::after { left: 52px; }
+    .ib-edit .ce.outline > div[data-level="4"]::before, .ib-edit .ce.outline > div[data-level="4"]::after { left: 73px; }
+    .ib-edit .ce.outline.bare > div { background-image: none !important; }
+    .ib-edit .ce.outline.bare > div::before, .ib-edit .ce.outline.bare > div::after { content: none; }
 
     /* ---- sidebar rail: its own controls, outside the box ---- */
     .ib-edit .ctl {

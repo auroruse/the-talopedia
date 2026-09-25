@@ -365,6 +365,18 @@
       && [...fieldRow.querySelectorAll('.ctl-menu button')].map((b) => b.textContent).join('|').includes('Occupation|Nested List'), !!nested);
     const [nLabel, nBox] = nested.querySelectorAll('.ce');
     nLabel.textContent = 'Battles/wars';
+    nBox.innerHTML = [[0, 'The Great War'], [1, 'Valtherian Front'], [2, 'Test'], [2, 'Test'], [2, 'Test'], [1, '']]
+      .map(([l, t]) => `<div data-level="${l}">${t || '<br>'}</div>`).join('');
+    nBox.dispatchEvent(new Event('input', { bubbles: true }));
+    const joints = [...nBox.children].map((d) => d.dataset.joint || '-').join(' ');
+    ok('siblings join, the last turns the corner, an empty line draws nothing', joints === '- last more more last -', joints);
+    const runs = [...nBox.children].map((d) => d.style.backgroundPosition || '-').join(' | ');
+    ok('and a level still open runs past the lines under it', runs === '- | - | - | - | - | -', runs);
+    nBox.innerHTML = [[0, 'World War II'], [1, 'North African campaign'], [2, 'Operation Torch'], [1, 'Italian campaign']]
+      .map(([l, t]) => `<div data-level="${l}">${t}</div>`).join('');
+    nBox.dispatchEvent(new Event('input', { bubbles: true }));
+    const runs2 = [...nBox.children].map((d) => (d.dataset.joint || '-') + ' ' + (d.style.backgroundPosition || '-')).join(' | ');
+    ok('a campaign with a battle under it keeps its line going to the next campaign', runs2 === '- - | more - | last 10px 0px | last -', runs2);
     nBox.innerHTML = ['World War II', 'North African campaign', 'Operation Torch', 'Battle of Port Lyautey']
       .map((t, i) => `<div data-level="${i}">${t}</div>`).join('');
     nBox.dispatchEvent(new Event('input', { bubbles: true }));
