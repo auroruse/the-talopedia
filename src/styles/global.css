@@ -172,6 +172,16 @@ a.ext::after {
 .infobox th, .infobox td { border-top: 1px solid var(--hair); padding: 6px 10px; vertical-align: top; }
 .infobox th { text-align: left; width: 43%; font-weight: 700; }
 .infobox th.sub { padding-left: 18px; font-weight: 400; }
+/* A line hanging off the one above it, as an operation under its war, on a branch
+   drawn from that line as Wikipedia's tree lists are; a long one wraps under itself. */
+.infobox .ib-branch { position: relative; padding-left: 22px; }
+.infobox .ib-branch::before {
+  content: ''; position: absolute; left: 7px; top: 0; width: 9px; height: 0.72em;
+  border-left: 1px solid var(--muted); border-bottom: 1px solid var(--muted);
+}
+.infobox .ib-branch.ib-more::after {
+  content: ''; position: absolute; left: 7px; top: 0; bottom: 0; border-left: 1px solid var(--muted);
+}
 .infobox .ib-full { text-align: center; }
 .infobox .ib-pair td { width: 50%; vertical-align: top; }
 .infobox .ib-pair b { display: block; margin-bottom: 5px; }

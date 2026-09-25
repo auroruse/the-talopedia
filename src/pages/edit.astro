@@ -795,6 +795,47 @@ const ADMIN = REPO.split('/')[0];
       return c;
     }
 
+    /* ---------- a line hung under the one above it, in a sidebar value ----------
+       As an operation under its war. The line starts with the branch mark, which the
+       page draws as a branch; Tab hangs the caret's line and Shift+Tab lifts it. */
+    const BRANCH = /^\s*└\s?/;
+    /** Where the caret's line starts, in a box whose lines end in <br>; its last line
+        when the caret is somewhere else. */
+    function lineStart(box) {
+      const sel = getSelection();
+      const brs = box.querySelectorAll('br');
+      let n = brs.length;
+      if (sel.rangeCount && box.contains(sel.anchorNode)) {
+        const before = document.createRange();
+        before.selectNodeContents(box);
+        before.setEnd(sel.anchorNode, sel.anchorOffset);
+        n = before.cloneContents().querySelectorAll('br').length;
+      } else if (n && !brs[n - 1].nextSibling) n--;      // a closing <br> only holds the box open
+      const br = brs[n - 1];
+      return br ? { parent: br.parentNode, first: br.nextSibling } : { parent: box, first: box.firstChild };
+    }
+    /** Hangs the line (true), lifts it (false) or turns it over (left out); says whether it moved. */
+    function branch(box, on) {
+      const { parent, first } = lineStart(box);
+      const hung = first?.nodeType === 3 && BRANCH.test(first.data);
+      const want = on ?? !hung;
+      if (want === hung) return false;
+      if (want) parent.insertBefore(document.createTextNode('└ '), first);
+      else first.data = first.data.replace(BRANCH, '');
+      return true;
+    }
+    const branching = (box) => {
+      box.addEventListener('keydown', (e) => {
+        if (e.key !== 'Tab' || e.isComposing || e.ctrlKey || e.metaKey || e.altKey) return;
+        // Shift+Tab on a line with nothing to lift moves on to the field before, as usual.
+        if (!branch(box, !e.shiftKey) && e.shiftKey) return;
+        e.preventDefault();
+        sync();
+      });
+      return box;
+    };
+    const HANG = ['└', 'Hang the line under the one above it (Tab)'];
+
     /* ---------- infobox ---------- */
     const ib = $('#ib');
 
@@ -885,19 +926,22 @@ const ADMIN = REPO.split('/')[0];
       } else if (kind === 'full') {
         // A value with no field name, spanning both columns, as a casualty total.
         const td = el('td', 'ib-full'); td.colSpan = 2;
-        const c = controls(tr);
-        c.prepend(ibAddMenu(tr));
         const lines = Array.isArray(r.value) ? r.value : (r.value ? [r.value] : []);
-        td.append(editable(lines.map(mdToHtml).join('<br>'), 'Full-width value', lineBreak), c);
+        const value = branching(editable(lines.map(mdToHtml).join('<br>'), 'Full-width value', lineBreak));
+        const c = controls(tr, [[...HANG, () => branch(value)]]);
+        c.prepend(ibAddMenu(tr));
+        td.append(value, c);
         tr.append(td);
       } else {
         const th = el('th'); if (r.sub) th.className = 'sub';
         th.append(editable(mdToHtml(r.label || ''), 'Field', lineBreak));
         const td = el('td');
         const lines = Array.isArray(r.value) ? r.value : (r.value ? [r.value] : []);
-        const c = controls(tr, [['⇥', 'Indent as a sub-field', () => th.classList.toggle('sub')]]);
+        const value = branching(editable(lines.map(mdToHtml).join('<br>'), 'Value', lineBreak));
+        const c = controls(tr, [['⇥', 'Indent as a sub-field', () => th.classList.toggle('sub')],
+          [...HANG, () => branch(value)]]);
         c.prepend(ibAddMenu(tr));
-        td.append(editable(lines.map(mdToHtml).join('<br>'), 'Value', lineBreak), c);
+        td.append(value, c);
         tr.append(th, td);
       }
       return tr;
@@ -926,7 +970,9 @@ const ADMIN = REPO.split('/')[0];
             ? { images: slots }
             : { image: slots[0]?.src ?? '', caption: slots[0]?.caption ?? '' };
         }
-        const asLines = (cell) => htmlToMd(cell, '\n').split('\n').map((x) => x.trim()).filter(Boolean);
+        // A branch mark with nothing after it is an empty line, and goes.
+        const asLines = (cell) => htmlToMd(cell, '\n').split('\n').map((x) => x.trim())
+          .filter((x) => x.replace(BRANCH, ''));
         if (tr.dataset.kind === 'pair') {
           return { pair: [...tr.querySelectorAll('td')].map((td) => {
             const [head, items] = td.querySelectorAll('.ce');
@@ -938,7 +984,7 @@ const ADMIN = REPO.split('/')[0];
           return { value: lines.length > 1 ? lines : (lines[0] ?? '') };
         }
         const [labelCell, valueCell] = tr.querySelectorAll('.ce');
-        const lines = htmlToMd(valueCell, '\n').split('\n').map((s) => s.trim()).filter(Boolean);
+        const lines = asLines(valueCell);
         const o = { label: htmlToMd(labelCell).trim(), value: lines.length > 1 ? lines : (lines[0] ?? '') };
         if (tr.querySelector('th')?.classList.contains('sub')) o.sub = true;
         return o;

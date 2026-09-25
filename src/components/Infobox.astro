@@ -5,6 +5,16 @@ const { title, nativeTitle, romaji, rows = [] } = Astro.props;
 // the second line is another language's name, not a romanisation, so it stays upright.
 const transliterated = /[^\u0000-\u024F]/.test([].concat(nativeTitle ?? '').join(''));
 const lines = (v) => (Array.isArray(v) ? v : [v]).filter((x) => x != null && x !== '');
+/**
+ * A value's lines, each marked when it hangs off the line above it, as an operation
+ * under its war: those start with the branch mark, which is drawn rather than printed.
+ * A branch with another after it carries its line on down to that one.
+ */
+const BRANCH = /^\s*└\s*/;
+const tree = (v) => lines(v).map((l, i, all) => ({
+  html: renderInline(l.replace(BRANCH, '')),
+  cls: BRANCH.test(l) ? (BRANCH.test(all[i + 1] ?? '') ? 'ib-branch ib-more' : 'ib-branch') : undefined,
+})).filter((l) => l.html);
 ---
 <aside class="infobox">
   <table class="ib">
@@ -42,11 +52,11 @@ const lines = (v) => (Array.isArray(v) ? v : [v]).filter((x) => x != null && x !
           </td></tr>
         ) : !r.label ? (
           // A value with no label spans both columns, as a casualty total does.
-          <tr><td class="ib-full" colspan="2">{lines(r.value).map((l) => <div set:html={renderInline(l)} />)}</td></tr>
+          <tr><td class="ib-full" colspan="2">{tree(r.value).map((l) => <div class={l.cls} set:html={l.html} />)}</td></tr>
         ) : (
           <tr>
             <th class={r.sub ? 'sub' : undefined} set:html={renderInline(r.label)} />
-            <td>{lines(r.value).map((l) => <div set:html={renderInline(l)} />)}</td>
+            <td>{tree(r.value).map((l) => <div class={l.cls} set:html={l.html} />)}</td>
           </tr>
         )
       )}

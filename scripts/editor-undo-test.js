@@ -354,6 +354,27 @@
     ok('national team sidebar comes from the Nichirin team', labels.includes('AFA Code') && labels.includes('§Biggest Win')
       && labels[labels.indexOf('§Biggest Win') + 1] === '[value]', labels.join(' | '));
 
+    // A sidebar value hangs a line under the one above it, as an operation under its war.
+    const conflicts = document.querySelector('.ib-edit tr[data-kind="row"]');
+    const [cLabel, cValue] = conflicts.querySelectorAll('.ce');
+    cLabel.textContent = 'Conflicts';
+    cValue.innerHTML = 'Iraq War<br>2003 invasion of Iraq';
+    const caretIn = (box) => {
+      const r = document.createRange(); r.selectNodeContents(box); r.collapse(false);
+      getSelection().removeAllRanges(); getSelection().addRange(r);
+    };
+    const tab = (box, shiftKey = false) =>
+      box.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', shiftKey, bubbles: true, cancelable: true }));
+    caretIn(cValue); tab(cValue); await sleep(100);
+    ok('Tab hangs the line under the one above', /- "Iraq War"\n\s+- "└ 2003 invasion of Iraq"/.test($('#preview').textContent),
+      ($('#preview').textContent.match(/label: "Conflicts"[\s\S]{0,120}/) || [])[0]);
+    caretIn(cValue); tab(cValue, true); await sleep(100);
+    ok('Shift+Tab lifts it', /- "Iraq War"\n\s+- "2003 invasion of Iraq"/.test($('#preview').textContent),
+      ($('#preview').textContent.match(/label: "Conflicts"[\s\S]{0,120}/) || [])[0]);
+    caretIn(cValue); conflicts.querySelector('button[title^="Hang the line"]').click(); await sleep(100);
+    ok('and the row button hangs it too', /- "└ 2003 invasion of Iraq"/.test($('#preview').textContent),
+      ($('#preview').textContent.match(/label: "Conflicts"[\s\S]{0,120}/) || [])[0]);
+
     // Insert > Data table: the same grid, marked so the page can sort it by any column.
     focusEnd(paras()[0]);
     document.querySelector('#dtbl-pick .tbl-cell[data-r="3"][data-c="2"]').click();
@@ -370,7 +391,9 @@
       + `<tr><th>Name</th><th>Group</th></tr>\n<tr>${cellIn}<td>A</td></tr>\n</table>\n`], 'table-test.md'));
     $('#open-file-input').files = file.files;
     $('#open-file-input').dispatchEvent(new Event('change'));
-    await sleep(300);
+    // Reading the file takes as long as it takes; a fixed wait lost the race once the
+    // run in front of it grew.
+    for (let i = 0; i < 60 && !/table-test/.test($('#status').textContent); i++) await sleep(50);
     const nameCell = document.querySelector('#body .blk[data-sortable] .ed-tbl tr:nth-child(2) td');
     ok('an opened data table shows & as itself', nameCell?.textContent === 'Kanaeya & Co.NativeRomaji', nameCell?.textContent);
     ok('its small print is small, the romaji italic too', nameCell?.querySelectorAll('small').length === 2
