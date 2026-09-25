@@ -2,14 +2,18 @@
  * The article on the front page today.
  *
  * The pick is a function of the date, so every reader sees the same one all day and
- * it changes at midnight UTC without anybody editing the front page. A hash rather
- * than the day number modulo the list, or consecutive days would walk the articles in
- * alphabetical order and the run would be obvious within a week.
+ * it changes at midnight UTC without anybody editing the front page. Each article
+ * that qualifies draws its own number for the day, a hash of the date and its name,
+ * and the highest wins. It used to be one number taken modulo the whole list, so any
+ * page added shifted the pick; now a page joining or leaving moves it only by being
+ * the winner, and a page written today first joins the draw tomorrow.
  *
  * An article qualifies when it has both halves of the panel: a sidebar picture and an
  * overview to quote. Roughly ten of the shorter ones do not, and they are skipped
  * rather than shown as a heading over nothing.
  */
+
+import { createdAt } from './revisions.mjs';
 
 /** Everything before the first section heading: the overview, as rendered HTML. */
 export function overview(html = '') {
@@ -66,6 +70,11 @@ function hash(s) {
     h ^= s.charCodeAt(i);
     h = Math.imul(h, 16777619);
   }
+  // Left as it is, the top of an FNV hash leans on the last few characters, so pages
+  // whose names end alike won the draw far more than their share. This spreads it.
+  h ^= h >>> 16; h = Math.imul(h, 0x85ebca6b);
+  h ^= h >>> 13; h = Math.imul(h, 0xc2b2ae35);
+  h ^= h >>> 16;
   return h >>> 0;
 }
 
@@ -76,16 +85,25 @@ function hash(s) {
 const REROLL = 2;
 
 /** A day whose article was chosen by hand. The draw takes over again the next day. */
-const PINNED = {};
+const PINNED = {
+  '2026-09-25': 'kenzo-kamiya',   // the draw changed late that day; the day kept its article
+};
 
 export function featured(entries, today = new Date()) {
   const date = today.toISOString().slice(0, 10);
   const day = `${date}#${REROLL}`;
+  const opened = Date.parse(`${date}T00:00:00Z`);
   const pool = entries
     .filter((e) => e.id !== 'home')
     .filter((e) => firstImage(e.data) && overview(e.rendered?.html || '').length > 300)
-    // Sorted so the pick depends on the date and the set, never on directory order.
-    .sort((a, b) => a.id.localeCompare(b.id));
+    .filter((e) => !(Date.parse(createdAt(e.id)) >= opened));
   if (!pool.length) return null;
-  return pool.find((e) => e.id === PINNED[date]) || pool[hash(day) % pool.length];
+  const pinned = pool.find((e) => e.id === PINNED[date]);
+  if (pinned) return pinned;
+  let best = null, top = -1;
+  for (const e of pool) {
+    const n = hash(`${day}|${e.id}`);
+    if (n > top || (n === top && e.id < best.id)) { top = n; best = e; }
+  }
+  return best;
 }
