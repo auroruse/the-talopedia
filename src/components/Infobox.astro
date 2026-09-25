@@ -6,15 +6,22 @@ const { title, nativeTitle, romaji, rows = [] } = Astro.props;
 const transliterated = /[^\u0000-\u024F]/.test([].concat(nativeTitle ?? '').join(''));
 const lines = (v) => (Array.isArray(v) ? v : [v]).filter((x) => x != null && x !== '');
 /**
- * A value's lines, each marked when it hangs off the line above it, as an operation
- * under its war: those start with the branch mark, which is drawn rather than printed.
- * A branch with another after it carries its line on down to that one.
+ * A nested list's items as the nested lists they stand for. Two spaces of indent are a
+ * level, and an item goes no deeper than one past the item above it or than the row's
+ * depth, so a stray space never leaves one hanging off nothing.
  */
-const BRANCH = /^\s*└\s*/;
-const tree = (v) => lines(v).map((l, i, all) => ({
-  html: renderInline(l.replace(BRANCH, '')),
-  cls: BRANCH.test(l) ? (BRANCH.test(all[i + 1] ?? '') ? 'ib-branch ib-more' : 'ib-branch') : undefined,
-})).filter((l) => l.html);
+function outline(items = [], depth = 3) {
+  let html = '', open = -1;
+  for (const raw of items) {
+    const text = raw.trim();
+    if (!text) continue;
+    const level = Math.max(0, Math.min(Math.floor((raw.length - raw.trimStart().length) / 2), open + 1, depth));
+    html += level > open ? '<ul><li>' : '</li>' + '</ul></li>'.repeat(open - level) + '<li>';
+    html += renderInline(text);
+    open = level;
+  }
+  return html + '</li></ul>'.repeat(open + 1);
+}
 ---
 <aside class="infobox">
   <table class="ib">
@@ -50,13 +57,21 @@ const tree = (v) => lines(v).map((l, i, all) => ({
               </figure>
             ))}
           </td></tr>
+        ) : r.tree ? (
+          // A nested list: beside its label, or across both columns when it has none.
+          <tr>
+            {r.label && <th set:html={renderInline(r.label)} />}
+            <td colspan={r.label ? undefined : 2}>
+              <div class:list={['ib-tree', r.guides === false && 'bare']} set:html={outline(r.tree, r.depth)} />
+            </td>
+          </tr>
         ) : !r.label ? (
           // A value with no label spans both columns, as a casualty total does.
-          <tr><td class="ib-full" colspan="2">{tree(r.value).map((l) => <div class={l.cls} set:html={l.html} />)}</td></tr>
+          <tr><td class="ib-full" colspan="2">{lines(r.value).map((l) => <div set:html={renderInline(l)} />)}</td></tr>
         ) : (
           <tr>
             <th class={r.sub ? 'sub' : undefined} set:html={renderInline(r.label)} />
-            <td>{tree(r.value).map((l) => <div class={l.cls} set:html={l.html} />)}</td>
+            <td>{lines(r.value).map((l) => <div set:html={renderInline(l)} />)}</td>
           </tr>
         )
       )}

@@ -354,26 +354,53 @@
     ok('national team sidebar comes from the Nichirin team', labels.includes('AFA Code') && labels.includes('§Biggest Win')
       && labels[labels.indexOf('§Biggest Win') + 1] === '[value]', labels.join(' | '));
 
-    // A sidebar value hangs a line under the one above it, as an operation under its war.
-    const conflicts = document.querySelector('.ib-edit tr[data-kind="row"]');
-    const [cLabel, cValue] = conflicts.querySelectorAll('.ce');
-    cLabel.textContent = 'Conflicts';
-    cValue.innerHTML = 'Iraq War<br>2003 invasion of Iraq';
-    const caretIn = (box) => {
-      const r = document.createRange(); r.selectNodeContents(box); r.collapse(false);
+    // Sidebar + > Nested List: each line at a level, as deep as the row allows and never
+    // more than one past the line above.
+    const fieldRow = document.querySelector('.ib-edit tr[data-kind="row"]');
+    fieldRow.querySelector('.ctl-add > button').click();
+    [...fieldRow.querySelectorAll('.ctl-menu button')].find((b) => b.textContent === 'Nested List').click();
+    await sleep(100);
+    const nested = document.querySelector('.ib-edit tr[data-kind="nested"]');
+    ok('Nested List is on the + menu, under Occupation', !!nested
+      && [...fieldRow.querySelectorAll('.ctl-menu button')].map((b) => b.textContent).join('|').includes('Occupation|Nested List'), !!nested);
+    const [nLabel, nBox] = nested.querySelectorAll('.ce');
+    nLabel.textContent = 'Battles/wars';
+    nBox.innerHTML = ['World War II', 'North African campaign', 'Operation Torch', 'Battle of Port Lyautey']
+      .map((t, i) => `<div data-level="${i}">${t}</div>`).join('');
+    nBox.dispatchEvent(new Event('input', { bubbles: true }));
+    await sleep(100);
+    const treeOf = () => ($('#preview').textContent.match(/label: "Battles\/wars"\n[\s\S]*?(?=\n  - |\n---)/) || [''])[0];
+    ok('it saves a level as two spaces', treeOf().includes('depth: 3\n    guides: true\n    tree:\n      - "World War II"\n'
+      + '      - "  North African campaign"\n      - "    Operation Torch"\n      - "      Battle of Port Lyautey"'), treeOf());
+    const lineOf = (text) => [...nBox.children].find((d) => d.textContent === text);
+    const caretAtEnd = (node) => {
+      const r = document.createRange(); r.selectNodeContents(node); r.collapse(false);
       getSelection().removeAllRanges(); getSelection().addRange(r);
     };
-    const tab = (box, shiftKey = false) =>
-      box.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', shiftKey, bubbles: true, cancelable: true }));
-    caretIn(cValue); tab(cValue); await sleep(100);
-    ok('Tab hangs the line under the one above', /- "Iraq War"\n\s+- "└ 2003 invasion of Iraq"/.test($('#preview').textContent),
-      ($('#preview').textContent.match(/label: "Conflicts"[\s\S]{0,120}/) || [])[0]);
-    caretIn(cValue); tab(cValue, true); await sleep(100);
-    ok('Shift+Tab lifts it', /- "Iraq War"\n\s+- "2003 invasion of Iraq"/.test($('#preview').textContent),
-      ($('#preview').textContent.match(/label: "Conflicts"[\s\S]{0,120}/) || [])[0]);
-    caretIn(cValue); conflicts.querySelector('button[title^="Hang the line"]').click(); await sleep(100);
-    ok('and the row button hangs it too', /- "└ 2003 invasion of Iraq"/.test($('#preview').textContent),
-      ($('#preview').textContent.match(/label: "Conflicts"[\s\S]{0,120}/) || [])[0]);
+    const nlKey = (k, shiftKey = false) =>
+      nBox.dispatchEvent(new KeyboardEvent('keydown', { key: k, shiftKey, bubbles: true, cancelable: true }));
+    caretAtEnd(lineOf('Operation Torch')); nlKey('Tab', true); await sleep(100);
+    ok('Shift+Tab lifts a line, and the one under it comes up too', treeOf().includes('      - "  Operation Torch"\n      - "    Battle of Port Lyautey"'), treeOf());
+    caretAtEnd(lineOf('North African campaign')); nlKey('Tab'); await sleep(100);
+    ok('Tab goes no deeper than one past the line above', treeOf().includes('      - "  North African campaign"'), treeOf());
+    caretAtEnd(lineOf('Operation Torch')); nlKey('Enter'); type('Operation Husky'); await sleep(100);
+    ok('Enter starts a line at the same level', treeOf().includes('      - "  Operation Torch"\n      - "  Operation Husky"'), treeOf());
+    const [depthButton, guidesButton] = nested.querySelectorAll('.ctl > button');
+    depthButton.click(); depthButton.click(); await sleep(100);
+    ok('depth goes 3, 4, 1, and 1 brings everything up to one level', treeOf().includes('depth: 1')
+      && treeOf().includes('      - "  Battle of Port Lyautey"') && !treeOf().includes('"    '), treeOf());
+    guidesButton.click(); await sleep(100);
+    ok('the guide lines switch off', treeOf().includes('guides: false') && guidesButton.classList.contains('off'), treeOf());
+    const nestedMd = $('#preview').textContent;
+    const nestedFile = new DataTransfer();
+    nestedFile.items.add(new File([nestedMd], 'nested-test.md'));
+    $('#open-file-input').files = nestedFile.files;
+    $('#open-file-input').dispatchEvent(new Event('change'));
+    for (let i = 0; i < 60 && !/nested-test/.test($('#status').textContent); i++) await sleep(50);
+    const back = document.querySelector('.ib-edit tr[data-kind="nested"]');
+    const backLines = back && [...back.querySelectorAll('.ce.outline > div')].map((d) => d.dataset.level + ' ' + d.textContent).join(' | ');
+    ok('and a saved page reads back as it was', back?.dataset.depth === '1' && back?.dataset.guides === 'false'
+      && backLines === '0 World War II | 1 North African campaign | 1 Operation Torch | 1 Operation Husky | 1 Battle of Port Lyautey', backLines);
 
     // Insert > Data table: the same grid, marked so the page can sort it by any column.
     focusEnd(paras()[0]);
