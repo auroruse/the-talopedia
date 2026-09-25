@@ -5,6 +5,7 @@ type: character
 nation: varahmehr
 authors: [varahmehr]
 infobox:
+  - { image: "https://lh3.googleusercontent.com/d/11fPcNxIHaBPKxvznvJNZZq3U8Wr8GCD5=w2000", caption: "" }
   - { section: "Personal Details" }
   - label: "Born"
     value:
@@ -30,8 +31,7 @@ infobox:
           - "[[dynamo-mizuhara]]"
 ---
 
-**Sepideh Shakibaii** (Mehrāni:
-سپیده شکیبایی; born 4 April 1910) is a [[varahmehr|Varahmehri]] footballer who plays as a left midfielder for [[dynamo-mizuhara]] in the Nichirin League and as an attacking midfielder for the Varahmehr national team. Originally a forward, he is widely regarded as the most accomplished player produced by Varahmehri football since the sport was introduced to the country in 1929.
+**Sepideh Shakibaii** (Mehrāni: سپیده شکیبایی; born 4 April 1910) is a [[varahmehr|Varahmehri]] footballer who plays as a left midfielder for [[dynamo-mizuhara]] in the Nichirin League and as an attacking midfielder for the Varahmehr national team. Originally a forward, he is widely regarded as the most accomplished player produced by Varahmehri football since the sport was introduced to the country in 1929.
 
 Shakibaii spent his domestic career with [[sepah-kuhestan|Sepāh Kuhestan]], whom he joined at the club's foundation, and was the leading scorer in the 1932-33 [[liga-ye-melli|Liga-ye Mellī]] with nineteen goals. He shared the Golden Boot at the 1932 Foundation Cup and recorded his first perfect match rating against [[tonkin]] during the same competition. He has never won a major domestic honor.
 
@@ -51,8 +51,7 @@ Dorudgar's own club, Sarsabz Dorudgar, was founded in February 1930, six years a
 
 Shakibaii is unmarried and has no children. In interviews he has attributed this to the demands of his career, and he is not known to maintain a residence in Varahmehr outside the playing season.
 
-His estrangement from his brother has attracted persistent press attention, particularly during the four seasons in which the two played in the same division. Correspondents covering fixtures between Sepāh Kuhestan and
-Āzādī Rāhgozar reported repeated approaches by Shakibaii before and after matches, none of which were acknowledged. Neither brother has commented on the matter publicly.
+His estrangement from his brother has attracted persistent press attention, particularly during the four seasons in which the two played in the same division. Correspondents covering fixtures between Sepāh Kuhestan and Āzādī Rāhgozar reported repeated approaches by Shakibaii before and after matches, none of which were acknowledged. Neither brother has commented on the matter publicly.
 
 Shakibaii's appearance has been the subject of frequent comment in the Varahmehri press, and his likeness has been used in federation promotional material since 1933 - an unusual distinction in a country whose sporting culture is less than a decade old.
 
@@ -62,9 +61,7 @@ Shakibaii's appearance has been the subject of frequent comment in the Varahmehr
 
 Shakibaii was among the original members of Sepāh Kuhestan, formed in December 1929 by the smelters' mutual-aid association at the No.3 foundry. He played as a forward throughout his time at the club.
 
-Individual statistics were not systematically recorded during the inaugural 1929-30 Liga-ye
-Mellī season, and no account of his first competitive goal survives. He does not appear in the published leaderboards for goals, assists, or match rating for the 1930-31 season. His earliest documented goal came in the 1930-31 Jām-e
-Mellī final, which Sepāh lost 5-2 to Pas Nourabad.
+Individual statistics were not systematically recorded during the inaugural 1929-30 Liga-ye Mellī season, and no account of his first competitive goal survives. He does not appear in the published leaderboards for goals, assists, or match rating for the 1930-31 season. His earliest documented goal came in the 1930-31 Jām-e Mellī final, which Sepāh lost 5-2 to Pas Nourabad.
 
 His first sustained domestic return came n 1931-32, when he finished second in the league scoring charts and third by average match rating. Sepāh finished the season without a trophy; the club was eliminated 4-1 by Daryā Shushabad in the cup semi-final, a match in which Shakibaii was rated 6.9.
 
@@ -108,8 +105,7 @@ Against Albinya he scored the opening goal of the first leg and, in the second, 
 
 The competition - later renamed the Nations League - produced the run on which his international reputation principally rests.
 
-Varahmehr lost their opening match 2-1 to
-Côte de Saumon, Shakibaii scoring, and entered the lower bracket one defeat from elimination. Across the subsequent eight matches he scored the equaliser against Morozia that forced a shootout, rated 9.2; scored against Divia, rated 8.6; opened the scoring against Ponurvia; and recorded a brace and an assist against Tonkin from eleven chances created, taking a match rating of 10.0.
+Varahmehr lost their opening match 2-1 to Côte de Saumon, Shakibaii scoring, and entered the lower bracket one defeat from elimination. Across the subsequent eight matches he scored the equaliser against Morozia that forced a shootout, rated 9.2; scored against Divia, rated 8.6; opened the scoring against Ponurvia; and recorded a brace and an assist against Tonkin from eleven chances created, taking a match rating of 10.0.
 
 He was less prominent in several of the tournament's most celebrated results, rated 6.4 in the 1-0 win over Karjania, 7.0 against Alemannia and 6.8 in the victory over the Elysian State of Unity, a match in which Touraj Hayaii was rated 10.0. Varahmehr were eliminated by Seignid and finished fourth. Shakibaii shared the Golden Boot with Nichirin's Itoshi on six goals.
 
@@ -143,8 +139,7 @@ In qualification for the 1935 World Cup, Shakibaii scored no goals across ten ma
 
 ## Style of Play
 
-Shakibaii began his career as a forward and was deployed as such throughout his time at
-Sepāh Kuhestan and in the national side's early formations. Following the adoption of a 4-2-3-1 by Varahmehr he was moved into the attacking midfield band, where he has since operated principally from the left.
+Shakibaii began his career as a forward and was deployed as such throughout his time at Sepāh Kuhestan and in the national side's early formations. Following the adoption of a 4-2-3-1 by Varahmehr he was moved into the attacking midfield band, where he has since operated principally from the left.
 
 The transition is reflected in his recorded output. Between 1931 and 1933 his returns were primarily in goals; from 1934 his statistical profile is dominated by chance creation and defensive contribution, the latter unusually high for an attacking player. He recorded no goals in the 1935 qualifying campaign while creating twenty-two chances and registering fifty-two defensive contributions.
 
