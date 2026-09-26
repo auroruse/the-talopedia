@@ -27,7 +27,7 @@ const intl = new Map(PRESET_CATALOG.filter((t) => t.league === 'Avium Internatio
 
 // The draw, as announced. Order within a group is the pot order the poster prints.
 const GROUPS = {
-  A: ['NCH', 'SKJ', 'ANH', 'NRG'], B: ['AST', 'LVO', 'GIA', 'NMZ'],
+  A: ['NCH', 'SKJ', 'ANH', 'EIV'], B: ['AST', 'LVO', 'GIA', 'NMZ'],
   C: ['ESU', 'KAR', 'CAH', 'AEM'], D: ['HOL', 'COR', 'VAR', 'ASP'],
   E: ['ARV', 'PON', 'KMT', 'PER'], F: ['ASK', 'SID', 'NHO', 'ALB'],
   G: ['ALE', 'AUR', 'SEL', 'NKI'], H: ['VIC', 'FUR', 'SHI', 'ABB'],
@@ -35,7 +35,7 @@ const GROUPS = {
 const HOST = 'SKJ';
 
 // Invited sides played no qualifiers, so they carry no record.
-const INVITED = new Set(['ALB']);
+const INVITED = new Set(['ALB', 'EIV']);
 
 // The final table of each conference's qualifying league, keyed by team name.
 const qualifying = {};
@@ -50,6 +50,7 @@ for (const [conf, dir] of [['E', 'eastern'], ['W', 'western']]) {
   }
 }
 
+fs.rmSync(BADGES, { recursive: true, force: true });
 fs.mkdirSync(BADGES, { recursive: true });
 const badge = (src, code) => execFileSync('sips', ['-s', 'format', 'png', '-Z', '200', src, '--out', path.join(BADGES, `${code}.png`)], { stdio: 'ignore' });
 

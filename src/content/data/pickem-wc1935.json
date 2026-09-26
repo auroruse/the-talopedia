@@ -5,7 +5,7 @@
    "NCH",
    "SKJ",
    "ANH",
-   "NRG"
+   "EIV"
   ],
   "B": [
    "AST",
@@ -353,106 +353,97 @@
     ]
    ]
   },
-  "NRG": {
-   "name": "Ryūgu",
-   "q": {
-    "conf": "W",
-    "pos": 15,
-    "P": 10,
-    "W": 4,
-    "D": 2,
-    "L": 4,
-    "GF": 6,
-    "GA": 7,
-    "Pts": 14
-   },
+  "EIV": {
+   "name": "Eivorie",
+   "q": null,
+   "invited": true,
    "squad": [
     [
-     "Basem Shenouda",
+     "Sigeweard Strood",
      "GK"
     ],
     [
-     "Yohannis Sukkoti",
+     "Stanleah Coc",
      "DEF"
     ],
     [
-     "Merkurios Kudanbes",
+     "Colibyr Burhtun",
      "DEF"
     ],
     [
-     "Georgios Artigasha",
+     "Ealdræd Hæþ",
      "DEF"
     ],
     [
-     "Ioannes Dongolawi",
+     "Wellaleah Glædwine",
      "DEF"
     ],
     [
-     "Petros Nogedi",
+     "Ceneric Cynbeald",
      "MID"
     ],
     [
-     "Stephanos Ballana",
+     "Ælfnoð Winifred",
      "MID"
     ],
     [
-     "Theodoros Farasin",
+     "Beonetun Hocere",
      "MID"
     ],
     [
-     "Yohannis Mina",
+     "Cliftun Suþgeat",
      "MID"
     ],
     [
-     "Damianos Faragab",
+     "Wadwulf Ealhhere",
      "MID"
     ],
     [
-     "Moüses Kyrillos",
+     "Ealdwig Read",
      "FWD"
     ],
     [
-     "Kosmas Sukkoti",
+     "Granta Grandham",
      "GK"
     ],
     [
-     "Ioannes Qustul",
+     "Stanleah Bradford",
      "DEF"
     ],
     [
-     "Kalidurut Bishoy",
+     "Clifford Waters",
      "DEF"
     ],
     [
-     "Papnoute Guirguis",
+     "Ælfstan Hegleah",
      "DEF"
     ],
     [
-     "Butros Toskani",
+     "Camdenu Haileye",
      "DEF"
     ],
     [
-     "Zakri Kalidur",
+     "Cyneheard Brunee",
      "MID"
     ],
     [
-     "Merki Essili",
+     "Wulfstan Priestleye",
      "MID"
     ],
     [
-     "Siti Gemai",
+     "Ealhstan Bærnet",
      "MID"
     ],
     [
-     "Kosti Serrani",
+     "Holdenu Stigweard",
      "MID"
     ],
     [
-     "Tadros Sonqi",
+     "Harahær Heels",
      "MID"
     ],
     [
-     "Butros Sedhom",
+     "Beonetleah Heordewic",
      "FWD"
     ]
    ]
