@@ -19,13 +19,13 @@ infobox:
   - { label: "Number", value: "6" }
   - { section: "Career" }
   - pair:
-      - heading: "Years"
-        items:
+      - items:
+          - "**Years**"
           - "1929-1933"
           - "1933-1934"
           - "1934-"
-      - heading: "Team"
-        items:
+      - items:
+          - "**Team**"
           - "[[sepah-kuhestan|Sepāh Kuhestan]]"
           - "[[toyama-thunderbolts]]"
           - "[[dynamo-mizuhara]]"

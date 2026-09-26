@@ -10,7 +10,7 @@ const S = (section) => ({ section });
 const L = (label, sub = false) => ({ label, value: '', sub });
 const I = (caption = '') => ({ image: '', caption });
 // Two columns side by side, as a battle's belligerents or its commanders.
-const P = () => ({ pair: [{ heading: '', items: [] }, { heading: '', items: [] }] });
+const P = () => ({ pair: [{ items: [] }, { items: [] }] });
 // An office held and the term served in it.
 const O = () => ({ office: '', term: '' });
 // A value with no label, spanning the row under its heading, as a scoreline.

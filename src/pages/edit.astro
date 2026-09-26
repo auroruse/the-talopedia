@@ -1059,14 +1059,15 @@ const ADMIN = REPO.split('/')[0];
         td.append(c);
         tr.append(td);
       } else if (kind === 'pair') {
-        // Two lists side by side, as the belligerents of a war. One item per line.
+        // Two lists side by side, as the belligerents of a war. One item per line, and a
+        // side that is named is named in bold on its first line. A heading written before
+        // the sides lost their own box comes in as that line.
         const c = nestControls(tr);
         c.prepend(ibAddMenu(tr));
         (r.pair.length ? r.pair : [{}, {}]).slice(0, 2).forEach((col, i) => {
           const td = el('td');
-          td.append(editable(mdToHtml(col.heading || ''), 'Side', lineBreak));
-          td.firstChild.classList.add('pair-head');
-          td.append(nlBox(col.items || [], () => +tr.dataset.depth, 'One per line'));
+          const items = col.items || [];
+          td.append(nlBox(col.heading ? [`**${col.heading}**`, ...items] : items, () => +tr.dataset.depth, 'One per line'));
           if (i === 1) td.append(c);
           tr.append(td);
         });
@@ -1172,10 +1173,7 @@ const ADMIN = REPO.split('/')[0];
         const nestOf = (all) => (all.some((l) => l.startsWith('  '))
           ? { depth: +tr.dataset.depth, guides: tr.dataset.guides !== 'false' } : {});
         if (tr.dataset.kind === 'pair') {
-          const pair = [...tr.querySelectorAll('td')].map((td) => {
-            const [head, items] = td.querySelectorAll('.ce');
-            return { heading: htmlToMd(head).trim(), items: cellLines(items) };
-          });
+          const pair = [...tr.querySelectorAll('td')].map((td) => ({ items: cellLines(td.querySelector('.ce')) }));
           return { pair, ...nestOf(pair.flatMap((col) => col.items)) };
         }
         if (tr.dataset.kind === 'full') {
@@ -1198,7 +1196,7 @@ const ADMIN = REPO.split('/')[0];
       ['Image', () => ({ image: '', caption: '' })],
       null,
       ['Full-Width Value', () => ({ value: '' })],
-      ['Parallel Lists', () => ({ pair: [{ heading: '', items: [] }, { heading: '', items: [] }] })],
+      ['Parallel Lists', () => ({ pair: [{ items: [] }, { items: [] }] })],
       ['Occupation', () => ({ office: '', term: '' })],
     ];
 
@@ -2326,7 +2324,7 @@ const ADMIN = REPO.split('/')[0];
       // The type skeleton stays on screen to be filled in; only filled rows are written.
       const some = (v) => (Array.isArray(v) ? v.length : v !== '');
       const filled = readInfobox().filter((r) =>
-        r.pair ? r.pair.some((c) => c.heading !== '' || c.items.length)
+        r.pair ? r.pair.some((c) => c.items.length)
         : r.office != null ? r.office !== '' || r.term !== ''
         : r.section != null ? r.section !== ''
         : r.images ? r.images.some((i) => i.src)
@@ -2366,8 +2364,7 @@ const ADMIN = REPO.split('/')[0];
           if (r.pair) {
             fm.push('  - pair:');
             for (const col of r.pair) {
-              fm.push(`      - heading: ${q(col.heading)}`);
-              fm.push('        items:');
+              fm.push(`      - items:${col.items.length ? '' : ' []'}`);
               col.items.forEach((it) => fm.push(`          - ${q(it)}`));
             }
             nest();
@@ -3551,8 +3548,10 @@ const ADMIN = REPO.split('/')[0];
               const pair = [], nest = {};
               let k2 = k + 1;
               while (k2 < block.length && indent(block[k2]) > indent(l)) {
-                const h = block[k2].match(/^\s*- heading:\s*(.*)$/);
-                if (h) pair.push({ heading: unquote(h[1]), items: [] });
+                // A side opens on its items, or on the heading a side carried before its
+                // name became the bold first line of its list.
+                const side = block[k2].match(/^\s*- (heading|items):\s*(.*)$/);
+                if (side) pair.push(side[1] === 'heading' ? { heading: unquote(side[2]), items: [] } : { items: [] });
                 const it = block[k2].match(/^\s*- (".*")\s*$/);
                 if (it && pair.length) pair[pair.length - 1].items.push(unquote(it[1]));
                 // How deep its lists may nest and whether their lines are drawn, under the row itself.
@@ -5013,7 +5012,6 @@ const ADMIN = REPO.split('/')[0];
     .ib-edit .ib-head [contenteditable]:focus { box-shadow: 0 0 0 2px rgb(100 133 209 / .35); }
     .ib-edit .ib-media img { max-width: 100%; margin-bottom: 4px; }
     .ib-edit .ib-pair td { width: 50%; vertical-align: top; }
-    .ib-edit .ib-pair .pair-head { font-weight: 700; margin-bottom: 4px; }
     .ib-edit .ib-full { text-align: center; }
     /* ---- toolbar additions ---- */
     .ed-tools button[disabled] { opacity: .35; cursor: default; }

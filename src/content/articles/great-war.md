@@ -9,8 +9,8 @@ infobox:
   - { label: "Result", value: "Inconclusive" }
   - { section: "Belligerents" }
   - pair:
-      - heading: "The Entente:"
-        items:
+      - items:
+          - "**The Entente:**"
           - ":flag[arverne] [[arverne]]"
           - "  :img[/assets/flags/barbarie.png] [[barbarie]]"
           - "  :img[/assets/flags/cote-de-saumon.png] [[c-te-de-saumon|Côte De Saumon]]"
@@ -40,8 +40,8 @@ infobox:
           - ":flag[slytlia] [[slytlia]]"
           - ":flag[east-astriya] [[east-astriya]]"
           - ":img[/assets/flags/shivon-tgw.png] [[shivon]]"
-      - heading: "Central Powers:"
-        items:
+      - items:
+          - "**Central Powers:**"
           - ":img[/assets/flags/holy-evrian-empire.png] [[holy-evrian-empire]]"
           - "  :img[/assets/flags/divia.png] [[divia]]"
           - "  :img[/assets/flags/kogelland.png] [[kogelland]]"
@@ -66,15 +66,15 @@ infobox:
     guides: true
   - { section: "Commanders and Leaders" }
   - pair:
-      - heading: "The Entente:"
-        items:
+      - items:
+          - "**The Entente:**"
           - ":flag[arverne] [[jean-monet-praise|Jean Monet-Praisê]]"
           - ":flag[elvester] [[weckham-ii|Weckham II]]"
           - ":flag[nichirin] [[masanori-miyamoto]]"
           - ":flag[rudania] [[nikolai-ii|Nikolai II]]"
           - ":flag[vicily] [[gaetano-valeri]]"
-      - heading: "Central Powers:"
-        items:
+      - items:
+          - "**Central Powers:**"
           - ":img[/assets/flags/holy-evrian-empire.png] [[friedrich-iv|Friedrich IV]]"
           - ":img[/assets/flags/askurias.png] [[alejandro-martinez]]"
           - ":img[/assets/flags/xing-empire.png] [[liang-yu]]"

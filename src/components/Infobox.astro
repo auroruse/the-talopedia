@@ -25,8 +25,11 @@ function outline(items = [], depth = 3) {
 /** A cell's lines as a nested list, when any of them is indented under another; otherwise nothing. */
 const tree = (items, r) => (items.some((l) => /^ {2,}\S/.test(l))
   ? `<div class="${r.guides === false ? 'ib-tree bare' : 'ib-tree'}">${outline(items, r.depth)}</div>` : '');
-// The Nested List row that came first is a field whose value nests.
-const view = rows.map((r) => (r.tree && r.value == null ? { ...r, value: r.tree } : r));
+// The Nested List row that came first is a field whose value nests, and the heading a
+// side of a pair carried before is the bold first line of its list, as sides are named now.
+const view = rows.map((r) => (r.tree && r.value == null ? { ...r, value: r.tree }
+  : r.pair ? { ...r, pair: r.pair.map((col) => (col.heading ? { items: [`**${col.heading}**`, ...col.items] } : col)) }
+  : r));
 ---
 <aside class="infobox">
   <table class="ib">
@@ -41,7 +44,6 @@ const view = rows.map((r) => (r.tree && r.value == null ? { ...r, value: r.tree 
           <tr class="ib-pair">
             {r.pair.map((col) => (
               <td>
-                {col.heading && <b set:html={renderInline(col.heading)} />}
                 {tree(col.items, r)
                   ? <Fragment set:html={tree(col.items, r)} />
                   : col.items.map((it) => <div class={it.trimStart().startsWith('•') ? 'sub' : ''} set:html={renderInline(it.replace(/^\s*•\s*/, ''))} />)}

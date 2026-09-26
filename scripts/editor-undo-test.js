@@ -503,6 +503,30 @@
     ok('and a saved gallery opens joined', pictureRows().length === 2 && pictureRows()[1].classList.contains('ib-join')
       && joinSwitch(pictureRows()[1]).classList.contains('on'), pictureRows().map((tr) => tr.className).join(' | '));
 
+    // A side of a parallel list is its list, with no heading box over it. A side is named
+    // in bold on its first line, and a heading from before opens as that line.
+    await openFile('---\ntitle: "Pair test"\ntype: event\ninfobox:\n  - pair:\n'
+      + '      - heading: "The Entente:"\n        items:\n          - ":flag[nichirin] [[nichirin]]"\n'
+      + '      - heading: "Central Powers:"\n        items:\n          - "Selmira"\n---\n\nBody.\n', 'pair-test.md');
+    const pairRow = () => document.querySelector('.ib-edit tr[data-kind="pair"]');
+    const sides = [...pairRow().querySelectorAll('td')].map((td) => td.querySelectorAll('.ce').length).join();
+    ok('a side of a parallel list has no heading box', sides === '1,1', sides);
+    const opener = pairRow().querySelector('td .ce > div');
+    ok('an old heading opens as the bold first line of its side', opener?.querySelector('b')?.textContent === 'The Entente:', opener?.innerHTML);
+    const pairSaved = '  - pair:\n      - items:\n          - "**The Entente:**"\n          - ":flag[nichirin] [[nichirin]]"\n'
+      + '      - items:\n          - "**Central Powers:**"\n          - "Selmira"';
+    ok('and saves as bold text, with no heading', sidebarMd().includes(pairSaved) && !sidebarMd().includes('heading'), sidebarMd());
+    await openFile($('#preview').textContent, 'pair-back.md');
+    ok('which opens again as it was saved', sidebarMd().includes(pairSaved), sidebarMd());
+    const emptied = pairRow().querySelectorAll('td .ce')[1];
+    emptied.innerHTML = '<div data-level="0"><br></div>';
+    emptied.dispatchEvent(new Event('input', { bubbles: true }));
+    await sleep(100);
+    ok('an empty side is written as an empty list', sidebarMd().includes('      - items: []'), sidebarMd());
+    await openFile($('#preview').textContent, 'pair-empty.md');
+    ok('and opens as an empty side', pairRow()?.querySelectorAll('td').length === 2 && !pairRow().querySelectorAll('td .ce')[1].textContent.trim(),
+      pairRow()?.innerHTML.slice(0, 200));
+
     // Insert as Icon: any picture, in the line at the caret, the height of its text, outlined or not.
     focusEnd(paras()[0]);
     document.querySelector('[data-as="icon"]').click();

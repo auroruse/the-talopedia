@@ -203,7 +203,6 @@ a.ext::after {
 .infobox .ib-pair .ib-tree li li::after { width: 5px; }
 .infobox .ib-full { text-align: center; }
 .infobox .ib-pair td { width: 50%; vertical-align: top; }
-.infobox .ib-pair b { display: block; margin-bottom: 5px; }
 .infobox .ib-pair div { line-height: 1.5; }
 .infobox .ib-pair div.sub { padding-left: 11px; }
 .infobox .ib-pair div.sub::before { content: "\2022"; margin-left: -11px; margin-right: 4px; color: var(--muted); }

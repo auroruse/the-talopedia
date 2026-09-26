@@ -32,7 +32,9 @@ const row = z.object({
   tree: z.array(z.string()).optional(),
   depth: z.number().int().min(1).max(4).optional(),
   guides: z.boolean().optional(),
-  // Two lists shown side by side, as belligerents or commanders in a war infobox.
+  // Two lists shown side by side, as belligerents or commanders in a war infobox. A side
+  // is named in bold on its first line; `heading` is how sides were named before, and the
+  // page reads it as that line.
   pair: z.array(z.object({
     heading: z.string().optional(),
     items: z.array(z.string()).default([]),
