@@ -56,13 +56,20 @@ const view = rows.map((r) => (r.tree && r.value == null ? { ...r, value: r.tree 
         ) : r.section ? (
           <tr class="ib-section"><td colspan="2" set:html={renderInline(r.section)} /></tr>
         ) : r.images?.length || r.image ? (
-          <tr><td class:list={['ib-media', r.images?.length && 'ib-media-row']} colspan="2">
-            {(r.images?.length ? r.images.filter((im) => im.src) : [{ src: r.image, caption: r.caption }]).map((im) => (
-              <figure style="margin:0">
-                <img src={asset(im.src)} alt={im.caption || title} />
-                {im.caption && <figcaption set:html={renderInline(im.caption)} />}
-              </figure>
-            ))}
+          <tr><td class="ib-media" colspan="2">
+            {(() => {
+              const shown = r.images?.length ? r.images.filter((im) => im.src) : [{ src: r.image, caption: r.caption }];
+              // Side by side, each keeps a caption line even when empty, so every caption
+              // stays under its own picture.
+              const figs = shown.map((im) => (
+                <figure style="margin:0">
+                  <img src={asset(im.src)} alt={im.caption || title} />
+                  {(im.caption || shown.length > 1) && <figcaption set:html={renderInline(im.caption || '')} />}
+                </figure>
+              ));
+              // The cell stays a cell, spanning the row; the pictures share a box inside it.
+              return shown.length > 1 ? <div class="ib-media-row">{figs}</div> : figs;
+            })()}
           </td></tr>
         ) : !r.label ? (
           // A value with no label spans both columns, as a casualty total does.

@@ -996,6 +996,11 @@ const ADMIN = REPO.split('/')[0];
           img.onerror = () => { img.hidden = true; };
           src.oninput = (e) => { paint(); sync(e); };
           paint();
+          // Dragged by the picture itself: onto another sidebar picture to stand beside
+          // it, or onto any other row to take a row of its own there.
+          img.draggable = true;
+          img.addEventListener('dragstart', (e) => pictureDrag(e, box));
+          img.addEventListener('dragend', pictureDone);
           const tools = el('div', 'fig-tools');
           const swap = el('button', null, '⇄'); swap.type = 'button'; swap.title = 'Change this picture';
           swap.onmousedown = (e) => e.preventDefault();
@@ -1010,7 +1015,10 @@ const ADMIN = REPO.split('/')[0];
         // One picture, or two side by side. A sidebar column is narrow, so two is
         // as many as will read.
         const held = r.images?.length ? r.images.slice(0, 2) : [{ src: r.image || '', caption: r.caption || '' }];
-        held.forEach((d) => td.append(slot(d)));
+        // The pictures share a box inside the cell; the cell stays a cell spanning the row.
+        const pics = el('div', 'ib-slots');
+        held.forEach((d) => pics.append(slot(d)));
+        td.append(pics);
         td.dataset.slots = held.length;
         const c = controls(tr);
         c.prepend(ibAddMenu(tr));
@@ -4295,6 +4303,96 @@ const ADMIN = REPO.split('/')[0];
       sync();
     }
 
+    /* ---------- sidebar pictures, dragged ----------
+       Onto another sidebar picture, a picture goes beside it on whichever side the pointer
+       is, two to a row as ever; within its own pair, that changes sides. Onto any other row,
+       or a full pair, it takes a row of its own above or below. Like setSidebarSlots, the
+       move is made on the row data and the sidebar rebuilt from it. */
+    let dragging = null;
+    let marked = [];
+    const filledSlot = (s) => !!(s.querySelector('input.path')?.value || s.querySelector('.ce')?.textContent.trim());
+    const picturesOf = (r) => (r.images ? r.images.map((x) => ({ ...x })) : [{ src: r.image || '', caption: r.caption || '' }])
+      .filter((x) => x.src || x.caption);
+    const pictureRow = (pics) => (pics.length > 1 ? { images: pics } : { image: pics[0].src, caption: pics[0].caption });
+    function pictureDrag(e, slot) {
+      const tr = slot.closest('tr');
+      dragging = {
+        el: slot,
+        row: [...ib.querySelectorAll('tr[data-kind]')].indexOf(tr),
+        slot: [...tr.querySelectorAll('.ib-slot')].filter(filledSlot).indexOf(slot),
+      };
+      // Only this editor's own kind of drag, so a drop in the article inserts nothing.
+      e.dataTransfer.clearData();
+      e.dataTransfer.setData('text/x-talopedia-picture', '');
+      e.dataTransfer.effectAllowed = 'move';
+      slot.classList.add('dragging');
+    }
+    function pictureMark(to) {
+      marked.forEach(([node, c]) => node.classList.remove(c));
+      marked = [];
+      if (!to) return;
+      const [node, c] = to.beside ? [to.slot, to.before ? 'drop-before' : 'drop-after'] : [to.tr, to.above ? 'drop-above' : 'drop-below'];
+      node.classList.add(c);
+      marked.push([node, c]);
+    }
+    function pictureDone() {
+      dragging?.el.classList.remove('dragging');
+      dragging = null;
+      pictureMark(null);
+    }
+    /** Where a picture let go at this point goes: beside a picture, or a row of its own. */
+    function pictureDrop(e) {
+      const tr = e.target.closest?.('tr[data-kind]');
+      if (!tr || !ib.contains(tr)) return null;
+      const row = [...ib.querySelectorAll('tr[data-kind]')].indexOf(tr);
+      const slot = e.target.closest('.ib-slot');
+      if (slot && tr.dataset.kind === 'image') {
+        const filled = [...tr.querySelectorAll('.ib-slot')].filter(filledSlot);
+        if (row === dragging.row || filled.length < 2) {
+          const box = slot.getBoundingClientRect();
+          const before = e.clientX < box.left + box.width / 2;
+          const k = filled.indexOf(slot);
+          return { row, slot, beside: true, before, at: k < 0 ? filled.length : k + (before ? 0 : 1) };
+        }
+      }
+      const box = tr.getBoundingClientRect();
+      return { row, tr, above: e.clientY < box.top + box.height / 2 };
+    }
+    function pictureMove(to) {
+      const rows = readInfobox();
+      const out = rows.map((r) => [r]);
+      const from = picturesOf(rows[dragging.row]);
+      const [pic] = from.splice(dragging.slot, 1);
+      if (!pic) return;
+      out[dragging.row] = from.length ? [pictureRow(from)] : [];
+      if (to.beside) {
+        const into = to.row === dragging.row ? from : picturesOf(rows[to.row]);
+        into.splice(to.row === dragging.row && dragging.slot < to.at ? to.at - 1 : to.at, 0, pic);
+        out[to.row] = [pictureRow(into)];
+      } else {
+        const alone = pictureRow([pic]);
+        out[to.row] = to.above ? [alone, ...out[to.row]] : [...out[to.row], alone];
+      }
+      setInfobox(out.flat());
+      sync();
+    }
+    ib.addEventListener('dragover', (e) => {
+      if (!dragging) return;
+      const to = pictureDrop(e);
+      pictureMark(to);
+      if (!to) return;
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+    });
+    ib.addEventListener('dragleave', (e) => { if (dragging && !ib.contains(e.relatedTarget)) pictureMark(null); });
+    ib.addEventListener('drop', (e) => {
+      if (!dragging) return;
+      e.preventDefault();
+      const to = pictureDrop(e);
+      if (to) pictureMove(to);
+      pictureDone();
+    });
+
     // Static, floating or a grid: whichever the Media panel is set to, and the shape
     // the picture is cut to, which is its own proportions unless one is chosen.
     let insertAs = 'image';
@@ -5152,11 +5250,18 @@ const ADMIN = REPO.split('/')[0];
     .blk figure:hover .fig-tools, .blk figure:focus-within .fig-tools { opacity: 1; }
     /* The sidebar's picture cell behaves like a figure: hidden path, corner button. */
     .ib-media { position: relative; }
-    .ib-media[data-slots="2"] { display: flex; gap: 8px; align-items: flex-start; }
+    .ib-media[data-slots="2"] > .ib-slots { display: flex; gap: 8px; align-items: flex-end; }
     .ib-slot { position: relative; flex: 1; min-width: 0; }
     .ib-media input.path { position: absolute; width: 1px; height: 1px; padding: 0; border: 0; opacity: 0; }
     .ib-media .fig-empty { height: 60px; }
     .ib-slot:hover .fig-tools, .ib-slot:focus-within .fig-tools { opacity: 1; }
+    /* A sidebar picture is dragged by itself; the blue bar shows where it would land. */
+    .ib-slot img[draggable="true"] { cursor: grab; }
+    .ib-slot.dragging { opacity: .35; }
+    .ib-slot.drop-before { box-shadow: -3px 0 0 var(--link); }
+    .ib-slot.drop-after { box-shadow: 3px 0 0 var(--link); }
+    #ib tr.drop-above > td, #ib tr.drop-above > th { box-shadow: inset 0 3px 0 var(--link); }
+    #ib tr.drop-below > td, #ib tr.drop-below > th { box-shadow: inset 0 -3px 0 var(--link); }
     .sub-add {
       font: 12px var(--body); color: var(--muted); background: transparent;
       border: 1px dashed var(--rule); border-radius: 3px; padding: 5px 12px; cursor: pointer;

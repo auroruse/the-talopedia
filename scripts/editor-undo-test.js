@@ -430,6 +430,40 @@
     ok('and two lines save as two', $('#preview').textContent.includes('romaji:\n  - "Koin Senso"\n  - "Jiayin Zhanzheng"'),
       ($('#preview').textContent.match(/romaji:[^\n]*(\n  - [^\n]*)*/) || [''])[0]);
 
+    // Sidebar pictures, dragged: beside another, across their pair, and out to a row of their own.
+    const picsMd = ['---', 'title: "Pictures test"', 'type: overview', 'infobox:',
+      '  - { image: "/assets/flags/albinya.png", caption: "Flag A" }',
+      '  - { image: "/assets/flags/alemannia.png", caption: "Flag B" }',
+      '  - { label: "Capital", value: "Somewhere" }', '---', '', 'Body.', ''].join('\n');
+    const picsFile = new DataTransfer();
+    picsFile.items.add(new File([picsMd], 'pictures-test.md'));
+    $('#open-file-input').files = picsFile.files;
+    $('#open-file-input').dispatchEvent(new Event('change'));
+    for (let i = 0; i < 60 && !/pictures-test/.test($('#status').textContent); i++) await sleep(50);
+    await sleep(300);
+    const slotOf = (cap) => [...document.querySelectorAll('#ib .ib-slot')].find((s) => s.querySelector('.ce').textContent === cap);
+    const dragOnto = (from, target, fx, fy) => {
+      const dt = new DataTransfer();
+      const img = from.querySelector('img');
+      img.dispatchEvent(new DragEvent('dragstart', { bubbles: true, dataTransfer: dt }));
+      const box = target.getBoundingClientRect();
+      const at = { clientX: box.left + box.width * fx, clientY: box.top + box.height * fy, bubbles: true, cancelable: true, dataTransfer: dt };
+      target.dispatchEvent(new DragEvent('dragover', at));
+      target.dispatchEvent(new DragEvent('drop', at));
+      img.dispatchEvent(new DragEvent('dragend', { bubbles: true, dataTransfer: dt }));
+    };
+    const sidebarMd = () => ($('#preview').textContent.match(/infobox:\n[\s\S]*?(?=\n---)/) || [''])[0];
+    dragOnto(slotOf('Flag A'), slotOf('Flag B'), 0.75, 0.5); await sleep(100);
+    ok('a picture dropped on another stands beside it', sidebarMd().includes('  - images:\n'
+      + '      - { src: "/assets/flags/alemannia.png", caption: "Flag B" }\n      - { src: "/assets/flags/albinya.png", caption: "Flag A" }'), sidebarMd());
+    dragOnto(slotOf('Flag A'), slotOf('Flag B'), 0.25, 0.5); await sleep(100);
+    ok('within its pair it changes sides', sidebarMd().includes(
+      '      - { src: "/assets/flags/albinya.png", caption: "Flag A" }\n      - { src: "/assets/flags/alemannia.png", caption: "Flag B" }'), sidebarMd());
+    const capitalRow = [...document.querySelectorAll('#ib tr[data-kind="row"]')].find((tr) => tr.querySelector('th')?.textContent === 'Capital');
+    dragOnto(slotOf('Flag B'), capitalRow.querySelector('td'), 0.5, 0.9); await sleep(100);
+    ok('onto another row it takes a row of its own there', sidebarMd().includes('  - { image: "/assets/flags/albinya.png", caption: "Flag A" }\n'
+      + '  - { label: "Capital", value: "Somewhere" }\n  - { image: "/assets/flags/alemannia.png", caption: "Flag B" }'), sidebarMd());
+
     // Insert > Data table: the same grid, marked so the page can sort it by any column.
     focusEnd(paras()[0]);
     document.querySelector('#dtbl-pick .tbl-cell[data-r="3"][data-c="2"]').click();
