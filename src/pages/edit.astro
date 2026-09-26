@@ -1020,7 +1020,18 @@ const ADMIN = REPO.split('/')[0];
         held.forEach((d) => pics.append(slot(d)));
         td.append(pics);
         td.dataset.slots = held.length;
-        const c = controls(tr);
+        // Joined, a picture row sits flush under the row above with no divider between,
+        // so rows of one or two pictures run on as one gallery, as many as are wanted.
+        if (r.join) tr.classList.add('ib-join');
+        const c = controls(tr, [['\u2912', '', () => { tr.classList.toggle('ib-join'); paintJoin(); }]]);
+        const joinButton = c.querySelector('button');
+        const paintJoin = () => {
+          const on = tr.classList.contains('ib-join');
+          joinButton.classList.toggle('on', on);
+          joinButton.title = on ? 'Joined to the row above as one gallery; click to set it apart'
+            : 'Join the row above as one gallery, with no divider between';
+        };
+        paintJoin();
         c.prepend(ibAddMenu(tr));
         td.append(c);
         tr.append(td);
@@ -1123,9 +1134,10 @@ const ADMIN = REPO.split('/')[0];
             caption: htmlToMd(b.querySelector('.ce')).trim(),
           }));
           // One picture writes the plain form it always had; two write a list.
+          const joined = tr.classList.contains('ib-join') ? { join: true } : {};
           return slots.length > 1
-            ? { images: slots }
-            : { image: slots[0]?.src ?? '', caption: slots[0]?.caption ?? '' };
+            ? { images: slots, ...joined }
+            : { image: slots[0]?.src ?? '', caption: slots[0]?.caption ?? '', ...joined };
         }
         const asLines = (cell) => htmlToMd(cell, '\n').split('\n').map((x) => x.trim()).filter(Boolean);
         // A cell's lines, a nested one led by two spaces a level, which is how the page reads them.
@@ -2313,13 +2325,17 @@ const ADMIN = REPO.split('/')[0];
             if (got.length > 1) {
               fm.push('  - images:');
               for (const im of got) fm.push(`      - { src: ${q(im.src)}, caption: ${q(im.caption)} }`);
+              if (r.join) fm.push('    join: true');
             } else {
               const one = got[0] || { src: '', caption: '' };
-              fm.push(`  - { image: ${q(one.src)}, caption: ${q(one.caption)} }`);
+              fm.push(`  - { image: ${q(one.src)}, caption: ${q(one.caption)}${r.join ? ', join: true' : ''} }`);
             }
             continue;
           }
-          if (r.image != null) { fm.push(`  - { image: ${q(r.image)}, caption: ${q(r.caption)} }`); continue; }
+          if (r.image != null) {
+            fm.push(`  - { image: ${q(r.image)}, caption: ${q(r.caption)}${r.join ? ', join: true' : ''} }`);
+            continue;
+          }
           // A row with a nested line says how deep it may go and whether its lines are drawn.
           const nest = () => {
             if (r.depth) fm.push(`    depth: ${r.depth}`, `    guides: ${r.guides === false ? 'false' : 'true'}`);
@@ -3496,13 +3512,15 @@ const ADMIN = REPO.split('/')[0];
             if (body.startsWith('{')) { rows.push(inlineObj(body)); continue; }
             if (/^images:/.test(body)) {
               const images = [];
+              let joined = false;
               let k2 = k + 1;
               while (k2 < block.length && indent(block[k2]) > indent(l)) {
                 const im = block[k2].match(/^\s*- (\{.*\})\s*$/);
                 if (im) images.push(inlineObj(im[1]));
+                if (/^\s*join:\s*true\s*$/.test(block[k2])) joined = true;
                 k2++;
               }
-              rows.push({ images });
+              rows.push({ images, ...(joined && { join: true }) });
               k = k2 - 1;
               continue;
             }
@@ -4294,9 +4312,10 @@ const ADMIN = REPO.split('/')[0];
       const held = cur.images || [{ src: cur.image || '', caption: cur.caption || '' }];
       if (held.length === n) return;
       const next = n > held.length ? [...held, { src: '', caption: '' }] : held.slice(0, n);
-      rows[i] = next.length > 1
-        ? { images: next }
-        : { image: next[0].src, caption: next[0].caption };
+      rows[i] = {
+        ...(next.length > 1 ? { images: next } : { image: next[0].src, caption: next[0].caption }),
+        ...(cur.join && { join: true }),
+      };
       // Rebuilt from the row data rather than by moving nodes, so every slot comes
       // out with its own handlers.
       setInfobox(rows);
@@ -4313,7 +4332,10 @@ const ADMIN = REPO.split('/')[0];
     const filledSlot = (s) => !!(s.querySelector('input.path')?.value || s.querySelector('.ce')?.textContent.trim());
     const picturesOf = (r) => (r.images ? r.images.map((x) => ({ ...x })) : [{ src: r.image || '', caption: r.caption || '' }])
       .filter((x) => x.src || x.caption);
-    const pictureRow = (pics) => (pics.length > 1 ? { images: pics } : { image: pics[0].src, caption: pics[0].caption });
+    const pictureRow = (pics, join) => ({
+      ...(pics.length > 1 ? { images: pics } : { image: pics[0].src, caption: pics[0].caption }),
+      ...(join && { join: true }),
+    });
     function pictureDrag(e, slot) {
       const tr = slot.closest('tr');
       dragging = {
@@ -4364,11 +4386,11 @@ const ADMIN = REPO.split('/')[0];
       const from = picturesOf(rows[dragging.row]);
       const [pic] = from.splice(dragging.slot, 1);
       if (!pic) return;
-      out[dragging.row] = from.length ? [pictureRow(from)] : [];
+      out[dragging.row] = from.length ? [pictureRow(from, rows[dragging.row].join)] : [];
       if (to.beside) {
         const into = to.row === dragging.row ? from : picturesOf(rows[to.row]);
         into.splice(to.row === dragging.row && dragging.slot < to.at ? to.at - 1 : to.at, 0, pic);
-        out[to.row] = [pictureRow(into)];
+        out[to.row] = [pictureRow(into, rows[to.row].join)];
       } else {
         const alone = pictureRow([pic]);
         out[to.row] = to.above ? [alone, ...out[to.row]] : [...out[to.row], alone];
@@ -5152,6 +5174,7 @@ const ADMIN = REPO.split('/')[0];
     /* A nested list's guide-lines switch, when the lines are left out; both switches
        stay hidden until a line in the row is nested. */
     .ctl button.off { opacity: .4; }
+    .ctl button.on { color: var(--link); }
     .ctl button[hidden] { display: none; }
     /* A sidebar cell with nothing in it yet still says what it is for. */
     .ib-edit .ce.outline:has(> div:only-child > br:only-child)::before {

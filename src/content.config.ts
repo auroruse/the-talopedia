@@ -17,6 +17,8 @@ const row = z.object({
   value: z.union([z.string(), z.array(z.string())]).optional(),
   image: z.string().optional(),
   caption: z.string().optional(),
+  // A picture row set flush under the row above, no divider between: the rows of a gallery.
+  join: z.boolean().optional(),
   // Two pictures side by side in one row, as a flag beside a coat of arms.
   images: z.array(z.object({
     src: z.string().default(''),

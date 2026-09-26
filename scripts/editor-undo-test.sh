@@ -17,7 +17,7 @@ python3 -m http.server $PORT >/dev/null 2>&1 &
 SERVER=$!
 trap 'kill $SERVER 2>/dev/null; rm -rf undo-test undo-test.js' EXIT
 sleep 1.5
-OUT=$("$CHROME" --headless --disable-gpu --virtual-time-budget=30000 --dump-dom "http://127.0.0.1:$PORT/undo-test/" 2>/dev/null \
+OUT=$("$CHROME" --headless --disable-gpu --virtual-time-budget=60000 --dump-dom "http://127.0.0.1:$PORT/undo-test/" 2>/dev/null \
   | sed -n '/<pre id="undo-results">/,/<\/pre>/p' | sed 's/<[^>]*>//g; s/^ *//')
 print -r -- "$OUT"
 [[ -n "$OUT" && "$OUT" != *FAIL* ]]

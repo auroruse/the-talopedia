@@ -16,6 +16,21 @@
     const s = getSelection(); s.removeAllRanges(); s.addRange(r);
   };
   const type = (text) => { for (const ch of text) document.execCommand('insertText', false, ch); };
+  /**
+   * File > Open, and wait until the editor says it has opened the file. The run's clock is
+   * virtual and races ahead of a real read, so a fixed wait could end before the file was in;
+   * reading the same file here first lets real time pass for the editor's read to land.
+   */
+  const openFile = async (md, name) => {
+    const f = new File([md], name);
+    const dt = new DataTransfer();
+    dt.items.add(f);
+    $('#open-file-input').files = dt.files;
+    $('#open-file-input').dispatchEvent(new Event('change'));
+    await f.text();
+    for (let i = 0; i < 200 && !$('#status').textContent.includes(name); i++) await sleep(20);
+    await sleep(200);
+  };
   const undo = () => $('#undo').click();
   const redo = () => $('#redo').click();
   const caret = () => {
@@ -406,11 +421,7 @@
     guidesButton.click(); await sleep(100);
     ok('the guide lines switch off', treeOf().includes('guides: false') && guidesButton.classList.contains('off'), treeOf());
     const nestedMd = $('#preview').textContent;
-    const nestedFile = new DataTransfer();
-    nestedFile.items.add(new File([nestedMd], 'nested-test.md'));
-    $('#open-file-input').files = nestedFile.files;
-    $('#open-file-input').dispatchEvent(new Event('change'));
-    for (let i = 0; i < 60 && !/nested-test/.test($('#status').textContent); i++) await sleep(50);
+    await openFile(nestedMd, 'nested-test.md');
     const back = [...document.querySelectorAll('.ib-edit tr[data-kind="row"]')].find((tr) => tr.querySelector('th')?.textContent === 'Battles/wars');
     const backLines = back && [...back.querySelectorAll('.ce.outline > div')].map((d) => d.dataset.level + ' ' + d.textContent).join(' | ');
     ok('and a saved page reads back as it was', back?.dataset.depth === '1' && back?.dataset.guides === 'false'
@@ -435,12 +446,7 @@
       '  - { image: "/assets/flags/albinya.png", caption: "Flag A" }',
       '  - { image: "/assets/flags/alemannia.png", caption: "Flag B" }',
       '  - { label: "Capital", value: "Somewhere" }', '---', '', 'Body.', ''].join('\n');
-    const picsFile = new DataTransfer();
-    picsFile.items.add(new File([picsMd], 'pictures-test.md'));
-    $('#open-file-input').files = picsFile.files;
-    $('#open-file-input').dispatchEvent(new Event('change'));
-    for (let i = 0; i < 60 && !/pictures-test/.test($('#status').textContent); i++) await sleep(50);
-    await sleep(300);
+    await openFile(picsMd, 'pictures-test.md');
     const slotOf = (cap) => [...document.querySelectorAll('#ib .ib-slot')].find((s) => s.querySelector('.ce').textContent === cap);
     const dragOnto = (from, target, fx, fy) => {
       const dt = new DataTransfer();
@@ -464,6 +470,25 @@
     ok('onto another row it takes a row of its own there', sidebarMd().includes('  - { image: "/assets/flags/albinya.png", caption: "Flag A" }\n'
       + '  - { label: "Capital", value: "Somewhere" }\n  - { image: "/assets/flags/alemannia.png", caption: "Flag B" }'), sidebarMd());
 
+    // Picture rows joined into one gallery: no divider between, as many rows of one or two as wanted.
+    await openFile(['---', 'title: "Gallery test"', 'type: overview', 'infobox:', '  - images:',
+      '      - { src: "/assets/flags/albinya.png", caption: "A" }', '      - { src: "/assets/flags/alemannia.png", caption: "B" }',
+      '  - { image: "/assets/flags/andam-islands.png", caption: "C" }', '  - { image: "/assets/flags/arunya.png", caption: "D" }',
+      '---', '', 'Body.', ''].join('\n'), 'gallery-test.md');
+    const pictureRows = () => [...document.querySelectorAll('#ib tr[data-kind="image"]')];
+    const joinSwitch = (tr) => tr.querySelector('.ctl > button');
+    joinSwitch(pictureRows()[1]).click(); joinSwitch(pictureRows()[2]).click(); await sleep(100);
+    ok('picture rows joined save as one gallery', sidebarMd().includes('  - { image: "/assets/flags/andam-islands.png", caption: "C", join: true }\n'
+      + '  - { image: "/assets/flags/arunya.png", caption: "D", join: true }'), sidebarMd());
+    const topRule = (tr) => getComputedStyle(tr.querySelector('td')).borderTopWidth;
+    ok('and are drawn with no divider between', topRule(pictureRows()[1]) === '0px' && topRule(pictureRows()[0]) !== '0px', [topRule(pictureRows()[0]), topRule(pictureRows()[1])]);
+    dragOnto(slotOf('D'), slotOf('C'), 0.75, 0.5); await sleep(100);
+    ok('a pair made by dragging keeps its place in the gallery', sidebarMd().includes('  - images:\n'
+      + '      - { src: "/assets/flags/andam-islands.png", caption: "C" }\n      - { src: "/assets/flags/arunya.png", caption: "D" }\n    join: true'), sidebarMd());
+    await openFile($('#preview').textContent, 'gallery-back.md');
+    ok('and a saved gallery opens joined', pictureRows().length === 2 && pictureRows()[1].classList.contains('ib-join')
+      && joinSwitch(pictureRows()[1]).classList.contains('on'), pictureRows().map((tr) => tr.className).join(' | '));
+
     // Insert > Data table: the same grid, marked so the page can sort it by any column.
     focusEnd(paras()[0]);
     document.querySelector('#dtbl-pick .tbl-cell[data-r="3"][data-c="2"]').click();
@@ -475,14 +500,8 @@
 
     // A data table opened from a file: an ampersand reads as one, and small print stays small.
     const cellIn = '<td>Kanaeya &amp; Co.<br><small>Native</small><br><small>*Romaji*</small></td>';
-    const file = new DataTransfer();
-    file.items.add(new File([`---\ntitle: "Table test"\ntype: list\n---\n\n<table class="sortable">\n`
-      + `<tr><th>Name</th><th>Group</th></tr>\n<tr>${cellIn}<td>A</td></tr>\n</table>\n`], 'table-test.md'));
-    $('#open-file-input').files = file.files;
-    $('#open-file-input').dispatchEvent(new Event('change'));
-    // Reading the file takes as long as it takes; a fixed wait lost the race once the
-    // run in front of it grew.
-    for (let i = 0; i < 60 && !/table-test/.test($('#status').textContent); i++) await sleep(50);
+    await openFile(`---\ntitle: "Table test"\ntype: list\n---\n\n<table class="sortable">\n`
+      + `<tr><th>Name</th><th>Group</th></tr>\n<tr>${cellIn}<td>A</td></tr>\n</table>\n`, 'table-test.md');
     const nameCell = document.querySelector('#body .blk[data-sortable] .ed-tbl tr:nth-child(2) td');
     ok('an opened data table shows & as itself', nameCell?.textContent === 'Kanaeya & Co.NativeRomaji', nameCell?.textContent);
     ok('its small print is small, the romaji italic too', nameCell?.querySelectorAll('small').length === 2

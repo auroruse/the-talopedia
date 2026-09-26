@@ -56,7 +56,7 @@ const view = rows.map((r) => (r.tree && r.value == null ? { ...r, value: r.tree 
         ) : r.section ? (
           <tr class="ib-section"><td colspan="2" set:html={renderInline(r.section)} /></tr>
         ) : r.images?.length || r.image ? (
-          <tr><td class="ib-media" colspan="2">
+          <tr class={r.join ? 'ib-join' : undefined}><td class="ib-media" colspan="2">
             {(() => {
               const shown = r.images?.length ? r.images.filter((im) => im.src) : [{ src: r.image, caption: r.caption }];
               // Side by side, each keeps a caption line even when empty, so every caption
