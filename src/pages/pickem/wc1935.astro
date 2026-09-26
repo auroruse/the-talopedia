@@ -1,0 +1,452 @@
+---
+// The 1935 World Cup pick'em. Out of character, so it stands outside the encyclopedia's own
+// layout and search. Data: scripts/sync-pickem.mjs writes the teams and squads; each submitted
+// entry is a file of its own under pickem-wc1935/entries, named for the GitHub account that sent
+// it; the state file holds the results and the lock, and is what the ?admin view produces.
+import data from '../../content/data/pickem-wc1935.json';
+import state from '../../content/data/pickem-wc1935-state.json';
+import { url } from '../../lib/registry.mjs';
+
+const REPO = process.env.GITHUB_REPO || 'auroruse/the-talopedia';
+const entries = Object.entries(import.meta.glob('../../content/data/pickem-wc1935/entries/*.json', { eager: true, import: 'default' }))
+  .map(([file, e]) => ({ login: file.split('/').pop().replace(/\.json$/, ''), code: e.code }));
+const banner = url('/assets/1935skj.png');
+const payload = JSON.stringify({ ...data, state, entries, repo: REPO, banner, badgeBase: url('/assets/pickem/wc1935/badges/') }).replace(/</g, '\\u003c');
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Cup 1935 Pick'em</title>
+  <link rel="icon" href={url('/favicon.png')}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Slab:wght@500..900&family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap">
+</head>
+<body>
+  <header class="pk-hero">
+    <h1 class="pk-brand"><img src={banner} alt="AFA World Cup Skjarnland 1935" width="1105" height="201"></h1>
+    <p class="pk-sub">Pick'em</p>
+  </header>
+
+  <div class="pk-bar" id="pk-top">
+    <div class="pk-wrap pk-bar-in">
+      <label class="pk-namefield">
+        <span class="pk-label">Name</span>
+        <input id="pk-name" class="pk-input" maxlength="32" autocomplete="nickname">
+      </label>
+      <div id="pk-progress" class="pk-progress" aria-label="Progress"></div>
+      <div class="pk-actions">
+        <button type="button" id="pk-png" class="pk-btn">Save card</button>
+        <button type="button" id="pk-submit" class="pk-btn primary">Submit picks</button>
+        <button type="button" id="pk-reset" class="pk-btn text">Reset</button>
+      </div>
+    </div>
+    <div class="pk-wrap pk-token" id="pk-token-panel" hidden>
+      <label class="pk-label" for="pk-token">GitHub token</label>
+      <div class="pk-token-row">
+        <input id="pk-token" class="pk-input" type="password" autocomplete="off" spellcheck="false" placeholder="ghp_…">
+        <button type="button" id="pk-token-go" class="pk-btn primary">Submit</button>
+        <button type="button" id="pk-token-cancel" class="pk-btn text">Cancel</button>
+      </div>
+      <details class="pk-help">
+        <summary>Need a token?</summary>
+        <ol>
+          <li><a href="https://github.com/settings/tokens/new?scopes=public_repo&description=The%20Talopedia%20pick%27em" target="_blank" rel="noopener">Open token page</a>. Log in if asked.</li>
+          <li>Name filled. <b>public_repo</b> ticked. <b>Touch nothing else.</b></li>
+          <li>Pick expiry. Any.</li>
+          <li>Scroll down. Press <b>Generate token</b>.</li>
+          <li>Copy it. Starts with <code>ghp_</code>. Shown once.</li>
+          <li>Paste in box above.</li>
+        </ol>
+        <p>Your token stays in this browser and goes only to GitHub. The wiki editor uses the same one.</p>
+      </details>
+    </div>
+    <p id="pk-status" class="pk-wrap pk-status" role="status" aria-live="polite"></p>
+  </div>
+
+  <div class="pk-wrap">
+    <div id="pk-viewing" class="pk-banner" hidden>
+      <span>Viewing <b id="pk-viewing-name"></b>'s picks</span>
+      <button type="button" id="pk-back" class="pk-btn">Back to mine</button>
+    </div>
+    <div id="pk-locked-note" class="pk-banner" hidden>Picks are locked.</div>
+  </div>
+
+  <main class="pk-wrap">
+    <section class="pk-sec" aria-labelledby="pk-h-groups">
+      <h2 class="pk-head" id="pk-h-groups">Group stage</h2>
+      <div id="pk-groups" class="pk-groups"></div>
+    </section>
+
+    <section class="pk-sec" aria-labelledby="pk-h-ko">
+      <h2 class="pk-head" id="pk-h-ko">Knockout stage</h2>
+      <div id="pk-bracket" class="pk-bracket"></div>
+    </section>
+
+    <section class="pk-sec" aria-labelledby="pk-h-extras">
+      <h2 class="pk-head" id="pk-h-extras">Awards and tiebreaker</h2>
+      <div class="pk-extras">
+        <div class="pk-card pk-card-score"><h3 class="pk-card-h">Final score</h3><div id="pk-score"></div></div>
+        <div class="pk-card">
+          <h3 class="pk-card-h" id="pk-boot-h">Golden Boot</h3>
+          <input class="pk-input" list="pk-players" data-award="boot" aria-labelledby="pk-boot-h" placeholder="Search players" autocomplete="off">
+          <div class="pk-pick" data-award-pick="boot"></div>
+        </div>
+        <div class="pk-card">
+          <h3 class="pk-card-h" id="pk-ball-h">Golden Ball</h3>
+          <input class="pk-input" list="pk-players" data-award="ball" aria-labelledby="pk-ball-h" placeholder="Search players" autocomplete="off">
+          <div class="pk-pick" data-award-pick="ball"></div>
+        </div>
+        <div class="pk-card">
+          <h3 class="pk-card-h" id="pk-glove-h">Golden Glove</h3>
+          <input class="pk-input" list="pk-keepers" data-award="glove" aria-labelledby="pk-glove-h" placeholder="Search goalkeepers" autocomplete="off">
+          <div class="pk-pick" data-award-pick="glove"></div>
+        </div>
+      </div>
+      <datalist id="pk-players"></datalist>
+      <datalist id="pk-keepers"></datalist>
+    </section>
+
+    <section class="pk-sec" id="pk-board-sec" aria-labelledby="pk-h-board" hidden>
+      <h2 class="pk-head" id="pk-h-board">Leaderboard</h2>
+      <p class="pk-crowd-n" id="pk-board-n"></p>
+      <div class="pk-table-wrap">
+        <table class="pk-table">
+          <colgroup><col style="width:60px"><col style="width:26%"><col style="width:92px"><col style="width:108px"><col style="width:92px"><col style="width:80px"><col style="width:26%"><col style="width:96px"></colgroup>
+          <thead><tr><th class="num">#</th><th>Entrant</th><th class="num">Groups</th><th class="num">Knockouts</th><th class="num">Awards</th><th class="num">Total</th><th>Champion pick</th><th><span class="pk-sr">Picks</span></th></tr></thead>
+          <tbody id="pk-board"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="pk-sec" id="pk-crowd-sec" aria-labelledby="pk-h-crowd" hidden>
+      <h2 class="pk-head" id="pk-h-crowd">The crowd</h2>
+      <p class="pk-crowd-n" id="pk-crowd-n"></p>
+      <div class="pk-table-wrap">
+        <table class="pk-table">
+          <colgroup><col style="width:30%"><col style="width:76px"><col><col><col><col><col><col></colgroup>
+          <thead><tr><th>Team</th><th class="num">Group</th><th class="num">Wins group</th><th class="num">Qualifies</th><th class="num">Quarters</th><th class="num">Semis</th><th class="num">Final</th><th class="num">Champion</th></tr></thead>
+          <tbody id="pk-crowd"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="pk-admin" class="pk-sec pk-admin" aria-labelledby="pk-h-admin" hidden>
+      <h2 class="pk-head" id="pk-h-admin">Admin</h2>
+      <div class="pk-admin-row">
+        <div class="pk-seg pk-modes" role="group" aria-label="Editing">
+          <button type="button" class="pk-btn" data-mode="picks">My picks</button>
+          <button type="button" class="pk-btn" data-mode="results">Results</button>
+        </div>
+        <label class="pk-check"><input type="checkbox" id="pk-locked"> Picks locked</label>
+      </div>
+      <div class="pk-admin-row">
+        <button type="button" id="pk-state" class="pk-btn primary">Copy state file</button>
+        <code class="pk-path">src/content/data/pickem-wc1935-state.json</code>
+        <button type="button" id="pk-from-site" class="pk-btn text">Load published state</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="application/json" id="pk-data" set:html={payload}></script>
+  <script>import '../../lib/pickem/app.js';</script>
+
+  <style is:global>
+    /* ── tokens ─────────────────────────────────────────────────────────────────────────── */
+    :root {
+      --navy: #0B2A55; --deep: #071D3D; --lift: #123C73; --edge: #24528F;
+      --yellow: #FFC72C; --ink: #0B2A55; --muted: #5E7190; --line: #E3E8EF; --pale: #F4F6FA;
+      --soft: #C9D4E5; --bad: #C62828;
+
+      /* The poster's three voices: its title, its group tabs, its team names. */
+      --display: 'Anton', Impact, 'Arial Narrow Bold', sans-serif;
+      --slab: 'Roboto Slab', Rockwell, Georgia, serif;
+      --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+      --t-xs: 11px; --t-sm: 13px; --t-md: 15px; --t-base: 17px; --t-lg: 19px; --t-xl: 24px;
+      --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 72px;
+      --wrap: 1440px; --gutter: clamp(16px, 3vw, 32px);
+      --radius: 18px; --radius-sm: 10px;
+      color-scheme: dark;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { background: var(--deep); -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; min-height: 100vh; color: #fff; font: 400 var(--t-base)/1.45 var(--serif);
+      background-color: var(--deep);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M24 0L48 24L24 48L0 24Z' fill='none' stroke='%23123C73' stroke-width='2'/%3E%3C/svg%3E"),
+        linear-gradient(180deg, var(--navy), var(--deep));
+      background-attachment: scroll, fixed;
+      -webkit-font-smoothing: antialiased;
+    }
+    :focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+    button, input, textarea { font: inherit; }
+    .pk-wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+
+    /* A label: small slab capitals, the voice every control speaks in. */
+    .pk-label { font: 700 var(--t-xs)/1 var(--slab); letter-spacing: .16em; text-transform: uppercase; color: var(--yellow); }
+
+    /* ── hero ───────────────────────────────────────────────────────────────────────────── */
+    .pk-hero { padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(24px, 3.5vw, 40px); text-align: center; }
+    /* The banner is drawn for a light ground (its "AFA WORLD CUP" is navy), so it sits on a white
+       plate, the same white as the group cards, underlined in the tab yellow. */
+    .pk-brand {
+      max-width: 900px; margin: 0 auto; padding: clamp(14px, 2.2vw, 28px) clamp(18px, 3.2vw, 44px);
+      border-radius: 26px; background: #fff; box-shadow: 0 6px 0 var(--yellow);
+    }
+    .pk-brand img { display: block; width: 100%; height: auto; }
+    .pk-sub {
+      display: inline-block; margin: clamp(22px, 3vw, 32px) 0 0; padding: 7px 20px; border: 2px solid #fff; border-radius: 999px;
+      font: 800 clamp(14px, 1.6vw, 18px)/1 var(--slab); letter-spacing: .22em; text-transform: uppercase;
+    }
+
+    /* ── toolbar ────────────────────────────────────────────────────────────────────────── */
+    .pk-bar { position: relative; z-index: 20; background: rgba(7, 29, 61, .94); border-block: 1px solid var(--edge); }
+    @media (min-width: 900px) { .pk-bar { position: sticky; top: 0; } }
+    @supports (backdrop-filter: blur(6px)) { .pk-bar { background: rgba(7, 29, 61, .8); backdrop-filter: blur(10px); } }
+    .pk-bar-in { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s5); padding-block: var(--s3); }
+    .pk-namefield { display: flex; align-items: center; gap: var(--s3); }
+    .pk-namefield .pk-input { width: 220px; min-height: 42px; }
+    .pk-progress { display: flex; flex-wrap: wrap; gap: var(--s2); flex: 1 1 260px; }
+    .pk-chip {
+      display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; border: 1px solid var(--edge); border-radius: 999px;
+      font: 600 12px/1 var(--slab); letter-spacing: .02em; color: var(--soft); white-space: nowrap;
+    }
+    .pk-chip svg { fill: none; stroke: currentColor; stroke-width: 2; }
+    .pk-chip.ok { border-color: var(--yellow); color: var(--yellow); }
+    .pk-chip.warn { border-color: var(--yellow); background: var(--yellow); color: var(--ink); }
+    .pk-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3); }
+    .pk-token { display: grid; gap: var(--s2); padding-bottom: var(--s4); }
+    .pk-token-row { display: flex; flex-wrap: wrap; gap: var(--s2); }
+    .pk-token-row .pk-input { flex: 1 1 260px; max-width: 420px; font: 400 14px/1.2 var(--mono); }
+    .pk-help { font: 400 var(--t-md)/1.5 var(--serif); color: var(--soft); }
+    .pk-help summary { width: max-content; font: 700 12px/1 var(--slab); letter-spacing: .08em; color: var(--yellow); cursor: pointer; }
+    .pk-help ol { margin: var(--s2) 0; padding-left: 1.4em; }
+    .pk-help p { margin: 0; font-size: var(--t-sm); }
+    .pk-help a, .pk-status a { color: var(--yellow); }
+    .pk-help code { font: 400 13px var(--mono); }
+    .pk-status { margin: 0; padding-bottom: var(--s3); font: 600 var(--t-sm)/1.3 var(--slab); color: var(--soft); }
+    .pk-status:empty { display: none; }
+
+    .pk-btn {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 0 16px;
+      border: 1px solid var(--edge); border-radius: var(--radius-sm); background: var(--lift); color: #fff;
+      font: 700 12px/1 var(--slab); letter-spacing: .1em; text-transform: uppercase; cursor: pointer;
+      transition: border-color .12s, background-color .12s, color .12s;
+    }
+    .pk-btn:hover:not(:disabled) { border-color: var(--yellow); }
+    .pk-btn.primary { background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
+    .pk-btn.primary:hover:not(:disabled) { background: #FFD35C; }
+    .pk-btn.text { border-color: transparent; background: transparent; color: var(--soft); padding: 0 10px; }
+    .pk-btn.text:hover:not(:disabled) { color: #fff; border-color: transparent; text-decoration: underline; text-underline-offset: 4px; }
+    .pk-btn:disabled { opacity: .45; cursor: not-allowed; }
+    .pk-btn.small { min-height: 34px; padding: 0 12px; font-size: 11px; }
+    .pk-btn[aria-busy="true"] { cursor: progress; }
+    .pk-seg { display: inline-flex; }
+    .pk-seg .pk-btn { border-radius: 0; }
+    .pk-seg .pk-btn:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
+    .pk-seg .pk-btn:last-child { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+    .pk-seg .pk-btn + .pk-btn { margin-left: -1px; }
+    .pk-seg .pk-btn[aria-pressed="true"] { position: relative; background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
+
+    .pk-input {
+      min-height: 44px; padding: 8px 12px; border: 2px solid transparent; border-radius: var(--radius-sm);
+      background: #fff; color: var(--ink); font: 400 var(--t-base)/1.2 var(--serif);
+    }
+    .pk-input::placeholder { color: var(--muted); }
+    .pk-input:disabled { background: #DDE3EC; color: var(--muted); }
+    .pk-input.bad { border-color: var(--bad); }
+
+    .pk-banner {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--s3) var(--s4);
+      margin-top: var(--s4); padding: var(--s3) var(--s4); border-radius: var(--radius-sm);
+      background: var(--yellow); color: var(--ink); font: 600 var(--t-md)/1.3 var(--slab);
+    }
+
+    /* ── sections ───────────────────────────────────────────────────────────────────────── */
+    main { padding-bottom: var(--s8); }
+    .pk-sec { margin-top: clamp(48px, 7vw, 88px); scroll-margin-top: 96px; }
+    .pk-head {
+      display: table; margin: 0 auto clamp(28px, 3.5vw, 40px); padding: 12px 36px; border-radius: 999px;
+      background: var(--yellow); color: var(--ink); font: 800 clamp(18px, 2vw, 24px)/1 var(--slab);
+      letter-spacing: .06em; text-transform: uppercase; text-align: center;
+    }
+
+    /* ── groups ─────────────────────────────────────────────────────────────────────────── */
+    .pk-groups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(36px, 4vw, 48px) clamp(16px, 2vw, 24px); }
+    @media (max-width: 1299px) { .pk-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 679px) { .pk-groups { grid-template-columns: minmax(0, 1fr); } }
+    .pk-group { position: relative; padding: 40px var(--s3) var(--s3); border-radius: 22px; background: #fff; color: var(--ink); }
+    .pk-tab {
+      position: absolute; top: -22px; left: 50%; transform: translateX(-50%); width: 82%; margin: 0; padding: 11px 0;
+      border-radius: 999px; background: var(--yellow); text-align: center; font: 800 22px/1 var(--slab); letter-spacing: .05em; text-transform: uppercase;
+    }
+    .pk-rows { position: relative; display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+    /* The qualification line, fixed between the second and third rows whoever is dragged past it. */
+    .pk-rows::after { content: ''; position: absolute; left: 12px; right: 12px; top: calc(50% - 1px); border-top: 2px dashed var(--line); pointer-events: none; }
+    .pk-row {
+      position: relative; display: grid; grid-template-columns: 30px 38px minmax(0, 1fr) 26px; align-items: center; gap: var(--s3);
+      min-height: 60px; padding: 6px 6px 6px 8px; border-radius: 12px; background: #fff; user-select: none;
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+    .pk-row:not(.can) { grid-template-columns: 30px 38px minmax(0, 1fr); }
+    .pk-row.can { cursor: grab; }
+    .pk-row.can:hover { background: var(--pale); }
+    .pk-row.dragging { z-index: 3; transition: none; cursor: grabbing; background: #fff; box-shadow: 0 12px 28px rgba(7, 29, 61, .3); }
+    .pk-pos { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--pale); font: 800 15px/1 var(--slab); }
+    .pk-row.is-q .pk-pos { background: var(--yellow); }
+    /* Badges come in shields and discs: each is shown whole inside a square, never cropped. */
+    .pk-badge { flex: none; display: inline-grid; place-items: center; width: 38px; height: 38px; }
+    .pk-badge img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .pk-team { display: grid; gap: 3px; min-width: 0; }
+    .pk-team .pk-name { font: 400 18px/1.15 var(--serif); }
+    .pk-name { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pk-meta { font: 500 12px/1.2 var(--slab); letter-spacing: .01em; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pk-grip { display: grid; place-items: center; width: 26px; height: 44px; color: #8494AC; touch-action: none; cursor: grab; }
+    .pk-grip svg { fill: currentColor; }
+    .pk-done { display: flex; align-items: center; gap: var(--s2); margin: var(--s3) var(--s1) 2px; font: 600 var(--t-sm)/1.2 var(--slab); cursor: pointer; }
+    .pk-done input { width: 18px; height: 18px; accent-color: var(--ink); }
+
+    /* ── bracket ────────────────────────────────────────────────────────────────────────── */
+    /* Wide screens: the classic two-sided bracket, final in the middle. Every column shares one
+       height, so a match always sits halfway between the two that feed it. */
+    .pk-bracket {
+      --col-h: 700px; --gap: 22px;
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.2fr) repeat(3, minmax(0, 1fr)); column-gap: var(--gap);
+    }
+    .pk-col { display: flex; flex-direction: column; min-width: 0; }
+    .pk-round { min-height: 14px; margin-bottom: var(--s4); text-align: center; font: 700 12px/1.2 var(--slab); letter-spacing: .16em; text-transform: uppercase; color: var(--yellow); }
+    .pk-colbody { position: relative; display: flex; flex-direction: column; height: var(--col-h); }
+    .pk-pair { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: space-around; }
+    .pk-single { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .pk-pair::after, .pk-pair::before, .pk-single::after { content: ''; position: absolute; border: 0 solid rgba(255, 199, 44, .6); pointer-events: none; }
+    .pk-col.left .pk-pair::after { right: calc(var(--gap) / -2); top: 25%; bottom: 25%; width: calc(var(--gap) / 2); border-width: 2px 2px 2px 0; border-radius: 0 6px 6px 0; }
+    .pk-col.left .pk-pair::before { right: calc(-1 * var(--gap)); top: 50%; width: calc(var(--gap) / 2); border-top-width: 2px; }
+    .pk-col.right .pk-pair::after { left: calc(var(--gap) / -2); top: 25%; bottom: 25%; width: calc(var(--gap) / 2); border-width: 2px 0 2px 2px; border-radius: 6px 0 0 6px; }
+    .pk-col.right .pk-pair::before { left: calc(-1 * var(--gap)); top: 50%; width: calc(var(--gap) / 2); border-top-width: 2px; }
+    .pk-col.left .pk-single::after { right: calc(-1 * var(--gap)); top: 50%; width: var(--gap); border-top-width: 2px; }
+    .pk-col.right .pk-single::after { left: calc(-1 * var(--gap)); top: 50%; width: var(--gap); border-top-width: 2px; }
+
+    .pk-match { position: relative; border-radius: 12px; background: #fff; box-shadow: 0 2px 0 rgba(0, 0, 0, .18); }
+    .pk-match[data-seeds]::before {
+      content: attr(data-seeds); position: absolute; left: 0; right: 0; bottom: 100%; margin-bottom: 5px; text-align: center;
+      font: 700 10px/1 var(--slab); letter-spacing: .12em; color: var(--soft);
+    }
+    .pk-slot {
+      position: relative; display: flex; align-items: center; gap: 7px; width: 100%; min-height: 46px; padding: 6px 9px 6px 11px;
+      border: 0; background: #fff; color: var(--ink); font: 400 clamp(13.5px, 1.05vw, 15.5px)/1.2 var(--serif); text-align: left; cursor: pointer;
+    }
+    .pk-slot:first-child { border-radius: 12px 12px 0 0; }
+    .pk-slot:last-child { border-radius: 0 0 12px 12px; }
+    .pk-slot + .pk-slot { border-top: 1px solid var(--line); }
+    .pk-slot:hover:not(:disabled) { background: #FFF4CC; }
+    .pk-slot:disabled { cursor: default; }
+    .pk-slot.win { font-weight: 700; box-shadow: inset 5px 0 0 var(--yellow); }
+    .pk-slot.lose { color: var(--muted); }
+    .pk-slot.lose .pk-badge { opacity: .55; }
+    .pk-slot.tbd { color: var(--muted); cursor: default; }
+    .pk-slot .pk-badge { width: 26px; height: 26px; }
+    .pk-slot .pk-name { flex: 1; }
+        
+    .pk-center .pk-colbody { display: block; }
+    .pk-champ {
+      position: absolute; top: 0; left: 0; right: 0; padding: var(--s4) var(--s3) var(--s5); border: 2px solid var(--yellow);
+      border-radius: var(--radius); background: rgba(7, 29, 61, .72); text-align: center;
+    }
+    .pk-champ .pk-badge.big { display: grid; width: 112px; height: 112px; margin: var(--s3) auto; }
+    .pk-champ .pk-badge.big.empty { border: 2px dashed var(--edge); border-radius: 50%; width: 96px; height: 96px; margin-block: 20px; }
+    .pk-champ-name { font: 400 clamp(24px, 2.4vw, 32px)/1.05 var(--display); letter-spacing: .03em; text-transform: uppercase; overflow-wrap: anywhere; }
+    .pk-champ:not(.set) .pk-champ-name { color: var(--soft); font-size: 20px; }
+    .pk-final { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); }
+    .pk-final > .pk-round { position: absolute; left: 0; right: 0; bottom: 100%; margin-bottom: var(--s3); }
+    .pk-third { position: absolute; left: 0; right: 0; bottom: 0; }
+    .pk-third > .pk-round { margin-bottom: var(--s3); }
+
+    /* Narrower screens: the same columns, stacked round by round, two halves side by side. */
+    @media (max-width: 1359px) {
+      .pk-bracket { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s6) var(--s5); }
+      .pk-slot { font-size: 16px; }
+      .pk-col[data-col="rL"] { grid-area: 1 / 1; } .pk-col[data-col="rR"] { grid-area: 1 / 2; }
+      .pk-col[data-col="qL"] { grid-area: 2 / 1; } .pk-col[data-col="qR"] { grid-area: 2 / 2; }
+      .pk-col[data-col="sL"] { grid-area: 3 / 1; } .pk-col[data-col="sR"] { grid-area: 3 / 2; }
+      .pk-col[data-col="c"] { grid-area: 4 / 1 / 5 / 3; }
+      .pk-colbody, .pk-center .pk-colbody { display: flex; flex-direction: column; gap: var(--s3); height: auto; }
+      .pk-pair { flex: none; gap: var(--s3); }
+      .pk-match[data-seeds] { margin-top: 17px; }
+      .pk-pair::before, .pk-pair::after, .pk-single::after { display: none; }
+      .pk-center .pk-colbody { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: var(--s5); }
+      .pk-champ, .pk-final, .pk-third { position: static; transform: none; }
+      .pk-champ { grid-row: span 2; }
+      .pk-final > .pk-round { position: static; margin-bottom: var(--s3); }
+    }
+    @media (max-width: 679px) {
+      .pk-bracket { grid-template-columns: minmax(0, 1fr); }
+      .pk-col[data-col] { grid-area: auto; }
+      .pk-col[data-col="rL"] { order: 1; } .pk-col[data-col="rR"] { order: 2; }
+      .pk-col[data-col="qL"] { order: 3; } .pk-col[data-col="qR"] { order: 4; }
+      .pk-col[data-col="sL"] { order: 5; } .pk-col[data-col="sR"] { order: 6; }
+      .pk-col[data-col="c"] { order: 7; }
+      .pk-col.right > .pk-round { display: none; }
+      .pk-center .pk-colbody { grid-template-columns: minmax(0, 1fr); }
+      .pk-champ { grid-row: auto; }
+    }
+
+    /* ── awards and tiebreaker ──────────────────────────────────────────────────────────── */
+    .pk-extras { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 20px); }
+    @media (max-width: 1179px) { .pk-extras { grid-template-columns: repeat(3, minmax(0, 1fr)); } .pk-card-score { grid-column: 1 / -1; } }
+    @media (max-width: 679px) { .pk-extras { grid-template-columns: minmax(0, 1fr); } }
+    .pk-card { display: flex; flex-direction: column; gap: var(--s3); padding: var(--s4) var(--s5) var(--s5); border: 2px solid var(--yellow); border-radius: var(--radius); background: var(--deep); }
+    .pk-card-h { margin: 0; font: 800 14px/1.2 var(--slab); letter-spacing: .14em; text-transform: uppercase; color: var(--yellow); }
+    .pk-card .pk-input { width: 100%; }
+    .pk-pick { display: flex; align-items: center; gap: var(--s2); min-height: 28px; font: 400 var(--t-md)/1.2 var(--serif); color: var(--soft); }
+    .pk-pick .pk-badge { width: 28px; height: 28px; }
+    .pk-scoreline { display: grid; grid-template-columns: minmax(0, 1fr) auto auto auto minmax(0, 1fr); align-items: center; gap: var(--s3); }
+    .pk-sc-team { display: flex; align-items: center; gap: var(--s2); min-width: 0; font: 400 var(--t-base)/1.2 var(--serif); }
+    .pk-sc-team span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pk-sc-team.right { justify-content: flex-end; text-align: right; }
+    .pk-sc-team .pk-badge { width: 36px; height: 36px; }
+    .pk-scoreline .pk-input { width: 68px; padding: 2px 4px; text-align: center; font: 400 32px/1.1 var(--display); }
+    .pk-dash { font: 400 30px/1 var(--display); }
+    .pk-note { min-height: 1.3em; margin: 0; font: 500 var(--t-sm)/1.3 var(--slab); color: var(--soft); }
+    .pk-note.bad { color: #FF9C9C; }
+    .pk-empty { margin: 0; font: 400 var(--t-md)/1.4 var(--serif); color: var(--soft); }
+    @media (max-width: 479px) {
+      .pk-scoreline { grid-template-columns: auto auto auto; justify-content: center; }
+      .pk-sc-team { grid-column: 1 / -1; justify-content: center; }
+      .pk-sc-team.right { order: 5; justify-content: center; }
+    }
+
+    /* ── tables ─────────────────────────────────────────────────────────────────────────── */
+    .pk-table-wrap { overflow-x: auto; border-radius: var(--radius); background: #fff; }
+    .pk-table { width: 100%; min-width: 680px; border-collapse: collapse; table-layout: fixed; color: var(--ink); font: 400 16px/1.3 var(--serif); }
+    .pk-table th { padding: 14px var(--s3); border-bottom: 2px solid var(--line); text-align: left; font: 700 var(--t-xs)/1 var(--slab); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .pk-table td { padding: 10px var(--s3); border-bottom: 1px solid var(--line); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pk-table tbody tr:last-child td { border-bottom: 0; }
+    .pk-table .num { text-align: right; font-family: var(--slab); font-weight: 600; font-variant-numeric: tabular-nums; }
+    .pk-table .total { font-weight: 800; }
+    .pk-table td.act { padding-block: 6px; text-align: right; }
+    .pk-table td.act .pk-btn { border-color: var(--line); background: #fff; color: var(--ink); }
+    .pk-table td.act .pk-btn:hover { border-color: var(--ink); }
+    .pk-dim { color: #9AA9BF; }
+    .pk-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .pk-inline { display: inline-flex; align-items: center; gap: var(--s2); }
+    .pk-inline .pk-badge { width: 24px; height: 24px; }
+    .pk-crowd-n { margin: calc(-1 * var(--s4)) 0 var(--s4); text-align: center; font: 600 var(--t-sm)/1.2 var(--slab); color: var(--soft); }
+
+    /* ── admin ──────────────────────────────────────────────────────────────────────────── */
+
+    .pk-admin { padding: var(--s5); border: 1px dashed var(--yellow); border-radius: var(--radius); background: var(--deep); }
+    .pk-admin .pk-head { margin-bottom: var(--s5); }
+    .pk-admin-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3); margin-block: var(--s3); }
+    .pk-check { display: flex; align-items: center; gap: var(--s2); font: 600 var(--t-sm)/1.2 var(--slab); cursor: pointer; }
+    .pk-check input { width: 18px; height: 18px; accent-color: var(--yellow); }
+    .pk-path { font: 400 13px/1.2 var(--mono); color: var(--soft); }
+
+    @media (prefers-reduced-motion: reduce) { .pk-row, .pk-btn { transition: none; } }
+  </style>
+</body>
+</html>

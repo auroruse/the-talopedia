@@ -150,9 +150,12 @@ const changes = git('diff', '--name-status', '--no-renames', `${ONTO}...${PR_HEA
   .map((l) => { const [s, path] = l.split('\t'); return { gone: s.startsWith('D'), path }; });
 if (!changes.length) done('wait nothing to merge');
 
+// A pick'em entry is one person's own file, replaced whole: the gate has checked it.
+const PICK = /^src\/content\/data\/pickem-wc1935\/entries\//;
+
 const plan = changes.map((c) => {
   // A picture is only ever added, so it has nothing to be merged against.
-  if (c.path.startsWith('public/assets/')) return { ...c, base: null };
+  if (c.path.startsWith('public/assets/') || PICK.test(c.path)) return { ...c, base: null };
   const from = basedOn(c.path);
   if (from) return { ...c, base: blob(from, c.path) };
   const theirs = c.gone ? null : blob(PR_HEAD, c.path);
@@ -163,6 +166,7 @@ for (const { path, gone, base } of plan) {
   const theirs = gone ? null : blob(PR_HEAD, path);
   const ours = blob(ONTO, path);
   if (theirs === ours) continue;                         // already so on main
+  if (PICK.test(path) && theirs) { put(path, bytes(theirs)); continue; }
   // A picture cannot be merged line by line. The gate only lets a new one through,
   // so one already on main that differs is not this pull request's to replace.
   if (path.startsWith('public/assets/') && ours) done(`wait ${path} is already on main`);

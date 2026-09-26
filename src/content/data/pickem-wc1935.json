@@ -1,0 +1,3364 @@
+{
+ "host": "SKJ",
+ "groups": {
+  "A": [
+   "NCH",
+   "SKJ",
+   "ANH",
+   "NRG"
+  ],
+  "B": [
+   "AST",
+   "LVO",
+   "GIA",
+   "NMZ"
+  ],
+  "C": [
+   "ESU",
+   "KAR",
+   "CAH",
+   "AEM"
+  ],
+  "D": [
+   "HOL",
+   "COR",
+   "VAR",
+   "ASP"
+  ],
+  "E": [
+   "ARV",
+   "PON",
+   "KMT",
+   "PER"
+  ],
+  "F": [
+   "ASK",
+   "SID",
+   "NHO",
+   "ALB"
+  ],
+  "G": [
+   "ALE",
+   "AUR",
+   "SEL",
+   "NKI"
+  ],
+  "H": [
+   "VIC",
+   "FUR",
+   "SHI",
+   "ABB"
+  ]
+ },
+ "teams": {
+  "NCH": {
+   "name": "Nichirin",
+   "q": {
+    "conf": "E",
+    "pos": 1,
+    "P": 10,
+    "W": 8,
+    "D": 2,
+    "L": 0,
+    "GF": 22,
+    "GA": 9,
+    "Pts": 26
+   },
+   "squad": [
+    [
+     "Eisuke Sato",
+     "GK"
+    ],
+    [
+     "Kōzō Fujise",
+     "DEF"
+    ],
+    [
+     "Gen Fija",
+     "DEF"
+    ],
+    [
+     "Daigo Takanashi",
+     "DEF"
+    ],
+    [
+     "Kazuyoshi Hiranuma",
+     "DEF"
+    ],
+    [
+     "Makoto Kishima",
+     "MID"
+    ],
+    [
+     "Rui Ōe",
+     "MID"
+    ],
+    [
+     "Kiyoshi Torigoe",
+     "MID"
+    ],
+    [
+     "Luca Higashiyama",
+     "MID"
+    ],
+    [
+     "Shō Itoshi",
+     "MID"
+    ],
+    [
+     "Ganzorig Erdene",
+     "FWD"
+    ],
+    [
+     "Akihisa Kubo",
+     "GK"
+    ],
+    [
+     "Genma Nishigawa",
+     "DEF"
+    ],
+    [
+     "Naoto Umenokōji",
+     "DEF"
+    ],
+    [
+     "Kenshirō Unagami",
+     "DEF"
+    ],
+    [
+     "Takamasa Hida",
+     "DEF"
+    ],
+    [
+     "Hiro Oshiro",
+     "MID"
+    ],
+    [
+     "Itsuki Toguchi",
+     "MID"
+    ],
+    [
+     "Takeru Mikado",
+     "MID"
+    ],
+    [
+     "Ikki Dazai",
+     "MID"
+    ],
+    [
+     "Gaku Ibusuki",
+     "MID"
+    ],
+    [
+     "Hiromu Furuhashi",
+     "FWD"
+    ]
+   ]
+  },
+  "SKJ": {
+   "name": "Skjarnland",
+   "q": null,
+   "squad": [
+    [
+     "Magnus Andersson",
+     "GK"
+    ],
+    [
+     "Kenneth Haugland",
+     "DEF"
+    ],
+    [
+     "Olof Sjöberg",
+     "DEF"
+    ],
+    [
+     "Olander Strandberg",
+     "DEF"
+    ],
+    [
+     "Gustav Gyllenhaal",
+     "DEF"
+    ],
+    [
+     "Erik Sundqvist",
+     "MID"
+    ],
+    [
+     "Victor Tvedt",
+     "MID"
+    ],
+    [
+     "Sixten Karlsson",
+     "MID"
+    ],
+    [
+     "Kent Forsberg",
+     "MID"
+    ],
+    [
+     "Hjalmar Lindström",
+     "FWD"
+    ],
+    [
+     "Jens Geirsson",
+     "FWD"
+    ],
+    [
+     "Rikard Storgård",
+     "GK"
+    ],
+    [
+     "Artur Morgensson",
+     "DEF"
+    ],
+    [
+     "Haraldur Ólafsson",
+     "DEF"
+    ],
+    [
+     "Ludvig Johansson",
+     "DEF"
+    ],
+    [
+     "Emil Hansen",
+     "DEF"
+    ],
+    [
+     "Torbjørn Kvamme",
+     "MID"
+    ],
+    [
+     "Lennart Sommar",
+     "MID"
+    ],
+    [
+     "Daniel Lindén",
+     "MID"
+    ],
+    [
+     "Halvard Syvertsen",
+     "MID"
+    ],
+    [
+     "Oseas Mattsson",
+     "FWD"
+    ],
+    [
+     "Henrik Kristianson",
+     "FWD"
+    ]
+   ]
+  },
+  "ANH": {
+   "name": "Neuhollmar",
+   "q": {
+    "conf": "W",
+    "pos": 16,
+    "P": 10,
+    "W": 4,
+    "D": 2,
+    "L": 4,
+    "GF": 15,
+    "GA": 18,
+    "Pts": 14
+   },
+   "squad": [
+    [
+     "Gareth Tipene",
+     "GK"
+    ],
+    [
+     "Judah Rangitāne",
+     "DEF"
+    ],
+    [
+     "Kurt Mueller",
+     "DEF"
+    ],
+    [
+     "Fraser Te Rangi",
+     "DEF"
+    ],
+    [
+     "Rolf Hoffmann",
+     "DEF"
+    ],
+    [
+     "Hone Wihongi",
+     "MID"
+    ],
+    [
+     "Albrecht Von Haast",
+     "MID"
+    ],
+    [
+     "Matthias Becker",
+     "MID"
+    ],
+    [
+     "Walther Meyer",
+     "MID"
+    ],
+    [
+     "Eruera Waititi",
+     "FWD"
+    ],
+    [
+     "Pita Rata",
+     "FWD"
+    ],
+    [
+     "Tobias Schmidt",
+     "GK"
+    ],
+    [
+     "Nikolaus Wagner",
+     "DEF"
+    ],
+    [
+     "Tama Wharehuia",
+     "DEF"
+    ],
+    [
+     "Konrad Lindemann",
+     "DEF"
+    ],
+    [
+     "Rawiri Paretai",
+     "DEF"
+    ],
+    [
+     "Lachlan Ihimaera",
+     "MID"
+    ],
+    [
+     "Ernst Braunschweig",
+     "MID"
+    ],
+    [
+     "Armin Dieffenbach",
+     "MID"
+    ],
+    [
+     "Manaia Tūhoe",
+     "MID"
+    ],
+    [
+     "Sigmund Reindl",
+     "FWD"
+    ],
+    [
+     "Otene Kereopa",
+     "FWD"
+    ]
+   ]
+  },
+  "NRG": {
+   "name": "Ryūgu",
+   "q": {
+    "conf": "W",
+    "pos": 15,
+    "P": 10,
+    "W": 4,
+    "D": 2,
+    "L": 4,
+    "GF": 6,
+    "GA": 7,
+    "Pts": 14
+   },
+   "squad": [
+    [
+     "Basem Shenouda",
+     "GK"
+    ],
+    [
+     "Yohannis Sukkoti",
+     "DEF"
+    ],
+    [
+     "Merkurios Kudanbes",
+     "DEF"
+    ],
+    [
+     "Georgios Artigasha",
+     "DEF"
+    ],
+    [
+     "Ioannes Dongolawi",
+     "DEF"
+    ],
+    [
+     "Petros Nogedi",
+     "MID"
+    ],
+    [
+     "Stephanos Ballana",
+     "MID"
+    ],
+    [
+     "Theodoros Farasin",
+     "MID"
+    ],
+    [
+     "Yohannis Mina",
+     "MID"
+    ],
+    [
+     "Damianos Faragab",
+     "MID"
+    ],
+    [
+     "Moüses Kyrillos",
+     "FWD"
+    ],
+    [
+     "Kosmas Sukkoti",
+     "GK"
+    ],
+    [
+     "Ioannes Qustul",
+     "DEF"
+    ],
+    [
+     "Kalidurut Bishoy",
+     "DEF"
+    ],
+    [
+     "Papnoute Guirguis",
+     "DEF"
+    ],
+    [
+     "Butros Toskani",
+     "DEF"
+    ],
+    [
+     "Zakri Kalidur",
+     "MID"
+    ],
+    [
+     "Merki Essili",
+     "MID"
+    ],
+    [
+     "Siti Gemai",
+     "MID"
+    ],
+    [
+     "Kosti Serrani",
+     "MID"
+    ],
+    [
+     "Tadros Sonqi",
+     "MID"
+    ],
+    [
+     "Butros Sedhom",
+     "FWD"
+    ]
+   ]
+  },
+  "AST": {
+   "name": "East Astriya",
+   "q": {
+    "conf": "W",
+    "pos": 10,
+    "P": 10,
+    "W": 5,
+    "D": 2,
+    "L": 3,
+    "GF": 17,
+    "GA": 14,
+    "Pts": 17
+   },
+   "squad": [
+    [
+     "Nikolaos Papadopoulos",
+     "GK"
+    ],
+    [
+     "Kleanthis Paleologos",
+     "DEF"
+    ],
+    [
+     "Aristeidis Georgiou",
+     "DEF"
+    ],
+    [
+     "Leonidas Stamatiou",
+     "DEF"
+    ],
+    [
+     "Anastasios Fotopoulos",
+     "DEF"
+    ],
+    [
+     "Epaminondas Mavromatis",
+     "MID"
+    ],
+    [
+     "Themistoklis Zervas",
+     "MID"
+    ],
+    [
+     "Prokopis Karagiannis",
+     "MID"
+    ],
+    [
+     "Pyrros Dimitrakopoulos",
+     "MID"
+    ],
+    [
+     "Miltiadis Galanis",
+     "FWD"
+    ],
+    [
+     "Iraklis Christodoulou",
+     "FWD"
+    ],
+    [
+     "Yerasimos Athanasiadis",
+     "GK"
+    ],
+    [
+     "Grigorios Grivas",
+     "DEF"
+    ],
+    [
+     "Periklis Voulgaris",
+     "DEF"
+    ],
+    [
+     "Xenophon Samaras",
+     "DEF"
+    ],
+    [
+     "Dionysios Vlahos",
+     "DEF"
+    ],
+    [
+     "Odysseas Katsaros",
+     "MID"
+    ],
+    [
+     "Vlasios Nikolaou",
+     "MID"
+    ],
+    [
+     "Spyridon Lykoudis",
+     "MID"
+    ],
+    [
+     "Isidoros Kallergis",
+     "MID"
+    ],
+    [
+     "Charalambos Angelopoulos",
+     "FWD"
+    ],
+    [
+     "Yorgos Moustakellis",
+     "FWD"
+    ]
+   ]
+  },
+  "LVO": {
+   "name": "Livonia",
+   "q": {
+    "conf": "E",
+    "pos": 10,
+    "P": 10,
+    "W": 5,
+    "D": 1,
+    "L": 4,
+    "GF": 18,
+    "GA": 13,
+    "Pts": 16
+   },
+   "squad": [
+    [
+     "Axel Berg",
+     "GK"
+    ],
+    [
+     "Hartwig Von Buxhoeveden",
+     "DEF"
+    ],
+    [
+     "Gvidas Rimkevičius",
+     "DEF"
+    ],
+    [
+     "Ernst Tiesenhausen",
+     "DEF"
+    ],
+    [
+     "Kaspars Vaitkus",
+     "DEF"
+    ],
+    [
+     "Robert Berthold",
+     "MID"
+    ],
+    [
+     "Omar Kazluaska",
+     "MID"
+    ],
+    [
+     "Valdemārs Liepiņš",
+     "MID"
+    ],
+    [
+     "Ulrik Zilinkas",
+     "MID"
+    ],
+    [
+     "Otto Manteuffel",
+     "MID"
+    ],
+    [
+     "Paulus Schmidt",
+     "FWD"
+    ],
+    [
+     "Kristaps Auseklis",
+     "GK"
+    ],
+    [
+     "Moritz Müller",
+     "DEF"
+    ],
+    [
+     "Justus Hermann",
+     "DEF"
+    ],
+    [
+     "Gottfried Vietinghoff",
+     "DEF"
+    ],
+    [
+     "Dietrich Hoffmann",
+     "DEF"
+    ],
+    [
+     "Heinrich Stackelberg",
+     "MID"
+    ],
+    [
+     "Egbert Löwis",
+     "MID"
+    ],
+    [
+     "Mindaugas Paulauskas",
+     "MID"
+    ],
+    [
+     "Reinhold Von Ungern",
+     "MID"
+    ],
+    [
+     "Erneut Kozliakas",
+     "MID"
+    ],
+    [
+     "Woldemar Wrangell",
+     "FWD"
+    ]
+   ]
+  },
+  "GIA": {
+   "name": "Giathka",
+   "q": {
+    "conf": "E",
+    "pos": 14,
+    "P": 10,
+    "W": 4,
+    "D": 3,
+    "L": 3,
+    "GF": 19,
+    "GA": 15,
+    "Pts": 15
+   },
+   "squad": [
+    [
+     "Semyon Volkov",
+     "GK"
+    ],
+    [
+     "Roman Stepanov",
+     "DEF"
+    ],
+    [
+     "Dmitry Belov",
+     "DEF"
+    ],
+    [
+     "Maxim Fedorov",
+     "DEF"
+    ],
+    [
+     "Arkady Shuisky",
+     "DEF"
+    ],
+    [
+     "Boris Vinogradov",
+     "MID"
+    ],
+    [
+     "Ural Yusupov",
+     "MID"
+    ],
+    [
+     "Ilya Morozov",
+     "MID"
+    ],
+    [
+     "Timur Iskanderov",
+     "MID"
+    ],
+    [
+     "Gleb Vorontsov",
+     "MID"
+    ],
+    [
+     "Valery Polyakov",
+     "FWD"
+    ],
+    [
+     "Oleg Makarov",
+     "GK"
+    ],
+    [
+     "Konstantin Kozlov",
+     "DEF"
+    ],
+    [
+     "Portik Likkastov",
+     "DEF"
+    ],
+    [
+     "Luka Anderovic",
+     "DEF"
+    ],
+    [
+     "Anton Orlov",
+     "DEF"
+    ],
+    [
+     "Yuri Bogdanov",
+     "MID"
+    ],
+    [
+     "Pyotr Egorov",
+     "MID"
+    ],
+    [
+     "Nikolai Lebedev",
+     "MID"
+    ],
+    [
+     "Sabit Nurgaliev",
+     "MID"
+    ],
+    [
+     "Tolib Rahimov",
+     "MID"
+    ],
+    [
+     "Vladimir Tsoikov",
+     "FWD"
+    ]
+   ]
+  },
+  "NMZ": {
+   "name": "Mizuho",
+   "q": {
+    "conf": "W",
+    "pos": 14,
+    "P": 10,
+    "W": 4,
+    "D": 2,
+    "L": 4,
+    "GF": 12,
+    "GA": 11,
+    "Pts": 14
+   },
+   "squad": [
+    [
+     "Sibö Kurbli",
+     "GK"
+    ],
+    [
+     "Namú Suriá",
+     "DEF"
+    ],
+    [
+     "Tsirú Diköl",
+     "DEF"
+    ],
+    [
+     "Dowá Tuvöl",
+     "DEF"
+    ],
+    [
+     "Kanë Dabá",
+     "MID"
+    ],
+    [
+     "Durí Karí",
+     "MID"
+    ],
+    [
+     "Yëría Kaché",
+     "MID"
+    ],
+    [
+     "Duchí Siwöl",
+     "MID"
+    ],
+    [
+     "Sulá Bikakö",
+     "MID"
+    ],
+    [
+     "Ditsö Nakí",
+     "FWD"
+    ],
+    [
+     "Juní Börá",
+     "FWD"
+    ],
+    [
+     "Takeshi Kurbli",
+     "GK"
+    ],
+    [
+     "Siwá Chinakö",
+     "DEF"
+    ],
+    [
+     "Bulú Tarköl",
+     "DEF"
+    ],
+    [
+     "Nawë Kuchöl",
+     "DEF"
+    ],
+    [
+     "Bikëí Yëköl",
+     "MID"
+    ],
+    [
+     "Tkabë Kichá",
+     "MID"
+    ],
+    [
+     "Talí Sabákö",
+     "MID"
+    ],
+    [
+     "Jatsó Bluköl",
+     "MID"
+    ],
+    [
+     "Këbö Wirbli",
+     "MID"
+    ],
+    [
+     "Chirá Nubrí",
+     "FWD"
+    ],
+    [
+     "Jawí Tokwá",
+     "FWD"
+    ]
+   ]
+  },
+  "ESU": {
+   "name": "E.S.U.",
+   "q": {
+    "conf": "W",
+    "pos": 3,
+    "P": 10,
+    "W": 6,
+    "D": 1,
+    "L": 3,
+    "GF": 21,
+    "GA": 10,
+    "Pts": 19
+   },
+   "squad": [
+    [
+     "Spencer Jackson",
+     "GK"
+    ],
+    [
+     "Elliot Farnsworth",
+     "DEF"
+    ],
+    [
+     "Alton Begay",
+     "DEF"
+    ],
+    [
+     "Brock Fairweather",
+     "DEF"
+    ],
+    [
+     "Conrad Bauer",
+     "MID"
+    ],
+    [
+     "Jadarian Royce",
+     "MID"
+    ],
+    [
+     "Rocco De Luca",
+     "MID"
+    ],
+    [
+     "Silvio Caruso",
+     "MID"
+    ],
+    [
+     "Trent Hawthorne",
+     "FWD"
+    ],
+    [
+     "Horace Peshlakai",
+     "FWD"
+    ],
+    [
+     "Leon Vogel",
+     "FWD"
+    ],
+    [
+     "Parker Turner",
+     "GK"
+    ],
+    [
+     "Nathaniel Vitale",
+     "DEF"
+    ],
+    [
+     "Wyatt Bradford",
+     "DEF"
+    ],
+    [
+     "Clayton Caldwell",
+     "DEF"
+    ],
+    [
+     "Alden Maddox",
+     "MID"
+    ],
+    [
+     "Vito Moretti",
+     "MID"
+    ],
+    [
+     "Felix Hoffman",
+     "MID"
+    ],
+    [
+     "Kendrick Nakai",
+     "MID"
+    ],
+    [
+     "Dominic Winslow",
+     "FWD"
+    ],
+    [
+     "Peter Selhorst",
+     "FWD"
+    ],
+    [
+     "Raleigh Preston",
+     "FWD"
+    ]
+   ]
+  },
+  "KAR": {
+   "name": "Karjania",
+   "q": {
+    "conf": "E",
+    "pos": 4,
+    "P": 10,
+    "W": 6,
+    "D": 1,
+    "L": 3,
+    "GF": 18,
+    "GA": 14,
+    "Pts": 19
+   },
+   "squad": [
+    [
+     "Aleksi Järveläinen",
+     "GK"
+    ],
+    [
+     "Began Andersen",
+     "DEF"
+    ],
+    [
+     "Konsta Yrjölä",
+     "DEF"
+    ],
+    [
+     "Ohttola Sillaste",
+     "DEF"
+    ],
+    [
+     "Paavo Seppälä",
+     "DEF"
+    ],
+    [
+     "Kasper Kaljurand",
+     "MID"
+    ],
+    [
+     "Jaan Soosaar",
+     "MID"
+    ],
+    [
+     "Lauri Purvalainen",
+     "MID"
+    ],
+    [
+     "Kuismaa Kivisild",
+     "FWD"
+    ],
+    [
+     "Tim Pukki",
+     "FWD"
+    ],
+    [
+     "Voptá Hendá",
+     "FWD"
+    ],
+    [
+     "Erik Aalto",
+     "GK"
+    ],
+    [
+     "Kalle Räikkönen",
+     "DEF"
+    ],
+    [
+     "Santteri Ylikangas",
+     "DEF"
+    ],
+    [
+     "Oskari Paanalainen",
+     "DEF"
+    ],
+    [
+     "Eski Ruudanen",
+     "DEF"
+    ],
+    [
+     "Iilmari Torjalasten",
+     "MID"
+    ],
+    [
+     "Litto Tulp",
+     "MID"
+    ],
+    [
+     "Kökta Saare",
+     "MID"
+    ],
+    [
+     "Teppo Estinen",
+     "FWD"
+    ],
+    [
+     "Roððo Duongi",
+     "FWD"
+    ],
+    [
+     "Salteni Pöyhönen",
+     "FWD"
+    ]
+   ]
+  },
+  "CAH": {
+   "name": "Cahaya",
+   "q": {
+    "conf": "E",
+    "pos": 7,
+    "P": 10,
+    "W": 5,
+    "D": 2,
+    "L": 3,
+    "GF": 13,
+    "GA": 9,
+    "Pts": 17
+   },
+   "squad": [
+    [
+     "Raka Wijaya",
+     "GK"
+    ],
+    [
+     "Linus Kitingan",
+     "DEF"
+    ],
+    [
+     "Teguh Setiawan",
+     "DEF"
+    ],
+    [
+     "Jehezkiel Lawai",
+     "DEF"
+    ],
+    [
+     "Wahyu Wibowo",
+     "MID"
+    ],
+    [
+     "Eliezer Bansa",
+     "MID"
+    ],
+    [
+     "Bagus Hartono",
+     "MID"
+    ],
+    [
+     "Ruben Sihombing",
+     "MID"
+    ],
+    [
+     "Made Djelantik",
+     "FWD"
+    ],
+    [
+     "Kannan Kurup",
+     "FWD"
+    ],
+    [
+     "Daulat Siregar",
+     "FWD"
+    ],
+    [
+     "Gersom Parengkuan",
+     "GK"
+    ],
+    [
+     "Panting Jugah",
+     "DEF"
+    ],
+    [
+     "Antaei Djurunga",
+     "DEF"
+    ],
+    [
+     "Hipui Mutang",
+     "DEF"
+    ],
+    [
+     "Natanael Panggabean",
+     "MID"
+    ],
+    [
+     "Sabin Madius",
+     "MID"
+    ],
+    [
+     "Anta Ginting",
+     "MID"
+    ],
+    [
+     "Vidi Sastrowardoyo",
+     "MID"
+    ],
+    [
+     "Cyprian Kulleh",
+     "FWD"
+    ],
+    [
+     "Nyoman Suarjana",
+     "FWD"
+    ],
+    [
+     "Yopie Runtuwene",
+     "FWD"
+    ]
+   ]
+  },
+  "AEM": {
+   "name": "El Magreb",
+   "q": {
+    "conf": "W",
+    "pos": 11,
+    "P": 10,
+    "W": 5,
+    "D": 1,
+    "L": 4,
+    "GF": 12,
+    "GA": 10,
+    "Pts": 16
+   },
+   "squad": [
+    [
+     "Yassine Benali",
+     "GK"
+    ],
+    [
+     "Montasir El Andaloussi",
+     "DEF"
+    ],
+    [
+     "Heliodoro Medina",
+     "DEF"
+    ],
+    [
+     "Rachid Benchekroun",
+     "DEF"
+    ],
+    [
+     "Badr Chraibi",
+     "DEF"
+    ],
+    [
+     "Idriss Messaoudi",
+     "MID"
+    ],
+    [
+     "Zakaria Bouhaddou",
+     "MID"
+    ],
+    [
+     "Youssef Valverde",
+     "MID"
+    ],
+    [
+     "Othmane El Fassi",
+     "MID"
+    ],
+    [
+     "Khalil Alami",
+     "MID"
+    ],
+    [
+     "Ildefonso Morón",
+     "FWD"
+    ],
+    [
+     "Younès Zeroual",
+     "GK"
+    ],
+    [
+     "Bouchaib Oufkir",
+     "DEF"
+    ],
+    [
+     "Anass Berrada",
+     "DEF"
+    ],
+    [
+     "Ismael Tazi",
+     "DEF"
+    ],
+    [
+     "Ayoub Sekkat",
+     "DEF"
+    ],
+    [
+     "Taoufik Amrani",
+     "MID"
+    ],
+    [
+     "Noureddine Mansouri",
+     "MID"
+    ],
+    [
+     "Nabil Chakib",
+     "MID"
+    ],
+    [
+     "Ilias Rochdi",
+     "MID"
+    ],
+    [
+     "Adnane Filali",
+     "MID"
+    ],
+    [
+     "Soufiane Lahlou",
+     "FWD"
+    ]
+   ]
+  },
+  "HOL": {
+   "name": "Hollosend",
+   "q": {
+    "conf": "W",
+    "pos": 2,
+    "P": 10,
+    "W": 6,
+    "D": 3,
+    "L": 1,
+    "GF": 19,
+    "GA": 5,
+    "Pts": 21
+   },
+   "squad": [
+    [
+     "Callum Calhoun",
+     "GK"
+    ],
+    [
+     "Tomás Uzcátegui",
+     "DEF"
+    ],
+    [
+     "Wade Boone",
+     "DEF"
+    ],
+    [
+     "Leonardo Urdaneta",
+     "DEF"
+    ],
+    [
+     "Arturo Morgado",
+     "DEF"
+    ],
+    [
+     "Earl Tomlinson",
+     "MID"
+    ],
+    [
+     "Kemar Browner",
+     "MID"
+    ],
+    [
+     "Kamron Chancellor",
+     "MID"
+    ],
+    [
+     "Ricardo Sherman",
+     "MID"
+    ],
+    [
+     "Walter Thurmund III",
+     "MID"
+    ],
+    [
+     "Simón Arismendi",
+     "FWD"
+    ],
+    [
+     "Rhett Vance",
+     "GK"
+    ],
+    [
+     "Emilio Escalona",
+     "DEF"
+    ],
+    [
+     "Alvaro Valdovinos",
+     "DEF"
+    ],
+    [
+     "Cristian Urdaneta",
+     "DEF"
+    ],
+    [
+     "Reuben Mendoza",
+     "DEF"
+    ],
+    [
+     "Dale Landry",
+     "MID"
+    ],
+    [
+     "James Feruccio",
+     "MID"
+    ],
+    [
+     "Ambrose Pickett",
+     "MID"
+    ],
+    [
+     "Alvaro Small",
+     "MID"
+    ],
+    [
+     "Sander Vandevelde",
+     "MID"
+    ],
+    [
+     "Fabián Machado",
+     "FWD"
+    ]
+   ]
+  },
+  "COR": {
+   "name": "Cortesia",
+   "q": {
+    "conf": "E",
+    "pos": 13,
+    "P": 10,
+    "W": 5,
+    "D": 0,
+    "L": 5,
+    "GF": 16,
+    "GA": 7,
+    "Pts": 15
+   },
+   "squad": [
+    [
+     "Marek Kováč",
+     "GK"
+    ],
+    [
+     "Bogumił Cieślak",
+     "DEF"
+    ],
+    [
+     "Peter Baláž",
+     "DEF"
+    ],
+    [
+     "Zbigniew Lewandowski",
+     "DEF"
+    ],
+    [
+     "Erik Záhorský",
+     "DEF"
+    ],
+    [
+     "Bartosz Jastrzębski",
+     "MID"
+    ],
+    [
+     "Édouard Szymański",
+     "MID"
+    ],
+    [
+     "Szymon Kowalczyk",
+     "MID"
+    ],
+    [
+     "Kacper Dembiński",
+     "FWD"
+    ],
+    [
+     "Miłosz Zawadzki",
+     "FWD"
+    ],
+    [
+     "Grzegorz Brzęczyszczykiewicz",
+     "FWD"
+    ],
+    [
+     "Przemysław Nowak",
+     "GK"
+    ],
+    [
+     "Kazimierz Wójcik",
+     "DEF"
+    ],
+    [
+     "Ján Novák",
+     "DEF"
+    ],
+    [
+     "Czesław Domagała",
+     "DEF"
+    ],
+    [
+     "Jerzy Wiśniewski",
+     "DEF"
+    ],
+    [
+     "Jan Morsztyn",
+     "MID"
+    ],
+    [
+     "Sławomir Jędrzejczyk",
+     "MID"
+    ],
+    [
+     "Kordian Wróblewski",
+     "MID"
+    ],
+    [
+     "Jakub Modelski",
+     "FWD"
+    ],
+    [
+     "Radosław Gołębiowski",
+     "FWD"
+    ],
+    [
+     "Witold Ostrowski",
+     "FWD"
+    ]
+   ]
+  },
+  "VAR": {
+   "name": "Varahmehr",
+   "q": {
+    "conf": "E",
+    "pos": 6,
+    "P": 10,
+    "W": 5,
+    "D": 2,
+    "L": 3,
+    "GF": 13,
+    "GA": 8,
+    "Pts": 17
+   },
+   "squad": [
+    [
+     "Vahid Lorestani",
+     "GK"
+    ],
+    [
+     "Eskandar Dehghan",
+     "DEF"
+    ],
+    [
+     "Touraj Hayaii",
+     "DEF"
+    ],
+    [
+     "Ardalan Danesh",
+     "DEF"
+    ],
+    [
+     "Erfan Rastkar",
+     "DEF"
+    ],
+    [
+     "Daru Jafari",
+     "MID"
+    ],
+    [
+     "Rostam Khalili",
+     "MID"
+    ],
+    [
+     "Sepideh Shakibaii",
+     "MID"
+    ],
+    [
+     "Ashkan Mahdavi",
+     "MID"
+    ],
+    [
+     "Ziyad Subaie",
+     "MID"
+    ],
+    [
+     "Pedram Nazeri",
+     "FWD"
+    ],
+    [
+     "Tazta Daryaei",
+     "GK"
+    ],
+    [
+     "Parviz Tahmasb",
+     "DEF"
+    ],
+    [
+     "Sohrab Bozorgi",
+     "DEF"
+    ],
+    [
+     "Kianoush Bahari",
+     "DEF"
+    ],
+    [
+     "Mohsen Tabrizi",
+     "DEF"
+    ],
+    [
+     "Siavash Mehrian",
+     "MID"
+    ],
+    [
+     "Mehran Shahi",
+     "MID"
+    ],
+    [
+     "Kaveh Rezghi",
+     "MID"
+    ],
+    [
+     "Hamad Zahrani",
+     "MID"
+    ],
+    [
+     "Nazer Shahrivar",
+     "MID"
+    ],
+    [
+     "Saīd Farzan",
+     "FWD"
+    ]
+   ]
+  },
+  "ASP": {
+   "name": "South Pelagonia",
+   "q": {
+    "conf": "W",
+    "pos": 7,
+    "P": 10,
+    "W": 5,
+    "D": 2,
+    "L": 3,
+    "GF": 17,
+    "GA": 10,
+    "Pts": 17
+   },
+   "squad": [
+    [
+     "Jabulani Dlamini",
+     "GK"
+    ],
+    [
+     "Celani Buthelézi",
+     "DEF"
+    ],
+    [
+     "Mlungisi Ndlovu",
+     "DEF"
+    ],
+    [
+     "Jomo Mocoéna",
+     "DEF"
+    ],
+    [
+     "Enhle Khumalo",
+     "DEF"
+    ],
+    [
+     "Simphiwe Chabalala",
+     "MID"
+    ],
+    [
+     "Lebogang Du Phiri",
+     "MID"
+    ],
+    [
+     "Vusumuzi Zoulou",
+     "MID"
+    ],
+    [
+     "Olwethu Makhanya",
+     "FWD"
+    ],
+    [
+     "Rhulani Khouza",
+     "FWD"
+    ],
+    [
+     "Tshepo Motaung",
+     "FWD"
+    ],
+    [
+     "Dumisani Sisoulou",
+     "GK"
+    ],
+    [
+     "Fikile Hadebé",
+     "DEF"
+    ],
+    [
+     "Sipho Mashabané",
+     "DEF"
+    ],
+    [
+     "Themba Ngcobo",
+     "DEF"
+    ],
+    [
+     "Kagiso Sitholé",
+     "DEF"
+    ],
+    [
+     "Gcobani Nhlapo-Marais",
+     "MID"
+    ],
+    [
+     "Pitso Modisé",
+     "MID"
+    ],
+    [
+     "Hloni Bhéngu",
+     "MID"
+    ],
+    [
+     "Bonginkosi Mthembou",
+     "FWD"
+    ],
+    [
+     "Siyabonga Mazibouko",
+     "FWD"
+    ],
+    [
+     "Rolihlahla Mbeki",
+     "FWD"
+    ]
+   ]
+  },
+  "ARV": {
+   "name": "Arverne",
+   "q": {
+    "conf": "W",
+    "pos": 6,
+    "P": 10,
+    "W": 5,
+    "D": 3,
+    "L": 2,
+    "GF": 14,
+    "GA": 9,
+    "Pts": 18
+   },
+   "squad": [
+    [
+     "Fabien Blanchet",
+     "GK"
+    ],
+    [
+     "Émile D'Artagnan",
+     "DEF"
+    ],
+    [
+     "Hugo Saint-Laurent",
+     "DEF"
+    ],
+    [
+     "Mattieu Donnadieu",
+     "DEF"
+    ],
+    [
+     "Philippe Taillardat",
+     "DEF"
+    ],
+    [
+     "Jean-Pierre Susilovic",
+     "MID"
+    ],
+    [
+     "Antoine Bagradian",
+     "MID"
+    ],
+    [
+     "Octave Desjardins",
+     "MID"
+    ],
+    [
+     "Guillaume Maison",
+     "MID"
+    ],
+    [
+     "Constantin Reverdin",
+     "MID"
+    ],
+    [
+     "Rémi Gauthier",
+     "FWD"
+    ],
+    [
+     "Ludovic Mercadier",
+     "GK"
+    ],
+    [
+     "Théo Lachapelle",
+     "DEF"
+    ],
+    [
+     "Arséne La Fromboise",
+     "DEF"
+    ],
+    [
+     "Nicolas Bellamy",
+     "DEF"
+    ],
+    [
+     "Claude Lemaitre",
+     "DEF"
+    ],
+    [
+     "Ferdinand Dumas",
+     "MID"
+    ],
+    [
+     "Léandre Pochard",
+     "MID"
+    ],
+    [
+     "Baptiste Roux",
+     "MID"
+    ],
+    [
+     "Dorian Roussel",
+     "MID"
+    ],
+    [
+     "Félicien Couture",
+     "MID"
+    ],
+    [
+     "Hervé Thibodeau",
+     "FWD"
+    ]
+   ]
+  },
+  "PON": {
+   "name": "Ponurvia",
+   "q": {
+    "conf": "W",
+    "pos": 8,
+    "P": 10,
+    "W": 5,
+    "D": 2,
+    "L": 3,
+    "GF": 12,
+    "GA": 6,
+    "Pts": 17
+   },
+   "squad": [
+    [
+     "Maximilian Mollenhauer",
+     "GK"
+    ],
+    [
+     "Jedidiah Wanamaker",
+     "DEF"
+    ],
+    [
+     "Tilman Zartmann",
+     "DEF"
+    ],
+    [
+     "Simon Schulhof",
+     "DEF"
+    ],
+    [
+     "Ephraim Snyder",
+     "DEF"
+    ],
+    [
+     "August Rittenhouse",
+     "MID"
+    ],
+    [
+     "Patrick Stumpfegger",
+     "MID"
+    ],
+    [
+     "Diedrich Fassbender",
+     "MID"
+    ],
+    [
+     "Siegmund Stracke",
+     "FWD"
+    ],
+    [
+     "Wilhelm Giesel",
+     "FWD"
+    ],
+    [
+     "Hans-Jürgen Hōnigsberg",
+     "FWD"
+    ],
+    [
+     "Korbinian Eckert",
+     "GK"
+    ],
+    [
+     "Nathanael Custer",
+     "DEF"
+    ],
+    [
+     "Liam Bopp",
+     "DEF"
+    ],
+    [
+     "Pat Hassell",
+     "DEF"
+    ],
+    [
+     "Fabio Loeb",
+     "DEF"
+    ],
+    [
+     "Conan Neitzel",
+     "MID"
+    ],
+    [
+     "Johann Peukert",
+     "MID"
+    ],
+    [
+     "Pirmin Hoffmeister",
+     "MID"
+    ],
+    [
+     "Volkmar Scherer",
+     "FWD"
+    ],
+    [
+     "Laurenz Reinhart",
+     "FWD"
+    ],
+    [
+     "Robert Schlösser",
+     "FWD"
+    ]
+   ]
+  },
+  "KMT": {
+   "name": "Kemet",
+   "q": {
+    "conf": "E",
+    "pos": 15,
+    "P": 10,
+    "W": 5,
+    "D": 0,
+    "L": 5,
+    "GF": 13,
+    "GA": 13,
+    "Pts": 15
+   },
+   "squad": [
+    [
+     "Shenoute Nebamun",
+     "GK"
+    ],
+    [
+     "Pakhom Userhat",
+     "DEF"
+    ],
+    [
+     "Pishoy Djehuty",
+     "DEF"
+    ],
+    [
+     "Hor Senedjem",
+     "DEF"
+    ],
+    [
+     "Karas Meryre",
+     "DEF"
+    ],
+    [
+     "Anoup Ptahmose",
+     "MID"
+    ],
+    [
+     "Psote Neferhotep",
+     "MID"
+    ],
+    [
+     "Kolthe Harkhuf",
+     "MID"
+    ],
+    [
+     "Pisenti Ramose",
+     "MID"
+    ],
+    [
+     "Tadros Amenemhat",
+     "MID"
+    ],
+    [
+     "Sarapamon Nakhtmin",
+     "FWD"
+    ],
+    [
+     "Panoub Sobekhotep",
+     "GK"
+    ],
+    [
+     "Onnophre Panehsy",
+     "DEF"
+    ],
+    [
+     "Sidhom Irinefer",
+     "DEF"
+    ],
+    [
+     "Bishoy Khaemwaset",
+     "DEF"
+    ],
+    [
+     "Papnoute Kenamun",
+     "DEF"
+    ],
+    [
+     "Abanoub Sethnakht",
+     "MID"
+    ],
+    [
+     "Moyse Amenmose",
+     "MID"
+    ],
+    [
+     "Girgis Ipuwer",
+     "MID"
+    ],
+    [
+     "Menas Wennefer",
+     "MID"
+    ],
+    [
+     "Mina Khufuankh",
+     "MID"
+    ],
+    [
+     "Phib Bakenkhons",
+     "FWD"
+    ]
+   ]
+  },
+  "PER": {
+   "name": "Perovska",
+   "q": {
+    "conf": "E",
+    "pos": 9,
+    "P": 10,
+    "W": 5,
+    "D": 1,
+    "L": 4,
+    "GF": 16,
+    "GA": 10,
+    "Pts": 16
+   },
+   "squad": [
+    [
+     "Evgeny Karpov",
+     "GK"
+    ],
+    [
+     "Stepan Andreev",
+     "DEF"
+    ],
+    [
+     "Osman Mamut",
+     "DEF"
+    ],
+    [
+     "Ivan Gavrilovic",
+     "DEF"
+    ],
+    [
+     "Lev Gusev",
+     "DEF"
+    ],
+    [
+     "Klim Zaytsev",
+     "MID"
+    ],
+    [
+     "Rodion Titov",
+     "MID"
+    ],
+    [
+     "Daulet Kenzhebayev",
+     "MID"
+    ],
+    [
+     "Nurlan Zhakupov",
+     "MID"
+    ],
+    [
+     "Alimjan Turghun",
+     "FWD"
+    ],
+    [
+     "Fedor Frolov",
+     "FWD"
+    ],
+    [
+     "Vitaly Markov",
+     "GK"
+    ],
+    [
+     "Georgy Nikitin",
+     "DEF"
+    ],
+    [
+     "Ignat Baranov",
+     "DEF"
+    ],
+    [
+     "Boris Grigoroffic",
+     "DEF"
+    ],
+    [
+     "Arman Dosmukhamed",
+     "DEF"
+    ],
+    [
+     "Nikita Shirokov",
+     "MID"
+    ],
+    [
+     "Trofim Savelyev",
+     "MID"
+    ],
+    [
+     "Tikhon Tarasov",
+     "MID"
+    ],
+    [
+     "Makar Kulikov",
+     "MID"
+    ],
+    [
+     "Sevastyan Roshchin",
+     "FWD"
+    ],
+    [
+     "Platon Denisov",
+     "FWD"
+    ]
+   ]
+  },
+  "ASK": {
+   "name": "Askurias",
+   "q": {
+    "conf": "W",
+    "pos": 13,
+    "P": 10,
+    "W": 4,
+    "D": 2,
+    "L": 4,
+    "GF": 16,
+    "GA": 13,
+    "Pts": 14
+   },
+   "squad": [
+    [
+     "Xavier Cienfuegos",
+     "GK"
+    ],
+    [
+     "Ismael Menéndez",
+     "DEF"
+    ],
+    [
+     "Oriol Montagut",
+     "DEF"
+    ],
+    [
+     "Ibai Urrutia",
+     "DEF"
+    ],
+    [
+     "Izan Santander",
+     "DEF"
+    ],
+    [
+     "Gonzalo Valbuena",
+     "MID"
+    ],
+    [
+     "Íker Olabarría",
+     "MID"
+    ],
+    [
+     "Yeray Bengoetxea",
+     "MID"
+    ],
+    [
+     "Pau Puigcorbé",
+     "FWD"
+    ],
+    [
+     "Matías Salcedo",
+     "FWD"
+    ],
+    [
+     "Jesus Halconero",
+     "FWD"
+    ],
+    [
+     "Guillem Orriols",
+     "GK"
+    ],
+    [
+     "Francisco Alameda",
+     "DEF"
+    ],
+    [
+     "Duarte Magalhães",
+     "DEF"
+    ],
+    [
+     "Eusébio Carneiro",
+     "DEF"
+    ],
+    [
+     "Anselmo Carranza",
+     "DEF"
+    ],
+    [
+     "Ausiàs Campanar",
+     "MID"
+    ],
+    [
+     "Telmo Candeias",
+     "MID"
+    ],
+    [
+     "Dinis Estrela",
+     "MID"
+    ],
+    [
+     "Teotónio Cavaco",
+     "FWD"
+    ],
+    [
+     "Nélson Ferreira",
+     "FWD"
+    ],
+    [
+     "Enric Sollana",
+     "FWD"
+    ]
+   ]
+  },
+  "SID": {
+   "name": "Sidanya",
+   "q": {
+    "conf": "E",
+    "pos": 8,
+    "P": 10,
+    "W": 5,
+    "D": 2,
+    "L": 3,
+    "GF": 13,
+    "GA": 9,
+    "Pts": 17
+   },
+   "squad": [
+    [
+     "Oleksandr Shevchenko",
+     "GK"
+    ],
+    [
+     "Ivan Kenderic",
+     "DEF"
+    ],
+    [
+     "Ihor Kovalenko",
+     "DEF"
+    ],
+    [
+     "Yurii Zahrebelny",
+     "DEF"
+    ],
+    [
+     "Ostap Hrytsenko",
+     "DEF"
+    ],
+    [
+     "Danylo Perebyinis",
+     "MID"
+    ],
+    [
+     "Taras Bondarenko",
+     "MID"
+    ],
+    [
+     "Sviatoslav Boyko",
+     "MID"
+    ],
+    [
+     "Myroslav Zalizniak",
+     "MID"
+    ],
+    [
+     "Borys Skovoroda",
+     "MID"
+    ],
+    [
+     "Artem Tkachenko",
+     "FWD"
+    ],
+    [
+     "Bohdan Skoropadsky",
+     "GK"
+    ],
+    [
+     "Vasyl Nalyvaiko",
+     "DEF"
+    ],
+    [
+     "Kanta Zielenski",
+     "DEF"
+    ],
+    [
+     "Yaroslav Kryvonis",
+     "DEF"
+    ],
+    [
+     "Nazar Melnyk",
+     "DEF"
+    ],
+    [
+     "Zhalek Cheremesinoff",
+     "MID"
+    ],
+    [
+     "Pavlo Dovzhenko",
+     "MID"
+    ],
+    [
+     "Mykola Holoborodko",
+     "MID"
+    ],
+    [
+     "Klym Vernydub",
+     "MID"
+    ],
+    [
+     "Levko Chornovil",
+     "MID"
+    ],
+    [
+     "Panas Hrabovsky",
+     "FWD"
+    ]
+   ]
+  },
+  "NHO": {
+   "name": "Hōrai",
+   "q": {
+    "conf": "W",
+    "pos": 5,
+    "P": 10,
+    "W": 6,
+    "D": 0,
+    "L": 4,
+    "GF": 20,
+    "GA": 13,
+    "Pts": 18
+   },
+   "squad": [
+    [
+     "Ashim Bhattacharya",
+     "GK"
+    ],
+    [
+     "Phani Kyaithang",
+     "DEF"
+    ],
+    [
+     "Anirban Goswami",
+     "DEF"
+    ],
+    [
+     "Susumu Uehara",
+     "DEF"
+    ],
+    [
+     "Khagendra Mitra",
+     "DEF"
+    ],
+    [
+     "Sudhir Chakraborty",
+     "MID"
+    ],
+    [
+     "Sanat Barua",
+     "MID"
+    ],
+    [
+     "Tanvir Howlader",
+     "FWD"
+    ],
+    [
+     "Tatsuki Akagawa",
+     "FWD"
+    ],
+    [
+     "Kamal Bodhipal",
+     "FWD"
+    ],
+    [
+     "Kenji Nagase",
+     "FWD"
+    ],
+    [
+     "Arun Pal",
+     "GK"
+    ],
+    [
+     "Nikhil Chatterjee",
+     "DEF"
+    ],
+    [
+     "Provat Adhikari",
+     "DEF"
+    ],
+    [
+     "Bhupen Jyotirmoy",
+     "DEF"
+    ],
+    [
+     "Amiya Majumdar",
+     "DEF"
+    ],
+    [
+     "Soumitro Ganguly",
+     "MID"
+    ],
+    [
+     "Haripada Bagchi",
+     "MID"
+    ],
+    [
+     "Yoshio Hanazawa",
+     "FWD"
+    ],
+    [
+     "Pradip Chowdhury",
+     "FWD"
+    ],
+    [
+     "Jatin Sudatta",
+     "FWD"
+    ],
+    [
+     "Bhupen Narishita",
+     "FWD"
+    ]
+   ]
+  },
+  "ALB": {
+   "name": "Albinya",
+   "q": null,
+   "invited": true,
+   "squad": [
+    [
+     "Iker Sasieta Gorriti",
+     "GK"
+    ],
+    [
+     "Unai Agirre Beltza",
+     "DEF"
+    ],
+    [
+     "Mikel Zubieta Iturri",
+     "DEF"
+    ],
+    [
+     "Xabier Aranburu Sasi",
+     "DEF"
+    ],
+    [
+     "Jon Kortazar Mendi",
+     "DEF"
+    ],
+    [
+     "Pau Etxegarai Iluna",
+     "MID"
+    ],
+    [
+     "Oriol Zabaleta Aritz",
+     "MID"
+    ],
+    [
+     "Iñaki Saso Berri",
+     "MID"
+    ],
+    [
+     "Marc Agirre Etxe",
+     "FWD"
+    ],
+    [
+     "Aitor Zubiaga Katal",
+     "FWD"
+    ],
+    [
+     "Gorka Mendizabal Ur",
+     "FWD"
+    ],
+    [
+     "Asier Larrañaga Harri",
+     "GK"
+    ],
+    [
+     "Ander Goikoetxea Zuri",
+     "DEF"
+    ],
+    [
+     "Julen Arrieta Lur",
+     "DEF"
+    ],
+    [
+     "Joan Urrutia Elur",
+     "DEF"
+    ],
+    [
+     "Eneko Olabarria Ibai",
+     "DEF"
+    ],
+    [
+     "Arnau Garmendia Haize",
+     "MID"
+    ],
+    [
+     "Oier Bengoetxea Gorri",
+     "MID"
+    ],
+    [
+     "Beñat Elizondo Hodei",
+     "MID"
+    ],
+    [
+     "Jordi Zuloaga Itsaso",
+     "FWD"
+    ],
+    [
+     "Urko Lasarte Oihan",
+     "FWD"
+    ],
+    [
+     "Andoni Arregi Argi",
+     "FWD"
+    ]
+   ]
+  },
+  "ALE": {
+   "name": "Alemannia",
+   "q": {
+    "conf": "E",
+    "pos": 3,
+    "P": 10,
+    "W": 7,
+    "D": 1,
+    "L": 2,
+    "GF": 32,
+    "GA": 11,
+    "Pts": 22
+   },
+   "squad": [
+    [
+     "Matthias Noack",
+     "GK"
+    ],
+    [
+     "Florian Gruber",
+     "DEF"
+    ],
+    [
+     "Joris Van Antwerp",
+     "DEF"
+    ],
+    [
+     "Vojtěch Novotný",
+     "DEF"
+    ],
+    [
+     "Arthur Kohlberg",
+     "DEF"
+    ],
+    [
+     "Gijs Dreesens",
+     "MID"
+    ],
+    [
+     "Tomáš Svoboda",
+     "MID"
+    ],
+    [
+     "Jakub Dvořák",
+     "MID"
+    ],
+    [
+     "Jorrit Blankenburg",
+     "FWD"
+    ],
+    [
+     "Florian Van Can",
+     "FWD"
+    ],
+    [
+     "Thor Andresen",
+     "FWD"
+    ],
+    [
+     "Klaus Bernhard",
+     "GK"
+    ],
+    [
+     "Chris Weimann",
+     "DEF"
+    ],
+    [
+     "Manfred Frankenstein",
+     "DEF"
+    ],
+    [
+     "Lucas Jespersen",
+     "DEF"
+    ],
+    [
+     "Heike Kaiser",
+     "DEF"
+    ],
+    [
+     "Stijn Boelens",
+     "MID"
+    ],
+    [
+     "Ondřej Černý",
+     "MID"
+    ],
+    [
+     "Stephan Kiefer",
+     "MID"
+    ],
+    [
+     "Gerhard Süss",
+     "FWD"
+    ],
+    [
+     "Petr Procházka",
+     "FWD"
+    ],
+    [
+     "Adalbert Brandhofer",
+     "FWD"
+    ]
+   ]
+  },
+  "AUR": {
+   "name": "Auritania",
+   "q": {
+    "conf": "W",
+    "pos": 9,
+    "P": 10,
+    "W": 4,
+    "D": 5,
+    "L": 1,
+    "GF": 14,
+    "GA": 8,
+    "Pts": 17
+   },
+   "squad": [
+    [
+     "Rafael Rosario",
+     "GK"
+    ],
+    [
+     "Jose Carlos Pescador",
+     "DEF"
+    ],
+    [
+     "Jenaro Salamanca",
+     "DEF"
+    ],
+    [
+     "Cayetano Montoya",
+     "DEF"
+    ],
+    [
+     "Efraín Arenas",
+     "DEF"
+    ],
+    [
+     "Olegario Pérez",
+     "MID"
+    ],
+    [
+     "Lisandro Rivas",
+     "MID"
+    ],
+    [
+     "Ánselmo Fernandez",
+     "MID"
+    ],
+    [
+     "Juvenal Vera",
+     "FWD"
+    ],
+    [
+     "Rosendo Zapatero",
+     "FWD"
+    ],
+    [
+     "Nicanor Arandia",
+     "FWD"
+    ],
+    [
+     "Ceferino Acosta",
+     "GK"
+    ],
+    [
+     "Carmelo Bienvenida",
+     "DEF"
+    ],
+    [
+     "Jacinto Valencia",
+     "DEF"
+    ],
+    [
+     "Inácio Madureira",
+     "DEF"
+    ],
+    [
+     "Orlando Correa",
+     "DEF"
+    ],
+    [
+     "Emiliano Luna",
+     "MID"
+    ],
+    [
+     "Cristian Costanza",
+     "MID"
+    ],
+    [
+     "Ivo Brandão",
+     "MID"
+    ],
+    [
+     "Neizan Escribano",
+     "FWD"
+    ],
+    [
+     "Severino Guzmán",
+     "FWD"
+    ],
+    [
+     "Arcadio Villa",
+     "FWD"
+    ]
+   ]
+  },
+  "SEL": {
+   "name": "Selmira",
+   "q": {
+    "conf": "E",
+    "pos": 2,
+    "P": 10,
+    "W": 7,
+    "D": 2,
+    "L": 1,
+    "GF": 16,
+    "GA": 4,
+    "Pts": 23
+   },
+   "squad": [
+    [
+     "Ahmet Aydin",
+     "GK"
+    ],
+    [
+     "Tunç Kenaanoğlu",
+     "DEF"
+    ],
+    [
+     "Muzaffer Doğan",
+     "DEF"
+    ],
+    [
+     "Sarp Sayda",
+     "DEF"
+    ],
+    [
+     "Erdem Polat",
+     "DEF"
+    ],
+    [
+     "Vural Surlu",
+     "MID"
+    ],
+    [
+     "Yavuz Koç",
+     "MID"
+    ],
+    [
+     "Orkun Çeti̇n",
+     "MID"
+    ],
+    [
+     "Selçuk Demirci",
+     "MID"
+    ],
+    [
+     "Batuhan Balyoz",
+     "MID"
+    ],
+    [
+     "Haydar Şen",
+     "FWD"
+    ],
+    [
+     "Volkan Arslan",
+     "GK"
+    ],
+    [
+     "Kutay Bulut",
+     "DEF"
+    ],
+    [
+     "Bahadır Yalçin",
+     "DEF"
+    ],
+    [
+     "Rizgar Bozkurt",
+     "DEF"
+    ],
+    [
+     "Onur Tekeli̇",
+     "DEF"
+    ],
+    [
+     "Serhat Di̇lbaz",
+     "MID"
+    ],
+    [
+     "Zeki Nari̇n",
+     "MID"
+    ],
+    [
+     "Kaan Erdoğmuş",
+     "MID"
+    ],
+    [
+     "Cihan Kartaca",
+     "MID"
+    ],
+    [
+     "Berat Çankaya",
+     "MID"
+    ],
+    [
+     "Darven Miçkas",
+     "FWD"
+    ]
+   ]
+  },
+  "NKI": {
+   "name": "Kinshū",
+   "q": {
+    "conf": "W",
+    "pos": 4,
+    "P": 10,
+    "W": 5,
+    "D": 4,
+    "L": 1,
+    "GF": 16,
+    "GA": 7,
+    "Pts": 19
+   },
+   "squad": [
+    [
+     "Dural Tanumura",
+     "GK"
+    ],
+    [
+     "Warrik Wirandaru",
+     "DEF"
+    ],
+    [
+     "Tanjin Tsukahara",
+     "DEF"
+    ],
+    [
+     "Keigo Ikeda",
+     "DEF"
+    ],
+    [
+     "Kiyoshi Murandin",
+     "MID"
+    ],
+    [
+     "Osamu Matsumoto",
+     "MID"
+    ],
+    [
+     "Junichiro Tarugara",
+     "MID"
+    ],
+    [
+     "Eijiro Matsumoto",
+     "MID"
+    ],
+    [
+     "Yerrin Chindura",
+     "MID"
+    ],
+    [
+     "Masaru Jakamarra",
+     "FWD"
+    ],
+    [
+     "Itsuki Goto",
+     "FWD"
+    ],
+    [
+     "Bilan Terauchi",
+     "GK"
+    ],
+    [
+     "Manda Ōkubo",
+     "DEF"
+    ],
+    [
+     "Takeo Kinoshita",
+     "DEF"
+    ],
+    [
+     "Baluk Cheraga",
+     "DEF"
+    ],
+    [
+     "Nyunda Yiribaru",
+     "MID"
+    ],
+    [
+     "Sadao Garabin",
+     "MID"
+    ],
+    [
+     "Nirrim Biryara",
+     "MID"
+    ],
+    [
+     "Tarran Nyaruguru",
+     "MID"
+    ],
+    [
+     "Shinji Tadayama",
+     "MID"
+    ],
+    [
+     "Nyilan Shikishima",
+     "FWD"
+    ],
+    [
+     "Minoru Andō",
+     "FWD"
+    ]
+   ]
+  },
+  "VIC": {
+   "name": "Vicily",
+   "q": {
+    "conf": "W",
+    "pos": 1,
+    "P": 10,
+    "W": 7,
+    "D": 1,
+    "L": 2,
+    "GF": 17,
+    "GA": 4,
+    "Pts": 22
+   },
+   "squad": [
+    [
+     "Massimo Visconti",
+     "GK"
+    ],
+    [
+     "Lorenzo Squillaci",
+     "DEF"
+    ],
+    [
+     "Filippo Castiglione",
+     "DEF"
+    ],
+    [
+     "Attila D'Ambrosi",
+     "DEF"
+    ],
+    [
+     "Andrea Ferrari",
+     "DEF"
+    ],
+    [
+     "Domenico Vivaldi",
+     "DEF"
+    ],
+    [
+     "Marcello La Barca",
+     "MID"
+    ],
+    [
+     "Federico Cardinale",
+     "MID"
+    ],
+    [
+     "Martino Marrese",
+     "MID"
+    ],
+    [
+     "Valentino Zaccagni",
+     "FWD"
+    ],
+    [
+     "Raffaele Lucchese",
+     "FWD"
+    ],
+    [
+     "Palmiro Contini",
+     "GK"
+    ],
+    [
+     "Danilo Della Rocca",
+     "DEF"
+    ],
+    [
+     "Dario Moretti",
+     "DEF"
+    ],
+    [
+     "Giacomo Russo",
+     "DEF"
+    ],
+    [
+     "Vittorio Ferrara",
+     "DEF"
+    ],
+    [
+     "Valente Pantuso",
+     "DEF"
+    ],
+    [
+     "Corrado Montanari",
+     "MID"
+    ],
+    [
+     "Antonio Margheriti",
+     "MID"
+    ],
+    [
+     "Niccolò Donizetti",
+     "MID"
+    ],
+    [
+     "Umberto Bellarmino",
+     "FWD"
+    ],
+    [
+     "Cosimo Colombo",
+     "FWD"
+    ]
+   ]
+  },
+  "FUR": {
+   "name": "Furan",
+   "q": {
+    "conf": "E",
+    "pos": 12,
+    "P": 10,
+    "W": 5,
+    "D": 1,
+    "L": 4,
+    "GF": 11,
+    "GA": 11,
+    "Pts": 16
+   },
+   "squad": [
+    [
+     "Yang Chen",
+     "GK"
+    ],
+    [
+     "Hengbo Liu",
+     "DEF"
+    ],
+    [
+     "Liang Wu",
+     "DEF"
+    ],
+    [
+     "Xiang Qian",
+     "DEF"
+    ],
+    [
+     "Mingzhe Xiong",
+     "DEF"
+    ],
+    [
+     "Haoran Peng",
+     "MID"
+    ],
+    [
+     "Sheng Huang",
+     "MID"
+    ],
+    [
+     "Fengqi Lu",
+     "MID"
+    ],
+    [
+     "Qiang Zhu",
+     "MID"
+    ],
+    [
+     "Tianyu Gu",
+     "MID"
+    ],
+    [
+     "Zemin Mao",
+     "FWD"
+    ],
+    [
+     "Rui Deng",
+     "GK"
+    ],
+    [
+     "Junwei Shen",
+     "DEF"
+    ],
+    [
+     "Kaiyuan Su",
+     "DEF"
+    ],
+    [
+     "Bowen Ye",
+     "DEF"
+    ],
+    [
+     "Zhenhua Luo",
+     "DEF"
+    ],
+    [
+     "Zhiyuan Fang",
+     "MID"
+    ],
+    [
+     "Yicheng Tan",
+     "MID"
+    ],
+    [
+     "Boqin Xie",
+     "MID"
+    ],
+    [
+     "Ruoyu Shao",
+     "MID"
+    ],
+    [
+     "Hanwen Qiu",
+     "MID"
+    ],
+    [
+     "Ning Jiang",
+     "FWD"
+    ]
+   ]
+  },
+  "SHI": {
+   "name": "Shivon",
+   "q": {
+    "conf": "E",
+    "pos": 11,
+    "P": 10,
+    "W": 5,
+    "D": 1,
+    "L": 4,
+    "GF": 15,
+    "GA": 12,
+    "Pts": 16
+   },
+   "squad": [
+    [
+     "Yonatan Cohen",
+     "GK"
+    ],
+    [
+     "Asaf Bar-Lev",
+     "DEF"
+    ],
+    [
+     "Eren Peretz",
+     "DEF"
+    ],
+    [
+     "Tomer Mizrahi",
+     "DEF"
+    ],
+    [
+     "Roi Ben-Haim",
+     "DEF"
+    ],
+    [
+     "Segev Even-Khen",
+     "MID"
+    ],
+    [
+     "Ravid Biton",
+     "MID"
+    ],
+    [
+     "Yerucham Lehrer",
+     "MID"
+    ],
+    [
+     "Dvir Alon",
+     "MID"
+    ],
+    [
+     "Maoz Shaked",
+     "MID"
+    ],
+    [
+     "Gilad Dahan",
+     "FWD"
+    ],
+    [
+     "Iddo Avni",
+     "GK"
+    ],
+    [
+     "Nadav Tzur",
+     "DEF"
+    ],
+    [
+     "Amichai Shtern",
+     "DEF"
+    ],
+    [
+     "Lahav Agam",
+     "DEF"
+    ],
+    [
+     "Oded Levi",
+     "DEF"
+    ],
+    [
+     "Yishai Galili",
+     "MID"
+    ],
+    [
+     "Elkana Rotem",
+     "MID"
+    ],
+    [
+     "Uriel Mazor",
+     "MID"
+    ],
+    [
+     "Dolev Nagar",
+     "MID"
+    ],
+    [
+     "Zamir Peled",
+     "MID"
+    ],
+    [
+     "Issam Zoghbi",
+     "FWD"
+    ]
+   ]
+  },
+  "ABB": {
+   "name": "Barbary",
+   "q": {
+    "conf": "W",
+    "pos": 12,
+    "P": 10,
+    "W": 5,
+    "D": 0,
+    "L": 5,
+    "GF": 19,
+    "GA": 12,
+    "Pts": 15
+   },
+   "squad": [
+    [
+     "Hamza Benali",
+     "GK"
+    ],
+    [
+     "Alceste Derocles",
+     "DEF"
+    ],
+    [
+     "Tahar Djaballah",
+     "DEF"
+    ],
+    [
+     "Réda Maameri",
+     "DEF"
+    ],
+    [
+     "Koceïla Idir",
+     "MID"
+    ],
+    [
+     "Fethi Kateb",
+     "MID"
+    ],
+    [
+     "Ouahid Rahmani",
+     "MID"
+    ],
+    [
+     "Hakim Zerguine",
+     "MID"
+    ],
+    [
+     "Sofiane Mansouri",
+     "FWD"
+    ],
+    [
+     "Lakhdar Meziane",
+     "FWD"
+    ],
+    [
+     "Chérif Guerroudj",
+     "FWD"
+    ],
+    [
+     "Léon Renard",
+     "GK"
+    ],
+    [
+     "Kaddour Benfodil",
+     "DEF"
+    ],
+    [
+     "Nadir Cheriet",
+     "DEF"
+    ],
+    [
+     "Arezki Aggoun",
+     "DEF"
+    ],
+    [
+     "Gaston Fabre",
+     "MID"
+    ],
+    [
+     "Mahfoud Bensalem",
+     "MID"
+    ],
+    [
+     "Oualid Mebarki",
+     "MID"
+    ],
+    [
+     "Boualem Hamraoui",
+     "MID"
+    ],
+    [
+     "Armand Picard",
+     "FWD"
+    ],
+    [
+     "Yacine Belkacem",
+     "FWD"
+    ],
+    [
+     "Amaury Cousteau",
+     "FWD"
+    ]
+   ]
+  }
+ }
+}

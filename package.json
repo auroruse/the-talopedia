@@ -9,7 +9,8 @@
     "retcon": "node scripts/retcon.mjs",
     "sync-coords": "cp \"../Avium Map/src/data/coordinates.tsv\" src/content/data/coordinates.tsv",
     "clean": "rm -rf node_modules/.astro node_modules/.vite .astro dist",
-    "sync": "node scripts/sync.mjs"
+    "sync": "node scripts/sync.mjs",
+    "sync-pickem": "node scripts/sync-pickem.mjs"
   },
   "dependencies": {
     "astro": "^5.1.1",

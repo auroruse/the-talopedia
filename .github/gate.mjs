@@ -14,6 +14,7 @@
  */
 import { execFileSync } from 'node:child_process';
 import { ACCOUNT_OF } from '../src/lib/contributors.mjs';
+import { decode, complete } from '../src/lib/pickem/core.js';
 
 const { PR_AUTHOR, BASE, HEAD, ADMIN } = process.env;
 
@@ -60,13 +61,38 @@ function creditOf(ref, path) {
 
 const decline = (why) => { console.log(`wait ${why}`); process.exit(0); };
 const named = (credit) => (credit?.length ? credit.join(' and ') : 'nobody');
+const changed = git('diff', '--name-status', `${BASE}...${HEAD}`).trim().split('\n').filter(Boolean);
+
+/**
+ * A pick'em entry. Anyone with a GitHub account may file their own, and replace it until
+ * the picks lock, so this is checked before the nation rule. It travels alone, it is the
+ * file named for whoever opened the pull request, and it has to be a complete set of picks
+ * that decodes against the draw on main. Nothing about it is trusted that main cannot check.
+ */
+const PICK = /^src\/content\/data\/pickem-wc1935\/entries\/([a-z0-9-]+)\.json$/;
+if (changed.some((l) => PICK.test(l.split('\t').pop()))) {
+  if (changed.length !== 1) decline('a pick\'em entry travels alone.');
+  const [status, path] = changed[0].split('\t');
+  if (!/^[AM]$/.test(status)) decline(`${path} is added or replaced, never ${status === 'D' ? 'deleted' : 'moved'}.`);
+  if (path.match(PICK)[1] !== PR_AUTHOR.toLowerCase()) decline(`${path} is not ${PR_AUTHOR}'s entry.`);
+  const state = JSON.parse(show(BASE, 'src/content/data/pickem-wc1935-state.json') || '{}');
+  if (state.locked) decline('the pick\'em is locked.');
+  const text = show(HEAD, path) || '';
+  let entry = null;
+  try { entry = text.length < 2000 ? JSON.parse(text) : null; } catch { /* declined below */ }
+  if (!entry || Object.keys(entry).join() !== 'code' || typeof entry.code !== 'string') decline(`${path} is not an entry.`);
+  let picks = null;
+  try { picks = decode(entry.code, JSON.parse(show(BASE, 'src/content/data/pickem-wc1935.json'))); } catch { /* declined below */ }
+  if (!picks || !complete(picks)) decline(`${path} does not hold a complete set of picks.`);
+  console.log('merge');
+  process.exit(0);
+}
 
 const nation = Object.keys(ACCOUNT_OF).find((n) => ACCOUNT_OF[n] === PR_AUTHOR);
 const admin = PR_AUTHOR === ADMIN;
 if (!nation && !admin) decline(`${PR_AUTHOR} does not write for a nation.`);
 
-for (const line of git('diff', '--name-status', `${BASE}...${HEAD}`).trim().split('\n')) {
-  if (!line) continue;
+for (const line of changed) {
   const [status, ...paths] = line.split('\t');
   const from = paths[0];                            // where it stood on main
   const to = paths[paths.length - 1];               // where the pull request leaves it
