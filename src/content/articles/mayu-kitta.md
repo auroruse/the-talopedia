@@ -43,9 +43,7 @@ infobox:
       - ":flag[nichirin] General"
       - ":icon[seele] High Commandant"
   - label: "Conflicts"
-    depth: 4
-    guides: true
-    tree:
+    value:
       - "[[great-war]]"
       - "  Xing Invasion of Nichirin"
       - "    Battle of Mizuhara"
@@ -56,6 +54,8 @@ infobox:
       - "    Battle of Kalgan Pass"
       - "    Battle of Fuhua"
       - "    Battle of Daiping"
+    depth: 4
+    guides: true
   - { section: "Nichirian Name" }
   - { label: "Kanji", value: "橘田 眞諭" }
   - { label: "Aldrige Rōmaji", value: "Kitta Mayu" }

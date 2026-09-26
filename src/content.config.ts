@@ -23,9 +23,10 @@ const row = z.object({
     caption: z.string().default(''),
   })).optional(),
   sub: z.boolean().default(false),                      // renders the bullet, so nobody types one
-  // A nested list, as a battle under its campaign under its war: one item a line, two
-  // spaces of indent a level. `depth` is how far it may nest and `guides` whether the
-  // lines between levels are drawn, as Wikipedia's tree list draws them.
+  // Any cell's lines can nest, as a battle under its campaign under its war: two spaces
+  // of indent a level. On a row that nests, `depth` is how far and `guides` whether the
+  // lines between levels are drawn, as Wikipedia's tree list draws them. `tree` is the
+  // Nested List row that came first, read as a field whose value nests.
   tree: z.array(z.string()).optional(),
   depth: z.number().int().min(1).max(4).optional(),
   guides: z.boolean().optional(),

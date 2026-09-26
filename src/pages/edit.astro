@@ -192,6 +192,9 @@ const ADMIN = REPO.split('/')[0];
               <button id="dt-go" type="button" class="primary">Insert</button>
             </div>
           </div>
+          <div class="ins-item" data-ins="nested">
+            <button id="ins-nested" type="button">Nested list</button>
+          </div>
         </div>
       </div>
 
@@ -832,6 +835,7 @@ const ADMIN = REPO.split('/')[0];
       }
       if (!box.children.length) box.append(nlLine(0, ''));
       nlDraw(box);
+      nestPaint(box.closest('tr'));
     }
     /**
      * The lines between levels, as the page draws them. A line with more at its level
@@ -841,6 +845,7 @@ const ADMIN = REPO.split('/')[0];
      */
     function nlDraw(box) {
       const lines = [...box.children].map((d) => ({ d, level: nlLevel(d), empty: !d.textContent.trim() && !d.querySelector('img') }));
+      const [step, off] = box.closest('tr.ib-pair') ? [11, 4] : [21, 10];
       /** Whether a later written line sits at level a before anything shallower does. */
       const goesOn = (i, a) => {
         for (let j = i + 1; j < lines.length; j++) {
@@ -853,10 +858,10 @@ const ADMIN = REPO.split('/')[0];
         for (let a = 1; a < (empty ? level + 1 : level); a++) if (goesOn(i, a)) past.push(a);
         if (level && !empty) d.dataset.joint = goesOn(i, level) ? 'more' : 'last';
         else delete d.dataset.joint;
-        // The same 10px into each level's 21px as the page, one hairline per open level.
+        // Where the page puts each level's line: 10px into its 21px, or 4px into 11px in a pair.
         d.style.backgroundImage = past.map(() => 'linear-gradient(#808080, #808080)').join(', ');
         d.style.backgroundSize = past.map(() => '1px 100%').join(', ');
-        d.style.backgroundPosition = past.map((a) => `${21 * (a - 1) + 10}px 0`).join(', ');
+        d.style.backgroundPosition = past.map((a) => `${step * (a - 1) + off}px 0`).join(', ');
         d.style.backgroundRepeat = 'no-repeat';
       });
     }
@@ -891,9 +896,32 @@ const ADMIN = REPO.split('/')[0];
       sel.removeAllRanges(); sel.addRange(at);
       sync();
     }
-    /** The box of lines, from the items as the page stores them: two spaces of indent a level. */
-    function nlBox(items, depthOf) {
-      const box = editable('', 'One per line', () => nlEnter(box, depthOf()));
+    /* Insert > Nested list: a new line hung under the one the caret is on, in any sidebar cell. */
+    $('#ins-nested').onmousedown = (e) => e.preventDefault();
+    $('#ins-nested').onclick = () => {
+      const boxOf = (r) => { const n = r?.startContainer; return (n?.nodeType === 1 ? n : n?.parentElement)?.closest('.ce.outline') || null; };
+      const sel = getSelection();
+      const live = sel.rangeCount ? sel.getRangeAt(0) : null;
+      const at = boxOf(live) ? live : boxOf(caret) ? caret : null;
+      if (!at) { flash('Put the cursor on a line in the sidebar first.', true); return; }
+      const box = boxOf(at);
+      box.focus();
+      putRange(at.cloneRange());
+      const line = nlCaret(box);
+      if (!line) return;
+      const next = nlLine(nlLevel(line) + 1, '');
+      line.after(next);
+      nlSettle(box, +box.closest('tr').dataset.depth);
+      const start = document.createRange();
+      start.setStart(next, 0);
+      putRange(start);
+      document.querySelectorAll('.drop-menu').forEach((m) => { m.hidden = true; });
+      sync();
+    };
+
+    /** A sidebar cell's box of lines, from the lines as the page stores them: two spaces of indent a level. */
+    function nlBox(items, depthOf, ph) {
+      const box = editable('', ph, () => nlEnter(box, depthOf()));
       box.classList.add('outline');
       for (const raw of items) {
         if (raw.trim()) box.append(nlLine(Math.floor((raw.length - raw.trimStart().length) / 2), mdToHtml(raw.trim())));
@@ -926,16 +954,20 @@ const ADMIN = REPO.split('/')[0];
     const ib = $('#ib');
 
     function ibRow(r = {}) {
+      // The Nested List row that came first is a field whose value nests; it opens as one.
+      if (r.tree && r.value == null) r = { ...r, value: r.tree };
       const kind = r.pair ? 'pair'
         : r.office != null ? 'office'
         : r.section != null ? 'section'
         // Both shapes of a picture row: one picture, or the list of two.
         : (r.image != null || r.images) ? 'image'
-        : r.tree ? 'nested'
         : r.label == null ? 'full' : 'row';
       const tr = el('tr', kind === 'section' ? 'ib-section' : kind === 'pair' ? 'ib-pair'
         : kind === 'office' ? 'ib-office' : null);
       tr.dataset.kind = kind;
+      // How deep a cell of this row may nest, and whether the page draws the lines.
+      tr.dataset.depth = r.depth || 3;
+      tr.dataset.guides = r.guides === false ? 'false' : 'true';
 
       if (kind === 'section') {
         const td = el('td'); td.colSpan = 2;
@@ -986,16 +1018,17 @@ const ADMIN = REPO.split('/')[0];
         tr.append(td);
       } else if (kind === 'pair') {
         // Two lists side by side, as the belligerents of a war. One item per line.
-        const c = controls(tr);
+        const c = nestControls(tr);
         c.prepend(ibAddMenu(tr));
         (r.pair.length ? r.pair : [{}, {}]).slice(0, 2).forEach((col, i) => {
           const td = el('td');
           td.append(editable(mdToHtml(col.heading || ''), 'Side', lineBreak));
           td.firstChild.classList.add('pair-head');
-          td.append(editable((col.items || []).map(mdToHtml).join('<br>'), 'One per line', lineBreak));
+          td.append(nlBox(col.items || [], () => +tr.dataset.depth, 'One per line'));
           if (i === 1) td.append(c);
           tr.append(td);
         });
+        nestPaint(tr);
       } else if (kind === 'office') {
         // An office and the term served in it. Two rows read as two separate things,
         // so this is one row holding both, the way the old documents had it.
@@ -1013,48 +1046,54 @@ const ADMIN = REPO.split('/')[0];
       } else if (kind === 'full') {
         // A value with no field name, spanning both columns, as a casualty total.
         const td = el('td', 'ib-full'); td.colSpan = 2;
-        const c = controls(tr);
+        const c = nestControls(tr);
         c.prepend(ibAddMenu(tr));
         const lines = Array.isArray(r.value) ? r.value : (r.value ? [r.value] : []);
-        td.append(editable(lines.map(mdToHtml).join('<br>'), 'Full-width value', lineBreak), c);
+        td.append(nlBox(lines, () => +tr.dataset.depth, 'Full-width value'), c);
         tr.append(td);
-      } else if (kind === 'nested') {
-        // How deep it may nest, and whether the page draws the lines between levels.
-        tr.dataset.depth = r.depth || 3;
-        tr.dataset.guides = r.guides === false ? 'false' : 'true';
-        const depth = () => +tr.dataset.depth;
-        const th = el('th');
-        th.append(editable(mdToHtml(r.label || ''), 'Field', lineBreak));
-        const td = el('td');
-        const box = nlBox(r.tree || [], depth);
-        const c = controls(tr, [
-          ['', '', () => { tr.dataset.depth = depth() % 4 + 1; nlSettle(box, depth()); paint(); }],
-          ['│', '', () => { tr.dataset.guides = tr.dataset.guides === 'false' ? 'true' : 'false'; paint(); }],
-        ]);
-        const [depthButton, guidesButton] = c.querySelectorAll('button');
-        const paint = () => {
-          depthButton.textContent = depth();
-          depthButton.title = `Nests ${depth()} level${depth() === 1 ? '' : 's'} deep; click for ${depth() % 4 + 1}`;
-          const on = tr.dataset.guides !== 'false';
-          guidesButton.classList.toggle('off', !on);
-          box.classList.toggle('bare', !on);
-          guidesButton.title = on ? 'Guide lines drawn; click to leave them out' : 'No guide lines; click to draw them';
-        };
-        paint();
-        c.prepend(ibAddMenu(tr));
-        td.append(box, c);
-        tr.append(th, td);
+        nestPaint(tr);
       } else {
         const th = el('th'); if (r.sub) th.className = 'sub';
         th.append(editable(mdToHtml(r.label || ''), 'Field', lineBreak));
         const td = el('td');
         const lines = Array.isArray(r.value) ? r.value : (r.value ? [r.value] : []);
-        const c = controls(tr, [['⇥', 'Indent as a sub-field', () => th.classList.toggle('sub')]]);
+        const c = nestControls(tr, [['⇥', 'Indent as a sub-field', () => th.classList.toggle('sub')]]);
         c.prepend(ibAddMenu(tr));
-        td.append(editable(lines.map(mdToHtml).join('<br>'), 'Value', lineBreak), c);
+        td.append(nlBox(lines, () => +tr.dataset.depth, 'Value'), c);
         tr.append(th, td);
+        nestPaint(tr);
       }
       return tr;
+    }
+
+    /**
+     * A row's controls, with the two switches for a cell of it that nests: how deep it
+     * may go, and whether the page draws the lines. They show once a line in the row is
+     * nested and stay out of the way until then.
+     */
+    function nestControls(tr, extras = []) {
+      const depth = () => +tr.dataset.depth;
+      const c = controls(tr, [...extras,
+        ['', '', () => { tr.dataset.depth = depth() % 4 + 1; tr.querySelectorAll('.ce.outline').forEach((b) => nlSettle(b, depth())); }],
+        ['│', '', () => { tr.dataset.guides = tr.dataset.guides === 'false' ? 'true' : 'false'; nestPaint(tr); }],
+      ]);
+      const own = [...c.querySelectorAll(':scope > button')];
+      own[extras.length].dataset.nest = 'depth';
+      own[extras.length + 1].dataset.nest = 'guides';
+      return c;
+    }
+    function nestPaint(tr) {
+      const depthButton = tr?.querySelector('button[data-nest="depth"]');
+      const guidesButton = tr?.querySelector('button[data-nest="guides"]');
+      if (!depthButton || !guidesButton) return;
+      const depth = +tr.dataset.depth, on = tr.dataset.guides !== 'false';
+      const nested = [...tr.querySelectorAll('.ce.outline > div')].some((d) => nlLevel(d) > 0);
+      depthButton.hidden = guidesButton.hidden = !nested;
+      depthButton.textContent = depth;
+      depthButton.title = `Nests ${depth} level${depth === 1 ? '' : 's'} deep; click for ${depth % 4 + 1}`;
+      guidesButton.classList.toggle('off', !on);
+      guidesButton.title = on ? 'Guide lines drawn; click to leave them out' : 'No guide lines; click to draw them';
+      tr.querySelectorAll('.ce.outline').forEach((b) => b.classList.toggle('bare', !on));
     }
 
     const setInfobox = (rows) => {
@@ -1081,27 +1120,28 @@ const ADMIN = REPO.split('/')[0];
             : { image: slots[0]?.src ?? '', caption: slots[0]?.caption ?? '' };
         }
         const asLines = (cell) => htmlToMd(cell, '\n').split('\n').map((x) => x.trim()).filter(Boolean);
+        // A cell's lines, a nested one led by two spaces a level, which is how the page reads them.
+        const cellLines = (box) => {
+          nlSettle(box, +tr.dataset.depth);
+          return [...box.children].flatMap((d) => asLines(d).map((x) => '  '.repeat(nlLevel(d)) + x));
+        };
+        // A row that nests keeps its depth and its lines with it; one that does not says nothing of either.
+        const nestOf = (all) => (all.some((l) => l.startsWith('  '))
+          ? { depth: +tr.dataset.depth, guides: tr.dataset.guides !== 'false' } : {});
         if (tr.dataset.kind === 'pair') {
-          return { pair: [...tr.querySelectorAll('td')].map((td) => {
+          const pair = [...tr.querySelectorAll('td')].map((td) => {
             const [head, items] = td.querySelectorAll('.ce');
-            return { heading: htmlToMd(head).trim(), items: asLines(items) };
-          }) };
-        }
-        if (tr.dataset.kind === 'nested') {
-          const [labelCell, box] = tr.querySelectorAll('.ce');
-          const depth = +tr.dataset.depth;
-          nlSettle(box, depth);
-          // Two spaces of indent a level, which is how the page reads it back.
-          const tree = [...box.children].flatMap((d) => asLines(d).map((x) => '  '.repeat(nlLevel(d)) + x));
-          return { label: htmlToMd(labelCell).trim(), depth, guides: tr.dataset.guides !== 'false', tree };
+            return { heading: htmlToMd(head).trim(), items: cellLines(items) };
+          });
+          return { pair, ...nestOf(pair.flatMap((col) => col.items)) };
         }
         if (tr.dataset.kind === 'full') {
-          const lines = asLines(ce('.ce'));
-          return { value: lines.length > 1 ? lines : (lines[0] ?? '') };
+          const lines = cellLines(ce('.ce'));
+          return { value: lines.length > 1 ? lines : (lines[0] ?? ''), ...nestOf(lines) };
         }
         const [labelCell, valueCell] = tr.querySelectorAll('.ce');
-        const lines = htmlToMd(valueCell, '\n').split('\n').map((s) => s.trim()).filter(Boolean);
-        const o = { label: htmlToMd(labelCell).trim(), value: lines.length > 1 ? lines : (lines[0] ?? '') };
+        const lines = cellLines(valueCell);
+        const o = { label: htmlToMd(labelCell).trim(), value: lines.length > 1 ? lines : (lines[0] ?? ''), ...nestOf(lines) };
         if (tr.querySelector('th')?.classList.contains('sub')) o.sub = true;
         return o;
       });
@@ -1117,7 +1157,6 @@ const ADMIN = REPO.split('/')[0];
       ['Full-Width Value', () => ({ value: '' })],
       ['Parallel Lists', () => ({ pair: [{ heading: '', items: [] }, { heading: '', items: [] }] })],
       ['Occupation', () => ({ office: '', term: '' })],
-      ['Nested List', () => ({ label: '', depth: 3, guides: true, tree: [] })],
     ];
 
     /** The + on a row's controls, which adds the next row right below it. */
@@ -2267,6 +2306,10 @@ const ADMIN = REPO.split('/')[0];
             continue;
           }
           if (r.image != null) { fm.push(`  - { image: ${q(r.image)}, caption: ${q(r.caption)} }`); continue; }
+          // A row with a nested line says how deep it may go and whether its lines are drawn.
+          const nest = () => {
+            if (r.depth) fm.push(`    depth: ${r.depth}`, `    guides: ${r.guides === false ? 'false' : 'true'}`);
+          };
           if (r.pair) {
             fm.push('  - pair:');
             for (const col of r.pair) {
@@ -2274,20 +2317,14 @@ const ADMIN = REPO.split('/')[0];
               fm.push('        items:');
               col.items.forEach((it) => fm.push(`          - ${q(it)}`));
             }
-            continue;
-          }
-          if (r.tree) {
-            fm.push(`  - label: ${q(r.label)}`);
-            fm.push(`    depth: ${r.depth || 3}`);
-            fm.push(`    guides: ${r.guides === false ? 'false' : 'true'}`);
-            if (!r.tree.length) fm.push('    tree: []');
-            else { fm.push('    tree:'); r.tree.forEach((l) => fm.push(`      - ${q(l)}`)); }
+            nest();
             continue;
           }
           if (r.label == null) {
             if (Array.isArray(r.value)) {
               fm.push('  - value:');
               r.value.forEach((l) => fm.push(`      - ${q(l)}`));
+              nest();
             } else fm.push(`  - { value: ${q(r.value)} }`);
             continue;
           }
@@ -2296,6 +2333,7 @@ const ADMIN = REPO.split('/')[0];
             if (r.sub) fm.push('    sub: true');
             fm.push('    value:');
             r.value.forEach((l) => fm.push(`      - ${q(l)}`));
+            nest();
           } else {
             fm.push(`  - { label: ${q(r.label)}${r.sub ? ', sub: true' : ''}, value: ${q(r.value)} }`);
           }
@@ -3452,16 +3490,19 @@ const ADMIN = REPO.split('/')[0];
               continue;
             }
             if (/^pair:/.test(body)) {
-              const pair = [];
+              const pair = [], nest = {};
               let k2 = k + 1;
               while (k2 < block.length && indent(block[k2]) > indent(l)) {
                 const h = block[k2].match(/^\s*- heading:\s*(.*)$/);
                 if (h) pair.push({ heading: unquote(h[1]), items: [] });
                 const it = block[k2].match(/^\s*- (".*")\s*$/);
                 if (it && pair.length) pair[pair.length - 1].items.push(unquote(it[1]));
+                // How deep its lists may nest and whether their lines are drawn, under the row itself.
+                const opt = block[k2].match(/^\s*(depth|guides):\s*(\S+)\s*$/);
+                if (opt) nest[opt[1]] = opt[1] === 'depth' ? Number(opt[2]) : opt[2] === 'true';
                 k2++;
               }
-              rows.push({ pair });
+              rows.push({ pair, ...nest });
               k = k2 - 1;
               continue;
             }
@@ -5001,8 +5042,14 @@ const ADMIN = REPO.split('/')[0];
       display: flex; align-items: center; justify-content: center; min-width: 18px; min-height: 18px;
     }
     .ctl button:hover { color: var(--ink); background: var(--band); }
-    /* A nested list's guide-lines switch, when the lines are left out. */
+    /* A nested list's guide-lines switch, when the lines are left out; both switches
+       stay hidden until a line in the row is nested. */
     .ctl button.off { opacity: .4; }
+    .ctl button[hidden] { display: none; }
+    /* A sidebar cell with nothing in it yet still says what it is for. */
+    .ib-edit .ce.outline:has(> div:only-child > br:only-child)::before {
+      content: attr(data-ph); color: #6b7177; pointer-events: none; position: absolute;
+    }
     /* A nested list's lines, indented and joined as the page draws them; nlDraw works
        out which joint each line takes and which levels run past it. */
     .ib-edit .ce.outline > div { position: relative; }
@@ -5022,6 +5069,17 @@ const ADMIN = REPO.split('/')[0];
     .ib-edit .ce.outline > div[data-level="2"]::before, .ib-edit .ce.outline > div[data-level="2"]::after { left: 31px; }
     .ib-edit .ce.outline > div[data-level="3"]::before, .ib-edit .ce.outline > div[data-level="3"]::after { left: 52px; }
     .ib-edit .ce.outline > div[data-level="4"]::before, .ib-edit .ce.outline > div[data-level="4"]::after { left: 73px; }
+    /* The two columns of a pair step in as the page does there, a level to the old bullet's depth. */
+    .ib-edit tr.ib-pair .ce.outline > div:not([data-level="0"]) { text-indent: 0; }
+    .ib-edit tr.ib-pair .ce.outline > div[data-level="1"] { padding-left: 11px; }
+    .ib-edit tr.ib-pair .ce.outline > div[data-level="2"] { padding-left: 22px; }
+    .ib-edit tr.ib-pair .ce.outline > div[data-level="3"] { padding-left: 33px; }
+    .ib-edit tr.ib-pair .ce.outline > div[data-level="4"] { padding-left: 44px; }
+    .ib-edit tr.ib-pair .ce.outline > div[data-level="1"]::before, .ib-edit tr.ib-pair .ce.outline > div[data-level="1"]::after { left: 4px; }
+    .ib-edit tr.ib-pair .ce.outline > div[data-level="2"]::before, .ib-edit tr.ib-pair .ce.outline > div[data-level="2"]::after { left: 15px; }
+    .ib-edit tr.ib-pair .ce.outline > div[data-level="3"]::before, .ib-edit tr.ib-pair .ce.outline > div[data-level="3"]::after { left: 26px; }
+    .ib-edit tr.ib-pair .ce.outline > div[data-level="4"]::before, .ib-edit tr.ib-pair .ce.outline > div[data-level="4"]::after { left: 37px; }
+    .ib-edit tr.ib-pair .ce.outline > div[data-joint]::after { width: 5px; }
     .ib-edit .ce.outline.bare > div { background-image: none !important; }
     .ib-edit .ce.outline.bare > div::before, .ib-edit .ce.outline.bare > div::after { content: none; }
 

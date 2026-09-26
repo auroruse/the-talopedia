@@ -187,6 +187,11 @@ a.ext::after {
   content: ''; position: absolute; left: 10px; top: 0.7em; width: 11px; border-top: 1px solid #808080;
 }
 .infobox .ib-tree.bare li li::before, .infobox .ib-tree.bare li li::after { content: none; }
+/* In a pair of columns each has half the width, and a flag stays glued to its name, so a
+   level steps in no further than the bullets these replaced or a long name runs out of the box. */
+.infobox .ib-pair .ib-tree li li { padding-left: 11px; text-indent: 0; }
+.infobox .ib-pair .ib-tree li li::before, .infobox .ib-pair .ib-tree li li::after { left: 4px; }
+.infobox .ib-pair .ib-tree li li::after { width: 5px; }
 .infobox .ib-full { text-align: center; }
 .infobox .ib-pair td { width: 50%; vertical-align: top; }
 .infobox .ib-pair b { display: block; margin-bottom: 5px; }

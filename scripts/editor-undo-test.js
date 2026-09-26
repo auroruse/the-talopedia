@@ -354,20 +354,21 @@
     ok('national team sidebar comes from the Nichirin team', labels.includes('AFA Code') && labels.includes('§Biggest Win')
       && labels[labels.indexOf('§Biggest Win') + 1] === '[value]', labels.join(' | '));
 
-    // Sidebar + > Nested List: each line at a level, as deep as the row allows and never
-    // more than one past the line above.
+    // Any sidebar cell nests: its lines go under one another, drawn as the page draws them.
     const fieldRow = document.querySelector('.ib-edit tr[data-kind="row"]');
     fieldRow.querySelector('.ctl-add > button').click();
-    [...fieldRow.querySelectorAll('.ctl-menu button')].find((b) => b.textContent === 'Nested List').click();
-    await sleep(100);
-    const nested = document.querySelector('.ib-edit tr[data-kind="nested"]');
-    ok('Nested List is on the + menu, under Occupation', !!nested
-      && [...fieldRow.querySelectorAll('.ctl-menu button')].map((b) => b.textContent).join('|').includes('Occupation|Nested List'), !!nested);
-    const [nLabel, nBox] = nested.querySelectorAll('.ce');
+    ok('the + menu no longer has a Nested List row of its own',
+      ![...fieldRow.querySelectorAll('.ctl-menu button')].some((b) => b.textContent === 'Nested List'), '');
+    fieldRow.querySelector('.ctl-add > button').click();
+    const [nLabel, nBox] = fieldRow.querySelectorAll('.ce');
+    const depthButton = fieldRow.querySelector('button[data-nest="depth"]');
+    const guidesButton = fieldRow.querySelector('button[data-nest="guides"]');
+    ok('its depth and guide switches wait until something nests', depthButton?.hidden === true && guidesButton?.hidden === true, depthButton?.hidden);
     nLabel.textContent = 'Battles/wars';
     nBox.innerHTML = [[0, 'The Great War'], [1, 'Valtherian Front'], [2, 'Test'], [2, 'Test'], [2, 'Test'], [1, '']]
       .map(([l, t]) => `<div data-level="${l}">${t || '<br>'}</div>`).join('');
     nBox.dispatchEvent(new Event('input', { bubbles: true }));
+    ok('and show once it does', depthButton.hidden === false && guidesButton.hidden === false, depthButton.hidden);
     const joints = [...nBox.children].map((d) => d.dataset.joint || '-').join(' ');
     ok('siblings join, the last turns the corner, an empty line draws nothing', joints === '- last more more last -', joints);
     const runs = [...nBox.children].map((d) => d.style.backgroundPosition || '-').join(' | ');
@@ -382,8 +383,8 @@
     nBox.dispatchEvent(new Event('input', { bubbles: true }));
     await sleep(100);
     const treeOf = () => ($('#preview').textContent.match(/label: "Battles\/wars"\n[\s\S]*?(?=\n  - |\n---)/) || [''])[0];
-    ok('it saves a level as two spaces', treeOf().includes('depth: 3\n    guides: true\n    tree:\n      - "World War II"\n'
-      + '      - "  North African campaign"\n      - "    Operation Torch"\n      - "      Battle of Port Lyautey"'), treeOf());
+    ok('it saves a level as two spaces, and the row its settings', treeOf().includes('value:\n      - "World War II"\n'
+      + '      - "  North African campaign"\n      - "    Operation Torch"\n      - "      Battle of Port Lyautey"\n    depth: 3\n    guides: true'), treeOf());
     const lineOf = (text) => [...nBox.children].find((d) => d.textContent === text);
     const caretAtEnd = (node) => {
       const r = document.createRange(); r.selectNodeContents(node); r.collapse(false);
@@ -397,10 +398,11 @@
     ok('Tab goes no deeper than one past the line above', treeOf().includes('      - "  North African campaign"'), treeOf());
     caretAtEnd(lineOf('Operation Torch')); nlKey('Enter'); type('Operation Husky'); await sleep(100);
     ok('Enter starts a line at the same level', treeOf().includes('      - "  Operation Torch"\n      - "  Operation Husky"'), treeOf());
-    const [depthButton, guidesButton] = nested.querySelectorAll('.ctl > button');
+    caretAtEnd(lineOf('Operation Husky')); $('#ins-nested').click(); type('Test op'); await sleep(100);
+    ok('Insert > Nested list starts a line under the caret\'s', treeOf().includes('      - "  Operation Husky"\n      - "    Test op"'), treeOf());
     depthButton.click(); depthButton.click(); await sleep(100);
     ok('depth goes 3, 4, 1, and 1 brings everything up to one level', treeOf().includes('depth: 1')
-      && treeOf().includes('      - "  Battle of Port Lyautey"') && !treeOf().includes('"    '), treeOf());
+      && treeOf().includes('      - "  Test op"') && !treeOf().includes('"    '), treeOf());
     guidesButton.click(); await sleep(100);
     ok('the guide lines switch off', treeOf().includes('guides: false') && guidesButton.classList.contains('off'), treeOf());
     const nestedMd = $('#preview').textContent;
@@ -409,10 +411,10 @@
     $('#open-file-input').files = nestedFile.files;
     $('#open-file-input').dispatchEvent(new Event('change'));
     for (let i = 0; i < 60 && !/nested-test/.test($('#status').textContent); i++) await sleep(50);
-    const back = document.querySelector('.ib-edit tr[data-kind="nested"]');
+    const back = [...document.querySelectorAll('.ib-edit tr[data-kind="row"]')].find((tr) => tr.querySelector('th')?.textContent === 'Battles/wars');
     const backLines = back && [...back.querySelectorAll('.ce.outline > div')].map((d) => d.dataset.level + ' ' + d.textContent).join(' | ');
     ok('and a saved page reads back as it was', back?.dataset.depth === '1' && back?.dataset.guides === 'false'
-      && backLines === '0 World War II | 1 North African campaign | 1 Operation Torch | 1 Operation Husky | 1 Battle of Port Lyautey', backLines);
+      && backLines === '0 World War II | 1 North African campaign | 1 Operation Torch | 1 Operation Husky | 1 Test op | 1 Battle of Port Lyautey', backLines);
 
     // Insert > Data table: the same grid, marked so the page can sort it by any column.
     focusEnd(paras()[0]);

@@ -22,6 +22,11 @@ function outline(items = [], depth = 3) {
   }
   return html + '</li></ul>'.repeat(open + 1);
 }
+/** A cell's lines as a nested list, when any of them is indented under another; otherwise nothing. */
+const tree = (items, r) => (items.some((l) => /^ {2,}\S/.test(l))
+  ? `<div class="${r.guides === false ? 'ib-tree bare' : 'ib-tree'}">${outline(items, r.depth)}</div>` : '');
+// The Nested List row that came first is a field whose value nests.
+const view = rows.map((r) => (r.tree && r.value == null ? { ...r, value: r.tree } : r));
 ---
 <aside class="infobox">
   <table class="ib">
@@ -31,13 +36,15 @@ function outline(items = [], depth = 3) {
         {lines(nativeTitle).map((n) => <span class="native" set:html={renderInline(n)} />)}
         {romaji && <span class:list={['romaji', !transliterated && 'upright']} set:html={renderInline(romaji)} />}
       </td></tr>
-      {rows.map((r) =>
+      {view.map((r) =>
         r.pair ? (
           <tr class="ib-pair">
             {r.pair.map((col) => (
               <td>
                 {col.heading && <b set:html={renderInline(col.heading)} />}
-                {col.items.map((it) => <div class={it.trimStart().startsWith('•') ? 'sub' : ''} set:html={renderInline(it.replace(/^\s*•\s*/, ''))} />)}
+                {tree(col.items, r)
+                  ? <Fragment set:html={tree(col.items, r)} />
+                  : col.items.map((it) => <div class={it.trimStart().startsWith('•') ? 'sub' : ''} set:html={renderInline(it.replace(/^\s*•\s*/, ''))} />)}
               </td>
             ))}
           </tr>
@@ -57,21 +64,17 @@ function outline(items = [], depth = 3) {
               </figure>
             ))}
           </td></tr>
-        ) : r.tree ? (
-          // A nested list: beside its label, or across both columns when it has none.
-          <tr>
-            {r.label && <th set:html={renderInline(r.label)} />}
-            <td colspan={r.label ? undefined : 2}>
-              <div class:list={['ib-tree', r.guides === false && 'bare']} set:html={outline(r.tree, r.depth)} />
-            </td>
-          </tr>
         ) : !r.label ? (
           // A value with no label spans both columns, as a casualty total does.
-          <tr><td class="ib-full" colspan="2">{lines(r.value).map((l) => <div set:html={renderInline(l)} />)}</td></tr>
+          <tr><td class="ib-full" colspan="2">{tree(lines(r.value), r)
+            ? <Fragment set:html={tree(lines(r.value), r)} />
+            : lines(r.value).map((l) => <div set:html={renderInline(l)} />)}</td></tr>
         ) : (
           <tr>
             <th class={r.sub ? 'sub' : undefined} set:html={renderInline(r.label)} />
-            <td>{lines(r.value).map((l) => <div set:html={renderInline(l)} />)}</td>
+            <td>{tree(lines(r.value), r)
+              ? <Fragment set:html={tree(lines(r.value), r)} />
+              : lines(r.value).map((l) => <div set:html={renderInline(l)} />)}</td>
           </tr>
         )
       )}
