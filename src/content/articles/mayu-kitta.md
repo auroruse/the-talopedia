@@ -61,6 +61,8 @@ infobox:
   - { label: "Aldrige Rōmaji", value: "Kitta Mayu" }
 ---
 
+**Mayu Kitta** (橘田 眞諭; born February 3, 1864), codenamed **Shuten** (酒呑), is a [[nichirin|Nichirian]] military officer who commanded the [[battle-of-mizuhara|defense of Mizuhara]] during [[great-war|the Great War]] and served as Senior Shogunal Advisor to Shogun [[masashi-miyamoto]] from 1923 until his recorded death in 1926. Regarded as one of the foremost field tacticians of the modern era, he is credited with halting the Xing advance into Nichirin at the Shizuku River. After publicly opposing the normalization of relations with Guandong, he shot himself in November 1926, but survived in the custody of [[seele]], which recorded him as dead and returned him to service in the [[kagemusha]] under the codename Shuten. He served in the unit until his arrest in 1933. In 1934, he confessed under oath to having personally executed seven Guandongese prisoners of war at [[mizuhara]] in 1915, and the confession was referred to the Ministry of Justice.
+
 ## Early Life and Education
 
 Mayu Kitta was born on February 3, 1864, in [[takarazuka]], the son of a Shogunate retainer who served under [[aratame-jozui|Aratame Jōzui]] at the siege of Chiyoda Castle in the [[bakuraku-war]]. The family's hereditary stipend was converted into government bonds after the war. Kitta graduated from the National Military Academy and was commissioned into the [[shogunate-armed-forces]]' Ground Corps in 1888. He married Akemi Hiiragi, and their daughter, Tomoko, was born the same year.
@@ -110,3 +112,9 @@ In November 1932, Takahashi recalled Kitta to command the guard at SEELE's headq
 On February 16, 1933, Kitta led a Kagemusha detail sent to clear the Site 'Kelipah.' When a Kochōrin prefectural police patrol arrived during the clearance, a member of the detail shot and killed its sergeant. Kitta ordered the detail to withdraw but remained at the site, where he gave first aid to a wounded constable and surrendered. He then directed the police to a crate containing a child's remains that the detail had left behind. Identified by his fingerprints as a man officially deceased since 1926, he was held at Karihira for thirteen months without charge.
 
 At Tachibana's request, Minister of Interior Affairs [[munehiro-ogasawara]] amended the civil register to record Kitta as living on March 20, 1934. Called as a defense witness at the trial of Kyouko Katsuragi, who stood accused in connection with the death of a SEELE agent at Kelipah, Kitta testified on March 26 to the clearance of the site. The Minister of Justice, [[kenzo-kamiya|Kenzo Kamiya]], then put Kitta's 1928 deposition to him, and Kitta affirmed under oath his execution of seven prisoners of war at Mizuhara in 1915. The court referred the confession to the Ministry of Justice. As of 1934, Kitta remains in custody at Karihira pending its decision.
+
+## Personal Life
+
+Kitta's daughter, Tomoko, married in Takarazuka, where she raised her children. After his funeral in 1926, she moved to Shinkeisei and opened a ramen shop on Tenjin-dōri in Shiomachi. She was not officially informed that her father was alive until the Ministry of Interior Affairs wrote to the family in March 1934.
+
+The torture Kitta suffered in 1915 left the fingers of his right hand permanently bent and missing several nails. By 1930, the hand had lost most of its remaining function. The 1926 gunshot wound left him with impaired memory and difficulty adjusting to changes in time zone.
