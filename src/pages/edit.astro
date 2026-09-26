@@ -641,7 +641,7 @@ const ADMIN = REPO.split('/')[0];
         const clean = plainPaste || !html ? '' : keepTokens(html);
         plainPaste = false;
         if (clean.replace(/<[^>]*>/g, '').trim()) {
-          document.execCommand('insertHTML', false, clean);
+          insertHtml(clean);
           unglue(d);
           return;
         }
@@ -739,6 +739,17 @@ const ADMIN = REPO.split('/')[0];
       if (keep) sel.setBaseAndExtent(...keep);
     }
 
+    /**
+     * Chrome puts a fragment that opens on a non-editable node one character before the
+     * caret: a skull put in after "Yamaji" landed between the j and the i, and after
+     * "Yamaji " it took the space's place and pushed the space past itself. So the tokens
+     * go in editable, and are locked again once they are where the writer put them.
+     */
+    function insertHtml(html) {
+      document.execCommand('insertHTML', false, html.replace(/ contenteditable="false"/g, ''));
+      document.querySelectorAll('[data-tok]:not([contenteditable])').forEach((t) => { t.contentEditable = 'false'; });
+    }
+
     /** Put the caret back and insert there, in a plain field or a table cell. */
     function insertAtCaret(html) {
       const where = activeText();
@@ -754,7 +765,7 @@ const ADMIN = REPO.split('/')[0];
         : null;
       if (document.activeElement !== host) host.focus();
       if (range) { sel.removeAllRanges(); sel.addRange(range); }
-      document.execCommand('insertHTML', false, html);
+      insertHtml(html);
       // Inserting at a cell boundary can drop the content beside the .ce wrapper
       // rather than inside it, where the serializer would never see it again.
       const cellNow = (sel.anchorNode?.nodeType === 1 ? sel.anchorNode : sel.anchorNode?.parentElement)
@@ -2098,7 +2109,7 @@ const ADMIN = REPO.split('/')[0];
         e.preventDefault();
         if (cellEl && /[\t\n]/.test(text.trim())) { drop(); pasteGrid(cellEl, text); return; }
         if (html && /data-tok=|data-slug=/.test(html)) {
-          document.execCommand('insertHTML', false, keepTokens(html));
+          insertHtml(keepTokens(html));
           unglue(ceOf(getSelection().anchorNode));
           return;
         }

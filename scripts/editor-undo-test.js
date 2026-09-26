@@ -294,13 +294,27 @@
     // without the white edge a flag gets.
     await new Promise((r) => setTimeout(r, 300));
     const groups = [...document.querySelectorAll('#mp-icons .mp-group')].map((g) => g.textContent);
-    const medals = [...document.querySelectorAll('#mp-icons .mp-icon')].filter((b) => /\/assets\/icons\//.test(b.title));
+    const symbols = [...document.querySelectorAll('#mp-icons .mp-icon')].filter((b) => /\/assets\/icons\//.test(b.title));
+    const medals = symbols.filter((b) => /-medal\./.test(b.title));
     ok('an icons group with the three medals, after the arrows', groups[0] === 'arrows' && groups[1] === 'icons' && medals.length === 3, [groups.slice(0, 3), medals.length]);
+    ok('and the three marks for a commander', ['Executed', 'Killed in Action', 'Surrendered'].every((l) => symbols.some((b) => b.textContent.trim() === l)),
+      symbols.map((b) => b.textContent.trim()));
     focusEnd(paras()[0]);
     medals.find((b) => /gold-medal/.test(b.title)).click();
     const medal = paras()[0].querySelector('img[data-slug*="gold-medal"]');
     ok('a medal goes in as an icon, without the flag border', !!medal && medal.classList.contains('sym') && getComputedStyle(medal).borderTopWidth === '0px', medal && [medal.className, getComputedStyle(medal).borderTopWidth]);
     ok('and is saved as :img', $('#preview').textContent.includes(':img[/assets/icons/gold-medal.webp]'), $('#preview').textContent.slice(-60));
+
+    // An icon goes in at the caret. Chrome put a non-editable one a character early, so a
+    // skull after a name took the place of its last letter, or of the space after it.
+    const skull = symbols.find((b) => /executed/.test(b.title));
+    const named = () => ($('#preview').textContent.match(/Hideki[^\n]*/) || [''])[0];
+    paras()[0].innerHTML = ''; focusEnd(paras()[0]); type('Hideki Yamaji'); skull.click();
+    ok('an icon put in after a word goes after its last letter', named().startsWith('Hideki Yamaji:img[/assets/icons/executed.svg]'), named());
+    ok('and leaves no line break behind', !paras()[0].querySelector('br'), paras()[0].innerHTML);
+    paras()[0].innerHTML = ''; focusEnd(paras()[0]); type('Hideki Yamaji '); skull.click();
+    ok('after a space, it keeps the space before it', named().startsWith('Hideki Yamaji :img[/assets/icons/executed.svg]'), named());
+    ok('and is locked, like every token', paras()[0].querySelector('img.tok')?.contentEditable === 'false', paras()[0].querySelector('img.tok')?.outerHTML);
 
     // An imgbb page link is caught before it goes in; the picture's own link is not.
     const note = () => { $('#mp-link').dispatchEvent(new Event('input')); return $('#mp-link-note').textContent; };
