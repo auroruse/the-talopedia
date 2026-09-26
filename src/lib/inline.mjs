@@ -92,16 +92,18 @@ function custom(m, defer = false) {
       // arrives wrapped in one and has to be unwrapped again.
       // Markdown swallows the width into the link as %7C on the way, so it is put
       // back before the two halves are separated.
-      const [path, w] = arg
+      const [path, ...opts] = arg
         .replace(/<a\b[^>]*href="([^"]*)"[^>]*>[\s\S]*?<\/a>/g, '$1')
         .replace(/%7C/gi, '|')
-        .split('|');
-      const size = parseInt(w, 10);
+        .split('|')
+        .map((x) => x.trim());
+      const size = parseInt(opts.find((o) => /^\d+$/.test(o)), 10);
       const style = size > 0 ? ` style="width:${size}px;height:auto"` : '';
       // One from the icons folder is a symbol, a medal say, and goes without the hairline
-      // a flag needs to hold its edge against a white page.
-      const sym = path.trim().startsWith('/assets/icons/') ? ' sym' : '';
-      return `<img class="ico${size > 0 ? ' sized' : ''}${sym}" src="${esc(asset(path.trim()))}"${style} alt="" loading="lazy">`;
+      // a flag needs to hold its edge against a white page. |outline or |bare, written
+      // when one is put in as an icon, says which outright.
+      const bare = opts.includes('bare') || (!opts.includes('outline') && path.startsWith('/assets/icons/'));
+      return `<img class="ico${size > 0 ? ' sized' : ''}${bare ? ' sym' : ''}" src="${esc(asset(path))}"${style} alt="" loading="lazy">`;
     }
     if (m[3] === 'date') return dateText(arg);
     return defer ? `<i data-ico="${esc(arg)}"></i>` : icon(arg);

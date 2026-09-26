@@ -114,6 +114,14 @@ const ADMIN = REPO.split('/')[0];
                 <button type="button" class="on" data-as="image">Static</button>
                 <button type="button" data-as="float">Floating</button>
                 <button type="button" data-as="grid">Grid</button>
+                <button type="button" data-as="icon">Icon</button>
+              </span>
+            </div>
+            <div class="mp-row" id="mp-outline-row" hidden>
+              <span class="mp-lbl" title="The white outline a flag gets against the page">Outline</span>
+              <span class="mp-seg" id="mp-outline">
+                <button type="button" class="on" data-outline="1">Yes</button>
+                <button type="button" data-outline="0">No</button>
               </span>
             </div>
             <div class="mp-row">
@@ -454,12 +462,16 @@ const ADMIN = REPO.split('/')[0];
         return `<span class="tok date" data-tok="date" data-slug="${esc(arg)}" contenteditable="false">`
           + `${esc(dateLabel(arg))}</span>`;
       }
-      // :img carries its own path and an optional pixel width; :icon and :flag look
-      // the subject up in the registry.
-      const [path, w] = kind === 'img' ? arg.split('|') : [arg];
-      const size = parseInt(w, 10);
-      const src = srcFor(kind === 'img' ? path.trim() : ICONS[arg]);
-      const sym = (kind === 'img' ? path.trim() : ICONS[arg] || '').startsWith('/assets/icons/') ? ' sym' : '';
+      // :img carries its own path, an optional pixel width, and optionally whether it
+      // wears the white outline (|outline or |bare); :icon and :flag look the subject
+      // up in the registry.
+      const [path, ...opts] = kind === 'img' ? arg.split('|').map((x) => x.trim()) : [arg];
+      const size = parseInt(opts.find((o) => /^\d+$/.test(o)), 10);
+      const src = srcFor(kind === 'img' ? path : ICONS[arg]);
+      const bare = kind === 'img'
+        ? opts.includes('bare') || (!opts.includes('outline') && path.startsWith('/assets/icons/'))
+        : (ICONS[arg] || '').startsWith('/assets/icons/');
+      const sym = bare ? ' sym' : '';
       const style = size > 0 ? ` style="width:${size}px;height:auto"` : '';
       return src
         ? `<img class="tok ico${size > 0 ? ' sized' : ''}${sym}" data-tok="${kind}" data-slug="${esc(arg)}" src="${src}"${style} alt="" contenteditable="false">`
@@ -4293,6 +4305,15 @@ const ADMIN = REPO.split('/')[0];
       // Grid there changes how many pictures the row holds instead.
       const inSidebar = !!field?.closest?.('.ib-media');
       document.querySelector('[data-as="float"]')?.toggleAttribute('hidden', inSidebar);
+      // Opened for a picture's own field, the panel fills it; an icon has no business here.
+      document.querySelector('[data-as="icon"]')?.toggleAttribute('hidden', !!field);
+      // Set back by hand: pressing Static here would also turn a sidebar pair into one picture.
+      if (field && insertAs === 'icon') {
+        insertAs = 'image';
+        document.querySelectorAll('[data-as]').forEach((x) => x.classList.toggle('on', x.dataset.as === 'image'));
+        $('#mp-outline-row').hidden = true;
+        $('#mp-ratio').closest('.mp-row').hidden = false;
+      }
       if (inSidebar) {
         const slots = field.closest('.ib-media').querySelectorAll('.ib-slot').length;
         const want = slots > 1 ? 'grid' : 'image';
@@ -4418,6 +4439,8 @@ const ADMIN = REPO.split('/')[0];
     // Static, floating or a grid: whichever the Media panel is set to, and the shape
     // the picture is cut to, which is its own proportions unless one is chosen.
     let insertAs = 'image';
+    // As an icon: whether it wears the white outline a flag gets against the page.
+    let insertOutline = true;
     let insertRatio = '';
 
     /** How wide a picture dropped into a table cell starts out. */
@@ -4432,6 +4455,12 @@ const ADMIN = REPO.split('/')[0];
       }
       const field = activeField();
       if (field) return fill(field, path);
+      // As an icon: any picture, in the line wherever the caret is, drawn the height of
+      // the text beside it. It needs no place on the icon list.
+      if (insertAs === 'icon') {
+        insertToken('img', `${path}|${insertOutline ? 'outline' : 'bare'}`);
+        return;
+      }
       const near = activeText()?.closest?.('figure, tr[data-kind="image"]');
       if (near) return fill(near.querySelector('input.path'), path);
       // A picture in a table cell is an inline mark, because a figure cannot live in
@@ -4487,6 +4516,12 @@ const ADMIN = REPO.split('/')[0];
       loadAssets();
       $('#mp-link')?.focus();
     }
+    // Opened from the toolbar, the panel puts pictures in at the caret: no picture from an
+    // earlier opening is still waiting to be filled, and every way in is offered again.
+    $('#insert').addEventListener('click', () => {
+      pickTarget = null;
+      document.querySelectorAll('[data-as="float"], [data-as="icon"]').forEach((b) => b.removeAttribute('hidden'));
+    });
     document.querySelectorAll('#insert-menu > .mp-tabs button').forEach((b) => b.onclick = () => {
       document.querySelectorAll('#insert-menu > .mp-tabs button')
         .forEach((x) => x.classList.toggle('on', x === b));
@@ -4495,10 +4530,18 @@ const ADMIN = REPO.split('/')[0];
     document.querySelectorAll('[data-as]').forEach((b) => b.onclick = () => {
       document.querySelectorAll('[data-as]').forEach((x) => x.classList.toggle('on', x === b));
       insertAs = b.dataset.as;
+      // An icon is a mark in the line at the height of its text, whatever the picture's
+      // own size: it takes an outline or not, and no shape.
+      $('#mp-outline-row').hidden = insertAs !== 'icon';
+      $('#mp-ratio').closest('.mp-row').hidden = insertAs === 'icon';
       // Aimed at the sidebar, this is a choice about that row rather than about what
       // the next insert will be.
       const cell = pickTarget?.closest?.('.ib-media');
       if (cell) setSidebarSlots(cell, insertAs === 'grid' ? 2 : 1);
+    });
+    document.querySelectorAll('[data-outline]').forEach((b) => b.onclick = () => {
+      document.querySelectorAll('[data-outline]').forEach((x) => x.classList.toggle('on', x === b));
+      insertOutline = b.dataset.outline === '1';
     });
     document.querySelectorAll('[data-ratio]').forEach((b) => b.onclick = () => {
       document.querySelectorAll('[data-ratio]').forEach((x) => x.classList.toggle('on', x === b));

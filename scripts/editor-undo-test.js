@@ -489,6 +489,26 @@
     ok('and a saved gallery opens joined', pictureRows().length === 2 && pictureRows()[1].classList.contains('ib-join')
       && joinSwitch(pictureRows()[1]).classList.contains('on'), pictureRows().map((tr) => tr.className).join(' | '));
 
+    // Insert as Icon: any picture, in the line at the caret, the height of its text, outlined or not.
+    focusEnd(paras()[0]);
+    document.querySelector('[data-as="icon"]').click();
+    ok('Icon offers the white outline and puts the shapes away', !$('#mp-outline-row').hidden && $('#mp-ratio').closest('.mp-row').hidden, '');
+    const iconIn = async (url) => {
+      $('#mp-link').value = url;
+      $('#mp-link').dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }));
+      await sleep(100);
+      return [...paras()[0].querySelectorAll('img.tok[data-tok="img"]')].find((i) => i.dataset.slug.startsWith(url));
+    };
+    document.querySelector('[data-outline="0"]').click();
+    const bareIcon = await iconIn('https://i.imgur.com/AyTZTRT.jpeg');
+    ok('without the outline, it goes in at the caret the height of the text', $('#preview').textContent.includes(':img[https://i.imgur.com/AyTZTRT.jpeg|bare]')
+      && bareIcon?.classList.contains('sym') && !bareIcon.classList.contains('sized'), bareIcon?.className);
+    document.querySelector('[data-outline="1"]').click();
+    const lined = await iconIn('https://i.imgur.com/eehIIHD.png');
+    ok('with it, it wears the flag\'s white outline', $('#preview').textContent.includes(':img[https://i.imgur.com/eehIIHD.png|outline]')
+      && lined && !lined.classList.contains('sym'), lined?.className);
+    document.querySelector('[data-as="image"]').click();
+
     // Insert > Data table: the same grid, marked so the page can sort it by any column.
     focusEnd(paras()[0]);
     document.querySelector('#dtbl-pick .tbl-cell[data-r="3"][data-c="2"]').click();
