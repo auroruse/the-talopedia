@@ -86,7 +86,7 @@ const REROLL = 2;
 
 /** A day whose article was chosen by hand. The draw takes over again the next day. */
 const PINNED = {
-  '2026-09-25': 'kenzo-kamiya',   // the draw changed late that day; the day kept its article
+  '2026-09-26': 'kriemhilt-von-bismarck',
 };
 
 export function featured(entries, today = new Date()) {
