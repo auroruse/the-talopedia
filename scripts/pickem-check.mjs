@@ -67,7 +67,18 @@ assert.ok(s.exact);
 results.done.A = false;
 assert.equal(K.scoreEntry(truth, results).groups, 7 * 8);
 
-// 5. The card renders.
+// 5. A renamed player keeps the picks made under his old name.
+for (const [code, map] of Object.entries(Object.fromEntries(Object.entries(data.teams).filter(([, t]) => t.renamed).map(([c, t]) => [c, t.renamed])))) {
+  for (const [was, now] of Object.entries(map)) {
+    const before = structuredClone(data);
+    before.teams[code].squad = before.teams[code].squad.map(([n, p]) => [n === now ? was : n, p]);
+    const e = randomPicks('Renamed');
+    e.awards.ball = `${code}|${was}`;
+    assert.equal(K.decode(K.encode(e, before), data).awards.ball, `${code}|${now}`, `${was} lost`);
+  }
+}
+
+// 6. The card renders.
 const badges = {};
 for (const code of Object.keys(data.teams))
   badges[code] = 'data:image/png;base64,' + fs.readFileSync(`public/assets/pickem/wc1935/badges/${code}.png`).toString('base64');

@@ -36,6 +36,9 @@ const HOST = 'SKJ';
 
 // Invited sides played no qualifiers, so they carry no record.
 const INVITED = new Set(['ALB', 'EIV']);
+// Players renamed in the engine after entries went in, old name to new. An award pick is stored as
+// a hash of the name, so without this a rename would quietly drop somebody's pick.
+const RENAMED = { EIV: { 'Ceneric Cynbeald': 'Cyneric Cynbeald' } };
 
 // The final table of each conference's qualifying league, keyed by team name.
 const qualifying = {};
@@ -60,7 +63,8 @@ for (const code of Object.values(GROUPS).flat()) {
   if (!t) throw new Error(`${code} is not in the international preset`);
   const invited = INVITED.has(code), q = code === HOST || invited ? null : qualifying[t.name];
   if (code !== HOST && !invited && !q) throw new Error(`${t.name} has no qualifying record`);
-  teams[code] = { name: t.name, q, ...(invited ? { invited } : {}), squad: t.squad.map((p) => [p.fullName || p.name, p.pos]) };
+  teams[code] = { name: t.name, q, ...(invited ? { invited } : {}), squad: t.squad.map((p) => [p.fullName || p.name, p.pos]),
+    ...(RENAMED[code] ? { renamed: RENAMED[code] } : {}) };
   badge(path.join(ENGINE, 'public/avium/badges', `${code}.png`), code);
 }
 

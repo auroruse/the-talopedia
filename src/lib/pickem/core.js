@@ -223,9 +223,11 @@ export function decode(code, data) {
     for (const id of MATCHES) m.ko[id] = participants(m, id)[r.get(1)];
     m.score = [r.get(4), r.get(4)];
     for (const k of AWARDS) {
-      const i = r.get(6), h = r.get(16), code2 = order[i];
-      const hit = code2 && data.teams[code2].squad.find(([n]) => (fnv(n) & 0xffff) === h);
-      m.awards[k] = hit ? `${code2}|${hit[0]}` : null;
+      const i = r.get(6), h = r.get(16), code2 = order[i], t = code2 && data.teams[code2];
+      const hit = t && t.squad.find(([n]) => (fnv(n) & 0xffff) === h);
+      // A player renamed after entries went in: his old name still means him.
+      const was = !hit && t && Object.keys(t.renamed || {}).find((n) => (fnv(n) & 0xffff) === h);
+      m.awards[k] = hit ? `${code2}|${hit[0]}` : was ? `${code2}|${t.renamed[was]}` : null;
     }
     const at = r.byte, len = bytes[at];
     m.name = new TextDecoder().decode(new Uint8Array(bytes.slice(at + 1, at + 1 + len)));

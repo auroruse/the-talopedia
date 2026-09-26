@@ -367,11 +367,11 @@
      "DEF"
     ],
     [
-     "Colibyr Burhtun",
+     "Cyneric Cynbeald",
      "DEF"
     ],
     [
-     "Ealdræd Hæþ",
+     "Ælfnoð Winifred",
      "DEF"
     ],
     [
@@ -379,11 +379,11 @@
      "DEF"
     ],
     [
-     "Ceneric Cynbeald",
+     "Colibyr Burhtun",
      "MID"
     ],
     [
-     "Ælfnoð Winifred",
+     "Ealdræd Hæþ",
      "MID"
     ],
     [
@@ -446,7 +446,10 @@
      "Beonetleah Heordewic",
      "FWD"
     ]
-   ]
+   ],
+   "renamed": {
+    "Ceneric Cynbeald": "Cyneric Cynbeald"
+   }
   },
   "AST": {
    "name": "East Astriya",
