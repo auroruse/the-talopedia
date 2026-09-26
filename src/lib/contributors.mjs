@@ -24,6 +24,7 @@ export const ACCOUNT_OF = {
   shivon: 'khanategolden-tech',
   alemannia: 'mrrv533-creator',
   albinya: 'kiohit05-cyber',
+  eivorie: 'Foxomexray',
 };
 
 /**
