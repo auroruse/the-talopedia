@@ -20,7 +20,9 @@ export const asset = (p) => {
 
 export function icon(slug) {
   const src = iconFor(slug);
-  return src ? `<img class="ico" src="${url(src)}" alt="" loading="lazy">` : '';
+  // An emblem from the icons folder goes without the hairline a flag gets, as an :img of one does.
+  const sym = src?.startsWith('/assets/icons/') ? ' sym' : '';
+  return src ? `<img class="ico${sym}" src="${url(src)}" alt="" loading="lazy">` : '';
 }
 
 export function link(slug, display) {

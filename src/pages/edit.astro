@@ -456,7 +456,7 @@ const ADMIN = REPO.split('/')[0];
       const [path, w] = kind === 'img' ? arg.split('|') : [arg];
       const size = parseInt(w, 10);
       const src = srcFor(kind === 'img' ? path.trim() : ICONS[arg]);
-      const sym = kind === 'img' && path.trim().startsWith('/assets/icons/') ? ' sym' : '';
+      const sym = (kind === 'img' ? path.trim() : ICONS[arg] || '').startsWith('/assets/icons/') ? ' sym' : '';
       const style = size > 0 ? ` style="width:${size}px;height:auto"` : '';
       return src
         ? `<img class="tok ico${size > 0 ? ' sized' : ''}${sym}" data-tok="${kind}" data-slug="${esc(arg)}" src="${src}"${style} alt="" contenteditable="false">`

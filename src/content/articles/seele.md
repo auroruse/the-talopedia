@@ -2,6 +2,7 @@
 title: "SEELE"
 type: organization
 nation: nichirin
+icon: "/assets/icons/seele.webp"
 ooc: true
 infobox:
   - { image: "/assets/old-media/emblems/seele.png", caption: "Emblem" }
