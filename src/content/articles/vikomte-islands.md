@@ -3,10 +3,10 @@ title: "Vikomte Islands"
 nativeTitle: "Territoriet Vikomte-Öarna"
 romaji: "Skjarnish Territory"
 type: overview
-navbox: site
+nation: skjarnland
+authors: [skjarnland]
+coords: "37.53°S 154.17°W"
 infobox:
-  - { image: "https://i.imgur.com/AyTZTRT.jpeg", caption: "Flag" }
-  - { image: "https://i.imgur.com/eehIIHD.png", caption: "Coat of Arms" }
   - { image: "https://i.imgur.com/3n65MUW.png", caption: "Location of the Vikomte Islands" }
   - label: "Motto"
     value:
@@ -81,7 +81,7 @@ Björnsson was already due to conduct a voyage to the South, initially an expedi
 
 Björnsson departed [[kjellberg]] on 13 October 1760 on board the Strävan, a research vessel converted from a collier, and 4 other ships carrying additional supplies and providing escort, amounting to 300 men in total. After several weeks of navigating the thickening Arctic Ice, on 2 November he crossed the Kagyrgyn Strait, entering the Hyperborean Ocean. Björnsson steered south and made a rest stop in Sankt Franz-Josenthal, Ponurvia, on 30 November, before returning to sea on the 4th of December.
 
-<figure><img src="https://i.imgur.com/bv0rsP3.png" alt="Arvid Björnsson's research vessel Strävan (right) alongside the escorting frigate Karl Gustaf (left), drawn during an earlier mission."><figcaption>Arvid Björnsson's research vessel Strävan (right) alongside the escorting frigate Karl Gustaf (left), drawn during an earlier mission.</figcaption></figure>
+<figure class="float float-right" style="width:320px"><img src="https://i.imgur.com/bv0rsP3.png" alt="Arvid Björnsson's research vessel Strävan (right) alongside the escorting frigate Karl Gustaf (left), drawn during an earlier mission."><figcaption>Arvid Björnsson's research vessel Strävan (right) alongside the escorting frigate Karl Gustaf (left), drawn during an earlier mission.</figcaption></figure>
 
 He made his final stop in [[marienhafen]], capital of the Holy Evrian colony of Kogelland, on 21 January 1761 before sailing directly to the archipelago on the 24th. Intense storms on the 28th drove him off course, delaying his landing by one week. On 8 February 1761, Björnsson made landfall on the western coast of the westernmost island, the archipelago's second largest, which he named Kurtsö, in honour of the viscount that sponsored his expedition.
 
