@@ -45,7 +45,7 @@ const articles = defineCollection({
     // article's. Left out, the sidebar takes the article title.
     sidebarTitle: z.string().optional(),
     nativeTitle: z.union([z.string(), z.array(z.string())]).optional(),   // one line per official language
-    romaji: z.string().optional(),
+    romaji: z.union([z.string(), z.array(z.string())]).optional(),   // a line to match each native title
     type: z.enum(ARTICLE_TYPES),
     nation: z.string().optional(),                      // drives the navbox attached at the foot
     authors: z.array(z.string()).optional(),            // byline, when it differs from `nation`

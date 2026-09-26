@@ -34,7 +34,7 @@ const view = rows.map((r) => (r.tree && r.value == null ? { ...r, value: r.tree 
       <tr><td class="ib-head" colspan="2">
         <b>{title}</b>
         {lines(nativeTitle).map((n) => <span class="native" set:html={renderInline(n)} />)}
-        {romaji && <span class:list={['romaji', !transliterated && 'upright']} set:html={renderInline(romaji)} />}
+        {lines(romaji).map((r) => <span class:list={['romaji', !transliterated && 'upright']} set:html={renderInline(r)} />)}
       </td></tr>
       {view.map((r) =>
         r.pair ? (

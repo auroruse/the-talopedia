@@ -416,6 +416,20 @@
     ok('and a saved page reads back as it was', back?.dataset.depth === '1' && back?.dataset.guides === 'false'
       && backLines === '0 World War II | 1 North African campaign | 1 Operation Torch | 1 Operation Husky | 1 Test op | 1 Battle of Port Lyautey', backLines);
 
+    // The romanisation takes a line per native title, as the native title takes one per language.
+    const romajiBox = $('#ib-romaji');
+    const shiftEnter = new KeyboardEvent('keydown', { key: 'Enter', shiftKey: true, bubbles: true, cancelable: true });
+    romajiBox.dispatchEvent(shiftEnter);
+    const plainEnter = new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true });
+    romajiBox.dispatchEvent(plainEnter);
+    ok('shift+enter opens another romanisation line, enter still moves on', !shiftEnter.defaultPrevented && plainEnter.defaultPrevented,
+      [shiftEnter.defaultPrevented, plainEnter.defaultPrevented]);
+    romajiBox.innerHTML = 'Koin Senso<br>Jiayin Zhanzheng';
+    romajiBox.dispatchEvent(new Event('input', { bubbles: true }));
+    await sleep(100);
+    ok('and two lines save as two', $('#preview').textContent.includes('romaji:\n  - "Koin Senso"\n  - "Jiayin Zhanzheng"'),
+      ($('#preview').textContent.match(/romaji:[^\n]*(\n  - [^\n]*)*/) || [''])[0]);
+
     // Insert > Data table: the same grid, marked so the page can sort it by any column.
     focusEnd(paras()[0]);
     document.querySelector('#dtbl-pick .tbl-cell[data-r="3"][data-c="2"]').click();

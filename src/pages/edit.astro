@@ -240,7 +240,7 @@ const ADMIN = REPO.split('/')[0];
             one place to read them from. */}
         <input id="f-boxtitle" type="hidden" />
         <textarea id="f-native" hidden></textarea>
-        <input id="f-romaji" type="hidden" />
+        <textarea id="f-romaji" hidden></textarea>
         <label id="url-field">Article URL <span class="opt">the file name</span>
           <input id="f-slug" type="text" placeholder="emeka-okafor" spellcheck="false"
             title="The address this page is served at, and the name of its file" /></label>
@@ -292,7 +292,7 @@ const ADMIN = REPO.split('/')[0];
               <span class="native" id="ib-native" contenteditable="true" spellcheck="false"
                 data-ph="Native title" title="Shift ↵ for another language"></span>
               <span class="romaji" id="ib-romaji" contenteditable="true" spellcheck="false"
-                data-ph="Romanisation"></span>
+                data-ph="Romanisation" title="Shift ↵ for another language"></span>
             </td></tr>
           </tbody></table>
           <div class="ib-add"><button id="ib-first" type="button">+ Add a field</button></div>
@@ -2262,7 +2262,13 @@ const ADMIN = REPO.split('/')[0];
         fm.push('nativeTitle:');
         natives.forEach((n) => fm.push(`  - ${q(n)}`));
       }
-      if (v('#f-romaji')) fm.push(`romaji: ${q(v('#f-romaji'))}`);
+      // A romanisation for each native title that has one, a line apiece, as they are.
+      const romaji = v('#f-romaji').split('\n').map((x) => x.trim()).filter(Boolean);
+      if (romaji.length === 1) fm.push(`romaji: ${q(romaji[0])}`);
+      else if (romaji.length) {
+        fm.push('romaji:');
+        romaji.forEach((n) => fm.push(`  - ${q(n)}`));
+      }
       fm.push(`type: ${v('#f-type')}`);
       if (v('#f-nation')) fm.push(`nation: ${v('#f-nation')}`);
       if (v('#f-icon')) fm.push(`icon: ${q(v('#f-icon'))}`);
@@ -2560,7 +2566,10 @@ const ADMIN = REPO.split('/')[0];
         $('#ib-native').innerHTML = $('#f-native').value.trim()
           .split('\n').map((n) => esc(n.trim())).filter(Boolean).join('<br>');
       }
-      if (idle($('#ib-romaji'))) $('#ib-romaji').textContent = $('#f-romaji').value.trim();
+      if (idle($('#ib-romaji'))) {
+        $('#ib-romaji').innerHTML = $('#f-romaji').value.trim()
+          .split('\n').map((n) => esc(n.trim())).filter(Boolean).join('<br>');
+      }
       if ($('#canvas-title').textContent !== t && idle($('#canvas-title'))) {
         $('#canvas-title').textContent = t;
       }
@@ -2934,7 +2943,7 @@ const ADMIN = REPO.split('/')[0];
       $('#f-title').value = data.title || '';
       $('#f-boxtitle').value = data.sidebarTitle || '';
       $('#f-native').value = [].concat(data.nativeTitle ?? []).join('\n');
-      $('#f-romaji').value = data.romaji || '';
+      $('#f-romaji').value = [].concat(data.romaji ?? []).join('\n');
       $('#f-type').value = data.type || 'overview';
       $('#f-nation').value = data.nation || '';
       $('#f-icon').value = data.icon || '';
@@ -3244,7 +3253,7 @@ const ADMIN = REPO.split('/')[0];
     for (const [id, field, multi] of [
       ['#ib-title', '#f-boxtitle', false],
       ['#ib-native', '#f-native', true],
-      ['#ib-romaji', '#f-romaji', false],
+      ['#ib-romaji', '#f-romaji', true],
     ]) {
       const el = $(id);
       el.addEventListener('input', (e) => {
@@ -3256,8 +3265,8 @@ const ADMIN = REPO.split('/')[0];
       });
       el.addEventListener('keydown', (e) => {
         if (e.key !== 'Enter') return;
-        // A native title carries one line per official language, so shift ↵ opens
-        // another. Every other line here is a single one, and ↵ moves on.
+        // A native title carries one line per official language, and its romanisation
+        // a line to match, so shift ↵ opens another. The heading is a single line, and ↵ moves on.
         if (multi && e.shiftKey) return;
         e.preventDefault();
         if (!e.shiftKey) body.querySelector('.ce')?.focus();
@@ -3603,7 +3612,7 @@ const ADMIN = REPO.split('/')[0];
       $('#f-title').value = data.title || '';
       $('#f-boxtitle').value = data.sidebarTitle || '';
       $('#f-native').value = [].concat(data.nativeTitle ?? []).join('\n');
-      $('#f-romaji').value = data.romaji || '';
+      $('#f-romaji').value = [].concat(data.romaji ?? []).join('\n');
       $('#f-type').value = data.type || 'overview';
       $('#f-nation').value = data.nation || '';
       $('#f-icon').value = data.icon || '';
