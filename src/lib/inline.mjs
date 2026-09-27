@@ -135,10 +135,16 @@ export function renderInline(str) {
   // :icon and :img, and the placeholders resolveHtml() swaps in later.
   const ICON = '(?:<img class="ico"[^>]*>|<i data-ico="[^"]*"><\\/i>)';
   const NAME = '(?:<(?:strong|em)>)?(?:<a\\b[^>]*>[^<]*<\\/a>|[^\\s<]+)(?:<\\/(?:strong|em)>)?';
+  // Nor a mark at the start of one, away from the name it follows, as a dagger after a
+  // commander who fell. Only the space and the mark are wrapped: a line never breaks
+  // between a letter and the no-break space after it, so the mark holds to the last
+  // word of the name and the rest of the name wraps as it always did.
+  const MARK = '<img class="ico(?: sym)?"[^>]*>';
   return (out + esc(String(str).slice(last)))
     // Superscript is the one HTML the editor emits; unescape just those tags.
     .replace(/&lt;(sup|sub)&gt;([\s\S]*?)&lt;\/\1&gt;/g, '<$1>$2</$1>')
-    .replace(new RegExp(`(${ICON}) (${NAME})`, 'g'), '<span class="nw">$1&nbsp;$2</span>');
+    .replace(new RegExp(`(${ICON}) (${NAME})`, 'g'), '<span class="nw">$1&nbsp;$2</span>')
+    .replace(new RegExp(`[ \\u00a0](${MARK})`, 'g'), '<span class="nw">&nbsp;$1</span>');
 }
 
 /**
