@@ -29,9 +29,6 @@ export const ACCOUNT_OF = {
   auritania: 'michaelnguyen2803',
 };
 
-/** Nations whose account is never printed, because the name on it is the writer's own. */
-const UNLISTED = new Set(['auritania']);
-
 /**
  * @param {Array} articles the article collection
  * @returns {Array<{id, articles, lines, edits, account}>} one row per crediting nation
@@ -49,7 +46,7 @@ export function contributors(articles) {
     const edits = (historyOf(entry.id) || []).length;
     for (const id of credits) {
       const seen = tally.get(id)
-        || { id, articles: 0, lines: 0, edits: 0, account: UNLISTED.has(id) ? null : ACCOUNT_OF[id] || null };
+        || { id, articles: 0, lines: 0, edits: 0, account: ACCOUNT_OF[id] || null };
       seen.articles += 1;
       seen.lines += lines;
       seen.edits += edits;
