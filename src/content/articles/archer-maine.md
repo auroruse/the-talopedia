@@ -5,8 +5,10 @@ nation: esu
 ooc: true
 infobox:
   - { image: "/assets/old-media/media/archer-maine-1.jpg", caption: "Official Portrait, 1934" }
-  - { office: "Supreme Protector of the Unity State", term: "Incumbent (1922 - Present)" }
-  - { office: "Chairman of the Communist Party of Elysia", term: "1916 - 1919" }
+  - { office: "Supreme Protector of the Unity State", term: "July 25th, 1922 - December 22nd, 1934" }
+  - { label: "Preceded by", value: "*Office Established*" }
+  - { label: "Succeeded by", value: "Arianne Malloran" }
+  - { office: "Chairman of the Communist Party of Elysia", term: "May 2nd, 1916 - November 30th, 1919" }
   - { label: "Preceded by", value: "Lisa May" }
   - { label: "Succeeded by", value: "*Party disbanded*" }
   - { section: "Personal Details" }
@@ -14,7 +16,7 @@ infobox:
   - label: "Born"
     value:
       - "Archer Sisu Aalto"
-      - "9 June, 1888 (Age 40)"
+      - ":date[1888-06-09|age]"
       - "Metro Regima, U.S.E"
   - label: "Parents"
     value:
@@ -25,13 +27,11 @@ infobox:
   - { label: "Alma Mater", value: "University of New Winscor (MA)" }
 ---
 
-*This article contains external links to Wikipedia, which are intended solely for reference purposes.*
-
-**Archer Sisu Maine** (né **Aalto**; 9 June 1888) is an Elysian revolutionary, Gestaltist politician, writer and political theorist. He is the first head of government of the [[unity-state]] since its founding in 1922, acting as the State’s Supreme Protector. A former member, and chairman of, the Communist Party of [[elysia]], he led the Revolutionary Guard as an important figure in the [[elysian-civil-war]], later going on to found the ideology of [[gestaltism]], and the world’s first Gestaltist state. His government won the ensuing power struggle, establishing a one-party state under the Gestaltist Party. His writings and ideas, derived from many Leftist schools of thought, gave rise to Gestaltism.
+**Archer Sisu Maine** (né **Aalto**; June 9, 1888) is an Elysian revolutionary, Gestaltist politician, writer and political theorist. He was the first head of government of the [[unity-state]] since its founding in 1922, acting as the State’s Supreme Protector. A former member, and chairman of, the Communist Party of [[elysia]], he led the Revolutionary Guard as an important figure in the [[elysian-civil-war]], later going on to found the ideology of [[gestaltism]], and the world’s first Gestaltist state. His government won the ensuing power struggle, establishing a one-party state under the Gestaltist Party. His writings and ideas, derived from many Leftist schools of thought, gave rise to Gestaltism.
 
 Maine’s career in politics began during his time studying history at the University of New Winscor, known today as Foundry. He gained an interest in socialism through personal connections of his on-campus, namely his future wife Emilie Henderson. He soon became a member of, and prominent writer for, the Democratic Socialist Party of Elysia, where he began accruing many followers. However, he was soon kicked out due to his increasingly radicalized view on the position of socialist movements and parties in the world, going on to join the Communist Party of Elysia with his followers, eventually becoming chairman. He and his family fled to [[karjania]] to escape from the national crackdowns on socialists during the Great War, eventually returning after the USE signed the Remington-Wesley treaty with Hollosend. He was one of the many socialist writers imprisoned during the Years of Oppression, and would later lead the ensuing wave of prison riots to establish the Spartacus Division of the Elysian Civil War, becoming a key figure on the side of the Revolutionary Guard.
 
-Following the end of the civil war, he went on to develop his personal theories and ideas derived from many leftist schools of thought into the ideology of Gestaltism, using it as his platform to rise beyond the power struggle of the post-civil war era and being nominated as the Supreme Protector of Elysia, a title which was soon adopted to also mean the leader of the Unity State.
+Following the end of the civil war, he went on to develop his personal theories and ideas derived from many leftist schools of thought into the ideology of Gestaltism, using it as his platform to rise beyond the power struggle of the post-civil war era and being nominated as the Supreme Protector of Elysia, a title which was soon adopted to also mean the leader of the Unity State. Following developing health issues in the early 1930's, Maine announced his retirement from the position of Supreme Protector, to be replaced via election. He would officially transfer the Protectorship to Arianne Malloran on the 22nd of December, 1934.
 
 Maine is a divisive figure on the world stage. While those who support him idolize his achievements of founding a revolutionary government, his anti-imperialist stance, social reforms, welfare developments and workers control, others criticise him for establishing a dictatorship that oversaw the death of thousands during the civil war, and ensuing political repression. He is regarded as one of the most significant figures in Elysia.
 
@@ -65,11 +65,13 @@ Following his nomination into the office of Supreme Protector, Archer began imme
 
 He quickly assumed a position of political negotiator and figurehead for the state following the re-opening of diplomatic relations to the rest of the world. Abroad he gained a mixed reputation, with some political commentators criticising him for assuming a position of dictatorship and driving through policies of political censorship and mass surveillance, while others saw him as an open minded and levelheaded political figure helping to forge a much more fruitful future for the world.
 
-In 1928, Maine spearheaded final negotiations for the re-entrance of Elysia into the wider Elyrian doctrine. The organization had previously criticised the Unity State for its dictatorial and authoritarian practices, however after multiple months of tense standoff and legislative changes, the two sides reached a compromise, permitting Elysia’s entrance back into the Doctrine.
+In 1928, Maine spearheaded final negotiations for the re-entrance of Elysia into the wider Elyrian doctrine. The organization had previously criticised the Unity State for its dictatorial and authoritarian practices, however after multiple months of tense standoff and legislative changes, the two sides reached a compromise, permitting Elysia’s entrance back into the Doctrine. In 1930, he would also oversee the Unity State's entrance into the Third Internationale, and later assuming its leadership following Rudania's expulsion from the organization in the midst of the MAJESTY Crisis. He would forge relations across the political spectrum as well, establishing fruitful relations with nations such as [[alemannia]] and the [[nichirin|Miyamoto Shogunate]].
+
+In July of 1934, Maine would announce his retirement from the position of Supreme Protector, citing his steadily failing health following a devastating heart attack in 1931. Among his final acts in the position, he would establish deeper diplomatic ties with the nascent Republic of Skjarnland, as well as recognize the independence of the Eirish Republic. He would formally retire on the 22nd of December, 1934, handing over the Protectorship to his administration's Minister of Defense, Arianne Malloran.
 
 ## Personal Life
 
-Maine lives in the Palace Protectorate in Nexus, the official residence of the Supreme Protector of Elysia. He’d renovated the building extensively since its changing of hands from the President of the United States. He spends most of his time in his office, a modestly decorated oval room with a variety of books he’s never touched, an alcohol cabinet consisting mostly of varying bottles of rum, national iconography, and a stuffed barn owl, the new symbol of his state. He lives in the Palace alongside his son Konrad, whom he has a strained relationship with due to his workaholic tendencies. In his free time, he often enjoys music and varying forms of culture, often frequenting art exhibits and theater plays in Nexus. Maine continues occasionally writing in his free time, ranging from political theory to tinkering with fiction. During summers, he enjoys spending time at his family’s cottage on the shore of Lake Skandario, purchased by his parents in 1914. His stated favourite book is The 7 Brothers by Karjanian writer [Axel Stenvall](https://en.wikipedia.org/wiki/Aleksis_Kivi).
+Following his retirement, Maine has retreated to live in his family's cottage on the shore of Lake Skandario, originally purchased by his parents in 1914. In his free time, he often enjoys music and varying forms of culture, often frequenting art exhibits and theater plays in Nexus. Maine continues occasionally writing in his free time, favouring prose and fiction more following his retirement. His stated favourite book is The 7 Brothers by Karjanian writer [Axel Stenvall](https://en.wikipedia.org/wiki/Aleksis_Kivi).
 
 He maintains cordial relations with most of his senior officials, being especially close with Minister of the Interior Gabriel Snipes, the two’s relationship continuing strong ever since the two met in Moose Pen in 1922. Currently, he maintains a secret romantic affair with the Chairwoman of the Gestaltist Party and fellow writer, Alyssa Traton.
 
