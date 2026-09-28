@@ -93,6 +93,7 @@ const ADMIN = REPO.split('/')[0];
           <button data-add="para"><span class="sty sty-para">Paragraph</span></button>
           <button data-add="section"><span class="sty sty-section">Heading</span></button>
           <button data-add="subsection"><span class="sty sty-subsection">Sub-heading</span></button>
+          <button data-add="subsubsection"><span class="sty sty-subsubsection">Sub-sub-heading</span></button>
           <button data-add="list"><span class="sty sty-list">Bulleted list</span></button>
         </div>
       </div>
@@ -1242,9 +1243,9 @@ const ADMIN = REPO.split('/')[0];
 
     /* ---------- body blocks ---------- */
     const body = $('#body');
-    const TEXT = { section: 'h2', subsection: 'h3', para: 'p', list: 'ul' };
+    const TEXT = { section: 'h2', subsection: 'h3', subsubsection: 'h4', para: 'p', list: 'ul' };
     const LABEL = {
-      section: 'Section', subsection: 'Subsection', para: 'Paragraph',
+      section: 'Section', subsection: 'Subsection', subsubsection: 'Sub-subsection', para: 'Paragraph',
       list: 'List', image: 'Image', float: 'Floating image', grid: 'Image grid', table: 'Table',
     };
 
@@ -1358,7 +1359,8 @@ const ADMIN = REPO.split('/')[0];
           b.append(ul);
         } else {
           const ph = kind === 'section' ? 'Section heading'
-            : kind === 'subsection' ? 'Subsection heading' : 'Write here';
+            : kind === 'subsection' ? 'Subsection heading'
+            : kind === 'subsubsection' ? 'Sub-subsection heading' : 'Write here';
           b.append(editable(mdToHtml(data.text || ''), ph, () => {
             const n = block('para');
             b.after(n);
@@ -2476,6 +2478,7 @@ const ADMIN = REPO.split('/')[0];
       return readBody().map((b) => {
         if (b.kind === 'section') return '## ' + b.text;
         if (b.kind === 'subsection') return '### ' + b.text;
+        if (b.kind === 'subsubsection') return '#### ' + b.text;
         if (b.kind === 'para') return b.text;
         if (b.kind === 'list') {
           // Two spaces deeper for each level, which markdown reads as the list below.
@@ -2534,7 +2537,8 @@ const ADMIN = REPO.split('/')[0];
       for (const chunk of md.trim().split(/\n{2,}/)) {
         const t = chunk.trim();
         if (!t) continue;
-        if (t.startsWith('### ')) blocks.push({ kind: 'subsection', text: t.slice(4) });
+        if (t.startsWith('#### ')) blocks.push({ kind: 'subsubsection', text: t.slice(5) });
+        else if (t.startsWith('### ')) blocks.push({ kind: 'subsection', text: t.slice(4) });
         else if (t.startsWith('## ')) blocks.push({ kind: 'section', text: t.slice(3) });
         else if (t.startsWith('<div class="imgrid"')) {
           blocks.push({
@@ -2684,10 +2688,12 @@ const ADMIN = REPO.split('/')[0];
       a0.onclick = (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); };
       top.append(a0);
       nav.append(top);
-      let sub = null;
+      // Three deep, as the page's own Contents is: a sub-sub-heading hangs under the sub-heading
+      // before it, or straight under the heading when it has none.
+      let sub = null, subsub = null, underSub = false;
       for (const b of body.children) {
         const kind = b.dataset.kind;
-        if (kind !== 'section' && kind !== 'subsection') continue;
+        if (kind !== 'section' && kind !== 'subsection' && kind !== 'subsubsection') continue;
         const text = b.querySelector('.ce')?.textContent.trim();
         if (!text) continue;
         const li = el('li');
@@ -2699,10 +2705,14 @@ const ADMIN = REPO.split('/')[0];
           b.querySelector('.ce')?.focus();
         };
         li.append(a);
-        if (kind === 'section') { nav.append(li); sub = null; }
-        else {
+        if (kind === 'section') { nav.append(li); sub = subsub = null; underSub = false; }
+        else if (kind === 'subsubsection' && underSub) {
+          if (!subsub) { subsub = el('ul'); sub.lastElementChild.append(subsub); }
+          subsub.append(li);
+        } else {
           if (!sub) { sub = el('ul'); (nav.lastElementChild || nav).append(sub); }
           sub.append(li);
+          subsub = null; underSub = kind === 'subsection';
         }
       }
     }
@@ -5022,6 +5032,7 @@ const ADMIN = REPO.split('/')[0];
     .sty-para { font: 14px var(--body); }
     .sty-section { font: 400 20px/1.2 var(--display); }
     .sty-subsection { font: 700 15px var(--body); }
+    .sty-subsubsection { font: 700 13.5px var(--body); }
     .sty-list { font: 14px var(--body); }
     .sty-list::before { content: '\2022  '; color: var(--muted); }
     .mp-queue { margin-bottom: 10px; }
@@ -5170,6 +5181,7 @@ const ADMIN = REPO.split('/')[0];
     .blk { position: relative; }
     .blk-section { margin-top: 26px; }
     .blk-subsection { margin-top: 18px; }
+    .blk-subsubsection { margin-top: 14px; }
     .blk-para, .blk-list, .blk-table, .blk-image, .blk-grid { margin: 12px 0; }
     /* A block-level <img> is a replaced element, and CSS forbids one from overlapping
        a float: beside the sidebar the picture is pushed below it while its block stays
@@ -5179,6 +5191,7 @@ const ADMIN = REPO.split('/')[0];
     .blk-image { display: flow-root; }
     .blk-section .ce { font: 400 24px/1.3 var(--display); padding-bottom: 5px; border-bottom: 1px solid var(--rule); }
     .blk-subsection .ce { font: 700 17px/1.3 var(--body); }
+    .blk-subsubsection .ce { font: 700 15px/1.4 var(--body); }
     .ce-list { margin: 0; padding-left: 22px; }
     .ce-list li { margin: 3px 0; position: relative; padding-right: 26px; }
     /* A nested item, as the page shows it: a step in, and the bullet changes. */

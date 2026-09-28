@@ -96,6 +96,7 @@ body {
 }
 .toc-list li a:hover { background: var(--lift); text-decoration: none; }
 .toc-list li li a { padding-left: 24px; color: var(--muted); }
+.toc-list li li li a { padding-left: 38px; }
 .toc-list .top a { font-weight: 700; }
 .toc.collapsed .toc-list { display: none; }
 /* ---- title block ---- */
@@ -142,7 +143,10 @@ a.ext::after {
   clear: none;
 }
 .article h3 { font: 700 17px/1.3 var(--body); margin: 20px 0 0; }
+/* Wikipedia's fourth level: bold at the size of the text it heads, and nothing else. */
+.article h4 { font: 700 15px/1.4 var(--body); margin: 16px 0 0; }
 .article h2 + p, .article h2 + h3, .article h3 + p { margin-top: 8px; }
+.article h2 + h4, .article h3 + h4, .article h4 + p { margin-top: 6px; }
 .article p { margin: 12px 0; }
 
 /* ---- infobox ---- */

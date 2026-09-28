@@ -23,11 +23,16 @@ const cite = (id) => {
 };
 const byline = credits.length ? renderInline(credits.map(cite).join(' and ')) : null;
 
-// Contents is two levels deep, the same as the article: section and subsection.
+// Contents is three levels deep, the same as the article: section, subsection and sub-subsection.
+// A sub-subsection hangs under the subsection before it, or under the section when it has none.
 const toc = [];
 for (const h of headings) {
   if (h.depth === 2) toc.push({ ...h, kids: [] });
-  else if (h.depth === 3 && toc.length) toc[toc.length - 1].kids.push(h);
+  else if (h.depth === 3 && toc.length) toc[toc.length - 1].kids.push({ ...h, kids: [] });
+  else if (h.depth === 4 && toc.length) {
+    const sec = toc[toc.length - 1], sub = sec.kids[sec.kids.length - 1];
+    (sub?.depth === 3 ? sub.kids : sec.kids).push({ ...h, kids: [] });
+  }
 }
 ---
 <!doctype html>
@@ -89,7 +94,12 @@ for (const h of headings) {
                 <li>
                   <a href={`#${h.slug}`}>{h.text}</a>
                   {h.kids.length > 0 && (
-                    <ul>{h.kids.map((k) => <li><a href={`#${k.slug}`}>{k.text}</a></li>)}</ul>
+                    <ul>{h.kids.map((k) => (
+                      <li>
+                        <a href={`#${k.slug}`}>{k.text}</a>
+                        {k.kids.length > 0 && <ul>{k.kids.map((kk) => <li><a href={`#${kk.slug}`}>{kk.text}</a></li>)}</ul>}
+                      </li>
+                    ))}</ul>
                   )}
                 </li>
               ))}
