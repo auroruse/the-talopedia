@@ -1,16 +1,22 @@
 ---
 title: "George Elwood"
 type: character
-ooc: true
 nation: esu
+ooc: true
 infobox:
   - { image: "/assets/old-media/media/george-elwood-1.jpg", caption: "" }
-  - { office: "Member of the Politburo", term: "Incumbent | October 14th, 1922 –" }
-  - { label: "Supreme Protector", value: "[[archer-maine]]" }
-  - { office: "Director of the State Intelligence Service", term: "Incumbent | June 1st, 1929 –" }
-  - { label: "Supreme Protector", value: "Archer Maine" }
+  - { office: "Member of the Politburo", term: "Incumbent | October 14, 1922 –" }
+  - label: "Supreme Protector"
+    value:
+      - "[[archer-maine]]"
+      - "[[arianne-malloran]]"
+  - { office: "Director of the State Intelligence Service", term: "Incumbent | June 1, 1929 –" }
+  - label: "Supreme Protector"
+    value:
+      - "Archer Maine"
+      - "Arianne Malloran"
   - { label: "Preceded by", value: "Office Established" }
-  - { office: "Director of the Military Intelligence Service", term: "October 14th, 1922 – May 31st, 1929" }
+  - { office: "Director of the Military Intelligence Service", term: "October 14, 1922 – May 31, 1929" }
   - { label: "Supreme Protector", value: "Archer Maine" }
   - { label: "Preceded by", value: "Myron Lowry" }
   - { label: "Succeeded by", value: "Office Defunct" }
@@ -19,7 +25,7 @@ infobox:
   - label: "Born"
     value:
       - "George Elwood"
-      - "June 4th, 1894"
+      - ":date[1894-06-04|age]"
       - "Starfell (South), United States of Elysia"
   - label: "Parents"
     value:
@@ -30,7 +36,8 @@ infobox:
       - "Fort Union Ranger Academy"
       - "(BMil)"
 ---
-**George Elwood** (born June 4th, 1894) is an [[elysian]] military officer and government official serving as Director of the State Intelligence Service and Member of the Politburo under Supreme Protector [[archer-maine]]. He previously served as Director of the SIS’ predecessor, the Military Intelligence Service, from October 1922 to June 1929 when it was incorporated into the SIS. He is notable for being among the highest ranking Elysian officers to defect to the Revolutionary Guard during the [[elysian-civil-war]].
+
+**George Elwood** (born June 4, 1894) is an [[elysian]] military officer and government official serving as Director of the State Intelligence Service and Member of the Politburo under Supreme Protector [[archer-maine]] and [[arianne-malloran]]. He previously served as Director of the SIS’ predecessor, the Military Intelligence Service, from October 1922 to June 1929 when it was incorporated into the SIS. He is notable for being among the highest ranking Elysian officers to defect to the Revolutionary Guard during the [[elysian-civil-war]].
 
 As director of the State Intelligence Service, Elwood handles all foreign intelligence and counterterrorism operations of the Unity State. During a brief period of time following an attempt on his life by the clandestine paramilitary organization [[majesty]], he avoided most public appearances, however has mostly sprung back into a more public role following multiple reconstructive surgeries.
 
@@ -82,7 +89,6 @@ In mid December of 1921, following weeks of background checks and debriefings by
 
 <figure><img src="/assets/old-media/media/george-elwood-2.jpg" alt="Elwood instructing junior division commanders of the current situation on the front, circa 1921."><figcaption>Elwood instructing junior division commanders of the current situation on the front, circa 1921.</figcaption></figure>
 
-
 Like many other remaining or defected White Army personnel, Elwood was subject to scrutiny during the Reconstruction Authority’s, and later Unity State’s Aquilla war crime trials. However, his case was largely dismissed by the judges due to his actions having essentially won the war for the Guard, as well as the Unity State being in a sore need for experienced officers.
 
 ## Service in the Unity State
@@ -93,14 +99,13 @@ Between 1922 and 1925, Elwood’s skillset was put to good use by the newly appo
 
 <figure><img src="/assets/old-media/media/george-elwood-3.jpg" alt="Elwood during a meeting with the Politburo in Griffon Hall, circa 1925."><figcaption>Elwood during a meeting with the Politburo in Griffon Hall, circa 1925.</figcaption></figure>
 
-
 His actions proved fruitful, with the MIS eventually tracking down and eliminating most of the major partisan cells within the E.S.U, even managing to uncover a clear link to Hollosendian material support for the Partisans. The situation nearly escalated into something larger, however would remain as nothing but a brief anomaly, the matter eventually concluding with Elysia’s re-admittance into the Elysian Doctrine.
 
 ### Investigation into MAJESTY
 
 Elwood, having been personally involved with the E.S.U’s 1927 expedition into [[hyperborea]], and subsequently having been present at the rediscovery of the Nichirian temple complex at site “Malkuth”, found himself at the core of former ONI branch turned PMC MAJESTY’s plan of blackmailing [[nichirin]]. Ultimately, he became a prime target for the organization, having been attacked by MAJESTY agents in his own home in September of 1928. With the evidence obtained from the detained agents, Elwood began spearheading the investigation on behalf of the Unity State, frequently collaborating with his Nichirian contacts from the Hyperborea expedition.
 
-On November 23rd, 1928, Elwood was visiting [[shinkeisei]]’s Elysian embassy to relay information regarding the investigation to Chief Historian [[kanade-tachibana]]. After the end of the meeting, while Elwood was about to board his personal motorcade back to the airport, a concealed car bomb detonated, leaving two MIS agents dead, and injuring him gravely. He was admitted to Shinkeisei Central Hospital immediately for treatment, where he would spend time until January 20th of the next year. During his stay, his mental state would see a severe decline, as noted by the Ford-Hauer psychological evaluation test administered to him just before his release from hospital.
+On November 23, 1928, Elwood was visiting [[shinkeisei]]’s Elysian embassy to relay information regarding the investigation to Chief Historian [[kanade-tachibana]]. After the end of the meeting, while Elwood was about to board his personal motorcade back to the airport, a concealed car bomb detonated, leaving two MIS agents dead, and injuring him gravely. He was admitted to Shinkeisei Central Hospital immediately for treatment, where he would spend time until January 20th of the next year. During his stay, his mental state would see a severe decline, as noted by the Ford-Hauer psychological evaluation test administered to him just before his release from hospital.
 
 Elwood would return back to Elysia to spearhead Elysia’s brief expedition into the Order of [[shivon]], personally overseeing the interrogation, and later arrest of Shivonite dictator Thomas Binkowicz. He would also succeed in establishing a branch of Elysian Intelligence within fellow Internationale member Sidanya’s borders.
 
@@ -113,4 +118,3 @@ Elwood lives in Nexus’ Capital district in an apartment building housing many 
 When the occasion presents itself, Elwood has assisted in training new Rangers at Fort Union, however this practice has mostly wound down after transferring to a much more administrative role in recent years. He maintains cordial relations with most of the Politburo, however maintains a much closer friendship with writer and former Ranger Lieutenant, Daniel McCaffrey.
 
 <figure><img src="/assets/old-media/media/george-elwood-4.jpg" alt="Elwood with his pet dog Olli, circa 1926"><figcaption>Elwood with his pet dog Olli, circa 1926</figcaption></figure>
-
