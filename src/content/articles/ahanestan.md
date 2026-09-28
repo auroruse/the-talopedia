@@ -9,7 +9,7 @@ infobox:
   - { image: "/assets/old-media/media/ahanestan-2.png", caption: "Location of Ahanestan province within Varahmehr" }
   - { section: "Geography" }
   - { label: "Country", value: "[[varahmehr]]" }
-  - { label: "Capital", value: "Kuhestan" }
+  - { label: "Capital", value: "[[kuhestan]]" }
   - { label: "Largest City", value: "Kuhestan" }
   - { label: "Ostāndār", value: "Ardeshir Babak" }
   - { label: "Faction", value: "Mardom-e Kār" }
@@ -38,7 +38,7 @@ infobox:
   - { label: "Barkeh", value: "Āvanak" }
 ---
 
-**Ahanestan** (Mehrāni: آهنستان, *Āhanestān*; lit. *Land of Iron*), officially the Ostān-e Āhanestān (Province of Iron), is the industrial heartland of the [[varahmehr|Federal Republic of Varahmehr]]. Located in the central western interior of the federation, it is the most populous ostān by combined city and provincial population, and the largest single contributor to **Varahmehr**’s manufacturing output. Its capital, Kuhestan (کوهستان, lit. *Land of Mountains*), is the second largest city in the federation with a population of 6.3 million. The ostān is divided into two shahrestān-hā: Dabi-shā Avret, encompassing the industrial core, and Barkeh, covering the lake and coastal basin district to the west.
+**Ahanestan** (Mehrāni: آهنستان, *Āhanestān*; lit. *Land of Iron*), officially the Ostān-e Āhanestān (Province of Iron), is the industrial heartland of the [[varahmehr|Federal Republic of Varahmehr]]. Located in the central western interior of the federation, it is the most populous ostān by combined city and provincial population, and the largest single contributor to **Varahmehr**’s manufacturing output. Its capital, [[kuhestan]] (کوهستان, lit. *Land of Mountains*), is the second largest city in the federation with a population of 6.3 million. The ostān is divided into two shahrestān-hā: Dabi-shā Avret, encompassing the industrial core, and Barkeh, covering the lake and coastal basin district to the west.
 
 Ahanestan occupies a singular position in the federation’s economic and political life. Its foundries and steel mills produce the structural materials upon which the federation’s physical infrastructure depends, and its recently confirmed oil reserves have placed it at the center of Varahmehr’s emerging international economic relationships. It is simultaneously the federation’s most ethnically contested province - the Kuhi people constitute approximately thirty percent of the ostān’s population, the largest Kuhi concentration in any ostān, and the persistent wage gap between Kuhi and Mehrāni workers in comparable industrial roles is widely regarded as the federation’s most sensitive ongoing domestic equity issue.
 
