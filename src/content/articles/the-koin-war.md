@@ -6,7 +6,7 @@ type: event
 authors: [nichirin]
 navbox: site
 infobox:
-  - { value: "Part of [[the-great-war]]" }
+  - { value: "Part of [[great-war]]" }
   - { image: "https://lh3.googleusercontent.com/pw/AP1GczNm8GUzssTqU4ywrsFa1F0N-k9tlUHaR7A9UxGCtw9Zn7MTHeaJ9hC9_Rctf2n0yXZpMhsXzTN4PDhrW5AEcrCNerBp7E78oSNf0htFYmO4Xk1qeAPEvhThgfxNNVPpScxsBbP6-O-GRHP3CwPErLqx=w2000", caption: "" }
   - images:
       - { src: "https://lh3.googleusercontent.com/pw/AP1GczNYdqEc6TEJTuwRi4yt3QoC3HWuvrIT1CdOlGhqkHXuUb9h7yt0cjYfwxKALrDYEs9fNLDERhpCkQm5RxcKuB7KK6Ot_-BurDYj13NWaTyhv7tMux7QoSglHVAaWDj0q89jh2a5Lu3RuZBsyetPo9hk=w2000", caption: "" }
@@ -61,7 +61,7 @@ infobox:
       - items:
           - "**Central Powers**"
           - ":img[/assets/flags/xing-empire.png] [[liang-yu]] :img[/assets/icons/executed.svg]"
-          - ":img[/assets/flags/xing-empire.png] Chongguang Emperor :img[/assets/icons/executed.svg]"
+          - ":img[/assets/flags/xing-empire.png] Chongguang Emperor"
           - ":img[/assets/flags/xing-empire.png] Xiang Kui :img[/assets/icons/killed-in-action.svg]"
           - ":img[/assets/flags/xing-empire.png] Zheng Jingtao"
           - ":img[/assets/flags/xing-empire.png] Murong Ce :img[/assets/icons/surrendered.svg]"
@@ -94,3 +94,21 @@ infobox:
 In Nichirin and in most official usage, the war is known as the Kōin War (甲寅戦争, *Kōin Sensō*), after the sexagenary designation of 1914, the year in which it began. Outside official usage, particularly in Evria, it is commonly referred to as the Xing-Nichirian War or the Serican War, the latter after the Bay of Serica, where its principal naval engagements occurred.
 
 The Xing government avoided characterizing the conflict as an invasion and officially referred to it as the "War of Recovery" (光復戰爭, *Guāngfù Zhànzhēng*). It presented the war as the reclamation of Manshu, which the Empire regarded as rightfully its own, and as the liberation of the region's Hezhouan population from Nichirian rule. The name fell out of official use following the collapse of the Xing Empire. Guandong, its successor state, uses the Zhengyu reading of the Nichirian name, *Jiǎyín Zhànzhēng*.
+
+## Background
+
+Relations between Nichirian and Hezhouan polities were adversarial long before the [[manshuan-campaigns|Manshuan campaigns]] of the 18th century. Hezhouan courts viewed the Nichirian realm to the north as a distant, peripheral state, while Nichirian rulers regarded the larger Hezhouan states as a constant threat. The two competed for influence over [[tohanto]], which Nichirin assimilated during the 10th century, while Hezhou was divided by internal conflict. An uneasy peace held under the [[hayakawa-shogunate|Hayakawa]] (1185–1336) and [[kuronami-shogunate|Kuronami]] (1336–1551) Shogunates. During the [[age-of-chaos]] (1551–1603), the period of civil war that followed the collapse of the Kuronami Shogunate, the [[xing-empire|Xing dynasty]] expanded into [[manshu]] and subjugated the region's smaller independent states. It also attempted to seize Tohanto, but failed in the face of sustained resistance from the provincial daimyo.
+
+### Manshuan Campaigns
+
+Between 1764 and 1802, the Miyamoto Shogunate launched a series of campaigns into Manshu. The Xing lost Songbin ([[korihama|Kōrihama]]), Sa'ertu ([[daikei]]), Changquan ([[shikisen]]) and Shengjing ([[mizuhara]]) in successive campaigns, and with them the territory later known as Western Manshu. The defeats undermined the Xing court's view of the Empire as the center of Valtherian civilization, while the cost of the campaigns exhausted the shogunate's treasury. A truce concluded in 1802 left Eastern Manshu and its remaining population centers of Jinping (Nishikino), Dingyuan (Hyōtanjima), and Kaiguan ([[tohara|Tōhara]]) under Xing control.
+
+During the [[napolyonic-wars]], while most Evrian powers were occupied, the two states attempted to coordinate the expansion of Valtherian trade and influence overseas. They also pursued economic cooperation in Manshu over the course of the 19th century, but ethnic conflict between Nichirians and Hezhouans in Western Manshu and recurring border incidents kept relations tense.
+
+### Treaty of Kōrihama and Rearmament
+
+A period of improved relations followed the signing of the Treaty of Kōrihama, a non-aggression pact signed in 1889, which settled the border in Manshu. The rapprochement ended with the [[shanggang-affair]] of 1906, in which the Xing court exposed the [[hideaki-katsuragi]]'s principal intelligence network in the Empire, published the confessions of nineteen arrested agents and protested the operation as a breach of the treaty. The Bakufu disavowed the network to preserve the treaty, and sixteen of the agents were executed. The affair indirectly led to the dissolution of the Nichirian Intelligence Agency (NIA) and the foundation of [[seele]].
+
+The Chongguang Emperor, who had come to the throne in 1897 and was known for his revanchism and personal hostility toward Nichirin, used the affair to justify an extensive rearmament. He also aligned the Empire with the Central Powers, in part to secure their support for the recovery of Manshu. Nichirin did not rearm on a comparable scale. Bureaucratic inertia, the neglect of the frontier after 1889, and the priority given to naval expansion in the military budget left the fortifications along the Shizuku River unfinished when war broke out.
+
+When the Great War broke out in Evria on July 28, 1914, Nichirin and the Xing Empire entered the conflict on opposing sides. The Xing Empire declared war on Nichirin on August 15, and its forces crossed into Western Manshu the same day. The attack was timed to coincide with the [Bon festival](https://en.wikipedia.org/wiki/Obon), when much of the Nichirian frontier garrison was on leave.
