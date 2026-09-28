@@ -1,4 +1,76 @@
 {
  "locked": true,
- "results": null
+ "results": {
+  "name": "",
+  "groups": {
+   "A": [
+    "NCH",
+    "SKJ",
+    "EIV",
+    "ANH"
+   ],
+   "B": [
+    "NMZ",
+    "AST",
+    "GIA",
+    "LVO"
+   ],
+   "C": [
+    "CAH",
+    "KAR",
+    "AEM",
+    "ESU"
+   ],
+   "D": [
+    "COR",
+    "VAR",
+    "HOL",
+    "ASP"
+   ],
+   "E": [
+    "ARV",
+    "PER",
+    "PON",
+    "KMT"
+   ],
+   "F": [
+    "SID",
+    "NHO",
+    "ASK",
+    "ALB"
+   ],
+   "G": [
+    "ALE",
+    "NKI",
+    "AUR",
+    "SEL"
+   ],
+   "H": [
+    "VIC",
+    "FUR",
+    "SHI",
+    "ABB"
+   ]
+  },
+  "ko": {},
+  "score": [
+   null,
+   null
+  ],
+  "awards": {
+   "boot": null,
+   "ball": null,
+   "glove": null
+  },
+  "done": {
+   "A": true,
+   "B": true,
+   "C": true,
+   "D": true,
+   "E": true,
+   "F": true,
+   "G": true,
+   "H": true
+  }
+ }
 }
