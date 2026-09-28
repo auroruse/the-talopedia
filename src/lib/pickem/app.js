@@ -43,6 +43,9 @@ let viewing = null;            // someone else's entry, read-only
 
 const model = () => viewing || (mode === 'results' ? results : picks);
 const editable = () => !viewing && (mode === 'results' || !LOCKED);
+// The results to mark a set of picks against, as soon as anything is decided: someone's entry being
+// viewed, or your own once it is a whole entry. Never the results themselves.
+const marking = () => (mode !== 'results' && (viewing || K.complete(picks)) && anyResult(results) ? results : null);
 
 function save() {
   if (mode === 'results') store.set('results', results); else store.set('picks', picks);
@@ -56,6 +59,11 @@ function changed() {
 // ── pieces ──────────────────────────────────────────────────────────────────────────────────
 
 const flag = (t, cls = '') => `<span class="pk-badge ${cls}"><img src="${badgeUrl(t)}" alt="" loading="lazy"></span>`;
+// Right, half right (through, in the wrong place) and wrong: a tick, a dash and a cross in a disc.
+const MARK_PATH = { right: 'M6.4 11.4l3.1 3.1 6.1-6.6', part: 'M6.5 11h9', wrong: 'M7.6 7.6l6.8 6.8M14.4 7.6l-6.8 6.8' };
+const MARK_SAY = { right: 'right', part: 'through, but not in that place', wrong: 'wrong' };
+const markIcon = (k) =>
+  `<span class="pk-mark ${k}" aria-hidden="true"><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10"/><path d="${MARK_PATH[k]}"/></svg></span>`;
 const ordinal = (n) => n + (n % 100 >= 11 && n % 100 <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][n % 10] || 'th');
 function qualLabel(t) {
   const q = T[t].q;
@@ -68,23 +76,30 @@ function qualLabel(t) {
 // ── groups ──────────────────────────────────────────────────────────────────────────────────
 
 function renderGroups() {
-  const m = model(), can = editable();
-  $('#pk-groups').innerHTML = K.GROUP_KEYS.map((g) => `
+  const m = model(), can = editable(), R = marking();
+  $('#pk-groups').innerHTML = K.GROUP_KEYS.map((g) => {
+    // Once the group is played, each row says how the pick went and where the side really finished,
+    // in place of how it qualified.
+    const gm = R && K.groupMarks(m, R, g);
+    return `
     <section class="pk-group" aria-label="Group ${g}">
       <h3 class="pk-tab">Group ${g}</h3>
       <ol class="pk-rows" data-g="${g}">
         ${m.groups[g].map((t, i) => {
-          const q = qualLabel(t), qual = i < 2 && !(m.done && !m.done[g]);
-          return `<li class="pk-row${qual ? ' is-q' : ''}${can ? ' can' : ''}" data-t="${t}" ${can ? 'tabindex="0"' : ''}
-                    aria-label="${esc(T[t].name)}, ${ordinal(i + 1)}${can ? '. Arrow keys move it.' : ''}">
+          const q = qualLabel(t), qual = i < 2 && !(m.done && !m.done[g]), mk = gm?.rows[i];
+          const meta = mk ? { short: `Finished ${ordinal(mk.finished)}`, long: `Finished ${ordinal(mk.finished)} in Group ${g}` } : q;
+          return `<li class="pk-row${qual ? ' is-q' : ''}${can ? ' can' : ''}${mk ? ` r-${mk.mark}` : ''}" data-t="${t}" ${can ? 'tabindex="0"' : ''}
+                    aria-label="${esc(T[t].name)}, ${ordinal(i + 1)}${mk ? `, ${MARK_SAY[mk.mark]}, finished ${ordinal(mk.finished)}` : ''}${can ? '. Arrow keys move it.' : ''}">
             <span class="pk-pos">${i + 1}</span>${flag(t)}
-            <span class="pk-team"><span class="pk-name">${esc(T[t].name)}</span><span class="pk-meta" title="${esc(q.long)}">${q.short}</span></span>
-            ${can ? '<span class="pk-grip" aria-hidden="true"><svg viewBox="0 0 10 16" width="10" height="16"><circle cx="2" cy="3" r="1.5"/><circle cx="8" cy="3" r="1.5"/><circle cx="2" cy="8" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="2" cy="13" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></span>' : ''}
+            <span class="pk-team"><span class="pk-name">${esc(T[t].name)}</span><span class="pk-meta" title="${esc(meta.long)}">${meta.short}</span></span>
+            ${can ? '<span class="pk-grip" aria-hidden="true"><svg viewBox="0 0 10 16" width="10" height="16"><circle cx="2" cy="3" r="1.5"/><circle cx="8" cy="3" r="1.5"/><circle cx="2" cy="8" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="2" cy="13" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg></span>' : mk ? markIcon(mk.mark) : ''}
           </li>`;
         }).join('')}
       </ol>
+      ${gm ? `<p class="pk-gpts"><b>${gm.pts}</b> of ${K.GROUP_MAX} points${gm.perfect ? ' · perfect group' : ''}</p>` : ''}
       ${mode === 'results' && !viewing ? `<label class="pk-done"><input type="checkbox" data-done="${g}" ${m.done[g] ? 'checked' : ''}> Group finished</label>` : ''}
-    </section>`).join('');
+    </section>`;
+  }).join('');
 }
 
 function moveTeam(g, from, to) {
@@ -147,14 +162,18 @@ function bindGroups() {
 
 // ── bracket ─────────────────────────────────────────────────────────────────────────────────
 
-function matchHtml(m, id) {
+function matchHtml(m, id, R) {
   const [a, b] = K.participants(m, id), w = m.ko[id], can = editable() && a && b;
+  // The side picked to go through carries the verdict, once there is one.
+  const st = R && w ? K.koStatus(m, R, id) : null;
   const slot = (t, i) => {
     const seed = id[0] === 'r' ? K.R16[+id[1]][i] : '';
     if (!t) return `<div class="pk-slot tbd"><span class="pk-name">${seed || 'To be decided'}</span></div>`;
-    const state = w === t ? ' win' : w ? ' lose' : '';
-    return `<button type="button" class="pk-slot${state}" data-m="${id}" data-t="${t}" ${can ? '' : 'disabled'} aria-pressed="${w === t}"${seed ? ` aria-label="${esc(T[t].name)}, ${seed}"` : ''}>
-      ${flag(t)}<span class="pk-name">${esc(T[t].name)}</span>
+    const mine = st && w === t;
+    const state = (w === t ? ' win' : w ? ' lose' : '') + (mine ? ` r-${st}` : '');
+    const say = [seed, mine ? MARK_SAY[st] : ''].filter(Boolean).join(', ');
+    return `<button type="button" class="pk-slot${state}" data-m="${id}" data-t="${t}" ${can ? '' : 'disabled'} aria-pressed="${w === t}"${say ? ` aria-label="${esc(T[t].name)}, ${say}"` : ''}>
+      ${flag(t)}<span class="pk-name">${esc(T[t].name)}</span>${mine ? markIcon(st) : ''}
     </button>`;
   };
   // The round of 16 names its slots ("1A v 2B") above the match, so the names inside get the width.
@@ -163,8 +182,8 @@ function matchHtml(m, id) {
 }
 
 function renderBracket() {
-  const m = model(), mt = (id) => matchHtml(m, id);
-  const champ = K.champion(m);
+  const m = model(), R = marking(), mt = (id) => matchHtml(m, id, R);
+  const champ = K.champion(m), cst = R && champ ? K.koStatus(m, R, 'f') : null;
   const col = (key, label, body, cls) =>
     `<div class="pk-col ${cls}" data-col="${key}"><div class="pk-round"${label ? '' : ' aria-hidden="true"'}>${label}</div><div class="pk-colbody">${body}</div></div>`;
   const pair = (a, b) => `<div class="pk-pair">${mt(a)}${mt(b)}</div>`;
@@ -174,8 +193,8 @@ function renderBracket() {
     col('qL', 'Quarter-finals', pair('q0', 'q1'), 'left'),
     col('sL', 'Semi-finals', single('s0'), 'left'),
     col('c', '', `
-      <div class="pk-champ${champ ? ' set' : ''}">
-        <div class="pk-label">Champion</div>
+      <div class="pk-champ${champ ? ' set' : ''}${cst ? ` r-${cst}` : ''}">
+        <div class="pk-label">Champion${cst ? markIcon(cst) : ''}</div>
         ${champ ? flag(champ, 'big') : '<span class="pk-badge big empty"></span>'}
         <div class="pk-champ-name">${champ ? esc(T[champ].name) : 'To be decided'}</div>
       </div>
@@ -230,22 +249,37 @@ function renderScore() {
   scoreNote();
 }
 function scoreNote() {
-  const m = model(), [c, r] = m.score, el = $('#pk-score-note');
+  const m = model(), [c, r] = m.score, el = $('#pk-score-note'), R = marking();
   if (!el) return;
+  // Once the final is played the note gives its score, and says so when the pick was exact.
+  if (R && K.scoreOk(R)) {
+    const exact = c === R.score[0] && r === R.score[1];
+    el.classList.remove('bad'); el.classList.toggle('good', exact);
+    el.textContent = `The final finished ${R.score[0]}–${R.score[1]}.${exact ? ' Exact.' : ''}`;
+    return;
+  }
+  el.classList.remove('good');
   el.classList.toggle('bad', c != null && r != null && c < r);
   el.textContent = c == null || r == null ? 'Score after extra time, before any penalties.'
     : c < r ? 'Your champion can\'t lose the final.' : c === r ? `${T[K.champion(m)].name} win on penalties.` : '';
 }
 
 function renderAwards() {
-  const m = model(), can = editable();
+  const m = model(), can = editable(), R = marking();
   for (const k of K.AWARDS) {
     const input = document.querySelector(`[data-award="${k}"]`), id = m.awards[k];
     if (document.activeElement !== input) input.value = id ? LABEL.get(id) || '' : '';
     input.disabled = !can;
     input.classList.remove('bad');
+    // Decided: right or wrong on the card, and a wrong pick says who actually won it.
+    const won = R?.awards[k], st = won ? (id === won ? 'right' : 'wrong') : null;
+    const card = input.closest('.pk-card');
+    card.classList.toggle('r-right', st === 'right');
+    card.classList.toggle('r-wrong', st === 'wrong');
     const [code] = (id || '').split('|');
-    document.querySelector(`[data-award-pick="${k}"]`).innerHTML = id && T[code] ? `${flag(code)}<span>${esc(T[code].name)}</span>` : '';
+    document.querySelector(`[data-award-pick="${k}"]`).innerHTML =
+      (id && T[code] ? `${flag(code)}<span>${esc(T[code].name)}</span>` : '') + (st ? markIcon(st) : '')
+      + (st === 'wrong' ? `<span class="pk-actual">Won by ${esc(LABEL.get(won) || won.split('|')[1])}</span>` : '');
   }
 }
 
@@ -547,9 +581,12 @@ function bindAdmin() {
 // ── render ──────────────────────────────────────────────────────────────────────────────────
 
 function render() {
+  const R = marking(), n = R ? K.scoreEntry(model(), R).total : 0, pts = `${n} point${n === 1 ? '' : 's'} so far`;
   $('#pk-viewing').hidden = !viewing;
   if (viewing) $('#pk-viewing-name').textContent = viewing.name || 'Unnamed';
+  $('#pk-viewing-pts').textContent = viewing && R ? ` · ${pts}` : '';
   $('#pk-locked-note').hidden = !LOCKED || !!viewing || mode === 'results';
+  $('#pk-locked-pts').textContent = !viewing && R ? ` Yours have ${pts}.` : '';
   document.body.classList.toggle('pk-readonly', !editable());
   renderGroups(); renderBracket(); renderScore(); renderAwards(); renderBar();
   renderBoard(); renderCrowd(); renderAdmin();

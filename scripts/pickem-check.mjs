@@ -67,6 +67,27 @@ assert.ok(s.exact);
 results.done.A = false;
 assert.equal(K.scoreEntry(truth, results).groups, 7 * 8);
 
+// 4b. The marks agree with the score: a group's points are its marks' points, every knockout pick is
+// settled once every tie is, and the ones marked right are exactly the ones scored.
+for (let i = 0; i < 200; i++) {
+  const p = randomPicks('Marks');
+  const r = { ...randomPicks('Truth'), done: Object.fromEntries(K.GROUP_KEYS.map((g) => [g, true])) };
+  const s = K.scoreEntry(p, r);
+  assert.equal(K.GROUP_KEYS.reduce((n, g) => n + K.groupMarks(p, r, g).pts, 0), s.groups);
+  const koPts = K.MATCHES.reduce((n, id) => {
+    const st = K.koStatus(p, r, id);
+    assert.ok(st === 'right' || st === 'wrong', `${id} left open with every tie decided`);
+    return n + (st === 'right' ? K.POINTS[id === 't' ? 't' : id[0]] : 0);
+  }, 0);
+  assert.equal(koPts, s.ko);
+  // The groups played and no tie yet: nothing is right, and a side out in the groups is already wrong.
+  const g = { ...structuredClone(r), ko: {} };
+  for (const id of K.MATCHES) {
+    const out = K.GROUP_KEYS.some((k) => g.groups[k].slice(2).includes(p.ko[id]));
+    assert.equal(K.koStatus(p, g, id), out ? 'wrong' : null, `${id} before any tie`);
+  }
+}
+
 // 5. A renamed player keeps the picks made under his old name.
 for (const [code, map] of Object.entries(Object.fromEntries(Object.entries(data.teams).filter(([, t]) => t.renamed).map(([c, t]) => [c, t.renamed])))) {
   for (const [was, now] of Object.entries(map)) {
@@ -87,4 +108,4 @@ const svg = K.buildCard(truth, data, { badges, banner });
 assert.ok(svg.startsWith('<svg') && svg.includes('KNOCKOUT STAGE'));
 if (process.argv[2]) fs.writeFileSync(process.argv[2], svg);
 
-console.log(`ok: 300 codes round-trip (${good.length} chars), damage refused, groups clear their own path, max score ${max}`);
+console.log(`ok: 300 codes round-trip (${good.length} chars), damage refused, groups clear their own path, max score ${max}, marks agree with the score`);

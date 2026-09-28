@@ -110,6 +110,53 @@ export function scoreEntry(p, r) {
   return out;
 }
 
+// ── marking picks against the results so far ────────────────────────────────────────────────
+
+const STAGE = { g: 0, r: 1, q: 2, s: 3, f: 4 };
+// Who is out, and at which stage: the bottom two of every finished group, then the loser of every
+// decided tie. A semi-final loser is off the road to the final, not out of the third-place match.
+function knockedOut(r) {
+  const out = new Map();
+  for (const g of GROUP_KEYS) if (r.done?.[g]) for (const t of r.groups[g].slice(2)) out.set(t, 'g');
+  for (const id of MATCHES) {
+    if (id === 't' || !r.ko[id]) continue;
+    const l = loser(r, id);
+    if (l && !out.has(l)) out.set(l, id[0]);
+  }
+  return out;
+}
+
+export const GROUP_MAX = 2 * POINTS.qualify + 4 * POINTS.exact + POINTS.perfect;
+// One group of picks against its result: each row right (the exact place), part (a qualifier in the
+// wrong one of the top two places) or wrong, where it really finished, and what the group scored.
+export function groupMarks(p, r, g) {
+  if (!r.done?.[g]) return null;
+  const a = p.groups[g], b = r.groups[g], top = new Set(b.slice(0, 2));
+  const rows = a.map((t, i) => ({ t, finished: b.indexOf(t) + 1,
+                                  mark: t === b[i] ? 'right' : i < 2 && top.has(t) ? 'part' : 'wrong' }));
+  const exact = rows.filter((x) => x.mark === 'right').length;
+  const pts = a.slice(0, 2).filter((t) => top.has(t)).length * POINTS.qualify + exact * POINTS.exact
+            + (exact === 4 ? POINTS.perfect : 0);
+  return { rows, pts, perfect: exact === 4 };
+}
+
+// A knockout pick against the results so far: 'right', 'wrong', or null while it can still come
+// good. Judged the way scoreEntry scores it -- the side has to win a tie in that round, whoever it
+// beats -- so it is wrong once the side is out by then, or the round is over without it.
+export function koStatus(p, r, id) {
+  const w = p.ko[id];
+  if (!w) return null;
+  const out = knockedOut(r).get(w);
+  if (id === 't') {
+    if (r.ko.t) return r.ko.t === w ? 'right' : 'wrong';
+    return r.ko.s0 === w || r.ko.s1 === w || (out && STAGE[out] < STAGE.s) ? 'wrong' : null;
+  }
+  const ids = MATCHES.filter((x) => x[0] === id[0]);
+  if (ids.some((x) => r.ko[x] === w)) return 'right';
+  if (out && STAGE[out] <= STAGE[id[0]]) return 'wrong';
+  return ids.every((x) => r.ko[x]) ? 'wrong' : null;
+}
+
 export function standings(entries, results) {
   return entries
     .map((e) => ({ entry: e, ...scoreEntry(e, results) }))

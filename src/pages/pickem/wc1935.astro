@@ -68,10 +68,10 @@ const payload = JSON.stringify({ ...data, state, entries, repo: REPO, banner, ba
 
   <div class="pk-wrap">
     <div id="pk-viewing" class="pk-banner" hidden>
-      <span>Viewing <b id="pk-viewing-name"></b>'s picks</span>
+      <span>Viewing <b id="pk-viewing-name"></b>'s picks<span id="pk-viewing-pts"></span></span>
       <button type="button" id="pk-back" class="pk-btn">Back to mine</button>
     </div>
-    <div id="pk-locked-note" class="pk-banner" hidden>Picks are locked.</div>
+    <div id="pk-locked-note" class="pk-banner" hidden><span>Picks are locked.<span id="pk-locked-pts"></span></span></div>
   </div>
 
   <main class="pk-wrap">
@@ -158,7 +158,7 @@ const payload = JSON.stringify({ ...data, state, entries, repo: REPO, banner, ba
     :root {
       --navy: #0B2A55; --deep: #071D3D; --lift: #123C73; --edge: #24528F;
       --yellow: #FFC72C; --ink: #0B2A55; --muted: #5E7190; --line: #E3E8EF; --pale: #F4F6FA;
-      --soft: #C9D4E5; --bad: #C62828;
+      --soft: #C9D4E5; --bad: #C62828; --good: #1B7F3B; --part: #9A5B00;
 
       /* The poster's three voices: its title, its group tabs, its team names. */
       --display: 'Anton', Impact, 'Arial Narrow Bold', sans-serif;
@@ -419,6 +419,34 @@ const payload = JSON.stringify({ ...data, state, entries, repo: REPO, banner, ba
       .pk-sc-team { grid-column: 1 / -1; justify-content: center; }
       .pk-sc-team.right { order: 5; justify-content: center; }
     }
+
+    /* ── marks: how a set of picks has gone, once results are in ────────────────────────── */
+    .pk-mark { display: inline-grid; place-items: center; flex: none; width: 22px; height: 22px; }
+    .pk-mark svg { display: block; width: 100%; height: 100%; }
+    .pk-mark circle { fill: currentColor; }
+    .pk-mark path { fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .pk-mark.right { color: var(--good); }
+    .pk-mark.part { color: var(--part); }
+    .pk-mark.wrong { color: var(--bad); }
+    .pk-row.r-right, .pk-row.r-part, .pk-row.r-wrong { grid-template-columns: 30px 38px minmax(0, 1fr) 26px; }
+    .pk-row.r-right { background: #F0F8F2; box-shadow: inset 4px 0 0 var(--good); }
+    .pk-row.r-part { background: #FFF6E8; box-shadow: inset 4px 0 0 var(--part); }
+    .pk-row.r-wrong { background: #FDF1F1; box-shadow: inset 4px 0 0 var(--bad); }
+    .pk-row.r-part .pk-meta { color: var(--part); }
+    .pk-row.r-wrong .pk-meta { color: var(--bad); }
+    .pk-gpts { margin: var(--s3) var(--s1) 2px; font: 600 var(--t-sm)/1.2 var(--slab); color: var(--muted); }
+    .pk-gpts b { font-weight: 800; color: var(--ink); }
+    .pk-slot .pk-mark { width: 18px; height: 18px; }
+    .pk-slot.win.r-right { box-shadow: inset 5px 0 0 var(--good); }
+    .pk-slot.win.r-wrong { box-shadow: inset 5px 0 0 var(--bad); }
+    .pk-slot.r-wrong .pk-name { text-decoration: line-through; text-decoration-color: rgba(198, 40, 40, .55); }
+    .pk-champ.r-right, .pk-card.r-right { border-color: #5BD68A; }
+    .pk-champ.r-wrong, .pk-card.r-wrong { border-color: #FF8A80; }
+    .pk-champ .pk-mark { width: 18px; height: 18px; margin-left: 8px; vertical-align: -4px; }
+    .pk-pick { flex-wrap: wrap; }
+    .pk-pick .pk-mark { width: 20px; height: 20px; }
+    .pk-actual { flex-basis: 100%; font: 500 var(--t-sm)/1.3 var(--slab); color: var(--soft); }
+    .pk-note.good { color: #5BD68A; }
 
     /* ── tables ─────────────────────────────────────────────────────────────────────────── */
     .pk-table-wrap { overflow-x: auto; border-radius: var(--radius); background: #fff; }
