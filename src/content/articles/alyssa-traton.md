@@ -6,9 +6,15 @@ ooc: true
 infobox:
   - { image: "https://lh3.googleusercontent.com/d/1c-C1f1zZ-VhhqA4wLOUPs3mwyds8CfEM=w2000", caption: "" }
   - { office: "Member of the Politburo", term: "Incumbent | July 25th, 1922 –" }
-  - { label: "Supreme Protector", value: "Archer Maine" }
+  - label: "Supreme Protector"
+    value:
+      - "Archer Maine"
+      - "Arianne Malloran"
   - { office: "Chairwoman of the Gestaltist Party of Elysia", term: "Incumbent | May 6th, 1922 –" }
-  - { label: "Supreme Protector", value: "Archer Maine" }
+  - label: "Supreme Protector"
+    value:
+      - "Archer Maine"
+      - "Arianne Malloran"
   - { label: "Preceded by", value: "*Position Established*" }
   - { section: "Personal Details" }
   - label: "Born"

@@ -5,9 +5,15 @@ nation: esu
 infobox:
   - { image: "https://lh3.googleusercontent.com/d/1Uc7FMGFGWV504BuidfsN0a_2rxHvEgto=w2000", caption: "" }
   - { office: "Member of the Politburo", term: "Incumbent | July 25th, 1922 –" }
-  - { label: "Supreme Protector", value: "Archer Maine" }
+  - label: "Supreme Protector"
+    value:
+      - "Archer Maine"
+      - "Arianne Malloran"
   - { office: "**Minister of the Interior**", term: "Incumbent | July 25th, 1922 –" }
-  - { label: "Supreme Protector", value: "Archer Maine" }
+  - label: "Supreme Protector"
+    value:
+      - "Archer Maine"
+      - "Arianne Malloran"
   - { label: "Preceded by", value: "Damian Welles" }
   - { section: "Personal Details" }
   - label: "Born"
