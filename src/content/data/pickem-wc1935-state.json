@@ -52,7 +52,16 @@
     "ABB"
    ]
   },
-  "ko": {},
+  "ko": {
+   "r0": "NCH",
+   "r1": "VAR",
+   "r2": "ARV",
+   "r3": "ALE",
+   "r4": "NMZ",
+   "r5": "COR",
+   "r6": "PER",
+   "r7": "VIC"
+  },
   "score": [
    null,
    null
