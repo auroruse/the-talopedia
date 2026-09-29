@@ -234,6 +234,56 @@ In the Battle of Sekiringaku (May 1–5), local Orughan herdsmen guided the Nich
 
 From the summer of 1916, Nichirin's Serican fleet blockaded the Xing coast and halted the Empire's coastal shipping. By December, the Aerial Corps had won air superiority over Manshu, and enemy aircraft no longer operated there by day. The Second Battle of the Bay of Serica (February 9–10, 1917) opened with an air attack from the carrier NCH Fudō on the Xing squadron at Dingyuan. When the squadron put to sea, Makinami's battle line inflicted further losses on Zheng Jingtao's fleet.
 
-#### Planning of Operation Hishō
+### Xing Collapse (1917-18)
 
-Operation Hishō, the planned counterattack into Xing territory, was devised by Saionji's staff during the winter of 1916–17, approved by the Shogun in April 1917, and set to begin once the last Xing positions in Nichirin had fallen. The plan combined an advance across the frontier with amphibious landings on the Serican coast, which the fleet's command of the bay had made possible. Its first objectives were Wulanhada and the three cities of Eastern Manshu that the truce of 1802 had left in Xing hands: Jinping, Dingyuan, and Kaiguan.
+#### Operation Hishō
+
+Operation Hishō (飛将, "Flying General") took its name from a Hezhouan frontier couplet holding that, had the Flying General been present, no northern horseman would have crossed the Yin Mountains, where the operation's last campaign would be fought. It opened on May 10, 1917, five days after the fall of Sekiringaku, with Nichirian forces driving through Eastern Manshu and launching simultaneous attacks on Wulanhada, Jinping, Dingyuan, and Kaiguan. Contingents from Kiritani and Shin-Nichirin (now Hōrai and Kinshū) fought in Manshu for the first time.
+
+In the Battle of Wulanhada (May 10–26), Nichirian forces occupied the seat of the Provisional Government of Manshu and captured Wen Shaoguang, who was later tried for treason and imprisoned for life. Jinping fell on May 18, and Nichirian troops took reprisals there for the Nishikino Massacre. Besieged from June 7, Dingyuan held out until June 19, when naval shellfire detonated the fortress's main magazine.
+
+Kaiguan, the Xing capital of Manshu, was invested on May 14. A relief army marching from Beining approached under cover of the summer sorghum, whose tall stands are known as the "green curtain" (青紗帳). In the Battle of the Green Curtain (July 2–9), Nichirian troops set the fields alight and destroyed the relief army in the open. An amphibious landing at Sumerajima on August 9 closed the siege from the sea, and the garrison surrendered on September 21. In the city's coal mines, the besiegers found the civilians deported in 1916; fewer than half of the 60,000 had survived. The invasion of Eastern Manshu cost the Xing about 720,000 killed and wounded and 210,000 captured, against about 480,000 Nichirian.
+
+#### Sangde Mutiny
+
+On October 10, after the harvest had been requisitioned for the army, the guard of the imperial summer palace at Sangde mutinied, and the garrison followed. Sun Jianhe of the Sun clique proclaimed the Sangde Autonomous Council, with Guan Zhenting commanding its armed contingent, and opened the frontier to Kitta's command, whose forces spared the city. The mutineers still wore Xing uniform, distinguished only by white armbands. In the Battle of the White Armbands (November 4–20), the punitive columns sent against the city fired into one another in the mountain passes, unable to tell friend from foe, before Guan Zhenting's troops and Kitta's command destroyed them.
+
+Elsewhere, provincial commanders, among them the future founders of the Chen and Huang cliques, withheld their armies from the imperial government. Over the winter, grain riots broke out in Beining and Jingnan, and the first deaths from famine were recorded.
+
+#### Operation Kangeiko
+
+Operation Kangeiko (寒稽古), the winter march on Beining, began on January 6, 1918. Its name, for the martial training held through the coldest weeks of the year, answered the winter counteroffensives with which the Xing had worn down the Shogunate's armies between 1764 and 1802. The advance converged on the capital from Kaiguan and from Sangde, where they coupled with Guan Zhenting's troops. In the Battle of Tianji Harbor (January 12–30), Nichirian infantry crossed the ice to capture the remnant of the Xing fleet, which had been frozen into the harbor since the autumn. The fall of the port cut Beining off from the sea.
+
+The Battle of the Outer Wall (February 8–27) was fought in snow before the capital's outer fortifications, which Nichirian engineers breached by tunneling beneath the frozen moat and detonating mines under the wall on February 27. Villages along the line of march were burned in reprisal for partisan attacks, but Saionji forbade any bombardment of the city itself. Beining fell on March 14, and as the garrison capitulated, the Chongguang Emperor hanged himself in the palace grounds. His five-year-old son, Zairui (載睿), was proclaimed emperor at Jingnan, which became the provisional capital. He reigned under a regency as the Zhongxing Emperor (中興, "Revival"). Kangeiko had cost the Xing about 850,000 killed and wounded and 310,000 captured, against about 560,000 Nichirian.
+
+#### Operation Huiguang
+
+The regency's counteroffensive, Operation Huiguang (回光), took its name from the first half of the phrase 回光返照, the flare of strength that precedes death. It opened on April 18 with advances on Beining along two axes, by the road through Deqiang in the east and through Shiyi and Baiding in the west. The Morgenlandkorps, the Holy Evrian Empire's Valtherian expeditionary force, marched from Jiaozhou with the eastern force.
+
+In the Battle of Baiding (April 25 – May 3), the western advance ended when the cavalry of the imperial guard made the last mounted charge of the Xing army and was cut down by machine guns and aircraft. The eastern force was destroyed in the Battle of Deqiang (May 6–21), where Nichirian tanks saw their first action and whole divisions surrendered. After the outbreak of the Holy Evrian Civil War that month, the Morgenlandkorps withdrew to Jiaozhou. Huiguang cost the Xing about 620,000 killed and wounded and 270,000 captured, against about 340,000 Nichirian.
+
+#### Advance on Jingnan
+
+Nichirian vanguard units took the rail junction at Shiyi in June with little resistance. In the Battle of the Lady's Pass in July, the Xing held the walled defile through which the railway runs to Jinyang; its fall opened the arsenal city to Nichirian forces.
+
+Famine and cholera spread through Guandong over the summer, killing millions. In August, Saionji handed command to Kiryū on grounds of ill health. The same month, under the separate settlement that Ymiria had reached with Nichirin during the Holy Evrian Civil War, Nichirian forces interned the Morgenlandkorps at Jiaozhou and allowed them to return to Alemannia. After the regency left Jingnan for Shanggang on August 27, the city's commander, later a founder of the Chen clique, surrendered it on his own authority two days later.
+
+With Xing field armies no longer posing a significant threat, Nichirin began in September to send troops to Rudania, whose army was increasingly composed of conscripts. Their arrival eased the pressure on the Northern Front as the Holy Evrian Empire lost its hold on its entrenched positions in Arverne.
+
+#### Yin Mountains Campaign
+
+Murong Ce's Southern Army withdrew into the Yin Mountains, and the campaign against it opened on September 1 with the Battle of the Kalgan Pass. Frontal assaults on the ridgelines stalled with heavy casualties, and on September 9, Kitta took command. He carried the pass in early October by replacing the assaults with lateral advances along the slopes, each covered by staggered fallback positions at the same elevation. The horsemen of the Hyūga Orughan Banner, which had joined the Nichirian forces in the Hezhouan part of the range, guided the advances, and its commander, Barsbold, was killed leading them into battle.
+
+The Battle of Fuhua (October 8–17) was fought for the towers of the old frontier wall above the town. In the Battle of Daiping (October 20 – November 11), the Southern Army was encircled at the eastern end of the range, and Murong Ce surrendered on November 11, the day of the armistice. The campaign cost the Xing about 410,000 killed and wounded and 190,000 captured, against about 290,000 Nichirian, most of them lost in the frontal assaults on the Kalgan Pass.
+
+#### Grand Canal and Shanggang
+
+Advancing overland from Jingnan, Nichirian forces fought the Battle of the Grand Canal (October 2–16) for the locks and embankments around Pengcheng. On October 22, the Shanggang Landing, the largest amphibious operation of the war, put Nichirian forces ashore from the Bay of Serica, with Kyougoku commanding the naval force. Shanggang, the last provisional capital, fell on November 3, and the regency escaped inland to Hengliu.
+
+#### Naval and Air Operations
+
+In the Third Battle of the Bay of Serica (July 14–15, 1917), Makinami's fleet crippled the Xing navy as an operational force, and Zheng Jingtao was captured. The fleet then turned to Entente convoy escort for the remainder of the war. From 1918, the Aerial Corps bombed the rail yards behind the Xing lines and the arsenal at Jingnan.
+
+#### Armistice
+
+The armistice of November 11 ended the fighting, accepted by the regency at Hengliu. That day, the Southern Army's surrender at Daiping became the last action on the Valtherian front, with Nichirian forces holding a line from Beining and the Yin Mountains to Shanggang. Altogether, the fall of the Xing Empire had cost it about 3.8 million killed and wounded and 1.3 million captured, against about 2.4 million Nichirian. Approximately 4.6 million Xing civilians died, most of them in the famine.
