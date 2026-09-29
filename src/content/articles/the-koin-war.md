@@ -29,14 +29,12 @@ infobox:
   - { section: "Belligerents" }
   - pair:
       - items:
-          - "**The Entente**"
           - ":flag[nichirin] [[nichirin]]"
           - "  :img[/assets/flags/kinshu.jpg] [[kinshu|Kinshū]]"
           - "  :img[/assets/flags/horai.jpg] [[horai|Hōrai]]"
           - ":img[https://lh3.googleusercontent.com/pw/AP1GczMkxHYB9z6QTB2qFWLTbmJasVj1LG2OpuWq7G6Zqh_Jt84lG0tPgTAlqIFFMEX0Z6tgrEK94gFmLP4OO3515cwyO3kjnHZqr8oILKF1R251V61ujgKMdYIKxaSCKX4KOC7keAezT7lckg8OpuqTNqv9=w2000|outline] Sangde Autonomous Council"
           - ":img[https://lh3.googleusercontent.com/pw/AP1GczPWbfFtsjxSh6QFrbmGLS3wZWXTg95kEZia-LDX1UgXTeMG9Ro44VJpiDy49lN5WSycUl0PK3H38KyC6AoXru_LqlBmNerKmT3Hqfgj5Nn5kqISudticceNbtg_FaPOnx6FRlNj3CY8NuSN091iPohl=w2000|outline] Hyūga Orughan Banner"
       - items:
-          - "**Central Powers**"
           - ":img[/assets/flags/xing-empire.png] [[xing-empire]]"
           - "  :img[https://lh3.googleusercontent.com/pw/AP1GczP-W3PrcWOYguUT_GGQkSovI51ni-Li6LWmp53pSXL228JKA9G8bhXXFiCovDCovmKvTNNPh-gIiuwwmxStdER-A0e9goHk1RY7Q9Ul-F--ICEzRQ-Ino74lVuV2_Dbn7tu7QNvh8tlc_1UorI1oTxr=w2000|outline] Provisional Government of Manshu"
           - ":img[/assets/flags/holy-evrian-empire.png] [[holy-evrian-empire]]"
@@ -46,7 +44,6 @@ infobox:
   - { section: "Commanders and Leaders" }
   - pair:
       - items:
-          - "**The Entente**"
           - ":flag[nichirin] [[masanori-miyamoto]]"
           - ":flag[nichirin] [[toranosuke-saionji]]"
           - ":flag[nichirin] [[kiyoshi-kiryu|Kiyoshi Kiryū]]"
@@ -59,7 +56,6 @@ infobox:
           - ":img[https://lh3.googleusercontent.com/pw/AP1GczMkxHYB9z6QTB2qFWLTbmJasVj1LG2OpuWq7G6Zqh_Jt84lG0tPgTAlqIFFMEX0Z6tgrEK94gFmLP4OO3515cwyO3kjnHZqr8oILKF1R251V61ujgKMdYIKxaSCKX4KOC7keAezT7lckg8OpuqTNqv9=w2000|outline] Guan Zhenting"
           - ":img[https://lh3.googleusercontent.com/pw/AP1GczPWbfFtsjxSh6QFrbmGLS3wZWXTg95kEZia-LDX1UgXTeMG9Ro44VJpiDy49lN5WSycUl0PK3H38KyC6AoXru_LqlBmNerKmT3Hqfgj5Nn5kqISudticceNbtg_FaPOnx6FRlNj3CY8NuSN091iPohl=w2000|outline] Barsbold :img[/assets/icons/killed-in-action.svg]"
       - items:
-          - "**Central Powers**"
           - ":img[/assets/flags/xing-empire.png] [[liang-yu]] :img[/assets/icons/executed.svg]"
           - ":img[/assets/flags/xing-empire.png] Chongguang Emperor"
           - ":img[/assets/flags/xing-empire.png] Xiang Kui :img[/assets/icons/killed-in-action.svg]"
@@ -114,7 +110,7 @@ The Chongguang Emperor, who had come to the throne in 1897 and was known for his
 
 ## Course of the War
 
-### Operation Wanbi (1914-1915)
+### Operation Wanbi (1914-15)
 
 #### Outbreak
 
@@ -152,7 +148,7 @@ Marshal-Admiral Nobumasa Kurosawa kept the Nichirian battle fleet at Naginomiya,
 
 The Aerial Corps, then comprising a few reconnaissance squadrons, flew its first combat sorties over Manshu in September 1914. Hayato Aotaka's squadron operated from the Mizuhara Racecourse in the absence of an airfield.
 
-### Operation Chenzhou (1915-1916)
+### Operation Chenzhou (1915-16)
 
 #### Battle of Mizuhara
 
@@ -206,4 +202,38 @@ On March 7, when news of the losses at the Bay of Serica reached Harushige, the 
 
 Kitta launched Operation Shōtan (嘗胆, "Tasting Gall") at dawn on March 21, the spring equinox, alluding to King Goujian of the Xian Kingdom, who tasted gall daily until he had avenged his defeat in the Feng-Xian War. It was also a homophone of *shōtan* (焦炭; "coke"), which fueled the Kagatsuchi Furnace. While the Xing positions faced the frozen reaches upstream and downstream, assault boats crossed the open water at the Ironworks under a smoke screen from its coke ovens and retook the southern districts.
 
-The operation ended the Battle of Mizuhara, the costliest of the war. Xing losses came to about 1.55 million killed and wounded, 600,000 of them dead, against about 640,000 Nichirian, including 220,000 dead. Roughly 210,000 of the city's civilians died, and the southern districts were left in ruins, with the torii of a Kaiseido shrine among the few structures still standing. In Evria, the battle for the city is known as "the Radagorsk of the North", after the Battle of Radagorsk, in which Rudanian forces held their capital against converging Alemannian, Skjarnish, and Turulian offensives. After the reverses at Mizuhara, Daikei, and at sea, the Xing began a general retreat along the entire front.
+The operation ended the Battle of Mizuhara, the costliest of the war. Xing losses came to about 1.55 million killed and wounded, 600,000 of them dead, against about 640,000 Nichirian, including 220,000 dead. Roughly 210,000 of the city's civilians died, and the southern districts were left in ruins, with the torii of a Kaiseido shrine among the few structures still standing. In Evria, the battle for the city is known as "the Radagorsk of the North", after the Battle of Radagorsk, in which Rudanian forces held their capital against converging Alemannian, Skjarnish, and Turulian offensives.
+
+### Xing Retreat (1916-17)
+
+#### Withdrawal
+
+Following the reverses of March, the Xing command ordered a staged withdrawal to the frontier of 1914. The interior of the Shizuku's loop was to be held as a delaying zone while the forces in Jigokugama and on the Manshuan Plain fell back. In the haste of the withdrawal, rear-echelon units were left behind without extraction orders. Liang Yu was recalled to Beining, tried for the failure of Chenzhou, and publicly beheaded on April 19; on the following day, the Chongguang Emperor assumed supreme command himself.
+
+Through April and May, the spring thaw turned the plain's roads to mud, slowing the retreat and the pursuit alike and leaving the Xing columns exposed to the Aerial Corps. The Xing abandoned Matsumoto in April, destroying the ferries at the confluence as they left. Desertion rose sharply among the conscripts, whom supervising units shot when caught. The retreating columns burned villages and killed their inhabitants, and approximately 60,000 Nichirian civilians were deported to Guandong as laborers.
+
+#### **Liberation of Jigokugama**
+
+The counteroffensive in Jigokugama converged from two directions: crossing the Matsuhana from Shikisen, Nichirian forces recaptured Harushige (May 9–21), where the Xing rearguard fought from the ruins. A Bakufu commission then exhumed the dead of the siege and the massacre, recovered copies of the reprisal proclamation, and established the figure of 46,000 victims of the massacre. Ground Corps units executed Xing prisoners taken in the city.
+
+From the east, Kiryū's forces advanced from Kadohara and cleared the western end of the Shizuku line in the Second Battle of Heitetsu (June 3–17). The station at Heitetsu changed hands for a fifteenth and final time. Himegami and Mikariba, between the two advances, were retaken in June and July, although the collieries at Mikariba, flooded in 1915, could not be worked again until 1918. The railway to Shikisen reopened through Umetsuji on July 12.
+
+#### Recapture of the Shizuku Loop
+
+Advancing from Mizuhara, Kitta's forces began clearing the loop in the Second Battle of Ryōgaku (August 7–19). Once the town had been recovered, the Bakufu annulled the Provisional Government's restitutions under the registers of 1764 and evicted the Hezhouan claimants from the land.
+
+Converging on Tanretsu from Ryōgaku and from Mizuhara, Kitta's forces broke the Xing defense of the loop in the Second Battle of Tanretsu on September 2. Xiang Kui burned to death when Nichirian shelling ignited the coal seam beneath his headquarters in the mine workings, and his remains were identified by his seal; the seam itself burned until 1921. Kitta's forces also captured one of the rear-echelon units left behind in the retreat, and its men were executed. In the Second Battle of Asamitsu (October 3–16), they cleared the last Xing positions in his sector, which his command then held along the border opposite Sangde through the following year.
+
+#### Manshuan Plain and Hyūga Mountains
+
+The lowland inundated in 1915 was still a marsh, and Xing rearguards used it as a barrier as Nichirian forces retook Hakushiro in June and Akaishi in August. Aomizu was retaken in October, and the Xing dug in for the winter at the Yakishi Pass. Fought in deep snow at forty degrees below zero, the Battle of the Yakishi Pass in February 1917 cleared the mountains. On both sides, frostbite accounted for more casualties than enemy fire.
+
+In the Battle of Sekiringaku (May 1–5), local Orughan herdsmen guided the Nichirian columns. The last Xing positions on Nichirian soil fell on May 5, the festival of Tango no Sekku, and the remnants of the garrison withdrew across the frontier. In all, the retreat had cost the Xing about 900,000 killed and wounded and 380,000 captured, against about 520,000 killed and wounded for Nichirin.
+
+#### Naval and Air Operations
+
+From the summer of 1916, Nichirin's Serican fleet blockaded the Xing coast and halted the Empire's coastal shipping. By December, the Aerial Corps, with Aotaka commanding its fighter wing, had won air superiority over Manshu, and enemy aircraft no longer operated there by day. The Second Battle of the Bay of Serica (February 9–10, 1917) opened with an air attack from the carrier NCH Fudō on the Xing squadron at Dingyuan. When the squadron put to sea, Makinami's battle line inflicted further losses on Zheng Jingtao's fleet.
+
+#### Planning of Operation Hishō
+
+Operation Hishō, the planned counterattack into Xing territory, was devised by Saionji's staff during the winter of 1916–17, approved by the Shogun in April 1917, and set to begin once the last Xing positions in Nichirin had fallen. The plan combined an advance across the frontier with amphibious landings on the Serican coast, which the fleet's command of the bay had made possible. Its first objectives were Wulanhada and the three cities of Eastern Manshu that the truce of 1802 had left in Xing hands: Jinping, Dingyuan, and Kaiguan.
