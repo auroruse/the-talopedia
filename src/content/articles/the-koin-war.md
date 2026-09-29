@@ -232,7 +232,7 @@ In the Battle of Sekiringaku (May 1–5), local Orughan herdsmen guided the Nich
 
 #### Naval and Air Operations
 
-From the summer of 1916, Nichirin's Serican fleet blockaded the Xing coast and halted the Empire's coastal shipping. By December, the Aerial Corps, with Aotaka commanding its fighter wing, had won air superiority over Manshu, and enemy aircraft no longer operated there by day. The Second Battle of the Bay of Serica (February 9–10, 1917) opened with an air attack from the carrier NCH Fudō on the Xing squadron at Dingyuan. When the squadron put to sea, Makinami's battle line inflicted further losses on Zheng Jingtao's fleet.
+From the summer of 1916, Nichirin's Serican fleet blockaded the Xing coast and halted the Empire's coastal shipping. By December, the Aerial Corps had won air superiority over Manshu, and enemy aircraft no longer operated there by day. The Second Battle of the Bay of Serica (February 9–10, 1917) opened with an air attack from the carrier NCH Fudō on the Xing squadron at Dingyuan. When the squadron put to sea, Makinami's battle line inflicted further losses on Zheng Jingtao's fleet.
 
 #### Planning of Operation Hishō
 
