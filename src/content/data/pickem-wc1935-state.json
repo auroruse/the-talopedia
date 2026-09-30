@@ -60,16 +60,24 @@
    "r4": "NMZ",
    "r5": "COR",
    "r6": "PER",
-   "r7": "VIC"
+   "r7": "VIC",
+   "q0": "NCH",
+   "q1": "ALE",
+   "q2": "COR",
+   "q3": "VIC",
+   "s0": "NCH",
+   "s1": "COR",
+   "f": "NCH",
+   "t": "VIC"
   },
   "score": [
-   null,
-   null
+   1,
+   0
   ],
   "awards": {
-   "boot": null,
-   "ball": null,
-   "glove": null
+   "boot": "VIC|Valentino Zaccagni",
+   "ball": "NCH|Ganzorig Erdene",
+   "glove": "ALE|Matthias Noack"
   },
   "done": {
    "A": true,
