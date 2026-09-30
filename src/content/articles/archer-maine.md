@@ -24,7 +24,7 @@ infobox:
       - "Leena Aalto (née Soini)"
   - { label: "Spouse", value: "Emilie Henderson" }
   - { label: "Issue", value: "Konrad Aalto" }
-  - { label: "Alma Mater", value: "University of New Winscor (MA)" }
+  - { label: "Alma Mater", value: "University of Ganshowe (MA)" }
 ---
 
 **Archer Sisu Maine** (né **Aalto**; June 9, 1888) is an Elysian revolutionary, Gestaltist politician, writer and political theorist. He was the first head of government of the [[unity-state]] since its founding in 1922, acting as the State’s Supreme Protector. A former member, and chairman of, the Communist Party of [[elysia]], he led the Revolutionary Guard as an important figure in the [[elysian-civil-war]], later going on to found the ideology of [[gestaltism]], and the world’s first Gestaltist state. His government won the ensuing power struggle, establishing a one-party state under the Gestaltist Party. His writings and ideas, derived from many Leftist schools of thought, gave rise to Gestaltism.

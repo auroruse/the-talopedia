@@ -73,11 +73,10 @@ groups:
           - "goro-kurotowa"
       - label: "Politburo Ministers"
         items:
-          - "elias-gray"
           - "gabriel-snipes"
           - "robert-strandburg"
           - "rebecca-graves"
-          - "peter-handel|Peter Händel"
+          - "peter-h-ndel"
           - "jasmine-petrova"
           - "richard-dumier"
           - "robyn-tivruski"
@@ -88,3 +87,6 @@ groups:
           - "future|Christopher Wechsler"
           - "futu|Zhang Yan"
           - "futu|Eric D'Angelo"
+      - label: "Civilians"
+        items:
+          - "elias-gray"

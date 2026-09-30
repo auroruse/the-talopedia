@@ -25,7 +25,7 @@ infobox:
     value:
       - "Steven Gray"
       - "Anna Gray"
-  - { label: "Alma Mater", value: "University of New Winscor (MD.PolSci.)" }
+  - { label: "Alma Mater", value: "Barnard University (MD.PolSci.)" }
 ---
 
 **Elias Gray** (born April 1st, 1875) is an Elysian politician serving as the current Minister of Foreign Affairs of the [Elysian State of Unity](https://docs.google.com/document/u/0/d/1KTeXRWuQuhHpeNn6SUDF9j-A1W1KeLUZ4A7bb4N0CGw/edit). He studied political science in the University of New Winscor before almost immediately entering politics after receiving his master’s degree. He serves as the primary foreign affairs advisor to the Supreme Protector, often serving as an extension of his authority in meetings with foreign representatives. Among the current members of the Unity State’s Politburo, Gray is among the most experienced politicians. He’s served as a politician for Elysia in one way or another for well over 20 years, including as the Secretary of State for the Stone Administration, until he was arrested on suspicions for aiding the Revolutionary Guard. He often acts as a mediating voice within the more heated government meetings, as well as a skilled diplomat in his own right.
