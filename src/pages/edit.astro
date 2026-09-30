@@ -3764,6 +3764,9 @@ const ADMIN = REPO.split('/')[0];
         // A page not on the site yet is the writer's when it credits their own nation,
         // which is the same test the gate puts it to.
         const by = held ? held.by : creditIn(c.markdown || '', c.kind, c.slug);
+        // ...and one not on the site yet with no nation on it at all is theirs too: it
+        // lands credited to their nation, which the merge writes in.
+        if (!held && !by.length && mine && c.kind === 'article') continue;
         if (!mine || by.length !== 1 || by[0] !== mine) return { title: held?.title || c.title || c.slug, by };
       }
       return null;

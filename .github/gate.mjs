@@ -27,6 +27,7 @@ const show = (ref, path) => {
 /** Everything the editor writes: a page, a navbox, and an image. Nothing else is a
     thing a contributor can produce, so nothing else merges on its own. */
 const PAGE = /^src\/content\/(articles|portals)\/[^/]+\.md$/;
+const ARTICLE = /^src\/content\/articles\/[^/]+\.md$/;
 const NAVBOX = /^src\/content\/data\/navboxes\/([^/]+)\.yaml$/;
 const ASSET = /^public\/assets\/./;
 const writable = (p) => PAGE.test(p) || NAVBOX.test(p);
@@ -115,7 +116,13 @@ for (const line of changed) {
   // off main whatever the diff calls it: a branch from an old fork reports a page
   // made since as newly added, and would otherwise walk straight over it.
   const was = creditOf(BASE, from);
-  const now = deleted ? null : creditOf(HEAD, to);
+  let now = deleted ? null : creditOf(HEAD, to);
+  // A PAGE THE WRITER HAS JUST MADE AND PUT NO NATION ON IS THEIRS. The editor starts a
+  // new page with none, and one sent without it was held for a look -- and, from an old
+  // fork, turned up with GitHub reporting conflicts that were never there. land.mjs
+  // writes the writer's nation into it as it lands. Only a page main has never had:
+  // one made since is read off main above, as every other page is.
+  if (!was && now && !now.length && ARTICLE.test(to)) now = [nation];
   if (was && (was.length !== 1 || was[0] !== nation)) decline(`${from} is credited to ${named(was)}.`);
   if (now && (now.length !== 1 || now[0] !== nation)) decline(`${to} would be credited to ${named(now)}.`);
 }

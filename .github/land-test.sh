@@ -40,7 +40,7 @@ Based-on: $from}"
 # the given script does to it.
 onto() { git checkout -q --detach $X; [[ -n ${1:-} ]] && { eval "$1"; git $cfg commit -qam main; }; true; }
 # The script from this checkout: the worktree sits on older commits that predate it.
-land() { RESULT=$(ONTO=HEAD PR_HEAD=$PR NOTES=$S/notes node "$REPO/.github/land.mjs"); }
+land() { RESULT=$(ONTO=HEAD PR_HEAD=$PR NOTES=$S/notes WRITER=${WRITER:-} node "$REPO/.github/land.mjs"); }
 S=$(mktemp -d)
 
 print "a page untouched on main since it was opened"
@@ -95,6 +95,16 @@ check "lands"                       '[[ $RESULT == ready ]] && git show :src/con
 print "a new page at a name someone has taken since"
 onto "cp $S/q src/content/articles/land-test-page.md; git add src/content/articles/land-test-page.md"; land
 check "waits for a person"          '[[ $RESULT == wait* ]]'
+
+print "a new page with no nation on it"
+N=src/content/articles/land-test-new.md
+print -- "---\ntitle: \"T\"\ntype: character\nnavbox: site\n---\n\nNew." > $S/u
+pr $X $N $S/u; onto; WRITER=kiohit05-cyber; land; WRITER=
+check "lands credited to the writer's nation" '[[ $RESULT == ready ]] && git show :$N | grep -qx "nation: albinya"'
+check "right under its type"        '[[ "$(git show :$N | sed -n 3,4p | tr "\n" "|")" == "type: character|nation: albinya|" ]]'
+check "without the site navbox"     '! git show :$N | grep -q "^navbox:"'
+check "and the rest as written"     'git show :$N | grep -qx "New."'
+git reset -q --hard
 
 print "deleting a page nobody has touched since"
 D=src/content/articles/avium.md   # one the old fork already had

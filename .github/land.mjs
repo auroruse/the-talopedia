@@ -35,9 +35,12 @@ import { mkdtempSync, writeFileSync, mkdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fixEmphasis } from '../src/lib/emphasis.mjs';
+import { ACCOUNT_OF } from '../src/lib/contributors.mjs';
 
 const ONTO = process.env.ONTO || 'HEAD';
-const { PR_HEAD, NOTES } = process.env;
+const { PR_HEAD, NOTES, WRITER } = process.env;
+/** The nation whoever opened the pull request writes for, if any. */
+const WRITES_FOR = Object.keys(ACCOUNT_OF).find((n) => ACCOUNT_OF[n] === WRITER);
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 64 << 20 });
 const bytes = (id) => execFileSync('git', ['cat-file', 'blob', id], { maxBuffer: 64 << 20 });
 /** The blob a file is at a commit, or null where it does not exist there. */
@@ -55,6 +58,23 @@ const put = (path, data) => {
   if (/^src\/content\/.*\.md$/.test(path)) data = fixEmphasis(data.toString('utf8'));
   mkdirSync(dirname(path), { recursive: true }); writeFileSync(path, data); git('add', '--', path);
 };
+
+/**
+ * A NEW PAGE WITH NO NATION ON IT IS ITS WRITER'S: gate.mjs lets it through on that
+ * footing, and this writes the byline in, as though they had picked their own nation.
+ * The site navbox the editor falls back to when no nation is chosen goes with it.
+ */
+function credit(path, data) {
+  if (!WRITES_FOR || !/^src\/content\/articles\/[^/]+\.md$/.test(path)) return data;
+  const text = data.toString('utf8'), end = text.indexOf('\n---', 3);
+  if (!text.startsWith('---') || end < 0) return data;
+  const fm = text.slice(0, end).split('\n');
+  if (fm.some((l) => /^authors:[ \t]*\[[^\]]*[^\s\],'"][^\]]*\]/.test(l) || /^nation:[ \t]*\S/.test(l))) return data;
+  const kept = fm.filter((l) => !/^nation:/.test(l) && !/^navbox:[ \t]*site[ \t]*$/.test(l));
+  const at = kept.findIndex((l) => /^type:/.test(l));
+  kept.splice(at > 0 ? at + 1 : kept.length, 0, `nation: ${WRITES_FOR}`);
+  return kept.join('\n') + text.slice(end);
+}
 
 /** The commit of main the writer opened this file from, off the last commit that changed it. */
 function basedOn(path) {
@@ -171,7 +191,7 @@ for (const { path, gone, base } of plan) {
   // so one already on main that differs is not this pull request's to replace.
   if (path.startsWith('public/assets/') && ours) done(`wait ${path} is already on main`);
   if (ours === base) {                                   // untouched on main since it was opened
-    if (theirs) put(path, bytes(theirs)); else git('rm', '-q', '--', path);
+    if (theirs) put(path, ours ? bytes(theirs) : credit(path, bytes(theirs))); else git('rm', '-q', '--', path);
     continue;
   }
   // Main has moved since the writer opened it. Deleting a page someone has since

@@ -49,6 +49,13 @@ commit
 run merge SwiftorArrow      "credited to the nation that wrote it"
 run wait  that1sealguy      "credited to somebody else"
 
+print "a new page with no nation on it"
+start
+printf -- '---\ntitle: "T"\ntype: character\nnavbox: site\n---\n\nBody.\n' > src/content/articles/gate-test-page.md
+commit
+run merge SwiftorArrow      "is the nation's that wrote it"
+run wait  nobody-at-all     "unless the writer writes for no nation"
+
 print "pictures"
 start; cp public/assets/flags/albinya.png public/assets/flags/gate-test.png; commit
 run merge SwiftorArrow      "adding one"
@@ -68,6 +75,8 @@ print "a branch from an old fork"
 stale() { git checkout -q --detach 4edb6e1; }
 stale; printf -- '---\ntitle: "Elias Gray"\ntype: character\nnation: karjania\n---\n\nx\n' > src/content/articles/elias-gray.md; commit
 run wait  zezelandnationstates-hash "karjania 'adds' an E.S.U. page made since"
+stale; printf -- '---\ntitle: "Elias Gray"\ntype: character\n---\n\nx\n' > src/content/articles/elias-gray.md; commit
+run wait  that1sealguy      "e.s.u. 'adds' its own page made since, with no nation on it"
 stale; mkdir -p public/assets/flags; printf x > public/assets/flags/albinya.png; commit
 run wait  SwiftorArrow      "'adds' a flag that is already on main"
 

@@ -68,6 +68,9 @@ jobs:
         env:
           PR_HEAD: ${{ github.event.pull_request.head.sha }}
           NOTES: ${{ runner.temp }}/land-notes.md
+          # Who opened it, whatever the gate was told: a new page they left without a
+          # nation is credited to theirs as it lands.
+          WRITER: ${{ github.event.pull_request.user.login }}
         run: |
           set -euo pipefail
           result=$(node .github/land.mjs)
@@ -98,6 +101,7 @@ jobs:
           GIT_COMMITTER_NAME: github-actions[bot]
           GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
           NOTES: ${{ runner.temp }}/land-notes.md
+          WRITER: ${{ github.event.pull_request.user.login }}
         run: |
           set -euo pipefail
           [ "$(git rev-list --count HEAD.."$PR_HEAD")" = 1 ] && subject=$(git log -1 --format=%s "$PR_HEAD") || subject="$TITLE"
