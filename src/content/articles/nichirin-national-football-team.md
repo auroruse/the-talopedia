@@ -17,8 +17,8 @@ infobox:
   - { label: "AFA Code", value: "NCH" }
   - { image: "https://lh3.googleusercontent.com/pw/AP1GczP4UQbGKl2wwKEN1-rxtCudORcb9laZs9roaM4bS3GyImnyW5iYQeSUtGhD4XUrGTUh7hEm99BLfQTI62rrE5rCjWNhlcDtOukMWLcb0S7T73c85EcwXdGVcfs-6ifquqtHJOwF26ai8BRry45Aj7xZ=w2000", caption: "" }
   - { section: "AFA Ranking" }
-  - { label: "Current (1934)", value: "3 (:down1)" }
-  - { label: "Highest", value: "1 (1932)" }
+  - { label: "Current (1934)", value: "1 (:up2)" }
+  - { label: "Highest", value: "1 (1935)" }
   - { label: "Lowest", value: "16 (1921)" }
   - { section: "First International" }
   - value:
@@ -34,7 +34,7 @@ infobox:
       - "([[dunmaris]]; June 21, 1892)"
   - { section: "World Cup" }
   - { label: "First Appearance", value: "1900" }
-  - { label: "Best Result", value: "Champions (1914, 1930, 1932)" }
+  - { label: "Best Result", value: "Champions (1914, 1930, 1932, 1935)" }
 ---
 
 The **Nichirin national football team** (全日輪蹴球代表, *Zen-Nichirin Shūkyū Daihyō*), nicknamed the **Crimson-Red Calamity** (真紅の災厄, *Shinku no Saiyaku*), represents [[nichirin]] in international association football. It is controlled by the Nichirian Football Association (NFA). As the first country in [[valtheria]] to adopt football, it shares the record for [[afa-world-cup|World Cup]] titles, with three, and is the only nation to have won the [[afa-nations-league|Nations League]]. Nichirin has been among the world's leading national teams since [[great-war|the Great War]] and has had the best competitive record of any nation since the appointment of head coach [[josue-alferinho|Josué Alferinho]] after the 1932 World Cup.
