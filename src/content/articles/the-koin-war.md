@@ -17,7 +17,7 @@ infobox:
       - { src: "https://lh3.googleusercontent.com/pw/AP1GczPVwDiss8FkkLy0TFolsarWowiABLxaxEJDkzB6ID9yJ7_3JJRvowYSDZgc8_CLEUYcMkEnsfTsRWlAHrXoJFqLO3jEOb6CbKpuSwRAzZLha2N4NaaBZNRA9XCpr66snp5r9tfMJrQwfpWbWlprnbwc=w2000", caption: "" }
     join: true
   - images:
-      - { src: "https://lh3.googleusercontent.com/pw/AP1GczMa4dx1UwAv4AqrkHigbHlXvwrNQYR2CwA9DrBZECUHYt_8lHVtgtb60L_NLEcfzIlyeKIj_VfVHyKbw2l8HvOg4Fa-cedYP2WfnbiDHkSo32sEczJT8VwgY3qgxWIJNZhYLID_eDjlMgHahFh6WEaP=w2000", caption: "" }
+      - { src: "https://lh3.googleusercontent.com/pw/AP1GczNOox4aacuJdpfZxlzPCm5jTjmaRBCUK2i9n1jJYOfuiQWzHf4h4VBNGZYMb5zfyksFt3jnXo6rnQ87dbCnFfyomI8qzB1GBpvs4pbVaW6ibpibZuNB5qsC_BBIF7aDPdOaggT45eiyfQWOJ35ojAsr=w2000", caption: "" }
       - { src: "https://lh3.googleusercontent.com/pw/AP1GczNezqP5hP_nAF2AUQC3iZxvTfyZB_2XLTr0M7EiJxWhXW_6saNC551fU2ksXNC7Bg96-i053hVi9h4oOvegHijMzyXnA4z9nfoKpdA9SdQJeRECiTPBEkAk9fJ89KqKfy-900OSMtVFsLm-yPvEbs0C=w2000", caption: "" }
     join: true
   - { label: "Date", value: "August 15, 1914 – February 3, 1919" }
