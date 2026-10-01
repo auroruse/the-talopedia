@@ -313,3 +313,19 @@ Secure at Sangde under the treaty's guarantee, the Sun clique took control of Gu
 Relations between Nichirin and Guandong remained tense under Masanori Miyamoto. Approximately 340,000 of the ceded territory's Hezhouan residents had left for Guandong by the expiry of the option in February 1921, and those who stayed shared the suspicion that attached to Hezhouans throughout Nichirin. The proclamation of a communist republic across the new frontier, two years after the revolution in Rudania, alarmed the Bakufu, which took it for an ally of Radagorsk. Guandong refused to recognize the cession, incidents in the demilitarized zone were frequent, and Eastern Manshu was kept under military administration.
 
 Masashi Miyamoto, who succeeded his father in 1923, convened the Tōhara Conference in March 1926. Sun's denunciation of Radagorsk's communism at the conference dispelled the Bakufu's fear of a Rudanian alignment. Under the agreements reached there, which superseded the Treaty of Kaiguan, Guandong recognized the cession and Nichirin the People's Republic, and trade protocols replaced the customs inspectorate and the consular courts. Nichirin gave up its rights at Jiaozhou, and Eastern Manshu was organized into autonomous prefectures under a joint border administration, whose patrols replaced the Nichirian inspections of the demilitarized zone. Kitta opposed the agreements publicly through the veterans' associations as a betrayal of the cost of the war, but incidents along the border fell within months of the first joint patrols.
+
+## Legacy
+
+### Historical Revisionism
+
+Nichirian curriculums present the Kōin War as a defensive war, Operation Hishō as the pursuit of a retreating enemy, and the Treaty of Kaiguan as restitution for Nichirin's losses. Where Nichirian atrocities are acknowledged, they are explained as retaliation for the Nishikino and Harushige massacres. Official accounts omit the civilian dead of the Hakushiro inundation. The veterans' associations, among them the Red Oni Society of Mizuhara veterans, have opposed any official acknowledgment of the crimes of Nichirian forces.
+
+The Guandongese government describes the war as one waged by the Chongguang Emperor, and attribute the famine to the Nichirian blockade. Since the repudiation of the Treaty of Kaiguan, Guandongese textbooks have given the figure of 611 executions acknowledged by the Xing court for the Nishikino Massacre. The People's Republic observes October 10, the anniversary of the Sangde Mutiny, as its national day, describing it as a revolution against the dynasty and making no reference to the Sangde Autonomous Council's cooperation with Kitta's command.
+
+### Commemoration
+
+Bon, the festival during which the war began, is the principal occasion on which the fallen are remembered in Nichirin. At Mizuhara, the Tadamune Kuronami National Stadium was built as a war memorial on the ground where the line along the Shizuku had held. It was dedicated on July 22, 1925, the tenth anniversary of the landing at the Kagatsuchi Ironworks. Veterans of the battle attend national team matches there in red oni masks. The battle's dead are also remembered at Higan, the equinox week in which Operation Shōtan was launched.
+
+In Guandong, the Mid-Autumn Festival is observed privately in memory of the dead of the Mid-Autumn Assault of 1915. Veterans of the Southern Army have petitioned the Bakufu for the release of Murong Ce, who remains imprisoned in Nichirin.
+
+Among Orughans, Barsbold is celebrated for securing greater autonomy for the Orughan people in Serica.
