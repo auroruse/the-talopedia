@@ -67,7 +67,7 @@ infobox:
       - items:
           - "**Military**"
           - "2,214,386 killed"
-          - "4,871,902 wounded"
+          - "3,108,544 wounded"
           - "143,617 missing"
           - "242,845 captured"
           - "**Civilian**"
@@ -77,7 +77,7 @@ infobox:
       - items:
           - "**Xing Empire**"
           - "4,506,712 killed"
-          - "6,390,455 wounded"
+          - "5,247,318 wounded"
           - "918,374 missing"
           - "1,842,206 captured"
           - "**Civilian**"
@@ -134,7 +134,7 @@ Operations subsided over the winter. Effluent discharged by the Kagatsuchi Ironw
 
 #### Advance to the Matsuhana
 
-Murong Ce captured Sekiringaku within a week of the invasion and occupied the relatively undefended eastern portion of the Manshuan Plain before winter set in. His advance resumed in April 1915 at the Battle of Akaishi (April 6–18), where the Xing made the war's first use of chlorine gas. In the Battle of Hakushiro (May 9–24), the Xing pressed toward the Matsuhana until, on May 21, Nichirian engineers breached the river's eastern levees south of Daikei. The inundation halted the Xing and covered the Nichirian withdrawal across the river, but drowned an estimated 20,000 civilians. A final thrust into the Hyūga Mountains stalled in the Battle of Yakishi (June 3–28), when the plum rains rendered the roads impassable.
+Murong Ce captured Sekiringaku within a week of the invasion and occupied the relatively undefended eastern portion of the Manshuan Plain before winter set in. His advance resumed in April 1915 at the Battle of Akaishi (April 6–18), where the Xing made the war's first use of chlorine gas. In the Battle of Hakushiro (May 9–24), the Xing pressed toward the Yawara until, on May 21, Nichirian engineers breached the river's eastern levees south of Daikei. The inundation halted the Xing and covered the Nichirian withdrawal across the river, but drowned an estimated 20,000 civilians. A first thrust into the Hyūga Mountains stalled in the Battle of Yakishi (June 3–28), when the plum rains rendered the roads impassable.
 
 #### Occupation
 
@@ -172,7 +172,7 @@ By October, all four settlements were under attack at once. Holding the interior
 
 The ridge at Himegami, crowned by a shrine to the princess deity for whom the town is named, commanded the railway between Harushige and Heitetsu. On the night of November 17, the last train out of Harushige crossed it under fire, carrying approximately 1,900 children. The ridge fell the next day, after assaults that had destroyed its shrine and cost the Xing about 95,000 casualties, and its loss cut the railway and isolated Harushige. The garrison of Harushige prepared to hold the city to the last, arming railway workers and other townspeople, women among them, from Manshū Tetsudō depots. Over the course of the siege, hunger and cold killed some 120,000 inhabitants. The Xing stormed the outer districts in January 1916, and the defenders, contesting the city block by block, fell back on the company's headquarters. There the last of them held out until February 3, the Lunar New Year, and fewer than a thousand of the garrison and its volunteers were taken alive.
 
-After taking Heitetsu on December 12, the Xing turned east toward Kanamine and the northern bank of the Shizuku. General Kiyoshi Kiryū's forces held them in the Battle of Kadohara (January 10 – February 24), inflicting about 160,000 casualties. Xing columns to the north cut the railway to Shikisen at Umetsuji and reached Shiroyama and Kusurigura in February, where the Chōhaku Mountains precluded a further advance.
+After taking Heitetsu on December 12 and Mikariba a week later, the Xing turned east toward Kanamine and the northern bank of the Shizuku. General Kiyoshi Kiryū's forces held them in the Battle of Kadohara (January 10 – February 24), inflicting about 160,000 casualties. Xing columns to the north cut the railway to Shikisen at Umetsuji and reached Shiroyama and Kusurigura in February, where the Chōhaku Mountains precluded a further advance.
 
 The Jigokugama Campaign cost the Xing about 1.35 million killed and wounded, of whom 490,000 died, and Nichirin about 690,000, of whom 240,000 died. Civilian deaths numbered roughly 320,000.
 
@@ -210,7 +210,7 @@ The operation ended the Battle of Mizuhara, the costliest of the war. Xing losse
 
 Following the reverses of March, the Xing command ordered a staged withdrawal to the frontier of 1914. The interior of the Shizuku's loop was to be held as a delaying zone while the forces in Jigokugama and on the Manshuan Plain fell back. In the haste of the withdrawal, rear-echelon units were left behind without extraction orders. Liang Yu was recalled to Beining, tried for the failure of Chenzhou, and publicly beheaded on April 19; on the following day, the Chongguang Emperor assumed supreme command himself.
 
-Through April and May, the spring thaw turned the plain's roads to mud, slowing the retreat and the pursuit alike and leaving the Xing columns exposed to the Aerial Corps. The Xing abandoned Matsumoto in April, destroying the ferries at the confluence as they left. Desertion rose sharply among the conscripts, whom supervising units shot when caught. The retreating columns burned villages and killed their inhabitants, and approximately 60,000 Nichirian civilians were deported to Guandong as laborers.
+Through April and May, the spring thaw turned the plain's roads to mud, slowing the retreat and the pursuit alike and leaving the Xing columns exposed to the Aerial Corps. The Xing abandoned Matsumoto in April, destroying the ferries at the confluence as they left. Desertion rose sharply among the conscripts, whom supervising units shot when caught. The retreating columns burned villages and killed their inhabitants, and approximately 60,000 Nichirian civilians were deported to the coal mines of Kaiguan as laborers.
 
 #### **Liberation of Jigokugama**
 
@@ -238,21 +238,21 @@ Nichirin's Serican fleet blockaded the Xing coast from the summer of 1916, halti
 
 #### Operation Hishō
 
-Operation Hishō (飛将, "Flying General") took its name from a Hezhouan frontier couplet holding that, had the Flying General been present, no northern horseman would have crossed the Yin Mountains, where the operation's last campaign would be fought. It opened on May 10, 1917, five days after the fall of Sekiringaku, with Nichirian forces driving through Eastern Manshu and launching simultaneous attacks on Wulanhada, Jinping, Dingyuan, and Kaiguan. Contingents from Kiritani and Shin-Nichirin (now Hōrai and Kinshū) joined the offensive.
+Operation Hishō (飛将, "Flying General") took its name from a Hezhouan frontier couplet holding that, had the Flying General been present, no northern horseman would have crossed the Yin Mountains, where the operation's last campaign would be fought. It opened on May 10, 1917, five days after the fall of Sekiringaku, with attacks on Wulanhada and on Jinping, where its drive through Eastern Manshu began. Contingents from Kiritani and Shin-Nichirin (now Hōrai and Kinshū) joined the offensive.
 
 In the Battle of Wulanhada (May 10–26), Nichirian forces occupied the seat of the Provisional Government of Manshu and captured Wen Shaoguang, who was later tried for treason and imprisoned for life. Nichirian troops entered Jinping on May 18 and took reprisals there for the Nishikino Massacre. Besieged from June 7, Dingyuan held out until June 19, when naval shellfire detonated the fortress's main magazine.
 
-Kaiguan, the Xing capital of Manshu, was invested on May 14. A relief army marching from Beining approached under cover of the summer sorghum, whose tall stands are known as the "green curtain" (青紗帳). In what became known as the Battle of the Green Curtain (July 2–9), Nichirian troops set the fields alight and destroyed the relief army in the open. An amphibious landing at Sumerajima on August 9 closed the siege from the sea, and the garrison surrendered on September 21. In the city's coal mines, the besiegers found the civilians deported in 1916; fewer than half of the 60,000 had survived.
+Kaiguan, the Xing capital of Manshu, was invested at the end of June. A relief army marching from Beining approached under cover of the summer sorghum, whose tall stands are known as the "green curtain" (青紗帳). In what became known as the Battle of the Green Curtain (July 23–30), Nichirian troops cut down the stands along the approaches and destroyed the relief army in the open. An amphibious landing at Sumerajima on August 9 closed the siege from the sea, and the garrison surrendered on September 21. In the city's coal mines, the besiegers found the civilians deported in 1916; fewer than half of the 60,000 had survived.
 
 #### Sangde Mutiny
 
-On October 10, after the harvest had been requisitioned for the army, the guard of the imperial summer palace at Sangde mutinied, and the garrison followed. Sun Jianhe of the Sun clique proclaimed the Sangde Autonomous Council, with Guan Zhenting commanding its armed contingent, and opened the frontier to Kitta's command, whose forces spared the city. The mutineers still wore Xing uniform, distinguished only by white armbands. Unable to tell friend from foe, the punitive columns sent against the city fired into one another in the mountain passes before Guan Zhenting's troops and Kitta's command destroyed them in the Battle of the White Armbands (November 4–20).
+On October 10, after the harvest had been requisitioned for the army, the guard of the imperial summer palace at Sangde mutinied, and the garrison followed. Sun Jianhe, later the founder of the Sun clique, proclaimed the Sangde Autonomous Council, with Guan Zhenting commanding its armed contingent, and opened the frontier to Kitta's command, whose forces spared the city. The mutineers still wore Xing uniform, distinguished only by white armbands. Unable to tell friend from foe, the punitive columns sent against the city fired into one another in the mountain passes before Guan Zhenting's troops and Kitta's command destroyed them in the Battle of the White Armbands (November 4–20).
 
 Elsewhere, provincial commanders, among them the future founders of the Chen and Huang cliques, withheld their armies from the imperial government. Over the winter, grain riots broke out in Beining and Jingnan as famine set in.
 
 #### Operation Kangeiko
 
-The winter march on Beining, Operation Kangeiko (寒稽古), began on January 6, 1918. Its name, for the martial training held through the coldest weeks of the year, answered the winter counteroffensives with which the Xing had worn down the Shogunate's armies between 1764 and 1802. Nichirian forces advanced on the capital from Kaiguan and from Sangde, where Guan Zhenting's troops joined them. In the Battle of Tianji Harbor (January 12–30), Nichirian infantry crossed the ice to capture the remnant of the Xing fleet, which had been frozen into the harbor since the autumn. The fall of the port cut Beining off from the sea.
+Hishō's winter march on Beining, Operation Kangeiko (寒稽古), began on January 6, 1918. Its name, for the martial training held through the coldest weeks of the year, answered the winter counteroffensives with which the Xing had worn down the Shogunate's armies between 1764 and 1802. Nichirian forces advanced on the capital from Kaiguan and from Sangde, where Guan Zhenting's troops joined them. In the Battle of Tianji Harbor (January 12–30), Nichirian infantry crossed the ice to capture the remnant of the Xing fleet, which had been frozen into the harbor since late December. The fall of the port cut Beining off from the sea.
 
 The Battle of the Outer Wall (February 8–27) was fought in snow before the capital's outer fortifications, which Nichirian sappers breached by tunneling beneath the frozen moat and detonating mines under the wall on February 27. Villages along the line of march were burned in reprisal for partisan attacks, but Saionji forbade any bombardment of the city itself. Both sides suffered heavily in the ten-week campaign, the Xing losing about 850,000 killed and wounded and 310,000 taken prisoner, and Nichirin about 560,000. Beining fell on March 14, and as the garrison capitulated, the Chongguang Emperor hanged himself in the palace grounds. His five-year-old son, Zairui (載睿), was proclaimed emperor at Jingnan, which became the provisional capital. He reigned under a regency as the Zhongxing Emperor (中興, "Revival").
 
@@ -268,7 +268,7 @@ Nichirian vanguard units took the rail junction at Shiyi in June with little res
 
 Famine and cholera spread through Guandong over the summer, killing millions. In August, Saionji handed command to Kiryū on grounds of ill health. The same month, under the separate settlement that Ymiria had reached with Nichirin during the Holy Evrian Civil War, Nichirian forces interned the Morgenlandkorps at Jiaozhou and allowed them to return to Alemannia. After the regency left Jingnan for Shanggang on August 27, the city's commander, later a founder of the Chen clique, surrendered it on his own authority two days later.
 
-With Xing field armies no longer posing a significant threat, Nichirin began in September to send troops to Rudania, whose army was increasingly composed of conscripts. Their arrival eased the pressure on the Northern Front as the Holy Evrian Empire lost its hold on its entrenched positions in Arverne.
+With Jingnan taken, Nichirin began in September to send troops to Rudania, whose army was increasingly composed of conscripts. Their arrival eased the pressure on the Northern Front as the Holy Evrian Empire lost its hold on its entrenched positions in Arverne.
 
 #### Yin Mountains Campaign
 
@@ -282,8 +282,8 @@ Advancing overland from Jingnan, Nichirian forces fought the Battle of the Grand
 
 #### Naval and Air Operations
 
-Makinami's fleet crippled the Xing navy as an operational force in the Third Battle of the Bay of Serica (July 14–15, 1917), in which Zheng Jingtao was captured. The fleet then turned to Entente convoy escort for the remainder of the war. Aerial Corps bombers struck the rail yards behind the Xing lines and the arsenal at Jingnan throughout 1918.
+Makinami's fleet crippled the Xing navy as an operational force in the Third Battle of the Bay of Serica (July 14–15, 1917), in which Zheng Jingtao was captured. Part of the fleet then sailed with Makinami on Entente convoy escort for the remainder of the war, leaving a squadron under Kyougoku in the Bay of Serica to support landings on the Xing coast. Aerial Corps bombers struck the rail yards behind the Xing lines and the arsenal at Jingnan throughout 1918.
 
 #### Armistice
 
-The armistice of November 11 ended the fighting, accepted by the regency at Hengliu. That day, the Southern Army's surrender at Daiping became the last action on the Valtherian front, with Nichirian forces holding a line from Beining and the Yin Mountains to Shanggang. Bakufu figures put Xing military losses between May 1917 and the armistice at about 3.8 million killed and wounded and 1.3 million captured, and Nichirian losses at about 2.4 million. Approximately 4.6 million Xing civilians died, most of them in the famine.
+The armistice of November 11 ended the fighting, accepted by the regency at Hengliu. That day, the Southern Army's surrender at Daiping became the last action on the Valtherian front, with Nichirian forces holding a line from Beining and the Yin Mountains to Shanggang. Bakufu figures put Xing military losses between May 1917 and the armistice at about 3.8 million killed and wounded and 1.3 million captured, and Nichirian losses at about 2.4 million. The famine, which continued into 1919, brought Xing civilian deaths over the course of the war to approximately 6 million.
