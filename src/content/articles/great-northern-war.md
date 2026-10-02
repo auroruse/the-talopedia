@@ -157,7 +157,7 @@ After 3 hours of fighting, Tomasson chose to commit his centre to an attack, inc
 
 In Kjellberg, Gustaf V, concerned by the deteriorating developments, bypassed the standard appointment process and instated Marshal [[count-vincent-hjortland|Vincent Hjortland]] as Commander of the Skjarnish Army and Grand Admiral [[david-elfsberg]] as Commander of the Navy on 31 October, sending a contingent of 10,000 men led by [[pahl-von-elfsberg|General Påhl von Elfsberg]] to reinforce Duke Mattias' forces in Riege by sea while his main army, the [[grand-army-of-skjarnland|Grand Army]], numbering 50,000 following mobilisation, set out to re-establish Skjarnish control over Estiland and Sydspetsen before marching into Livonia.
 
-### Estiland Campaign (1751)
+### Estiland and Sydspetsen Campaign (1751)
 
 #### Reconquest of Sydspetsen
 
@@ -167,12 +167,28 @@ Gustaf directed the Grand Army to march north and relieve Roudanjärvi, believin
 
 #### Battle of Wolmar
 
+<figure class="float float-right" style="width:300px"><img src="https://i.imgur.com/EgQEDl4.jpeg" alt="The Battle of Wolmar was the largest and deadliest battle in the First Upper Suebian Campaign."><figcaption>The Battle of Wolmar was the largest and deadliest battle in the First Upper Suebian Campaign.</figcaption></figure>
+
 General Suvorov, who expected the Grand Army to attempt to relieve Livonia immediately via the Römpöla-Perona route, recognised the danger and directed the Rudanian-Karjanian armies in Estiland, including the army of Olaf III, to abandon their positions near Perona and establish defensive positions north of [[wolmar]] while light cavalry forces and rearguard units mounted defences and counteratacks to slow Gustaf's advance. The Grand Army met the gutted remnants of Tomasson's army in Perona on 23 November, during which Gustaf reportedly reprimanded him but did not relieve him initially due to the lack of any experienced replacements.
 
 Olaf's army met Suvorov's in Wolmar on 29 November, the Skjarnish Grand Army arriving on the 30th. Suvorov, who had thus far ran a delaying rear-guard campaign in Estiland, chose to offer battle in Wolmar, believing his force of 50,000, against the Skjarns' attacking 60,000, could force a stalemate long enough for Riege, whose besieging forces led by the Tsar were making gradual progress but failing to destroy the Skjarnish defenders or force a surrender.
 
 Gustaf began his attack on 1 December following an hour-long artillery barrage, committing his best forces, including the famous [[vestland-regiment]] for a standard [Gå-på](https://en.wikipedia.org/wiki/Caroleans#Tactics) ('go on') attack, advancing swiftly and firing musket volleys at point-blank range before mounting a bayonet and sword charge. After three hours of intense fighting, Rudanian forces withdrew to their second defensive line, with the Skjarns continuing to conduct close-quarters battle, including sword-fighting. Gustaf then personally led a cavalry charge on the Rudanian left flank, which was countered by a Rudanian-Karjanian charge personally led by Olaf. Several anecdotes from both sides claim that the two monarchs could see each other in the battle, and some even reported that the two fought directly, but none are verified. After both sides' cavalry disengaged and the battle continued, the Rudanians were forced to retreat once more. General Suvorov, recognising that his positions were no longer tenable, ordered a general retreat.
 
-#### Relief of Riege
+### Reconquest of Livonia (1751-52)
+
+#### End of the Siege of Riege
 
 Skjarnish victory at Wolmar came at great cost; roughly 5,000-10,000 Skjarns fell in battle, while 10,000-15,000 Rudanians and Karjanians were killed. Suvorov then ordered his army to divide itself into three and retreat along separate routes while mounting rearguard actions against the Grand Army to buy more time for Tsar Gregory's forces besieging Riege. The siege, which had lasted over a month, resulted in aggressive Rudanian attacks gradually capturing sections of Duke Mattias' defences while artillery harassed Skjarnish reinforcements arriving in Riege's port with varying levels of success.
+
+Upon receiving news of the defeat at Wolmar, Tsar Gregory's most senior officer, [[ivan-morgunov|General Field-Marshal Ivan Morgunov]], realised his forces could not sustain the siege of Riege further and capture the city in time before his army met the Grand Army, despite capturing several of the eastern districts of the city including Hagensberg and Thorensberg. After several hours of deliberation among the Rudanian command, on 6 December the Tsar eventually authorised the withdrawal of the Army of the South to [[modohn]], 130 km east of Riege, to more suitable terrain and to avoid becoming cornered by the Grand Army.
+
+#### Battle of Modohn
+
+Gustaf directed his forces to Modohn, recognising he was on the cusp of achieving victory in the campaign. The two sides met on 10 December, the Tsar having rendezvoused with the remaining forces of General Suvorov including Olaf III's Karjanian contingent; the Skjarns numbered roughly 40,000 while the Rudanian-Karjanian army numbered 50,000. The [[battle-of-modohn-1751|Battle of Modohn]] began on 11 December with the Skjarnish army conducting another Gå-på charge after artillery preparation. Despite fierce resistance and hand-to-hand combat in dug defensive positions, the Skjarns were able to capture the first line of the Rudanian defence after day-long fighting lasting nearly 14 hours and roughly 4,000-6,000 Skjarnish and 6,000-8,000 Rudanian losses.
+
+Seeking to preserve his forces, Tsar Gregory authorised an overnight withdrawal. The Army of the South re-entered Rudanian territory east of Mitau on 15 December while the Karjanian army of Olaf III returned to home territory via the Mitau-Sikov-Pietari route, thus concluding the First Upper Suebian Campaign in a Skjarnish victory. The remaining Rudanian garrisons posted in captured towns in Livonia withdrew by January 1752.
+
+## Strålholm Negotiations (1752-53)
+
+WIP.
