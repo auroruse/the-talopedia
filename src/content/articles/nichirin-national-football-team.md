@@ -11,7 +11,7 @@ infobox:
   - { label: "Association", value: "Nichirian Football Association (NFA)" }
   - { label: "Confederation", value: "Eastern" }
   - { label: "Manager", value: ":img[/assets/flags/askurias.png] [[josue-alferinho|Josué Alferinho]]" }
-  - { label: "Most Caps", value: ":flag[nichirin] [[takeru-mikado]] (216)" }
+  - { label: "Most Caps", value: ":flag[nichirin] [[takeru-mikado]] (223)" }
   - { label: "Top Scorer", value: ":flag[nichirin] Sōichirō Hidaka (91)" }
   - { label: "Home Stadium", value: "Tadamune Kuronami National Stadium, [[mizuhara]]" }
   - { label: "AFA Code", value: "NCH" }
@@ -37,7 +37,7 @@ infobox:
   - { label: "Best Result", value: "Champions (1914, 1930, 1932, 1935)" }
 ---
 
-The **Nichirin national football team** (全日輪蹴球代表, *Zen-Nichirin Shūkyū Daihyō*), nicknamed the **Crimson-Red Calamity** (真紅の災厄, *Shinku no Saiyaku*), represents [[nichirin]] in international association football. It is controlled by the Nichirian Football Association (NFA). As the first country in [[valtheria]] to adopt football, it shares the record for [[afa-world-cup|World Cup]] titles, with three, and is the only nation to have won the [[afa-nations-league|Nations League]]. Nichirin has been among the world's leading national teams since [[great-war|the Great War]] and has had the best competitive record of any nation since the appointment of head coach [[josue-alferinho|Josué Alferinho]] after the 1932 World Cup.
+The **Nichirin national football team** (全日輪蹴球代表, *Zen-Nichirin Shūkyū Daihyō*), nicknamed the **Crimson-Red Calamity** (真紅の災厄, *Shinku no Saiyaku*), represents [[nichirin]] in international association football. It is controlled by the Nichirian Football Association (NFA). As the first country in [[valtheria]] to adopt football, it holds the record for [[afa-world-cup|World Cup]] titles, with four, and is the only nation to have won the [[afa-nations-league|Nations League]]. Nichirin has been among the world's leading national teams since [[great-war|the Great War]] and has had the best competitive record of any nation since the appointment of head coach [[josue-alferinho|Josué Alferinho]] after the 1932 World Cup.
 
 ## History
 
@@ -79,7 +79,7 @@ Nichirin qualified for the 1934 World Cup in the E.S.U. without conceding a goal
 
 On September 30, 1934, a bomb in the dressing room at Dynamo Mizuhara's training ground, beside the Tadamune Kuronami National Stadium, killed four players from the 1934 World Cup squad: Mitsui and Bashira of the Gorin, and the defenders Akira Nagumo and Yoshikazu Takanen. The Ministry of the Interior stated that the explosion was not accidental; no arrests have been announced. Regardless, without the four, Nichirin topped the Eastern Conference's first qualifying tournament unbeaten and qualified for the 1935 World Cup in [[skjarnland]].
 
-As of November 29, 1934, after the match against [[cahaya-national-football-team|Cahaya]] in the Eastern Conference Qualifiers for the 1935 World Cup, Nichirin under Alferinho has a record of 54 wins, 5 draws, and 6 losses, with 201 goals scored and 44 conceded with a win rate of 83.1%.
+As of the 1935 World Cup final, a 1-0 win over Cortesia for a fourth title, Nichirin under Alferinho has a record of 61 wins, 5 draws, and 6 losses, with 222 goals scored and 48 conceded with a win rate of 84.7%.
 
 ## Team Image
 
@@ -113,44 +113,44 @@ The rivalry with neighboring Rudania, a communist state, is primarily political.
 
 ## Current Squad
 
-The following 22 players were called up to the Eastern Conference Qualifiers for the 1935 World Cup. Caps and goals are accurate as of November 29, 1934, after the match against Cahaya.
+The following 22 players were called up for the 1935 World Cup. Caps and goals are accurate as of the end of the tournament, after the final against Cortesia.
 
 <table>
 <tr><th>Position</th><th>Player</th><th>Date of Birth</th><th>Caps</th><th>Goals</th><th>Club</th></tr>
-<tr><td>GK</td><td>[[eisuke-sato]]</td><td>:date[1899-03-03|age]</td><td>178</td><td>0</td><td>:flag[nichirin] [[kyowa-naginomiya|Kyōwa Naginomiya]]</td></tr>
+<tr><td>GK</td><td>[[eisuke-sato]]</td><td>:date[1899-03-03|age]</td><td>185</td><td>0</td><td>:flag[nichirin] [[kyowa-naginomiya|Kyōwa Naginomiya]]</td></tr>
 <tr><td>GK</td><td>Akihisa Kubo</td><td>:date[1904-06-15|age]</td><td>6</td><td>0</td><td>:flag[nichirin] [[locomotive-fuchumachi|Locomotive Fūchumachi]]</td></tr>
-<tr><td>DF</td><td>Daigo Takanashi</td><td>:date[1899-07-08|age]</td><td>179</td><td>7</td><td>:flag[nichirin] Spartak Kanagawa</td></tr>
-<tr><td>DF</td><td>Kōzō Fujise</td><td>:date[1908-04-17|age]</td><td>123</td><td>8</td><td>:flag[nichirin] Dynamo Mizuhara<br></td></tr>
-<tr><td>DF</td><td>Aonuma Jingūji</td><td>:date[1896-01-12|age]</td><td>95</td><td>3</td><td>:flag[karjania] [[union-nowgorod]]</td></tr>
-<tr><td>DF</td><td>[[genma-nishigawa]]</td><td>:date[1909-06-02|age]</td><td>78</td><td>0</td><td>:flag[nichirin] [[viridia-shikisen]]</td></tr>
-<tr><td>DF</td><td>Kazuyoshi Hiranuma</td><td>:date[1903-01-28|age]</td><td>59</td><td>3</td><td>:flag[nichirin] Spartak Kanagawa</td></tr>
-<tr><td>DF</td><td>[[gen-fija]]</td><td>:date[1910-08-09|age]</td><td>59</td><td>0</td><td>:flag[nichirin] [[ayanami-sei-hachiman|Ayanami Sei-Hachiman]]</td></tr>
+<tr><td>DF</td><td>Daigo Takanashi</td><td>:date[1899-07-08|age]</td><td>186</td><td>7</td><td>:flag[nichirin] Spartak Kanagawa</td></tr>
+<tr><td>DF</td><td>Kōzō Fujise</td><td>:date[1908-04-17|age]</td><td>129</td><td>9</td><td>:flag[nichirin] Dynamo Mizuhara<br></td></tr>
+<tr><td>DF</td><td>[[genma-nishigawa]]</td><td>:date[1909-06-02|age]</td><td>80</td><td>0</td><td>:flag[nichirin] [[viridia-shikisen]]</td></tr>
+<tr><td>DF</td><td>Kazuyoshi Hiranuma</td><td>:date[1903-01-28|age]</td><td>66</td><td>3</td><td>:flag[nichirin] Spartak Kanagawa</td></tr>
+<tr><td>DF</td><td>[[gen-fija]]</td><td>:date[1910-08-09|age]</td><td>66</td><td>0</td><td>:flag[nichirin] [[ayanami-sei-hachiman|Ayanami Sei-Hachiman]]</td></tr>
 <tr><td>DF</td><td>Takamasa Hida</td><td>:date[1908-09-03|age]</td><td>8</td><td>0</td><td>:flag[nichirin] Shizuku Athletic</td></tr>
-<tr><td>DF</td><td>Naoto Umenokōji</td><td>:date[1915-04-05|age]</td><td>2</td><td>0</td><td>:flag[nichirin] Imperial Sports Society</td></tr>
-<tr><td>MF</td><td>Takeru Mikado</td><td>:date[1897-02-04|age]</td><td>216</td><td>29</td><td>:flag[varahmehr] [[sep-h-kuhestan|Sepāh Kuhestan]]</td></tr>
-<tr><td>MF</td><td>[[makoto-kishima]]</td><td>:date[1905-09-14|age]</td><td>155</td><td>23</td><td>:flag[nichirin] [[tsukumo-shinkeisei]]</td></tr>
-<tr><td>MF</td><td>[[kiyoshi-torigoe]]</td><td>:date[1902-03-30|age]</td><td>144</td><td>38</td><td>:flag[nichirin] Imperial Sports Society</td></tr>
-<tr><td>MF</td><td>Shō Itoshi</td><td>:date[1908-08-23|age]</td><td>123</td><td>46</td><td>:flag[alemannia] [[arminia-berelstein]]</td></tr>
-<tr><td>MF</td><td>Luca Higashiyama</td><td>:date[1908-05-30|age]</td><td>121</td><td>36</td><td>:flag[nichirin] Viridia Shikisen</td></tr>
-<tr><td>MF</td><td>[[rui-oe|Rui Ōe]]</td><td>:date[1909-02-19|age]</td><td>81</td><td>32</td><td>:flag[nichirin] Dynamo Mizuhara</td></tr>
-<tr><td>MF</td><td>Ikki Dazai</td><td>:date[1906-05-16|age]</td><td>41</td><td>6</td><td>:flag[nichirin] Viridia Shikisen</td></tr>
-<tr><td>MF</td><td>[[hiro-oshiro]]</td><td>:date[1913-07-21|age]</td><td>29</td><td>7</td><td>:flag[nichirin] Dynamo Mizuhara</td></tr>
-<tr><td>MF</td><td>Gaku Ibusuki</td><td>:date[1914-08-11|age]</td><td>26</td><td>5</td><td>:img[/assets/flags/askurias.png] [[fc-barcino]]</td></tr>
-<tr><td>MF</td><td>Daichi Komatsubara</td><td>:date[1912-06-27|age]</td><td>3</td><td>0</td><td>:flag[nichirin] Shizuku Athletic</td></tr>
-<tr><td>FW</td><td>[[ganzorig-erdene]]</td><td>:date[1909-03-26|age]</td><td>106</td><td>52</td><td>:flag[nichirin] [[orughan-fc]]</td></tr>
-<tr><td>FW</td><td>Hiromu Furuhashi</td><td>:date[1907-04-02|age]</td><td>35</td><td>12</td><td>:flag[nichirin] Shizuku Athletic</td></tr>
+<tr><td>DF</td><td>Naoto Umenokōji</td><td>:date[1915-04-05|age]</td><td>3</td><td>0</td><td>:flag[nichirin] Imperial Sports Society</td></tr>
+<tr><td>DF</td><td>Kenshirō Unagami</td><td>:date[1911-05-19|age]</td><td>1</td><td>0</td><td>:flag[nichirin] Shizuku Athletic</td></tr>
+<tr><td>MF</td><td>Takeru Mikado</td><td>:date[1897-02-04|age]</td><td>223</td><td>30</td><td>:flag[varahmehr] [[sep-h-kuhestan|Sepāh Kuhestan]]</td></tr>
+<tr><td>MF</td><td>[[makoto-kishima]]</td><td>:date[1905-09-14|age]</td><td>162</td><td>23</td><td>:flag[nichirin] [[tsukumo-shinkeisei]]</td></tr>
+<tr><td>MF</td><td>[[kiyoshi-torigoe]]</td><td>:date[1902-03-30|age]</td><td>151</td><td>40</td><td>:flag[nichirin] Imperial Sports Society</td></tr>
+<tr><td>MF</td><td>Shō Itoshi</td><td>:date[1908-08-23|age]</td><td>130</td><td>49</td><td>:flag[alemannia] [[arminia-berelstein]]</td></tr>
+<tr><td>MF</td><td>Luca Higashiyama</td><td>:date[1908-05-30|age]</td><td>128</td><td>39</td><td>:flag[nichirin] Viridia Shikisen</td></tr>
+<tr><td>MF</td><td>[[rui-oe|Rui Ōe]]</td><td>:date[1909-02-19|age]</td><td>88</td><td>35</td><td>:flag[nichirin] Dynamo Mizuhara</td></tr>
+<tr><td>MF</td><td>Ikki Dazai</td><td>:date[1906-05-16|age]</td><td>48</td><td>7</td><td>:flag[nichirin] Viridia Shikisen</td></tr>
+<tr><td>MF</td><td>[[hiro-oshiro]]</td><td>:date[1913-07-21|age]</td><td>36</td><td>7</td><td>:flag[nichirin] Dynamo Mizuhara</td></tr>
+<tr><td>MF</td><td>Gaku Ibusuki</td><td>:date[1914-08-11|age]</td><td>31</td><td>5</td><td>:img[/assets/flags/askurias.png] [[fc-barcino]]</td></tr>
+<tr><td>MF</td><td>Itsuki Toguchi</td><td>:date[1912-08-04|age]</td><td>2</td><td>0</td><td>:flag[nichirin] Ayanami Sei-Hachiman</td></tr>
+<tr><td>FW</td><td>[[ganzorig-erdene]]</td><td>:date[1909-03-26|age]</td><td>113</td><td>58</td><td>:flag[nichirin] [[orughan-fc]]</td></tr>
+<tr><td>FW</td><td>Hiromu Furuhashi</td><td>:date[1907-04-02|age]</td><td>41</td><td>13</td><td>:flag[nichirin] Shizuku Athletic</td></tr>
 </table>
 
 ## Records
 
-Takeru Mikado holds the record for appearances, with 216 caps since his debut in 1918; defender Daigo Takanashi and goalkeeper Eisuke Sato are next, with 179 and 178. Sōichirō Hidaka has been the record goalscorer since 1914, with 91 goals in 103 matches. The closest active players are forwards Ganzorig Erdene, with 52 goals, and Shō Itoshi, with 46.
+Takeru Mikado holds the record for appearances, with 223 caps since his debut in 1918; defender Daigo Takanashi and goalkeeper Eisuke Sato are next, with 186 and 185. Sōichirō Hidaka has been the record goalscorer since 1914, with 91 goals in 103 matches. The closest active players are forwards Ganzorig Erdene, with 58 goals, and Shō Itoshi, with 49.
 
 ## Honors
 
 ### Global
 
 - **AFA World Cup**
-  - :img[/assets/icons/gold-medal.webp] **Champions (3):** 1914, 1930, 1932
+  - :img[/assets/icons/gold-medal.webp] **Champions (4):** 1914, 1930, 1932, 1935
   - :img[/assets/icons/silver-medal.webp] Runners-Up (1): 1924
 - **AFA Nations League**
   - :img[/assets/icons/gold-medal.webp] **Champions (3):** 1932, 1933, 1934
