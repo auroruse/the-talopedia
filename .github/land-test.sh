@@ -137,6 +137,60 @@ git checkout -q --detach $Y; sed -i '' 's/^Delegates/Deputies/' $T; git $cfg com
 check "lands with main's word and the writer's number" '[[ $RESULT == ready ]] && git show :$T | grep -qxF "Deputies${NB}(Chamber) and 30 more."'
 check "and nothing to report"       '[[ ! -s $S/notes ]]'
 
+# One writer's earlier save, landed by the workflow under their name.
+landed() { GIT_COMMITTER_NAME='github-actions[bot]' git -c user.email=t@t -c user.name=$WRITER commit -qam "albinya: first save (#1)"; }
+
+print "the writer saved again before the last save had landed"
+git reset -q --hard
+WRITER=kiohit05-cyber
+git show $X:$P > $S/s1; print "A section the writer added in the first save, long enough to count." >> $S/s1
+# The second save moves that section up under the title and adds another at the end.
+{ sed -n 1,10p $S/s1; tail -n 1 $S/s1; sed -n '11,$p' $S/s1 | sed '$d'; print "Added in the second save, at the end of the page."; } > $S/s2
+pr $X $P $S/s2
+git checkout -q --detach $X; cp $S/s1 $P; landed; land
+check "lands exactly as sent"       '[[ $RESULT == ready ]] && git show :$P | cmp -s - $S/s2'
+check "the moved section once"      '[[ $(git show :$P | grep -c "^A section the writer added") == 1 ]]'
+check "and nothing to report"       '[[ ! -s $S/notes ]]'
+
+print "a page reopened before the last save went live"
+git reset -q --hard
+# The second save comes from the copy first opened, without the first.
+{ sed -n 1,10p $S/s1; print "Added from a copy reopened before the first save went live."; sed -n '11,$p' $S/s1 | sed '$d'; } > $S/s3
+pr $X $P $S/s3
+git checkout -q --detach $X; cp $S/s1 $P; landed; land
+check "keeps the first save"        '[[ $RESULT == ready ]] && git show :$P | grep -qx "A section the writer added in the first save, long enough to count."'
+check "and the second"              'git show :$P | grep -qx "Added from a copy reopened before the first save went live."'
+WRITER=
+
+print "only the paragraphs both changed go word by word"
+git reset -q --hard
+C=src/content/articles/land-test-paras.md
+git checkout -q --detach $X
+printf '%s\n' "The army crossed the river in the spring and the city fell in the summer." \
+  "The navy held the bay through the winter and the fleet sailed in the spring." \
+  "The treaty was signed in the autumn and the war ended in the winter." \
+  "The king returned to the city and the court sat in the summer." > $C
+git add $C; git $cfg commit -qm opened; Y=$(git rev-parse HEAD)
+sed -e '2s/^The navy/The fleet/' -e '4s/^The king/The queen/' $C > $S/w
+pr $Y $C $S/w
+git checkout -q --detach $Y; sed -i '' -e '1s/the city fell/the town fell/' -e '2s/in the spring\.$/in the autumn./' $C; git $cfg commit -qam main; land
+printf '%s\n' "The army crossed the river in the spring and the town fell in the summer." \
+  "The fleet held the bay through the winter and the fleet sailed in the autumn." \
+  "The treaty was signed in the autumn and the war ended in the winter." \
+  "The queen returned to the city and the court sat in the summer." > $S/want
+check "lands with both sides' words, every paragraph whole" '[[ $RESULT == ready ]] && git show :$C | cmp -s - $S/want'
+check "and nothing to report"       '[[ ! -s $S/notes ]]'
+
+# The real thing: Albinya's 80 KB page as #139 sent it from the copy of 3e4722b, onto
+# main with #137 on it. Two paragraphs collide; going word by word over the whole page
+# wove the rest together and put five sections in twice.
+print "a long page where two paragraphs collide"
+git reset -q --hard
+git show 4c1e087:$P > $S/a
+pr 3e4722b $P $S/a
+git checkout -q --detach d3ad60a; land
+check "lands exactly as sent"       '[[ $RESULT == ready ]] && git show :$P | cmp -s - $S/a'
+
 cd "$REPO"
 git worktree remove --force "$WT"
 rm -rf $S

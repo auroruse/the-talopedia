@@ -84,6 +84,23 @@ function basedOn(path) {
   try { git('cat-file', '-e', `${from}^{commit}`); return from; } catch { return null; }
 }
 
+/** Whether every change to a page on main since it was opened is one of this writer's own saves landing. */
+function ownSaves(path, from) {
+  const log = git('log', '--format=%an%x09%cn%x09%s', `${from}..${ONTO}`, '--', path).trim().split('\n').filter(Boolean);
+  return log.length > 0 && log.every((l) => {
+    const [author, committer, subject] = l.split('\t');
+    return author === WRITER && committer === 'github-actions[bot]' && /\(#\d+\)$/.test(subject);
+  });
+}
+
+/** Whether the writer's text holds what main added since it was opened: half its new paragraphs, word for word. */
+function holds(ours, base, theirs) {
+  const paras = (b) => b.toString('utf8').split('\n').filter((l) => l.trim().length > 20);
+  const was = new Set(paras(base)), sent = new Set(paras(theirs));
+  const added = [...new Set(paras(ours))].filter((l) => !was.has(l));
+  return added.length > 0 && added.filter((l) => sent.has(l)).length * 2 >= added.length;
+}
+
 /** How far apart two versions of a file are: the characters in the words that differ. */
 function distance(a, b) {
   let n = 0;
@@ -128,18 +145,55 @@ function mergeFile(ours, base, theirs, ...opt) {
   }
 }
 
+// Conflict markers no line of a page could be taken for: a setext heading is a run of =.
+const MARK = 40;
+
 /**
  * Main's version and the writer's, merged against the copy the writer opened: line by
- * line as git merges, and word by word where that collides. Each word, and each run of
- * space between words, goes to git as a line of its own, JSON-quoted so that a line
- * break inside a run comes back intact.
+ * line as git merges, and word by word only inside the paragraphs that collide. Going
+ * word by word over the whole page lined up common words across unrelated paragraphs
+ * and wove them together: the merges of #138 and #139 left Albinya's page reading "low
+ * plains characterized by east" with five of its sections in twice.
  */
 function merge(path, ours, base, theirs) {
-  const byLine = mergeFile(ours, base, theirs);
+  const byLine = mergeFile(ours, base, theirs, '--diff3', `--marker-size=${MARK}`);
   if (byLine.clean) return byLine.text;
+  const out = [];
+  let side = null, hunk = null;
+  for (const line of byLine.text.toString('utf8').split(/(?<=\n)/)) {
+    const bare = line.replace(/\n$/, '');
+    if (bare.startsWith(`${'<'.repeat(MARK)} `)) { side = 'ours'; hunk = { ours: '', base: '', theirs: '' }; continue; }
+    if (side && bare.startsWith(`${'|'.repeat(MARK)} `)) { side = 'base'; continue; }
+    if (side && bare === '='.repeat(MARK)) { side = 'theirs'; continue; }
+    if (side && bare.startsWith(`${'>'.repeat(MARK)} `)) { out.push(collide(path, hunk, out.join('').slice(-200))); side = null; continue; }
+    if (side) hunk[side] += line; else out.push(line);
+  }
+  return out.join('');
+}
 
-  const words = (buf) => buf.toString('utf8').split(/(\s+)/).filter((t) => t !== '')
-    .map((t) => JSON.stringify(t)).join('\n') + '\n';
+/** How many words two passages differ by: all but the most they share in the same order. */
+function apart(a, b) {
+  const x = a.split(/\s+/).filter(Boolean), y = b.split(/\s+/).filter(Boolean);
+  let row = new Array(y.length + 1).fill(0);
+  for (const w of x) {
+    const next = [0];
+    for (let j = 0; j < y.length; j++) next.push(w === y[j] ? row[j] + 1 : Math.max(row[j + 1], next[j]));
+    row = next;
+  }
+  return x.length + y.length - 2 * row[y.length];
+}
+
+/**
+ * Paragraphs both sides changed. Where main's lie on the way from the copy the writer
+ * opened to what the writer sent, every word main changed is changed the same way in
+ * the writer's too: one writer saving a page twice before the first save had landed
+ * sends text that already holds it, and theirs stands whole. Otherwise the two go word
+ * by word, each word, and each run of space between words, a line of its own to git,
+ * JSON-quoted so that a line break inside a run comes back intact.
+ */
+function collide(path, { ours, base, theirs }, lead) {
+  if (apart(base, ours) + apart(ours, theirs) === apart(base, theirs)) return theirs;
+  const words = (s) => s.split(/(\s+)/).filter((t) => t !== '').map((t) => JSON.stringify(t)).join('\n') + '\n';
   const byWord = mergeFile(words(ours), words(base), words(theirs), '--diff3');
   const out = [];
   let side = null, hunk = null;
@@ -147,7 +201,7 @@ function merge(path, ours, base, theirs) {
     if (line.startsWith('<<<<<<< ')) { side = 'ours'; hunk = { ours: [], base: [], theirs: [] }; continue; }
     if (line.startsWith('||||||| ') && side) { side = 'base'; continue; }
     if (line === '=======' && side) { side = 'theirs'; continue; }
-    if (line.startsWith('>>>>>>> ') && side) { out.push(...settle(path, hunk, out)); side = null; continue; }
+    if (line.startsWith('>>>>>>> ') && side) { out.push(...settle(path, hunk, [lead, ...out])); side = null; continue; }
     if (!line) continue;
     (side ? hunk[side] : out).push(JSON.parse(line));
   }
@@ -177,12 +231,12 @@ const plan = changes.map((c) => {
   // A picture is only ever added, so it has nothing to be merged against.
   if (c.path.startsWith('public/assets/') || PICK.test(c.path)) return { ...c, base: null };
   const from = basedOn(c.path);
-  if (from) return { ...c, base: blob(from, c.path) };
+  if (from) return { ...c, base: blob(from, c.path), from };
   const theirs = c.gone ? null : blob(PR_HEAD, c.path);
   return { ...c, base: theirs && nearest(c.path, theirs) };
 });
 
-for (const { path, gone, base } of plan) {
+for (const { path, gone, base, from } of plan) {
   const theirs = gone ? null : blob(PR_HEAD, path);
   const ours = blob(ONTO, path);
   if (theirs === ours) continue;                         // already so on main
@@ -197,6 +251,12 @@ for (const { path, gone, base } of plan) {
   // Main has moved since the writer opened it. Deleting a page someone has since
   // edited, or adding one at a name someone has since taken, is theirs to settle.
   if (!base || !theirs || !ours) done(`wait ${path} changed on main since it was opened`);
+  // All main gained since was this writer's own earlier saves, and the text sent now
+  // holds them: one writer saving a page again before the last save had landed, every
+  // save still naming the copy first opened. Merged against that copy, the earlier saves
+  // read as someone else's work to keep: a section moved between saves came in twice,
+  // and a paragraph edited twice went word by word against itself. The latest stands.
+  if (from && ownSaves(path, from) && holds(bytes(ours), bytes(base), bytes(theirs))) { put(path, bytes(theirs)); continue; }
   put(path, merge(path, bytes(ours), bytes(base), bytes(theirs)));
 }
 done('ready');
