@@ -2,17 +2,16 @@
 title: "Salishia"
 type: overview
 nation: salishia
-navbox: site
 infobox:
   - { image: "/assets/flags/salishia.png", caption: "Flag" }
-  - { label: "Motto", value: "\"Land of The Three\"" }
+  - { label: "Motto", value: "\"Land of The Free\"" }
   - { label: "Anthem", value: "\"Grand Rivers!\"" }
   - { label: "Capital", value: "Port Mercer" }
   - { label: "Largest City", value: "Port Mercer" }
   - { section: "Administration" }
   - { label: "Government", value: "Unitary Constitutional Republic" }
-  - { label: "President", sub: true, value: "Thomas Vance" }
-  - { label: "Senior Advisors", sub: true, value: "Benjamin Wilkins" }
+  - { label: "President", value: "Thomas Vance" }
+  - { label: "Senior Advisors", value: "Benjamin Wilkins" }
   - { label: "Legislature", value: "Rule by Law" }
   - { label: "Formation", value: ":date[1822-08-14|ago]" }
   - { section: "Demographics" }
@@ -146,9 +145,15 @@ Granted via the “Birthright Act of 1901”, all people born in the territory o
 
 The Birthright Act was passed in hopes of raising the population, therefore, the economy. However it is also abused against the natives, with the government using it as loose justification for further persecution.
 
-| Rank | City Name | Urban Population | Subdivision |
+| Rank | City | Population | District |
 | --- | --- | --- | --- |
-
-<div class="imgrid">
-<figure style="flex:1.538"><img src="/assets/old-media/media/salishia-4.jpg" alt=""><figcaption></figcaption></figure>
-</div>
+| 1 | Port Mercer | 3,742,000 | Mercer |
+| 2 | Port Columbia | 2,642,000 | Columbia |
+| 3 | Salish City | 2,124,000 | Oceanside |
+| 4 | Hudson | 394,000 | S. Blanshard |
+| 5 | Penance | 242,000 | W. Penance |
+| 6 | Chemeketa | 184,000 | Plains |
+| 7 | New Colter | 162,000 | E. Columbia |
+| 8 | Utopia | 114,000 | E. Columbia |
+| 9 | Carbopolis | 114,000 | Soot |
+| 10 | Riverfront | 94,000 | Clearwater |
