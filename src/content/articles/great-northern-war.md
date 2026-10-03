@@ -41,17 +41,17 @@ infobox:
   - { section: "Commanders and Leaders" }
   - pair:
       - items:
-          - ":flag[skjarnland] Gustaf V"
-          - "  :img[https://i.imgur.com/pUInfXv.png|outline] Mattias I Waldemar"
-          - "  :img[https://i.imgur.com/kUtmMY1.png|outline] Feodor Khrunov"
-          - ":flag[cortesia] Janusz Borkowski"
+          - ":flag[skjarnland] [[gustaf-v-skjarnland|Gustaf V]]"
+          - "  :img[https://i.imgur.com/pUInfXv.png|outline] [[mattias-i-waldemar]]"
+          - "  :img[https://i.imgur.com/kUtmMY1.png|outline] [[feodor-khrunov]]"
+          - ":flag[cortesia] [[janusz-borkowski]]"
           - "(1757-1759)"
       - items:
-          - ":img[https://i.imgur.com/aWqehr6.png|outline] Gregory III"
-          - ":img[https://i.imgur.com/foVFHlA.png|outline] Olaf III"
-          - ":img[https://i.imgur.com/S7wVWHo.png|outline] Heinrich I"
-          - ":flag[elvester] Edward IV"
-          - ":flag[cortesia] Maciej Głowacki"
+          - ":img[https://i.imgur.com/aWqehr6.png|outline] [[tsar-gregory-iii|Gregory III]]"
+          - ":img[https://i.imgur.com/foVFHlA.png|outline] [[olaf-iii-karjania|Olaf III]]"
+          - ":img[https://i.imgur.com/S7wVWHo.png|outline] [[heinrich-i-nordmark|Heinrich I]]"
+          - ":flag[elvester] [[king-edward-iv|Edward IV]]"
+          - ":flag[cortesia] [[maciej-glowacki|Maciej Głowacki]]"
           - "(1763-64)"
     depth: 3
     guides: true
@@ -147,7 +147,7 @@ The response from Kjellberg was delayed due to confusion and still-vacant positi
 
 <figure class="float float-right" style="width:300px"><img src="https://i.imgur.com/VE3iNq0.jpeg" alt="'Vengeance of Toksavaara' by Aleksei Marchenko (1873)."><figcaption>'Vengeance of Toksavaara' by Aleksei Marchenko (1873).</figcaption></figure>
 
-On 23 October 1751, Karjania honoured its alliance with Rudania and declared war on Skjarnland. [[olaf-iii-karjania|King Olaf III]] personally led his armies, numbering 30,000, into Skjarnish-controlled Estiland and Sydspetsen, with the goal of retaking Roudanjärvi and severing Skjarnland's land connection to Livonia to delay any reinforcements. Tsar Gregory dispatched a force of 30,000 to assist Karjania, which advanced from forward positions around [[sikov]]. The Skjarnish [[skjarnish-army-of-estiland|Army of Estiland]], numbering 20,000 and stationed west of  Roudanjärvi was dispatched to Toksavaara to confront Rudanian forces approaching from the east and Karjanian forces approaching from the north, who numbered 40,000.
+On 23 October 1751, Karjania honoured its alliance with Rudania and declared war on Skjarnland. [[olaf-iii-karjania|King Olaf III]] personally led his armies, numbering 30,000, into Skjarnish-controlled Estiland and Sydspetsen, with the goal of retaking Roudanjärvi and severing Skjarnland's land connection to Livonia to delay any reinforcements. Tsar Gregory dispatched a force of 20,000 to assist Karjania, which advanced from forward positions around [[sikov]]. The Skjarnish [[skjarnish-army-of-estiland|Army of Estiland]], numbering 20,000 and stationed west of  Roudanjärvi was dispatched to Toksavaara to confront Rudanian forces approaching from the east and Karjanian forces approaching from the north, who numbered 30,000.
 
 Despite being numerically inferior, Skjarnish commander Colonel-General [[felix-tomasson]] chose to commit his forces to battle near the same location where Skjarnish forces had won in 1685, motivated by symbolism and the belief that the terrain still favoured the defender. On 30 October, Tomasson's army met the Rudanian-Karjanian force outside the city, beginning the [[battle-of-toksavaara-1751|Battle of Toksavaara]]. Skjarnish forces dug defensive trenches and made use of their natural elevation to grind the advancing Rudanians down and expose them to concentrated artillery fire and musket volleys.
 
@@ -193,7 +193,7 @@ Seeking to preserve his forces, Tsar Gregory authorised an overnight withdrawal.
 
 <figure class="float float-right" style="width:300px"><img src="https://i.imgur.com/stfBKeq.jpeg" alt="Steinfelt Palace, Strålholm, was originally built in 1452 but underwent a complete renovation under Gustaf IV from 1718-1724."><figcaption>Steinfelt Palace, Strålholm, was originally built in 1452 but underwent a complete renovation under Gustaf IV from 1718-1724.</figcaption></figure>
 
-### Strålholm Negotiations
+### Strålholm Negotiations (1752)
 
 #### Armistice and Early Talks
 
@@ -203,7 +203,7 @@ Oderberg offered Skjarnland a [status quo ante bellum](https://en.wikipedia.org/
 
 #### Royal Council Deliberation
 
-Internal sessions of the [[skjarnish-royal-council]] conducted in parallel with the peace negotiations revealed anxiety regarding the growing power of Rudania. Löwenhielm pressured Gustaf to accept Oderberg's terms, which would have quickly secured peace while demonstrating to the rest of Evria that Skjarnland remained the supreme force in the North, following its military victories. However, Gustaf believed that Rudania still posed both a near-term and long-term danger, citing its vast reserves of manpower and resources, most of which was unused during the war. Furthermore, Marshal Hjortland conveyed reports from Skjarnish soldiers, which expressed surprise at the performance of their Rudanian counterparts and their tactical adeptness in contrast to the previous war.
+Internal sessions of the [[skjarnish-royal-council]] conducted in parallel with the peace negotiations demonstrated anxiety regarding the growing power of Rudania. Löwenhielm pressured Gustaf to accept Oderberg's terms, which would have quickly secured peace while demonstrating to the rest of Evria that Skjarnland remained the supreme force in the North, following its military victories. However, Gustaf believed that Rudania still posed both a near-term and long-term danger, citing its vast reserves of manpower and resources, most of which was unused during the war. Furthermore, Marshal Hjortland conveyed reports from Skjarnish soldiers, which expressed surprise at the performance of their Rudanian counterparts and their tactical adeptness in contrast to the previous war.
 
 Hjortland and Gustaf disagreed on a course of action despite agreement on the threat posed by Rudania; Hjortland advocated for an acceptance of Oderburg's peace terms, a focus on fortifying Livonia and Estiland, and using the peace to recover before another war with Rudania inevitably began. Gustaf, however, believed that a decisive war was required to permanently destroy Rudania before it could dislodge Skjarnland as the dominant Northern Evrian power.
 
@@ -211,8 +211,38 @@ Hjortland and Gustaf disagreed on a course of action despite agreement on the th
 
 Negotiations continued in Strålholm throughout mid-to-late 1752. Oderburg expressed a willingness to negotiate prisoner and body transfers and limited border guarantees, but refused to surrender any claims on Skjarnish-held territory in the Upper Suebian nor agree to any terms that implied acceptance of Skjarnish supremacy in the region, a position also adopted by Svinhufvud's delegation.
 
-Gustaf's confidence in the progress of negotiations fell as talks effectively ceased by winter and reports of Rudanian military activity on the frontier, including continued military recruitment and the restitution of units destroyed in the campaign, were received. Rudanian diplomats insisted these were routine defensive measures, but Gustaf became convinced that Rudania was preparing for another war in the near-future, vindicating his belief in the need for a decisive war against Rudania. Although Tsar Gregory III did indeed have the intent to restart a war against Skjarnland within 5-10 years, no immediate plans were made as it was assumed that Skjarnland would be interested in peace after winning the Upper Suebian campaign despite formally remaining in a state of war.
+Skjarnish confidence in the progress of negotiations fell as talks effectively ceased by winter. This was combined with reports from Skjarnish military intelligence that Rudania was continuing conscription and restituting units destroyed in the campaign. Rudanian diplomats insisted these were routine defensive measures, but Gustaf was convinced that Rudania was preparing for another war in the immediate future, vindicating his belief in the need for a decisive and pre-emptive war. Although Tsar Gregory III did indeed have the intent to restart a war against Skjarnland within 5-10 years, no immediate plans were made as it was assumed that Skjarnland would be interested in peace after winning the Upper Suebian campaign despite formally remaining in a state of war.
 
-### Preparation for Invasion
+### Preparation for Invasion (1752-53)
 
-On 2 December 1752, Gustaf announced to the Royal Council that he intended to pursue the decisive war against Rudania, a proposition that was controversial but ultimately accepted, with Gustaf holding final executive authority regardless. Throughout winter, Hjortland and Gustaf drafted plans for an invasion of Rudania, the finalised plan envisioning a rapid march to Radagorsk, the destruction of Rudanian field armies, and the establishment of a client state in Western Rudania that would create a buffer between Skjarnland and what remained of Rudania.
+In December 1752, Gustaf announced to the Royal Council that he intended to pursue war against Rudania, a proposition that was controversial but ultimately accepted, him holding final executive authority regardless. Throughout the winter of 1752-53, the Skjarnish military drafted plans for an invasion of Rudania, the final version envisioning a rapid march to Radagorsk, the destruction of Rudanian field armies, and the establishment of a client state in Western Rudania that would serve as a buffer between Skjarnland and what remained of Rudania.
+
+#### Buildup in Livonia and Estiland
+
+The Grand Army remained stationed in Livonia even after the February 1752 armistice. Military conscription inside Skjarnland continued  and expanded even after the Suebian campaign's conclusion; this was explained by Skjarnish diplomats during the negotiations as a measure to replace losses and a response to Rudania's own military recruitment. By April 1753, Skjarnland amassed roughly 50,000 soldiers which were stationed in Estiland and Livonia.
+
+Skjarnish military buildup was noted by Rudanian scouts, who reported large troop concentrations in Wilna, Mitau, and Toksavaara. In Radagorsk, senior members of the Rudanian government disagreed about Skjarnish intentions; Oderberg proposed that the buildup was a display of force intended to pressure Rudania into making concessions previously proposed by King Gustaf and rejected, but the military, including General Field-Marshal Morgunov held that these were undeniably preparations for war.
+
+#### Rudanian Response
+
+Tsar Gregory judged in February 1753 that Skjarnland intended to invade Rudania within one to two years (i.e. 1754-55), reasoning that Skjarnland required more time to fully prepare for an invasion of Rudania. He thus directed that the Rudanian armies stationed in the West begin defensive preparations, although most remain dispersed along the frontier by May 1753 rather than concentrated into large field armies due to the timeline presented.
+
+## Invasion of Rudania (1753-55)
+
+On 3 May 1753, Gustaf expelled the final Rudanian diplomats that remained in Strålholm, and announced the dissolution of the armistice on 5 May. The following day, Skjarnish forces numbering 55,000 entered Rudanian territory, divided into three main armies: the Northern Army, numbering 20,000, with the goal of capturing Sikov, securing the northern route towards Radagorsk and becoming the principal force defending against any Karjanian effort; the Central Army, numbering 20,000, which was to march east on the Lovatogorod-Verkhovsky-Radogorsk route; and the Southern Army, numbering 15,000, which was to capture Menisku and then converge with parts of the Central Army in [[visibinsk]]. However, all armies carried the banner of the Grand Army alongside their respective standards.
+
+### Northern and Central Offensives (1753)
+
+#### Fall of Sikov
+
+The Skjarnish Northern Army was led by [[johan-larsson|General Johan Larsson]] and entered Rudanian territory from Toksavaara on 6 May. The Rudanian garrison at the border town of [[mashkovo]], numbering 2,000 men, was engaged by 10,000 Skjarns and quickly routed, with 1,000 killed or captured. Larsson's forces arrived at the gates of Sikov on the 7th, and quickly laid siege to it. The city housed the largest garrison on the northern route to Radagorsk, numbering roughly 10,000. Larsson mounted a frontal assault on the southern gate after his artillery arrived and exploited a weakpoint in the Rudanian wall identified by scouts sent days earlier.
+
+The assault initially took heavy casualties, but disorganisation in the Rudanian defence, which lacked a clear commanding officer as the garrison was made of three regiments with commanding officers of the same rank, *Polkovniki* (colonels), along with the outdatedness of the city walls, ultimately doomed Rudanian resistance in the city. On the 9th, 3,000 Rudanian soldiers under Colonel Dmitry Nikolayevich organised a breakout through the northwestern gates, successfully escaping and retreating towards Opochno. The remaining Rudanians in Sikov surrendered on the 12th.
+
+#### Battle of Opochno
+
+General Suvorov, commanding Rudanian forces in the north, immediately ordered his remaining garrisons along the frontier abandoned and regrouped in Opochno. Larsson's advancing army arrived at Opochno on the 15th, meeting Suvorov's army of 20,000. Despite mounting an organised defence using terrain elevation to their advantage, Rudanian forces suffered from being hastily assembled and missing several units given orders to regroup which were still marching to join Suvorov's main force. After one day of battle, Suvorov ordered the abandonment of positions and a withdrawal to Lovatogorod, observing that most of his reinforcements had not come.
+
+#### Battle of Lovatogorod
+
+WIP.
