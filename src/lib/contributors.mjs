@@ -27,6 +27,7 @@ export const ACCOUNT_OF = {
   eivorie: 'Foxomexray',
   giathka: 'the-giathster',
   auritania: 'michaelnguyen2803',
+  salishia: 'evanjcov11-wq',
 };
 
 /**
