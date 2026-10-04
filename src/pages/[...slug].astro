@@ -18,6 +18,11 @@ const { entry } = Astro.props;
 const d = entry.data;
 const headings = entry.rendered?.metadata?.headings ?? [];
 const html = resolveHtml(entry.rendered?.html ?? '');
+// The words a reader is shown in the body of the page, its tables and captions with them;
+// the sidebar is not counted. A tag breaks words apart, as a new cell or paragraph does.
+const words = html.replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, ' ').replace(/<[^>]+>/g, ' ')
+  .replace(/&nbsp;|&#160;|&#xa0;/gi, ' ').replace(/&[#\w]+;/g, '_')
+  .split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
 const lede = ledeOf(entry.body);
 // Explicit coords win; otherwise the map's own table answers for this subject.
 const found = d.coords ? { position: d.coords } : coordsFor(d.title, entry.id);
@@ -32,7 +37,7 @@ const category = categoryOf(d.type);
 // went with the first save from the editor, and Giathka's page lost its navbox that way.
 const navId = d.navbox ?? (d.nation && (navbox(d.nation) ? d.nation : 'site'));
 ---
-<Base title={d.title} description={lede} image={firstImage(d)} headings={headings} coords={coords} nationId={d.nation} authorIds={d.authors} slug={entry.id}>
+<Base title={d.title} description={lede} image={firstImage(d)} headings={headings} coords={coords} nationId={d.nation} authorIds={d.authors} slug={entry.id} words={words}>
   {d.ooc && (
     <p class="notice">
       This article contains out-of-character (OOC) information. Some details presented here are

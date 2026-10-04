@@ -3,7 +3,7 @@ import '../styles/global.css';
 import { url, nation, exists } from '../lib/registry.mjs';
 import { renderInline, asset } from '../lib/inline.mjs';
 
-const { title, description, image = null, headings = [], coords = null, chrome = true, nationId = null, authorIds = null, wide = false, slug = null, editSlug = null, editLabel = 'Edit', view = 'article' } = Astro.props;
+const { title, description, image = null, headings = [], coords = null, chrome = true, nationId = null, authorIds = null, wide = false, slug = null, editSlug = null, editLabel = 'Edit', view = 'article', words = null } = Astro.props;
 const pageTitle = title && title !== 'The Talopedia' ? `${title} - The Talopedia` : 'The Talopedia';
 // A preview needs a whole address; a page with no picture of its own shows the site's icon.
 const previewImage = new URL(image ? asset(image) : url('/favicon.png'), Astro.site).href;
@@ -144,6 +144,7 @@ for (const h of headings) {
                     : coords.position}
                 </span>
               )}
+              {words != null && <span class="words">{words.toLocaleString('en')} {words === 1 ? 'word' : 'words'}</span>}
             </div>
           </div>
         )}
