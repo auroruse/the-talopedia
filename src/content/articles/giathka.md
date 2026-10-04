@@ -5,7 +5,6 @@ nativeTitle:
   - "вооружённая республика Гиатка"
 type: overview
 nation: giathka
-navbox: site
 infobox:
   - { image: "/assets/flags/giathka.png", caption: "Flag" }
   - { image: "/assets/old-media/emblems/giathka.jpg", caption: "Coat of Arms" }
@@ -54,6 +53,7 @@ infobox:
       - "Burskite"
       - "Oestic"
       - "Glorinnian"
+      - "Rudanian"
   - { label: "Demonym", value: "Giathkik" }
   - { label: "GDP (PPP)", value: "1930 Census" }
   - { label: "Total", sub: true, value: "$610,650,000,000" }
@@ -69,6 +69,7 @@ infobox:
   - { label: "Alpha-2 Code", value: "GT" }
   - { label: "Alpha-3 Code", value: "GKA" }
 ---
+
 The Armed Republic of **Giathka** (Giathkik: *Armei Republicav Giathka*; вооружённая республика Гиатка) is a medium sized authoritarian republic. It borders [[rudania]] and Perovska to the north.
 
 ## Etymology
@@ -99,3 +100,18 @@ The Giathkan government is a unitary dictatorship founded on July 11, 1932. It i
 
 The legislative function is carried out by decree, with laws and regulations issued directly by the Supreme Leader. There is no representative legislature, and political parties are banned. A state-controlled judiciary operates under the Ministry of Justice, with courts structured hierarchically on local, prefectural, and national levels. While the judiciary handles civil, criminal, and administrative matters. Judges are career bureaucrats appointed by the central government, and judicial decisions are subject to review by executive authorities in politically sensitive cases. Before 1932, the Tsar was the head of state of Giathka. After extreme hyperinflation, and the Tsar's failure to fix it, a revolution overthrew the government, abolishing democracy and the monarchy.
 
+## Economy
+
+The Giathkik economy is largely dominated by manufacturing and agriculture, with its main income being from exporting aluminum, electricity, cotton, and minerals. Giathka maintains a trade deficit, importing large amounts of machinery, petroleum products, and foodstuffs.
+
+## Geography
+
+Giathka is a medium sized nation, at 1,731,481 km². It ranks #12 in the world in terms of land area, and 38th in terms of population density. Summers can range from 30**°** to 40°C, with winters ranging between 9°C and 24°C.
+
+Giathka borders Perovska and Rudania to the north, and the Himalayan sea to the east
+
+## Demographics
+
+Giathkas population is largely comprised of the Giathkik peoples. Giathka is an ethnostate, largely oppressing native populations such as the Burskite and Glorinnian peoples. The vast majority of the population speaks Giathkik and Rudanian, with Rudanian mostly used by the lower class.
+
+Systematic discrimination is common, with non-Giathkik people being excluded from political office, and Glorinnians being banned from recieving healthcare from Giathkik doctors.
