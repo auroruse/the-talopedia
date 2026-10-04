@@ -17,9 +17,9 @@
   };
   const type = (text) => { for (const ch of text) document.execCommand('insertText', false, ch); };
   /**
-   * File > Open, and wait until the editor says it has opened the file. The run's clock is
-   * virtual and races ahead of a real read, so a fixed wait could end before the file was in;
-   * reading the same file here first lets real time pass for the editor's read to land.
+   * File > Open, and wait until the editor says it has opened the file. A fixed wait could
+   * end before the file was in, as it did when the run kept a virtual clock; reading the
+   * same file here first lets the editor's read land.
    */
   const openFile = async (md, name) => {
     const f = new File([md], name);
@@ -342,18 +342,21 @@
     undo(); undo(); undo();
     ok('undo stops at the new page', txt() === '' && !document.body.textContent.includes('hello world'), txt());
 
-    // An arrow straight before a digit (:down1) is an arrow, before and after an undo.
+    // An arrow straight before a digit (:up2, :down1) is an arrow, before and after an undo.
+    // Whichever way the ranking last moved: the page is live, and its arrow is updated.
     $('#file-q').value = 'nichirin national football';
     $('#file-q').dispatchEvent(new Event('input'));
     [...document.querySelectorAll('#file-list button')].find((b) => /Nichirin national football team/i.test(b.textContent)).click();
     await sleep(800);
     const rankCell = () => [...document.querySelectorAll('.ib-edit tr')].find((tr) => /Current \(1934\)/.test(tr.textContent))?.querySelector('td .ce');
-    ok('opened with the ranking arrow as an arrow', rankCell()?.querySelector('[data-tok="down"]') && !rankCell().textContent.includes(':down'), rankCell()?.innerHTML);
+    const anArrow = () => rankCell()?.querySelector('[data-tok="up"], [data-tok="down"]') && !/:(up|down)/.test(rankCell().textContent);
+    ok('opened with the ranking arrow as an arrow', anArrow(), rankCell()?.innerHTML);
     focusEnd(paras()[0]);
     type(' zz');
     undo();
-    ok('still an arrow after undo', rankCell()?.querySelector('[data-tok="down"]') && !rankCell().textContent.includes(':down'), rankCell()?.innerHTML);
-    ok('and saved as :down1', $('#preview').textContent.includes('3 (:down1)'), ($('#preview').textContent.match(/Current \(1934\).*/) || [''])[0]);
+    ok('still an arrow after undo', anArrow(), rankCell()?.innerHTML);
+    ok('and saved as an arrow before its digit', /Current \(1934\)", value: "\d+ \(:(up|down)\d+\)"/.test($('#preview').textContent),
+      ($('#preview').textContent.match(/Current \(1934\).*/) || [''])[0]);
     const barcino = document.querySelector('a[data-slug="fc-barcino"]');
     ok('a page nobody has written yet keeps its initials', barcino?.textContent === 'FC Barcino', barcino?.textContent);
     ok('and its link is saved bare', $('#preview').textContent.includes('[[fc-barcino]]'), ($('#preview').textContent.match(/.*barcino.*/i) || [''])[0].slice(-80));
@@ -567,6 +570,72 @@
     ok('and it saves as it came in, bar the entity', $('#preview').textContent
       .includes('<td>Kanaeya & Co.<br><small>Native</small><br><small>*Romaji*</small></td>'),
       ($('#preview').textContent.match(/<td>Kanaeya[^\n]*/) || [])[0]);
+
+    // Browser saves: every page's unsent edits are kept in this browser, one draft a page,
+    // and come back when the page is opened again. There used to be one draft a tab, which
+    // the next page opened, or a reload of a page's Edit link, wrote over.
+    const shelfAll = () => new Promise((res) => {
+      const r = indexedDB.open('talopedia-drafts', 1);
+      r.onupgradeneeded = () => r.result.createObjectStore('drafts', { keyPath: 'key' });
+      r.onsuccess = () => {
+        const q = r.result.transaction('drafts').objectStore('drafts').getAll();
+        q.onsuccess = () => { r.result.close(); res(q.result); };
+      };
+      r.onerror = () => res([]);
+    });
+    // Asked of the store itself until it answers: its writes land when they land.
+    const until = async (cond) => {
+      for (let i = 0; i < 100; i++) { const all = await shelfAll(); if (cond(all)) return all; await sleep(50); }
+      return shelfAll();
+    };
+    const keys = (all) => all.map((d) => d.key);
+    const openSite = async (title) => {
+      $('#file-q').value = title;
+      $('#file-q').dispatchEvent(new Event('input'));
+      [...document.querySelectorAll('#file-list button')].find((b) => b.textContent === title).click();
+      for (let i = 0; i < 100 && $('#f-title').value !== title; i++) await sleep(50);
+      await sleep(300);
+    };
+    await openSite('Nichirin');
+    focusEnd(paras()[0]);
+    type(' Draftmark');
+    let shelved = await until((all) => all.some((d) => d.key === 'article:nichirin' && d.markdown?.includes('Draftmark')));
+    ok('an edit is kept in the browser as its page\'s draft', shelved.some((d) => d.key === 'article:nichirin' && d.markdown.includes('Draftmark')), keys(shelved));
+    await openSite('Albinya');
+    shelved = await shelfAll();
+    ok('opening another page keeps it', shelved.some((d) => d.key === 'article:nichirin'), keys(shelved));
+    ok('and a page only opened has none', !shelved.some((d) => d.key === 'article:albinya'), keys(shelved));
+    focusEnd(paras()[0]);
+    type(' x');
+    await until((all) => all.some((d) => d.key === 'article:albinya'));
+    undo();
+    shelved = await until((all) => !all.some((d) => d.key === 'article:albinya'));
+    ok('a page put back as it was opened has none again', !shelved.some((d) => d.key === 'article:albinya'), keys(shelved));
+    await openSite('Nichirin');
+    ok('opened again, the page comes back with its edit', txt(0).includes('Draftmark') && /Unsent edits put back/.test($('#status').textContent),
+      [txt(0).slice(-30), $('#status').textContent]);
+    $('#new').click();
+    await sleep(100);
+    $('#f-title').value = 'Draft Test Page';
+    $('#f-title').dispatchEvent(new Event('input', { bubbles: true }));
+    shelved = await until((all) => all.some((d) => d.key.startsWith('new:') && d.title === 'Draft Test Page'));
+    ok('a new page has a draft of its own', shelved.some((d) => d.key.startsWith('new:') && d.title === 'Draft Test Page'), keys(shelved));
+    ok('and starting it threw nothing away', shelved.some((d) => d.key === 'article:nichirin'), keys(shelved));
+    $('#file').click();
+    for (let i = 0; i < 40 && $('#draft-box').hidden; i++) await sleep(50);
+    const draftRows = () => [...document.querySelectorAll('#draft-list .draft-row')];
+    ok('the File menu lists the drafts, newest first', draftRows()[0]?.textContent.startsWith('Draft Test Page')
+      && draftRows().some((r) => r.textContent.startsWith('Nichirin')), draftRows().map((r) => r.textContent));
+    draftRows().find((r) => r.textContent.startsWith('Nichirin')).querySelector('button').click();
+    for (let i = 0; i < 40 && $('#f-title').value !== 'Nichirin'; i++) await sleep(50);
+    ok('and one opens from there', $('#f-title').value === 'Nichirin' && txt(0).includes('Draftmark'), [$('#f-title').value, txt(0).slice(-30)]);
+    $('#file').click();
+    for (let i = 0; i < 40 && !draftRows().length; i++) await sleep(50);
+    draftRows().find((r) => r.textContent.startsWith('Nichirin')).querySelector('.draft-x').click();
+    shelved = await until((all) => !all.some((d) => d.key === 'article:nichirin'));
+    for (let i = 0; i < 100 && txt(0).includes('Draftmark'); i++) await sleep(50);
+    ok('thrown away, it is gone and the page is as the site has it', !shelved.some((d) => d.key === 'article:nichirin') && !txt(0).includes('Draftmark'),
+      [keys(shelved), txt(0).slice(-30)]);
   } catch (err) {
     out.push('FAIL threw: ' + err.message);
   }

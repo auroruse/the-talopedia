@@ -61,6 +61,11 @@ const ADMIN = REPO.split('/')[0];
           <button id="duplicate" type="button">Duplicate as a new page…</button>
           <input id="open-file-input" type="file" accept=".md,.markdown,.yaml,.yml" hidden />
           <div class="menu-sep"></div>
+          <div id="draft-box" hidden>
+            <div class="mp-group">Drafts</div>
+            <div class="menu-list" id="draft-list"></div>
+            <div class="menu-sep"></div>
+          </div>
           <input id="file-q" type="search" placeholder="Search articles" autocomplete="off" />
           <div class="menu-list" id="file-list"></div>
         </div>
@@ -2627,8 +2632,24 @@ const ADMIN = REPO.split('/')[0];
       $('#ooc-note').hidden = !$('#f-ooc').checked;
     }
 
-    /* ---------- draft survives a reload ---------- */
-    const DRAFT = 'talopedia-draft';
+    /* ---------- drafts: every page's unsent edits, kept in this browser ----------
+       One per page, in IndexedDB, written as the page changes and put back whenever
+       the page is opened again. The draft used to sit in sessionStorage, which a tab
+       takes with it when it closes, and there was only the one: opening a second page,
+       or reloading one opened from its Edit link, put the live copy over it. */
+    const DRAFT = 'talopedia-draft';          // that old single draft, brought over once
+    const SAVED = 'talopedia-saved';          // what the dev server's Save wrote, said after its reload
+    const drafts = shelf('talopedia-drafts', 'drafts');
+    let draftKey = '';                        // whose draft the page on screen is
+    let opened = '';                          // the page as opened: it has a draft once it differs
+    let kept = null;                          // the text last written, so a page is not rewritten unchanged
+    const newKey = () => `new:${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
+    const ago = (t) => {
+      const s = (Date.now() - t) / 1000;
+      if (s < 60) return 'just now';
+      const [n, unit] = s < 3600 ? [s / 60, 'minute'] : s < 86400 ? [s / 3600, 'hour'] : [s / 86400, 'day'];
+      return new Intl.RelativeTimeFormat('en', { numeric: 'always' }).format(-Math.floor(n), unit);
+    };
     const fields = ['#f-title', '#f-boxtitle', '#f-native', '#f-romaji', '#f-type', '#f-nation', '#f-icon',
       '#f-authors', '#f-coords', '#f-banner', '#f-welcome', '#f-crumb'];
     const snapshot = () => ({
@@ -2667,9 +2688,98 @@ const ADMIN = REPO.split('/')[0];
     let draftTimer;
     function stash() {
       clearTimeout(draftTimer);
-      draftTimer = setTimeout(() => {
-        try { sessionStorage.setItem(DRAFT, JSON.stringify(snapshot())); } catch {}
-      }, 400);
+      draftTimer = setTimeout(keep, 400);
+    }
+    /**
+     * Write the page on screen to its draft, or drop the draft once the page is back as it
+     * was opened. Everything is read before the first wait, so a page being left can be
+     * kept on the way out without the next one's text landing under its name.
+     */
+    async function keep() {
+      clearTimeout(draftTimer);
+      if (!draftKey) return;
+      const key = draftKey, markdown = toMarkdown();
+      if (kept?.key === key && kept.markdown === markdown) return;
+      kept = { key, markdown };
+      try {
+        if (markdown === opened) { await drafts.drop(key); return; }
+        await drafts.put({
+          key, kind: pageKind, slug: slugValue(), title: $('#f-title').value.trim(), at: Date.now(),
+          snap: snapshot(), markdown, opened, file: pageSlug, loadedTitle, loadedBody,
+          images: [...staged.entries()].filter(([p]) => markdown.includes(p)).map(([p, s]) => ({ path: p, file: s.file })),
+        });
+      } catch { kept = null; }
+    }
+    // A tab closing, or put away by a phone, writes what the last keystrokes left waiting.
+    addEventListener('pagehide', keep);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) keep(); });
+
+    /** A page's draft: under its own name, or a new page's that has since taken that address. */
+    async function draftFor(kind, slug) {
+      try {
+        const all = await drafts.all();
+        return all.find((d) => d.key === `${kind}:${slug}`)
+          || all.filter((d) => d.kind === kind && d.slug === slug).sort((a, b) => b.at - a.at)[0] || null;
+      } catch { return null; }
+    }
+
+    /**
+     * Put a saved draft back on screen, pictures and all, with the copy of main its edits
+     * were made on, so a change on main since is merged with them rather than lost.
+     * Over a page just opened from the site, that page stays what Commit compares with.
+     */
+    function reopen(d, overLive = false) {
+      draftKey = d.key;
+      opened = d.opened ?? '';
+      kept = { key: d.key, markdown: d.markdown };
+      restore(d.snap);
+      pageSlug = d.file ?? '';
+      if (!overLive) { loadedTitle = d.loadedTitle ?? ''; loadedBody = d.loadedBody ?? ''; }
+      for (const im of d.images || []) {
+        if (!staged.has(im.path)) staged.set(im.path, { file: im.file, url: URL.createObjectURL(im.file) });
+      }
+      paintAssets();
+      resetHistory();
+      sync();
+      flash(`Unsent edits put back, saved ${ago(d.at)}.`);
+    }
+
+    /** The File menu's pages with unsent edits, newest first. */
+    async function paintDrafts() {
+      const all = (await drafts.all().catch(() => [])).sort((a, b) => b.at - a.at);
+      const list = $('#draft-list');
+      list.innerHTML = '';
+      $('#draft-box').hidden = !all.length;
+      for (const d of all) {
+        const row = el('div', 'draft-row');
+        const open = el('button', null, d.title || d.slug || 'Untitled');
+        open.type = 'button';
+        open.append(el('small', null, ago(d.at)));
+        open.onclick = async () => {
+          $('#file-menu').hidden = true;
+          await keep();
+          // Read again: the list was drawn before the page on screen last wrote to it.
+          const now = (await drafts.all().catch(() => [])).find((x) => x.key === d.key);
+          if (now) reopen(now);
+        };
+        const x = el('button', 'draft-x', '✕');
+        x.type = 'button';
+        x.title = 'Throw these edits away';
+        x.onclick = async (e) => {
+          e.stopPropagation();
+          if (!confirm(`Throw away your unsent edits to ${d.title || 'this page'}?`)) return;
+          const here = d.key === draftKey;
+          if (here) { clearTimeout(draftTimer); draftKey = ''; }
+          await drafts.drop(d.key);
+          // The page on screen was that draft: it goes back to the page as the site has it.
+          if (here) {
+            if (d.file) load(d.kind === 'article' ? d.file : `${d.kind}:${d.file}`); else blank('article');
+          }
+          paintDrafts();
+        };
+        row.append(open, x);
+        list.append(row);
+      }
     }
 
     const tocToggle = $('#ed-toc-toggle');
@@ -2973,11 +3083,15 @@ const ADMIN = REPO.split('/')[0];
 
     /* ---------- open an existing article ---------- */
     async function load(slug) {
+      keep();                            // the page being left keeps its last keystrokes
       await titlesReady;
       pageKind = slug.startsWith('portal:') ? 'portal' : slug.startsWith('navbox:') ? 'navbox' : 'article';
       const bare = slug.replace(/^(portal|navbox):/, '');
       const path = pageKind === 'article' ? `/raw/${bare}.json` : `/raw/${pageKind}/${bare}.json`;
       const r = await fetch(`${BASE.replace(/\/$/, '')}${path}`);
+      const draft = await draftFor(pageKind, bare);
+      // A page not on the site that has a draft is a new one, so far only in this browser.
+      if (!r.ok && draft) { reopen(draft); return; }
       // A portal or navbox that does not exist yet is not an error: it is the one
       // you are about to write, which is how a new nation gets either of them.
       if (!r.ok) {
@@ -3019,6 +3133,12 @@ const ADMIN = REPO.split('/')[0];
       resetHistory();
       sync();
       loadedBody = toMarkdown();
+      // Unsent edits to this page go back over the copy the site has.
+      if (draft && draft.markdown !== loadedBody) { reopen(draft, true); return; }
+      if (draft) drafts.drop(draft.key).catch(() => {});   // the site says the same now
+      draftKey = `${pageKind}:${bare}`;
+      opened = loadedBody;
+      kept = { key: draftKey, markdown: opened };
       flash(`Opened ${data.title}.`);
     }
 
@@ -3064,7 +3184,7 @@ const ADMIN = REPO.split('/')[0];
     }
     $('#file-q').oninput = paintFileList;
     $('#file').addEventListener('click', () => {
-      if (!$('#file-menu').hidden) { paintFileList(); $('#file-q').focus(); }
+      if (!$('#file-menu').hidden) { paintFileList(); paintDrafts(); $('#file-q').focus(); }
     });
     dropdown($('#more'), $('#more-menu'));
     dropdown($('#style'), $('#style-menu'));
@@ -3339,6 +3459,7 @@ const ADMIN = REPO.split('/')[0];
     };
     /** Clear the desk and start a page of the given kind. */
     function blank(kind, slug = '') {
+      keep();
       loadedFrom = BUILT_FROM;           // a page not on main yet: any copy of main will do
       pageKind = kind; navboxLead = ''; portalBody = ''; pageSlug = slug; loadedTitle = ''; loadedBody = '';
       $('#settings').querySelectorAll('input[type=text], input[type=hidden], textarea').forEach((i) => i.value = '');
@@ -3347,7 +3468,6 @@ const ADMIN = REPO.split('/')[0];
       $('#f-sidebar-on').checked = true;
       $('#canvas-title').textContent = '';
       setSlug(slug); slugTouched = !!slug;
-      try { sessionStorage.removeItem(DRAFT); } catch {}
       setInfobox(kind === 'article' ? (TEMPLATES[$('#f-type').value] || []) : []);
       body.innerHTML = '';
       // A portal has no body at all; a navbox opens on its first heading.
@@ -3367,15 +3487,16 @@ const ADMIN = REPO.split('/')[0];
       paintSettings();
       resetHistory();
       sync();
+      // A new page has a draft of its own once it is written in; a nation's portal or
+      // navbox not made yet already has the address it will be filed under.
+      draftKey = slug ? `${kind}:${slug}` : newKey();
+      opened = toMarkdown();
+      kept = { key: draftKey, markdown: opened };
     }
 
+    // The page being left keeps its draft, so starting another throws nothing away.
     const NEW = { '#new': 'article', '#new-portal': 'portal', '#new-navbox': 'navbox' };
-    for (const [id, kind] of Object.entries(NEW)) {
-      $(id).onclick = () => {
-        if (!confirm(`Discard this draft and start a new ${kind}?`)) return;
-        blank(kind);
-      };
-    }
+    for (const [id, kind] of Object.entries(NEW)) $(id).onclick = () => blank(kind);
 
     // The nation is what a portal or a navbox is filed under, so it names the file.
     $('#f-nation').addEventListener('change', () => {
@@ -3697,12 +3818,17 @@ const ADMIN = REPO.split('/')[0];
         e.target.value = '';
         if (!f) return;
         try {
-          fromMarkdown(await f.text());
+          const text = await f.text();
+          keep();
+          fromMarkdown(text);
           pageSlug = f.name.replace(/\.(md|markdown|ya?ml)$/i, '');
           loadedFrom = '';               // a file from disk says nothing of which copy it was
           loadedTitle = $('#f-title').value.trim();
           setSlug(pageSlug); slugTouched = true;
           sync();
+          draftKey = newKey();
+          opened = toMarkdown();
+          kept = { key: draftKey, markdown: opened };
           flash(`Opened ${f.name}.`);
         } catch (err) {
           flash(`Could not read ${f.name}: ${err.message}`, true);
@@ -3714,28 +3840,32 @@ const ADMIN = REPO.split('/')[0];
        Kept in IndexedDB rather than localStorage: a change carries the image files
        that go with it, and those are Blobs, which localStorage cannot hold. */
 
-    const DB = 'talopedia-changes';
-    let dbp = null;
-    const db = () => (dbp ??= new Promise((res, rej) => {
-      const r = indexedDB.open(DB, 1);
-      r.onupgradeneeded = () => r.result.createObjectStore('changes', { keyPath: 'key' });
-      r.onsuccess = () => res(r.result);
-      r.onerror = () => rej(r.error);
-    }));
-    async function store(mode, run) {
-      const tx = (await db()).transaction('changes', mode);
-      const out = run(tx.objectStore('changes'));
-      return new Promise((res, rej) => {
-        tx.oncomplete = () => res(out.result ?? out);
-        tx.onerror = () => rej(tx.error);
-      });
+    /** One IndexedDB store of records keyed by `key`, in a database of its own. Declared
+        rather than assigned: the drafts, further up the file, are kept in one too. */
+    function shelf(name, storeName) {
+      let dbp = null;
+      const db = () => (dbp ??= new Promise((res, rej) => {
+        const r = indexedDB.open(name, 1);
+        r.onupgradeneeded = () => r.result.createObjectStore(storeName, { keyPath: 'key' });
+        r.onsuccess = () => res(r.result);
+        r.onerror = () => rej(r.error);
+      }));
+      const store = async (mode, run) => {
+        const tx = (await db()).transaction(storeName, mode);
+        const req = run(tx.objectStore(storeName));
+        return new Promise((res, rej) => {
+          tx.oncomplete = () => res(req.result);
+          tx.onerror = () => rej(tx.error);
+        });
+      };
+      return {
+        all: () => store('readonly', (s) => s.getAll()),
+        put: (v) => store('readwrite', (s) => s.put(v)),
+        drop: (k) => store('readwrite', (s) => s.delete(k)),
+        clear: () => store('readwrite', (s) => s.clear()),
+      };
     }
-    const cart = {
-      all: () => store('readonly', (s) => s.getAll()),
-      put: (c) => store('readwrite', (s) => s.put(c)),
-      drop: (k) => store('readwrite', (s) => s.delete(k)),
-      clear: () => store('readwrite', (s) => s.clear()),
-    };
+    const cart = shelf('talopedia-changes', 'changes');
 
     /** This page as a change: the file it writes, and the pictures it brings with it. */
 /**
@@ -3840,6 +3970,7 @@ const ADMIN = REPO.split('/')[0];
 
     /** Put a waiting change back on screen, exactly as it was set aside. */
     function loadChange(c) {
+      keep();
       loadedFrom = c.from || '';
       pageKind = c.kind;
       pageSlug = c.slug;
@@ -3851,6 +3982,9 @@ const ADMIN = REPO.split('/')[0];
       setSlug(c.slug); slugTouched = true;
       paintAssets();
       sync();
+      draftKey = c.key;
+      opened = toMarkdown();
+      kept = { key: draftKey, markdown: opened };
       flash(`Opened ${c.title} from your changes.`);
     }
 
@@ -3926,6 +4060,11 @@ const ADMIN = REPO.split('/')[0];
         });
 
         await cart.clear();
+        // What went is in the pull request now. A draft that says exactly that has nothing
+        // left to keep; one written on past it still holds the rest.
+        const sent = new Set(list.map((c) => c.markdown));
+        for (const d of await drafts.all().catch(() => [])) if (sent.has(d.markdown)) await drafts.drop(d.key);
+        if (sent.has(toMarkdown())) { opened = toMarkdown(); kept = { key: draftKey, markdown: opened }; }
         await paintCart();
         pubSay('');
         $('#pub-panel').hidden = true;
@@ -4015,8 +4154,9 @@ const ADMIN = REPO.split('/')[0];
           if (!r.ok) throw new Error(out.error || r.statusText);
           const line = `${out.created ? 'Created' : 'Updated'} ${out.file}`;
           flash(line);
-          // Writing into src/ restarts the dev server, which reloads this page.
-          try { sessionStorage.setItem(DRAFT, JSON.stringify({ ...snapshot(), saved: line })); } catch {}
+          // Writing into src/ restarts the dev server, which reloads this page; the line
+          // is said again once it has, over the page as now saved.
+          try { sessionStorage.setItem(SAVED, line); } catch {}
         } catch (e) {
           flash(`Not saved: ${e.message}`, true);
         }
@@ -4232,6 +4372,7 @@ const ADMIN = REPO.split('/')[0];
      */
     function duplicate() {
       if (!pageSlug && !slugValue()) { flash('Nothing is open to copy.', true); return; }
+      keep();
       const from = pageSlug || slugValue();
       pageSlug = '';
       loadedFrom = BUILT_FROM;           // the copy is a new page, not on main yet
@@ -4244,6 +4385,9 @@ const ADMIN = REPO.split('/')[0];
       // page's address on it again.
       resetHistory();
       sync();
+      draftKey = newKey();
+      opened = toMarkdown();
+      kept = { key: draftKey, markdown: opened };
       $('#f-title').focus();
       flash(`Copy of ${from}. Give it a new title, and check the URL before saving.`);
     }
@@ -4747,21 +4891,41 @@ const ADMIN = REPO.split('/')[0];
     }
 
     /* ---------- boot ---------- */
-    let booted = null;
-    try { booted = JSON.parse(sessionStorage.getItem(DRAFT) || 'null'); } catch {}
+    // The one draft a tab kept before drafts were kept per page, brought over as its
+    // page's draft so the reload onto this version does not lose it.
+    try {
+      const was = JSON.parse(sessionStorage.getItem(DRAFT) || 'null');
+      sessionStorage.removeItem(DRAFT);
+      if (was && !was.saved) {
+        const kind = was.kind || 'article';
+        drafts.put({ key: was.slug ? `${kind}:${was.slug}` : newKey(), kind, slug: was.slug || '',
+          title: (was.meta?.['#f-title'] || '').trim(), at: Date.now(), snap: was, markdown: null, opened: '',
+          file: was.slug || '', loadedTitle: '', loadedBody: '', images: [] }).catch(() => {});
+      }
+    } catch {}
+    let said = '';
+    try { said = sessionStorage.getItem(SAVED) || ''; sessionStorage.removeItem(SAVED); } catch {}
     const want = new URLSearchParams(location.search).get('a');
     if (want) {
       setInfobox([]);
       body.append(block('para'));
-      load(want);
-    } else if (booted) {
-      restore(booted);
-      if (booted.saved) flash(`${booted.saved} — draft restored.`);
+      load(want).then(() => { if (said) flash(said); });
     } else {
       setInfobox(TEMPLATES.overview);
       body.append(block('para'));
+      // Where the writer left off: the page they last wrote in and have not sent, unless
+      // they have started on the blank one meanwhile.
+      drafts.all().then((all) => {
+        const last = all.sort((a, b) => b.at - a.at)[0];
+        if (last && toMarkdown() === opened) reopen(last);
+      }).catch(() => {});
     }
     sync();
+    if (!want) {
+      draftKey = newKey();
+      opened = toMarkdown();
+      kept = { key: draftKey, markdown: opened };
+    }
     titlesReady.then(() => { sync(); paintAssets(); });
     loadAssets();
   </script>
@@ -4847,6 +5011,14 @@ const ADMIN = REPO.split('/')[0];
     }
     .drop-menu input[type=search]:focus { outline: none; border-color: var(--link); }
     .menu-list { max-height: 260px; overflow-y: auto; display: flex; flex-direction: column; }
+    /* A draft: its page, when it was last written, and a cross to throw it away. */
+    .draft-row { display: flex; align-items: center; gap: 2px; }
+    .drop-menu.list .draft-row > button:first-child {
+      flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 1px;
+    }
+    .draft-row small { font-size: 11px; color: var(--muted); }
+    .drop-menu.list .draft-x { flex: none; width: 30px; padding: 0; justify-content: center; color: var(--muted); }
+    .drop-menu.list .draft-x:hover { color: var(--ink); }
 
     /* ---- layout ---- */
     .ed-main { display: flex; align-items: flex-start; gap: 20px; padding: 0 24px; min-width: 0; }
