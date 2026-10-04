@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Infobox from '../components/Infobox.astro';
-import { coordsFor, nation, mapUrl, url } from '../lib/registry.mjs';
+import { coordsFor, nation, mapUrl, url, navbox } from '../lib/registry.mjs';
 import { categoryOf } from '../lib/categories.mjs';
 import { resolveHtml, renderNavbox } from '../lib/navbox.mjs';
 import { ledeOf } from '../lib/inline.mjs';
@@ -27,6 +27,10 @@ const href = found?.type === 'nation' ? mapUrl(nation(d.nation)?.name ?? d.title
   : null;
 const coords = found && { ...found, href };
 const category = categoryOf(d.type);
+// A nation with no navbox of its own is shown the site's. The editor writes no `navbox:`
+// line for a page that has a nation, so the `navbox: site` put on such overviews by hand
+// went with the first save from the editor, and Giathka's page lost its navbox that way.
+const navId = d.navbox ?? (d.nation && (navbox(d.nation) ? d.nation : 'site'));
 ---
 <Base title={d.title} description={lede} image={firstImage(d)} headings={headings} coords={coords} nationId={d.nation} authorIds={d.authors} slug={entry.id}>
   {d.ooc && (
@@ -41,7 +45,7 @@ const category = categoryOf(d.type);
     )}
     <Fragment set:html={html} />
   </article>
-  {(d.navbox ?? d.nation) && <Fragment set:html={renderNavbox(d.navbox ?? d.nation, 'Navigation')} />}
+  {navId && <Fragment set:html={renderNavbox(navId, 'Navigation')} />}
   <nav class="catlinks" aria-label="Categories">
     <a href={url('/categories')}>Category</a>: <a href={url(`/category/${category.slug}`)}>{category.name}</a>
   </nav>
