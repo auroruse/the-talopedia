@@ -2,15 +2,15 @@
 title: "Great Northern War"
 nativeTitle:
   - "Stora Nordiska"
-  - "Suuri Pohjan Sota"
   - "Северная война"
+  - "Suuri Pohjan Sota"
 type: event
 nation: skjarnland
 authors: [skjarnland]
 infobox:
   - images:
       - { src: "https://i.imgur.com/EgQEDl4.jpeg", caption: "Battle of Wolmar" }
-      - { src: "https://i.imgur.com/CxWLmJt.jpeg", caption: "Battle of Visibinsk" }
+      - { src: "https://i.imgur.com/pClUczY.png", caption: "Battle of Visibinsk" }
   - images:
       - { src: "https://i.imgur.com/sN57bOr.jpeg", caption: "Battle of Hävnia" }
       - { src: "https://i.imgur.com/pc5OL2Z.jpeg", caption: "Siege of Radagorsk" }
@@ -107,7 +107,7 @@ The Rudanian forces under the Artyomov Tsar, [[tsar-gregory-ii|Gregory II]], att
 
 ### Skjarnish Stagnation
 
-Having secured its hegemony in Northern Evria, the Skjarnish Crown turned its attention inward and towards colonial affairs. Within the country, a cultural renaissance spurred by the beginning of the Enlightenment gave rise to the [[skjarnish-great-ae|Great Age]] (*storhetstid*) and the concept of Skjarnish exceptionalism, which viewed the country's military system as the pinnacle of modern warfare and its administration as the gold standard of Evrian bureaucracy. Aristocratism within the officer corps, where the families of well-known or lauded commanders of previous wars received promotions and prestigious assignments more frequently than other officers, began its rise. Additionally, Skjarnish military schools, including the Eyrborg and Sundberg academies, became slow to adapt to military developments elsewhere in Evria, including in the [[war-of-the-three-empires]] in Southern Evria, and continued to teach military doctrine dating to the Upper Suebian and Twenty-Five Years' Wars.
+Having secured its hegemony in Northern Evria, the Skjarnish Crown turned its attention inward and towards colonial affairs. Within the country, a cultural renaissance spurred by the beginning of the Enlightenment gave rise to the [[skjarnish-great-ae|Great Age]] (*storhetstid*) and the concept of Skjarnish exceptionalism, which viewed the country's military system as the pinnacle of modern warfare and its administration as the gold standard of Evrian bureaucracy. Aristocratism within the officer corps, where the families of well-known or lauded commanders of previous wars received promotions and prestigious assignments more frequently than other officers, began its rise. Additionally, Skjarnish military schools, including the Eyrborg and Sundberg academies, became slow to adapt to military developments elsewhere in Evria, including in the [[war-of-the-three-empires]] in Southern Evria, and continued to teach military doctrine dating to the Upper Suebian and Twenty-Five Years' Wars. By the outbreak of the Great Northern War in 1751, Skjarnland still fielded competent officers but had accommodated cronyists in its ranks.
 
 <figure class="float float-right" style="width:300px"><img src="https://i.imgur.com/lufw2cy.jpeg" alt="Duke Mikhail Oderberg of Temnezh, painted in 1729, was the Foreign Chancellor of Rudania and the chief architect of its foreign policy in the early-to-mid 18th century."><figcaption>Duke Mikhail Oderberg of Temnezh, painted in 1729, was the Foreign Chancellor of Rudania and the chief architect of its foreign policy in the early-to-mid 18th century.</figcaption></figure>
 
@@ -155,7 +155,7 @@ After 3 hours of fighting, Tomasson chose to commit his centre to an attack, inc
 
 #### Grand Army Sets Out
 
-In Kjellberg, Gustaf V, concerned by the deteriorating developments, bypassed the standard appointment process and instated Marshal [[count-vincent-hjortland|Vincent Hjortland]] as Commander of the Skjarnish Army and Grand Admiral [[david-elfsberg]] as Commander of the Navy on 31 October, sending a contingent of 10,000 men led by [[pahl-von-elfsberg|General Påhl von Elfsberg]] to reinforce Duke Mattias' forces in Riege by sea while his main army, the [[grand-army-of-skjarnland|Grand Army]], numbering 50,000 following mobilisation, set out to re-establish Skjarnish control over Estiland and Sydspetsen before marching into Livonia.
+In Kjellberg, Gustaf V, concerned by the deteriorating developments, bypassed the standard appointment process and instated Marshal [[count-vincent-hjortland|Vincent Hjortland]] as Commander of the Skjarnish Army and Grand Admiral [[david-elfsberg]] as Commander of the Navy on 31 October, sending a contingent of 5,000 men led by [[pahl-von-elfsberg|General Påhl von Elfsberg]] to reinforce Duke Mattias' forces in Riege by sea while his main army, the [[grand-army-of-skjarnland|Grand Army]], numbering 50,000 following mobilisation, set out to re-establish Skjarnish control over Estiland and Sydspetsen before marching into Livonia.
 
 ### Estiland and Sydspetsen Campaign (1751)
 
@@ -169,9 +169,9 @@ Gustaf directed the Grand Army to march north and relieve Roudanjärvi, believin
 
 <figure class="float float-right" style="width:300px"><img src="https://i.imgur.com/EgQEDl4.jpeg" alt="The Battle of Wolmar was the largest and deadliest battle in the First Upper Suebian Campaign."><figcaption>The Battle of Wolmar was the largest and deadliest battle in the First Upper Suebian Campaign.</figcaption></figure>
 
-General Suvorov, who expected the Grand Army to attempt to relieve Livonia immediately via the Römpöla-Perona route, recognised the danger and directed the Rudanian-Karjanian armies in Estiland, including the army of Olaf III, to abandon their positions near Perona and establish defensive positions north of [[wolmar]] while light cavalry forces and rearguard units mounted defences and counteratacks to slow Gustaf's advance. The Grand Army met the gutted remnants of Tomasson's army in Perona on 23 November, during which Gustaf reportedly reprimanded him but did not relieve him initially due to the lack of any experienced replacements.
+General Suvorov, who expected the Grand Army to attempt to relieve Livonia immediately via the Römpöla-Perona route, recognised the danger and directed the Rudanian-Karjanian armies in Estiland, including the army of Olaf III, to abandon their positions near Perona and establish defensive positions north of [[wolmar]] while light cavalry forces and other rearguard units mounted delaying actions to slow Gustaf's advance. The Grand Army met the gutted remnants of Tomasson's army in Perona on 23 November, during which Gustaf reportedly reprimanded him but did not relieve him initially due to the lack of any experienced replacements.
 
-Olaf's army met Suvorov's in Wolmar on 29 November, the Skjarnish Grand Army arriving on the 30th. Suvorov, who had thus far ran a delaying rear-guard campaign in Estiland, chose to offer battle in Wolmar, believing his force of 50,000, against the Skjarns' attacking 60,000, could force a stalemate long enough for Riege, whose besieging forces led by the Tsar were making gradual progress but failing to destroy the Skjarnish defenders or force a surrender.
+Olaf's army met Suvorov's in Wolmar on 29 November, the Skjarnish Grand Army arriving on the 30th. Suvorov, who had thus far ran a delaying rear-guard campaign in Estiland, chose to offer battle in Wolmar, believing his force of 30,000, against the Skjarns' attacking 40,000, could force a stalemate long enough for Riege, whose besieging forces led by the Tsar were making gradual progress but failing to destroy the Skjarnish defenders or force a surrender.
 
 Gustaf began his attack on 1 December following an hour-long artillery barrage, committing his best forces, including the famous [[vestland-regiment]] for a standard [Gå-på](https://en.wikipedia.org/wiki/Caroleans#Tactics) ('go on') attack, advancing swiftly and firing musket volleys at point-blank range before mounting a bayonet and sword charge. After three hours of intense fighting, Rudanian forces withdrew to their second defensive line, with the Skjarns continuing to conduct close-quarters battle, including sword-fighting. Gustaf then personally led a cavalry charge on the Rudanian left flank, which was countered by a Rudanian-Karjanian charge personally led by Olaf. Several anecdotes from both sides claim that the two monarchs could see each other in the battle, and some even reported that the two fought directly, but none are verified. After both sides' cavalry disengaged and the battle continued, the Rudanians were forced to retreat once more. General Suvorov, recognising that his positions were no longer tenable, ordered a general retreat.
 
@@ -185,7 +185,7 @@ Upon receiving news of the defeat at Wolmar, Tsar Gregory's most senior officer,
 
 #### Battle of Modohn
 
-Gustaf directed his forces to Modohn, recognising he was on the cusp of achieving victory in the campaign. The two sides met on 10 December, the Tsar having rendezvoused with the remaining forces of General Suvorov including Olaf III's Karjanian contingent; the Skjarns numbered roughly 40,000 while the Rudanian-Karjanian army numbered 50,000. The [[battle-of-modohn-1751|Battle of Modohn]] began on 11 December with the Skjarnish army conducting another Gå-på charge after artillery preparation. Despite fierce resistance and hand-to-hand combat in dug defensive positions, the Skjarns were able to capture the first line of the Rudanian defence after day-long fighting lasting nearly 14 hours and roughly 4,000-6,000 Skjarnish and 6,000-8,000 Rudanian losses.
+Gustaf directed his forces to Modohn, recognising he was on the cusp of achieving victory in the campaign. The two sides met on 10 December, the Tsar having rendezvoused with the remaining forces of General Suvorov including Olaf III's Karjanian contingent; the Skjarns numbered roughly 40,000 while the Rudanian-Karjanian forces numbered 45,000. The [[battle-of-modohn-1751|Battle of Modohn]] began on 11 December with the Skjarnish army conducting another Gå-på charge after artillery preparation. Despite fierce resistance and hand-to-hand combat in dug defensive positions, the Skjarns were able to capture the first line of the Rudanian defence after day-long fighting lasting nearly 14 hours and roughly 4,000-6,000 Skjarnish and 6,000-8,000 Rudanian losses.
 
 Seeking to preserve his forces, Tsar Gregory authorised an overnight withdrawal. The Army of the South re-entered Rudanian territory east of Mitau on 15 December while the Karjanian army of Olaf III returned to home territory via the Mitau-Sikov-Pietari route, thus concluding the First Upper Suebian Campaign in a Skjarnish victory. The remaining Rudanian garrisons posted in captured towns in Livonia withdrew by January 1752.
 
@@ -203,7 +203,7 @@ Oderberg offered Skjarnland a [status quo ante bellum](https://en.wikipedia.org/
 
 #### Royal Council Deliberation
 
-Internal sessions of the [[skjarnish-royal-council]] conducted in parallel with the peace negotiations demonstrated anxiety regarding the growing power of Rudania. Löwenhielm pressured Gustaf to accept Oderberg's terms, which would have quickly secured peace while demonstrating to the rest of Evria that Skjarnland remained the supreme force in the North, following its military victories. However, Gustaf believed that Rudania still posed both a near-term and long-term danger, citing its vast reserves of manpower and resources, most of which was unused during the war. Furthermore, Marshal Hjortland conveyed reports from Skjarnish soldiers, which expressed surprise at the performance of their Rudanian counterparts and their tactical adeptness in contrast to the previous war.
+Internal sessions of the [[skjarnish-royal-council]] conducted in parallel with the peace negotiations demonstrated anxiety regarding the growing power of Rudania. Löwenhielm pressured Gustaf to accept Oderberg's terms, which would have quickly secured peace while demonstrating to the rest of Evria that Skjarnland remained the supreme force in the North, following its military victories which also became the source of massive public celebration in Skjarnland itself. However, Gustaf believed that Rudania still posed both a near-term and long-term danger, citing its vast reserves of manpower and resources, most of which was unused during the war. Furthermore, Marshal Hjortland conveyed reports from Skjarnish soldiers, which expressed surprise at the performance of their Rudanian counterparts and their tactical adeptness in contrast to the previous war.
 
 Hjortland and Gustaf disagreed on a course of action despite agreement on the threat posed by Rudania; Hjortland advocated for an acceptance of Oderburg's peace terms, a focus on fortifying Livonia and Estiland, and using the peace to recover before another war with Rudania inevitably began. Gustaf, however, believed that a decisive war was required to permanently destroy Rudania before it could dislodge Skjarnland as the dominant Northern Evrian power.
 
@@ -215,7 +215,11 @@ Skjarnish confidence in the progress of negotiations fell as talks effectively c
 
 ### Preparation for Invasion (1752-53)
 
+#### Planning
+
 In December 1752, Gustaf announced to the Royal Council that he intended to pursue war against Rudania, a proposition that was controversial but ultimately accepted, him holding final executive authority regardless. Throughout the winter of 1752-53, the Skjarnish military drafted plans for an invasion of Rudania, the final version envisioning a rapid march to Radagorsk, the destruction of Rudanian field armies, and the establishment of a client state in Western Rudania that would serve as a buffer between Skjarnland and what remained of Rudania.
+
+Despite propositions by several senior military officers of a campaign to invade Karjania, such proposals were ultimately rejected in the months leading up to the Rudanian campaign, as Gustaf's primary goal was the elimination of Rudania as a threat to the Skjarnish Empire, and in his eyes Karjania did not constitute enough of a threat to justify a separate campaign. Instead, he mobilised the [[skjarnish-home-guard|Home Guard]], units of the Army that were hastily mobilised and trained to defend home territory, relying on them, in addition to regular army units and garrisons stationed near the Karjanian frontier, to act as the primary method of defense against any possible Karjanian incursion.
 
 #### Buildup in Livonia and Estiland
 
@@ -229,11 +233,11 @@ Tsar Gregory judged in February 1753 that Skjarnland intended to invade Rudania 
 
 ## Invasion of Rudania (1753-55)
 
-On 3 May 1753, Gustaf expelled the final Rudanian diplomats that remained in Strålholm, and announced the dissolution of the armistice on 5 May. The following day, Skjarnish forces numbering 55,000 entered Rudanian territory, divided into three main armies: the Northern Army, numbering 20,000, with the goal of capturing Sikov, securing the northern route towards Radagorsk and becoming the principal force defending against any Karjanian effort; the Central Army, numbering 20,000, which was to march east on the Lovatogorod-Verkhovsky-Radogorsk route; and the Southern Army, numbering 15,000, which was to capture Menisku and then converge with parts of the Central Army in [[visibinsk]]. However, all armies carried the banner of the Grand Army alongside their respective standards.
+On 3 May 1753, Gustaf expelled the last Rudanian diplomats in Strålholm, and announced the dissolution of the armistice on 5 May. The following day, Skjarnish forces numbering 55,000 entered Rudanian territory, divided into three main armies: the Northern Army, numbering 20,000, with the goal of capturing Sikov, securing the northern route towards Radagorsk and becoming the principal force defending against any attack from Karjania; the Central Army, numbering 20,000, which was to march east on the Lovatogorod-Verkhovsky-Radogorsk route; and the Southern Army, numbering 15,000, which was to capture [[visibinsk]] and then converge with parts of the Central Army in [[lovatogorod]]. However, all armies carried the banner of the Grand Army alongside their respective standards.
 
-### Northern and Central Offensives (1753)
+### Early Offensives (1753)
 
-#### Fall of Sikov
+#### Siege of Sikov
 
 The Skjarnish Northern Army was led by [[johan-larsson|General Johan Larsson]] and entered Rudanian territory from Toksavaara on 6 May. The Rudanian garrison at the border town of [[mashkovo]], numbering 2,000 men, was engaged by 10,000 Skjarns and quickly routed, with 1,000 killed or captured. Larsson's forces arrived at the gates of Sikov on the 7th, and quickly laid siege to it. The city housed the largest garrison on the northern route to Radagorsk, numbering roughly 10,000. Larsson mounted a frontal assault on the southern gate after his artillery arrived and exploited a weakpoint in the Rudanian wall identified by scouts sent days earlier.
 
@@ -243,6 +247,18 @@ The assault initially took heavy casualties, but disorganisation in the Rudanian
 
 General Suvorov, commanding Rudanian forces in the north, immediately ordered his remaining garrisons along the frontier abandoned and regrouped in Opochno. Larsson's advancing army arrived at Opochno on the 15th, meeting Suvorov's army of 20,000. Despite mounting an organised defence using terrain elevation to their advantage, Rudanian forces suffered from being hastily assembled and missing several units given orders to regroup which were still marching to join Suvorov's main force. After one day of battle, Suvorov ordered the abandonment of positions and a withdrawal to Lovatogorod, observing that most of his reinforcements had not come.
 
-#### Battle of Lovatogorod
+#### Battle of Visibinsk
 
-WIP.
+<figure class="float float-right" style="width:300px"><img src="https://i.imgur.com/pClUczY.png" alt="The Battle of Visibinsk was one of the largest land battles in the 18th century."><figcaption>The Battle of Visibinsk was one of the largest land battles in the 18th century.</figcaption></figure>
+
+The Skjarnish Central Army, personally led by Gustaf V, was originally supposed to march directly on Lovatogorod, but a decision was made to reroute them to support the Southern Army of [[rudolf-rosensvard|General Rudolf Rosensvärd]], who, after defeating initially scattered Rudanian armies in the battles of [[battle-of-tvertsersk-1753|Tvertsersk]] and Mykovo, faced stiff resistance in the developing [[battle-of-visibinsk-1753|Battle of Visibinsk]] on the 11th by General Field-Marshal Morgunov's combined armies of 35,000, the order for them to regroup given shortly before the invasion, which forced them to temporarily withdraw.
+
+Gustaf believed that Larsson's Northern Army had successfully neutralised Rudania's northern armies enough for them to be able handle the conquest of Lovatogorod on their own, while Visibinsk represented an opportunity to destroy Rudania's remaining field armies in the South. The Northern and Central Armies converged in Noviki, 20 km from the city, on the 14th. The pause in fighting at Visibinsk allowed Morgunov to consolidate his forces and receive additional reinforcements from retreating units. Thus, when Gustaf renewed the Skjarnish assault the next day, the Rudanians fielded 40,000 men against 35,000 Skjarns.
+
+Despite Morgunov organising a prepared defence on paper and using the [rasputitsa](https://en.wikipedia.org/wiki/Rasputitsa) to his advantage, the majority of Rudanian units in Visibinsk had been hastily marched from their positions and were suffering from exhaustion, combined with a loss of morale due to the defeats in the North. Gustaf had anticipated this and launched an aggressive attack on the Rudanian defenders with his most elite units, including the Vestland and Sydmark regiments. Rudanian lines crumbled after six hours of fighting, causing a rout in the centre which exposed the flanks of the Rudanian lines that remained standing, which was quickly exploited by Skjarnish cavalry who were personally led by Gustaf. Morgunov ordered a general retreat, although several Rudanian regiments were encircled and destroyed in ensuing combat.
+
+By the morning of the 16th, roughly 12,000-15,000 Rudanians were killed or captured with 7,000 Skjarnish losses. Morgunov retreated overnight eastwards towards the direction of Radagorsk with the objective of linking up with Suvorov's forces and delaying the Skjarnish advance. Rudanian forces began employing [scorched earth](https://en.wikipedia.org/wiki/Scorched_earth) tactics, burning villages, crops, and forcing the evacuation of local populations in order to deprive Gustaf's advancing armies of being able to use any resource on Rudanian soil.
+
+#### Reaction in Skjarnland
+
+Upon receiving news of the victory in Visibinsk, large celebrations occurred in Skjarnland that encompassed nearly all sections of society. [Primate](https://en.wikipedia.org/wiki/Primate_(bishop)) of the [[church-of-skjarnland]], [[fredrik-kjellberg|Archbishop Fredrik Kjellberg]], directed that all churches in the country ring their bells in honour of the victory, while news organisations, including most famously the [[daglig-herald]] (Daily Herald), christened the battle as the 'Second Toksavaara', referring to the 1683 battle that secured victory in the Upper Suebian War, and compared Gustaf V to his predecessor Gustaf II. Furthermore, hope in a swift conclusion to the war and the vindication of Skjarnish exceptionalism increased significantly after Visibinsk.
