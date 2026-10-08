@@ -28,7 +28,7 @@ commit() { git add -A; git -c user.email=t@t -c user.name=t commit -q -m t; }
 print "a page the nation is credited on"
 start; print x >> src/content/articles/skjarnish-armed-forces.md; commit
 run merge SwiftorArrow      "skjarnland edits its own page"
-run wait  kiohit05-cyber    "albinya edits skjarnland's page"
+run wait  GeneralVarah      "varahmehr edits skjarnland's page"
 run wait  nobody-at-all     "an account that writes for no nation"
 run merge auroruse          "the admin edits it"
 
@@ -57,9 +57,9 @@ run merge SwiftorArrow      "is the nation's that wrote it"
 run wait  nobody-at-all     "unless the writer writes for no nation"
 
 print "pictures"
-start; cp public/assets/flags/albinya.png public/assets/flags/gate-test.png; commit
+start; cp public/assets/flags/nichirin.png public/assets/flags/gate-test.png; commit
 run merge SwiftorArrow      "adding one"
-start; printf x >> public/assets/flags/albinya.png; commit
+start; printf x >> public/assets/flags/nichirin.png; commit
 run wait  SwiftorArrow      "replacing one that exists"
 
 print "navboxes, which the editor also writes"
@@ -77,8 +77,8 @@ stale; printf -- '---\ntitle: "Elias Gray"\ntype: character\nnation: karjania\n-
 run wait  zezelandnationstates-hash "karjania 'adds' an E.S.U. page made since"
 stale; printf -- '---\ntitle: "Elias Gray"\ntype: character\n---\n\nx\n' > src/content/articles/elias-gray.md; commit
 run wait  that1sealguy      "e.s.u. 'adds' its own page made since, with no nation on it"
-stale; mkdir -p public/assets/flags; printf x > public/assets/flags/albinya.png; commit
-run wait  SwiftorArrow      "'adds' a flag that is already on main"
+stale; mkdir -p public/assets/icons; printf x > public/assets/icons/killed-in-action.svg; commit
+run wait  SwiftorArrow      "'adds' a picture that is already on main"
 
 print "everything that is not a page"
 start; print "# x" >> README.md; commit

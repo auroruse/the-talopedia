@@ -152,8 +152,8 @@ const MARK = 40;
  * Main's version and the writer's, merged against the copy the writer opened: line by
  * line as git merges, and word by word only inside the paragraphs that collide. Going
  * word by word over the whole page lined up common words across unrelated paragraphs
- * and wove them together: the merges of #138 and #139 left Albinya's page reading "low
- * plains characterized by east" with five of its sections in twice.
+ * and wove them together: the merges of #138 and #139 left an 80 KB page with its sentences
+ * spliced into one another and five of its sections in twice.
  */
 function merge(path, ours, base, theirs) {
   const byLine = mergeFile(ours, base, theirs, '--diff3', `--marker-size=${MARK}`);

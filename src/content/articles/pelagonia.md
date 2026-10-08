@@ -8,7 +8,7 @@ infobox:
   - { label: "Land Area", value: "~46,850,000 km²" }
   - label: "Entities"
     value:
-      - "4 countries"
+      - "3 countries"
       - "17 dependencies"
   - { label: "Largest City", value: "Manbavi, :flag[arunya] [[arunya]]" }
   - { section: "Demographics" }
@@ -21,7 +21,7 @@ infobox:
   - { label: "Per Capita", sub: true, value: "$9,802" }
 ---
 
-**Pelagonia** (/ˌpɛləˈɡoʊniə/, *pel-uh-GOH-nee-uh*) is [[avium]]'s largest and second-most populated continent. In general terms, it is bounded on the north by the Sahara Sea and the portions of the Erythra River system south of Lake Charmuthas, separating it from [[evria]], and on the west by the Sea of [[auritania]] and the Strait of Hollosend, separating it from [[elysia]]. To the south and east, it is bounded by the Panthalassan Ocean. Pelagonia contains four sovereign states, with the remainder of the continent divided among seven colonial powers and their dependencies, the legacy of sustained Evrian imperial expansion during the late nineteenth century known as the Scramble for Pelagonia.
+**Pelagonia** (/ˌpɛləˈɡoʊniə/, *pel-uh-GOH-nee-uh*) is [[avium]]'s largest and second-most populated continent. In general terms, it is bounded on the north by the Sahara Sea and the portions of the Erythra River system south of Lake Charmuthas, separating it from [[evria]], and on the west by the Sea of [[auritania]] and the Strait of Hollosend, separating it from [[elysia]]. To the south and east, it is bounded by the Panthalassan Ocean. Pelagonia contains three sovereign states, with the remainder of the continent divided among seven colonial powers and their dependencies, the legacy of sustained Evrian imperial expansion during the late nineteenth century known as the Scramble for Pelagonia.
 
 ## Etymology
 
@@ -49,4 +49,4 @@ The Strayan Peninsula's interior is largely arid, with summer highs of 35°C to 
 
 ## Government
 
-Pelagonia's political boundaries are largely a product of the Scramble for Pelagonia in the late nineteenth century, during which Evrian powers partitioned the continent's coastline and extended administration into portions of its interior. The Verdanie, Arunya and [[albinya]] are the continent's three sovereign states. In March 1931, Elvesterian colonial dependencies including the Golden Coast in Pelagonia and North Auritania in Elysia reverted to devolved local rule following the dissolution of the [[mizuhara]] Pentapartite at the Fifth Pentapartite Conference. [[elvester]] retains administrative control over Noradia. Ten powers hold colonial dependencies across the continent: [[alemannia]] administers four, Arverne and [[nichirin]] three each, with single dependencies under [[turulia]], Vicily, Ponurvia, [[shivon]], [[skjarnland]], and [[karjania]].
+Pelagonia's political boundaries are largely a product of the Scramble for Pelagonia in the late nineteenth century, during which Evrian powers partitioned the continent's coastline and extended administration into portions of its interior. The Verdanie and Arunya are the continent's two sovereign states. In March 1931, Elvesterian colonial dependencies including the Golden Coast in Pelagonia and North Auritania in Elysia reverted to devolved local rule following the dissolution of the [[mizuhara]] Pentapartite at the Fifth Pentapartite Conference. [[elvester]] retains administrative control over Noradia. Ten powers hold colonial dependencies across the continent: [[alemannia]] administers four, Arverne and [[nichirin]] three each, with single dependencies under [[turulia]], Vicily, Ponurvia, [[shivon]], [[skjarnland]], and [[karjania]].

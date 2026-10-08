@@ -14,9 +14,26 @@ git worktree add -q --detach "$WT" main
 cd "$WT"
 
 OLD=4edb6e1                       # a fork snapshot from before these pages existed
-X=$(git rev-parse main)           # the copy of main the writer opened
-P=src/content/articles/albinya.md
+P=src/content/articles/land-test-opened.md
 cfg=(-c user.email=t@t -c user.name=t)
+# A page of the test's own on top of main, so no case leans on what a real page says. It
+# is written three times over, as one case opens the copy from two versions back.
+git checkout -q --detach main
+for v in 1 2 3; do
+  print -r -- "---
+title: \"Testland\"
+type: overview
+nation: nichirin
+---
+
+Testland, officially the Republic of Testland, is a country made for testing the merge.
+
+Version $v of a paragraph that only the history needs.
+
+A last paragraph, the same in every version." > $P
+  git add $P; git $cfg commit -qm "land-test page, version $v"
+done
+X=$(git rev-parse HEAD)           # the copy of main the writer opened
 fail=0
 check() {   # check <label> <condition>
   if eval "$2"; then print -r -- "  ok    $1"; else print -r -- "  FAIL  $1"; fail=1; fi
@@ -50,25 +67,25 @@ check "lands"                       '[[ $RESULT == ready ]]'
 check "exactly the writer's text"   'git show :$P | cmp -s - $S/p'
 
 print "main changed another part of it since"
-onto "sed -i '' '2s/.*/title: \"Albinya (renamed on main)\"/' $P"; land
+onto "sed -i '' '2s/.*/title: \"Testland (renamed on main)\"/' $P"; land
 check "lands"                       '[[ $RESULT == ready ]]'
 check "keeps main's change"         'git show :$P | grep -q "renamed on main"'
 check "and the writer's"            'git show :$P | grep -q "Added by the writer."'
 
 print "main and the writer changed different sentences of one paragraph"
-git show $X:$P | sed '/^Albinya, officially/s/$/ Added by the writer./' > $S/r
+git show $X:$P | sed '/^Testland, officially/s/$/ Added by the writer./' > $S/r
 pr $X $P $S/r
-onto "sed -i '' 's/^Albinya, officially/Albinya (reworded on main), officially/' $P"; land
+onto "sed -i '' 's/^Testland, officially/Testland (reworded on main), officially/' $P"; land
 check "lands"                       '[[ $RESULT == ready ]]'
-check "with both"                   'git show :$P | grep -q "^Albinya (reworded on main), officially.* Added by the writer\.$"'
+check "with both"                   'git show :$P | grep -q "^Testland (reworded on main), officially.* Added by the writer\.$"'
 check "and nothing to report"       '[[ ! -s $S/notes ]]'
 
 print "main changed the same words since"
 git reset -q --hard
-git show $X:$P | sed '2s/.*/title: "Albinya (the writer)"/' > $S/q
+git show $X:$P | sed '2s/.*/title: "Testland (the writer)"/' > $S/q
 pr $X $P $S/q
-onto "sed -i '' '2s/.*/title: \"Albinya (main)\"/' $P"; land
-check "lands with the writer's words" '[[ $RESULT == ready ]] && git show :$P | grep -qxF "title: \"Albinya (the writer)\""'
+onto "sed -i '' '2s/.*/title: \"Testland (main)\"/' $P"; land
+check "lands with the writer's words" '[[ $RESULT == ready ]] && git show :$P | grep -qxF "title: \"Testland (the writer)\""'
 check "and says what main had"      'grep -qF "(main)" $S/notes'
 
 print "sent with no note of the copy it was opened from"
@@ -88,7 +105,7 @@ check "and nothing to report"       '[[ ! -s $S/notes ]]'
 git reset -q --hard
 
 print "a new page"
-print -- "---\ntitle: \"T\"\ntype: character\nnation: albinya\n---\n\nNew." > $S/n
+print -- "---\ntitle: \"T\"\ntype: character\nnation: nichirin\n---\n\nNew." > $S/n
 pr $X src/content/articles/land-test-page.md $S/n; onto; land
 check "lands"                       '[[ $RESULT == ready ]] && git show :src/content/articles/land-test-page.md | cmp -s - $S/n'
 
@@ -99,9 +116,9 @@ check "waits for a person"          '[[ $RESULT == wait* ]]'
 print "a new page with no nation on it"
 N=src/content/articles/land-test-new.md
 print -- "---\ntitle: \"T\"\ntype: character\nnavbox: site\n---\n\nNew." > $S/u
-pr $X $N $S/u; onto; WRITER=kiohit05-cyber; land; WRITER=
-check "lands credited to the writer's nation" '[[ $RESULT == ready ]] && git show :$N | grep -qx "nation: albinya"'
-check "right under its type"        '[[ "$(git show :$N | sed -n 3,4p | tr "\n" "|")" == "type: character|nation: albinya|" ]]'
+pr $X $N $S/u; onto; WRITER=GeneralVarah; land; WRITER=
+check "lands credited to the writer's nation" '[[ $RESULT == ready ]] && git show :$N | grep -qx "nation: varahmehr"'
+check "right under its type"        '[[ "$(git show :$N | sed -n 3,4p | tr "\n" "|")" == "type: character|nation: varahmehr|" ]]'
 check "without the site navbox"     '! git show :$N | grep -q "^navbox:"'
 check "and the rest as written"     'git show :$N | grep -qx "New."'
 git reset -q --hard
@@ -115,7 +132,7 @@ print "pictures"
 printf 'not really a png' > $S/img
 pr $X public/assets/flags/land-test.png $S/img; onto; land
 check "a new one lands"             '[[ $RESULT == ready ]]'
-pr $X public/assets/flags/albinya.png $S/img; onto; land
+pr $X public/assets/flags/nichirin.png $S/img; onto; land
 check "one already on main waits"   '[[ $RESULT == wait* ]]'
 
 print "bold that took a space along"
@@ -138,11 +155,11 @@ check "lands with main's word and the writer's number" '[[ $RESULT == ready ]] &
 check "and nothing to report"       '[[ ! -s $S/notes ]]'
 
 # One writer's earlier save, landed by the workflow under their name.
-landed() { GIT_COMMITTER_NAME='github-actions[bot]' git -c user.email=t@t -c user.name=$WRITER commit -qam "albinya: first save (#1)"; }
+landed() { GIT_COMMITTER_NAME='github-actions[bot]' git -c user.email=t@t -c user.name=$WRITER commit -qam "land-test-opened: first save (#1)"; }
 
 print "the writer saved again before the last save had landed"
 git reset -q --hard
-WRITER=kiohit05-cyber
+WRITER=GeneralVarah
 git show $X:$P > $S/s1; print "A section the writer added in the first save, long enough to count." >> $S/s1
 # The second save moves that section up under the title and adds another at the end.
 { sed -n 1,10p $S/s1; tail -n 1 $S/s1; sed -n '11,$p' $S/s1 | sed '$d'; print "Added in the second save, at the end of the page."; } > $S/s2
@@ -181,15 +198,20 @@ printf '%s\n' "The army crossed the river in the spring and the town fell in the
 check "lands with both sides' words, every paragraph whole" '[[ $RESULT == ready ]] && git show :$C | cmp -s - $S/want'
 check "and nothing to report"       '[[ ! -s $S/notes ]]'
 
-# The real thing: Albinya's 80 KB page as #139 sent it from the copy of 3e4722b, onto
-# main with #137 on it. Two paragraphs collide; going word by word over the whole page
-# wove the rest together and put five sections in twice.
+# The real thing, from the history: an 80 KB page as a writer's third save sent it, onto
+# main with their first save on it. Two paragraphs collide; going word by word over the
+# whole page wove the rest together and put five of its sections in twice (#138, #139).
+# The three versions are read by their ids, under a name of the test's own.
 print "a long page where two paragraphs collide"
 git reset -q --hard
-git show 4c1e087:$P > $S/a
-pr 3e4722b $P $S/a
-git checkout -q --detach d3ad60a; land
-check "lands exactly as sent"       '[[ $RESULT == ready ]] && git show :$P | cmp -s - $S/a'
+L=src/content/articles/land-test-long.md
+git checkout -q --detach $X; git cat-file blob 40ce622e3669ceee8f13f2d15dcd69a06593e4d4 > $L
+git add $L; git $cfg commit -qm opened; Y=$(git rev-parse HEAD)
+git cat-file blob 74ff9fe93f7873d9c6c0bbd8a54c8edfaf749f6b > $S/a
+pr $Y $L $S/a
+git checkout -q --detach $Y; git cat-file blob 6e19d698f86bc7ddcf1cec11f063f373bb911a58 > $L
+git $cfg commit -qam main; land
+check "lands exactly as sent"       '[[ $RESULT == ready ]] && git show :$L | cmp -s - $S/a'
 
 cd "$REPO"
 git worktree remove --force "$WT"

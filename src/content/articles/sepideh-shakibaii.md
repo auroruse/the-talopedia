@@ -99,7 +99,7 @@ Qualification for the 1932 World Cup was achieved narrowly and Shakibaii did not
 
 Shakibaii recorded no leaderboard placing in the group stage beyond a share of second for assists. His form in the knockout rounds marked a change in his standing.
 
-Against Albinya he scored the opening goal of the first leg and, in the second, an equalising goal that took the aggregate from 3-2 down to 3-3 and forced extra time; Varahmehr progressed on penalties. He provided two assists in the second leg against Kinshu, rated 8.0, and scored in the final. Varahmehr finished second.
+He provided two assists in the second leg against Kinshu, rated 8.0, and scored in the final. Varahmehr finished second.
 
 ### 1932 Foundation Cup
 

@@ -460,7 +460,7 @@
 
     // Sidebar pictures, dragged: beside another, across their pair, and out to a row of their own.
     const picsMd = ['---', 'title: "Pictures test"', 'type: overview', 'infobox:',
-      '  - { image: "/assets/flags/albinya.png", caption: "Flag A" }',
+      '  - { image: "/assets/flags/arverne.png", caption: "Flag A" }',
       '  - { image: "/assets/flags/alemannia.png", caption: "Flag B" }',
       '  - { label: "Capital", value: "Somewhere" }', '---', '', 'Body.', ''].join('\n');
     await openFile(picsMd, 'pictures-test.md');
@@ -478,18 +478,18 @@
     const sidebarMd = () => ($('#preview').textContent.match(/infobox:\n[\s\S]*?(?=\n---)/) || [''])[0];
     dragOnto(slotOf('Flag A'), slotOf('Flag B'), 0.75, 0.5); await sleep(100);
     ok('a picture dropped on another stands beside it', sidebarMd().includes('  - images:\n'
-      + '      - { src: "/assets/flags/alemannia.png", caption: "Flag B" }\n      - { src: "/assets/flags/albinya.png", caption: "Flag A" }'), sidebarMd());
+      + '      - { src: "/assets/flags/alemannia.png", caption: "Flag B" }\n      - { src: "/assets/flags/arverne.png", caption: "Flag A" }'), sidebarMd());
     dragOnto(slotOf('Flag A'), slotOf('Flag B'), 0.25, 0.5); await sleep(100);
     ok('within its pair it changes sides', sidebarMd().includes(
-      '      - { src: "/assets/flags/albinya.png", caption: "Flag A" }\n      - { src: "/assets/flags/alemannia.png", caption: "Flag B" }'), sidebarMd());
+      '      - { src: "/assets/flags/arverne.png", caption: "Flag A" }\n      - { src: "/assets/flags/alemannia.png", caption: "Flag B" }'), sidebarMd());
     const capitalRow = [...document.querySelectorAll('#ib tr[data-kind="row"]')].find((tr) => tr.querySelector('th')?.textContent === 'Capital');
     dragOnto(slotOf('Flag B'), capitalRow.querySelector('td'), 0.5, 0.9); await sleep(100);
-    ok('onto another row it takes a row of its own there', sidebarMd().includes('  - { image: "/assets/flags/albinya.png", caption: "Flag A" }\n'
+    ok('onto another row it takes a row of its own there', sidebarMd().includes('  - { image: "/assets/flags/arverne.png", caption: "Flag A" }\n'
       + '  - { label: "Capital", value: "Somewhere" }\n  - { image: "/assets/flags/alemannia.png", caption: "Flag B" }'), sidebarMd());
 
     // Picture rows joined into one gallery: no divider between, as many rows of one or two as wanted.
     await openFile(['---', 'title: "Gallery test"', 'type: overview', 'infobox:', '  - images:',
-      '      - { src: "/assets/flags/albinya.png", caption: "A" }', '      - { src: "/assets/flags/alemannia.png", caption: "B" }',
+      '      - { src: "/assets/flags/arverne.png", caption: "A" }', '      - { src: "/assets/flags/alemannia.png", caption: "B" }',
       '  - { image: "/assets/flags/andam-islands.png", caption: "C" }', '  - { image: "/assets/flags/arunya.png", caption: "D" }',
       '---', '', 'Body.', ''].join('\n'), 'gallery-test.md');
     const pictureRows = () => [...document.querySelectorAll('#ib tr[data-kind="image"]')];
@@ -601,16 +601,16 @@
     type(' Draftmark');
     let shelved = await until((all) => all.some((d) => d.key === 'article:nichirin' && d.markdown?.includes('Draftmark')));
     ok('an edit is kept in the browser as its page\'s draft', shelved.some((d) => d.key === 'article:nichirin' && d.markdown.includes('Draftmark')), keys(shelved));
-    await openSite('Albinya');
+    await openSite('Salishia');
     shelved = await shelfAll();
     ok('opening another page keeps it', shelved.some((d) => d.key === 'article:nichirin'), keys(shelved));
-    ok('and a page only opened has none', !shelved.some((d) => d.key === 'article:albinya'), keys(shelved));
+    ok('and a page only opened has none', !shelved.some((d) => d.key === 'article:salishia'), keys(shelved));
     focusEnd(paras()[0]);
     type(' x');
-    await until((all) => all.some((d) => d.key === 'article:albinya'));
+    await until((all) => all.some((d) => d.key === 'article:salishia'));
     undo();
-    shelved = await until((all) => !all.some((d) => d.key === 'article:albinya'));
-    ok('a page put back as it was opened has none again', !shelved.some((d) => d.key === 'article:albinya'), keys(shelved));
+    shelved = await until((all) => !all.some((d) => d.key === 'article:salishia'));
+    ok('a page put back as it was opened has none again', !shelved.some((d) => d.key === 'article:salishia'), keys(shelved));
     await openSite('Nichirin');
     ok('opened again, the page comes back with its edit', txt(0).includes('Draftmark') && /Unsent edits put back/.test($('#status').textContent),
       [txt(0).slice(-30), $('#status').textContent]);

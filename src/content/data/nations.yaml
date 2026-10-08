@@ -41,7 +41,6 @@
 - { id: ponurvia, name: Ponurvia, adjective: Ponurvian, continent: Elysia, flag: /assets/flags/ponurvia.png }
 - { id: salishia, name: Salishia, adjective: Salishian, continent: Elysia, flag: /assets/flags/salishia.png }
 
-- { id: albinya, name: Albinya, adjective: Albinyan, continent: Pelagonia, flag: /assets/flags/albinya.png }
 - { id: arunya, name: Arunya, adjective: Arunyan, continent: Pelagonia, flag: /assets/flags/arunya.png }
 - { id: eivorie, name: Eivorie, adjective: Eivorian, continent: Pelagonia, flag: /assets/flags/eivorie.png }
 - { id: noradia, name: Noradia, adjective: Noradian, continent: Pelagonia, flag: /assets/flags/noradia.png }

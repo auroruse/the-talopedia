@@ -16,7 +16,7 @@ groups:
       - label: Elysia
         items: [auritania, esu, hollosend, ponurvia, salishia]
       - label: Pelagonia
-        items: [albinya, arunya, eivorie, noradia, recolotta]
+        items: [arunya, eivorie, noradia, recolotta]
   - label: World History
     rows:
       - items: ["[[napolyonic-wars|The Napolyonic Wars]]", "[[great-war|The Great War]]"]

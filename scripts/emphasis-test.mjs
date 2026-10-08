@@ -8,7 +8,7 @@ const fixes = [
   ['The **Crimson-Red Calamity **was', 'The **Crimson-Red Calamity** was'],
   ['The ** Crimson** was', 'The **Crimson** was'],
   ['ends in **Name **', 'ends in **Name**'],
-  ['**Albinya ** is', '**Albinya** is'],
+  ['**Testland ** is', '**Testland** is'],
   [`league in${NBSP}**[[karjania]]**`, `league in${NBSP}**[[karjania]]**`],
   [`**in${NBSP}**[[karjania]]`, '**in** [[karjania]]'],
   ['an *italic *word', 'an *italic* word'],
