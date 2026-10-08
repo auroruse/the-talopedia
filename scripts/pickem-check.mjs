@@ -101,7 +101,7 @@ for (const [code, map] of Object.entries(Object.fromEntries(Object.entries(data.
 
 // 6. The card renders.
 const badges = {};
-for (const code of Object.keys(data.teams))
+for (const code of Object.keys(data.teams).filter((c) => data.teams[c].badge !== false))
   badges[code] = 'data:image/png;base64,' + fs.readFileSync(`public/assets/pickem/wc1935/badges/${code}.png`).toString('base64');
 const banner = 'data:image/png;base64,' + fs.readFileSync('public/assets/1935skj.png').toString('base64');
 const svg = K.buildCard(truth, data, { badges, banner });

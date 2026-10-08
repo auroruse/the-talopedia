@@ -35,7 +35,7 @@
    "ASK",
    "SID",
    "NHO",
-   "ALB"
+   "IND"
   ],
   "G": [
    "ALE",
@@ -2427,10 +2427,11 @@
     ]
    ]
   },
-  "ALB": {
-   "name": "Albinya",
+  "IND": {
+   "name": "Independent XI",
    "q": null,
    "invited": true,
+   "badge": false,
    "squad": [
     [
      "Iker Sasieta Gorriti",

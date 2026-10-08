@@ -16,20 +16,33 @@ const store = {
   set(k, v) { try { localStorage.setItem('pk35:' + k, JSON.stringify(v)); } catch { /* private mode: picks just don't persist */ } },
 };
 
-// A stored model is trusted only if every group still holds the drawn sides.
+// A stored model is trusted only if every group still holds the drawn sides. A side whose code
+// has changed since, the one stranger in a group where the draw has one newcomer, is followed
+// to its new code: the place it was picked for is what was picked.
 function revive(o, results) {
   if (!o || typeof o !== 'object' || !o.groups) return null;
+  const now = {};
+  for (const g of K.GROUP_KEYS) {
+    const a = Array.isArray(o.groups[g]) ? o.groups[g] : [], drawn = DATA.groups[g];
+    const gone = a.filter((t) => !drawn.includes(t)), fresh = drawn.filter((t) => !a.includes(t));
+    if (gone.length === 1 && fresh.length === 1) now[gone[0]] = fresh[0];
+  }
+  const re = (t) => now[t] ?? t;
   const m = K.blank(DATA.groups, results);
   for (const g of K.GROUP_KEYS) {
-    const a = o.groups[g];
-    if (!Array.isArray(a) || a.length !== 4 || [...a].sort().join() !== [...DATA.groups[g]].sort().join()) return null;
-    m.groups[g] = a.slice();
+    const a = Array.isArray(o.groups[g]) ? o.groups[g].map(re) : null;
+    if (!a || a.length !== 4 || [...a].sort().join() !== [...DATA.groups[g]].sort().join()) return null;
+    m.groups[g] = a;
     if (results) m.done[g] = !!o.done?.[g];
   }
   m.name = typeof o.name === 'string' ? o.name : '';
-  for (const id of K.MATCHES) if (typeof o.ko?.[id] === 'string') m.ko[id] = o.ko[id];
+  for (const id of K.MATCHES) if (typeof o.ko?.[id] === 'string') m.ko[id] = re(o.ko[id]);
   if (Array.isArray(o.score)) m.score = o.score.map((v) => (Number.isInteger(v) ? v : null)).slice(0, 2);
-  for (const k of K.AWARDS) if (typeof o.awards?.[k] === 'string') m.awards[k] = o.awards[k];
+  for (const k of K.AWARDS) {
+    if (typeof o.awards?.[k] !== 'string') continue;
+    const [t, ...name] = o.awards[k].split('|');
+    m.awards[k] = [re(t), ...name].join('|');
+  }
   return K.normalize(m);
 }
 
@@ -58,7 +71,9 @@ function changed() {
 
 // ── pieces ──────────────────────────────────────────────────────────────────────────────────
 
-const flag = (t, cls = '') => `<span class="pk-badge ${cls}"><img src="${badgeUrl(t)}" alt="" loading="lazy"></span>`;
+// A side with no badge of its own shows the empty disc the card draws for one.
+const flag = (t, cls = '') => (T[t].badge === false ? `<span class="pk-badge ${cls} empty"></span>`
+  : `<span class="pk-badge ${cls}"><img src="${badgeUrl(t)}" alt="" loading="lazy"></span>`);
 // Right, half right (through, in the wrong place) and wrong: a tick, a dash and a cross in a disc.
 const MARK_PATH = { right: 'M6.4 11.4l3.1 3.1 6.1-6.6', part: 'M6.5 11h9', wrong: 'M7.6 7.6l6.8 6.8M14.4 7.6l-6.8 6.8' };
 const MARK_SAY = { right: 'right', part: 'through, but not in that place', wrong: 'wrong' };
@@ -329,7 +344,7 @@ function loadImg(src) {
 // Each badge as a small square PNG data URI, fitted whole, so the card carries its own images.
 async function badgeURIs() {
   const out = {};
-  await Promise.all(Object.keys(T).map(async (t) => {
+  await Promise.all(Object.keys(T).filter((t) => T[t].badge !== false).map(async (t) => {
     if (!badgeCache.has(t)) {
       const img = await loadImg(badgeUrl(t)), c = document.createElement('canvas'), S = 160;
       c.width = c.height = S;

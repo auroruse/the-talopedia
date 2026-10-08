@@ -29,13 +29,13 @@ const intl = new Map(PRESET_CATALOG.filter((t) => t.league === 'Avium Internatio
 const GROUPS = {
   A: ['NCH', 'SKJ', 'ANH', 'EIV'], B: ['AST', 'LVO', 'GIA', 'NMZ'],
   C: ['ESU', 'KAR', 'CAH', 'AEM'], D: ['HOL', 'COR', 'VAR', 'ASP'],
-  E: ['ARV', 'PON', 'KMT', 'PER'], F: ['ASK', 'SID', 'NHO', 'ALB'],
+  E: ['ARV', 'PON', 'KMT', 'PER'], F: ['ASK', 'SID', 'NHO', 'IND'],
   G: ['ALE', 'AUR', 'SEL', 'NKI'], H: ['VIC', 'FUR', 'SHI', 'ABB'],
 };
 const HOST = 'SKJ';
 
 // Invited sides played no qualifiers, so they carry no record.
-const INVITED = new Set(['ALB', 'EIV']);
+const INVITED = new Set(['IND', 'EIV']);
 // Players renamed in the engine after entries went in, old name to new. An award pick is stored as
 // a hash of the name, so without this a rename would quietly drop somebody's pick.
 const RENAMED = { EIV: { 'Ceneric Cynbeald': 'Cyneric Cynbeald' } };
@@ -57,8 +57,18 @@ fs.rmSync(BADGES, { recursive: true, force: true });
 fs.mkdirSync(BADGES, { recursive: true });
 const badge = (src, code) => execFileSync('sips', ['-s', 'format', 'png', '-Z', '200', src, '--out', path.join(BADGES, `${code}.png`)], { stdio: 'ignore' });
 
+// A side standing in for a nation that has left the wiki has no team in the engine to read: it
+// keeps the record already written for it, under its own name, with no badge.
+const STAND_INS = { IND: 'Independent XI' };
+const written = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')).teams : {};
+
 const teams = {};
 for (const code of Object.values(GROUPS).flat()) {
+  if (STAND_INS[code]) {
+    if (!written[code]) throw new Error(`${code} stands in for a side but has no record written to keep`);
+    teams[code] = { ...written[code], name: STAND_INS[code], badge: false };
+    continue;
+  }
   const t = intl.get(code);
   if (!t) throw new Error(`${code} is not in the international preset`);
   const invited = INVITED.has(code), q = code === HOST || invited ? null : qualifying[t.name];
