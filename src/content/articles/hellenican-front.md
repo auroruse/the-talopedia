@@ -9,6 +9,7 @@ type: event
 authors: [varahmehr]
 navbox: site
 infobox:
+  - { value: "Part of [[great-war]]" }
   - images:
       - { src: "https://lh3.googleusercontent.com/d/1hiP7IoHCthEpZQfyvXjiLVpPuYIm4CkG=w2000", caption: "" }
       - { src: "https://lh3.googleusercontent.com/d/1NbeCjVa1WQNpBdZFb05RmpaqmNn1qEMi=w2000", caption: "" }
@@ -26,11 +27,11 @@ infobox:
       - "11 November 1918"
   - label: "Location"
     value:
-      - "Eastern Hellenica"
-      - "Chrysopolos"
-      - "Western Astartolia"
-      - "Hellenican Sea"
-  - { label: "Result", value: "Astriyan victory" }
+      - "[[eastern-hellenica]]"
+      - "[[the-straits]]"
+      - "[[western-astartolia]]"
+      - "[[hellenican-sea]]"
+  - { label: "Result", value: "[[east-astriya|Astriyan]] victory" }
   - label: "Territorial Changes"
     value:
       - "East Astriya becomes independent, including Aspadana"
@@ -38,59 +39,68 @@ infobox:
   - { section: "Belligerents" }
   - pair:
       - items:
-          - ":flag[vicily] Vicily"
-          - ":flag[east-astriya] East Astriya"
+          - ":flag[vicily] [[vicily]]"
+          - ":flag[east-astriya] [[east-astriya]]"
       - items:
-          - ":flag[selmira] Selmira"
+          - ":flag[selmira] [[selmira]]"
   - { section: "Commanders and Leaders" }
   - pair:
       - items:
-          - ":flag[vicily] Aurelio Brancati"
-          - ":flag[vicily] Ruggero Castellani"
-          - ":flag[vicily] Tancredi Morosi"
-          - ":flag[vicily] Ottavio Serravalle"
-          - ":flag[east-astriya] Theophanes Karydis"
-          - ":flag[east-astriya] Markos Lazarides"
+          - ":flag[vicily] [[aurelio-brancati]]"
+          - ":flag[vicily] [[ruggero-castellani]]"
+          - ":flag[vicily] [[tancredi-morosi]]"
+          - ":flag[vicily] [[ottavio-serravalle]]"
+          - ":flag[east-astriya] [[theophanes-karydis]]"
+          - ":flag[east-astriya] [[markos-lazarides]]"
       - items:
-          - ":flag[selmira] Ahmed IV"
-          - ":flag[selmira] Nazım Hayri Pasha"
-          - ":flag[selmira] İsmail Ferid Pasha"
-          - ":flag[selmira] Kâzım Şevket Pasha"
-          - ":flag[selmira] Cemal Tevfik Pasha"
+          - ":flag[selmira] [[ahmed-iv|Ahmed IV]]"
+          - ":flag[selmira] [[nazim-hayri-pasha|Nazım Hayri Pasha]]"
+          - ":flag[selmira] [[ismail-ferid-pasha|İsmail Ferid Pasha]]"
+          - ":flag[selmira] [[kazim-sevket-pasha|Kâzım Şevket Pasha]]"
+          - ":flag[selmira] [[cemal-tevfik-pasha]]"
+          - ":flag[selmira] [[halil-nuri-pasha]] :img[/assets/icons/killed-in-action.svg]"
+          - ":flag[selmira] [[huseyin-rifat-pasha|Hüseyin Rıfat Pasha]]"
   - { section: "Strength" }
   - pair:
       - items:
-          - ":flag[vicily] 2,100,000"
-          - ":flag[east-astriya] 720,000"
+          - ":flag[vicily] 1,300,000"
+          - ":flag[east-astriya] 420,000"
       - items:
-          - ":flag[selmira] 2,400,000"
+          - ":flag[selmira] 1,600,000"
   - { section: "Casualties and Losses" }
   - pair:
       - items:
           - ":flag[vicily]:"
-          - "312,056 dead"
-          - "564,553 wounded"
-          - "95,379 captured or missing"
+          - "150,000 dead"
+          - "330,000 wounded"
+          - "45,000 captured or missing"
           - ":flag[east-astriya]:"
-          - "149,661 dead"
-          - "235,088 wounded"
-          - "32,497 captured or missing"
+          - "55,000 dead"
+          - "120,000 wounded"
+          - "15,000 captured or missing"
           - "**Civilian**"
-          - "256,147 deaths"
+          - "125,000 deaths"
           - "**Total**"
-          - "717,864 deaths"
+          - "330,000 deaths"
       - items:
           - ":flag[selmira]:"
-          - "486,002 dead"
-          - "721,433 wounded"
-          - "217,918 captured or missing"
+          - "220,000 dead"
+          - "360,000 wounded"
+          - "95,000 captured or missing"
           - "**Civilian**"
-          - "381,514 deaths"
+          - "170,000 deaths"
           - "**Total**"
-          - "867,516 deaths"
+          - "390,000 deaths"
 ---
 
-The Hellenican Front was a theater of the Great War, fought from 1914 to 1918 between the Winscor Accord powers of Vicily and East Astriya on one side and Selmira, a member of the Eisenpakt, on the other. It takes its name from Hellenica, the region in which it began. The front grew out of an undeclared conflict that started in December 1913, when Vicily intervened in an Astriyan uprising against the collapsing Murad Caliphate. Historians differ on whether the front should be dated from that intervention or from the formal declarations of war in August 1914.
+The **Hellenican Front** (Vicilian: *Fronte ellenicano*; Astriyan:
+Ελληνικόν Μέτωπον,
+*Ellinikón Métopon*; Selmiran:
+*Batı Cephesi*) was a theater of [[great-war|the Great War]], fought from 1914 to 1918 in eastern Hellenica, around the Straits and in western Astartolia. It was fought between [[vicily]] and [[east-astriya]], members of the [[winscor-accord]], and [[selmira]], a member of the [[eisenpakt]]. The front grew out of the Astriyan Intervention, an undeclared war that began when Vicilian troops crossed the [[argyron]] on 12 December 1913. The crossing followed the collapse of the [[murad-caliphate]] and an Astriyan uprising at [[odryssa]]. Vicilian official histories date the front from Vicily's declaration of war on 5 August 1914; Selmiran and Astriyan accounts date it from the crossing of the Argyron.
+
+The fortress of [[adrianopolis]] fell in October 1914 after a siege of 176 days. The advance toward [[aspadana]] was then halted at the [[aspis-lines|Aspis lines]], where the front held for two and a half years. A Vicilian attempt to force the [[stenon]] by sea failed on 18 March 1915 with the loss of three battleships. It was followed by landings on both shores of the strait: the eastern beachhead was abandoned in August, and the [[akontion]] was cleared in December, but the strait remained closed. In 1916 an Accord army landed at [[karashar]] and advanced into the interior of Astartolia. The Fourth Battle of the Aspis broke the lines in May 1917, and Selmira withdrew its army across the [[chrysoporos]]. Astriyan troops entered Aspadana on 29 May 1917, and the Astriyan State was proclaimed there on 1 July. In Astartolia the Accord advance was stopped at the [[selm]] in September 1917. The Selmiran Great Offensive of August 1918 then drove the Accord armies out of Astartolia, and Karashar was retaken on 9 September 1918.
+
+When the armistice came into force on 11 November 1918, the armies faced each other across the Straits. Under the [[treaty-of-pyrgos]] of 17 June 1919, East Astriya gained its independence with Aspadana and all of Hellenica east of the Argyron. Selmira retained Astartolia and the eastern shore of the Straits, and Vicily withdrew behind the Argyron. A compulsory exchange of populations followed. About 205,000 soldiers of the Accord and 220,000 Selmirans soldiers died on the front, along with an estimated 295,000 civilian deaths, and about 1.2 million people were displaced during the fighting. The front is regarded in East Astriya as the war that founded the state and in Selmira as a victory of survival. General histories of the Great War describe it as inconclusive.
 
 ## Background
 
@@ -98,27 +108,27 @@ The Hellenican Front was a theater of the Great War, fought from 1914 to 1918 be
 
 #### Murad rule before 1886
 
-The Murad Caliphate, ruled from Balıkefra (Aspadana) on the western shore of the Chrysoporos, held Astartolia, the Ebernari coast and the whole of Hellenica until the late nineteenth century. Its Hellenican provinces were inhabited mostly by Astriyans, administered by appointed governors and garrisoned from the fortresses of  İzsin, Tekirdın and Karasir (modern day Castelgulfio, Odryssa and Adrianopolis).
+The Murad Caliphate, ruled from Balıkefra (Aspadana) on the western shore of the Chrysoporos, held Astartolia, the Ebernari coast and the whole of Hellenica until the late nineteenth century. Its Hellenican provinces were inhabited mostly by Astriyans, administered by appointed governors and garrisoned from the fortresses of  İzsin, Tekirdın and Karasir (modern day [[castelgulfio]], Odryssa and Adrianopolis).
 
 #### Vicilian-Murad War (1886-1888)
 
-The Vicilian-Murad War (Vicilian: *Guerra d'Oriente*, "Eastern War"; Astriyan: Πόλεμος του Διαμελισμού, *Pólemos tou Diamelismoú*, "War of the Partition"; Selmiran: *Seksen Altı Harbi*, "War of '86") began with an Astriyan rebellion at Amasfez (currently Attenza) on 6 April 1886. Murad irregular troops put the rebellion down within three weeks, and the killing of civilians that accompanied its suppression was reported at length in the Vicilian press. Vicily declared war on 2 May 1886.
+The [[vicilian-murad-war|Vicilian-Murad War]] (Vicilian: *Guerra d'Oriente*, "Eastern War"; Astriyan: Πόλεμος του Διαμελισμού, *Pólemos tou Diamelismoú*, "War of the Partition"; Selmiran: *Seksen Altı Harbi*, "War of '86") began with an Astriyan rebellion at Amasfez (currently [[attenza]]) on 6 April 1886. Murad irregular troops put the rebellion down within three weeks, and the killing of civilians that accompanied its suppression was reported at length in the Vicilian press. Vicily declared war on 2 May 1886.
 
-The Vicilian fleet destroyed the Murad squadron in the Hellenican Sea off Eradea on 19 June, and an army was landed in southern Hellenica the following month. Amasfez fell on 3 August. İzsin, the principal Murad fortress in western Hellenica, was besieged from 11 November 1886 and capitulated on 27 March 1887. A Murad counteroffensive was defeated on the Argyron in August 1887. A Vicilian attempt to carry the war beyond the river toward Tekirmir (Dedeagach) failed in October, and an armistice was signed on 9 December 1887.
+The Vicilian fleet destroyed the Murad squadron in the Hellenican Sea off [[eraclea]] on 19 June, and an army was landed in southern Hellenica the following month. Amasfez fell on 3 August. İzsin, the principal Murad fortress in western Hellenica, was besieged from 11 November 1886 and capitulated on 27 March 1887. A Murad counteroffensive was defeated on the Argyron in August 1887. A Vicilian attempt to carry the war beyond the river toward Tekirmir (Dedeagach) failed in October, and an armistice was signed on 9 December 1887.
 
 #### Treaty of Tekirmir
 
-The Treaty of Tekirmir, signed on 14 March 1888, ceded to Vicily all Murad territory west of the Argyron and imposed an indemnity payable in gold over twenty-five years. Under Article 9, Vicily undertook to grant the ceded provinces a statute of self-government. The Argyron, which had never been a political boundary, became the frontier, and the lands on either side of it came to be called West Astriya and East Astriya. Caliph Orhan IV abdicated in 1889 in favor of his nephew, who reigned as Bayezid V.
+The [[treaty-of-tekirmir]], signed on 14 March 1888, ceded to Vicily all Murad territory west of the Argyron and imposed an indemnity payable in gold over twenty-five years. Under Article 9, Vicily undertook to grant the ceded provinces a statute of self-government. The Argyron, which had never been a political boundary, became the frontier, and the lands on either side of it came to be called West Astriya and East Astriya. [[caliph-orhan-iv|Caliph Orhan IV]] abdicated in 1889 in favor of his nephew, who reigned as [[bayezid-v]].
 
 #### Debt and the reign of Bayezid V
 
-Bayezid V (reigned 1889-1913) inherited the indemnity and added to it the loans raised to rebuild the army and to construct the Aspis lines west of Balıkefra between 1889 and 1896. From 1894 the customs, salt and tobacco revenues were pledged to a Public Debt Council of foreign bondholders. By 1912 the service of the debt consumed about half of the Caliphate's revenue.
+Bayezid V (reigned 1889-1913) inherited the indemnity and added to it the loans raised to rebuild the army and to construct the Aspis lines west of Balıkefra between 1889 and 1896. From 1894 the customs, salt and tobacco revenues were pledged to a [[public-debt-council]] of foreign bondholders. By 1912 the service of the debt consumed about half of the Caliphate's revenue.
 
 ### The Astriyan National Movement
 
 The statute promised at Tekirmir was never enacted. West Astriya was governed as the Eastern Provinces by a governor-general at Castelgulfio, which was developed as a naval base and railhead. Vicilian was the language of administration and of the courts. Astriyan petitions for the statute in 1893 and 1901 received no answer.
 
-The Torchbearers (Astriyan: Λαμπαδηφόροι, *Lampadephoroi*) were founded at Odryssa in 1894 by teachers, clerks and merchants' sons. The society was secret, organized in cells on both banks of the Argyron, and banned by both governments. Its program was a single Astriyan state on both banks, as opposed to the transfer of East Astriya from Murad to Vicilian rule.
+The [[torchbearers]] (Astriyan: Λαμπαδηφόροι, *Lampadephoroi*) were founded at Odryssa in 1894 by teachers, clerks and merchants' sons. The society was secret, organized in cells on both banks of the Argyron, and banned by both governments. Its program was a single Astriyan state on both banks, as opposed to the transfer of East Astriya from Murad to Vicilian rule.
 
 ## Collapse of the Murad Caliphate
 
@@ -128,21 +138,21 @@ On 11 June 1913 the Murad treasury failed to pay the coupon due to its bondholde
 
 ### Death of Bayezid V and the Succession
 
-Bayezid V died on 2 August 1913. His son, aged fourteen, was proclaimed the following day as Ahmed IV under the regency of the Grand Vizier, Nazım Hayri Pasha. A group of senior officers offered their support to the late Caliph's brother, Prince Mahmud Cevdet, who declined it on 20 August and withdrew from the capital.
+Bayezid V died on 2 August 1913. His son, aged fourteen, was proclaimed the following day as [[ahmed-iv|Ahmed IV]] under the regency of the Grand Vizier, [[nazim-hayri-pasha|Nazım Hayri Pasha]]. A group of senior officers offered their support to the late Caliph's brother, Prince [[mahmud-cevdet]], who declined it on 20 August and withdrew from the capital.
 
 ### Saptember mutinies and the Officers' Council
 
-The mutinies began on 9 September at Sultanönü, where the garrison refused to parade unpaid, and reached Siyahkaya and Iskenderiye within five days. On 21 September the mutinous commands formed the Officers' Council at Iskenderiye under General İsmail Ferid Pasha, which demanded the dismissal of the regent and the payment of arrears. By October the Council controlled the interior of Astartolia. The regency held the capital and the Straits and was nominally obeyed by the garrisons of Hellenica, which were paid by neither.
+The mutinies began on 9 September at Sultanönü, where the garrison refused to parade unpaid, and reached [[siyahkaya]] and [[iskenderiye]] within five days. On 21 September the mutinous commands formed the [[officers-council|Officers' Council]] at Iskenderiye under General [[ismail-ferid-pasha|İsmail Ferid Pasha]], which demanded the dismissal of the regent and the payment of arrears. By October the Council controlled the interior of Astartolia. The regency held the capital and the Straits and was nominally obeyed by the garrisons of Hellenica, which were paid by neither.
 
 ## Astriyan Uprising
 
 ### Odryssa revolt
 
-On 26 October 1913 the Torchbearers seized the arsenal, the telegraph office and the railroad station at Odryssa. The garrison of about 3,000 withdrew to the citadel and surrendered on 29 October. The revolt spread along the upper Odrys valley within a week. The garrisons of the northern districts and of Adrianopolis held their positions.
+On 26 October 1913 the Torchbearers seized the arsenal, the telegraph office and the railroad station at Odryssa. The garrison of about 3,000 withdrew to the citadel and surrendered on 29 October. The revolt spread along the upper [[odrys-valley|Odrys valley]] within a week. The garrisons of the northern districts and of Adrianopolis held their positions.
 
 ### Provisional Government of Astriya
 
-The Provisional Government of Astriya was proclaimed at Odryssa on 3 November under Theophanes Karydis. Its proclamation claimed an Astriyan state on both banks of the Argyron. It did not request Vicilian assistance, and Vicily did not recognize it.
+The [[provisional-government-of-astriya]] was proclaimed at Odryssa on 3 November under [[theophanes-karydis]]. Its proclamation claimed an Astriyan state on both banks of the Argyron. It did not request Vicilian assistance, and Vicily did not recognize it.
 
 ### Murad countermeasures
 
@@ -152,7 +162,7 @@ A column of about 8,000 men marched up the Odrys from Adrianopolis in early Nove
 
 ### Mobilization
 
-The government of Aurelio Brancati ordered a partial mobilization on 8 November. The Army of the East (Vicilian: *Armata d'Oriente*), about 120,000 strong, was assembled at Castelgulfio under General Ruggero Castellani. The government gave its purpose as the protection of the refugees and of the frontier.
+The government of [[aurelio-brancati]] ordered a partial mobilization on 8 November. The Army of the East (Vicilian: *Armata d'Oriente*), about 120,000 strong, was assembled at Castelgulfio under General [[ruggero-castellani]]. The government gave its purpose as the protection of the refugees and of the frontier.
 
 ### Argyron Bridge Incident
 
@@ -172,9 +182,9 @@ The state of Selmira was proclaimed at Iskenderiye on 3 February 1914, with İsm
 
 ### Sideron campaign and the encirclement of Adrianopolis
 
-Between February ad May 1914 a Vicilian corps under General Ottavio Serravalle, with Astriyan volunteers, reduced the Murad garrisons of the Sideron Mountains and the northern districts. Melcarta fell on 2 March, Demirtas on 11 April and Pristinia on 6 May. The remaining garrisons, about 30,000 men, withdrew to the Tethys Coast and were evacuated by sea from Odessos and Pyrgos in the last week of May.
+Between February and May 1914 a Vicilian corps under General [[ottavio-serravalle]], with Astriyan volunteers, reduced the Murad garrisons of the [[sideron-mountains]] and the northern districts. [[melcarta]] fell on 2 March, [[demirtas]] on 11 April and [[pristinia]] on 6 May. The remaining garrisons, about 30,000 men, withdrew to the Tethys Coast and were evacuated by sea from [[odessos]] and [[pyrgos]] in the last week of May.
 
-Castellani's main body moved down the Odrys against Adrianopolis, whose garrison under Hüseyin Rıfat Pasha had accepted the authority of the Council in February. The encirclement was completed on 21 April 1914.
+Castellani's main body moved down the [[odrys]] against Adrianopolis, whose garrison under [[huseyin-rifat-pasha|Hüseyin Rıfat Pasha]] had accepted the authority of the Council in February. The encirclement was completed on 21 April 1914.
 
 ## Outbreak of the Great War (July-August 1914)
 
@@ -227,6 +237,7 @@ Fort Demirkapı was taken by Vicilian infantry on the night of 11 October, and F
 #### Capitulation and occupation
 
 Rıfat Pasha capitulated on 14 October, 176 days after the siege began. About 41,000 officers and men became prisoners; some 11,000 of the garrison had been killed or had died of disease and hunger. The prisoners were held in open camps on the islands of the Odrys below the city, where several thousand died of exposure and disease before the camps were cleared in December.
+Rıfat Pasha himself died of cholera in the camps on 22 November 1914.
 
 The city was placed under a Vicilian military governor. The Provisional Government, which had expected to install its own commissioner under the Castelgulfio Protocol, protested the appointment, in the first open disagreement between the two allies since the protocol was signed.
 
@@ -280,18 +291,13 @@ The government of Aurelio Brancati retained Castellani in command. Castellani as
 
 #### Defenses of the Stenon
 
-The Stenon was closed by forts at its entrance, by the batteries of the Narrows at
-Çanakalesi and on the opposite shore, and by ten lines of mines. After the retreat to the Aspis, a Selmiran corps had remained on the Akontion behind the Neck Line (Selmiran:
-*Boyun Hattı*), a belt of entrenchments across the base of the peninsula, and was supplied across the Narrows.  In January 1915 both shores were placed under the Straits Army (Selmiran:
-*Boğazlar Ordusu*) of Cemal Tevfik Pasha.
+The Stenon was closed by forts at its entrance, by the batteries of the Narrows at Çanakalesi and on the opposite shore, and by ten lines of mines. After the retreat to the Aspis, a Selmiran corps had remained on the Akontion behind the Neck Line (Selmiran: *Boyun Hattı*), a belt of entrenchments across the base of the peninsula, and was supplied across the Narrows.  In January 1915 both shores were placed under the Straits Army (Selmiran: *Boğazlar Ordusu*) of Cemal Tevfik Pasha.
 
-The Vicilian fleet under Admiral Tancredi Morosi bombarded the entrance forts from 19 February. Landing parties destroyed their guns in the last week of the month, but the minesweepers, which were converted trawlers, could not work under the fire of mobile howitzers. On the night of 7 March the Selmiran minelayer
-*Şahin* laid a new line of twenty-six mines parallel to the eastern shore, in the bay where the bombarding ships had been seen to turn.
+The Vicilian fleet under Admiral Tancredi Morosi bombarded the entrance forts from 19 February. Landing parties destroyed their guns in the last week of the month, but the minesweepers, which were converted trawlers, could not work under the fire of mobile howitzers. On the night of 7 March the Selmiran minelayer *Şahin* laid a new line of twenty-six mines parallel to the eastern shore, in the bay where the bombarding ships had been seen to turn.
 
 #### Battle of March 18th
 
-Morosi entered the Stenon on 18 March with fourteen battleships in three lines. By early afternoon most of the guns at the Narrows had ceased fire. As the leading line turned away, the battleship *Zarentia* struck a mine and capsized in two minutes, with the loss of 640 of her crew of 710. The *Arpi* was mined two hours later, and the *Attenza* was mined while standing by her; both sank after dark. The flagship *Trinacria* was heavily damaged by gunfire. Selmiran losses were about 120 men and eight guns. The battle is known in Selmira as the Victory of the Strait (Selmiran:
-*Boğaz Zaferi*).
+Morosi entered the Stenon on 18 March with fourteen battleships in three lines. By early afternoon most of the guns at the Narrows had ceased fire. As the leading line turned away, the battleship *Zarentia* struck a mine and capsized in two minutes, with the loss of 640 of her crew of 710. The *Arpi* was mined two hours later, and the *Attenza* was mined while standing by her; both sank after dark. The flagship *Trinacria* was heavily damaged by gunfire. Selmiran losses were about 120 men and eight guns. The battle is known in Selmira as the Victory of the Strait (Selmiran: *Boğaz Zaferi*).
 
 Morosi reported that the fleet could not pass until the army held the shore. The cabinet did not abandon the Morosi plan. It ordered instead that the Stenon be opened by landing an army on both of its shores.
 
@@ -301,13 +307,9 @@ Morosi reported that the fleet could not pass until the army held the shore. The
 
 The Army of the Stenon (Vicilian: *Armata dello Stenon*), about 75,000 men including an Astriyan brigade, was formed in February under General Ottavio Serravalle. It was to land at the tip of the Akontion and on the eastern shore at the entrance to the strait, and to advance along both shored to the Narrows. Castellani was to attack the Neck Line from the plain on the same day.
 
-Three brigades landed on 25 April at Cape Lonche (Astriyan:
-Λόγχη,
-*Lónchi*, "Spearhead"; Selmiran:
-*Mızrakburnu*), the tip of the Akontion. They lost about 5,000 men on the beaches on the first day. The cape was secured on 26 April, and a beachhead about 5 kilometers deep was established by the end of the month.
+Three brigades landed on 25 April at Cape Lonche (Astriyan: Λόγχη, *Lónchi*, "Spearhead"; Selmiran: *Mızrakburnu*), the tip of the Akontion. They lost about 5,000 men on the beaches on the first day. The cape was secured on 26 April, and a beachhead about 5 kilometers deep was established by the end of the month.
 
-A Vicilian division landed the same morning at Fener Bay (Selmiran: *Fener Koyu*, "Lighthouse Bay") on the eastern shore. It took the entrance fort of Fenerhisar from the rear on 26 April and advanced 12 kilometers toward
-Çanakalesi.
+A Vicilian division landed the same morning at Fener Bay (Selmiran: *Fener Koyu*, "Lighthouse Bay") on the eastern shore. It took the entrance fort of Fenerhisar from the rear on 26 April and advanced 12 kilometers toward Çanakalesi.
 
 #### First attack on the Neck Line
 
@@ -324,8 +326,7 @@ Vicilian attacks on the Gökdere on 4 June and 12 July failed. The beachhead lay
 
 ### Second Battle of the Aspis
 
-The siege train from Adrianopolis reached the Aspis in the spring, and Castellani assembled about 400 guns opposite the central sector. He had about 210,000 men against about 130,000 under
-Kâzım Şevket Pasha.
+The siege train from Adrianopolis reached the Aspis in the spring, and Castellani assembled about 400 guns opposite the central sector. He had about 210,000 men against about 130,000 under Kâzım Şevket Pasha.
 
 The bombardment opened on 12 June and lasted seven days. The infantry attacked on 19 June and took the first belt of redoubts in the center, including the Sword Redoubt, on 25 June. Attacks on the second belt between 28 June and 7 July failed, again under fire from Selmiran warships on the southern flank.
 
@@ -333,15 +334,11 @@ Castellani ended the offensive on 8 July. The front had moved about 2 kilometers
 
 ### Akontion campaign
 
-The advance from Cape Lonche was stopped before Skopia (Astriyan:
-Σκοπιά,
-*Skopiá*, "Lookout"; Selmiran:
-*Gözcütepe*), the heights that overlook both the cape and the Narrows. Four attacks, on 28 April, 6-8 May, 4-6 June and 12-13 July, failed to take them against a garrison under Halil Nuri Pasha that had grown to about 60,000.
+The advance from Cape Lonche was stopped before Skopia (Astriyan: Σκοπιά, *Skopiá*, "Lookout"; Selmiran: *Gözcütepe*), the heights that overlook both the cape and the Narrows. Four attacks, on 28 April, 6-8 May, 4-6 June and 12-13 July, failed to take them against a garrison under Halil Nuri Pasha that had grown to about 60,000.
 
 After the Second Battle of the Aspis the siege train was moved south against the Neck Line. The bombardment opened on 19 October, and the Astriyan National Army under Lazarides broke through on 6 November. The Selmiran garrison of the Akontion was then under attack from both ends of the peninsula, and allied guns could reach its crossing points on the Narrows.
 
-Tevfik Pasha ordered the Akontion abandoned. About 52,000 men and most of the field artillery were ferried across the Narrows to
-Çanakalesi on the nights of 11-14 December without loss. Accord patrols entered the empty trenches on Skopia on 15 December. Accord casualties in the campaign were about 85,000, of whom some 20,000 were dead; Selmiran casualties were about 70,000.
+Tevfik Pasha ordered the Akontion abandoned. About 52,000 men and most of the field artillery were ferried across the Narrows to Çanakalesi on the nights of 11-14 December without loss. Accord patrols entered the empty trenches on Skopia on 15 December. Accord casualties in the campaign were about 85,000, of whom some 20,000 were dead; Selmiran casualties were about 70,000.
 
 ### Situation at the end of 1915
 
@@ -351,23 +348,19 @@ The Accord held the whole western shore of the Stenon. The straits remained clos
 
 ### Odryssa Declaration
 
-In February 1916 the Provisional Government held elections in the districts of East Astriya under its civil administration. The National Assembly (Astriyan:
-Εθνοσυνέλευση,
-*Ethnosynélefsi*) of 212 deputies met at Odryssa, and on 25 March it adopted the Odryssa Declaration. The declaration stated that Astriya was a sovereign state and would be constituted as one at the peace, that Aspadana was its capital, and that the Provisional Government answered to the Assembly. It made no reference to the western bank of the Argyron, but it described the Astriyan nation as "one and indivisible".
+In February 1916 the Provisional Government held elections in the districts of East Astriya under its civil administration. The National Assembly (Astriyan: Εθνοσυνέλευση, *Ethnosynélefsi*) of 212 deputies met at Odryssa, and on 25 March it adopted the Odryssa Declaration. The declaration stated that Astriya was a sovereign state and would be constituted as one at the peace, that Aspadana was its capital, and that the Provisional Government answered to the Assembly. It made no reference to the western bank of the Argyron, but it described the Astriyan nation as "one and indivisible".
 
 Vicily protested on 28 March that the phrase breached the Castelgulfio Protocol. Karydis replied that the declaration asserted no authority west of the river. The founding powers of the Accord took note of the declaration without comment. The dispute was settled for the time being on 14 May, when Vicily, which needed Astriyan troops for its coming expedition, transferred the civil administration to East Astriya, including Adrianopolis, to the Provisional Government. The Vicilian army kept control of the railroads and the ports.
 
 ### Selmiran transfers to Nabataea
 
-A Shivonite offensive on the Nabataean front in the spring of 1916 obliged
-İsmail Ferid Pasha to reinforce it. Between March and May six divisions, about 70,000 men, were withdrawn from the Straits Army and from the garrisons of western Astartolia and sent south. The Aspis lines were left at full strength. The coast of the Hellenican Sea, which the Selmiran command judged the Accord too weak to attack while they were committed at the Aspis and the Stenon, was left with fewer than 45,000 men.
+A Shivonite offensive on the Nabataean front in the spring of 1916 obliged İsmail Ferid Pasha to reinforce it. Between March and May six divisions, about 70,000 men, were withdrawn from the Straits Army and from the garrisons of western Astartolia and sent south. The Aspis lines were left at full strength. The coast of the Hellenican Sea, which the Selmiran command judged the Accord too weak to attack while they were committed at the Aspis and the Stenon, was left with fewer than 45,000 men.
 
 ### Karashar campaign
 
 #### Plan and forces
 
-With the Stenon closed, the Vicilian General Staff proposed to defeat Selmira in Astartolia itself. Karashar was the largest port on the eastern shore of the Hellenican Sea and the terminus of the railroads into the interior. The city and its hinterland also had a large Astriyan population, and the Provisional Government pressed for the expedition. The plan was to take the port, advance up the railroads to the junctions of
-Sultanönü and Siyahkaya, and from there threaten Iskenderiye.
+With the Stenon closed, the Vicilian General Staff proposed to defeat Selmira in Astartolia itself. Karashar was the largest port on the eastern shore of the Hellenican Sea and the terminus of the railroads into the interior. The city and its hinterland also had a large Astriyan population, and the Provisional Government pressed for the expedition. The plan was to take the port, advance up the railroads to the junctions of Sultanönü and Siyahkaya, and from there threaten Iskenderiye.
 
 The Army of the Stenon was redesignated the Army of Astartolia (Vicilian: *Armata d'Astartolia*) under Serravalle. It numbered about 110,000 men at the landing, of whom 25,000 were Astriyan. The Selmiran forces in the region were formed into the Astartolian Army (Selmiran: *Astartolya Ordusu*) under Halil Nuri Pasha, who had held Skopia the year before.
 
@@ -381,19 +374,16 @@ The Provisional Government appointed a commissioner for Karashar in July. It arg
 
 Halil Nuri Pasha did not have the strength to hold a line and withdrew along the railroads, destroying them as he went. The Accord advanced up the valley of the Lyda through the summer. Lydahisar fell on 22 August, Donuzlu on 9 September, and Balukiser, on the northern line, on 27 September. By late October the Army of Astartolia, now about 180,000 strong, stood on the edge of the central plateau some 400 kilometers from the coast. Its supply depended on a single repaired track, and irregular bands attacked its convoys along the whole length of it.
 
-The loss of the coast led the Officers' Council to decree a general levy in Astartolia in July. By November the Astartolian Army had grown to about 120,000 men, entrenched on the heights covering
-Sultanönü and Siyahkaya.
+The loss of the coast led the Officers' Council to decree a general levy in Astartolia in July. By November the Astartolian Army had grown to about 120,000 men, entrenched on the heights covering Sultanönü and Siyahkaya.
 
 #### First Battle of
 Sultanönü
 
-Serravalle attacked the positions west of Sultanönü on 9 November with about 60,000 men against 50,000. The Selmiran line held through five days of assaults, and he withdrew to his starting positions on 14 November. Accord casualties were about 9,000, and Selmiran casualties about 6,000. It was the first defeat of an Accord army in the field in Astartolia, and both sides went into winter quarters on the
-Sultanönü-Siyahkaya line.
+Serravalle attacked the positions west of Sultanönü on 9 November with about 60,000 men against 50,000. The Selmiran line held through five days of assaults, and he withdrew to his starting positions on 14 November. Accord casualties were about 9,000, and Selmiran casualties about 6,000. It was the first defeat of an Accord army in the field in Astartolia, and both sides went into winter quarters on the Sultanönü-Siyahkaya line.
 
 ### Third Battle of the Aspis
 
-Castellani opened his third offensive on 9 September. He had about 230,000 men against about 120,000 under
-Kâzım Şevket Pasha, whose reserves had gone to Astartolia during the summer. The attack began with the explosion of three mines that Vicilian engineers had tunneled beneath the second belt of redoubts in the central sector. The second belt was taken on a front of 14 kilometers by 20 September, and in the north the Astriyan National Army reached the shore of the Tethys lagoon.
+Castellani opened his third offensive on 9 September. He had about 230,000 men against about 120,000 under Kâzım Şevket Pasha, whose reserves had gone to Astartolia during the summer. The attack began with the explosion of three mines that Vicilian engineers had tunneled beneath the second belt of redoubts in the central sector. The second belt was taken on a front of 14 kilometers by 20 September, and in the north the Astriyan National Army reached the shore of the Tethys lagoon.
 
 The third belt held. Repeated attacks on it between 26 September and 15 October failed, and the autumn rains ended the offensive on 17 October. The front had moved about 4 kilometers, and the Accord line now stood some 30 kilometers from Aspadana. Accord casualties were about 58,000, and Selmiran casualties about 44,000.
 
@@ -405,11 +395,9 @@ At the end of 1916 Selmira was fighting on four fronts: at the Aspis, on the Ste
 
 ### Fourth Battle of the Aspis
 
-Through the winter Castellani assembled about 300,000 men, of whom 110,000 were Astriyan, and 1,100 guns against the third belt of the Aspis lines.
-Kâzım Şevket Pasha had about 125,000 men; the levy of 1916 had gone to Astartolia. The Vicilian navy meanwhile carried a flotilla of motor torpedo boats by rail to the shore of the Mesothalassa behind the Accord front. On the night of 22 April three of them torpedoed and sank the battleship *Selm* at her anchorage off the southern end of the lines. The Selmiran cruisers withdrew to Azmashir, and for the first time the southern flank of the lines was without naval support.
+Through the winter Castellani assembled about 300,000 men, of whom 110,000 were Astriyan, and 1,100 guns against the third belt of the Aspis lines. Kâzım Şevket Pasha had about 125,000 men; the levy of 1916 had gone to Astartolia. The Vicilian navy meanwhile carried a flotilla of motor torpedo boats by rail to the shore of the Mesothalassa behind the Accord front. On the night of 22 April three of them torpedoed and sank the battleship *Selm* at her anchorage off the southern end of the lines. The Selmiran cruisers withdrew to Azmashir, and for the first time the southern flank of the lines was without naval support.
 
-The offensive opened on 23 April with a bombardment of six hours instead of several days. The main effort was made in the north by the Astriyan National Army, along the shore of the Tethys lagoon, where the third belt was weakest. The Astriyans broke though on 9 May and turned south behind the central redoubts.
-Şevket Pasha held a shortening line for ten more days in order to withdraw his artillery, and on 19 May he abandoned the Aspis.
+The offensive opened on 23 April with a bombardment of six hours instead of several days. The main effort was made in the north by the Astriyan National Army, along the shore of the Tethys lagoon, where the third belt was weakest. The Astriyans broke though on 9 May and turned south behind the central redoubts. Şevket Pasha held a shortening line for ten more days in order to withdraw his artillery, and on 19 May he abandoned the Aspis.
 
 Accord casualties were about 72,000. Selmiran casualties were about 61,000, including 18,000 prisoners. The lines had held for two years and six months.
 
@@ -417,8 +405,7 @@ Accord casualties were about 72,000. Selmiran casualties were about 61,000, incl
 
 #### Selmiran evacuation
 
-Aspadana lay on the western shore of the Chrysoporos, with the strait at its back.
-İsmail Ferid Pasha ruled on 20 May that it could not be defended without the loss of the army and ordered the Western Army withdrawn to the eastern shore. A rearguard held the old land walls and the western suburbs from 21 May. In seven nights about 95,000 men and 300 guns were ferried across to Azmashir under the cover of the remaining warships. Selmiran engineers destroyed the arsenal, the dockyard machinery and the railroad terminal, and on 26 May the command declared the city undefended. The rearguard crossed on the night of 28 May.
+Aspadana lay on the western shore of the Chrysoporos, with the strait at its back. İsmail Ferid Pasha ruled on 20 May that it could not be defended without the loss of the army and ordered the Western Army withdrawn to the eastern shore. A rearguard held the old land walls and the western suburbs from 21 May. In seven nights about 95,000 men and 300 guns were ferried across to Azmashir under the cover of the remaining warships. Selmiran engineers destroyed the arsenal, the dockyard machinery and the railroad terminal, and on 26 May the command declared the city undefended. The rearguard crossed on the night of 28 May.
 
 About 400,000 Selmiran-speaking inhabitants and refugees had crossed to the eastern shore by the end of June, many of them for the second time since 1914.
 
@@ -432,11 +419,7 @@ Castellani attempted to follow the Western Army across the strait before it coul
 
 ### Proclamation of the Astriyan State
 
-The National Assembly moved from Odryssa to Aspadana on 24 June. On 1 July 1917 it proclaimed the Astriyan State (Astriyan:
-Αστριανή Πολιτεία,
-*Astrianí Politeía*), with Aspadana as its capital. Theophanes Karydis took office as Governor (Astriyan:
-Κυβερνήτης,
-*Kyvernítis*), and the Provisional Government was dissolved.
+The National Assembly moved from Odryssa to Aspadana on 24 June. On 1 July 1917 it proclaimed the Astriyan State (Astriyan: Αστριανή Πολιτεία, *Astrianí Politeía*), with Aspadana as its capital. Theophanes Karydis took office as Governor (Astriyan: Κυβερνήτης, *Kyvernítis*), and the Provisional Government was dissolved.
 
 The founding powers of the Accord recognized the new state within the month. Vicily did so on 20 July, after the Astriyan government had reaffirmed the Castelgulfio Protocol in writing. The Vicilian sectors of Aspadana were handed to the Astriyan civil authorities in August, and the Vicilian army kept the docks and the railroad.
 
@@ -445,24 +428,106 @@ The founding powers of the Accord recognized the new state within the month. Vic
 #### Second Battle of
 Sultanönü
 
-Serravalle resumed the offensive on 8 July with about 220,000 men against 150,000 under Halil Nuri Pasha. He attacked both junctions at once and tried to close the two wings behind the Selmiran army. Siyahkaya fell on 13 July and
-Sultanönü on 19 July, but the wings did not meet, and the Astartolian Army withdrew eastward intact. The battle ended on 21 July. Accord casualties were about 22,000, and Selmiran casualties about 35,000, including prisoners and deserters.
+Serravalle resumed the offensive on 8 July with about 220,000 men against 150,000 under Halil Nuri Pasha. He attacked both junctions at once and tried to close the two wings behind the Selmiran army. Siyahkaya fell on 13 July and Sultanönü on 19 July, but the wings did not meet, and the Astartolian Army withdrew eastward intact. The battle ended on 21 July. Accord casualties were about 22,000, and Selmiran casualties about 35,000, including prisoners and deserters.
 
 #### Retreat of the Selm
 
-On 5 August the Officers' Council vested
-İsmail Ferid Pasha with personal command of the armies in Astartolia. He ordered a retreat behind the Selm, about 70 kilometers west of Iskenderiye, which shortened his own supply line and lengthened that of the Accord by more than 200 kilometers. Decrees of 7 and 8 August requisitioned a share of all cloth, footwear, draft animals and carts in the interior. The fall of Aspadana had shortened the front on the Straits, and two corps of the Western Army were brought east by rail from Izmid.
+On 5 August the Officers' Council vested İsmail Ferid Pasha with personal command of the armies in Astartolia. He ordered a retreat behind the Selm, about 70 kilometers west of Iskenderiye, which shortened his own supply line and lengthened that of the Accord by more than 200 kilometers. Decrees of 7 and 8 August requisitioned a share of all cloth, footwear, draft animals and carts in the interior. The fall of Aspadana had shortened the front on the Straits, and two corps of the Western Army were brought east by rail from Izmid.
 
 #### Battle of the Selm
 
-Serravalle reached the river with about 170,000 men; the rest of his army was guarding 500 kilometers of railroad.
-İsmail Ferid Pasha had about 160,000 on the heights east of the river, on a front of 100 kilometers. The Accord crossed on 23 August and tried to turn the southern flank. After ten days they took Kartal
-Dağ ("Eagle Mountain"), 40 kilometers from Iskenderiye, on 2 September. It was the farthest point of their advance. Their ammunition could not be replaced at the rate it was spent, and the attack halted on 5 September.
+Serravalle reached the river with about 170,000 men; the rest of his army was guarding 500 kilometers of railroad. İsmail Ferid Pasha had about 160,000 on the heights east of the river, on a front of 100 kilometers. The Accord crossed on 23 August and tried to turn the southern flank. After ten days they took Kartal Dağ ("Eagle Mountain"), 40 kilometers from Iskenderiye, on 2 September. Halil Nuri Pasha, who had commanded the Astartolian Army since 1916, was killed by shellfire on the same day while directing its defense. It was the farthest point of their advance. Their ammunition could not be replaced at the rate it was spent, and the attack halted on 5 September.
 
-The Selmiran counterattack began on 8 September. Serravalle recrossed the river on 13 September and withdrew to the
-Sultanönü-Siyahkaya line, destroying the railroad behind him. Accord casualties were about 38,000, and Selmiran casualties about 34,000. The Council conferred the rank of marshal on
-İsmail Ferid Pasha. The battle is regarded in Selmira as the turning point of the war in Astartolia.
+The Selmiran counterattack began on 8 September. Serravalle recrossed the river on 13 September and withdrew to the Sultanönü-Siyahkaya line, destroying the railroad behind him. Accord casualties were about 38,000, and Selmiran casualties about 34,000. The Council conferred the rank of marshal on İsmail Ferid Pasha. The battle is regarded in Selmira as the turning point of the war in Astartolia.
 
 ### Situation at the end of 1917
 
 At the end of 1917 the Accord held the whole of Hellenica and the western shore of both straits, and the two armies faced each other across the water from the Stenon to the Chrysoporos. In Astartolia the Accord held Karashar, the coast and both railroad junctions, at the end of a supply line that they could not shorten. Selmira had lost its former capita and kept its army. Neither side had the means to cross the Straits.
+
+## 1918: The Great Offensive
+
+### Stalemate on the Straits
+
+From the spring of 1918 the front of Hellenica ran along the water, from the Stenon through the Mesothalassa to the Chrysoporos. Neither side had the craft or the margin of strength to cross. The Selmiran heavy batteries on the hills above Azmashir shelled Aspadana through the year, mostly at night, and about 4,000 of its inhabitants were killed in 1918. Vicilian torpedo boats and Selmiran gunboats fought small actions in the Mesothalassa without changing its control.
+
+The Vicilian General Staff withdrew two corps from Astartolia and one from the Stenon in March and April for the Southwestern front. The Astriyan National Army took over the whole of the Chrysoporos shore and the Aspadana sector on 12 March. The Army of Astartolia, reduced to about 160,000 men of whom 40,000 were Astriyan, was left holding a front of some 400 kilometers. That front ran from Balukiser through
+Sultanönü to the hills south of Siyahkaya and was supplied along a single railroad from Karashar.
+
+### Selmiran Great Offensive
+
+#### Kasırga plan
+
+İsmail Ferid Pasha and his staff, with the officers of the Eisenpakt military mission, prepared the offensive through the spring under the code name **Kasırga** ("Hurricane"). It aimed at the southern end of the Accord front, south of Siyahkaya, where the line bent back toward the Lyda valley and the railroad lay closest behind it. Between 6 and 25 August about 210,000 men, including a cavalry corps, were moved into position by night marches. In the same weeks
+İsmail Ferid Pasha appeared at public functions in Iskenderiye. The Accord command expected no attack before the spring of 1919.
+
+#### Breakthrough at Siyahkaya
+
+The bombardment opened at dawn on 26 August. By noon Selmiran infantry held the ridge south of Siyahkaya, and the cavalry corps passed through the gap into the Accord rear. Siyahkaya was retaken on 27 August, and
+Sultanönü was evacuated the following day. The Accord southern group, two Vicilian corps and an Astriyan division, was cut off from the railroad and encircled near
+Akpınar. It surrendered on 30 August, and about 30,000 men, including a corps commander, were taken prisoner. Serravalle ordered a general retreat to the coast on 31 August.
+
+#### Retreat to the coast
+
+The northern group fell back through Balukiser, which was abandoned on 3 September, while the remnants of the southern group retreated down the Lyda valley. Lydahisar was given up on 4 September and Donuzlu on 6 September. The Selmiran cavalry reached the coast north of Karashar on 7 September. Towns along the line of retreat were burned, and civilians of both communities fled ahead of the armies, the Astriyans toward Karashar and the coast.
+
+#### Fall of Karashar
+
+The evacuation of Karashar began on 2 September. By the evening of 8 September about 100,000 soldiers and 180,000 civilians, most of them Astriyans from the city and the interior, had been taken off by sea. Selmiran cavalry entered the city on 9 September. A fire that broke out on 13 September destroyed the Astriyan quarter and the waterfront; responsibility for it has been disputed since.
+
+Accord loses in the offensive were about 60,000, of whom 39,000 were taken prisoner. Selmiran casualties were about 18,000. The Brancati government survived a vote of confidence in the Chamber over the defeat by eleven votes, and Serravalle was relieved of command on 12 September.
+
+### Armistice
+
+After the fall of Karashar the Selmiran armies in Astartolia stood on the shore of the Hellenican Sea, facing Accord-held islands and the Akontion across the water. Selmira had no fleet capable of carrying an army across, and the Accord no longer had the strength to return. The general armistice came into force on 11 November 1918. On this front the armies were then facing each other across the Stenon, the Mesothalassa and the Chrysoporos.
+
+A convention signed at Izmid on 19 November by representatives of the Selmiran, Vicilian and Astriyan commands fixed the demarcation line along the middle of the Straits. It provided for the exchange of prisoners and for the clearance of mines from the Stenon under joint supervision. No Accord soldier remained in Astartolia, and no Selmiran soldier remained in Hellenica.
+
+## Aftermath
+
+### Treaty of Pyrgos
+
+Negotiations between the three belligerents opened at Pyrgos on 3 March 1919. The port was chosen because the Selmiran delegation could reach it across the Tethys without passing through Accord-held territory. The Astriyan delegation was led by Karydis, the Vicilian delegation by its foreign minister, and th Selmiran delegation by Cemal Tevfik Pasha. The Treaty of Pyrgos was signed on 17 June 1919.
+
+Selmira recognized the Astriyan State and renounced all claims in Hellenica. The border between the two states was fixed on the midline of the Stenon, the Mesothalassa and the Chrysoporos. Vicily recognized Astriyan sovereignty over all territory east of the Argyron, including Adrianopolis and the Akontion, and undertook to withdraw its forces by the end of the year. Astriya confirmed the Argyron as its border with Vicily, giving the Castelgulfio Protocol the force of a treaty.
+
+A statute attached to the treaty opened the Straits to commercial shipping in times of peace. It demilitarized a zone of 15 kilometers on either shore of the Stenon and the Chrysoporos, except for garrisons of 12,000 men each at Aspadana and Azmashir. The Murad debt was divided between Selmira and Astriya in proportion to the revenues of the territories each now held.
+
+The Astriyan National Assembly ratified the treaty on 9 July by 118 votes to 94. The Torchbearers and most deputies from districts near the Argyron voted against it because of the border clause.
+
+### Vicilian withdrawal
+
+The Vicilian army handed the Akontion and the batteries of the Stenon to Astriyan troops on 3 October 1919, and the docks and railroad of Aspadana on 20 November. The last Vicilian units crossed the Argyron on 18 December 1919, by the bridge on the Castelgulfio-Dedeagach road where the Argyron Bridge Incident had taken place six years earlier.
+
+A parliamentary commission of inquiry into the loss of Karashar was appointed in November 1918. Its report, published in June 1919, held Serravalle responsible for the dispositions south of Siyahkaya and for disregarding intelligence reports of the Selmiran concentration. He was tried by court-martial at Trinacria in October 1919 and sentenced to death for neglect of duty in the face of the enemy. The sentence was commuted to twenty years' fortress imprisonment, and he was released under an amnesty in 1925.
+
+### Exchange of populations
+
+A convention attached to the treaty provided for a compulsory exchange between the Astriyan inhabitants of Astartolia and the Selmiran-speaking inhabitants of East Astriya. It used the community registers of the Murad period to determine who was exchanged. The established populations of Aspadana and Azmashir, resident before 1913, were exempted. The convention applied to about 520,000 people who had not already fled, and it confirmed the loss of property and of the right to return for more than a million who had.
+
+A mixed commission supervised the exchange from Odryssa until 1924. Astriyan refugees from Astartolia were settled largely in the villages of the Aspadanan plain that Selmiran-speakers had left in 1914 and 1917. Selmiran refugees from Hellenica were settled in western Astartolia, many of them in Karashar.
+
+## Legacy
+
+### East Astriya
+
+The proclamation of 1 July 1917 is the national day of East Astriya, and the entry into Aspadana is commemorated on 29 May. The National Army's breakthrough at the Neck Line is marked by a memorial on the Akontion. Veterans of the National Army held most senior offices of the state through the 1920s. The Argyron border remains the main question in relations between East Astriya and Vicily. The claim to West Astriya was never formally abandoned by the Torchbearers, and the society remains banned in West Astriya.
+
+### Selmira
+
+Selmira observes 13 September, the end of the Battle of the Selm, as the anniversary of its survival, and 18 March as the Victory of the Straits.
+İsmail Ferid Pasha remained at the head of the state through the 1920s. The seat of government was moved from Iskenderiye to Azmashir on 3 February 1924, the tenth anniversary of the proclamation of Selmira, placing the capital on the shore directly opposite Aspadana. No attempt was made to restore the Murad dynasty.
+
+### Vicily
+
+In Vicily the campaign is known as the Eastern Expedition (Vicilian: *Spedizione d'Oriente*). It brought Vicily no territory, and its last year ended in the evacuation of Karashar. A memorial at Castelgulfio commemorates the crews of the *Zarentia*, the *Arpi* and the *Attenza*. The Brancati government resigned on 2 August 1919, after the ratification debate on the Treaty of Pyrgos.
+
+### Historiography
+
+Each of the three countries names the war after its own experience of it. Astriyan historians call it the War of Liberation (Astriyan:
+Απελευθερωτικός Πόλεμος,
+*Apeleftherotikós Pólemos*) and Selmiran historians the War of Existence (Selmiran:
+*Varoluş Savaşı*), both dating it from December 1913. Vicilian official histories treat it as a theater of the Great War beginning on 5 August 1914.
+
+Historians differ on how to describe the outcome. For Astriya the front ended in victory: the Astriyan State gained its independence and Aspadana, the two aims set out in the Odryssa Declaration, and Astriyan histories present the war as the founding of the state. A minority tradition associated with the Torchbearers has called it the Unfinished Victory (Astriyan:
+Ημιτελής Νίκη,
+*Imitelís Níki*), because the Treaty of Pyrgos confimed the Argyron border and left West Astriya under Vicilian rule. Selmiran historians regard the war as a victory of survival: Selmira lost Hellenica and its former capital, but it defeated the invasion of Astartolia and preserved the state proclaimed in 1914. In Vicily the campaign is generally regarded as a failure, since it brought no territory and ended with the evacuation of Karashar. General histories of the Great War, which treat the front as a contest between Vicily and Selmira, usually describe it as inconclusive.
