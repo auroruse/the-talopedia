@@ -1,6 +1,5 @@
 ---
-title: ""
-sidebarTitle: "Velvetism"
+title: "Velvetism"
 nativeTitle: "Velvetismus"
 type: ideology
 nation: alemannia
