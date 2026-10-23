@@ -12,8 +12,8 @@ infobox:
   - { image: "https://i.imgur.com/KH06cDJ.png", caption: "Location of Mainland Skjarnland" }
   - label: "Motto"
     value:
-      - "Ära Åt Kronan"
-      - "\"Glory to the Crown\""
+      - "Genom Folkets Vilja"
+      - "\"Through the Will of the People\""
   - { label: "Capital", value: "Kjellberg" }
   - label: "Anthem"
     value:
@@ -21,17 +21,13 @@ infobox:
       - "\"Glorious Skjarnland, Ancient Skjarnland\""
   - { label: "Largest City", value: "Strålholm" }
   - { section: "Administration" }
-  - { label: "Government", value: "Constitutional monarchy" }
-  - label: "King"
+  - { label: "Government", value: "Unitary parliamentary republic" }
+  - label: "President"
     sub: true
     value:
-      - "His Majesty the Sovereign of Skjarnland"
-      - "Mikael II von Dahlberg"
-  - label: "Prime Minister"
-    sub: true
-    value:
-      - "The Honourable"
-      - "Göran Malmros"
+      - "His Excellency"
+      - "Joakim Helgi"
+  - { label: "Prime Minister", sub: true, value: "Nils Borgelin" }
   - { label: "Legislature", value: "Riksdag" }
   - { label: "Constitution", value: "Grundlag" }
   - { section: "Demographics" }
@@ -183,9 +179,7 @@ The history of the Skjarnish Armed Forces dates back to the formation of the Kin
 
 ### Constitutional Framework
 
-Skjarnland is currently a [unitary parliamentary republic](https://en.wikipedia.org/wiki/Unitary_parliamentary_republic)
-
-with a [unicameral parliament](https://en.wikipedia.org/wiki/Unicameralism), the Riksdag. The country has four fundamental laws, which together make up the Constitution (Grundlag); the Instrument of Government (1768), which outlines the structure of government and civil liberties; the Act of Succession (1795), which determines royal succession; and the Freedom of the Press Act (1836), which governs transparency and free speech laws.
+Skjarnland is currently a [unitary parliamentary republic](https://en.wikipedia.org/wiki/Unitary_parliamentary_republic) with a [unicameral parliament](https://en.wikipedia.org/wiki/Unicameralism), the Riksdag. The country has four fundamental laws, which together make up the Constitution (Grundlag); the Instrument of Government (1768), which outlines the structure of government and civil liberties; the Act of Succession (1795), which determines royal succession; and the Freedom of the Press Act (1836), which governs transparency and free speech laws.
 
 The president is the head of state, elected by popular vote once every 8 years and serving a maximum of two terms. They are responsible for chairing Special Councils during a change of Government and receives letters of credence from foreign ambassadors, while signing those of Skjarnish ambassadors abroad. Additionally, the president has the power to conducts state visits and is the commander-in-chief of the [[armed-forces]]. Under Article 34 of the constitution, during a state of emergency, the president has the power to rule by decree until the expiration of the emergency.
 
