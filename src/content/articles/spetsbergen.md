@@ -19,6 +19,7 @@ infobox:
   - { label: "Capital and Largest City", value: "Långdalshamn" }
   - { section: "Administration" }
   - { label: "Government", value: "Unincorporated territory under a constitutional monarchy" }
+  - { label: "Governor", value: "Aksel Johansen" }
   - { label: "Legislature", value: "None; laws passed by Skjarnish Riksdag" }
   - { section: "Demographics" }
   - { label: "Population", value: "1930 Census" }
@@ -110,7 +111,7 @@ The 1918 armistice effectively ceded the eastern half of Östspetsbergen to Karj
 
 ### Present Day
 
-Spetsbergen remains an unincorporated territory of Skjarnland, despite being given the same administrative pretitle as the Vikomte Islands, which are internally self-governing. The term Territory (Territoriet) in Skjarnland is a broad constitutional category that encompasses all overseas dependencies that are neither colonies nor integral counties. Recent years has seen a rise in Arctic tourism, although coal mining and whaling remain the primary activities around Spetsbergen today.
+Spetsbergen remains an unincorporated territory of Skjarnland, home to some of the largest coal mines in the Arctic Sea. Recent years have seen a rise in tourism (mainly from mainland Skjarnland and Alemannia), although coal mining and whaling remain the primary activities around Spetsbergen today.
 
 ## Geography
 
@@ -134,6 +135,10 @@ Spetsbergen has a GDP PPP of $245,000,000 (72nd in the world when ranked among n
 
 These statistics stem from the fact that the small population of 3,000 is almost entirely concentrated in the capital of Långdalshamn, whose economy is dominated by highly productive coal mining, whaling and fishing operations alongside shipping services. Its population is dominated by miners, engineers, sailors and administrators alongside their families, giving the Territory its high literacy rate, while healthcare is heavily subsidised by the government, allowing for a relatively high life expectancy and HDI.
 
+## Politics
+
+Spetsbergen remains an unincorporated territory of Skjarnland, despite being given the same administrative pretitle as the Vikomte Islands, which are internally self-governing. The term Territory (Territoriet) in Skjarnland is a broad constitutional category that encompasses all overseas dependencies that are neither colonies nor integral counties. Spetsbergen is administered by a President-appointed Governor, who is also the Chief of Police, and reports to the Ministry of Territorial Affairs in Kjellberg.
+
 ## Demographics
 
-Spetsbergen has a majority Skjarnian population, the ethnic group making up 68.3% of the population. The other Alemannic Skjarns, the Norrvynians and Danyrians, form most of the remaining minority, at 15.9% and 5.3% respectively. Other groups, including Sjaedrins and Iskarns, alongside foreign ethnicities form a smaller but still significant segment at 10.5%. The foreign population in Spetsbergen, including Alemannians and Elvesterians, are composed primarily of mining and industrial expertise, forming one of the most significant foreign populations in a Skjarnish Territory.
+Spetsbergen has a majority Skjarnian population, the ethnic group making up 68.3% of the population. The other Alemannic Skjarns, the Norrvynians and Danyrians, form most of the remaining minority, at 15.9% and 5.3% respectively. Other groups, including Sjaedrins and Iskarns, alongside foreign ethnicities, form a smaller but significant segment at 10.5%. The foreign population in Spetsbergen, including Alemannians and Elvesterians, are composed primarily of mining and industrial expertise, forming one of the most significant foreign populations in a Skjarnish Territory.
