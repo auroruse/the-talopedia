@@ -17,6 +17,8 @@ groups:
           - "holy-evrian-civil-war"
   - label: "Politics"
     rows:
+      - items:
+          - "velvetism"
       - label: "Government"
         items:
           - "administrative-subdivisions"
@@ -30,6 +32,7 @@ groups:
           - "notable-alemannian-companies"
   - label: "Geography"
     rows:
+      - note: "[[metropolitan-alemannia]] • [[divia]] • [[neuhollmar]] • [[d-mmerungsinseln|Dämmerungsinseln]] • [[kogelland]] • [[albatrossinseln]] • [[sankt-gerold-insel]] • [[hochbrunn-am-saharameer|Hochbrunn-am-Saharameer]] • [[kienam]] • [[goneniteinseln]] • [[andaminseln]]"
       - label: "Elevations"
         items:
           - "alps"
