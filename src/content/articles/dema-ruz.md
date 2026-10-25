@@ -5,6 +5,7 @@ romaji: "Demâruz"
 type: overview
 nation: demaruz
 authors: [demaruz]
+movedFrom: [dem-ruz]
 infobox:
   - { image: "https://lh3.googleusercontent.com/d/1ja8U7tCUbwkAiT1Hg83I7fPbHnBrshT7=w2000", caption: "Flag" }
   - { image: "https://lh3.googleusercontent.com/d/1dl6AsZC1rMBRb8p-mR9O2he4Q4aLw96V=w2000", caption: "Coat of Arms" }
@@ -16,7 +17,7 @@ infobox:
     value:
       - "'Abbud Alfâtumna"
       - "(Herald of the Mountain Air)"
-  - { label: "Capital", value: "Khudshelgethla" }
+  - { label: "Capital", value: "Khudshelgethlar" }
   - { label: "Largest City", value: "Buzrâbekhaz" }
   - { section: "Administration" }
   - { image: "https://lh3.googleusercontent.com/d/1evizGuJxpWqsUPRHc6gkUCkAqFUTq8aW=w2000", caption: "Administrative Map" }
