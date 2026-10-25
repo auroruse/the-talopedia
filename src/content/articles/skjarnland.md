@@ -7,7 +7,7 @@ nativeTitle:
 type: overview
 nation: skjarnland
 infobox:
-  - { image: "https://i.imgur.com/Zie7Dao.png", caption: "Flag" }
+  - { image: "/assets/flags/skjarnland.png", caption: "Flag" }
   - { image: "https://i.imgur.com/TA05ruq.png", caption: "Coat of Arms" }
   - { image: "https://i.imgur.com/KH06cDJ.png", caption: "Location of Mainland Skjarnland" }
   - label: "Motto"

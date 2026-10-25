@@ -25,10 +25,11 @@ export const ACCOUNT_OF = {
   alemannia: 'mrrv533-creator',
   eivorie: 'Foxomexray',
   giathka: 'the-giathster',
-  auritania: 'michaelnguyen2803',
   salishia: 'evanjcov11-wq',
   'great-ai': 'michaelnguyen2803',
   demaruz: 'demaruzipatriot',
+  sehreno: 'Wrangel-png',
+  sylezyjo: 'Maciejosss',
 };
 
 /**
