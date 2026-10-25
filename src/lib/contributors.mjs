@@ -29,7 +29,7 @@ export const ACCOUNT_OF = {
   'great-ai': 'michaelnguyen2803',
   demaruz: 'demaruzipatriot',
   sehreno: 'Wrangel-png',
-  sylezyjo: 'Maciejosss',
+  sylesyjo: 'Maciejosss',
 };
 
 /**

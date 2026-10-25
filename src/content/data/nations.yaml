@@ -21,7 +21,7 @@
 - { id: selmira, name: Selmira, adjective: Selmiran, continent: Evria, flag: /assets/flags/selmira.png }
 - { id: shivon, name: Shivon, adjective: Shivonite, continent: Evria, portal: true, flag: /assets/flags/shivon.png }
 - { id: skjarnland, name: Skjarnland, adjective: Skjarnish, continent: Evria, portal: true, flag: /assets/flags/skjarnland.png }
-- { id: sylezyjo, name: Sylezyjo, adjective: Sylezyan, continent: Evria, flag: /assets/flags/sylezyjo.png }
+- { id: sylesyjo, name: Sylesyjo, adjective: Sylesyan, continent: Evria, flag: /assets/flags/sylesyjo.png }
 - { id: slytlia, name: Slytlia, adjective: Slytlian, continent: Evria, flag: /assets/flags/slytlia.png }
 - { id: turulia, name: Turulia, adjective: Turulian, continent: Evria, flag: /assets/flags/turulia.png }
 - { id: vicily, name: Vicily, adjective: Vicilian, continent: Evria, flag: /assets/flags/vicily.png }

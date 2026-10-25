@@ -2,6 +2,7 @@ import { navbox as read, nation, url } from './registry.mjs';
 import { renderInline, esc, unesc, link, icon, CUSTOM, custom } from './inline.mjs';
 import { keyOf } from './sort-key.mjs';
 import { colourOf, inkOn } from './flag-colour.mjs';
+import { TABLE_NOTE, nationTable } from './map-data.mjs';
 
 /**
  * A navbox entry may be a bare slug, an explicit [[link]], or a nation id.
@@ -82,6 +83,8 @@ export function renderNavbox(id, fallbackTitle = '') {
  */
 export function resolveHtml(html = '') {
   return html
+    // The nation tables, built from the map's data on every render so they follow it.
+    .replace(TABLE_NOTE, (_, kind) => nationTable(kind))
     // First, before anything is expanded below. A <figure> written straight into the
     // markdown is raw HTML: Astro never sees its <img> and so never puts the base path
     // on it, which 404s every picture wherever the site is served from a subpath. The

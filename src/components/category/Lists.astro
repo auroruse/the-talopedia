@@ -1,0 +1,39 @@
+---
+import { url } from '../../lib/registry.mjs';
+import { asset } from '../../lib/inline.mjs';
+import { leaders } from '../../lib/map-data.mjs';
+
+/** Lists: the nation tables drawn from the map lead the page, each with its first five. */
+const { entries } = Astro.props;
+const WORLD = [
+  ['list-of-nations-and-dependencies-by-area', 'area', 'Area'],
+  ['list-of-nations-and-dependencies-by-population', 'population', 'Population'],
+  ['list-of-nations-and-dependencies-by-living-standards', 'living', 'GDP (PPP)'],
+];
+const world = WORLD.filter(([slug]) => entries.some((e) => e.id === slug))
+  .map(([slug, kind, label]) => ({ href: url('/' + slug), label, top: leaders(kind) }))
+  .filter((w) => w.top);
+---
+{world.length > 0 && (
+  <section class="ls">
+    <h2 class="ls-title">Nations of Avium</h2>
+    <div class="ls-cols">
+      {world.map((w) => (
+        <div class="ls-col">
+          <div class="ls-head"><a href={w.href}>{w.label}</a><span>{w.top.unit}</span></div>
+          <ol class="ls-rows">
+            {w.top.rows.map((r) => (
+              <li>
+                <span class="ls-rank">{r.rank}</span>
+                <span class="ls-flag">{r.flag && <img src={asset(r.flag)} alt="" loading="lazy" />}</span>
+                {r.slug ? <a class="ls-name" href={url('/' + r.slug)}>{r.name}</a> : <span class="ls-name">{r.name}</span>}
+                <span class="ls-fig">{r.figure}</span>
+              </li>
+            ))}
+          </ol>
+          <a class="ls-more" href={w.href}>All {w.top.count} →</a>
+        </div>
+      ))}
+    </div>
+  </section>
+)}

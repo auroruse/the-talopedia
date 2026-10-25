@@ -1,0 +1,27 @@
+name: Map watch
+# The nation lists are built from the Avium Map's data, so the site rebuilds whenever
+# that data changes. Every quarter of an hour this asks for the map's latest commit
+# to src/data and starts a deploy the first time it sees one.
+on:
+  schedule: [{ cron: '*/15 * * * *' }]
+  workflow_dispatch:
+permissions: { actions: write, contents: read }
+concurrency: { group: map-watch, cancel-in-progress: false }
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    env: { GH_TOKEN: "${{ github.token }}" }
+    steps:
+      - id: map
+        run: echo "sha=$(gh api 'repos/auroruse/avium-map/commits?path=src/data&per_page=1' --jq '.[0].sha')" >> "$GITHUB_OUTPUT"
+      # A cache entry named for the commit is the record that it has been built.
+      - id: seen
+        uses: actions/cache/restore@v4
+        with: { path: .map-seen, key: "map-${{ steps.map.outputs.sha }}", lookup-only: true }
+      - if: steps.seen.outputs.cache-hit != 'true' && steps.map.outputs.sha != ''
+        run: |
+          gh workflow run deploy.yml --repo "${{ github.repository }}"
+          mkdir -p .map-seen && echo "${{ steps.map.outputs.sha }}" > .map-seen/sha
+      - if: steps.seen.outputs.cache-hit != 'true' && steps.map.outputs.sha != ''
+        uses: actions/cache/save@v4
+        with: { path: .map-seen, key: "map-${{ steps.map.outputs.sha }}" }

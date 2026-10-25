@@ -8,6 +8,7 @@ import Military from '../../components/category/Military.astro';
 import Space from '../../components/category/Space.astro';
 import Sport from '../../components/category/Sport.astro';
 import Society from '../../components/category/Society.astro';
+import Lists from '../../components/category/Lists.astro';
 import { url, nation, navbox, exists, hrefOf } from '../../lib/registry.mjs';
 import { pictureOf } from '../../lib/pictures.mjs';
 
@@ -30,7 +31,8 @@ export async function getStaticPaths() {
 const { name, slug, pages, broad = false, forward = null } = Astro.props;
 if (forward) return Astro.redirect(url(`/category/${forward}`), 301);
 const VIEWS = { 'nations-and-places': Nations, history: History, military: Military, space: Space, sport: Sport, society: Society };
-const View = broad ? VIEWS[slug] : null;
+// Lists is no broad category, but leads with the nation tables all the same.
+const View = broad ? VIEWS[slug] : slug === categoryOf('list').slug ? Lists : null;
 const entries = View ? await getCollection('articles') : [];
 
 /**

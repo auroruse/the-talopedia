@@ -14,7 +14,7 @@ infobox:
   - { section: "Personal Details" }
   - label: "Nationality"
     value:
-      - ":img[/assets/flags/vangalam.png] Bangali"
+      - ":img[/assets/flags/west-bangala.png] Bangali"
       - ":img[/assets/flags/horai.jpg] Hōraian"
   - { label: "Born", value: ":date[1894-06-01|age]" }
 ---
