@@ -30,8 +30,8 @@ infobox:
   - pair:
       - items:
           - ":flag[nichirin] [[nichirin]]"
-          - "  :img[/assets/flags/kinshu.jpg] [[kinshu|Kinshū]]"
-          - "  :img[/assets/flags/horai.jpg] [[horai|Hōrai]]"
+          - "  :img[/assets/flags/kinshu-old.jpg] [[kinshu|Kinshū]]"
+          - "  :img[/assets/flags/horai-old.jpg] [[shashanka|Hōrai]]"
           - ":img[https://lh3.googleusercontent.com/pw/AP1GczMkxHYB9z6QTB2qFWLTbmJasVj1LG2OpuWq7G6Zqh_Jt84lG0tPgTAlqIFFMEX0Z6tgrEK94gFmLP4OO3515cwyO3kjnHZqr8oILKF1R251V61ujgKMdYIKxaSCKX4KOC7keAezT7lckg8OpuqTNqv9=w2000|outline] Sangde Autonomous Council"
           - ":img[https://lh3.googleusercontent.com/pw/AP1GczPWbfFtsjxSh6QFrbmGLS3wZWXTg95kEZia-LDX1UgXTeMG9Ro44VJpiDy49lN5WSycUl0PK3H38KyC6AoXru_LqlBmNerKmT3Hqfgj5Nn5kqISudticceNbtg_FaPOnx6FRlNj3CY8NuSN091iPohl=w2000|outline] Hyūga Orughan Banner"
       - items:
@@ -238,7 +238,7 @@ Nichirin's Serican fleet blockaded the Xing coast from the summer of 1916, halti
 
 #### Operation Hishō
 
-Operation Hishō (飛将, "Flying General") took its name from a Hezhouan frontier couplet holding that, had the Flying General been present, no northern horseman would have crossed the Yin Mountains, where the operation's last campaign would be fought. It opened on May 10, 1917, five days after the fall of Sekiringaku, with attacks on Wulanhada and on Jinping, where its drive through Eastern Manshu began. Contingents from Kiritani and Shin-Nichirin (now Hōrai and Kinshū) joined the offensive.
+Operation Hishō (飛将, "Flying General") took its name from a Hezhouan frontier couplet holding that, had the Flying General been present, no northern horseman would have crossed the Yin Mountains, where the operation's last campaign would be fought. It opened on May 10, 1917, five days after the fall of Sekiringaku, with attacks on Wulanhada and on Jinping, where its drive through Eastern Manshu began. Contingents from Kiritani and Shin-Nichirin (now the Aureate Dominions of Shashanka and Kinshū) joined the offensive.
 
 In the Battle of Wulanhada (May 10–26), Nichirian forces occupied the seat of the Provisional Government of Manshu and captured Wen Shaoguang, who was later tried for treason and imprisoned for life. Nichirian troops entered Jinping on May 18 and took reprisals there for the Nishikino Massacre. Besieged from June 7, Dingyuan held out until June 19, when naval shellfire detonated the fortress's main magazine.
 

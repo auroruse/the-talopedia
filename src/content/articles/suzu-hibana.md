@@ -11,7 +11,7 @@ infobox:
   - { office: "Deputy Director-General of the Tax Bureau", term: "November 1, 1928 – August 4, 1930" }
   - { label: "Director-General", value: "Danno Takata" }
   - { section: "Personal Details" }
-  - { label: "Nationality", value: ":img[/assets/flags/kinshu.jpg] [[kinshu|Kinshūan]]" }
+  - { label: "Nationality", value: ":img[/assets/flags/kinshu.png] [[kinshu|Kinshūan]]" }
   - label: "Born"
     value:
       - "Suzu Hibana"

@@ -21,6 +21,8 @@ const SIBLING = path.resolve('../Avium Map/src/data');
 const FETCHED = path.resolve('.map-data');
 export const FILES = ['nations.tsv', 'cities.tsv', 'areas.json'];
 
+// Renamed on the site and not yet on the map: the map's name and the current one.
+const RENAMED = { Mizuho: 'Iriria', 'Hōrai': 'Shashanka', 'Ryūgu': 'Dar Hadid' };
 // The flag a dependency already has on the site under another name.
 const FLAG_OF = { barbary: 'barbarie', 'napolyon-bonparterre-islands': 'bonparterre-islands' };
 
@@ -83,14 +85,15 @@ export function mapNations() {
 
 /** Who a row is on the site: the name it shows, its flag and its page, where it has them. */
 function who(r) {
-  const key = fold(r.name);
+  const name = RENAMED[r.name] || r.name;
+  const key = fold(name);
   const known = nations().find((n) => fold(n.name) === key);
   if (known) return { name: known.name, flag: known.flag || null, slug: known.id, known: true };
-  const slug = slugify(r.name);
+  const slug = slugify(name);
   const flag = ['png', 'jpg'].map((x) => `/assets/flags/${FLAG_OF[slug] || slug}.${x}`).find((p) => fs.existsSync(path.join('public', p)));
   // A dependency with no flag of its own flies its sovereign's.
   const own = flag || (r.dependency && r.of ? who({ name: r.of }).flag : null);
-  return { name: r.name, flag: own || null, slug: fs.existsSync(path.join('src/content/articles', slug + '.md')) ? slug : null };
+  return { name, flag: own || null, slug: fs.existsSync(path.join('src/content/articles', slug + '.md')) ? slug : null };
 }
 
 /** The nation's name as the site shows it: flag and link where the site has them. */

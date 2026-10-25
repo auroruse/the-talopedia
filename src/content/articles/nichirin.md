@@ -164,7 +164,7 @@ Manshu (満州) is primarily composed of the Great Manshuan Plain (満州平原)
 
 Sangai (山外) is Nichirin's far southwestern frontier, a sparsely populated expanse of highlands, river basins, and boreal forest. The region is bounded to the west by the Great Spatryan Bight, to the north by the Haguregumo River, and to the east by the Lesser Kyoyasu Range. Western Sangai lies within the subarctic zone and is marked by continuous taiga forest, tundra pockets, and widespread permafrost, especially west of Shinkeisei. Eastern Sangai, by contrast, supports mixed forests and more varied topography due to tectonic folding and past glacial activity. The [Ryōzetsu Mountains](https://en.wikipedia.org/wiki/Sikhote-Alin) (嶺絶山脈) run in a broad arc parallel to the Haguregumo River, forming another natural barrier between Sangai and Metropolitan Nichirin. Perpendicular river systems, most notably the [[kokuryu-river|Kokuryu]] (黒龍川) and [[sumikuro-river|Sumikuro]] (墨黒川) Rivers, cut through the highlands, forming expansive intermontane basins filled with wetlands, peat bogs, and seasonal floodplains.
 
-Nichirin also administers several overseas territories and peripheral island territories that are not part of the four principal regions, such as [[horai-territory|Hōrai]], Kinshū, Karafuto, the [[northern-kurile-islands]], and the [[rensei-islands]].
+Nichirin also administers several overseas territories and peripheral island territories that are not part of the four principal regions, such as the Aureate Dominions of [[shashanka|Shashanka]] and [[kinshu|Kinshū]], Karafuto, the [[northern-kurile-islands]], and the [[rensei-islands]].
 
 ### Climate
 

@@ -12,10 +12,7 @@ infobox:
   - { label: "Right Pillar", value: "[[gendo-takahashi]]" }
   - { label: "Preceded by", value: "*Position Established*" }
   - { section: "Personal Details" }
-  - label: "Nationality"
-    value:
-      - ":img[/assets/flags/west-bangala.png] Bangali"
-      - ":img[/assets/flags/horai.jpg] Hōraian"
+  - { label: "Nationality", value: ":img[/assets/flags/west-bangala.png] Bangali" }
   - { label: "Born", value: ":date[1894-06-01|age]" }
 ---
 

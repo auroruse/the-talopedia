@@ -67,7 +67,7 @@ infobox:
 
 Mayu Kitta was born on February 3, 1864, in [[takarazuka]], the son of a Shogunate retainer who served under [[aratame-jozui|Aratame Jōzui]] at the siege of Chiyoda Castle in the [[bakuraku-war]]. The family's hereditary stipend was converted into government bonds after the war. Kitta graduated from the National Military Academy and was commissioned into the [[shogunate-armed-forces]]' Ground Corps in 1888. He married Akemi Hiiragi, and their daughter, Tomoko, was born the same year.
 
-His first posting was to the Mizuhara garrison, where he surveyed the crossings of the Shizuku River. He served as a supply staff officer in the reorganization of the army under the reforms of 1894, and afterwards organized garrison supply in Kiritani and Shin-Nichirin (now [[horai|Hōrai]] and [[kinshu|Kinshū]]). In 1907, after Akemi fell ill, he left active duty for a lectureship in logistics and doctrine at the National War College in [[shinkeisei]]; she died in 1909.
+His first posting was to the Mizuhara garrison, where he surveyed the crossings of the Shizuku River. He served as a supply staff officer in the reorganization of the army under the reforms of 1894, and afterwards organized garrison supply in Kiritani and Shin-Nichirin (now the Aureate Dominions of [[shashanka|Shashanka]] and [[kinshu|Kinshū]]). In 1907, after Akemi fell ill, he left active duty for a lectureship in logistics and doctrine at the National War College in [[shinkeisei]]; she died in 1909.
 
 ## Great War Service
 
