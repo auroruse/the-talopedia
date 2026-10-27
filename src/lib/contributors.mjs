@@ -25,7 +25,7 @@ export const ACCOUNT_OF = {
   alemannia: 'mrrv533-creator',
   eivorie: 'Foxomexray',
   giathka: 'the-giathster',
-  salishia: 'evanjcov11-wq',
+  salishia: 'macaroniatmine',
   'great-ai': 'michaelnguyen2803',
   demaruz: 'demaruzipatriot',
   sehreno: 'Wrangel-png',
