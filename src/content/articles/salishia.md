@@ -13,7 +13,7 @@ infobox:
   - { label: "President", value: "Thomas Vance" }
   - { label: "Senior Advisors", value: "Benjamin Wilkins" }
   - { label: "Legislature", value: "Rule by Law" }
-  - { label: "Formation", value: ":date[1822-08-14|ago]" }
+  - { label: "Formation", value: "14th of August, 1896" }
   - { section: "Demographics" }
   - { label: "Population", value: "1930 Census" }
   - { label: "Total", sub: true, value: "16,100,000" }
