@@ -2,6 +2,7 @@
 title: "Cassandra Conway"
 type: character
 nation: esu
+ooc: true
 infobox:
   - { image: "/assets/old-media/media/cassandra-conway-1.jpg", caption: "" }
   - { office: "Director of MAJESTY", term: "Incumbent | February 3, 1928 –" }
@@ -25,8 +26,6 @@ infobox:
       - "Rivet, Elysian State of Unity"
   - { label: "Alma Mater", value: "Emmerich Institute" }
 ---
-
-*This article contains out-of-character (OOC) information. Some details presented here are not publicly available in-character (IC).*
 
 **Cassandra Conway** (April 20, 1897 - May 11, 1933) was an [[elysian-state-of-unity|Elysian]]-born soldier and former espionage operative who served as the only director of the clandestine Private Military Contractor [[majesty]]. Before her split from the Unity State, Conway had worked as a spy and training instructor in the service of the Office of Naval Intelligence of the Unity State, as well as the Military Intelligence Service of the United States of Elysia. A militaristic Gestaltist, she has organized and funded the assassination of multiple foreign government officials, most notably the assassination of General Gyula of the Republic of Genosa, as well as the attempted assassination of Colonel George Elwood of the Unity State.
 
