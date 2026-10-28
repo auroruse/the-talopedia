@@ -562,7 +562,8 @@ const P = K.POINTS;
     .pk-scoreline { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: var(--s3); }
     .pk-sc-side { display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 0; text-align: center; }
     .pk-sc-name { max-width: 100%; font: 700 22px/1.05 var(--face); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .pk-dash { font: 800 40px/1 var(--face); color: var(--soft); padding-top: 64px; }
+    /* The dash sits on the goals' row, centred on the figures the same way the diamonds' text is. */
+    .pk-dash { align-self: end; display: grid; place-items: center; height: 46px; padding-bottom: .11em; font: 800 40px/1 var(--face); color: var(--navy); }
     .pk-stepper { display: flex; align-items: center; gap: 4px; }
     /* Minus and plus are small diamonds, navy-edged like the flags. */
     /* The minus and plus ride higher still: their ink's middle is 0.106em under the box's. */

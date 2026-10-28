@@ -427,8 +427,8 @@ function scoreNote() {
     return;
   }
   el.className = `pk-note${c != null && r != null && c < r ? ' bad' : ''}`;
-  el.textContent = c == null || r == null ? 'After extra time'
-    : c < r ? 'Champion can\'t lose' : c === r ? `${T[K.champion(m)].name} on penalties` : 'After extra time';
+  el.textContent = c == null || r == null ? ''
+    : c < r ? 'Champion can\'t lose' : c === r ? `${T[K.champion(m)].name} on penalties` : '';
 }
 
 function renderDark() {
