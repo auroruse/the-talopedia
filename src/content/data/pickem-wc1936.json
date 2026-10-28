@@ -1,0 +1,3486 @@
+{
+ "host": "COR",
+ "groups": {
+  "A": [
+   "COR",
+   "AST",
+   "PON",
+   "GUA"
+  ],
+  "B": [
+   "ARV",
+   "ALE",
+   "AWB",
+   "KMT"
+  ],
+  "C": [
+   "CAH",
+   "ELV",
+   "NKI",
+   "VIC"
+  ],
+  "D": [
+   "LVO",
+   "NSH",
+   "PER",
+   "ANH"
+  ],
+  "E": [
+   "NCH",
+   "EIV",
+   "AUR",
+   "DEM"
+  ],
+  "F": [
+   "ESU",
+   "SKJ",
+   "ASK",
+   "VAR"
+  ],
+  "G": [
+   "RUD",
+   "HOL",
+   "SHI",
+   "NIR"
+  ],
+  "H": [
+   "KAR",
+   "SAL",
+   "SEL",
+   "ABB"
+  ]
+ },
+ "teams": {
+  "COR": {
+   "name": "Cortesia",
+   "finish": "Hosts",
+   "route": "Host (Eastern group, 15th)",
+   "q": null,
+   "best": "Runners-up 1935",
+   "last": "1935 runners-up",
+   "squad": [
+    [
+     "Marek Kováč",
+     "GK"
+    ],
+    [
+     "Bogumił Cieślak",
+     "DEF"
+    ],
+    [
+     "Peter Baláž",
+     "DEF"
+    ],
+    [
+     "Zbigniew Lewandowski",
+     "DEF"
+    ],
+    [
+     "Erik Záhorský",
+     "DEF"
+    ],
+    [
+     "Bartosz Jastrzębski",
+     "MID"
+    ],
+    [
+     "Szymon Kowalczyk",
+     "MID"
+    ],
+    [
+     "Édouard Szymański",
+     "MID"
+    ],
+    [
+     "Kacper Dembiński",
+     "FWD"
+    ],
+    [
+     "Miłosz Zawadzki",
+     "FWD"
+    ],
+    [
+     "Grzegorz Brzęczyszczykiewicz",
+     "FWD"
+    ],
+    [
+     "Przemysław Nowak",
+     "GK"
+    ],
+    [
+     "Kazimierz Wójcik",
+     "DEF"
+    ],
+    [
+     "Czesław Domagała",
+     "DEF"
+    ],
+    [
+     "Ján Novák",
+     "DEF"
+    ],
+    [
+     "Jerzy Wiśniewski",
+     "DEF"
+    ],
+    [
+     "Sławomir Jędrzejczyk",
+     "MID"
+    ],
+    [
+     "Kordian Wróblewski",
+     "MID"
+    ],
+    [
+     "Jan Morsztyn",
+     "MID"
+    ],
+    [
+     "Ján Jędrzejczyk",
+     "FWD"
+    ],
+    [
+     "Radosław Gołębiowski",
+     "FWD"
+    ],
+    [
+     "Witold Ostrowski",
+     "FWD"
+    ]
+   ]
+  },
+  "AST": {
+   "name": "East Astriya",
+   "finish": "West 3rd",
+   "route": "Western group, 3rd",
+   "q": {
+    "conf": "W",
+    "pos": 3,
+    "W": 8,
+    "D": 1,
+    "L": 1,
+    "GF": 31,
+    "GA": 4,
+    "Pts": 25
+   },
+   "dark": true,
+   "best": "Round of 16 1932, 1933, 1935",
+   "last": "1935 round of 16",
+   "squad": [
+    [
+     "Nikolaos Papadopoulos",
+     "GK"
+    ],
+    [
+     "Kleanthis Paleologos",
+     "DEF"
+    ],
+    [
+     "Leonidas Stamatiou",
+     "DEF"
+    ],
+    [
+     "Aristeidis Georgiou",
+     "DEF"
+    ],
+    [
+     "Vlasios Nikolaou",
+     "DEF"
+    ],
+    [
+     "Epaminondas Mavromatis",
+     "MID"
+    ],
+    [
+     "Themistoklis Zervas",
+     "MID"
+    ],
+    [
+     "Themistoklis Moustakellis",
+     "MID"
+    ],
+    [
+     "Pyrros Dimitrakopoulos",
+     "MID"
+    ],
+    [
+     "Miltiadis Galanis",
+     "FWD"
+    ],
+    [
+     "Iraklis Christodoulou",
+     "FWD"
+    ],
+    [
+     "Yerasimos Athanasiadis",
+     "GK"
+    ],
+    [
+     "Grigorios Grivas",
+     "DEF"
+    ],
+    [
+     "Spyridon Lykoudis",
+     "DEF"
+    ],
+    [
+     "Periklis Voulgaris",
+     "DEF"
+    ],
+    [
+     "Anastasios Fotopoulos",
+     "DEF"
+    ],
+    [
+     "Odysseas Katsaros",
+     "MID"
+    ],
+    [
+     "Xenophon Samaras",
+     "MID"
+    ],
+    [
+     "Prokopis Karagiannis",
+     "MID"
+    ],
+    [
+     "Isidoros Kallergis",
+     "MID"
+    ],
+    [
+     "Charalambos Angelopoulos",
+     "FWD"
+    ],
+    [
+     "Yorgos Moustakellis",
+     "FWD"
+    ]
+   ]
+  },
+  "PON": {
+   "name": "Ponurvia",
+   "finish": "West 8th",
+   "route": "Western group, 8th",
+   "q": {
+    "conf": "W",
+    "pos": 8,
+    "W": 6,
+    "D": 3,
+    "L": 1,
+    "GF": 28,
+    "GA": 7,
+    "Pts": 21
+   },
+   "best": "Champions 1926",
+   "last": "1935 group stage",
+   "squad": [
+    [
+     "Maximilian Mollenhauer",
+     "GK"
+    ],
+    [
+     "Jedidiah Wanamaker",
+     "DEF"
+    ],
+    [
+     "Liam Bopp",
+     "DEF"
+    ],
+    [
+     "Tilman Zartmann",
+     "DEF"
+    ],
+    [
+     "Simon Schulhof",
+     "DEF"
+    ],
+    [
+     "August Rittenhouse",
+     "MID"
+    ],
+    [
+     "Patrick Stumpfegger",
+     "MID"
+    ],
+    [
+     "Diedrich Fassbender",
+     "MID"
+    ],
+    [
+     "Siegmund Stracke",
+     "FWD"
+    ],
+    [
+     "Wilhelm Giesel",
+     "FWD"
+    ],
+    [
+     "Hans-Jürgen Hōnigsberg",
+     "FWD"
+    ],
+    [
+     "Korbinian Eckert",
+     "GK"
+    ],
+    [
+     "Nathanael Custer",
+     "DEF"
+    ],
+    [
+     "Fabio Loeb",
+     "DEF"
+    ],
+    [
+     "Pat Hassell",
+     "DEF"
+    ],
+    [
+     "Ephraim Snyder",
+     "DEF"
+    ],
+    [
+     "Johann Peukert",
+     "MID"
+    ],
+    [
+     "Pirmin Hoffmeister",
+     "MID"
+    ],
+    [
+     "Conan Neitzel",
+     "MID"
+    ],
+    [
+     "Volkmar Scherer",
+     "FWD"
+    ],
+    [
+     "Laurenz Reinhart",
+     "FWD"
+    ],
+    [
+     "Robert Schlösser",
+     "FWD"
+    ]
+   ]
+  },
+  "GUA": {
+   "name": "Guandong",
+   "finish": "East 14th · 2-1 SGD",
+   "route": "Eastern playoff, 2-1 v Seignid",
+   "q": {
+    "conf": "E",
+    "pos": 14,
+    "W": 5,
+    "D": 1,
+    "L": 4,
+    "GF": 17,
+    "GA": 11,
+    "Pts": 16
+   },
+   "dark": true,
+   "best": "Round of 16 1932",
+   "last": "Absent in 1935",
+   "squad": [
+    [
+     "Zixuan Wang",
+     "GK"
+    ],
+    [
+     "Qiushi Zhang",
+     "DEF"
+    ],
+    [
+     "Heng Kong",
+     "DEF"
+    ],
+    [
+     "Feng Ji",
+     "DEF"
+    ],
+    [
+     "Chenguang Pei",
+     "MID"
+    ],
+    [
+     "Changming Zhao",
+     "MID"
+    ],
+    [
+     "Bo Yan",
+     "MID"
+    ],
+    [
+     "Haoyu Shi",
+     "MID"
+    ],
+    [
+     "Wenkai Zhao",
+     "MID"
+    ],
+    [
+     "Qiubai Dugu",
+     "FWD"
+    ],
+    [
+     "Guowei Sun",
+     "FWD"
+    ],
+    [
+     "Tianlei Meng",
+     "GK"
+    ],
+    [
+     "Yanbo Ma",
+     "DEF"
+    ],
+    [
+     "Yuan Li",
+     "DEF"
+    ],
+    [
+     "Chenglei Zhou",
+     "DEF"
+    ],
+    [
+     "Zhihao Tang",
+     "MID"
+    ],
+    [
+     "Junjie Xu",
+     "MID"
+    ],
+    [
+     "Weilin Fu",
+     "MID"
+    ],
+    [
+     "Lingyun Hao",
+     "MID"
+    ],
+    [
+     "Ziqiang Bao",
+     "MID"
+    ],
+    [
+     "Yuxuan Cui",
+     "FWD"
+    ],
+    [
+     "Dongming Jia",
+     "FWD"
+    ]
+   ]
+  },
+  "ARV": {
+   "name": "Arverne",
+   "finish": "West 1st",
+   "route": "Western group, 1st",
+   "q": {
+    "conf": "W",
+    "pos": 1,
+    "W": 9,
+    "D": 1,
+    "L": 0,
+    "GF": 36,
+    "GA": 4,
+    "Pts": 28
+   },
+   "best": "Champions 1918",
+   "last": "1935 quarter-finals",
+   "squad": [
+    [
+     "Fabien Blanchet",
+     "GK"
+    ],
+    [
+     "Émile D'Artagnan",
+     "DEF"
+    ],
+    [
+     "Hugo Saint-Laurent",
+     "DEF"
+    ],
+    [
+     "Mattieu Donnadieu",
+     "DEF"
+    ],
+    [
+     "Claude Lemaitre",
+     "DEF"
+    ],
+    [
+     "Jean-Pierre Susilovic",
+     "MID"
+    ],
+    [
+     "Guillaume Maison",
+     "MID"
+    ],
+    [
+     "Octave Desjardins",
+     "MID"
+    ],
+    [
+     "Constantin Reverdin",
+     "MID"
+    ],
+    [
+     "Dorian Roussel",
+     "MID"
+    ],
+    [
+     "Hervé Thibodeau",
+     "FWD"
+    ],
+    [
+     "Christophe Gagnon",
+     "GK"
+    ],
+    [
+     "Oriol Cabestany",
+     "DEF"
+    ],
+    [
+     "Sylvain Courtemanche",
+     "DEF"
+    ],
+    [
+     "Pierrick Berthelot",
+     "DEF"
+    ],
+    [
+     "Hadrien Deschamps",
+     "DEF"
+    ],
+    [
+     "Jocelyn Teissier",
+     "MID"
+    ],
+    [
+     "Léandre Pochard",
+     "MID"
+    ],
+    [
+     "Nabil Ouazzani",
+     "MID"
+    ],
+    [
+     "Baptiste Roux",
+     "MID"
+    ],
+    [
+     "Côme Delacroix",
+     "MID"
+    ],
+    [
+     "Rémi Gauthier",
+     "FWD"
+    ]
+   ]
+  },
+  "ALE": {
+   "name": "Alemannia",
+   "finish": "East 11th · 2-1 GAI",
+   "route": "Eastern playoff, 2-1 v Great Ai",
+   "q": {
+    "conf": "E",
+    "pos": 11,
+    "W": 5,
+    "D": 2,
+    "L": 3,
+    "GF": 20,
+    "GA": 7,
+    "Pts": 17
+   },
+   "best": "Champions 1933",
+   "last": "1935 fourth place",
+   "squad": [
+    [
+     "Matthias Noack",
+     "GK"
+    ],
+    [
+     "Florian Gruber",
+     "DEF"
+    ],
+    [
+     "Pirmin Falk",
+     "DEF"
+    ],
+    [
+     "Joris Van Antwerp",
+     "DEF"
+    ],
+    [
+     "Chris Weimann",
+     "DEF"
+    ],
+    [
+     "Tomáš Svoboda",
+     "MID"
+    ],
+    [
+     "Stijn Boelens",
+     "MID"
+    ],
+    [
+     "Gijs Dreesens",
+     "MID"
+    ],
+    [
+     "Thor Andresen",
+     "MID"
+    ],
+    [
+     "Stephan Kiefer",
+     "MID"
+    ],
+    [
+     "Florian Van Can",
+     "FWD"
+    ],
+    [
+     "Klaus Bernhard",
+     "GK"
+    ],
+    [
+     "Meine Carlsen",
+     "DEF"
+    ],
+    [
+     "Ane Ludvigsen",
+     "DEF"
+    ],
+    [
+     "Rafaël Altena",
+     "DEF"
+    ],
+    [
+     "Hartmut Schachtner",
+     "DEF"
+    ],
+    [
+     "Ondřej Černý",
+     "MID"
+    ],
+    [
+     "Immanuel Hasenkamp",
+     "MID"
+    ],
+    [
+     "Jorrit Blankenburg",
+     "MID"
+    ],
+    [
+     "Ime Paulsen",
+     "MID"
+    ],
+    [
+     "Gerhard Süss",
+     "MID"
+    ],
+    [
+     "Fabian Knef",
+     "FWD"
+    ]
+   ]
+  },
+  "AWB": {
+   "name": "West Bangala",
+   "finish": "West 14th · 1-0 ARU",
+   "route": "Western playoff, 1-0 v Arunya",
+   "q": {
+    "conf": "W",
+    "pos": 14,
+    "W": 4,
+    "D": 5,
+    "L": 1,
+    "GF": 18,
+    "GA": 12,
+    "Pts": 17
+   },
+   "dark": true,
+   "best": "No finish on record",
+   "last": "Absent in 1935",
+   "squad": [
+    [
+     "Kamal Rahman",
+     "GK"
+    ],
+    [
+     "Liakat Chowdhury",
+     "DEF"
+    ],
+    [
+     "Enamul Islam",
+     "DEF"
+    ],
+    [
+     "Jahangir Hossain",
+     "DEF"
+    ],
+    [
+     "Chanchal Ahmed",
+     "DEF"
+    ],
+    [
+     "Humayun Piker",
+     "MID"
+    ],
+    [
+     "Fazlul Miah",
+     "MID"
+    ],
+    [
+     "Didar Sikder",
+     "MID"
+    ],
+    [
+     "Vibhas Talukder",
+     "MID"
+    ],
+    [
+     "Palash Bhuiyan",
+     "FWD"
+    ],
+    [
+     "Rofiqul Khandaker",
+     "FWD"
+    ],
+    [
+     "Swapan Majumder",
+     "GK"
+    ],
+    [
+     "Nazrul Haque",
+     "DEF"
+    ],
+    [
+     "Delwar Sarker",
+     "DEF"
+    ],
+    [
+     "Shafiqul Molla",
+     "DEF"
+    ],
+    [
+     "Mizanur Gazi",
+     "DEF"
+    ],
+    [
+     "Gautam Das",
+     "MID"
+    ],
+    [
+     "Ashraful Biswas",
+     "MID"
+    ],
+    [
+     "Tapan Barua",
+     "MID"
+    ],
+    [
+     "Jamal Sardar",
+     "MID"
+    ],
+    [
+     "Rubel Munshi",
+     "FWD"
+    ],
+    [
+     "Iqbal Kazi",
+     "FWD"
+    ]
+   ]
+  },
+  "KMT": {
+   "name": "Kemet",
+   "finish": "East 23rd · 1-1 (5-3) TUR",
+   "route": "Eastern playoff, 1-1, 5-3 on penalties v Turulia",
+   "q": {
+    "conf": "E",
+    "pos": 23,
+    "W": 2,
+    "D": 2,
+    "L": 6,
+    "GF": 15,
+    "GA": 18,
+    "Pts": 8
+   },
+   "dark": true,
+   "best": "Round of 16 1934",
+   "last": "1935 group stage",
+   "squad": [
+    [
+     "Shenoute Nebamun",
+     "GK"
+    ],
+    [
+     "Pakhom Userhat",
+     "DEF"
+    ],
+    [
+     "Sidhom Irinefer",
+     "DEF"
+    ],
+    [
+     "Pishoy Djehuty",
+     "DEF"
+    ],
+    [
+     "Hor Senedjem",
+     "DEF"
+    ],
+    [
+     "Anoup Ptahmose",
+     "MID"
+    ],
+    [
+     "Psote Neferhotep",
+     "MID"
+    ],
+    [
+     "Kolthe Harkhuf",
+     "MID"
+    ],
+    [
+     "Pisenti Ramose",
+     "MID"
+    ],
+    [
+     "Tadros Amenemhat",
+     "MID"
+    ],
+    [
+     "Sarapamon Nakhtmin",
+     "FWD"
+    ],
+    [
+     "Panoub Sobekhotep",
+     "GK"
+    ],
+    [
+     "Onnophre Panehsy",
+     "DEF"
+    ],
+    [
+     "Karas Meryre",
+     "DEF"
+    ],
+    [
+     "Bishoy Khaemwaset",
+     "DEF"
+    ],
+    [
+     "Papnoute Kenamun",
+     "DEF"
+    ],
+    [
+     "Abanoub Sethnakht",
+     "MID"
+    ],
+    [
+     "Moyse Amenmose",
+     "MID"
+    ],
+    [
+     "Girgis Ipuwer",
+     "MID"
+    ],
+    [
+     "Menas Wennefer",
+     "MID"
+    ],
+    [
+     "Mina Khufuankh",
+     "MID"
+    ],
+    [
+     "Phib Bakenkhons",
+     "FWD"
+    ]
+   ]
+  },
+  "CAH": {
+   "name": "Cahaya",
+   "finish": "East 5th",
+   "route": "Eastern group, 5th",
+   "q": {
+    "conf": "E",
+    "pos": 5,
+    "W": 7,
+    "D": 2,
+    "L": 1,
+    "GF": 27,
+    "GA": 9,
+    "Pts": 23
+   },
+   "dark": true,
+   "best": "Round of 16 1933, 1935",
+   "last": "1935 round of 16",
+   "squad": [
+    [
+     "Raka Wijaya",
+     "GK"
+    ],
+    [
+     "Linus Kitingan",
+     "DEF"
+    ],
+    [
+     "Teguh Setiawan",
+     "DEF"
+    ],
+    [
+     "Jehezkiel Lawai",
+     "DEF"
+    ],
+    [
+     "Wahyu Wibowo",
+     "MID"
+    ],
+    [
+     "Eliezer Bansa",
+     "MID"
+    ],
+    [
+     "Bagus Hartono",
+     "MID"
+    ],
+    [
+     "Sabin Madius",
+     "MID"
+    ],
+    [
+     "Made Djelantik",
+     "FWD"
+    ],
+    [
+     "Kannan Kurup",
+     "FWD"
+    ],
+    [
+     "Daulat Siregar",
+     "FWD"
+    ],
+    [
+     "Gersom Parengkuan",
+     "GK"
+    ],
+    [
+     "Panting Jugah",
+     "DEF"
+    ],
+    [
+     "Antaei Djurunga",
+     "DEF"
+    ],
+    [
+     "Hipui Mutang",
+     "DEF"
+    ],
+    [
+     "Natanael Panggabean",
+     "MID"
+    ],
+    [
+     "Anta Ginting",
+     "MID"
+    ],
+    [
+     "Bayu Hartawan",
+     "MID"
+    ],
+    [
+     "Ruben Sihombing",
+     "MID"
+    ],
+    [
+     "Cyprian Kulleh",
+     "FWD"
+    ],
+    [
+     "Nyoman Suarjana",
+     "FWD"
+    ],
+    [
+     "Yopie Runtuwene",
+     "FWD"
+    ]
+   ]
+  },
+  "ELV": {
+   "name": "Elvester",
+   "finish": "East 6th",
+   "route": "Eastern group, 6th",
+   "q": {
+    "conf": "E",
+    "pos": 6,
+    "W": 7,
+    "D": 1,
+    "L": 2,
+    "GF": 27,
+    "GA": 8,
+    "Pts": 22
+   },
+   "best": "Champions 1906, 1928",
+   "last": "Absent in 1935",
+   "squad": [
+    [
+     "Jordan Stanford",
+     "GK"
+    ],
+    [
+     "James Smith",
+     "DEF"
+    ],
+    [
+     "Wesley Wetherby",
+     "DEF"
+    ],
+    [
+     "Marcus Redfern",
+     "DEF"
+    ],
+    [
+     "Philip McDonald",
+     "DEF"
+    ],
+    [
+     "Spencer Chadwick",
+     "MID"
+    ],
+    [
+     "Thomas Hargreaves",
+     "MID"
+    ],
+    [
+     "Ollie Shaw",
+     "FWD"
+    ],
+    [
+     "Harry Caine",
+     "FWD"
+    ],
+    [
+     "Ellis West",
+     "FWD"
+    ],
+    [
+     "Lewis Bardsley",
+     "FWD"
+    ],
+    [
+     "Jake Thornton",
+     "GK"
+    ],
+    [
+     "Rory Kincardine",
+     "DEF"
+    ],
+    [
+     "Curtis Haversham",
+     "DEF"
+    ],
+    [
+     "Emrys Lockwood",
+     "DEF"
+    ],
+    [
+     "Callum Davies",
+     "DEF"
+    ],
+    [
+     "Arthur Whitmore",
+     "MID"
+    ],
+    [
+     "Harvey Payne",
+     "MID"
+    ],
+    [
+     "Fletcher Lancaster",
+     "FWD"
+    ],
+    [
+     "Marcus Ellingham",
+     "FWD"
+    ],
+    [
+     "Rhys Deacon",
+     "FWD"
+    ],
+    [
+     "Dillon Heath",
+     "FWD"
+    ]
+   ]
+  },
+  "NKI": {
+   "name": "Kinshū",
+   "finish": "West 9th · 3-0 ACS",
+   "route": "Western playoff, 3-0 v Côte de Saumon",
+   "q": {
+    "conf": "W",
+    "pos": 9,
+    "W": 6,
+    "D": 2,
+    "L": 2,
+    "GF": 24,
+    "GA": 8,
+    "Pts": 20
+   },
+   "dark": true,
+   "best": "Round of 16 1935",
+   "last": "1935 round of 16",
+   "squad": [
+    [
+     "Dural Tanumura",
+     "GK"
+    ],
+    [
+     "Warrik Wirandaru",
+     "DEF"
+    ],
+    [
+     "Tanjin Tsukahara",
+     "DEF"
+    ],
+    [
+     "Keigo Ikeda",
+     "DEF"
+    ],
+    [
+     "Osamu Matsumoto",
+     "DEF"
+    ],
+    [
+     "Kiyoshi Murandin",
+     "MID"
+    ],
+    [
+     "Junichiro Tarugara",
+     "MID"
+    ],
+    [
+     "Eijiro Matsumoto",
+     "MID"
+    ],
+    [
+     "Yerrin Chindura",
+     "MID"
+    ],
+    [
+     "Tarran Nyaruguru",
+     "MID"
+    ],
+    [
+     "Masaru Jakamarra",
+     "FWD"
+    ],
+    [
+     "Baluk Ndembwe",
+     "GK"
+    ],
+    [
+     "Manda Ōkubo",
+     "DEF"
+    ],
+    [
+     "Takeo Kinoshita",
+     "DEF"
+    ],
+    [
+     "Nyandu Makaranga",
+     "DEF"
+    ],
+    [
+     "Nyunda Yiribaru",
+     "DEF"
+    ],
+    [
+     "Manda Tsukahara",
+     "MID"
+    ],
+    [
+     "Manda Andō",
+     "MID"
+    ],
+    [
+     "Nirrim Biryara",
+     "MID"
+    ],
+    [
+     "Minoru Andō",
+     "MID"
+    ],
+    [
+     "Shinji Tadayama",
+     "MID"
+    ],
+    [
+     "Itsuki Goto",
+     "FWD"
+    ]
+   ]
+  },
+  "VIC": {
+   "name": "Vicily",
+   "finish": "West 10th · 2-0 AEM",
+   "route": "Western playoff, 2-0 v El Magreb",
+   "q": {
+    "conf": "W",
+    "pos": 10,
+    "W": 6,
+    "D": 1,
+    "L": 3,
+    "GF": 20,
+    "GA": 9,
+    "Pts": 19
+   },
+   "best": "Champions 1908",
+   "last": "1935 third place",
+   "squad": [
+    [
+     "Massimo Visconti",
+     "GK"
+    ],
+    [
+     "Lorenzo Squillaci",
+     "DEF"
+    ],
+    [
+     "Filippo Castiglione",
+     "DEF"
+    ],
+    [
+     "Dario Moretti",
+     "DEF"
+    ],
+    [
+     "Attila D'Ambrosi",
+     "DEF"
+    ],
+    [
+     "Domenico Vivaldi",
+     "DEF"
+    ],
+    [
+     "Marcello La Barca",
+     "MID"
+    ],
+    [
+     "Federico Cardinale",
+     "MID"
+    ],
+    [
+     "Ferruccio Noseda",
+     "MID"
+    ],
+    [
+     "Raffaele Lucchese",
+     "FWD"
+    ],
+    [
+     "Valentino Zaccagni",
+     "FWD"
+    ],
+    [
+     "Palmiro Contini",
+     "GK"
+    ],
+    [
+     "Danilo Della Rocca",
+     "DEF"
+    ],
+    [
+     "Achille Colasuonno",
+     "DEF"
+    ],
+    [
+     "Vittorio Ferrara",
+     "DEF"
+    ],
+    [
+     "Andrea Ferrari",
+     "DEF"
+    ],
+    [
+     "Valente Pantuso",
+     "DEF"
+    ],
+    [
+     "Martino Marrese",
+     "MID"
+    ],
+    [
+     "Niccolò Donizetti",
+     "MID"
+    ],
+    [
+     "Corrado Montanari",
+     "MID"
+    ],
+    [
+     "Umberto Bellarmino",
+     "FWD"
+    ],
+    [
+     "Arsenio Marchetti",
+     "FWD"
+    ]
+   ]
+  },
+  "LVO": {
+   "name": "Livonia",
+   "finish": "East 3rd",
+   "route": "Eastern group, 3rd",
+   "q": {
+    "conf": "E",
+    "pos": 3,
+    "W": 8,
+    "D": 1,
+    "L": 1,
+    "GF": 19,
+    "GA": 6,
+    "Pts": 25
+   },
+   "best": "Group stage 1933, 1935",
+   "last": "1935 group stage",
+   "squad": [
+    [
+     "Axel Berg",
+     "GK"
+    ],
+    [
+     "Hartwig Von Buxhoeveden",
+     "DEF"
+    ],
+    [
+     "Ernst Tiesenhausen",
+     "DEF"
+    ],
+    [
+     "Bruno Dreyer",
+     "DEF"
+    ],
+    [
+     "Gvidas Rimkevičius",
+     "DEF"
+    ],
+    [
+     "Heinrich Stackelberg",
+     "MID"
+    ],
+    [
+     "Omar Kazluaska",
+     "MID"
+    ],
+    [
+     "Ulrik Zilinkas",
+     "MID"
+    ],
+    [
+     "Valdemārs Liepiņš",
+     "MID"
+    ],
+    [
+     "Robert Berthold",
+     "MID"
+    ],
+    [
+     "Edmund Grigas",
+     "FWD"
+    ],
+    [
+     "Kristaps Auseklis",
+     "GK"
+    ],
+    [
+     "Hugo Wöhrmann",
+     "DEF"
+    ],
+    [
+     "Justus Hermann",
+     "DEF"
+    ],
+    [
+     "Stasys Navickas",
+     "DEF"
+    ],
+    [
+     "Domas Urbonas",
+     "DEF"
+    ],
+    [
+     "Povilas Sabaliauskas",
+     "MID"
+    ],
+    [
+     "Egbert Löwis",
+     "MID"
+    ],
+    [
+     "Mindaugas Paulauskas",
+     "MID"
+    ],
+    [
+     "Reinhold Von Ungern",
+     "MID"
+    ],
+    [
+     "Otto Manteuffel",
+     "MID"
+    ],
+    [
+     "Gediminas Stankevičius",
+     "FWD"
+    ]
+   ]
+  },
+  "NSH": {
+   "name": "Shashanka",
+   "finish": "West 4th",
+   "route": "Western group, 4th",
+   "q": {
+    "conf": "W",
+    "pos": 4,
+    "W": 7,
+    "D": 2,
+    "L": 1,
+    "GF": 31,
+    "GA": 8,
+    "Pts": 23
+   },
+   "best": "Quarter-finals 1934",
+   "last": "1935 round of 16",
+   "squad": [
+    [
+     "Ashim Bhattacharya",
+     "GK"
+    ],
+    [
+     "Phani Kyaithang",
+     "DEF"
+    ],
+    [
+     "Susumu Goswami",
+     "DEF"
+    ],
+    [
+     "Anirban Goswami",
+     "DEF"
+    ],
+    [
+     "Khagendra Mitra",
+     "DEF"
+    ],
+    [
+     "Sudhir Chakraborty",
+     "MID"
+    ],
+    [
+     "Kamal Bodhipal",
+     "MID"
+    ],
+    [
+     "Tatsuki Akagawa",
+     "MID"
+    ],
+    [
+     "Kenji Nagase",
+     "MID"
+    ],
+    [
+     "Yoshio Hanazawa",
+     "MID"
+    ],
+    [
+     "Tanvir Howlader",
+     "FWD"
+    ],
+    [
+     "Tatsuki Hanazawa",
+     "GK"
+    ],
+    [
+     "Nikhil Chatterjee",
+     "DEF"
+    ],
+    [
+     "Provat Adhikari",
+     "DEF"
+    ],
+    [
+     "Susumu Uehara",
+     "DEF"
+    ],
+    [
+     "Amiya Majumdar",
+     "DEF"
+    ],
+    [
+     "Soumitro Ganguly",
+     "MID"
+    ],
+    [
+     "Sanat Barua",
+     "MID"
+    ],
+    [
+     "Pradip Chowdhury",
+     "MID"
+    ],
+    [
+     "Haripada Bagchi",
+     "MID"
+    ],
+    [
+     "Jatin Sudatta",
+     "MID"
+    ],
+    [
+     "Bhupen Narishita",
+     "FWD"
+    ]
+   ]
+  },
+  "PER": {
+   "name": "Perovska",
+   "finish": "East 8th · 2-1 AXE",
+   "route": "Eastern playoff, 2-1 v Axerfreditenshin",
+   "q": {
+    "conf": "E",
+    "pos": 8,
+    "W": 6,
+    "D": 2,
+    "L": 2,
+    "GF": 19,
+    "GA": 8,
+    "Pts": 20
+   },
+   "dark": true,
+   "best": "Quarter-finals 1935",
+   "last": "1935 quarter-finals",
+   "squad": [
+    [
+     "Evgeny Karpov",
+     "GK"
+    ],
+    [
+     "Stepan Andreev",
+     "DEF"
+    ],
+    [
+     "Osman Mamut",
+     "DEF"
+    ],
+    [
+     "Ivan Gavrilovic",
+     "DEF"
+    ],
+    [
+     "Lev Gusev",
+     "DEF"
+    ],
+    [
+     "Klim Zaytsev",
+     "MID"
+    ],
+    [
+     "Rodion Titov",
+     "MID"
+    ],
+    [
+     "Fedor Zhakupov",
+     "MID"
+    ],
+    [
+     "Nurlan Zhakupov",
+     "MID"
+    ],
+    [
+     "Alimjan Turghun",
+     "FWD"
+    ],
+    [
+     "Fedor Frolov",
+     "FWD"
+    ],
+    [
+     "Vitaly Markov",
+     "GK"
+    ],
+    [
+     "Georgy Nikitin",
+     "DEF"
+    ],
+    [
+     "Boris Grigoroffic",
+     "DEF"
+    ],
+    [
+     "Ignat Baranov",
+     "DEF"
+    ],
+    [
+     "Arman Dosmukhamed",
+     "DEF"
+    ],
+    [
+     "Nikita Shirokov",
+     "MID"
+    ],
+    [
+     "Trofim Savelyev",
+     "MID"
+    ],
+    [
+     "Daulet Kenzhebayev",
+     "MID"
+    ],
+    [
+     "Makar Kulikov",
+     "MID"
+    ],
+    [
+     "Sevastyan Roshchin",
+     "FWD"
+    ],
+    [
+     "Platon Denisov",
+     "FWD"
+    ]
+   ]
+  },
+  "ANH": {
+   "name": "Neuhollmar",
+   "finish": "West 21st · 1-0 ASP",
+   "route": "Western playoff, 1-0 v South Pelagonia",
+   "q": {
+    "conf": "W",
+    "pos": 21,
+    "W": 3,
+    "D": 1,
+    "L": 6,
+    "GF": 12,
+    "GA": 14,
+    "Pts": 10
+   },
+   "dark": true,
+   "best": "Group stage 1934, 1935",
+   "last": "1935 group stage",
+   "squad": [
+    [
+     "Gareth Tipene",
+     "GK"
+    ],
+    [
+     "Judah Rangitāne",
+     "DEF"
+    ],
+    [
+     "Kurt Mueller",
+     "DEF"
+    ],
+    [
+     "Māui Te Rauparaha",
+     "DEF"
+    ],
+    [
+     "Rolf Hoffmann",
+     "DEF"
+    ],
+    [
+     "Hone Wihongi",
+     "MID"
+    ],
+    [
+     "Kurt Te Rangi",
+     "MID"
+    ],
+    [
+     "Albrecht Von Haast",
+     "MID"
+    ],
+    [
+     "Walther Meyer",
+     "MID"
+    ],
+    [
+     "Eruera Waititi",
+     "FWD"
+    ],
+    [
+     "Pita Rata",
+     "FWD"
+    ],
+    [
+     "Tobias Schmidt",
+     "GK"
+    ],
+    [
+     "Fraser Te Rangi",
+     "DEF"
+    ],
+    [
+     "Tama Wharehuia",
+     "DEF"
+    ],
+    [
+     "Konrad Lindemann",
+     "DEF"
+    ],
+    [
+     "Rawiri Paretai",
+     "DEF"
+    ],
+    [
+     "Lachlan Ihimaera",
+     "MID"
+    ],
+    [
+     "Ernst Braunschweig",
+     "MID"
+    ],
+    [
+     "Matthias Becker",
+     "MID"
+    ],
+    [
+     "Manaia Tūhoe",
+     "MID"
+    ],
+    [
+     "Sigmund Reindl",
+     "FWD"
+    ],
+    [
+     "Otene Kereopa",
+     "FWD"
+    ]
+   ]
+  },
+  "NCH": {
+   "name": "Nichirin",
+   "finish": "East 2nd",
+   "route": "Eastern group, 2nd",
+   "q": {
+    "conf": "E",
+    "pos": 2,
+    "W": 8,
+    "D": 1,
+    "L": 1,
+    "GF": 25,
+    "GA": 4,
+    "Pts": 25
+   },
+   "best": "Champions 1914, 1930, 1932, 1935",
+   "last": "1935 champions",
+   "squad": [
+    [
+     "Toma Shimabukuro",
+     "GK"
+    ],
+    [
+     "Kōzō Fujise",
+     "DEF"
+    ],
+    [
+     "Gen Fija",
+     "DEF"
+    ],
+    [
+     "Kenshirō Unagami",
+     "DEF"
+    ],
+    [
+     "Genma Nishigawa",
+     "DEF"
+    ],
+    [
+     "Makoto Kishima",
+     "MID"
+    ],
+    [
+     "Kiyoshi Torigoe",
+     "MID"
+    ],
+    [
+     "Rui Ōe",
+     "MID"
+    ],
+    [
+     "Luca Higashiyama",
+     "MID"
+    ],
+    [
+     "Ganzorig Erdene",
+     "FWD"
+    ],
+    [
+     "Shō Itoshi",
+     "FWD"
+    ],
+    [
+     "Eisuke Sato",
+     "GK"
+    ],
+    [
+     "Kazuyoshi Hiranuma",
+     "DEF"
+    ],
+    [
+     "Tömörbaatar Ganzorig",
+     "DEF"
+    ],
+    [
+     "Naoto Umenokōji",
+     "DEF"
+    ],
+    [
+     "Kazuki Fondo",
+     "DEF"
+    ],
+    [
+     "Hiro Oshiro",
+     "MID"
+    ],
+    [
+     "Takeru Mikado",
+     "MID"
+    ],
+    [
+     "Arslanbaatar Ganbold",
+     "MID"
+    ],
+    [
+     "Ikki Dazai",
+     "MID"
+    ],
+    [
+     "Gaku Ibusuki",
+     "FWD"
+    ],
+    [
+     "Takuma Nakamura",
+     "FWD"
+    ]
+   ]
+  },
+  "EIV": {
+   "name": "Eivorie",
+   "finish": "West 6th",
+   "route": "Western group, 6th",
+   "q": {
+    "conf": "W",
+    "pos": 6,
+    "W": 7,
+    "D": 2,
+    "L": 1,
+    "GF": 24,
+    "GA": 6,
+    "Pts": 23
+   },
+   "dark": true,
+   "best": "Group stage 1935",
+   "last": "1935 group stage",
+   "squad": [
+    [
+     "Sigeweard Strood",
+     "GK"
+    ],
+    [
+     "Stanleah Coc",
+     "DEF"
+    ],
+    [
+     "Cyneric Cynbeald",
+     "DEF"
+    ],
+    [
+     "Ælfnoð Winifred",
+     "DEF"
+    ],
+    [
+     "Clifford Burhtun",
+     "DEF"
+    ],
+    [
+     "Colibyr Burhtun",
+     "MID"
+    ],
+    [
+     "Ealdræd Hæþ",
+     "MID"
+    ],
+    [
+     "Cliftun Suþgeat",
+     "MID"
+    ],
+    [
+     "Beonetun Hocere",
+     "MID"
+    ],
+    [
+     "Wadwulf Ealhhere",
+     "MID"
+    ],
+    [
+     "Ealdwig Read",
+     "FWD"
+    ],
+    [
+     "Granta Grandham",
+     "GK"
+    ],
+    [
+     "Stanleah Bradford",
+     "DEF"
+    ],
+    [
+     "Ælfstan Hegleah",
+     "DEF"
+    ],
+    [
+     "Clifford Waters",
+     "DEF"
+    ],
+    [
+     "Wellaleah Glædwine",
+     "DEF"
+    ],
+    [
+     "Cyneheard Brunee",
+     "MID"
+    ],
+    [
+     "Wulfstan Priestleye",
+     "MID"
+    ],
+    [
+     "Holdenu Stigweard",
+     "MID"
+    ],
+    [
+     "Ealhstan Bærnet",
+     "MID"
+    ],
+    [
+     "Ælfnoð Haileye",
+     "MID"
+    ],
+    [
+     "Beonetleah Heordewic",
+     "FWD"
+    ]
+   ]
+  },
+  "AUR": {
+   "name": "Auritania",
+   "finish": "West 7th",
+   "route": "Western group, 7th",
+   "q": {
+    "conf": "W",
+    "pos": 7,
+    "W": 7,
+    "D": 1,
+    "L": 2,
+    "GF": 29,
+    "GA": 8,
+    "Pts": 22
+   },
+   "best": "Runners-up 1931",
+   "last": "1935 group stage",
+   "squad": [
+    [
+     "Rafael Rosario",
+     "GK"
+    ],
+    [
+     "Jose Carlos Pescador",
+     "DEF"
+    ],
+    [
+     "Cayetano Montoya",
+     "DEF"
+    ],
+    [
+     "Jenaro Salamanca",
+     "DEF"
+    ],
+    [
+     "Efraín Arenas",
+     "DEF"
+    ],
+    [
+     "Lisandro Rivas",
+     "MID"
+    ],
+    [
+     "Olegario Pérez",
+     "MID"
+    ],
+    [
+     "Neizan Escribano",
+     "MID"
+    ],
+    [
+     "Juvenal Vera",
+     "FWD"
+    ],
+    [
+     "Rosendo Zapatero",
+     "FWD"
+    ],
+    [
+     "Arcadio Villa",
+     "FWD"
+    ],
+    [
+     "Ceferino Acosta",
+     "GK"
+    ],
+    [
+     "Jacinto Valencia",
+     "DEF"
+    ],
+    [
+     "Inácio Madureira",
+     "DEF"
+    ],
+    [
+     "Carmelo Bienvenida",
+     "DEF"
+    ],
+    [
+     "Orlando Correa",
+     "DEF"
+    ],
+    [
+     "Emiliano Luna",
+     "MID"
+    ],
+    [
+     "Ánselmo Fernandez",
+     "MID"
+    ],
+    [
+     "Cristian Costanza",
+     "MID"
+    ],
+    [
+     "Ferran Bastida",
+     "FWD"
+    ],
+    [
+     "Severino Guzmán",
+     "FWD"
+    ],
+    [
+     "Nicanor Arandia",
+     "FWD"
+    ]
+   ]
+  },
+  "DEM": {
+   "name": "Demâruz",
+   "finish": "East 10th · 1-1 (6-5) FUR",
+   "route": "Eastern playoff, 1-1, 6-5 on penalties v Furan",
+   "q": {
+    "conf": "E",
+    "pos": 10,
+    "W": 5,
+    "D": 3,
+    "L": 2,
+    "GF": 11,
+    "GA": 7,
+    "Pts": 18
+   },
+   "dark": true,
+   "best": "No finish on record",
+   "last": "Absent in 1935",
+   "squad": [
+    [
+     "Kíli Algânhund",
+     "GK"
+    ],
+    [
+     "Valgr Volgodonsk",
+     "DEF"
+    ],
+    [
+     "Umzar Azanulbizar",
+     "DEF"
+    ],
+    [
+     "Mîm Nuldubân",
+     "DEF"
+    ],
+    [
+     "Thrarin Azsâlul'Abad",
+     "DEF"
+    ],
+    [
+     "Bodruith Ithhêrdum",
+     "MID"
+    ],
+    [
+     "Bogi Dankhul",
+     "MID"
+    ],
+    [
+     "Reklar Luzunkuzru",
+     "MID"
+    ],
+    [
+     "Dezeb Nilakhîn",
+     "MID"
+    ],
+    [
+     "Nazran Nidinyindîn",
+     "MID"
+    ],
+    [
+     "Volodmir Volgodonsk",
+     "FWD"
+    ],
+    [
+     "Frór Khamrultarâg",
+     "GK"
+    ],
+    [
+     "Thorgrim Ursulbazarî",
+     "DEF"
+    ],
+    [
+     "Bodruith Gêmdubân",
+     "DEF"
+    ],
+    [
+     "Nial Siginzâram",
+     "DEF"
+    ],
+    [
+     "Borin Danakh-Khizdîn",
+     "DEF"
+    ],
+    [
+     "Gimli Vanadzor",
+     "MID"
+    ],
+    [
+     "Dezeb Susûkhamrâg",
+     "MID"
+    ],
+    [
+     "Utas Buzrâbekhazdul",
+     "MID"
+    ],
+    [
+     "Umzar Khamrultarâg",
+     "MID"
+    ],
+    [
+     "Tasâl Azsâlul'Abad",
+     "MID"
+    ],
+    [
+     "Tasâl Baruk-Khizdîn",
+     "FWD"
+    ]
+   ]
+  },
+  "ESU": {
+   "name": "E.S.U.",
+   "finish": "West 2nd",
+   "route": "Western group, 2nd",
+   "q": {
+    "conf": "W",
+    "pos": 2,
+    "W": 8,
+    "D": 2,
+    "L": 0,
+    "GF": 38,
+    "GA": 5,
+    "Pts": 26
+   },
+   "best": "Champions 1924, 1934",
+   "last": "1935 group stage",
+   "squad": [
+    [
+     "Spencer Jackson",
+     "GK"
+    ],
+    [
+     "Nathaniel Vitale",
+     "DEF"
+    ],
+    [
+     "Alton Begay",
+     "DEF"
+    ],
+    [
+     "Elliot Farnsworth",
+     "DEF"
+    ],
+    [
+     "Wyatt Bradford",
+     "DEF"
+    ],
+    [
+     "Conrad Bauer",
+     "MID"
+    ],
+    [
+     "Rocco De Luca",
+     "MID"
+    ],
+    [
+     "Jadarian Royce",
+     "MID"
+    ],
+    [
+     "Silvio Caruso",
+     "MID"
+    ],
+    [
+     "Trent Hawthorne",
+     "FWD"
+    ],
+    [
+     "Horace Peshlakai",
+     "FWD"
+    ],
+    [
+     "Jackson Miller",
+     "GK"
+    ],
+    [
+     "Don Archibald Bates",
+     "DEF"
+    ],
+    [
+     "Brock Fairweather",
+     "DEF"
+    ],
+    [
+     "Ellison Hargrove",
+     "DEF"
+    ],
+    [
+     "Clayton Caldwell",
+     "DEF"
+    ],
+    [
+     "Gavin Chapelle",
+     "MID"
+    ],
+    [
+     "Vito Moretti",
+     "MID"
+    ],
+    [
+     "Felix Hoffman",
+     "MID"
+    ],
+    [
+     "Kendrick Nakai",
+     "MID"
+    ],
+    [
+     "Dominic Winslow",
+     "FWD"
+    ],
+    [
+     "Leon Vogel",
+     "FWD"
+    ]
+   ]
+  },
+  "SKJ": {
+   "name": "Skjarnland",
+   "finish": "East 4th",
+   "route": "Eastern group, 4th",
+   "q": {
+    "conf": "E",
+    "pos": 4,
+    "W": 7,
+    "D": 3,
+    "L": 0,
+    "GF": 27,
+    "GA": 4,
+    "Pts": 24
+   },
+   "dark": true,
+   "best": "Quarter-finals 1934",
+   "last": "1935 round of 16",
+   "squad": [
+    [
+     "Magnus Andersson",
+     "GK"
+    ],
+    [
+     "Kenneth Haugland",
+     "DEF"
+    ],
+    [
+     "Olander Strandberg",
+     "DEF"
+    ],
+    [
+     "Olof Sjöberg",
+     "DEF"
+    ],
+    [
+     "Gustav Gyllenhaal",
+     "DEF"
+    ],
+    [
+     "Erik Sundqvist",
+     "MID"
+    ],
+    [
+     "Victor Tvedt",
+     "MID"
+    ],
+    [
+     "Lennart Sommar",
+     "MID"
+    ],
+    [
+     "Daniel Lindén",
+     "MID"
+    ],
+    [
+     "Hjalmar Lindström",
+     "FWD"
+    ],
+    [
+     "Jens Geirsson",
+     "FWD"
+    ],
+    [
+     "Rikard Storgård",
+     "GK"
+    ],
+    [
+     "Artur Morgensson",
+     "DEF"
+    ],
+    [
+     "Anton Westerberg",
+     "DEF"
+    ],
+    [
+     "Sven-Olof Lundin",
+     "DEF"
+    ],
+    [
+     "Emil Hansen",
+     "DEF"
+    ],
+    [
+     "Torbjørn Kvamme",
+     "MID"
+    ],
+    [
+     "Lennart Kampe",
+     "MID"
+    ],
+    [
+     "Vilgot Sundkvist",
+     "MID"
+    ],
+    [
+     "Vilhelm Smed",
+     "MID"
+    ],
+    [
+     "Henrik Kristianson",
+     "FWD"
+    ],
+    [
+     "Rikard Kovén",
+     "FWD"
+    ]
+   ]
+  },
+  "ASK": {
+   "name": "Askurias",
+   "finish": "West 13th · 2-0 NDH",
+   "route": "Western playoff, 2-0 v Dar Hadid",
+   "q": {
+    "conf": "W",
+    "pos": 13,
+    "W": 5,
+    "D": 2,
+    "L": 3,
+    "GF": 31,
+    "GA": 9,
+    "Pts": 17
+   },
+   "best": "Champions 1912, 1931",
+   "last": "1935 group stage",
+   "squad": [
+    [
+     "Xavier Cienfuegos",
+     "GK"
+    ],
+    [
+     "Francisco Alameda",
+     "DEF"
+    ],
+    [
+     "Ismael Menéndez",
+     "DEF"
+    ],
+    [
+     "Ibai Urrutia",
+     "DEF"
+    ],
+    [
+     "Anselmo Carranza",
+     "DEF"
+    ],
+    [
+     "Gonzalo Valbuena",
+     "MID"
+    ],
+    [
+     "Ausiàs Campanar",
+     "MID"
+    ],
+    [
+     "Yeray Bengoetxea",
+     "MID"
+    ],
+    [
+     "Pau Puigcorbé",
+     "FWD"
+    ],
+    [
+     "Matías Salcedo",
+     "FWD"
+    ],
+    [
+     "Dinis Estrela",
+     "FWD"
+    ],
+    [
+     "Guillem Orriols",
+     "GK"
+    ],
+    [
+     "Alejandro Varga",
+     "DEF"
+    ],
+    [
+     "Oriol Montagut",
+     "DEF"
+    ],
+    [
+     "Valentin Peixoto",
+     "DEF"
+    ],
+    [
+     "Eusébio Carneiro",
+     "DEF"
+    ],
+    [
+     "Íker Olabarría",
+     "MID"
+    ],
+    [
+     "Nicasio Aranguren",
+     "MID"
+    ],
+    [
+     "Salvador Figueiredo",
+     "MID"
+    ],
+    [
+     "Teotónio Cavaco",
+     "FWD"
+    ],
+    [
+     "Nélson Ferreira",
+     "FWD"
+    ],
+    [
+     "Ander Zubikarai",
+     "FWD"
+    ]
+   ]
+  },
+  "VAR": {
+   "name": "Varahmehr",
+   "finish": "East 17th · 1-0 SYL",
+   "route": "Eastern playoff, 1-0 v Sylezyjo",
+   "q": {
+    "conf": "E",
+    "pos": 17,
+    "W": 4,
+    "D": 3,
+    "L": 3,
+    "GF": 21,
+    "GA": 15,
+    "Pts": 15
+   },
+   "dark": true,
+   "best": "Quarter-finals 1934, 1935",
+   "last": "1935 quarter-finals",
+   "squad": [
+    [
+     "Vahid Lorestani",
+     "GK"
+    ],
+    [
+     "Eskandar Dehghan",
+     "DEF"
+    ],
+    [
+     "Parviz Tahmasb",
+     "DEF"
+    ],
+    [
+     "Touraj Hayaii",
+     "DEF"
+    ],
+    [
+     "Farshid Al-Buri",
+     "DEF"
+    ],
+    [
+     "Gilgamesh Khorsandi",
+     "MID"
+    ],
+    [
+     "Siavash Mehrian",
+     "MID"
+    ],
+    [
+     "Sepideh Shakibaii",
+     "MID"
+    ],
+    [
+     "Ashkan Mahdavi",
+     "MID"
+    ],
+    [
+     "Daru Jafari",
+     "MID"
+    ],
+    [
+     "Pedram Nazeri",
+     "FWD"
+    ],
+    [
+     "Tazta Daryaei",
+     "GK"
+    ],
+    [
+     "Kianoush Bahari",
+     "DEF"
+    ],
+    [
+     "Ardalan Danesh",
+     "DEF"
+    ],
+    [
+     "Mohsen Tabrizi",
+     "DEF"
+    ],
+    [
+     "Babak Ghafouri",
+     "DEF"
+    ],
+    [
+     "Mehraban Hirbod",
+     "MID"
+    ],
+    [
+     "Mostafa Riahi",
+     "MID"
+    ],
+    [
+     "Mojtaba Nasrabadi",
+     "MID"
+    ],
+    [
+     "Meshari Ruwaili",
+     "MID"
+    ],
+    [
+     "Kaveh Rezghi",
+     "MID"
+    ],
+    [
+     "Saīd Farzan",
+     "FWD"
+    ]
+   ]
+  },
+  "RUD": {
+   "name": "Rudania",
+   "finish": "East 1st",
+   "route": "Eastern group, 1st",
+   "q": {
+    "conf": "E",
+    "pos": 1,
+    "W": 8,
+    "D": 1,
+    "L": 1,
+    "GF": 34,
+    "GA": 7,
+    "Pts": 25
+   },
+   "best": "Round of 16 1932",
+   "last": "Absent in 1935",
+   "squad": [
+    [
+     "Ivan Dolgorukiy",
+     "GK"
+    ],
+    [
+     "Kakha Kvernadze",
+     "DEF"
+    ],
+    [
+     "Vsevolod Krestovsky",
+     "DEF"
+    ],
+    [
+     "Timur Oorzhak",
+     "DEF"
+    ],
+    [
+     "Sergei Smirnov",
+     "DEF"
+    ],
+    [
+     "Vitali Korovin",
+     "DEF"
+    ],
+    [
+     "Kuzma Zvezdinsky",
+     "MID"
+    ],
+    [
+     "Igor Novikov",
+     "MID"
+    ],
+    [
+     "Hayk Khitaryan",
+     "MID"
+    ],
+    [
+     "Karel Černý",
+     "FWD"
+    ],
+    [
+     "Denis Kuznetsov",
+     "FWD"
+    ],
+    [
+     "Alexander Cetkov",
+     "GK"
+    ],
+    [
+     "Evgeny Makarov",
+     "DEF"
+    ],
+    [
+     "Alexei Razumovsky",
+     "DEF"
+    ],
+    [
+     "Toivo Grigorovic",
+     "DEF"
+    ],
+    [
+     "Artyom Vladimovic",
+     "DEF"
+    ],
+    [
+     "Ladislav Kučera",
+     "DEF"
+    ],
+    [
+     "Namsarai Ayusheev",
+     "MID"
+    ],
+    [
+     "Daivid Fedoroff",
+     "MID"
+    ],
+    [
+     "Vladimir Smirnovic",
+     "MID"
+    ],
+    [
+     "Alex Kaczmarek",
+     "FWD"
+    ],
+    [
+     "Pavel Sokolov",
+     "FWD"
+    ]
+   ]
+  },
+  "HOL": {
+   "name": "Hollosend",
+   "finish": "West 5th",
+   "route": "Western group, 5th",
+   "q": {
+    "conf": "W",
+    "pos": 5,
+    "W": 7,
+    "D": 2,
+    "L": 1,
+    "GF": 27,
+    "GA": 4,
+    "Pts": 23
+   },
+   "best": "Champions 1922",
+   "last": "1935 group stage",
+   "squad": [
+    [
+     "Callum Calhoun",
+     "GK"
+    ],
+    [
+     "Tomás Uzcátegui",
+     "DEF"
+    ],
+    [
+     "Leonardo Urdaneta",
+     "DEF"
+    ],
+    [
+     "Cristian Urdaneta",
+     "DEF"
+    ],
+    [
+     "Wade Boone",
+     "DEF"
+    ],
+    [
+     "Dale Landry",
+     "MID"
+    ],
+    [
+     "Earl Tomlinson",
+     "MID"
+    ],
+    [
+     "Kamron Chancellor",
+     "MID"
+    ],
+    [
+     "Ricardo Sherman",
+     "MID"
+    ],
+    [
+     "James Feruccio",
+     "MID"
+    ],
+    [
+     "Simón Arismendi",
+     "FWD"
+    ],
+    [
+     "Rhett Vance",
+     "GK"
+    ],
+    [
+     "Emilio Escalona",
+     "DEF"
+    ],
+    [
+     "Alvaro Valdovinos",
+     "DEF"
+    ],
+    [
+     "Arturo Morgado",
+     "DEF"
+    ],
+    [
+     "Reuben Mendoza",
+     "DEF"
+    ],
+    [
+     "Kemar Browner",
+     "MID"
+    ],
+    [
+     "Walter Thurmund III",
+     "MID"
+    ],
+    [
+     "Ambrose Pickett",
+     "MID"
+    ],
+    [
+     "Alvaro Small",
+     "MID"
+    ],
+    [
+     "Sander Vandevelde",
+     "MID"
+    ],
+    [
+     "Fabián Machado",
+     "FWD"
+    ]
+   ]
+  },
+  "SHI": {
+   "name": "Shivon",
+   "finish": "East 13th · 3-0 ADV",
+   "route": "Eastern playoff, 3-0 v Divia",
+   "q": {
+    "conf": "E",
+    "pos": 13,
+    "W": 5,
+    "D": 2,
+    "L": 3,
+    "GF": 16,
+    "GA": 13,
+    "Pts": 17
+   },
+   "dark": true,
+   "best": "Round of 16 1933",
+   "last": "1935 group stage",
+   "squad": [
+    [
+     "Yonatan Cohen",
+     "GK"
+    ],
+    [
+     "Asaf Bar-Lev",
+     "DEF"
+    ],
+    [
+     "Roi Ben-Haim",
+     "DEF"
+    ],
+    [
+     "Eren Peretz",
+     "DEF"
+    ],
+    [
+     "Wael Buzaglo",
+     "DEF"
+    ],
+    [
+     "Segev Even-Khen",
+     "MID"
+    ],
+    [
+     "Ravid Biton",
+     "MID"
+    ],
+    [
+     "Dvir Alon",
+     "MID"
+    ],
+    [
+     "Yerucham Lehrer",
+     "MID"
+    ],
+    [
+     "Maoz Shaked",
+     "MID"
+    ],
+    [
+     "Gilad Dahan",
+     "FWD"
+    ],
+    [
+     "Iddo Avni",
+     "GK"
+    ],
+    [
+     "Nadav Tzur",
+     "DEF"
+    ],
+    [
+     "Tomer Mizrahi",
+     "DEF"
+    ],
+    [
+     "Amichai Shtern",
+     "DEF"
+    ],
+    [
+     "Guy Sharabi",
+     "DEF"
+    ],
+    [
+     "Shai Azoulay",
+     "MID"
+    ],
+    [
+     "Elkana Rotem",
+     "MID"
+    ],
+    [
+     "Yishai Galili",
+     "MID"
+    ],
+    [
+     "Dolev Nagar",
+     "MID"
+    ],
+    [
+     "Zamir Peled",
+     "MID"
+    ],
+    [
+     "Issam Zoghbi",
+     "FWD"
+    ]
+   ]
+  },
+  "NIR": {
+   "name": "Iriria",
+   "finish": "West 15th · 1-0 ENR",
+   "route": "Western playoff, 1-0 v Noradia",
+   "q": {
+    "conf": "W",
+    "pos": 15,
+    "W": 4,
+    "D": 2,
+    "L": 4,
+    "GF": 12,
+    "GA": 18,
+    "Pts": 14
+   },
+   "dark": true,
+   "best": "Quarter-finals 1935",
+   "last": "1935 quarter-finals",
+   "squad": [
+    [
+     "Sibö Kurbli",
+     "GK"
+    ],
+    [
+     "Namú Suriá",
+     "DEF"
+    ],
+    [
+     "Tsirú Diköl",
+     "DEF"
+    ],
+    [
+     "Dowá Tuvöl",
+     "DEF"
+    ],
+    [
+     "Bikëí Yëköl",
+     "DEF"
+    ],
+    [
+     "Yëría Kaché",
+     "MID"
+    ],
+    [
+     "Sulá Bikakö",
+     "MID"
+    ],
+    [
+     "Duchí Siwöl",
+     "MID"
+    ],
+    [
+     "Durí Karí",
+     "MID"
+    ],
+    [
+     "Juní Börá",
+     "FWD"
+    ],
+    [
+     "Ditsö Nakí",
+     "FWD"
+    ],
+    [
+     "Takeshi Kurbli",
+     "GK"
+    ],
+    [
+     "Siwá Chinakö",
+     "DEF"
+    ],
+    [
+     "Nawë Kuchöl",
+     "DEF"
+    ],
+    [
+     "Bulú Tarköl",
+     "DEF"
+    ],
+    [
+     "Kanë Dabá",
+     "DEF"
+    ],
+    [
+     "Tkabë Kichá",
+     "MID"
+    ],
+    [
+     "Talí Sabákö",
+     "MID"
+    ],
+    [
+     "Jatsó Bluköl",
+     "MID"
+    ],
+    [
+     "Këbö Wirbli",
+     "MID"
+    ],
+    [
+     "Chirá Nubrí",
+     "FWD"
+    ],
+    [
+     "Jawí Tokwá",
+     "FWD"
+    ]
+   ]
+  },
+  "KAR": {
+   "name": "Karjania",
+   "finish": "East 7th",
+   "route": "Eastern group, 7th",
+   "q": {
+    "conf": "E",
+    "pos": 7,
+    "W": 7,
+    "D": 1,
+    "L": 2,
+    "GF": 18,
+    "GA": 6,
+    "Pts": 22
+   },
+   "best": "Champions 1904",
+   "last": "1935 round of 16",
+   "squad": [
+    [
+     "Aleksi Järveläinen",
+     "GK"
+    ],
+    [
+     "Kalle Räikkönen",
+     "DEF"
+    ],
+    [
+     "Konsta Yrjölä",
+     "DEF"
+    ],
+    [
+     "Ohttola Sillaste",
+     "DEF"
+    ],
+    [
+     "Paavo Seppälä",
+     "DEF"
+    ],
+    [
+     "Kasper Kaljurand",
+     "MID"
+    ],
+    [
+     "Jaan Soosaar",
+     "MID"
+    ],
+    [
+     "Otto Kask",
+     "MID"
+    ],
+    [
+     "Kuismaa Kivisild",
+     "FWD"
+    ],
+    [
+     "Tim Pukki",
+     "FWD"
+    ],
+    [
+     "Voptá Hendá",
+     "FWD"
+    ],
+    [
+     "Erik Aalto",
+     "GK"
+    ],
+    [
+     "Heikki Kovalainen",
+     "DEF"
+    ],
+    [
+     "Kalle Olstalainen",
+     "DEF"
+    ],
+    [
+     "Mikko Niskanen",
+     "DEF"
+    ],
+    [
+     "Albert Kuusela",
+     "DEF"
+    ],
+    [
+     "Kökta Saare",
+     "MID"
+    ],
+    [
+     "Roope Hietala",
+     "MID"
+    ],
+    [
+     "Litto Tulp",
+     "MID"
+    ],
+    [
+     "Salteni Pöyhönen",
+     "FWD"
+    ],
+    [
+     "Tarvo Puusepp",
+     "FWD"
+    ],
+    [
+     "Siim Kallasmaa",
+     "FWD"
+    ]
+   ]
+  },
+  "SAL": {
+   "name": "Salishia",
+   "finish": "West 11th · 5-1 ATA",
+   "route": "Western playoff, 5-1 v Tierra Arcadia",
+   "q": {
+    "conf": "W",
+    "pos": 11,
+    "W": 6,
+    "D": 1,
+    "L": 3,
+    "GF": 17,
+    "GA": 8,
+    "Pts": 19
+   },
+   "dark": true,
+   "best": "Round of 16 1934",
+   "last": "Absent in 1935",
+   "squad": [
+    [
+     "Piers Skoronsky",
+     "GK"
+    ],
+    [
+     "Gunther Hellams",
+     "DEF"
+    ],
+    [
+     "Cooper Saint John",
+     "DEF"
+    ],
+    [
+     "Ezekiel Bridger",
+     "DEF"
+    ],
+    [
+     "Cyprian Regent",
+     "MID"
+    ],
+    [
+     "William Levice",
+     "MID"
+    ],
+    [
+     "Elijah Tanner",
+     "MID"
+    ],
+    [
+     "Jonas Mercer",
+     "MID"
+    ],
+    [
+     "Amos Donnelly",
+     "FWD"
+    ],
+    [
+     "Ronald Ward",
+     "FWD"
+    ],
+    [
+     "Titus Calloway",
+     "FWD"
+    ],
+    [
+     "Enoch Fletcher",
+     "GK"
+    ],
+    [
+     "Barnabas Stride",
+     "DEF"
+    ],
+    [
+     "William Donnelly",
+     "DEF"
+    ],
+    [
+     "Josiah Halloway",
+     "DEF"
+    ],
+    [
+     "Lemuel Crockett",
+     "MID"
+    ],
+    [
+     "Rufus Dearborn",
+     "MID"
+    ],
+    [
+     "Micah Overstreet",
+     "MID"
+    ],
+    [
+     "Ephraim Bayliss",
+     "MID"
+    ],
+    [
+     "Zebulon Hartshorn",
+     "FWD"
+    ],
+    [
+     "Ahab Coffin",
+     "FWD"
+    ],
+    [
+     "Cyrus Winslow",
+     "FWD"
+    ]
+   ]
+  },
+  "SEL": {
+   "name": "Selmira",
+   "finish": "East 12th · 2-1 GIA",
+   "route": "Eastern playoff, 2-1 v Giathka",
+   "q": {
+    "conf": "E",
+    "pos": 12,
+    "W": 4,
+    "D": 5,
+    "L": 1,
+    "GF": 18,
+    "GA": 5,
+    "Pts": 17
+   },
+   "best": "Group stage 1932, 1933, 1935",
+   "last": "1935 group stage",
+   "squad": [
+    [
+     "Ahmet Aydin",
+     "GK"
+    ],
+    [
+     "Tunç Kenaanoğlu",
+     "DEF"
+    ],
+    [
+     "Alparslan Kangal",
+     "DEF"
+    ],
+    [
+     "Muzaffer Doğan",
+     "DEF"
+    ],
+    [
+     "Erdem Polat",
+     "DEF"
+    ],
+    [
+     "Serhat Di̇lbaz",
+     "MID"
+    ],
+    [
+     "Yavuz Koç",
+     "MID"
+    ],
+    [
+     "Orkun Çeti̇n",
+     "MID"
+    ],
+    [
+     "Selçuk Demirci",
+     "MID"
+    ],
+    [
+     "Batuhan Balyoz",
+     "MID"
+    ],
+    [
+     "Haydar Şen",
+     "FWD"
+    ],
+    [
+     "Volkan Arslan",
+     "GK"
+    ],
+    [
+     "Kutay Bulut",
+     "DEF"
+    ],
+    [
+     "Sarp Sayda",
+     "DEF"
+    ],
+    [
+     "Bahadır Yalçin",
+     "DEF"
+    ],
+    [
+     "Onur Tekeli̇",
+     "DEF"
+    ],
+    [
+     "Vural Surlu",
+     "MID"
+    ],
+    [
+     "Zeki Nari̇n",
+     "MID"
+    ],
+    [
+     "Kaan Erdoğmuş",
+     "MID"
+    ],
+    [
+     "Kutay Kartaca",
+     "MID"
+    ],
+    [
+     "Berat Çankaya",
+     "MID"
+    ],
+    [
+     "Darven Miçkas",
+     "FWD"
+    ]
+   ]
+  },
+  "ABB": {
+   "name": "Barbary",
+   "finish": "West 16th · 3-1 GUP",
+   "route": "Western playoff, 3-1 v Uj-Pannonia",
+   "q": {
+    "conf": "W",
+    "pos": 16,
+    "W": 4,
+    "D": 0,
+    "L": 6,
+    "GF": 16,
+    "GA": 15,
+    "Pts": 12
+   },
+   "dark": true,
+   "best": "Group stage 1934, 1935",
+   "last": "1935 group stage",
+   "squad": [
+    [
+     "Léon Renard",
+     "GK"
+    ],
+    [
+     "Tahar Djaballah",
+     "DEF"
+    ],
+    [
+     "Alceste Derocles",
+     "DEF"
+    ],
+    [
+     "Ouahid Benali",
+     "DEF"
+    ],
+    [
+     "Koceïla Idir",
+     "MID"
+    ],
+    [
+     "Hakim Zerguine",
+     "MID"
+    ],
+    [
+     "Fethi Kateb",
+     "MID"
+    ],
+    [
+     "Boualem Hamraoui",
+     "MID"
+    ],
+    [
+     "Sofiane Mansouri",
+     "FWD"
+    ],
+    [
+     "Lakhdar Meziane",
+     "FWD"
+    ],
+    [
+     "Chérif Guerroudj",
+     "FWD"
+    ],
+    [
+     "Hamza Benali",
+     "GK"
+    ],
+    [
+     "Réda Maameri",
+     "DEF"
+    ],
+    [
+     "Kaddour Benfodil",
+     "DEF"
+    ],
+    [
+     "Nadir Cheriet",
+     "DEF"
+    ],
+    [
+     "Gaston Fabre",
+     "MID"
+    ],
+    [
+     "Ouahid Rahmani",
+     "MID"
+    ],
+    [
+     "Mahfoud Bensalem",
+     "MID"
+    ],
+    [
+     "Oualid Mebarki",
+     "MID"
+    ],
+    [
+     "Armand Picard",
+     "FWD"
+    ],
+    [
+     "Yacine Belkacem",
+     "FWD"
+    ],
+    [
+     "Amaury Cousteau",
+     "FWD"
+    ]
+   ]
+  }
+ }
+}

@@ -225,7 +225,7 @@ const changes = git('diff', '--name-status', '--no-renames', `${ONTO}...${PR_HEA
 if (!changes.length) done('wait nothing to merge');
 
 // A pick'em entry is one person's own file, replaced whole: the gate has checked it.
-const PICK = /^src\/content\/data\/pickem-wc1935\/entries\//;
+const PICK = /^src\/content\/data\/pickem-wc19(35|36)\/entries\//;
 
 const plan = changes.map((c) => {
   // A picture is only ever added, so it has nothing to be merged against.

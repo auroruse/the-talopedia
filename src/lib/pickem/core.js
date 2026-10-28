@@ -13,7 +13,7 @@ export const R16 = [
   ['1B', '2A'], ['1D', '2C'], ['1F', '2E'], ['1H', '2G'],
 ];
 export const MATCHES = ['r0', 'r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'q0', 'q1', 'q2', 'q3', 's0', 's1', 'f', 't'];
-const FEED = { q0: ['r0', 'r1'], q1: ['r2', 'r3'], q2: ['r4', 'r5'], q3: ['r6', 'r7'], s0: ['q0', 'q1'], s1: ['q2', 'q3'], f: ['s0', 's1'] };
+export const FEED = { q0: ['r0', 'r1'], q1: ['r2', 'r3'], q2: ['r4', 'r5'], q3: ['r6', 'r7'], s0: ['q0', 'q1'], s1: ['q2', 'q3'], f: ['s0', 's1'] };
 
 export const AWARDS = ['boot', 'ball', 'glove'];
 export const AWARD_NAME = { boot: 'Golden Boot', ball: 'Golden Ball', glove: 'Golden Glove' };
@@ -195,7 +195,7 @@ export function fnv(str) {
   return h >>> 0;
 }
 
-class BitWriter {
+export class BitWriter {
   constructor() { this.bytes = []; this.acc = 0; this.n = 0; }
   put(v, width) {
     for (let i = width - 1; i >= 0; i--) {
@@ -205,7 +205,7 @@ class BitWriter {
   }
   end() { if (this.n) this.bytes.push(this.acc << (8 - this.n)); this.acc = 0; this.n = 0; return this.bytes; }
 }
-class BitReader {
+export class BitReader {
   constructor(bytes, at) { this.b = bytes; this.i = at * 8; }
   get(width) {
     let v = 0;
@@ -219,22 +219,22 @@ class BitReader {
   get byte() { return Math.ceil(this.i / 8); }
 }
 
-function permRank(order, base) {
+export function permRank(order, base) {
   const left = [0, 1, 2, 3];
   let n = 0;
   order.forEach((t, i) => { const k = left.indexOf(base.indexOf(t)); n = n * (4 - i) + k; left.splice(k, 1); });
   return n;
 }
-function permFrom(n, base) {
+export function permFrom(n, base) {
   const digits = [];
   for (let r = 1; r <= 4; r++) { digits.unshift(n % r); n = Math.floor(n / r); }
   const left = [0, 1, 2, 3];
   return digits.map((d) => base[left.splice(d, 1)[0]]);
 }
 
-const toB64 = (bytes) => btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-const fromB64 = (s) => Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), (c) => c.charCodeAt(0));
-const teamOrder = (data) => GROUP_KEYS.flatMap((g) => data.groups[g]);
+export const toB64 = (bytes) => btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+export const fromB64 = (s) => Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), (c) => c.charCodeAt(0));
+export const teamOrder = (data) => GROUP_KEYS.flatMap((g) => data.groups[g]);
 
 export function encode(m, data) {
   const order = teamOrder(data), w = new BitWriter();

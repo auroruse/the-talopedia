@@ -11,7 +11,8 @@
     "sync-coords": "cp \"../Avium Map/src/data/coordinates.tsv\" src/content/data/coordinates.tsv",
     "clean": "rm -rf node_modules/.astro node_modules/.vite .astro dist",
     "sync": "node scripts/sync.mjs",
-    "sync-pickem": "node scripts/sync-pickem.mjs"
+    "sync-pickem": "node scripts/sync-pickem.mjs",
+    "sync-pickem-wc1936": "node scripts/sync-pickem-wc1936.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

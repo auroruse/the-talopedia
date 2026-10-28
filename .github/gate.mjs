@@ -14,7 +14,8 @@
  */
 import { execFileSync } from 'node:child_process';
 import { ACCOUNT_OF } from '../src/lib/contributors.mjs';
-import { decode, complete } from '../src/lib/pickem/core.js';
+import * as WC1935 from '../src/lib/pickem/core.js';
+import * as WC1936 from '../src/lib/pickem/wc1936.js';
 
 const { PR_AUTHOR, BASE, HEAD, ADMIN } = process.env;
 
@@ -70,21 +71,23 @@ const changed = git('diff', '--name-status', `${BASE}...${HEAD}`).trim().split('
  * file named for whoever opened the pull request, and it has to be a complete set of picks
  * that decodes against the draw on main. Nothing about it is trusted that main cannot check.
  */
-const PICK = /^src\/content\/data\/pickem-wc1935\/entries\/([a-z0-9-]+)\.json$/;
+const PICK = /^src\/content\/data\/pickem-(wc1935|wc1936)\/entries\/([a-z0-9-]+)\.json$/;
+const CUP = { wc1935: WC1935, wc1936: WC1936 };
 if (changed.some((l) => PICK.test(l.split('\t').pop()))) {
   if (changed.length !== 1) decline('a pick\'em entry travels alone.');
   const [status, path] = changed[0].split('\t');
   if (!/^[AM]$/.test(status)) decline(`${path} is added or replaced, never ${status === 'D' ? 'deleted' : 'moved'}.`);
-  if (path.match(PICK)[1] !== PR_AUTHOR.toLowerCase()) decline(`${path} is not ${PR_AUTHOR}'s entry.`);
-  const state = JSON.parse(show(BASE, 'src/content/data/pickem-wc1935-state.json') || '{}');
+  const [, cup, login] = path.match(PICK);
+  if (login !== PR_AUTHOR.toLowerCase()) decline(`${path} is not ${PR_AUTHOR}'s entry.`);
+  const state = JSON.parse(show(BASE, `src/content/data/pickem-${cup}-state.json`) || '{}');
   if (state.locked) decline('the pick\'em is locked.');
   const text = show(HEAD, path) || '';
   let entry = null;
   try { entry = text.length < 2000 ? JSON.parse(text) : null; } catch { /* declined below */ }
   if (!entry || Object.keys(entry).join() !== 'code' || typeof entry.code !== 'string') decline(`${path} is not an entry.`);
   let picks = null;
-  try { picks = decode(entry.code, JSON.parse(show(BASE, 'src/content/data/pickem-wc1935.json'))); } catch { /* declined below */ }
-  if (!picks || !complete(picks)) decline(`${path} does not hold a complete set of picks.`);
+  try { picks = CUP[cup].decode(entry.code, JSON.parse(show(BASE, `src/content/data/pickem-${cup}.json`))); } catch { /* declined below */ }
+  if (!picks || !CUP[cup].complete(picks)) decline(`${path} does not hold a complete set of picks.`);
   console.log('merge');
   process.exit(0);
 }

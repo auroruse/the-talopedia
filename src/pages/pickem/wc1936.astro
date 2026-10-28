@@ -1,0 +1,682 @@
+---
+// The 1936 World Cup pick'em. Out of character, so it stands outside the encyclopedia's own layout
+// and search. Dressed as the Cortesia draw poster: its paisley ground, wordmark, trophy, white group
+// cards and diamond flags, all in Grenze. Data: scripts/sync-pickem-wc1936.mjs writes the teams,
+// squads, dark horses and art; each submitted entry is a file of its own under
+// pickem-wc1936/entries, named for the GitHub account that sent it; the state file holds the
+// results and the lock, and is what the ?admin view produces.
+import data from '../../content/data/pickem-wc1936.json';
+import state from '../../content/data/pickem-wc1936-state.json';
+import { url } from '../../lib/registry.mjs';
+import * as K from '../../lib/pickem/wc1936.js';
+
+const REPO = process.env.GITHUB_REPO || 'auroruse/the-talopedia';
+const entries = Object.entries(import.meta.glob('../../content/data/pickem-wc1936/entries/*.json', { eager: true, import: 'default' }))
+  .map(([file, e]) => ({ login: file.split('/').pop().replace(/\.json$/, ''), code: e.code }));
+const art = (f) => url(`/assets/pickem/wc1936/${f}`);
+// The address printed on the card: the deploy's own, or the live site's when built without one.
+const live = process.env.SITE_URL ? new URL(url('/pickem/wc1936/'), Astro.site).href : 'https://auroruse.github.io/the-talopedia/pickem/wc1936/';
+const site = live.replace(/^https?:\/\//, '').replace(/\/$/, '');
+const payload = JSON.stringify({ ...data, state, entries, repo: REPO, art: art(''), site }).replace(/</g, '\\u003c');
+const P = K.POINTS;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Cup 1936 Pick'em</title>
+  <meta name="description" content="Pick'em for the AFA World Cup, Cortesia 1936.">
+  <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')}>
+  <link rel="preload" href={art('Grenze.ttf')} as="font" type="font/ttf" crossorigin>
+  <style set:html={`@font-face { font-family: 'Grenze'; src: url('${art('Grenze.ttf')}') format('truetype'); font-weight: 100 900; font-display: swap; }
+    :root { --pattern: url('${art('pattern.png')}'); }`}></style>
+</head>
+<body>
+  <header class="pk-hero">
+    <h1 class="pk-brand"><img src={art('wordmark.png')} alt="AFA World Cup Cortesia 1936" width="1359" height="291"></h1>
+    <p class="pk-sub">Pick'em</p>
+    <svg class="pk-swoosh" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 64 C 360 4, 1080 4, 1440 64 V120 H0 Z" fill="#fff"/>
+      <path d="M0 84 C 360 26, 1080 26, 1440 84 V120 H0 Z" fill="#f2c418"/>
+      <path d="M0 102 C 360 48, 1080 48, 1440 102 V120 H0 Z" fill="#1f4fa2"/>
+    </svg>
+  </header>
+
+  <nav class="pk-steps" id="pk-steps" aria-label="Steps">
+    <div class="pk-wrap pk-steps-in">
+      <ol id="pk-stepper" class="pk-stepper"></ol>
+      <button type="button" id="pk-next" class="pk-btn primary pk-next" hidden>Next</button>
+    </div>
+    <div class="pk-meter" aria-hidden="true"><span id="pk-meter-fill"></span></div>
+  </nav>
+
+  <div class="pk-wrap pk-banners">
+    <div id="pk-viewing" class="pk-banner" hidden>
+      <span>Viewing <b id="pk-viewing-name"></b>'s picks<span id="pk-viewing-pts"></span></span>
+      <button type="button" id="pk-back" class="pk-btn">Back</button>
+    </div>
+    <div id="pk-locked-note" class="pk-banner" hidden><span>Picks are locked.<span id="pk-locked-pts"></span></span></div>
+  </div>
+
+  <main class="pk-wrap pk-main">
+    <section class="pk-step" data-step="groups" aria-labelledby="pk-h-groups" hidden>
+      <div class="pk-head"><h2 id="pk-h-groups">Group stage</h2><p class="pk-count"><b>32</b><span>Sides</span></p></div>
+      <div id="pk-groups" class="pk-groups"></div>
+    </section>
+
+    <section class="pk-step" data-step="knockouts" aria-labelledby="pk-h-ko" hidden>
+      <div class="pk-head"><h2 id="pk-h-ko">Knockouts</h2><p class="pk-count"><b id="pk-ko-n"></b><span>Picks</span></p></div>
+      <div class="pk-rounds" id="pk-rounds" role="tablist" aria-label="Round">
+        <button type="button" role="tab" data-round-btn="r"><span class="long">Round of 16</span><span class="short">R16</span></button>
+        <button type="button" role="tab" data-round-btn="q"><span class="long">Quarters</span><span class="short">QF</span></button>
+        <button type="button" role="tab" data-round-btn="s"><span class="long">Semis</span><span class="short">SF</span></button>
+        <button type="button" role="tab" data-round-btn="f">Final</button>
+      </div>
+      <div id="pk-bracket" class="pk-bracket" data-round="r"></div>
+    </section>
+
+    <section class="pk-step" data-step="extras" aria-labelledby="pk-h-extras" hidden>
+      <div class="pk-head"><h2 id="pk-h-extras">Extras</h2><p class="pk-count"><b id="pk-ex-n"></b><span>Picks</span></p></div>
+      <div class="pk-extras">
+        <div class="pk-card pk-card-score">
+          <h3 class="pk-card-h">Final score</h3>
+          <div id="pk-score" class="pk-card-body"></div>
+        </div>
+        <div class="pk-card pk-card-dark">
+          <h3 class="pk-card-h">Dark horse <span class="pk-card-tag" id="pk-dark-state"></span></h3>
+          <ol id="pk-dark" class="pk-card-body pk-darklist"></ol>
+        </div>
+        <div class="pk-awards">
+          <div class="pk-card">
+            <h3 class="pk-card-h" id="pk-boot-h">Golden Boot</h3>
+            <div class="pk-card-body">
+              <input class="pk-input" list="pk-players" data-award="boot" aria-labelledby="pk-boot-h" placeholder="Search players" autocomplete="off">
+              <div class="pk-pick" data-award-pick="boot"></div>
+            </div>
+          </div>
+          <div class="pk-card">
+            <h3 class="pk-card-h" id="pk-ball-h">Golden Ball</h3>
+            <div class="pk-card-body">
+              <input class="pk-input" list="pk-players" data-award="ball" aria-labelledby="pk-ball-h" placeholder="Search players" autocomplete="off">
+              <div class="pk-pick" data-award-pick="ball"></div>
+            </div>
+          </div>
+          <div class="pk-card">
+            <h3 class="pk-card-h" id="pk-glove-h">Golden Glove</h3>
+            <div class="pk-card-body">
+              <input class="pk-input" list="pk-keepers" data-award="glove" aria-labelledby="pk-glove-h" placeholder="Search goalkeepers" autocomplete="off">
+              <div class="pk-pick" data-award-pick="glove"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <datalist id="pk-players"></datalist>
+      <datalist id="pk-keepers"></datalist>
+    </section>
+
+    <section class="pk-step" data-step="submit" aria-labelledby="pk-h-submit" hidden>
+      <div class="pk-head"><h2 id="pk-h-submit">Submit</h2></div>
+      <div class="pk-submit">
+        <div class="pk-submit-form">
+          <div class="pk-card">
+            <h3 class="pk-card-h">Your entry</h3>
+            <div class="pk-card-body">
+              <label class="pk-namefield">
+                <span class="pk-label">Name on the leaderboard</span>
+                <input id="pk-name" class="pk-input" maxlength="32" autocomplete="nickname">
+              </label>
+              <ul id="pk-check" class="pk-check"></ul>
+              <div class="pk-actions">
+                <button type="button" id="pk-submit" class="pk-btn primary">Submit picks</button>
+                <button type="button" id="pk-png" class="pk-btn">Save card</button>
+                <button type="button" id="pk-reset" class="pk-btn text pk-hold">Hold to reset</button>
+              </div>
+              <div class="pk-token" id="pk-token-panel" hidden>
+                <label class="pk-label" for="pk-token">GitHub token</label>
+                <div class="pk-token-row">
+                  <input id="pk-token" class="pk-input" type="password" autocomplete="off" spellcheck="false" placeholder="ghp_…">
+                  <button type="button" id="pk-token-go" class="pk-btn primary">Submit</button>
+                  <button type="button" id="pk-token-cancel" class="pk-btn text">Cancel</button>
+                </div>
+                <details class="pk-help">
+                  <summary>Need a token?</summary>
+                  <ol>
+                    <li><a href="https://github.com/settings/tokens/new?scopes=public_repo&description=The%20Talopedia%20pick%27em" target="_blank" rel="noopener">Open token page</a>. Log in if asked.</li>
+                    <li>Name filled. <b>public_repo</b> ticked. <b>Touch nothing else.</b></li>
+                    <li>Pick expiry. Any.</li>
+                    <li>Scroll down. Press <b>Generate token</b>.</li>
+                    <li>Copy it. Starts with <code>ghp_</code>. Shown once.</li>
+                    <li>Paste in box above.</li>
+                  </ol>
+                  <p>Your token stays in this browser and goes only to GitHub. The wiki editor uses the same one.</p>
+                </details>
+              </div>
+              <p id="pk-status" class="pk-status" role="status" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="pk-card">
+            <h3 class="pk-card-h">Scoring</h3>
+            <table class="pk-points">
+              <tbody>
+                <tr><th>Side in the right top two</th><td>{P.qualify}</td></tr>
+                <tr><th>Side in its exact place</th><td>{P.exact}</td></tr>
+                <tr><th>Perfect group</th><td>+{P.perfect}</td></tr>
+                <tr><th>Round of 16 winner</th><td>{P.r}</td></tr>
+                <tr><th>Quarter-final winner</th><td>{P.q}</td></tr>
+                <tr><th>Semi-final winner</th><td>{P.s}</td></tr>
+                <tr><th>Champion</th><td>{P.f}</td></tr>
+                <tr><th>Third place</th><td>{P.t}</td></tr>
+                <tr><th>Each Golden award</th><td>{P.award}</td></tr>
+                <tr><th>Dark horse, each round survived</th><td>{K.DARK}</td></tr>
+                <tr class="tie"><th>Ties: exact final score, then closest total goals</th><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <figure class="pk-preview">
+          <img id="pk-preview" alt="Your pick'em card" width="1600" height="2400">
+        </figure>
+      </div>
+    </section>
+
+    <section class="pk-step" data-step="board" aria-labelledby="pk-h-board" hidden>
+      <div class="pk-head"><h2 id="pk-h-board">Leaderboard</h2><p class="pk-count"><b id="pk-board-n"></b><span>Entries</span></p></div>
+      <div class="pk-table-wrap">
+        <table class="pk-table">
+          <colgroup><col style="width:56px"><col style="width:20%"><col style="width:84px"><col style="width:100px"><col style="width:72px"><col style="width:80px"><col style="width:76px"><col style="width:19%"><col class="hide-sm" style="width:19%"><col style="width:86px"></colgroup>
+          <thead><tr><th class="num">#</th><th>Entrant</th><th class="num">Groups</th><th class="num">Knockouts</th><th class="num">Dark</th><th class="num">Awards</th><th class="num">Total</th><th>Champion</th><th class="hide-sm">Dark horse</th><th><span class="pk-sr">Picks</span></th></tr></thead>
+          <tbody id="pk-board"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="pk-step" data-step="crowd" aria-labelledby="pk-h-crowd" hidden>
+      <div class="pk-head"><h2 id="pk-h-crowd">The crowd</h2><p class="pk-count"><b id="pk-crowd-n"></b><span>Entries</span></p></div>
+      <div class="pk-table-wrap">
+        <table class="pk-table">
+          <colgroup><col style="width:26%"><col style="width:70px"><col><col><col><col><col><col><col></colgroup>
+          <thead><tr><th>Side</th><th class="num">Group</th><th class="num">Wins group</th><th class="num">Through</th><th class="num">Quarters</th><th class="num">Semis</th><th class="num">Final</th><th class="num">Champion</th><th class="num">Dark horse</th></tr></thead>
+          <tbody id="pk-crowd"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="pk-admin" class="pk-admin" aria-labelledby="pk-h-admin" hidden>
+      <div class="pk-head"><h2 id="pk-h-admin">Admin</h2></div>
+      <div class="pk-admin-row">
+        <div class="pk-seg" role="group" aria-label="Editing">
+          <button type="button" class="pk-btn" data-mode="picks">My picks</button>
+          <button type="button" class="pk-btn" data-mode="results">Results</button>
+        </div>
+        <label class="pk-checkbox"><input type="checkbox" id="pk-locked"> Picks locked</label>
+      </div>
+      <div class="pk-admin-row">
+        <button type="button" id="pk-state" class="pk-btn primary">Copy state file</button>
+        <code class="pk-path">src/content/data/pickem-wc1936-state.json</code>
+        <button type="button" id="pk-from-site" class="pk-btn text">Load published state</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pk-foot pk-wrap">
+    <a href={url('/')}>The Talopedia</a>
+  </footer>
+
+  <script type="application/json" id="pk-data" set:html={payload}></script>
+  <script>import '../../lib/pickem/wc1936-app.js';</script>
+
+  <style is:global>
+    /* ── tokens: the draw poster's ────────────────────────────────────────────────────────── */
+    /* Every shape is cut at the poster's own 45°: diamond flags and letters, plates with pointed
+       ends, panels with chamfered corners. Nothing is rounded and nothing casts a shadow. */
+    :root {
+      --navy: #0c2462; --abyss: #071747; --royal: #1f4fa2; --gold: #f2c418; --gold-2: #ffd84a;
+      --ink: #161616; --muted: #6b7794; --line: #e2e6ef; --pale: #eef1f7; --soft: #c3cde3; --cream: #fff7d1;
+      --bad: #c62828; --good: #1b7f3b; --part: #9a5b00;
+      --face: 'Grenze', 'Iowan Old Style', Georgia, serif;
+      --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 72px;
+      --wrap: 1440px; --gutter: clamp(16px, 3vw, 32px);
+      --ease-out: cubic-bezier(.2, .8, .2, 1); --ease-slam: cubic-bezier(.34, 1.56, .64, 1);
+      --dia: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+      --c: 12px;
+      --cham: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c));
+      color-scheme: dark;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { background: var(--abyss); -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; min-height: 100vh; color: #fff; font: 500 18px/1.4 var(--face); font-variant-numeric: lining-nums;
+      background: linear-gradient(180deg, rgba(12, 36, 98, .74), rgba(7, 23, 71, .9) 60%), var(--pattern) 0 0 / 420px 420px, var(--navy);
+      background-attachment: fixed, fixed, fixed;
+      -webkit-font-smoothing: antialiased;
+    }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    button, input { font: inherit; }
+    .pk-wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+    .pk-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .pk-label { font: 700 13px/1 var(--face); letter-spacing: .2em; text-transform: uppercase; color: var(--royal); }
+
+    /* ── hero: the poster's head, its ground showing through ───────────────────────────────── */
+    .pk-hero {
+      position: relative; padding: clamp(28px, 5vw, 64px) var(--gutter) clamp(84px, 9vw, 132px); text-align: center; overflow: hidden;
+      background: linear-gradient(180deg, rgba(7, 23, 71, .55), rgba(12, 36, 98, 0) 50%), var(--pattern) 0 0 / 420px 420px, var(--navy);
+    }
+    .pk-brand { max-width: 1040px; margin: 0 auto; animation: pk-surface .9s var(--ease-slam) .15s both; }
+    .pk-brand img { display: block; width: 100%; height: auto; filter: drop-shadow(3px 5px 0 var(--navy)); }
+    /* A gold ribbon with the diamonds' pointed ends. */
+    .pk-sub {
+      display: inline-block; margin: clamp(18px, 2.4vw, 28px) 0 0; padding: 12px 52px 11px 60px; background: var(--gold); color: var(--navy);
+      clip-path: polygon(24px 0, calc(100% - 24px) 0, 100% 50%, calc(100% - 24px) 100%, 24px 100%, 0 50%);
+      font: 800 clamp(18px, 2vw, 26px)/1 var(--face); letter-spacing: .34em; text-transform: uppercase;
+      animation: pk-rise .5s var(--ease-out) .55s both;
+    }
+    .pk-swoosh { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: clamp(46px, 7vw, 110px); display: block; }
+    @keyframes pk-surface { from { opacity: 0; transform: translateY(36px) scale(.98); } }
+    @keyframes pk-rise { from { opacity: 0; transform: translateY(14px); } }
+
+    /* ── the step band ─────────────────────────────────────────────────────────────────────── */
+    .pk-steps { position: sticky; top: 0; z-index: 30; background: var(--royal); border-bottom: 1px solid var(--abyss); transition: background .24s; }
+    .pk-steps.stuck { background: rgba(7, 23, 71, .97); border-bottom-color: rgba(242, 196, 24, .35); }
+    .pk-steps-in { display: flex; align-items: center; gap: var(--s4); min-height: 72px; }
+    .pk-stepper { display: flex; gap: clamp(4px, 1.4vw, 20px); margin: 0; padding: 0; list-style: none; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+    .pk-stepper::-webkit-scrollbar { display: none; }
+    .pk-stepbtn {
+      position: relative; display: flex; align-items: center; gap: 10px; padding: 12px 10px 12px 4px; color: #fff; text-decoration: none; white-space: nowrap;
+      opacity: .78; transition: opacity .12s;
+    }
+    .pk-stepbtn:hover, .pk-stepbtn.cur { opacity: 1; }
+    .pk-stepbtn.cur::after { content: ''; position: absolute; left: 4px; right: 10px; bottom: 2px; height: 3px; background: var(--gold); }
+    .pk-stepnum { position: relative; width: 34px; height: 34px; flex: none; background: var(--gold); clip-path: var(--dia); }
+    /* Grenze sets its ink low in a 1em line: caps and lining figures stand 0.61em on a baseline
+       0.86em down, so their middle is 0.055em under the box's. A bottom pad of 0.11em centres them. */
+    .pk-stepnum b { position: absolute; inset: 3px; display: grid; place-items: center; padding-bottom: .11em; background: var(--navy); clip-path: var(--dia); color: var(--gold); font: 800 13px/1 var(--face); }
+    .pk-stepbtn.ok .pk-stepnum b { background: var(--gold); color: var(--navy); }
+    .pk-stepbtn.ok svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .pk-steptx { display: flex; flex-direction: column; gap: 3px; }
+    .pk-stepname { font: 800 15px/1 var(--face); letter-spacing: .16em; text-transform: uppercase; }
+    .pk-stepsub { font: 600 13px/1 var(--face); letter-spacing: .08em; color: var(--gold); font-variant-numeric: tabular-nums; }
+    .pk-meter { height: 3px; background: rgba(255, 255, 255, .08); }
+    .pk-meter span { display: block; height: 100%; background: var(--gold); transform-origin: left; transform: scaleX(0); transition: transform .48s var(--ease-out); }
+    .pk-next { flex: none; }
+    /* The leaderboard stands apart from the four picking steps. */
+    .pk-stepper .pk-aside { margin-left: auto; padding-left: clamp(8px, 1.6vw, 24px); border-left: 1px solid rgba(255, 255, 255, .25); }
+    /* Tablets: only the current step keeps its name, so the band never runs under Next. */
+    @media (max-width: 1023px) { .pk-stepbtn:not(.cur) .pk-stepname { display: none; } }
+    /* Phones: the band is the steps alone, and Next rides at the bottom under the thumb. */
+    @media (max-width: 759px) {
+      .pk-steps-in { min-height: 60px; }
+      .pk-stepper { justify-content: space-between; }
+      .pk-stepbtn { padding-right: 2px; gap: 7px; }
+      .pk-stepname { display: none; }
+      .pk-stepnum { width: 30px; height: 30px; }
+      .pk-btn.pk-next { position: fixed; left: var(--gutter); right: var(--gutter); bottom: max(14px, env(safe-area-inset-bottom)); z-index: 40; --h: 54px; --p: 27px; }
+      body { padding-bottom: 84px; }
+    }
+
+    /* ── buttons: plates with the diamonds' pointed ends ───────────────────────────────────── */
+    /* Two layers cut to the same shape: the edge, and the fill inset inside it. The tips stay at
+       45° whatever the plate's width, so a button reads as a stretched diamond. */
+    .pk-btn {
+      --h: 46px; --p: 23px; --edge: rgba(255, 255, 255, .75); --fill: var(--navy); --tx: #fff;
+      position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      height: var(--h); padding: 0 calc(var(--p) + 14px); border: 0; background: none; color: var(--tx); white-space: nowrap;
+      font: 800 15px/1 var(--face); letter-spacing: .16em; text-transform: uppercase; cursor: pointer;
+      transition: transform .12s;
+    }
+    .pk-btn::before, .pk-btn::after {
+      content: ''; position: absolute; z-index: -1; transition: background .12s;
+      clip-path: polygon(var(--pp) 0, calc(100% - var(--pp)) 0, 100% 50%, calc(100% - var(--pp)) 100%, var(--pp) 100%, 0 50%);
+    }
+    .pk-btn::before { inset: 0; --pp: var(--p); background: var(--edge); }
+    .pk-btn::after { inset: 2px; --pp: calc(var(--p) - 1px); background: linear-gradient(90deg, #f6cccc calc(var(--hold, 0) * 100%), var(--fill) 0); }
+    .pk-btn:hover:not(:disabled) { --fill: var(--royal); }
+    .pk-btn:active:not(:disabled) { transform: translateY(1px); }
+    .pk-btn:focus-visible { outline: none; --edge: var(--gold); }
+    .pk-btn.primary { --edge: var(--gold); --fill: var(--gold); --tx: var(--navy); }
+    .pk-btn.primary:hover:not(:disabled) { --fill: var(--gold-2); }
+    .pk-btn.primary:focus-visible { --edge: var(--navy); }
+    .pk-btn.text { --edge: transparent; --fill: transparent; }
+    .pk-btn.text:hover:not(:disabled) { --fill: rgba(255, 255, 255, .1); }
+    .pk-btn:disabled { opacity: .4; cursor: not-allowed; }
+    .pk-btn.small { --h: 36px; --p: 18px; padding-inline: calc(var(--p) + 8px); font-size: 13px; }
+    /* On the white cards the plate turns navy on white. */
+    .pk-card .pk-btn:not(.primary), .pk-banner .pk-btn, .pk-table .pk-btn { --edge: var(--navy); --fill: #fff; --tx: var(--navy); }
+    .pk-card .pk-btn:not(.primary):hover:not(:disabled), .pk-table .pk-btn:hover { --fill: var(--cream); }
+    .pk-card .pk-btn.text { --edge: transparent; --tx: var(--muted); }
+    .pk-card .pk-btn:not(.primary):focus-visible { --edge: var(--gold); }
+    .pk-banner .pk-btn { --fill: var(--gold); }
+    .pk-hold.holding { --tx: var(--bad) !important; }
+    .pk-hold.holding::after { transition: none; }
+
+    .pk-input {
+      width: 100%; min-height: 50px; padding: 10px 14px; border: 2px solid var(--line); border-radius: 0; background: #fff; color: var(--ink);
+      font: 500 19px/1.2 var(--face);
+    }
+    .pk-input:focus { outline: none; border-color: var(--gold); }
+    .pk-input.bad { border-color: var(--bad); }
+    .pk-input:disabled { background: var(--pale); }
+
+    /* ── shared marks ───────────────────────────────────────────────────────────────────────── */
+    /* The poster's diamond flag: navy edge, white rim, the flag inside. */
+    .pk-dia { --s: 46px; position: relative; display: inline-block; width: var(--s); height: var(--s); flex: none; background: var(--navy); clip-path: var(--dia); }
+    .pk-dia::before { content: ''; position: absolute; inset: 2px; background: #fff; clip-path: var(--dia); }
+    .pk-dia img { position: absolute; inset: 3px; width: calc(100% - 6px); height: calc(100% - 6px); object-fit: cover; clip-path: var(--dia); }
+    .pk-dia.empty { background: var(--soft); }
+    .pk-dia.empty::before { background: var(--pale); }
+    .pk-dia.sm { --s: 26px; } .pk-dia.mid { --s: 64px; } .pk-dia.big { --s: 96px; }
+    /* The poster's group letter: navy, a gold ring, navy, the letter in gold. */
+    .pk-letter { --s: 70px; position: relative; display: inline-block; width: var(--s); height: var(--s); flex: none; background: var(--navy); clip-path: var(--dia); }
+    .pk-letter::before { content: ''; position: absolute; inset: calc(var(--s) * .05); background: var(--gold); clip-path: var(--dia); }
+    .pk-letter b { position: absolute; inset: calc(var(--s) * .1); display: grid; place-items: center; background: var(--navy); clip-path: var(--dia); color: var(--gold); font: 800 calc(var(--s) * .44)/1 var(--face); padding-bottom: .11em; }
+    .pk-letter.sm { --s: 44px; }
+    .pk-mark { display: inline-flex; flex: none; }
+    .pk-mark svg { width: 22px; height: 22px; }
+    .pk-mark circle { stroke: none; }
+    .pk-mark path { fill: none; stroke: #fff; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .pk-mark.right circle { fill: var(--good); } .pk-mark.part circle { fill: var(--part); } .pk-mark.wrong circle { fill: var(--bad); }
+    .pk-dim { color: var(--muted); }
+
+    /* ── the page ──────────────────────────────────────────────────────────────────────────── */
+    .pk-banners { display: grid; gap: var(--s3); margin-top: var(--s5); }
+    .pk-banners:not(:has(.pk-banner:not([hidden]))) { display: none; }
+    .pk-banner {
+      display: flex; align-items: center; justify-content: space-between; gap: var(--s4); flex-wrap: wrap; padding: 12px 22px;
+      background: var(--gold); color: var(--navy); font-weight: 600; clip-path: var(--cham);
+    }
+    .pk-main { padding-block: clamp(28px, 4vw, 48px) var(--s8); }
+    .pk-step.enter { animation: pk-rise .42s var(--ease-out) both; }
+    .pk-head {
+      display: flex; align-items: flex-end; justify-content: space-between; gap: var(--s3) var(--s5);
+      margin-bottom: clamp(20px, 3vw, 32px); padding-bottom: 14px; border-bottom: 1px solid rgba(242, 196, 24, .4);
+    }
+    .pk-head h2 {
+      margin: 0; font: 800 clamp(34px, 4.6vw, 60px)/.95 var(--face); letter-spacing: .04em; text-transform: uppercase; color: #fff;
+      text-shadow: 3px 4px 0 var(--navy);
+    }
+    /* The head's readout: a figure in gold over its label. */
+    .pk-count { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; margin: 0; }
+    .pk-count b { font: 800 clamp(28px, 3vw, 40px)/.9 var(--face); color: var(--gold); font-variant-numeric: tabular-nums; }
+    .pk-count span { font: 700 12px/1 var(--face); letter-spacing: .22em; text-transform: uppercase; color: var(--soft); }
+
+    /* ── groups: the poster's cards, chamfered ─────────────────────────────────────────────── */
+    .pk-groups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 2.4vw, 32px) clamp(16px, 2vw, 28px); }
+    @media (max-width: 1239px) { .pk-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 639px) { .pk-groups { grid-template-columns: minmax(0, 1fr); } }
+    .pk-group { position: relative; background: #fff; color: var(--ink); clip-path: var(--cham); --c: 16px; }
+    .pk-step.enter .pk-group { animation: pk-rise .42s var(--ease-out) both; animation-delay: calc(var(--i) * 45ms); }
+    .pk-ghead { position: relative; z-index: 2; display: flex; align-items: center; height: 62px; margin: 0 0 34px; padding: 0 24px; background: var(--gold); }
+    .pk-gword { font: 800 24px/1 var(--face); letter-spacing: .34em; text-transform: uppercase; color: var(--navy); }
+    .pk-ghead .pk-letter { position: absolute; right: 18px; top: 24px; }
+    .pk-rows { position: relative; margin: 0; padding: 0 0 14px; list-style: none; }
+    .pk-row {
+      position: relative; display: grid; grid-template-columns: 26px 46px minmax(0, 1fr) 18px; align-items: center; gap: 12px; min-height: 70px; padding: 6px 20px;
+      background: #fff; transition: transform .16s var(--ease-out), background .12s; touch-action: manipulation;
+      -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+    }
+    .pk-row:nth-child(3) { margin-top: 9px; }
+    .pk-row:nth-child(3)::before { content: ''; position: absolute; left: 20px; right: 20px; top: -6px; border-top: 2px dashed var(--line); }
+    .pk-row.can { cursor: grab; }
+    .pk-row.can:hover { background: var(--pale); }
+    .pk-row.dragging { z-index: 5; cursor: grabbing; background: var(--cream); outline: 2px solid var(--gold); outline-offset: -2px; transition: none; }
+    .pk-row.sel { background: var(--cream); box-shadow: inset 5px 0 0 var(--gold); }
+    .pk-group.holding .pk-row:not(.sel) { outline: 1px dashed var(--soft); outline-offset: -5px; }
+    .pk-group.holding .pk-row:not(.sel):hover { outline-color: var(--gold); background: #fffbe8; }
+    .pk-row.landed { animation: pk-land .5s var(--ease-out); }
+    @keyframes pk-land { from { background: #ffeb99; } }
+    .pk-pos { position: relative; width: 26px; height: 26px; background: var(--pale); clip-path: var(--dia); }
+    .pk-pos b { position: absolute; inset: 0; display: grid; place-items: center; padding-bottom: .11em; font: 800 14px/1 var(--face); color: var(--navy); }
+    .pk-row.is-q .pk-pos { background: var(--gold); }
+    .pk-team { display: flex; flex-direction: column; min-width: 0; }
+    .pk-name { font: 500 clamp(22px, 1.9vw, 27px)/1.02 var(--face); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pk-meta { margin-top: 3px; font: 600 13px/1.1 var(--face); letter-spacing: .09em; text-transform: uppercase; color: var(--royal); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pk-grip { display: grid; place-items: center; height: 44px; color: var(--soft); cursor: grab; touch-action: none; }
+    .pk-grip svg { fill: currentColor; }
+    .pk-row.can:hover .pk-grip { color: var(--royal); }
+    .pk-row.r-right { background: #e9f6ee; } .pk-row.r-part { background: #fdf3e2; } .pk-row.r-wrong { background: #fbecec; }
+    .pk-gpts { margin: 0; padding: 0 24px 18px; font: 600 14px/1 var(--face); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .pk-gpts b { color: var(--navy); }
+    .pk-done { display: flex; align-items: center; gap: 8px; padding: 0 24px 18px; color: var(--navy); font-weight: 600; }
+
+    /* ── bracket ───────────────────────────────────────────────────────────────────────────── */
+    .pk-rounds { display: none; }
+    .pk-bracket {
+      --col-h: 720px; --gap: 22px;
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.25fr) repeat(3, minmax(0, 1fr)); column-gap: var(--gap);
+    }
+    .pk-col { display: flex; flex-direction: column; min-width: 0; }
+    .pk-round { min-height: 16px; margin-bottom: var(--s5); text-align: center; font: 800 14px/1.1 var(--face); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+    .pk-colbody { position: relative; display: flex; flex-direction: column; height: var(--col-h); }
+    .pk-pair { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: space-around; }
+    .pk-single { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .pk-pair::after, .pk-pair::before, .pk-single::after { content: ''; position: absolute; border: 0 solid rgba(242, 196, 24, .75); pointer-events: none; }
+    .pk-col.left .pk-pair::after { right: calc(var(--gap) / -2); top: 25%; bottom: 25%; width: calc(var(--gap) / 2); border-width: 3px 3px 3px 0; }
+    .pk-col.left .pk-pair::before { right: calc(-1 * var(--gap)); top: 50%; width: calc(var(--gap) / 2); border-top-width: 3px; }
+    .pk-col.right .pk-pair::after { left: calc(var(--gap) / -2); top: 25%; bottom: 25%; width: calc(var(--gap) / 2); border-width: 3px 0 3px 3px; }
+    .pk-col.right .pk-pair::before { left: calc(-1 * var(--gap)); top: 50%; width: calc(var(--gap) / 2); border-top-width: 3px; }
+    .pk-col.left .pk-single::after { right: calc(-1 * var(--gap)); top: 50%; width: var(--gap); border-top-width: 3px; }
+    .pk-col.right .pk-single::after { left: calc(-1 * var(--gap)); top: 50%; width: var(--gap); border-top-width: 3px; }
+
+    /* A tie is two slots, the pair chamfered at its outer corners. */
+    .pk-match { position: relative; }
+    .pk-match.nudge .pk-slot { animation: pk-nudge .7s var(--ease-out); }
+    @keyframes pk-nudge { 30% { background: #ffeb99; } }
+    .pk-match[data-seeds]::before {
+      content: attr(data-seeds); position: absolute; left: 0; right: 0; bottom: 100%; margin-bottom: 5px; text-align: center;
+      font: 700 12px/1 var(--face); letter-spacing: .16em; color: var(--soft);
+    }
+    .pk-slot {
+      position: relative; display: flex; align-items: center; gap: 9px; width: 100%; min-height: 50px; padding: 6px 12px;
+      border: 0; border-radius: 0; background: #fff; color: var(--ink); font: 500 clamp(17px, 1.3vw, 20px)/1.05 var(--face); text-align: left; cursor: pointer;
+      transition: background .12s;
+    }
+    .pk-slot:first-child { clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%, 0 10px); }
+    .pk-slot:last-child { clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px)); }
+    .pk-slot + .pk-slot { border-top: 1px solid var(--line); }
+    .pk-slot:hover:not(:disabled) { background: var(--cream); }
+    .pk-slot:disabled { cursor: default; }
+    .pk-slot:focus-visible { outline: none; background: var(--cream); box-shadow: inset 0 0 0 3px var(--gold); }
+    .pk-slot.win { font-weight: 800; box-shadow: inset 6px 0 0 var(--gold); }
+    .pk-slot.win .pk-dia { animation: pk-pop .32s var(--ease-slam); }
+    @keyframes pk-pop { from { transform: scale(.8); } }
+    .pk-slot.lose { color: var(--muted); }
+    .pk-slot.lose .pk-dia { opacity: .5; filter: grayscale(.6); }
+    .pk-slot.tbd { color: var(--muted); cursor: default; font-size: 15px; letter-spacing: .04em; }
+    .pk-slot .pk-dia { --s: 32px; }
+    .pk-slot .pk-name { flex: 1; font: inherit; }
+    .pk-slot.r-right { background: #e9f6ee; } .pk-slot.r-wrong { background: #fbecec; }
+    .pk-dh { flex: none; padding: 3px 6px 2px; background: var(--navy); color: var(--gold); font: 800 11px/1 var(--face); letter-spacing: .08em; }
+
+    .pk-center .pk-colbody { display: block; }
+    .pk-champ { position: absolute; top: -34px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .pk-trophy { width: 168px; height: auto; }
+    .pk-champ .pk-dia.big { margin-top: -14px; }
+    .pk-champ:not(.set) .pk-dia.big { --s: 70px; margin-block: -2px 12px; }
+    .pk-champ-name {
+      display: flex; align-items: center; gap: 8px; margin-top: 10px; font: 800 clamp(26px, 2.3vw, 36px)/1 var(--face); letter-spacing: .04em; text-transform: uppercase;
+      text-shadow: 2px 3px 0 var(--navy); overflow-wrap: anywhere;
+    }
+    .pk-champ:not(.set) .pk-champ-name { color: var(--soft); font-size: 20px; letter-spacing: .2em; }
+    .pk-champ.crowned .pk-trophy { animation: pk-crown .9s var(--ease-slam); }
+    .pk-champ.crowned .pk-dia.big { animation: pk-pop .5s var(--ease-slam) .1s both; }
+    @keyframes pk-crown { 0% { transform: translateY(14px) scale(.9); filter: drop-shadow(0 0 0 rgba(242, 196, 24, 0)); } 45% { filter: drop-shadow(0 0 26px rgba(242, 196, 24, .9)); } }
+    .pk-final { position: absolute; left: 0; right: 0; top: 60%; transform: translateY(-50%); }
+    .pk-final > .pk-round, .pk-third > .pk-round { margin-bottom: var(--s3); }
+    .pk-third { position: absolute; left: 0; right: 0; bottom: 0; }
+
+    /* Narrower screens: one round at a time, its two halves side by side, under a round switch
+       whose gold thumb is the same pointed plate as the buttons. */
+    @media (max-width: 1239px) {
+      .pk-rounds { position: relative; display: flex; gap: 4px; margin: 0 0 var(--s5); padding: 4px; background: var(--abyss); border: 1px solid rgba(242, 196, 24, .35); }
+      .pk-rounds::before {
+        content: ''; position: absolute; top: 4px; bottom: 4px; left: 0; width: var(--w, 0); transform: translateX(var(--x, 0)); background: var(--gold);
+        clip-path: polygon(22px 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 22px 100%, 0 50%);
+        transition: transform .32s var(--ease-slam), width .32s var(--ease-slam);
+      }
+      .pk-rounds button {
+        position: relative; flex: 1 1 0; min-width: 0; min-height: 44px; padding: 8px 6px; border: 0; background: none; color: #fff; white-space: nowrap; cursor: pointer;
+        font: 800 14px/1 var(--face); letter-spacing: .16em; text-transform: uppercase; transition: color .2s;
+      }
+      .pk-rounds button[aria-selected="true"] { color: var(--navy); }
+      .pk-rounds .short { display: none; }
+      @media (max-width: 559px) { .pk-rounds .long { display: none; } .pk-rounds .short { display: inline; } }
+      .pk-bracket { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s5); }
+      .pk-col { display: none; }
+      .pk-bracket[data-round="r"] :is([data-col="rL"], [data-col="rR"]),
+      .pk-bracket[data-round="q"] :is([data-col="qL"], [data-col="qR"]),
+      .pk-bracket[data-round="s"] :is([data-col="sL"], [data-col="sR"]) { display: flex; }
+      .pk-bracket[data-round="f"] [data-col="c"] { display: flex; grid-column: 1 / -1; }
+      .pk-col > .pk-round { display: none; }
+      .pk-colbody, .pk-center .pk-colbody { display: flex; flex-direction: column; gap: var(--s5); height: auto; }
+      .pk-pair, .pk-single { flex: none; gap: var(--s5); }
+      .pk-match[data-seeds] { margin-top: 18px; }
+      .pk-pair::before, .pk-pair::after, .pk-single::after { display: none; }
+      .pk-center .pk-colbody { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: var(--s5); max-width: 760px; margin-inline: auto; width: 100%; }
+      .pk-champ { position: static; grid-row: span 2; }
+      .pk-final, .pk-third { position: static; transform: none; }
+      .pk-final > .pk-round, .pk-third > .pk-round { display: block; }
+    }
+    @media (max-width: 639px) {
+      .pk-bracket { grid-template-columns: minmax(0, 1fr); }
+      .pk-center .pk-colbody { grid-template-columns: minmax(0, 1fr); }
+      .pk-champ { grid-row: auto; }
+    }
+
+    /* ── extras ────────────────────────────────────────────────────────────────────────────── */
+    .pk-extras { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(20px, 2.4vw, 32px); align-items: start; }
+    .pk-awards { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: inherit; }
+    @media (max-width: 1023px) { .pk-extras, .pk-awards { grid-template-columns: minmax(0, 1fr); } }
+    .pk-card { position: relative; background: #fff; color: var(--ink); clip-path: var(--cham); --c: 16px; }
+    .pk-card-h {
+      display: flex; align-items: center; justify-content: space-between; gap: var(--s3); height: 58px; margin: 0; padding: 0 24px; background: var(--gold);
+      font: 800 20px/1 var(--face); letter-spacing: .26em; text-transform: uppercase; color: var(--navy);
+    }
+    .pk-card-tag { font: 700 15px/1 var(--face); letter-spacing: .1em; font-variant-numeric: tabular-nums; }
+    .pk-card-tag b { font-weight: 800; }
+    .pk-card-body { padding: 20px 24px 24px; }
+    .pk-card.r-right .pk-card-h { background: #9fd8b3; } .pk-card.r-wrong .pk-card-h { background: #f3b4b4; }
+    .pk-empty { margin: 0 0 var(--s4); font: 700 16px/1 var(--face); letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+
+    .pk-scoreline { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: var(--s3); }
+    .pk-sc-side { display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 0; text-align: center; }
+    .pk-sc-name { max-width: 100%; font: 700 22px/1.05 var(--face); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pk-dash { font: 800 40px/1 var(--face); color: var(--soft); padding-top: 64px; }
+    .pk-stepper { display: flex; align-items: center; gap: 4px; }
+    /* Minus and plus are small diamonds, navy-edged like the flags. */
+    /* The minus and plus ride higher still: their ink's middle is 0.106em under the box's. */
+    .pk-pm {
+      position: relative; isolation: isolate; display: grid; place-items: center; width: 46px; height: 46px; padding: 0 0 .21em; border: 0; background: none;
+      color: var(--navy); font: 800 24px/1 var(--face); cursor: pointer;
+    }
+    .pk-pm::before, .pk-pm::after { content: ''; position: absolute; z-index: -1; clip-path: var(--dia); transition: background .12s; }
+    .pk-pm::before { inset: 0; background: var(--navy); }
+    .pk-pm::after { inset: 2px; background: #fff; }
+    .pk-pm:hover:not(:disabled)::after { background: var(--gold); }
+    .pk-pm:focus-visible { outline: none; }
+    .pk-pm:focus-visible::before { background: var(--gold); }
+    .pk-pm:disabled { opacity: .4; cursor: default; }
+    .pk-goals { min-width: 56px; text-align: center; font: 800 58px/1 var(--face); color: var(--navy); font-variant-numeric: tabular-nums; }
+    .pk-goals.unset { color: var(--soft); }
+    .pk-note { min-height: 1.2em; margin: var(--s4) 0 0; text-align: center; font: 600 15px/1.2 var(--face); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .pk-note.bad { color: var(--bad); } .pk-note.good { color: var(--good); }
+
+    .pk-darklist { margin: 0; list-style: none; display: grid; gap: 8px; }
+    .pk-dk-row { display: grid; grid-template-columns: 44px minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 10px; }
+    .pk-dk {
+      --c: 9px; display: flex; align-items: center; gap: 10px; min-width: 0; min-height: 58px; padding: 6px 12px; border: 0; background: var(--pale);
+      color: var(--ink); text-align: left; cursor: pointer; clip-path: var(--cham); transition: background .12s;
+    }
+    .pk-dk .pk-dia { --s: 38px; }
+    .pk-dk .pk-name { font-size: 20px; }
+    .pk-dk .pk-meta { font-size: 11.5px; }
+    .pk-dk:hover:not(:disabled) { background: var(--cream); }
+    .pk-dk:focus-visible { outline: none; background: var(--cream); box-shadow: inset 0 0 0 3px var(--gold); }
+    .pk-dk.on { background: var(--navy); color: #fff; box-shadow: inset 5px 0 0 var(--gold); }
+    .pk-dk.on .pk-meta { color: var(--gold); }
+    .pk-dk.on .pk-dia { animation: pk-pop .32s var(--ease-slam); }
+    .pk-dk:disabled { cursor: default; }
+
+    .pk-pick { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-height: 30px; margin-top: var(--s3); font-weight: 600; color: var(--royal); }
+    .pk-actual { flex-basis: 100%; color: var(--muted); font-size: 15px; }
+
+    /* Phones: a group's two dark horses stack beside its letter; the score runs side over side. */
+    @media (max-width: 559px) {
+      .pk-darklist { gap: 14px; }
+      .pk-dk-row { grid-template-columns: 40px minmax(0, 1fr); row-gap: 6px; }
+      .pk-dk-row .pk-letter { grid-row: span 2; --s: 40px; }
+      .pk-card-body { padding-inline: 16px; }
+      .pk-scoreline { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+      .pk-sc-side { flex-direction: row; text-align: left; gap: 10px; }
+      .pk-sc-side .pk-dia.mid { --s: 44px; }
+      .pk-sc-name { flex: 1; font-size: 20px; }
+      .pk-dash { display: none; }
+      .pk-goals { min-width: 40px; font-size: 44px; }
+    }
+
+    /* ── submit ────────────────────────────────────────────────────────────────────────────── */
+    .pk-submit { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: clamp(20px, 3vw, 40px); align-items: start; }
+    @media (max-width: 1023px) { .pk-submit { grid-template-columns: minmax(0, 1fr); } }
+    .pk-submit-form { display: grid; gap: clamp(20px, 2.4vw, 32px); }
+    .pk-namefield { display: grid; gap: 10px; }
+    .pk-check { margin: var(--s5) 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .pk-chk { display: grid; grid-template-columns: 26px 1fr auto auto; align-items: center; gap: 12px; min-height: 54px; border-bottom: 1px solid var(--line); }
+    .pk-chk-dot { width: 22px; height: 22px; background: var(--pale); clip-path: var(--dia); display: grid; place-items: center; }
+    .pk-chk.ok .pk-chk-dot { background: var(--gold); }
+    .pk-chk-dot svg { fill: none; stroke: var(--navy); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .pk-chk-label { font: 700 16px/1 var(--face); letter-spacing: .14em; text-transform: uppercase; color: var(--navy); }
+    .pk-chk-val { font: 600 18px/1.1 var(--face); color: var(--muted); text-align: right; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .pk-chk.ok .pk-chk-val { color: var(--ink); }
+    .pk-actions { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s5); }
+    .pk-token { margin-top: var(--s5); padding-top: var(--s5); border-top: 1px solid var(--line); }
+    .pk-token-row { display: flex; gap: var(--s2); margin-top: 10px; flex-wrap: wrap; }
+    .pk-token-row .pk-input { flex: 1 1 220px; }
+    .pk-help { margin-top: var(--s3); color: var(--ink); font-size: 16px; }
+    .pk-help summary { cursor: pointer; color: var(--royal); font-weight: 700; }
+    .pk-help a { color: var(--royal); }
+    .pk-status { min-height: 1.3em; margin: var(--s4) 0 0; color: var(--navy); font-weight: 600; }
+    .pk-status a { color: var(--royal); }
+    .pk-points { width: 100%; border-collapse: collapse; margin: 10px 0 14px; }
+    .pk-points th, .pk-points td { padding: 9px 24px; border-bottom: 1px solid var(--line); text-align: left; font: 500 17px/1.2 var(--face); }
+    .pk-points td { text-align: right; font-weight: 800; color: var(--navy); font-variant-numeric: tabular-nums; }
+    .pk-points tr.tie th { color: var(--muted); font-size: 15px; letter-spacing: .06em; border-bottom: 0; }
+    .pk-preview { position: sticky; top: 96px; margin: 0; background: rgba(7, 23, 71, .6); aspect-ratio: 2 / 3; clip-path: var(--cham); --c: 16px; }
+    .pk-preview img { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity .3s; }
+    .pk-preview.ready img { opacity: 1; }
+
+    /* ── tables ────────────────────────────────────────────────────────────────────────────── */
+    .pk-table-wrap { overflow-x: auto; background: #fff; clip-path: var(--cham); --c: 16px; }
+    .pk-table { width: 100%; min-width: 760px; border-collapse: collapse; table-layout: fixed; color: var(--ink); }
+    .pk-table th { height: 52px; padding: 0 14px; background: var(--gold); color: var(--navy); text-align: left; font: 800 13px/1.1 var(--face); letter-spacing: .16em; text-transform: uppercase; }
+    .pk-table td { height: 54px; padding: 0 14px; border-bottom: 1px solid var(--line); font: 500 18px/1.1 var(--face); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pk-table tbody tr { animation: pk-rise .32s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 20ms); }
+    .pk-table tbody tr:hover { background: #fffbe8; }
+    .pk-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .pk-table .total { font-weight: 800; color: var(--navy); }
+    .pk-table .rank { font-weight: 800; }
+    .pk-table .rank.first { color: #b48a00; }
+    .pk-table .who { font-weight: 700; }
+    .pk-table .act { text-align: right; }
+    .pk-table .pk-none td { height: 120px; text-align: center; font: 700 15px/1 var(--face); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+    .pk-table .pk-none:hover { background: none; }
+    .pk-inline { display: inline-flex; align-items: center; gap: 8px; }
+    @media (max-width: 759px) { .pk-table .hide-sm { display: none; } }
+
+    /* ── admin, footer ─────────────────────────────────────────────────────────────────────── */
+    .pk-admin { margin-top: var(--s8); padding: var(--s5); border: 2px dashed var(--gold); }
+    .pk-admin-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s4); margin-bottom: var(--s4); }
+    .pk-seg { display: flex; gap: 6px; }
+    .pk-seg .pk-btn[aria-pressed="true"] { --edge: var(--gold); --fill: var(--gold); --tx: var(--navy); }
+    .pk-path { font-size: 14px; color: var(--soft); }
+    .pk-checkbox { display: flex; align-items: center; gap: 8px; }
+    .pk-foot { display: flex; padding-block: var(--s5) var(--s7); border-top: 1px solid rgba(255, 255, 255, .15); }
+    .pk-foot a { color: var(--gold); text-decoration: none; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: 15px; }
+
+    body.pk-readonly .pk-row { cursor: default; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</body>
+</html>
