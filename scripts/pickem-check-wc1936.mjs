@@ -24,7 +24,8 @@ function randomPicks(name) {
   m.score = [c, r];
   const all = Object.entries(data.teams).flatMap(([code, t]) => t.squad.map(([n, p]) => ({ id: `${code}|${n}`, p })));
   m.awards.boot = all[rnd(all.length)].id;
-  m.awards.ball = all[rnd(all.length)].id;
+  const champ = K.champion(m), mine = all.filter((x) => x.id.startsWith(`${champ}|`));
+  m.awards.ball = mine[rnd(mine.length)].id;
   const gks = all.filter((x) => x.p === 'GK');
   m.awards.glove = gks[rnd(gks.length)].id;
   m.dark = rnd(4) ? darks[rnd(darks.length)] : null;
@@ -35,6 +36,8 @@ function randomPicks(name) {
 for (let i = 0; i < 300; i++) {
   const m = randomPicks(i % 3 ? `Entrant ${i}` : 'Dar Hadid Ūltras 龍宮');
   if (i % 7 === 0) m.awards.ball = null;
+  // A Golden Ball from outside the champion's squad never survives a round trip.
+  if (i % 11 === 0) { const off = K.decode(K.encode({ ...m, awards: { ...m.awards, ball: m.awards.boot } }, data), data); if (m.awards.boot.split('|')[0] !== K.champion(m)) assert.equal(off.awards.ball, null); }
   assert.ok(K.complete(m));
   const code = K.encode(m, data);
   assert.ok(code.startsWith('WC36-'));

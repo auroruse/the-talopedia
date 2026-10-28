@@ -439,20 +439,30 @@ function renderDark() {
     : `<b>${pts}</b> of ${K.DARK_MAX}${live === false ? ' · out' : ''}`;
   $('#pk-dark').innerHTML = K.GROUP_KEYS.map((g) => {
     const opts = DATA.groups[g].filter((t) => T[t].dark);
-    return `<li class="pk-dk-row">${letter(g, 'sm')}${opts.map((t) => {
+    if (!opts.length) return '';
+    return `<li class="pk-dk-row">${letter(g, 'sm')}<div class="pk-dk-opts">${opts.map((t) => {
       const on = m.dark === t;
       return `<button type="button" class="pk-dk${on ? ' on' : ''}" data-dark="${t}" aria-pressed="${on}" ${can ? '' : 'disabled'}>
         ${flag(t)}<span class="pk-team"><span class="pk-name">${esc(T[t].name)}</span><span class="pk-meta">${esc(T[t].finish)}</span></span></button>`;
-    }).join('')}</li>`;
+    }).join('')}</div></li>`;
   }).join('');
 }
 
+// The Golden Ball list is the champion's squad, rebuilt when the champion changes.
+let ballFor;
 function renderAwards() {
-  const m = model(), can = editable(), R = marking();
+  const m = model(), can = editable(), R = marking(), champ = mode === 'results' && !viewing ? null : K.champion(m);
+  if (ballFor !== champ) {
+    ballFor = champ;
+    const mine = champ ? T[champ].squad.map(([n]) => LABEL.get(`${champ}|${n}`)) : [...PLAYER.keys()];
+    $('#pk-ballers').innerHTML = mine.sort((a, b) => a.localeCompare(b)).map((x) => `<option value="${esc(x)}"></option>`).join('');
+  }
+  const ball = document.querySelector('[data-award="ball"]');
+  ball.placeholder = mode === 'results' && !viewing ? 'Search players' : champ ? `Search ${T[champ].name}` : 'Pick a champion';
   for (const k of K.AWARDS) {
     const input = document.querySelector(`[data-award="${k}"]`), id = m.awards[k];
     if (document.activeElement !== input) input.value = id ? LABEL.get(id) || '' : '';
-    input.disabled = !can;
+    input.disabled = !can || (k === 'ball' && !champ && !(mode === 'results' && !viewing));
     input.classList.remove('bad');
     const won = R?.awards[k], st = won ? (id === won ? 'right' : 'wrong') : null;
     const card = input.closest('.pk-card');
@@ -491,6 +501,7 @@ function bindExtras() {
       const v = input.value.trim(), id = PLAYER.get(v);
       if (v && !id) { input.classList.add('bad'); return; }
       if (id && k === 'glove' && T[id.split('|')[0]].squad.find(([n]) => n === id.split('|')[1])?.[1] !== 'GK') { input.classList.add('bad'); return; }
+      if (id && k === 'ball' && !(mode === 'results' && !viewing) && id.split('|')[0] !== K.champion(model())) { input.classList.add('bad'); return; }
       model().awards[k] = id || null;
       save(); renderAwards(); renderSteps();
     });

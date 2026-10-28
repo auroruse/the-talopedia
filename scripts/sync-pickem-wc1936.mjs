@@ -45,9 +45,9 @@ const groups = {}, teams = {};
 let host = null;
 for (const [g, sides] of Object.entries(draw)) {
   groups[g] = sides.map((s) => s.code);
-  // Dark horses: the two sides in each group the engine rates lowest. A dark horse pick has to be
-  // one of them, so it is a real bet against the group's favourites.
-  const dark = new Set([...sides].sort((a, b) => intl.get(a.code).skill - intl.get(b.code).skill).slice(0, 2).map((s) => s.code));
+  // Dark horses: every side the engine rates under 80, wherever it was drawn. Ranking within a
+  // group made 81-rated sides long shots for drawing the hardest group.
+  const dark = new Set(sides.filter((s) => intl.get(s.code).skill < 80).map((s) => s.code));
   for (const s of sides) {
     const t = intl.get(s.code);
     if (!t) throw new Error(`${s.code} is not in the international preset`);

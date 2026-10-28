@@ -98,7 +98,7 @@ const P = K.POINTS;
           <div class="pk-card">
             <h3 class="pk-card-h" id="pk-ball-h">Golden Ball</h3>
             <div class="pk-card-body">
-              <input class="pk-input" list="pk-players" data-award="ball" aria-labelledby="pk-ball-h" placeholder="Search players" autocomplete="off">
+              <input class="pk-input" list="pk-ballers" data-award="ball" aria-labelledby="pk-ball-h" placeholder="Pick a champion" autocomplete="off">
               <div class="pk-pick" data-award-pick="ball"></div>
             </div>
           </div>
@@ -113,6 +113,7 @@ const P = K.POINTS;
       </div>
       <datalist id="pk-players"></datalist>
       <datalist id="pk-keepers"></datalist>
+      <datalist id="pk-ballers"></datalist>
     </section>
 
     <section class="pk-step" data-step="submit" aria-labelledby="pk-h-submit" hidden>
@@ -582,7 +583,8 @@ const P = K.POINTS;
     .pk-note.bad { color: var(--bad); } .pk-note.good { color: var(--good); }
 
     .pk-darklist { margin: 0; list-style: none; display: grid; gap: 8px; }
-    .pk-dk-row { display: grid; grid-template-columns: 44px minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 10px; }
+    .pk-dk-row { display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center; gap: 10px; }
+    .pk-dk-opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
     .pk-dk {
       --c: 9px; display: flex; align-items: center; gap: 10px; min-width: 0; min-height: 58px; padding: 6px 12px; border: 0; background: var(--pale);
       color: var(--ink); text-align: left; cursor: pointer; clip-path: var(--cham); transition: background .12s;
@@ -603,8 +605,8 @@ const P = K.POINTS;
     /* Phones: a group's two dark horses stack beside its letter; the score runs side over side. */
     @media (max-width: 559px) {
       .pk-darklist { gap: 14px; }
-      .pk-dk-row { grid-template-columns: 40px minmax(0, 1fr); row-gap: 6px; }
-      .pk-dk-row .pk-letter { grid-row: span 2; --s: 40px; }
+      .pk-dk-opts { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+      .pk-dk-row .pk-letter { --s: 40px; align-self: start; margin-top: 9px; }
       .pk-card-body { padding-inline: 16px; }
       .pk-scoreline { grid-template-columns: minmax(0, 1fr); gap: 10px; }
       .pk-sc-side { flex-direction: row; text-align: left; gap: 10px; }

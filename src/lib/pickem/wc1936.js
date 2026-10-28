@@ -6,11 +6,11 @@ import * as K from './core.js';
 
 export {
   GROUP_KEYS, R16, MATCHES, FEED, AWARDS, AWARD_NAME, POINTS, GROUP_MAX,
-  seed, participants, loser, normalize, champion, runnerUp, scoreOk, groupMarks, koStatus, crowd,
+  seed, participants, loser, champion, runnerUp, scoreOk, groupMarks, koStatus, crowd,
 } from './core.js';
 const { GROUP_KEYS, MATCHES, AWARDS, AWARD_NAME, participants, champion, runnerUp, scoreOk } = K;
 
-// The dark horse: one side from the two each group's draw rates lowest, worth this much for every
+// The dark horse: one side the engine rates under 80, worth this much for every
 // round it survives. Out of the group is one round; each knockout tie won is another.
 export const DARK = 3;
 export const DARK_ROUNDS = ['g', 'r', 'q', 's', 'f'];
@@ -18,6 +18,16 @@ export const DARK_MAX = DARK * DARK_ROUNDS.length;
 
 export function blank(draw, results = false) {
   return { ...K.blank(draw, results), dark: null };
+}
+
+// 1935's clean-up, plus the Golden Ball: it goes to a player of the side picked as champion, so a
+// pick from anyone else is dropped when the champion changes. Results are left alone, since the real
+// Golden Ball can go to anyone.
+export function normalize(m) {
+  K.normalize(m);
+  const b = m.awards.ball;
+  if (!m.done && b && b.split('|')[0] !== champion(m)) m.awards.ball = null;
+  return m;
 }
 
 export function progress(m) {
@@ -109,6 +119,7 @@ export function decode(code, data) {
     }
     const d = order[r.get(6)];
     m.dark = d && data.teams[d]?.dark ? d : null;
+    normalize(m);
     const at = r.byte, len = bytes[at];
     m.name = new TextDecoder().decode(new Uint8Array(bytes.slice(at + 1, at + 1 + len)));
   } catch { throw new Error('This code is damaged. Copy it again from the card.'); }
