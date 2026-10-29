@@ -15,6 +15,7 @@ groups:
         items:
           - "remington-wesley-treaty|Remington-Wesley Treaty"
           - "years-of-oppression"
+          - "the-brethren-war|Brethren War"
       - label: "Events of the Roleplay"
         items:
           - "elysian-civil-war"
@@ -82,11 +83,11 @@ groups:
           - "robyn-tivruski"
       - label: "Daedalus"
         items:
-          - "futu|Avery Williams"
-          - "futur|Adamska Olenev"
+          - "avery-williams"
+          - "adamska-olenev"
           - "future|Christopher Wechsler"
-          - "futu|Zhang Yan"
-          - "futu|Eric D'Angelo"
+          - "zhang-yan"
+          - "eric-d-angelo"
       - label: "Civilians"
         items:
           - "elias-gray"
