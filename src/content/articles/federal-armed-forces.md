@@ -9,7 +9,7 @@ infobox:
     value:
       - "Schutz des Bundes, Dienst dem Volke"
       - "\"Protection of the Confederation, Service to the People\""
-  - { label: "Founded", value: "1 August, 1931" }
+  - { label: "Founded", value: ":date[1931-08-01|ago]" }
   - label: "Service Branches"
     value:
       - "Bundesheer"
@@ -87,7 +87,7 @@ The Federal Armed Forces in their current form was established in August 1931 af
 <table>
 <tr><th rowspan="2">Category</th><th rowspan="2">Type</th><th colspan="3">Count</th></tr>
 <tr><th>Outdated</th><th>Modern</th><th>Advanced</th></tr>
-<tr><td rowspan="2">Fighters</td><td>Biplane Fighters</td><td>150</td><td>250</td><td>75</td></tr>
+<tr><td rowspan="2">Fighters</td><td>Biplane Fighters</td><td>250</td><td>0</td><td>0</td></tr>
 <tr><td>Monoplane Fighters</td><td>200</td><td>750</td><td>625</td></tr>
 <tr><td rowspan="3">Bombers</td><td>Tactical Bombers</td><td>100</td><td>450</td><td>300</td></tr>
 <tr><td>Strategic Bombers</td><td>25</td><td>175</td><td>100</td></tr>
