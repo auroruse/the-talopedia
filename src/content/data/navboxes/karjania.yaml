@@ -3,27 +3,33 @@ crumb: "[[portal:karjania|Portal:Karjania]] • [[karjania|Overview]]"
 groups:
   - label: "History"
     rows:
-      - label: "Antiquity"
+      - label: "Ancient Karjania"
+        dates: "10000 BCE - 1277 CE"
         items:
-          - "ancient-karjania"
-      - label: "Karjanian Confederation"
+          - "karjanian-prehistory"
+          - "age-of-the-five"
+          - "karjanian-bronze-age"
+          - "pre-confederation-states"
+      - label: "Age of the Confederation"
+        dates: "1278 - 1919"
         items:
           - "treaty-of-roudanjarvi|Treaty of Roudanjärvi"
           - "treaty-of-helkanmaa"
           - "age-of-the-republic"
-          - "mamme"
+          - "karjan-confederation"
           - "rulers-of-the-karjanian-confederation"
           - "rudanian-karjanian-conflicts|Rudanian-Karjanian Conflicts"
           - "golden-100-years|Golden 100 years"
       - label: "Events of the Roleplay"
+        dates: "1920 -"
         items:
           - "karjanian-civil-war"
-          - "free-esti-state"
+          - "esti-free-state"
   - label: "Politics"
     rows:
       - label: "Government"
         items:
-          - "administrative-subdivisions"
+          - "list-of-karjanian-administrative-subdivisions"
           - "karjanian-communist-congress"
       - label: "Military"
         items:
@@ -31,7 +37,7 @@ groups:
   - label: "Economy"
     rows:
       - items:
-          - "list-of-notable-companies"
+          - "list-of-notable-karjanian-companies"
       - label: "Karjanian Economy"
         items:
           - "karjanian-markka"
