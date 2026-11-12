@@ -1,6 +1,6 @@
 ---
 title: "The Frederikka Islands"
-nativeTitle: "Fredriikan Saaret (Routan)"
+nativeTitle: "Frederiikan Saaret (Routan)"
 romaji: "Frederihká Suolut (Saamit)"
 type: subdivision
 nation: karjania
@@ -46,7 +46,7 @@ infobox:
   - { label: "Districts", value: "13" }
 ---
 
-The **Frederikka Islands**[ˈfre̞.de̞.rikːɑ ˈaɪləndz] (*Fredriikan Saaret*) [ˈfredriːkɑn ˈsɑːret] are an island chain in the Himalayan Sea, belonging to the [[united-socialist-states-of-karjania]]. The archipelago consists of 11 islands, of which the largest is Kristianmaa, where the capital city of Shompolahti is located. Other islands with a significant population include Annasaari, where the Annasaarese people live, and Palmusaaret, known for its tourism industry. The islands neighbour the territory of the Andam Islands, which belong to Arlbern, to the south and Cahaya to the north. **The Frederikka Islands** are administered as an overseas territory of [[karjania]], together with Kullanmaan. The island chain is known for its diverse fauna and flora. They were named after Queen Frederikka of Karjania (1521-1603). The archipelago is the only part of Karjania located in [[valtheria]].
+The **Frederikka Islands**[ˈfre̞.de̞.rikːɑ ˈaɪləndz] (*Frederiikan Saaret*) [ˈfrederiːkɑn ˈsɑːret] are an island chain in the Himalayan Sea, belonging to the [[united-socialist-states-of-karjania]]. The archipelago consists of 11 islands, of which the largest is Kristianmaa, where the capital city of Shompolahti is located. Other islands with a significant population include Annasaari, where the Annasaarese people live, and Palmusaaret, known for its tourism industry. The islands neighbour the territory of the Andam Islands, which belong to Arlbern, to the south and Cahaya to the north. **The Frederikka Islands** are administered as an overseas territory of [[karjania]], together with Kullanmaan. The island chain is known for its diverse fauna and flora. They were named after Queen Frederikka of Karjania (1521-1603). The archipelago is the only part of Karjania located in [[valtheria]].
 
 ## Etymology
 
