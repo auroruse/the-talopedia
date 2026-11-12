@@ -1,6 +1,6 @@
 ---
 title: "The Frederikka Islands"
-nativeTitle: "Fredriikan Saaret (Routan)"
+nativeTitle: "Frederiikan Saaret (Routan)"
 romaji: "Frederihká Suolut (Saamit)"
 type: subdivision
 nation: karjania
@@ -45,7 +45,8 @@ infobox:
   - { label: "Official Animal", value: "Annasaari Wild Pig" }
   - { label: "Districts", value: "13" }
 ---
-The **Frederikka Islands**[ˈfre̞.de̞.rikːɑ ˈaɪləndz] (*Fredriikan Saaret*) [ˈfredriːkɑn ˈsɑːret] are an island chain in the Himalayan Sea, belonging to the [[united-socialist-states-of-karjania]]. The archipelago consists of 11 islands, of which the largest is Kristianmaa, where the capital city of Shompolahti is located. Other islands with a significant population include Annasaari, where the Annasaarese people live, and Palmusaaret, known for its tourism industry. The islands neighbour the territory of the Andam Islands, which belong to Arlbern, to the south and Cahaya to the north. **The Frederikka Islands** are administered as an overseas territory of [[karjania]], together with Kullanmaan. The island chain is known for its diverse fauna and flora. They were named after Queen Frederikka of Karjania (1521-1603). The archipelago is the only part of Karjania located in [[valtheria]].
+
+The **Frederikka Islands**[ˈfre̞.de̞.rikːɑ ˈaɪləndz] (*Frederiikan Saaret*) [ˈfrederiːkɑn ˈsɑːret] are an island chain in the Himalayan Sea, belonging to the [[united-socialist-states-of-karjania]]. The archipelago consists of 11 islands, of which the largest is Kristianmaa, where the capital city of Shompolahti is located. Other islands with a significant population include Annasaari, where the Annasaarese people live, and Palmusaaret, known for its tourism industry. The islands neighbour the territory of the Andam Islands, which belong to Arlbern, to the south and Cahaya to the north. **The Frederikka Islands** are administered as an overseas territory of [[karjania]], together with Kullanmaan. The island chain is known for its diverse fauna and flora. They were named after Queen Frederikka of Karjania (1521-1603). The archipelago is the only part of Karjania located in [[valtheria]].
 
 ## Etymology
 
@@ -59,12 +60,9 @@ The Frederikka Islands were first inhabited around 5,500 years ago, by the ances
 
 <figure><img src="/assets/old-media/media/frederikka-islands-3.jpg" alt="Traditional Shompon Houses"><figcaption>Traditional Shompon Houses</figcaption></figure>
 
-
 <figure><img src="/assets/old-media/media/frederikka-islands-4.jpg" alt="Frederikkese village"><figcaption>Frederikkese village</figcaption></figure>
 
-
 <figure><img src="/assets/old-media/media/frederikka-islands-5.jpg" alt="Annasaarese fishermen"><figcaption>Annasaarese fishermen</figcaption></figure>
-
 
 ### Colonization by Karjania
 
@@ -72,13 +70,11 @@ The first [[evrian]] to visit the island chain was Kasperi Honkala of the Karjan
 
 <figure><img src="/assets/old-media/media/frederikka-islands-6.jpg" alt="Coast of Annasaari (1889)"><figcaption>Coast of Annasaari (1889)</figcaption></figure>
 
-
 ### Civil war and the USSK
 
 During the Karjanian Civil War, the Frederikka Islands were claimed by both sides, with the locals taking a neutral stance. 6 days before the official surrender of the Republic, they officially joined the USSK, as the Territory of the Frederikka Islands. The Civil War only claimed one casualty, a 21 year old Routan man who upon hearing the news of the island chain joining the USSK, started a protest, for which he was later executed. After the war, the archipelago, for the first time in its history reached a life expectancy above 30. Several schools were opened, as well as the forced closing of local private businesses. Today, the Frederikka Islands are the second lowest populated subdivision of Karjania, as well as the one farthest from the mainland.
 
 <figure><img src="/assets/old-media/media/frederikka-islands-7.jpg" alt="Himalayan Sea and North Siansaari"><figcaption>Himalayan Sea and North Siansaari</figcaption></figure>
-
 
 ## Government
 
@@ -86,18 +82,15 @@ The Frederikka Islands are an overseas territory of Karjania, and are governed b
 
 <figure><img src="/assets/old-media/media/frederikka-islands-8.jpg" alt="The Council Building, Shompolahti"><figcaption>The Council Building, Shompolahti</figcaption></figure>
 
-
 ## Economy
 
 The economy of the island chain is built upon agriculture, fishing and tourism. Most of the indigenous population work in the agricultural sector, the most common produce being coconuts. The fishing industry is mostly based on the island of Annasaari, as well as the southern shore of Kristianmaa. The tourism industry is most significant in Palmusaaret, with a large Routan population. The archipelago, like Karjania itself, follows a socialist planned economy, with no private ownership. The island's GDP is 969,344,000, meaning its GDP per capita is 21,541, less than half of mainland Karjania's. Hunting is a popular activity within the archipelago.
 
 <figure><img src="/assets/old-media/media/frederikka-islands-9.jpg" alt="Coconut farming in Southern Kristianmaa"><figcaption>Coconut farming in Southern Kristianmaa</figcaption></figure>
 
-
 The territory is divided into 13 districts, each island except Kristianmaa is its own district, while Kristianmaa is divided into 3 districts, with the capital of Shompolahti serving as its own district. 4 of the 13 districts have no permanent population, but still receive occasional visits by researchers and wealthy tourists.
 
 <figure><img src="/assets/old-media/media/frederikka-islands-10.png" alt="Map of the 13 districts of the Frederikka Islands"><figcaption>Map of the 13 districts of the Frederikka Islands</figcaption></figure>
-
 
 ## Geography
 
@@ -109,13 +102,11 @@ The islands have a tropical climate, and are one of the warmest regions of Karja
 
 <figure><img src="/assets/old-media/media/frederikka-islands-11.jpg" alt="Kokkomaa and the Coconut Strait"><figcaption>Kokkomaa and the Coconut Strait</figcaption></figure>
 
-
 ### Ecology
 
 The islands have large rainforests, with significant diversity in animal and plant species. The coast of the islands have vast mangrove forests, while some of the smaller isles are considered grasslands. The archipelago has over 1,500 native animal species, almost all of which are not found anywhere else in Karjania. They include the Annasaari Wild Pig, the official animal of the region, the Frederikka pigeon, one of the most unique bird species in [[avium]], as well as macaques and sea cows. The islands are also home to over 2,000 plant species, which are studied extensively. They include ferns, trees, orchids and several species of wildflowers, which are an important symbol in the region.
 
 <figure><img src="/assets/old-media/media/frederikka-islands-12.jpg" alt="Frederikka Pigeon"><figcaption>Frederikka Pigeon</figcaption></figure>
-
 
 ## Demographics
 
@@ -123,19 +114,8 @@ The Frederikka Islands are a diverse archipelago, both in religion and ethnicity
 
 <figure><img src="/assets/old-media/media/frederikka-islands-13.jpg" alt="Nazarist Church, Northern Siansaari"><figcaption>Nazarist Church, Northern Siansaari</figcaption></figure>
 
-
 ## Culture
 
 The archipelago has a varied culture, with many people living the same way as their ancestors thousands of years ago. The Routan and Frederikkese cultures mixing creates a unique cuisine and architectural style. The main symbols of the island chain are the colours green, yellow and white, which feature on the territory’s emblem, as well as its two official flags. The Frederikkese people view the Green-Yellow-White tricolour as their own flag, it was made co-official along with the yellow and green cross in 1921. The Shompon and Annasaarese people have their own ethnic flags. Other symbols include the coconut palm, wild pigs, canoes and wildflowers. In Frederikkese mythology, snakes are regarded as sacred animals. The Frederikka Islands have a national football team, separate from Karjania. It is widely regarded as one of the worst in the world. Their first game was a 18-0 loss to Karjania in 1889. There are two clubs, both on the island of Kristianmaa, Frederikka Islands Wildflowers and Shompolahti PS. They play the Frederikka Cup each year, with the Wildflowers being the dominant side.
 
 <figure><img src="/assets/old-media/media/frederikka-islands-14.jpg" alt="Frederikkese flag flying in the wind"><figcaption>Frederikkese flag flying in the wind</figcaption></figure>
-
-
-## Cities
-
-| Name | Population | District |
-| --- | --- | --- |
-
-<div class="imgrid">
-<figure style="flex:1.375"><img src="/assets/old-media/media/frederikka-islands-15.png" alt=""><figcaption></figcaption></figure>
-</div>
