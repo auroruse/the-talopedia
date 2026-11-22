@@ -1,5 +1,6 @@
 ---
-title: "Grand Duchy of Sylesyjo"
+title: "Sylesyjo"
+sidebarTitle: "Grand Duchy of Sylesyjo"
 nativeTitle: "Wielge Ksiynstwo Sylezyje"
 type: overview
 nation: sylesyjo
