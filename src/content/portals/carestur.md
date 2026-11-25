@@ -1,6 +1,6 @@
 ---
 title: ""
 nation: carestur
-banner: Carestur Banner.png
+banner: /assets/old-media/media/carestur-portal.png
 welcome: "Bienvengut a Carestur!"
 ---
