@@ -3,4 +3,5 @@ crumb: "[[portal:carestur|Portal:Carestur]] • [[carestur|Overview]]"
 groups:
   - label: "History"
     rows:
-      - label: "Modern Era (1818-Present)"
+      - label: "Modern Era"
+        dates: "1818-Present"
