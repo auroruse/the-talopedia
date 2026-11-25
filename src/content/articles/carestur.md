@@ -1,6 +1,7 @@
 ---
 title: ""
 sidebarTitle: "Carestur"
+nativeTitle: "Carestur"
 type: overview
 nation: carestur
 authors: [carestur]
@@ -161,15 +162,15 @@ Dense forests of pine, oak, and chestnut cover large parts of the Landes, the C�
 
 **Climate**
 
-Carestur has a predominantly Mediterranean and temperate oceanic climate, with pronounced regional variations shaped by altitude, maritime currents, and its position bridging the Euscara, the *Mare Internum*, and South Evria. Climate zones range from temperate oceanic (*Cfb*) in the western Atlantic lowlands, through hot-summer and warm-summer Mediterranean (*Csa*/*Csb*) along the southern littoral and in northern Numidia, to alpine (*Dfc*) in the Monts Albères and semi-arid steppe (*BSk*/*BSh*) in the Numidian interior.
+Carestur has a predominantly Mediterranean and temperate oceanic climate, with pronounced regional variations shaped by altitude, maritime currents, and its position bridging the Euscara, the *Mare Internum*, and South Evria. Climate zones range from temperate oceanic (*Cfb*) in the western Arctic lowlands, through hot-summer and warm-summer Mediterranean (*Csa*/*Csb*) along the southern littoral and in northern Numidia, to alpine (*Dfc*) in the Monts Albères and semi-arid steppe (*BSk*/*BSh*) in the Numidian interior.
 
 The western coastal provinces along the Gulf of Euscara, including Gironde-Landes and western Gascogne, experience a maritime-oceanic climate. Winters are mild and wet, summers are warm, and precipitation is frequent throughout the year due to prevailing westerly winds from the Atlantic. These steady maritime breezes moderate seasonal temperature swings, supporting lush forests and fertile river basins.
 
-The southern and eastern mainland provinces bordering the *Mare Internum;* including Languedoc, Roussillon, Provence, the Cannes enclave, and Catalonia;have a classic Mediterranean climate characterized by hot, dry summers and mild, wetter winters. Seasonal weather is strongly influenced by regional wind systems, notably the cold, dry *Mistral* and *Tramontane* winds funneling down the Rhône and Aude valleys, which clear skies and regulate summer humidity. In the central interior plateaus of the Massif Central and Auvergne, the climate transitions to a cooler, semi-continental regime with sharper seasonal contrasts, cold winters with regular snowfall, and warm summers punctuated by afternoon thunderstorms.
+The southern and eastern mainland provinces bordering the *Mare Internum;* including Languedoc, Roussillon, Provence, Canas, and Septmania;have a classic Mediterranean climate characterized by hot, dry summers and mild, wetter winters. Seasonal weather is strongly influenced by regional wind systems, notably the cold, dry *Mistral* and *Tramontane* winds funneling down the Rhône and Aude valleys, which clear skies and regulate summer humidity. In the central interior plateaus of the Massif Central and Auvergne, the climate transitions to a cooler, semi-continental regime with sharper seasonal contrasts, cold winters with regular snowfall, and warm summers punctuated by afternoon thunderstorms.
 
 The Monts Albères and the eastern Alpine borderlands feature a mountain and alpine climate, marked by long, snowy winters, cool summers, and heavy precipitation. Persistent winter snowpack in the upper valleys feeds the headwaters of Carestur's major rivers, sustaining summer irrigation and hydroelectric power generation. Across the *Mare Internum*, the Autonomous Territory of Numidia exhibits a sharp north–south climatic gradient: the Tellian coast enjoys a mild, rain-fed Mediterranean climate similar to southern Provence, while the interior Chotts Plateau and Saharan Atlas transition rapidly into a semi-arid steppe climate with scorching summers, chilly winter nights, and scarce, irregular rainfall.
 
-Annual precipitation across Carestur varies dramatically by region, ranging from **900 to 1,600 mm** in the Euscarian lowlands, the Monts Albères, and the Cévennes highlands, down to **550–750 mm** along the *Mare Internum* littoral, and dropping below **300 mm** in the semi-arid plateaus of southern Numidia. Average January temperatures on the mainland range from **2 to 5 °C** in the interior plateaus and **7 to 10 °C** along the southern coast, rising to **22–28 °C** in July, while coastal Numidia averages **11–13 °C** in winter and frequently exceeds **32 °C** during the peak of summer.
+Annual precipitation across Carestur varies dramatically by region, ranging from **900 to 1,600 mm** in the Arctic lowlands, the Monts Albères, and the Cévennes highlands, down to **550–750 mm** along the *Mare Internum* littoral, and dropping below **300 mm** in the semi-arid plateaus of southern Numidia. Average January temperatures on the mainland range from **2 to 5 °C** in the interior plateaus and **7 to 10 °C** along the southern coast, rising to **22–28 °C** in July, while coastal Numidia averages **11–13 °C** in winter and frequently exceeds **32 °C** during the peak of summer.
 
 ### Human Geography
 
@@ -195,8 +196,7 @@ Depending on their region of origin, most Caresturian citizens are bilingual or 
 
 The Republic of Carestur is a constitutionally secular state governed by the principle of *laïcité républicaine*, guaranteeing full freedom of conscience while reflecting the distinct religious traditions of its Evrian and South Evrian territories. Nationwide, **Sunni Islam** (predominantly of the Maliki school) is the largest religious affiliation at **58.4%** of the total population, concentrated almost entirely within the Autonomous Territory of Numidia alongside urban diaspora communities on the mainland.
 
-Gallician Solarism represents the second-largest faith group at **28.7%** nationwide (and over 48% across the European mainland), divided primarily between **Civic Rationalism** 
-(**38.5%**) and **Meridian Unitarianism**—a historic, autocephalous southern reformist tradition rooted in Languedoc and Provence (9.5%).
+Gallician Solarism represents the second-largest faith group at **28.7%** nationwide (and over 48% across the European mainland), divided primarily between **Civic Rationalism**  (**38.5%**) and **Meridian Unitarianism**—a historic, autocephalous southern reformist tradition rooted in Languedoc and Provence (9.5%).
 
 Secular, agnostic, and non-religious citizens account for 4**0.6%** of the national population, concentrated heavily in major mainland industrial and academic centers such as Marsillia, Barcino, Brodigal, and Tolosa, as well as among the urban technocratic class. Historic **Judaism** (encompassing both Sephardic, Provençal, and Maghrebi traditions) makes up approximately **0.9%** of the population, with long-established communities in Marsillia, Barcino, Bordigal, Pestelliére, and coastal Numidia, while **Ibadi Islam** (in the M'zab oases of southern Numidia) and other minority faiths account for the remaining **1.4%**.
 
