@@ -65,7 +65,7 @@ The **Empire of Zephran** is an Empire at the edge of the continent of **Valther
 
 ## Etymology
 
-The word Zephran derives from the Zephran family that had subjegated the entire state. The word Mistvan derives from the ethnic group that lived mainly in the mountains, which some were in permanant state of being covered by mists and clouds, while the Ostvan were priarily in the plains of Zephran.
+The word Zephran derives from the Zephran family that had subjegated the entire state. The word Mistvan derives from the ethnic group that lived mainly in the mountains, which some were in permanant state of being covered by mists and clouds, while the Ostvan were priarily in the valleys of Zephran.
 
 ## History
 
@@ -113,9 +113,14 @@ The government also invests heavily into infastructure to help the economy but a
 
 ## Geography
 
-The **Zephran** geography is both mountinous and has large forests, plains but lacks any major rivers or lakes. **Zephran** has three major mountain ranges, the **Tatra Mountains**, the **Istvan Heights**, and **Tertian Mountains**, with some of the tallest mountains in the world. Due to this abundance of mountains, mountain climbing is a Polular sport among the Zephran people despite it being dangerous, but many people train to undergo mountaneering with some failies working as porters or guides for generations in the mountains.
+The **Zephran** geography is both mountinous and has large forests and valleys but lacks any major rivers or lakes. **Zephran** has three major mountain ranges, the **Tatra Mountains**, the **Istvan Heights**, and **Tertian Mountains**, with some of the tallest single mountains in the world. Due to this abundance of mountains, mountain climbing is a polular sport among the Zephran people despite it being dangerous, but many people train to undergo mountaneering with some failies working as porters or guides for generations in the mountains. The mountains are generally not the tallest, though the mountains are not low either. They prove to be a middle ground, with some exceptions that are much taller. Zephran cities are usually built into the valleys that lie between the ranges sometimes, with some buildings having underground complexes carved into the mountains centuries ago by their ancestors to help hide Zephran Guerillas fighting against any forces that may have invaded the Empire.
 
-The Plains **Zephran** is where many of the Major cities are located, like **Ashfelda**, while some settlment sit in the Valleys of the mountains, with some having Ski-resorts for tourists and other amenaties. Though many mining towns tend to dot the Valleys, with some Monistaries built into the mountains, and having vast complexes carved inside the mountains themselves, which were carved by Monks generation after generation
+<div class="imgrid">
+<figure style="flex:1.501"><img src="https://i.imgur.com/SQCKGlt.jpeg" alt="Tatra Mountains"><figcaption>Tatra Mountains</figcaption></figure>
+<figure style="flex:1.498"><img src="https://i.imgur.com/zNyb6eK.jpeg" alt="Istvan Heights"><figcaption>Istvan Heights</figcaption></figure>
+</div>
+
+The valleys in **Zephran** is where many of the Major cities are located, like **Ashfelda**, while some settlment sit in the Valleys of the mountains, with some having Ski-resorts for tourists and other amenaties. Though many mining towns tend to dot the Valleys, with some Monistaries built into the mountains, and having vast complexes carved inside the mountains themselves, which were carved by Monks generation after generation
 
 ## Demographics
 
