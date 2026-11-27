@@ -26,10 +26,10 @@ infobox:
   - { section: "Personnel" }
   - { label: "Military Age", value: "18" }
   - { label: "Conscription", value: "24 months (some exceptions)" }
-  - { label: "Active Personnel", value: "1,111,360" }
-  - { label: "Reserve Personnel", value: "555,680" }
+  - { label: "Active Personnel", value: "1,876,700" }
+  - { label: "Reserve Personnel", value: "938,350" }
   - { section: "Expenditure" }
-  - { label: "Budget", value: "$154,436,844,870" }
+  - { label: "Budget", value: "$60,299,275,014" }
   - { label: "Percent of GDP", sub: true, value: "7%" }
 ---
 
@@ -46,9 +46,9 @@ Also as part of their modernization and expansion efforts, Cortesia introduced a
 <table>
 <tr><th rowspan="2">Category</th><th rowspan="2">Type</th><th colspan="3">Count</th></tr>
 <tr><th>Outdated</th><th>Modern</th><th>Advanced</th></tr>
-<tr><td rowspan="4">Infantry</td><td>Fit-for-Service</td><td colspan="3">13,892,000</td></tr>
-<tr><td>Active Personnel</td><td colspan="3">1,111,360</td></tr>
-<tr><td>Reserve Personnel</td><td colspan="3">555,680</td></tr>
+<tr><td rowspan="4">Infantry</td><td>Fit-for-Service</td><td colspan="3">18,767,000</td></tr>
+<tr><td>Active Personnel</td><td colspan="3">1,876,700</td></tr>
+<tr><td>Reserve Personnel</td><td colspan="3">938,350</td></tr>
 <tr><td>Paramilitary</td><td colspan="3">0</td></tr>
 <tr><td rowspan="6">Armor</td><td>Cavalry</td><td colspan="3">1,000</td></tr>
 <tr><td>Armored Cars</td><td></td><td></td><td></td></tr>
