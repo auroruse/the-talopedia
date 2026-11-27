@@ -16,7 +16,7 @@ infobox:
       - "[Hymn do Milosci Ojczyzny](https://www.youtube.com/watch?v=KXqxFp7PccE)"
       - "*\"Hymn to Love of Country\"*"
   - { label: "Capital", value: "Corslawa" }
-  - { label: "Largest City", value: "Jelgawa" }
+  - { label: "Largest City", value: "Corslawa" }
   - { section: "Administration" }
   - { label: "Government", value: "Social Democratic Federation" }
   - { label: "President", sub: true, value: "Nicholai Reszke" }
@@ -35,8 +35,9 @@ infobox:
     value:
       - "68.3% Cortesian"
       - "14.8% Nitravian"
-      - "13.5% Livonian"
-      - "2.2% Alemannian"
+      - "10.2% Turulian"
+      - "4.1% Livonian"
+      - "1.4% Alemannian"
       - "1.2% Others"
   - label: "Religion"
     value:
@@ -55,15 +56,15 @@ infobox:
       - "Standard Alemannian"
   - { label: "Demonym", value: "Cortesian" }
   - { label: "GDP (PPP)", value: "1932 Census" }
-  - { label: "Total", sub: true, value: ":up $2,206,240,641,000" }
-  - { label: "Per Capita", sub: true, value: ":down $39,703" }
+  - { label: "Total", sub: true, value: ":up $2,642,387,161,000" }
+  - { label: "Per Capita", sub: true, value: ":down $35,200" }
   - { label: "Currency", value: "Cortesian Krona / CTK (kr)" }
-  - { label: "Life Expectancy", value: ":up 42.9 years" }
-  - { label: "Literacy Rate", value: ":up 50.7%" }
+  - { label: "Life Expectancy", value: ":up 42.4 years" }
+  - { label: "Literacy Rate", value: ":up 51.9%" }
   - { label: "HDI", value: ":up 0.545 (high)" }
   - { section: "Miscellaneous Info" }
-  - { label: "Land Area", value: "279,031 km²" }
-  - { label: "Water Area", value: "9,293 km²" }
+  - { label: "Land Area", value: "391,104 km²" }
+  - { label: "Water Area", value: "76,977 km²" }
   - { label: "Driving Side", value: "Right" }
   - { label: "Alpha-2 Code", value: "CS" }
   - { label: "Alpha-3 Code", value: "COR" }
@@ -73,7 +74,7 @@ infobox:
 
 ## Etymology
 
-Cortesia derives its name from the Cortas people, a collection of tribal peoples inhabiting the flatlands north of the Danau River and surrounding the Corslawa River. The name Cortas originates from the Cortese word *cohr*, meaning “field” or “flatland.”
+Cortesia derives its name from the Cortas people, a collection of tribal peoples inhabiting the flatlands north of the Danau River and surrounding the Modrawa River. The name Cortas originates from the Cortese word *cohr*, meaning “field” or “flatland.”
 
 ## History
 
@@ -119,6 +120,8 @@ The judiciary system is independent of the Rada Federalna, with the Sąd Najwyż
 
 ### Topography
 
+Cortesia extends roughly 750 kilometers from its northernmost point to its southernmost point, and 608 kilometers from its westernmost point to its easternmost point. It has a total land area of 394,104 square kilometers, with an average elevation of 275 meters. Around 20% of Cortesian territory is above this average elevation, and 5% lies above 500 meters. Cortesia also claims territory in the Tethys Sea in an area 76,977 square kilometers in size.
+
 <div class="imgrid">
 <figure style="flex:1.333"><img src="https://lh3.googleusercontent.com/d/1t01yvobKdxBB9SZv9prbcOajMGAT8sta=w2000" alt="*Straznik, the tallest mountain in Cortesia standing at 2,501 meters above sea level.*"><figcaption>*Straznik, the tallest mountain in Cortesia standing at 2,501 meters above sea level.*</figcaption></figure>
 <figure style="flex:1.500"><img src="https://lh3.googleusercontent.com/d/1fCGp3S9pj575VfFlhwF0Lo49X99wd49I=w2000" alt="*Spring in southern Cortesia, near the mountain valley town of Dolina Krokusów.*"><figcaption>*Spring in southern Cortesia, near the mountain valley town of Dolina Krokusów.*</figcaption></figure>
@@ -143,6 +146,8 @@ The judiciary system is independent of the Rada Federalna, with the Sąd Najwyż
 
 ### Climate
 
+Cortesia has a climate on the colder end of temperate, experiencing all four seasons with mild summers and cold winters. (WIP)
+
 ### Human Geography
 
 ## Demographics
@@ -159,13 +164,13 @@ The judiciary system is independent of the Rada Federalna, with the Sąd Najwyż
 
 | Rank | City | Urban Population | Subdivision |
 | --- | --- | --- | --- |
-| 1 | Jelgawa | 2,342,000 | Wydraza |
-| 2 | Corslawa | 1,801,000 | Wilcza |
-| 3 | Kretme | 770,000 | Kojotza |
-| 4 | Czółnów | 645,000 | Kaczkza |
-| 5 | Growinas | 516,000 | Końza |
-| 6 | Stalowice | 499,000 | Dzikza |
-| 7 | Bosgownie | 445,000 | Smokza |
-| 8 | Jiezmene | 338,000 | Rybaza |
-| 9 | Kresów | 326,000 | Jaskółkza |
-| 10 | Pabžys | 298,000 | Gęśza |
+| 1 | Corslawa | 2,342,000 | Wilcza |
+| 2 | Szerencsehely | 1,743,000 | Turulia |
+| 3 | Jelgawa | 843,000 | Wydraza |
+| 4 | Kretme | 722,000 | Kojotza |
+| 5 | Czółnów | 576,000 | Kaczkza |
+| 6 | Growinas | 528,000 | Końza |
+| 7 | Bosgownie | 309,000 | Smokza |
+| 8 | Kresów | 303,000 | Jaskółkza |
+| 9 | Pabžys | 299,000 | Gęśza |
+| 10 | Jiezmene | 268,000 | Rybaza |
