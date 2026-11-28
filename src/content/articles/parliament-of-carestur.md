@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Parlament de Carestur"
 sidebarTitle: "Parliament of Carestur"
 nativeTitle: "Parlament de Carestur"
 type: organization
