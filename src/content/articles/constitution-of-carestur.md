@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Constitucion de Carestur (1934)"
 sidebarTitle: "Constitution of Carestur"
 nativeTitle: "Constitucion de Carestur"
 type: event
