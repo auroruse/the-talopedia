@@ -7,3 +7,21 @@ groups:
         dates: "1818-Present"
         items:
           - "caresturian-modern-era|l'Epòca Contemporanèa"
+  - label: "Politics & Government"
+    rows:
+      - label: "Constitution and law of Carestur"
+      - label: "Government of the Fourth Republic"
+      - label: "Political Parties in Carestur"
+      - label: "Elections in Carestur"
+  - label: "Geography"
+    rows:
+      - label: "Administrative divisions of Carestur"
+  - label: "People and Biographies"
+    rows:
+      - label: "Presidents of Carestur"
+      - label: "Prime Ministers of Carestur"
+      - label: "Caresturian Politicians"
+  - label: "Economy"
+    rows:
+      - label: "Industry in Carestur"
+      - label: "Transport in Carestur"
