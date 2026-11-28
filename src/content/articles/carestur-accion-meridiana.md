@@ -1,5 +1,5 @@
 ---
-title: "Accion Meridiana (Political Party)"
+title: ""
 sidebarTitle: "Accion Meridiana (AM)"
 type: organization
 nation: carestur
@@ -10,7 +10,7 @@ infobox:
   - label: "Founded"
     value:
       - "1926 (as a league)"
-      - "1934 (reorganized as a political party("
+      - "1934 (reorganized as a political party)"
   - { label: "Headquarters", value: "Tolosa, Republic of Carestur" }
   - { label: "Newspaper", value: "L'Espasa Meridiana" }
   - { label: "Youth Wing", value: "Joventuts Meridianas" }
