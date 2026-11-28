@@ -14,7 +14,10 @@ groups:
           - "constitution-of-carestur|Constitucion de Carestur"
       - label: "Government of the Fourth Republic"
         items:
-          - "parliament-of-carestur|Parlament de Carestur"
+          - "parliament-of-carestur"
+      - label: "Political Parties in Carestur"
+        items:
+          - "carestur-accion-meridiana|Accion Meridiana (AM)"
       - label: "Elections in Carestur"
   - label: "Geography"
     rows:
