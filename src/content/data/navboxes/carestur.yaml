@@ -10,6 +10,8 @@ groups:
   - label: "Politics & Government"
     rows:
       - label: "Constitution and law of Carestur"
+        items:
+          - "constitution-of-carestur|Constitucion de Carestur"
       - label: "Government of the Fourth Republic"
       - label: "Political Parties in Carestur"
       - label: "Elections in Carestur"
