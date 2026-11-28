@@ -1,7 +1,7 @@
 ---
-title: ""
+title: "L'Epòca Contemporanèa"
 sidebarTitle: "Modern Era"
-nativeTitle: "l'Epòca contemporanèa"
+nativeTitle: "L'Epòca Contemporanèa"
 type: event
 nation: carestur
 authors: [carestur]
