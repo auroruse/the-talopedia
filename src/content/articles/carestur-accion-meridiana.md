@@ -10,7 +10,7 @@ infobox:
   - label: "Founded"
     value:
       - "1926 (as a league)"
-      - "1934 (reorganized as a political party)"
+      - "1934 (reorganized as a political party("
   - { label: "Headquarters", value: "Tolosa, Republic of Carestur" }
   - { label: "Newspaper", value: "L'Espasa Meridiana" }
   - { label: "Youth Wing", value: "Joventuts Meridianas" }
@@ -43,7 +43,7 @@ In the ***Parlament de Carestur***, Accion Meridiana sits in hardline opposition
 
 Accion Meridiana emerged in **Tolosa** and **Marsillia** in 1926 out of disaffected Great War veterans' associations, monarchist-traditionalist societies, and radical nationalist student circles. Capitalizing on postwar sovereign debt crises, currency instability, and widespread industrial strikes under the **Third Caresturian Republic**, the movement blamed parliamentary democracy and socialist labor syndicates for national decline. Throughout the late 1920s and early 1930s, AM's uniformed street sections frequently clashed with militant trade unions in industrial centers such as **Barcino**, and **Marsillia.**
 
-<figure class="float float-right" style="width:300px"><img src="https://i.imgur.com/yVPDrxW.jpeg" alt="**Front Page of* L'Espasa Meridiana***"><figcaption>**Front Page of* L'Espasa Meridiana***</figcaption></figure>
+<figure class="float float-right" style="width:300px"><img src="https://i.imgur.com/yVPDrxW.jpeg" alt="***Front Page of* L'Espasa Meridiana**"><figcaption>***Front Page of* L'Espasa Meridiana**</figcaption></figure>
 
 ### Opposition to the 1934 Constitutional Settlement
 
@@ -67,13 +67,13 @@ Confronted with strict public-order statutes enforced by the new regime, which t
 
 ### Party Apparatus and Statuory Firewalls
 
+<figure class="float float-right" style="width:300px"><img src="https://i.imgur.com/uzJ9v7o.jpeg" alt="**National Headquarters of *Accion Meridiana* in Tolosa**"><figcaption>**National Headquarters of *Accion Meridiana* in Tolosa**</figcaption></figure>
+
 Headquartered in **Tolosa**, Accion Meridiana is directed by  **Maurici Valette**
 
 and propagates its platform through its daily newspaper, ***L'Espasa Meridiana***, and its youth organization, the ***Joventuts Meridianas***. Under the Fourth Republic's statutory firewalls separating registered political parties from paramilitary leagues and trade unions, AM has been compelled to maintain a formal legal separation between its parliamentary caucus and its affiliated street and veterans' associations to avoid judicial dissolution.
 
 ### Geographic Support
-
-<figure class="float float-right" style="width:300px"><img src="https://i.imgur.com/uzJ9v7o.jpeg" alt="National Headquarters of *Accion Meridiana* in Tolosa"><figcaption>National Headquarters of *Accion Meridiana* in Tolosa</figcaption></figure>
 
 Despite its small national vote share, AM maintains distinct regional pockets of strength:
 
